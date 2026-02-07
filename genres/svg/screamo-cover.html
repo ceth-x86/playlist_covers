@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Screamo Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #080708;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a090a;
+    overflow: hidden;
+  }
+
+  /* Near-black with faint sickly warmth — 
+     the colour of a room after everyone's left */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(160, 80, 90, 0.025) 0%, transparent 40%),
+      linear-gradient(178deg, #0c0b0c 0%, #0a090a 50%, #080708 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Wound glow — thin, horizontal, like a cut that's still hot */
+  .glow {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 30px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(190, 70, 80, 0.05) 0%, rgba(150, 50, 60, 0.02) 50%, transparent 70%);
+    filter: blur(18px);
+    z-index: 2;
+  }
+
+  /* Grain — series constant, heavy — 
+     screamo records are always lo-fi */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.32;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — tight, claustrophobic */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 46%, transparent 28%, rgba(4,3,4,0.68) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 48px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(210, 120, 130, 0.78);
+    line-height: 1;
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(180, 95, 105, 0.16);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 104px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(180, 95, 105, 0.08);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: a single jagged line tearing across the frame —
+       THE SCREAM itself, made visible.
+       
+       This is not metalcore's organized toggle.
+       Not thrash's directed force.
+       Not noise rock's omnidirectional explosion.
+       
+       Screamo is ONE gesture: a human voice breaking.
+       The line starts from silence (left edge, thin),
+       erupts violently through the center (jagged, thick, torn),
+       and collapses back into silence (right, disintegrating).
+       
+       The line is not smooth — it's a polyline with 
+       extreme vertical spikes, like a waveform clipping.
+       Below: the ghost echo of the scream, inverted, 
+       fading — the emotional residue.
+       
+       Above and below the tear: near-total emptiness.
+       Screamo songs are 90 seconds long. The silence
+       around the scream IS part of the music.
+       
+       Saetia, Orchid, pg.99, Jeromes Dream, City of Caterpillar,
+       Portraits of Past — the sound of someone who can't 
+       hold it in anymore. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="screamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#5a2028;stop-opacity:0"/>
+        <stop offset="5%" style="stop-color:#8a3540;stop-opacity:0.1"/>
+        <stop offset="15%" style="stop-color:#c05060;stop-opacity:0.35"/>
+        <stop offset="35%" style="stop-color:#e87080;stop-opacity:0.65"/>
+        <stop offset="50%" style="stop-color:#f08890;stop-opacity:0.8"/>
+        <stop offset="65%" style="stop-color:#e07078;stop-opacity:0.6"/>
+        <stop offset="80%" style="stop-color:#b85058;stop-opacity:0.35"/>
+        <stop offset="92%" style="stop-color:#803038;stop-opacity:0.12"/>
+        <stop offset="100%" style="stop-color:#5a2028;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="echoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#401520;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#702838;stop-opacity:0.06"/>
+        <stop offset="50%" style="stop-color:#904050;stop-opacity:0.1"/>
+        <stop offset="80%" style="stop-color:#702838;stop-opacity:0.06"/>
+        <stop offset="100%" style="stop-color:#401520;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="breathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#301018;stop-opacity:0"/>
+        <stop offset="30%" style="stop-color:#501828;stop-opacity:0.03"/>
+        <stop offset="50%" style="stop-color:#602030;stop-opacity:0.05"/>
+        <stop offset="70%" style="stop-color:#501828;stop-opacity:0.03"/>
+        <stop offset="100%" style="stop-color:#301018;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="tearDistort">
+        <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="4" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="screamGlow" x="-5%" y="-15%" width="110%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="echoBlur">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3.5"/>
+      </filter>
+    </defs>
+
+    <!-- === SILENCE BEFORE — the empty space IS the content === -->
+    <!-- Nothing above the scream line. Deliberate void. -->
+
+
+    <!-- === THE SCREAM — one jagged tear across the frame === -->
+
+    <!-- Glow layer — the heat of the voice -->
+    <g filter="url(#echoBlur)" opacity="0.4">
+      <polyline points="
+        20,200
+        45,198
+        60,195
+        72,192
+        82,188
+        90,178
+        96,195
+        102,165
+        110,202
+        116,148
+        122,210
+        130,135
+        138,215
+        145,125
+        152,220
+        158,115
+        165,225
+        172,108
+        180,230
+        188,100
+        195,235
+        202,95
+        210,238
+        218,92
+        225,240
+        232,94
+        240,235
+        248,100
+        255,230
+        262,110
+        268,225
+        275,120
+        282,218
+        288,135
+        295,212
+        302,148
+        308,205
+        315,162
+        322,200
+        330,175
+        338,198
+        348,192
+        360,195
+        375,197
+        395,199
+        420,200
+      " fill="none" stroke="url(#screamGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Main scream line — distorted, raw -->
+    <g filter="url(#tearDistort)">
+      <polyline points="
+        20,200
+        45,198
+        60,195
+        72,192
+        82,188
+        90,178
+        96,195
+        102,165
+        110,202
+        116,148
+        122,210
+        130,135
+        138,215
+        145,125
+        152,220
+        158,115
+        165,225
+        172,108
+        180,230
+        188,100
+        195,235
+        202,95
+        210,238
+        218,92
+        225,240
+        232,94
+        240,235
+        248,100
+        255,230
+        262,110
+        268,225
+        275,120
+        282,218
+        288,135
+        295,212
+        302,148
+        308,205
+        315,162
+        322,200
+        330,175
+        338,198
+        348,192
+        360,195
+        375,197
+        395,199
+        420,200
+      " fill="none" stroke="url(#screamGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+      filter="url(#screamGlow)"/>
+    </g>
+
+    <!-- Sharp peaks — the moments of clipping, 
+         where the voice breaks completely -->
+    <g fill="rgba(240,135,140,0.25)" filter="url(#screamGlow)">
+      <circle cx="188" cy="100" r="1.5"/>
+      <circle cx="202" cy="95" r="1.8"/>
+      <circle cx="218" cy="92" r="2.0"/>
+      <circle cx="225" cy="240" r="1.8"/>
+      <circle cx="210" cy="238" r="1.5"/>
+    </g>
+
+
+    <!-- === THE ECHO — inverted ghost below, fading === -->
+    <g filter="url(#echoBlur)" opacity="0.25">
+      <polyline points="
+        80,212
+        90,222
+        102,235
+        116,252
+        130,265
+        145,270
+        158,278
+        172,282
+        188,288
+        202,290
+        218,292
+        232,290
+        248,288
+        262,282
+        275,275
+        288,265
+        302,252
+        315,240
+        330,225
+        345,215
+        360,208
+      " fill="none" stroke="url(#echoGrad)" stroke-width="1.2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Residue — tiny fragments that fall from the scream line,
+         like particles of a shattered voice -->
+    <g opacity="0.12">
+      <circle cx="130" cy="230" r="0.8" fill="rgba(200,90,100,0.4)"/>
+      <circle cx="155" cy="242" r="0.6" fill="rgba(190,85,95,0.3)"/>
+      <circle cx="182" cy="252" r="0.7" fill="rgba(180,80,90,0.25)"/>
+      <circle cx="210" cy="258" r="0.5" fill="rgba(170,75,85,0.2)"/>
+      <circle cx="240" cy="255" r="0.6" fill="rgba(165,72,82,0.18)"/>
+      <circle cx="268" cy="248" r="0.5" fill="rgba(160,70,80,0.15)"/>
+      <circle cx="295" cy="238" r="0.4" fill="rgba(155,68,78,0.12)"/>
+    </g>
+
+
+    <!-- === SILENCE AFTER === -->
+    <!-- Nothing below the echo. The song ended.
+         90 seconds. That's all there is. -->
+
+
+    <!-- === DURATION MARKER — showing how short this is === -->
+    <!-- A tiny timeline at the very bottom -->
+    <g opacity="0.03">
+      <line x1="150" y1="370" x2="290" y2="370"
+        stroke="rgba(180,90,100,1)" stroke-width="0.4"/>
+      <!-- The filled portion — the song is THIS short -->
+      <line x1="150" y1="370" x2="190" y2="370"
+        stroke="rgba(200,100,110,1)" stroke-width="0.6"/>
+    </g>
+    <g fill="rgba(170,85,95,0.025)" font-family="'DM Mono', monospace" font-size="4.5">
+      <text x="145" y="378" text-anchor="end">0:00</text>
+      <text x="295" y="378">1:30</text>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Screamo</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power Metal Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #060710;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #080918;
+    overflow: hidden;
+  }
+
+  /* Deep royal blue-black — the only metal variant 
+     with a BLUE base, not grey or brown.
+     Night sky before dawn. The colour of quests. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 32%, rgba(180, 160, 60, 0.05) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 40%, rgba(100, 90, 160, 0.03) 0%, transparent 35%),
+      linear-gradient(180deg, #0a0c20 0%, #080918 40%, #060710 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Apex glow — bright, concentrated at the top,
+     like a star or a raised sword catching light -->
+  .glow {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(220, 200, 80, 0.08) 0%, rgba(190, 170, 50, 0.03) 45%, transparent 65%);
+    filter: blur(20px);
+    z-index: 2;
+  }
+
+  .glow2 {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(240, 225, 100, 0.06) 0%, transparent 55%);
+    filter: blur(12px);
+    z-index: 2;
+  }
+
+  /* Grain — series constant */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — softer than most metal, 
+     power metal is not claustrophobic */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 38%, transparent 38%, rgba(4,5,12,0.55) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+
+  .genre-name .line1 {
+    color: rgba(235, 215, 95, 0.88);
+  }
+
+  .genre-name .line2 {
+    color: rgba(195, 175, 65, 0.42);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(205, 185, 70, 0.17);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 108px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(205, 185, 70, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+  <div class="glow2"></div>
+
+  <!-- Central form: ascending rays converging to an apex —
+       the INVERTED V of thrash, flipped upward.
+       
+       Thrash points DOWN (attack, violence).
+       Power metal points UP (triumph, flight).
+       
+       Doom presses down with a monolith.
+       Power metal lifts up with radiating light.
+       
+       These are the two poles of the metal spectrum:
+       doom = gravity, power = levity.
+       
+       The form shows lines rising from a wide base
+       toward a single bright point — an inverted pyramid,
+       a raised sword, a mountain peak, a high note held.
+       
+       The lines are clean and bright (not corroded like
+       industrial, not fragmented like prog death, 
+       not torn like screamo). Power metal is POLISHED.
+       
+       Helloween, Blind Guardian, Stratovarius, 
+       Rhapsody of Fire, Gamma Ray, Edguy —
+       the sound of a hero's theme played at 180 BPM
+       with a 40-piece orchestra behind it. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="goldRay" x1="50%" y1="100%" x2="50%" y2="0%">
+        <stop offset="0%" style="stop-color:#8a7828;stop-opacity:0.06"/>
+        <stop offset="30%" style="stop-color:#c0aa40;stop-opacity:0.25"/>
+        <stop offset="60%" style="stop-color:#e0cc58;stop-opacity:0.5"/>
+        <stop offset="85%" style="stop-color:#f0e070;stop-opacity:0.7"/>
+        <stop offset="100%" style="stop-color:#f8ec88;stop-opacity:0.85"/>
+      </linearGradient>
+      <linearGradient id="goldRay2" x1="50%" y1="100%" x2="50%" y2="0%">
+        <stop offset="0%" style="stop-color:#706020;stop-opacity:0.03"/>
+        <stop offset="40%" style="stop-color:#a89238;stop-opacity:0.12"/>
+        <stop offset="70%" style="stop-color:#c8b048;stop-opacity:0.25"/>
+        <stop offset="100%" style="stop-color:#d8c058;stop-opacity:0.4"/>
+      </linearGradient>
+      <linearGradient id="goldFaint" x1="50%" y1="100%" x2="50%" y2="0%">
+        <stop offset="0%" style="stop-color:#584e18;stop-opacity:0.01"/>
+        <stop offset="50%" style="stop-color:#908030;stop-opacity:0.06"/>
+        <stop offset="100%" style="stop-color:#b0a040;stop-opacity:0.15"/>
+      </linearGradient>
+
+      <filter id="radiance" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="apexGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- === THE APEX — the point everything rises toward === -->
+    <g filter="url(#apexGlow)">
+      <circle cx="220" cy="88" r="4" fill="rgba(248,236,130,0.4)"/>
+    </g>
+    <circle cx="220" cy="88" r="2" fill="rgba(255,245,150,0.3)" filter="url(#radiance)"/>
+
+
+    <!-- === PRIMARY RAYS — ascending to the apex === -->
+    <g filter="url(#radiance)">
+      <!-- Left arm — the primary ascent -->
+      <line x1="100" y1="305" x2="220" y2="88"
+        stroke="url(#goldRay)" stroke-width="2.0" stroke-linecap="round"/>
+      <!-- Right arm -->
+      <line x1="340" y1="305" x2="220" y2="88"
+        stroke="url(#goldRay)" stroke-width="2.0" stroke-linecap="round"/>
+    </g>
+
+    <!-- === SECONDARY RAYS — wider, echo === -->
+    <g filter="url(#radiance)" opacity="0.6">
+      <line x1="82" y1="310" x2="216" y2="95"
+        stroke="url(#goldRay2)" stroke-width="1.0" stroke-linecap="round"/>
+      <line x1="358" y1="310" x2="224" y2="95"
+        stroke="url(#goldRay2)" stroke-width="1.0" stroke-linecap="round"/>
+    </g>
+
+    <!-- === TERTIARY RAYS — widest === -->
+    <g opacity="0.3">
+      <line x1="65" y1="315" x2="212" y2="100"
+        stroke="url(#goldFaint)" stroke-width="0.6" stroke-linecap="round"/>
+      <line x1="375" y1="315" x2="228" y2="100"
+        stroke="url(#goldFaint)" stroke-width="0.6" stroke-linecap="round"/>
+    </g>
+
+    <!-- === INNER RAYS — tighter, between primary lines === -->
+    <g filter="url(#radiance)" opacity="0.4">
+      <line x1="140" y1="298" x2="220" y2="90"
+        stroke="url(#goldRay2)" stroke-width="0.7" stroke-linecap="round"/>
+      <line x1="300" y1="298" x2="220" y2="90"
+        stroke="url(#goldRay2)" stroke-width="0.7" stroke-linecap="round"/>
+    </g>
+    <g opacity="0.2">
+      <line x1="175" y1="290" x2="220" y2="92"
+        stroke="url(#goldFaint)" stroke-width="0.5" stroke-linecap="round"/>
+      <line x1="265" y1="290" x2="220" y2="92"
+        stroke="url(#goldFaint)" stroke-width="0.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- === BASE LINE — the wide foundation === -->
+    <g filter="url(#radiance)" opacity="0.2">
+      <line x1="65" y1="315" x2="375" y2="315"
+        stroke="rgba(200,180,60,0.15)" stroke-width="0.5"/>
+    </g>
+
+    <!-- === ASCENDING MARKERS — like altitude notches on the rays === -->
+    <g stroke="rgba(220,200,70,0.04)" stroke-width="0.3">
+      <!-- Left ray markers — getting brighter as they climb -->
+      <line x1="150" y1="220" x2="140" y2="218" />
+      <line x1="168" y1="190" x2="158" y2="188" />
+      <line x1="186" y1="158" x2="176" y2="155" />
+      <line x1="200" y1="132" x2="190" y2="128" />
+      <!-- Right ray markers -->
+      <line x1="290" y1="220" x2="300" y2="218" />
+      <line x1="272" y1="190" x2="282" y2="188" />
+      <line x1="254" y1="158" x2="264" y2="155" />
+      <line x1="240" y1="132" x2="250" y2="128" />
+    </g>
+
+    <!-- === HARMONIC ARCS — connecting left and right rays,
+         like the sweep of a melody across the stereo field === -->
+    <g fill="none" opacity="0.08" filter="url(#radiance)">
+      <path d="M 135,260 Q 220,235 305,260"
+        stroke="rgba(220,200,70,0.3)" stroke-width="0.4"/>
+      <path d="M 160,210 Q 220,188 280,210"
+        stroke="rgba(225,205,75,0.35)" stroke-width="0.4"/>
+      <path d="M 185,162 Q 220,145 255,162"
+        stroke="rgba(230,212,80,0.4)" stroke-width="0.4"/>
+      <path d="M 202,128 Q 220,118 238,128"
+        stroke="rgba(238,220,88,0.45)" stroke-width="0.4"/>
+    </g>
+
+    <!-- === STAR FIELD — tiny points, the epic backdrop === -->
+    <g fill="rgba(220,210,120,0.04)">
+      <circle cx="85" cy="125" r="0.5"/>
+      <circle cx="355" cy="140" r="0.5"/>
+      <circle cx="120" cy="95" r="0.4"/>
+      <circle cx="320" cy="105" r="0.4"/>
+      <circle cx="180" cy="80" r="0.3"/>
+      <circle cx="260" cy="75" r="0.3"/>
+      <circle cx="70" cy="180" r="0.4"/>
+      <circle cx="370" cy="190" r="0.4"/>
+      <circle cx="50" cy="240" r="0.3"/>
+      <circle cx="390" cy="235" r="0.3"/>
+    </g>
+
+    <!-- === BPM — fast and even, galloping === -->
+    <g stroke="rgba(195,178,60,0.035)" stroke-width="0.3">
+      <line x1="100" y1="350" x2="100" y2="356"/>
+      <line x1="112" y1="350" x2="112" y2="356"/>
+      <line x1="124" y1="350" x2="124" y2="356"/>
+      <line x1="136" y1="350" x2="136" y2="356"/>
+      <line x1="148" y1="350" x2="148" y2="356"/>
+      <line x1="160" y1="350" x2="160" y2="356"/>
+      <line x1="172" y1="350" x2="172" y2="356"/>
+      <line x1="184" y1="350" x2="184" y2="356"/>
+      <line x1="196" y1="350" x2="196" y2="356"/>
+      <line x1="208" y1="350" x2="208" y2="356"/>
+      <line x1="220" y1="350" x2="220" y2="356"/>
+      <line x1="232" y1="350" x2="232" y2="356"/>
+      <line x1="244" y1="350" x2="244" y2="356"/>
+      <line x1="256" y1="350" x2="256" y2="356"/>
+      <line x1="268" y1="350" x2="268" y2="356"/>
+      <line x1="280" y1="350" x2="280" y2="356"/>
+      <line x1="292" y1="350" x2="292" y2="356"/>
+      <line x1="304" y1="350" x2="304" y2="356"/>
+      <line x1="316" y1="350" x2="316" y2="356"/>
+      <line x1="328" y1="350" x2="328" y2="356"/>
+      <line x1="340" y1="350" x2="340" y2="356"/>
+    </g>
+    <!-- Gallop pattern — every 3rd tick emphasized (triplet feel) -->
+    <g stroke="rgba(205,188,65,0.05)" stroke-width="0.4">
+      <line x1="100" y1="349" x2="100" y2="358"/>
+      <line x1="136" y1="349" x2="136" y2="358"/>
+      <line x1="172" y1="349" x2="172" y2="358"/>
+      <line x1="208" y1="349" x2="208" y2="358"/>
+      <line x1="244" y1="349" x2="244" y2="358"/>
+      <line x1="280" y1="349" x2="280" y2="358"/>
+      <line x1="316" y1="349" x2="316" y2="358"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Power</span><br/>
+      <span class="line2">Metal</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

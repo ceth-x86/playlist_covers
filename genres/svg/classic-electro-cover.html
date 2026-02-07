@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classic Electro Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #08080a;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0a0c;
+    overflow: hidden;
+  }
+
+  /* Black with warm electric undertone */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(220, 180, 30, 0.03) 0%, transparent 45%),
+      linear-gradient(180deg, #0c0c0e 0%, #0a0a0c 50%, #08080a 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 420px;
+    height: 420px;
+  }
+
+  /* Amber LED glow behind the form */
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(220, 175, 30, 0.05) 0%, rgba(200, 160, 20, 0.02) 50%, transparent 70%);
+    filter: blur(30px);
+    z-index: 2;
+  }
+
+  /* Step sequencer grid background */
+  .sequencer-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    opacity: 0.025;
+    pointer-events: none;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 36px,
+        rgba(220, 185, 40, 0.3) 36px,
+        rgba(220, 185, 40, 0.3) 37px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 36px,
+        rgba(220, 185, 40, 0.2) 36px,
+        rgba(220, 185, 40, 0.2) 37px
+      );
+  }
+
+  /* Grain — series constant */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    opacity: 0.25;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: radial-gradient(ellipse at center, transparent 38%, rgba(0,0,0,0.55) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 38px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(230, 195, 50, 0.85);
+  }
+
+  .genre-name .line2 {
+    color: rgba(200, 165, 30, 0.4);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(210, 175, 40, 0.18);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 108px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(210, 175, 40, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+  <div class="sequencer-grid"></div>
+
+  <!-- Central form: stepped waveform — the 808 kick pattern.
+       No curves. Only right angles. Every transition is a hard step,
+       like a drum machine sequence or early digital audio.
+       This is Kraftwerk's precision, Cybotron's geometry,
+       Drexciya's mechanical funk — rendered as a signal path. -->
+  <svg class="central-form" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="amberFade" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#b8922a;stop-opacity:0"/>
+        <stop offset="10%" style="stop-color:#dab432;stop-opacity:0.4"/>
+        <stop offset="50%" style="stop-color:#e8c840;stop-opacity:0.8"/>
+        <stop offset="90%" style="stop-color:#dab432;stop-opacity:0.4"/>
+        <stop offset="100%" style="stop-color:#b8922a;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="amberFade2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#9a7a20;stop-opacity:0"/>
+        <stop offset="15%" style="stop-color:#c8a030;stop-opacity:0.2"/>
+        <stop offset="50%" style="stop-color:#d8b438;stop-opacity:0.4"/>
+        <stop offset="85%" style="stop-color:#c8a030;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#9a7a20;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="amberGhost" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#8a6a18;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#b89028;stop-opacity:0.1"/>
+        <stop offset="50%" style="stop-color:#c8a030;stop-opacity:0.18"/>
+        <stop offset="80%" style="stop-color:#b89028;stop-opacity:0.1"/>
+        <stop offset="100%" style="stop-color:#8a6a18;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="ledGlow" x="-10%" y="-15%" width="120%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="softLed" x="-10%" y="-15%" width="120%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- Baseline reference -->
+    <line x1="50" y1="210" x2="370" y2="210" stroke="rgba(220,185,40,0.03)" stroke-width="0.3"/>
+
+    <!-- Ghost stepped pattern — widest, faintest -->
+    <g filter="url(#softLed)">
+      <polyline points="
+        50,210
+        50,210
+        72,210
+        72,185
+        94,185
+        94,210
+        116,210
+        116,155
+        138,155
+        138,210
+        160,210
+        160,175
+        182,175
+        182,130
+        204,130
+        204,175
+        226,175
+        226,210
+        248,210
+        248,165
+        270,165
+        270,210
+        292,210
+        292,145
+        314,145
+        314,190
+        336,190
+        336,210
+        358,210
+        358,210
+        370,210
+      " fill="none" stroke="url(#amberGhost)" stroke-width="0.8" stroke-linejoin="miter"/>
+    </g>
+
+    <!-- Secondary stepped pattern — offset, like a second voice -->
+    <g filter="url(#softLed)">
+      <polyline points="
+        55,210
+        55,210
+        77,210
+        77,225
+        99,225
+        99,210
+        121,210
+        121,240
+        143,240
+        143,210
+        165,210
+        165,230
+        187,230
+        187,255
+        209,255
+        209,230
+        231,230
+        231,210
+        253,210
+        253,235
+        275,235
+        275,210
+        297,210
+        297,248
+        319,248
+        319,222
+        341,222
+        341,210
+        363,210
+      " fill="none" stroke="url(#amberGhost)" stroke-width="0.7" stroke-linejoin="miter"/>
+    </g>
+
+    <!-- Primary stepped waveform — sharp, bright, the main voice -->
+    <g filter="url(#ledGlow)">
+      <polyline points="
+        60,210
+        60,210
+        82,210
+        82,178
+        104,178
+        104,210
+        126,210
+        126,148
+        148,148
+        148,210
+        170,210
+        170,170
+        192,170
+        192,125
+        214,125
+        214,170
+        236,170
+        236,210
+        258,210
+        258,158
+        280,158
+        280,210
+        302,210
+        302,138
+        324,138
+        324,185
+        346,185
+        346,210
+        365,210
+      " fill="none" stroke="url(#amberFade)" stroke-width="1.6" stroke-linejoin="miter"/>
+    </g>
+
+    <!-- Step indicator dots — like lit LEDs on a sequencer -->
+    <g filter="url(#ledGlow)">
+      <circle cx="82" cy="178" r="2" fill="rgba(230,195,50,0.35)"/>
+      <circle cx="126" cy="148" r="2.2" fill="rgba(230,195,50,0.45)"/>
+      <circle cx="170" cy="170" r="1.8" fill="rgba(230,195,50,0.3)"/>
+      <circle cx="192" cy="125" r="2.5" fill="rgba(230,195,50,0.55)"/>
+      <circle cx="258" cy="158" r="2" fill="rgba(230,195,50,0.38)"/>
+      <circle cx="302" cy="138" r="2.3" fill="rgba(230,195,50,0.48)"/>
+      <circle cx="346" cy="185" r="1.5" fill="rgba(230,195,50,0.25)"/>
+    </g>
+
+    <!-- Step numbers along baseline — sequencer position markers -->
+    <g fill="rgba(220,185,40,0.06)" font-family="'DM Mono', monospace" font-size="7" text-anchor="middle">
+      <text x="71" y="275">01</text>
+      <text x="93" y="275">02</text>
+      <text x="115" y="275">03</text>
+      <text x="137" y="275">04</text>
+      <text x="159" y="275">05</text>
+      <text x="181" y="275">06</text>
+      <text x="203" y="275">07</text>
+      <text x="225" y="275">08</text>
+      <text x="247" y="275">09</text>
+      <text x="269" y="275">10</text>
+      <text x="291" y="275">11</text>
+      <text x="313" y="275">12</text>
+      <text x="335" y="275">13</text>
+      <text x="357" y="275">14</text>
+    </g>
+
+    <!-- Beat group markers — 4/4 divisions -->
+    <g stroke="rgba(220,185,40,0.05)" stroke-width="0.4">
+      <line x1="148" y1="268" x2="148" y2="280"/>
+      <line x1="236" y1="268" x2="236" y2="280"/>
+      <line x1="324" y1="268" x2="324" y2="280"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Classic</span><br/>
+      <span class="line2">Electro</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

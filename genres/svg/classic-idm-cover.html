@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classic IDM Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #07070a;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0a10;
+    overflow: hidden;
+  }
+
+  /* Deep charcoal with the faintest violet cast —
+     not warm (no brown), not cold-blue (no steel),
+     not pure black (not metal). The colour of a 
+     Warp Records sleeve. Late-night computer screen
+     reflected in a window. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(130, 120, 160, 0.03) 0%, transparent 42%),
+      radial-gradient(ellipse at 46% 50%, rgba(110, 105, 140, 0.02) 0%, transparent 32%),
+      linear-gradient(180deg, #0c0c14 0%, #0a0a10 45%, #07070a 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Diffuse cerebral glow — centred, neutral */
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(150, 140, 180, 0.035) 0%, rgba(120, 112, 150, 0.012) 50%, transparent 65%);
+    filter: blur(25px);
+    z-index: 2;
+  }
+
+  /* Grain — series constant, moderate */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — gentle, cerebral */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(4,4,7,0.52) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(185, 175, 210, 0.78);
+  }
+
+  .genre-name .line2 {
+    color: rgba(145, 138, 175, 0.38);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(155, 148, 185, 0.15);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 102px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(155, 148, 185, 0.09);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: algorithmic near-regularity —
+       patterns that ALMOST repeat but don't.
+       
+       IDM sits between:
+       - Minimal techno (perfect repetition, subtraction)
+       - Experimental techno (broken system, fragmentation)
+       
+       IDM is NEITHER. It's a system that appears regular
+       on first glance but reveals subtle wrongness on
+       closer inspection. A grid where one cell is 
+       1.3px off. A circle that's actually an ellipse 
+       with eccentricity 0.02. A sequence of intervals
+       that follows a pattern for 7 steps then mutates.
+       
+       The uncanny valley of pattern recognition.
+       Your brain sees "grid" but something feels wrong.
+       
+       Autechre's later work, Aphex Twin's analord series,
+       Boards of Canada's warped nostalgia, Squarepusher —
+       the moment a computer develops an almost-personality.
+       
+       CRITICAL DIFFERENCE from experimental techno:
+       Experimental techno BREAKS rules (fragments, errors).
+       IDM BENDS rules (almost-patterns, near-misses). -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="idmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#6860a0;stop-opacity:0.05"/>
+        <stop offset="30%" style="stop-color:#8880b8;stop-opacity:0.2"/>
+        <stop offset="50%" style="stop-color:#9890c8;stop-opacity:0.3"/>
+        <stop offset="70%" style="stop-color:#8880b8;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#6860a0;stop-opacity:0.05"/>
+      </linearGradient>
+      <linearGradient id="idmFaint" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#504890;stop-opacity:0.02"/>
+        <stop offset="50%" style="stop-color:#7068a8;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#504890;stop-opacity:0.02"/>
+      </linearGradient>
+
+      <filter id="idmGlow" x="-6%" y="-6%" width="112%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="softGlow" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- ============================================== -->
+    <!-- === THE ALMOST-GRID — 6×6 with anomalies === -->
+    <!-- ============================================== -->
+    <!-- A 6×6 grid of dots. MOST are perfectly placed.
+         Some are offset by 1-3px. The eye registers 
+         "grid" but something is unsettling. -->
+
+    <g fill="rgba(160,152,195,0.18)" filter="url(#idmGlow)">
+      <!-- Row 1 — nearly perfect -->
+      <circle cx="120" cy="110" r="1.8"/>
+      <circle cx="165" cy="110" r="1.8"/>
+      <circle cx="210" cy="110" r="1.8"/>
+      <circle cx="255" cy="110" r="1.8"/>
+      <circle cx="300" cy="111.5" r="1.8"/><!-- 1.5px off -->
+      <circle cx="345" cy="110" r="1.8"/>
+
+      <!-- Row 2 — one missing, one oversized -->
+      <circle cx="120" cy="152" r="1.8"/>
+      <circle cx="165" cy="152" r="1.8"/>
+      <circle cx="210" cy="153" r="2.6"/><!-- larger, 1px off -->
+      <!-- cx=255 MISSING — the absence -->
+      <circle cx="300" cy="152" r="1.8"/>
+      <circle cx="345" cy="152" r="1.8"/>
+
+      <!-- Row 3 — slight horizontal drift -->
+      <circle cx="121" cy="194" r="1.8"/><!-- 1px right -->
+      <circle cx="166.5" cy="194" r="1.8"/><!-- 1.5px right -->
+      <circle cx="212" cy="194" r="1.8"/><!-- 2px right -->
+      <circle cx="257" cy="194" r="1.8"/><!-- 2px right -->
+      <circle cx="301" cy="194" r="1.8"/><!-- 1px right -->
+      <circle cx="345" cy="194" r="1.8"/>
+
+      <!-- Row 4 — perfect (the contrast makes other rows feel wrong) -->
+      <circle cx="120" cy="236" r="1.8"/>
+      <circle cx="165" cy="236" r="1.8"/>
+      <circle cx="210" cy="236" r="1.8"/>
+      <circle cx="255" cy="236" r="1.8"/>
+      <circle cx="300" cy="236" r="1.8"/>
+      <circle cx="345" cy="236" r="1.8"/>
+
+      <!-- Row 5 — size variations -->
+      <circle cx="120" cy="278" r="1.3"/><!-- smaller -->
+      <circle cx="165" cy="278" r="1.8"/>
+      <circle cx="210" cy="278" r="2.2"/><!-- larger -->
+      <circle cx="255" cy="278" r="1.8"/>
+      <circle cx="300" cy="278" r="1.0"/><!-- smallest -->
+      <circle cx="345" cy="278" r="1.8"/>
+
+      <!-- Row 6 — two swapped positions -->
+      <circle cx="120" cy="320" r="1.8"/>
+      <circle cx="165" cy="320" r="1.8"/>
+      <circle cx="210" cy="320" r="1.8"/>
+      <circle cx="255" cy="320" r="1.8"/>
+      <circle cx="338" cy="314" r="1.8"/><!-- displaced -->
+      <circle cx="348" cy="326" r="1.8"/><!-- displaced -->
+    </g>
+
+
+    <!-- === THE CONNECTING LOGIC — lines between some dots,
+         following a rule that's not quite discernible === -->
+    <!-- The connections form an almost-pattern:
+         they connect every 3rd dot, but sometimes skip,
+         sometimes double back. An algorithm with a bug
+         that produces beauty. -->
+
+    <g stroke="url(#idmGrad)" stroke-width="0.5" fill="none" filter="url(#idmGlow)">
+      <!-- Sequence 1 — starts regular, mutates -->
+      <line x1="120" y1="110" x2="210" y2="110"/>
+      <line x1="210" y1="110" x2="210" y2="153"/><!-- drops down -->
+      <line x1="210" y1="153" x2="300" y2="152"/>
+      <line x1="300" y1="152" x2="301" y2="194"/><!-- drops, drifts 1px -->
+      <line x1="301" y1="194" x2="210" y2="236"/><!-- diagonal! breaks the pattern -->
+
+      <!-- Sequence 2 — different starting logic -->
+      <line x1="345" y1="110" x2="345" y2="152"/>
+      <line x1="345" y1="152" x2="345" y2="194"/>
+      <line x1="345" y1="194" x2="345" y2="236"/>
+      <line x1="345" y1="236" x2="345" y2="278"/>
+      <!-- Breaks at row 6 — connects to displaced dot -->
+      <line x1="345" y1="278" x2="338" y2="314"/>
+
+      <!-- Sequence 3 — sparse, suggestive -->
+      <line x1="120" y1="152" x2="120" y2="194"/>
+      <line x1="120" y1="236" x2="120" y2="278"/>
+      <!-- Gap at row 3-4 (skipped connection) -->
+    </g>
+
+
+    <!-- === THE ABSENT DOT — where row 2, col 4 should be === -->
+    <!-- A faint ring marks where the dot SHOULD have been -->
+    <circle cx="255" cy="152" r="4" fill="none"
+      stroke="rgba(140,132,175,0.04)" stroke-width="0.3"
+      stroke-dasharray="1.5,2"/>
+
+
+    <!-- === ALGORITHMIC ANNOTATION — the code's trace === -->
+    <!-- Tiny notations suggesting the generative process -->
+    <g fill="rgba(140,132,175,0.025)" font-family="'DM Mono', monospace" font-size="4.5">
+      <text x="370" y="112">n</text>
+      <text x="370" y="154">n+1</text>
+      <text x="370" y="196">n+1.5</text><!-- non-integer — the anomaly -->
+      <text x="370" y="238">n+2</text>
+      <text x="370" y="280">n+3</text>
+      <text x="370" y="322">n+?</text><!-- unknown -->
+    </g>
+
+    <!-- === WAVEFORM FRAGMENT — bottom, showing the 
+         audio character: chopped, resequenced, glitchy === -->
+    <g stroke="rgba(150,142,185,0.06)" stroke-width="0.5" fill="none">
+      <polyline points="
+        95,375
+        100,375
+        105,370
+        108,378
+        112,372
+        115,375
+        120,375
+        130,375
+        133,368
+        136,380
+        138,365
+        140,382
+        142,370
+        145,375
+        155,375
+        160,375
+        163,373
+        166,376
+        170,375
+        180,375
+        185,375
+        188,362
+        190,385
+        192,358
+        194,388
+        196,365
+        198,380
+        200,375
+        210,375
+        225,375
+        228,372
+        231,377
+        234,375
+        250,375
+        255,375
+        258,368
+        260,380
+        262,365
+        264,382
+        266,375
+        280,375
+        295,375
+        298,370
+        300,378
+        302,375
+        320,375
+        325,375
+        328,366
+        330,382
+        332,360
+        334,386
+        336,368
+        338,378
+        340,375
+        355,375
+      "/>
+    </g>
+    <!-- The waveform has clusters of activity separated by
+         silence — the IDM approach to rhythm. Not continuous
+         like techno, not random like noise. PATTERNED silence. -->
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Classic</span><br/>
+      <span class="line2">IDM</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

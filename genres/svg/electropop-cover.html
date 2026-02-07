@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electropop Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #06081a;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #080a1e;
+    overflow: hidden;
+  }
+
+  /* Deep saturated navy — not the muted blue-grey of
+     indietronica (lukewarm), not the purple-black of 
+     dark synthpop (gothic). This is the SATURATED navy
+     of a nightclub with good lighting — crisp, clean,
+     designed. The colour of a Robyn album sleeve.
+     Polydor, Fiction Records, Glassnote. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(200, 80, 160, 0.04) 0%, transparent 42%),
+      radial-gradient(ellipse at 52% 48%, rgba(80, 140, 230, 0.025) 0%, transparent 35%),
+      linear-gradient(178deg, #0a0e24 0%, #080a1e 42%, #06081a 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Clean focused glow — warm pink, precise */
+  .glow {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(210, 90, 170, 0.05) 0%, rgba(180, 70, 145, 0.02) 45%, transparent 65%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+
+  /* Grain — minimal, digital clarity */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.16;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — moderate, clean */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 44%, transparent 35%, rgba(4,5,16,0.52) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 38px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: rgba(220, 105, 180, 0.88);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(100, 150, 230, 0.18);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 100px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(190, 85, 155, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: PERFECT SINE WAVE — 
+       the pop melody made electronic.
+       
+       Soft rock: one gentle arc (organic, single gesture).
+       Pop punk: sine wave with bounces (joyful, guitar).
+       Electropop: sine wave that is PRECISELY SYNTHETIC —
+       mathematically smooth, perfectly periodic, with
+       a shimmering electronic fill.
+       
+       The difference from pop punk's bounce:
+       - Pop punk's wave has rough edges (guitar, distortion)
+       - Electropop's wave is FRICTIONLESS — no texture,
+         no roughness, pure mathematical curve
+       - Pop punk fills with solid colour
+       - Electropop fills with a GRADIENT SHIMMER
+       
+       The difference from synthpop:
+       - Dark synthpop has TWO elements (synth + voice,
+         parallel but separate)
+       - Electropop has ONE element — the synth and voice
+         are FUSED into one seamless wave
+       
+       The difference from hyperpop:
+       - Hyperpop clips and distorts (overload)
+       - Electropop is CLEAN — maximum polish, zero distortion
+       
+       Robyn "Dancing On My Own",
+       CHVRCHES "The Bones of What You Believe",
+       La Roux, Grimes (early), Passion Pit, M83 —
+       crying on the dancefloor, perfectly produced. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Main wave gradient — pink to blue shift -->
+      <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#a048a0;stop-opacity:0"/>
+        <stop offset="8%" style="stop-color:#c060b0;stop-opacity:0.2"/>
+        <stop offset="25%" style="stop-color:#d878c0;stop-opacity:0.45"/>
+        <stop offset="50%" style="stop-color:#e088c8;stop-opacity:0.55"/>
+        <stop offset="75%" style="stop-color:#a080d0;stop-opacity:0.42"/>
+        <stop offset="92%" style="stop-color:#6888c8;stop-opacity:0.18"/>
+        <stop offset="100%" style="stop-color:#5078b0;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Shimmer fill — the interior glow of the wave -->
+      <linearGradient id="shimmerFill" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#b050a0;stop-opacity:0"/>
+        <stop offset="15%" style="stop-color:#c868b8;stop-opacity:0.03"/>
+        <stop offset="40%" style="stop-color:#d878c0;stop-opacity:0.06"/>
+        <stop offset="60%" style="stop-color:#b078c8;stop-opacity:0.05"/>
+        <stop offset="85%" style="stop-color:#7888c8;stop-opacity:0.03"/>
+        <stop offset="100%" style="stop-color:#5878b0;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Accent wave gradient — cooler blue -->
+      <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#5068b0;stop-opacity:0"/>
+        <stop offset="15%" style="stop-color:#6880c0;stop-opacity:0.08"/>
+        <stop offset="50%" style="stop-color:#7898d0;stop-opacity:0.18"/>
+        <stop offset="85%" style="stop-color:#6880c0;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#5068b0;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="synthGlow" x="-5%" y="-12%" width="110%" height="124%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="shimmer" x="-3%" y="-3%" width="106%" height="106%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3.5"/>
+      </filter>
+    </defs>
+
+
+    <!-- === SHIMMER AURA — the wide glow behind the wave === -->
+    <g filter="url(#shimmer)" opacity="0.3">
+      <path d="M 15,210
+               C 50,210 70,160 110,155
+               C 150,150 170,210 210,215
+               C 250,220 270,155 310,150
+               C 350,145 370,210 410,215"
+        fill="none" stroke="url(#waveGrad)" stroke-width="10"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === THE PERFECT SINE WAVE — primary === -->
+    <!-- Two complete cycles. Mathematically smooth.
+         No hand-drawn wobble. No distortion.
+         The synth oscillator as pure form. -->
+    <g filter="url(#synthGlow)">
+      <path d="M 15,210
+               C 50,210 70,158 110,153
+               C 150,148 170,210 210,215
+               C 250,220 270,158 310,153
+               C 350,148 370,210 410,215"
+        fill="none" stroke="url(#waveGrad)" stroke-width="1.8"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === SHIMMER FILL — between wave and centre line === -->
+    <!-- The area under the wave shimmers with a gradient,
+         showing the harmonic content — the richness of
+         the synth patch. Clean but FULL. -->
+    <path d="M 15,210
+             C 50,210 70,158 110,153
+             C 150,148 170,210 210,215
+             C 250,220 270,158 310,153
+             C 350,148 370,210 410,215
+             L 410,210 L 15,210 Z"
+      fill="url(#shimmerFill)"/>
+
+
+    <!-- === ACCENT WAVE — harmonic overtone === -->
+    <!-- A thinner wave at exactly half the amplitude,
+         like the first harmonic of the fundamental.
+         Same period, less intensity — the shimmer
+         above the main melody. -->
+    <g opacity="0.5">
+      <path d="M 15,210
+               C 50,210 70,182 110,180
+               C 150,178 170,210 210,212
+               C 250,214 270,182 310,180
+               C 350,178 370,210 410,212"
+        fill="none" stroke="url(#accentGrad)" stroke-width="0.7"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === PEAK NODES — the high points of each cycle === -->
+    <!-- Clean, bright, precise — the hook moments. -->
+    <g filter="url(#synthGlow)" opacity="0.45">
+      <circle cx="110" cy="153" r="3" fill="rgba(220,120,190,0.15)"/>
+      <circle cx="310" cy="153" r="3" fill="rgba(130,150,215,0.12)"/>
+    </g>
+
+    <!-- Trough nodes — the low points -->
+    <g filter="url(#synthGlow)" opacity="0.25">
+      <circle cx="210" cy="215" r="2" fill="rgba(200,100,170,0.1)"/>
+      <circle cx="410" cy="215" r="1.5" fill="rgba(110,140,210,0.08)"/>
+    </g>
+
+
+    <!-- === FREQUENCY INDICATOR — showing the clean periodicity === -->
+    <!-- Two cycle markers showing the wave is EXACTLY periodic.
+         Electropop doesn't deviate. -->
+    <g stroke="rgba(170,100,160,0.015)" stroke-width="0.25"
+       stroke-dasharray="2,6">
+      <line x1="15" y1="210" x2="410" y2="210"/>
+    </g>
+
+    <!-- Period markers -->
+    <g fill="rgba(160,100,155,0.02)" font-family="'DM Mono', monospace" font-size="4">
+      <text x="55" y="245">λ</text>
+      <text x="255" y="245">λ</text>
+    </g>
+
+
+    <!-- === BPM — dance tempo, precise, four-on-the-floor === -->
+    <!-- 120-128 BPM feel. Electronic precision.
+         Not as rigid as futurepop (militant).
+         Not as loose as indie (human).
+         The sweet spot: machine-tight but danceable. -->
+    <g stroke="rgba(180,95,155,0.03)" stroke-width="0.3">
+      <line x1="95" y1="350" x2="95" y2="357"/>
+      <line x1="113" y1="350" x2="113" y2="357"/>
+      <line x1="131" y1="350" x2="131" y2="357"/>
+      <line x1="149" y1="350" x2="149" y2="357"/>
+      <line x1="167" y1="350" x2="167" y2="357"/>
+      <line x1="185" y1="350" x2="185" y2="357"/>
+      <line x1="203" y1="350" x2="203" y2="357"/>
+      <line x1="221" y1="350" x2="221" y2="357"/>
+      <line x1="239" y1="350" x2="239" y2="357"/>
+      <line x1="257" y1="350" x2="257" y2="357"/>
+      <line x1="275" y1="350" x2="275" y2="357"/>
+      <line x1="293" y1="350" x2="293" y2="357"/>
+      <line x1="311" y1="350" x2="311" y2="357"/>
+      <line x1="329" y1="350" x2="329" y2="357"/>
+      <line x1="347" y1="350" x2="347" y2="357"/>
+    </g>
+    <!-- Four-on-the-floor + offbeat accent (the hi-hat) -->
+    <g stroke="rgba(195,105,165,0.05)" stroke-width="0.45">
+      <line x1="95" y1="349" x2="95" y2="358"/>
+      <line x1="167" y1="349" x2="167" y2="358"/>
+      <line x1="239" y1="349" x2="239" y2="358"/>
+      <line x1="311" y1="349" x2="311" y2="358"/>
+    </g>
+    <!-- Offbeat — the thing that makes it dance -->
+    <g stroke="rgba(110,140,210,0.03)" stroke-width="0.3">
+      <line x1="131" y1="349" x2="131" y2="358"/>
+      <line x1="203" y1="349" x2="203" y2="358"/>
+      <line x1="275" y1="349" x2="275" y2="358"/>
+      <line x1="347" y1="349" x2="347" y2="358"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Electropop</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

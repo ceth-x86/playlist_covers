@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peak Techno Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #060608;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #08080c;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(140, 160, 200, 0.05) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 52%, rgba(80, 100, 140, 0.03) 0%, transparent 35%),
+      linear-gradient(180deg, #0a0a10 0%, #08080c 50%, #060610 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 420px;
+    height: 420px;
+  }
+
+  /* Cold strobe glow */
+  .glow {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(160, 180, 220, 0.08) 0%, rgba(100, 120, 160, 0.03) 40%, transparent 65%);
+    filter: blur(25px);
+    z-index: 2;
+  }
+
+  /* Vertical strobe lines — the warehouse strobe effect */
+  .strobes {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    opacity: 0.025;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 28px,
+      rgba(180, 200, 240, 0.4) 28px,
+      rgba(180, 200, 240, 0.4) 29px
+    );
+  }
+
+  /* Grain — series constant */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    opacity: 0.25;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Hard vignette */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.6) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 42px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(190, 205, 230, 0.9);
+  }
+
+  .genre-name .line2 {
+    color: rgba(140, 160, 200, 0.45);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(160, 175, 210, 0.2);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 108px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(160, 175, 210, 0.12);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: dense, layered, rotated geometric structure — 
+       like looking into the machinery of a warehouse sound system.
+       Concentric polygons rotating at different angles,
+       building pressure and density toward the core. -->
+  <svg class="central-form" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="steelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#8898b8;stop-opacity:0.05"/>
+        <stop offset="50%" style="stop-color:#b0c0d8;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#8898b8;stop-opacity:0.05"/>
+      </linearGradient>
+      <filter id="steelGlow" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- Layer 7 — outermost, barely visible -->
+    <g transform="rotate(3, 210, 195)" opacity="0.3">
+      <rect x="80" y="65" width="260" height="260" rx="2"
+        fill="none" stroke="rgba(160,175,210,0.06)" stroke-width="0.4"/>
+    </g>
+
+    <!-- Layer 6 -->
+    <g transform="rotate(-8, 210, 195)" opacity="0.4">
+      <rect x="95" y="80" width="230" height="230" rx="2"
+        fill="none" stroke="rgba(160,175,210,0.07)" stroke-width="0.4"/>
+    </g>
+
+    <!-- Layer 5 -->
+    <g transform="rotate(15, 210, 195)" opacity="0.5">
+      <rect x="110" y="95" width="200" height="200" rx="1"
+        fill="none" stroke="rgba(160,175,210,0.08)" stroke-width="0.5"/>
+    </g>
+
+    <!-- Layer 4 -->
+    <g transform="rotate(-5, 210, 195)" opacity="0.6">
+      <rect x="125" y="110" width="170" height="170" rx="1"
+        fill="none" stroke="rgba(160,175,210,0.1)" stroke-width="0.5"/>
+    </g>
+
+    <!-- Layer 3 -->
+    <g transform="rotate(22, 210, 195)" opacity="0.7">
+      <rect x="142" y="127" width="136" height="136" rx="1"
+        fill="none" stroke="rgba(160,175,210,0.12)" stroke-width="0.6"/>
+    </g>
+
+    <!-- Layer 2 — building intensity -->
+    <g transform="rotate(-12, 210, 195)" opacity="0.8">
+      <rect x="158" y="143" width="104" height="104" rx="1"
+        fill="none" stroke="rgba(170,185,220,0.16)" stroke-width="0.7"/>
+    </g>
+
+    <!-- Layer 1 — primary ring -->
+    <g transform="rotate(8, 210, 195)" filter="url(#steelGlow)">
+      <rect x="175" y="160" width="70" height="70" rx="0"
+        fill="none" stroke="rgba(185,200,230,0.25)" stroke-width="1"/>
+    </g>
+
+    <!-- Core square — solid, absolute -->
+    <g transform="rotate(-3, 210, 195)" filter="url(#steelGlow)">
+      <rect x="195" y="180" width="30" height="30"
+        fill="rgba(190,205,230,0.06)" stroke="rgba(190,205,230,0.18)" stroke-width="0.8"/>
+    </g>
+
+    <!-- Center point -->
+    <circle cx="210" cy="195" r="1.5" fill="rgba(200,215,240,0.4)"/>
+
+    <!-- Diagonal tension lines — crossing through the structure -->
+    <g opacity="0.04" stroke="rgba(170,185,220,1)" stroke-width="0.3">
+      <line x1="80" y1="65" x2="340" y2="325"/>
+      <line x1="340" y1="65" x2="80" y2="325"/>
+    </g>
+
+    <!-- Axis crosshair through center -->
+    <g opacity="0.035" stroke="rgba(170,185,220,1)" stroke-width="0.3">
+      <line x1="100" y1="195" x2="320" y2="195"/>
+      <line x1="210" y1="85" x2="210" y2="305"/>
+    </g>
+
+    <!-- Corner anchors — mechanical precision marks -->
+    <g stroke="rgba(160,175,210,0.08)" stroke-width="0.4">
+      <!-- top-left -->
+      <line x1="78" y1="63" x2="93" y2="63"/>
+      <line x1="78" y1="63" x2="78" y2="78"/>
+      <!-- top-right -->
+      <line x1="342" y1="63" x2="327" y2="63"/>
+      <line x1="342" y1="63" x2="342" y2="78"/>
+      <!-- bottom-left -->
+      <line x1="78" y1="327" x2="93" y2="327"/>
+      <line x1="78" y1="327" x2="78" y2="312"/>
+      <!-- bottom-right -->
+      <line x1="342" y1="327" x2="327" y2="327"/>
+      <line x1="342" y1="327" x2="342" y2="312"/>
+    </g>
+
+    <!-- Scale ticks along bottom edge -->
+    <g stroke="rgba(160,175,210,0.04)" stroke-width="0.3">
+      <line x1="110" y1="330" x2="110" y2="335"/>
+      <line x1="140" y1="330" x2="140" y2="335"/>
+      <line x1="170" y1="330" x2="170" y2="335"/>
+      <line x1="200" y1="330" x2="200" y2="337"/>
+      <line x1="230" y1="330" x2="230" y2="335"/>
+      <line x1="260" y1="330" x2="260" y2="335"/>
+      <line x1="290" y1="330" x2="290" y2="335"/>
+    </g>
+  </svg>
+
+  <div class="strobes"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Peak</span><br/>
+      <span class="line2">Techno</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

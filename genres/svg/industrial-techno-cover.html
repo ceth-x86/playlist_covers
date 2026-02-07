@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industrial Techno Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #080604;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0806;
+    overflow: hidden;
+  }
+
+  /* Scorched black with toxic rust bleed */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 48% 46%, rgba(180, 80, 20, 0.06) 0%, transparent 40%),
+      radial-gradient(ellipse at 55% 55%, rgba(140, 50, 10, 0.03) 0%, transparent 35%),
+      linear-gradient(175deg, #0c0a06 0%, #0a0806 45%, #080604 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 420px;
+    height: 420px;
+  }
+
+  /* Furnace glow — hot spot, deep inside the machine */
+  .glow {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(200, 90, 20, 0.06) 0%, rgba(160, 60, 10, 0.025) 50%, transparent 65%);
+    filter: blur(28px);
+    z-index: 2;
+  }
+
+  /* Interference bands — electromagnetic hum made visible */
+  .interference {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    opacity: 0.03;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 8px,
+      rgba(200, 100, 30, 0.25) 8px,
+      rgba(200, 100, 30, 0.25) 9px,
+      transparent 9px,
+      transparent 11px,
+      rgba(200, 100, 30, 0.15) 11px,
+      rgba(200, 100, 30, 0.15) 12px
+    );
+  }
+
+  /* Grain — series constant, heavy -->
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Coarse industrial grit */
+  .grit {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    opacity: 0.06;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grit'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.35' numOctaves='2' stitchTiles='stitch'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='discrete' tableValues='0 0.3'/%3E%3CfeFuncG type='discrete' tableValues='0 0.15'/%3E%3CfeFuncB type='discrete' tableValues='0 0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grit)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+  }
+
+  /* Hard vignette */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.65) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(220, 130, 50, 0.85);
+  }
+
+  .genre-name .line2 {
+    color: rgba(180, 95, 30, 0.42);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(190, 105, 35, 0.17);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 104px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(190, 105, 35, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: vertical piston bars — like the cross-section 
+       of a stamping press or engine block.
+       Heavy vertical shafts at varying heights, corroded edges,
+       connected by cross-beams. The machine is running,
+       relentless, punishing.
+       
+       This is Ansome, Perc, Container, Vatican Shadow —
+       the sound of metal on metal, hydraulic pressure,
+       factory floor at 3am.
+       
+       vs Peak Techno: that was clean geometry (the system).
+       This is the MACHINE itself — scarred, hot, physical. -->
+  <svg class="central-form" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="rustGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#c86820;stop-opacity:0.5"/>
+        <stop offset="30%" style="stop-color:#a85018;stop-opacity:0.35"/>
+        <stop offset="70%" style="stop-color:#884010;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#603008;stop-opacity:0.08"/>
+      </linearGradient>
+      <linearGradient id="rustGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#b05818;stop-opacity:0.3"/>
+        <stop offset="50%" style="stop-color:#904010;stop-opacity:0.18"/>
+        <stop offset="100%" style="stop-color:#683008;stop-opacity:0.06"/>
+      </linearGradient>
+      <linearGradient id="hotCore" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#e88830;stop-opacity:0.6"/>
+        <stop offset="40%" style="stop-color:#d07020;stop-opacity:0.4"/>
+        <stop offset="100%" style="stop-color:#a05015;stop-opacity:0.15"/>
+      </linearGradient>
+
+      <filter id="corrode">
+        <feTurbulence type="turbulence" baseFrequency="0.025" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="heavyCorrode">
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="4" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="ironGlow" x="-8%" y="-5%" width="116%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- === PISTON SHAFTS — the main vertical bars === -->
+    <g filter="url(#corrode)">
+      <!-- Shaft 1 — far left, short -->
+      <rect x="98" y="195" width="12" height="110" fill="url(#rustGrad2)" rx="1"/>
+      <!-- Shaft 2 -->
+      <rect x="128" y="145" width="14" height="165" fill="url(#rustGrad)" rx="1"/>
+      <!-- Shaft 3 — tallest -->
+      <rect x="160" y="95" width="16" height="220" fill="url(#rustGrad)" rx="1"/>
+      <!-- Shaft 4 — the hot one -->
+      <rect x="195" y="80" width="18" height="240" fill="url(#hotCore)" rx="1"/>
+      <!-- Shaft 5 -->
+      <rect x="232" y="100" width="16" height="215" fill="url(#rustGrad)" rx="1"/>
+      <!-- Shaft 6 -->
+      <rect x="266" y="140" width="14" height="170" fill="url(#rustGrad)" rx="1"/>
+      <!-- Shaft 7 — far right, short -->
+      <rect x="298" y="185" width="12" height="120" fill="url(#rustGrad2)" rx="1"/>
+    </g>
+
+    <!-- === CROSS-BEAMS — horizontal connectors === -->
+    <g filter="url(#corrode)">
+      <!-- Upper beam -->
+      <rect x="155" y="120" width="100" height="3" fill="rgba(180,90,25,0.18)" rx="0.5"/>
+      <!-- Middle beam -->
+      <rect x="93" y="210" width="222" height="4" fill="rgba(170,85,22,0.15)" rx="0.5"/>
+      <!-- Lower beam -->
+      <rect x="123" y="280" width="162" height="3" fill="rgba(160,78,20,0.12)" rx="0.5"/>
+    </g>
+
+    <!-- === CORRODED CAPS — top of each piston === -->
+    <g filter="url(#heavyCorrode)">
+      <rect x="95" y="190" width="18" height="6" fill="rgba(200,105,30,0.25)" rx="1"/>
+      <rect x="125" y="140" width="20" height="6" fill="rgba(200,105,30,0.3)" rx="1"/>
+      <rect x="156" y="90" width="24" height="7" fill="rgba(210,110,30,0.35)" rx="1"/>
+      <rect x="191" y="74" width="26" height="8" fill="rgba(230,130,40,0.45)" rx="1"/>
+      <rect x="228" y="95" width="24" height="7" fill="rgba(210,110,30,0.35)" rx="1"/>
+      <rect x="263" y="135" width="20" height="6" fill="rgba(200,105,30,0.3)" rx="1"/>
+      <rect x="295" y="180" width="18" height="6" fill="rgba(200,105,30,0.25)" rx="1"/>
+    </g>
+
+    <!-- === HEAT LINES — rising from the hot shaft === -->
+    <g opacity="0.06" stroke="rgba(230,140,50,1)" stroke-width="0.4" fill="none">
+      <path d="M 201,74 Q 199,55 202,38"/>
+      <path d="M 207,74 Q 210,52 207,32"/>
+      <path d="M 213,74 Q 211,58 214,42"/>
+    </g>
+
+    <!-- === RIVETS / BOLT MARKS === -->
+    <g fill="rgba(180,100,30,0.1)">
+      <!-- Along middle beam -->
+      <circle cx="110" cy="212" r="1.5"/>
+      <circle cx="145" cy="212" r="1.5"/>
+      <circle cx="180" cy="212" r="1.8"/>
+      <circle cx="215" cy="212" r="1.8"/>
+      <circle cx="250" cy="212" r="1.5"/>
+      <circle cx="285" cy="212" r="1.5"/>
+    </g>
+    <g fill="rgba(200,110,35,0.08)">
+      <!-- Along upper beam -->
+      <circle cx="170" cy="121" r="1.2"/>
+      <circle cx="200" cy="121" r="1.3"/>
+      <circle cx="235" cy="121" r="1.2"/>
+    </g>
+
+    <!-- === WEAR MARKS — horizontal scoring on shafts === -->
+    <g stroke="rgba(140,70,18,0.08)" stroke-width="0.3">
+      <line x1="195" y1="130" x2="213" y2="130"/>
+      <line x1="195" y1="165" x2="213" y2="165"/>
+      <line x1="195" y1="200" x2="213" y2="200"/>
+      <line x1="195" y1="235" x2="213" y2="235"/>
+      <line x1="195" y1="270" x2="213" y2="270"/>
+      <line x1="160" y1="155" x2="176" y2="155"/>
+      <line x1="160" y1="220" x2="176" y2="220"/>
+      <line x1="232" y1="160" x2="248" y2="160"/>
+      <line x1="232" y1="225" x2="248" y2="225"/>
+    </g>
+
+    <!-- === BASE PLATE === -->
+    <g filter="url(#corrode)">
+      <rect x="85" y="312" width="240" height="5" fill="rgba(150,75,20,0.1)" rx="1"/>
+      <rect x="80" y="318" width="250" height="3" fill="rgba(130,65,18,0.06)" rx="0.5"/>
+    </g>
+
+    <!-- Warning marker — industrial hazard -->
+    <g opacity="0.04">
+      <rect x="85" y="330" width="8" height="8" fill="rgba(220,140,30,1)"/>
+      <rect x="97" y="330" width="8" height="8" fill="rgba(220,140,30,1)"/>
+    </g>
+  </svg>
+
+  <div class="interference"></div>
+  <div class="grit"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Industrial</span><br/>
+      <span class="line2">Techno</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

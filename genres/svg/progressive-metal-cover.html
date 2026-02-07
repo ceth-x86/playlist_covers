@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progressive Metal Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #08080a;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0a0e;
+    overflow: hidden;
+  }
+
+  /* Dark gunmetal with deep warm undertone */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 48% 44%, rgba(180, 120, 50, 0.05) 0%, transparent 45%),
+      radial-gradient(ellipse at 52% 50%, rgba(140, 90, 30, 0.03) 0%, transparent 35%),
+      linear-gradient(170deg, #0c0c12 0%, #0a0a0e 45%, #08080c 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 420px;
+    height: 420px;
+  }
+
+  /* Warm core glow */
+  .glow {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200, 140, 60, 0.06) 0%, rgba(160, 100, 40, 0.02) 50%, transparent 65%);
+    filter: blur(25px);
+    z-index: 2;
+  }
+
+  /* Grain — series constant */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    opacity: 0.25;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: radial-gradient(ellipse at center, transparent 38%, rgba(0,0,0,0.6) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(215, 175, 120, 0.85);
+  }
+
+  .genre-name .line2 {
+    color: rgba(185, 140, 80, 0.45);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(190, 150, 90, 0.2);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 104px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(190, 150, 90, 0.12);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: angular spiral built from interlocking polygons —
+       prog metal is about complexity, odd time signatures, technical precision.
+       The form is a spiral made of angular segments, like a golden ratio
+       rendered in sharp metal edges. Each segment connects to the next
+       at unexpected angles — the visual equivalent of a 7/8 time signature.
+       Not chaotic (that's noise rock), not minimal (that's techno) — 
+       it's intricate, deliberate, architectural. -->
+  <svg class="central-form" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="copperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#8b6914;stop-opacity:0.08"/>
+        <stop offset="35%" style="stop-color:#c8963c;stop-opacity:0.35"/>
+        <stop offset="50%" style="stop-color:#daa850;stop-opacity:0.5"/>
+        <stop offset="65%" style="stop-color:#c8963c;stop-opacity:0.35"/>
+        <stop offset="100%" style="stop-color:#8b6914;stop-opacity:0.08"/>
+      </linearGradient>
+      <linearGradient id="copperGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#6b5010;stop-opacity:0.05"/>
+        <stop offset="40%" style="stop-color:#a07828;stop-opacity:0.2"/>
+        <stop offset="60%" style="stop-color:#b88830;stop-opacity:0.28"/>
+        <stop offset="100%" style="stop-color:#6b5010;stop-opacity:0.05"/>
+      </linearGradient>
+      <linearGradient id="steelFaint" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#888;stop-opacity:0.02"/>
+        <stop offset="50%" style="stop-color:#aaa;stop-opacity:0.06"/>
+        <stop offset="100%" style="stop-color:#888;stop-opacity:0.02"/>
+      </linearGradient>
+      <filter id="metalGlow" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- Angular spiral — outermost path, the full journey -->
+    <!-- Layer 1: ghost outline — the full form barely visible -->
+    <g opacity="0.15">
+      <polyline points="
+        310,100
+        340,150
+        330,210
+        350,260
+        310,310
+        250,330
+        190,320
+        140,290
+        110,240
+        100,180
+        120,130
+        160,100
+        210,90
+        260,100
+      " fill="none" stroke="url(#copperGrad2)" stroke-width="0.5" stroke-linejoin="bevel"/>
+    </g>
+
+    <!-- Layer 2: secondary angular spiral — tighter -->
+    <g opacity="0.3">
+      <polyline points="
+        280,125
+        310,165
+        300,215
+        315,255
+        285,290
+        240,305
+        195,295
+        160,268
+        140,228
+        138,178
+        158,140
+        190,120
+        228,115
+        265,125
+      " fill="none" stroke="url(#copperGrad2)" stroke-width="0.6" stroke-linejoin="bevel"/>
+    </g>
+
+    <!-- Layer 3: medium spiral -->
+    <g opacity="0.5">
+      <polyline points="
+        265,148
+        285,178
+        278,218
+        288,248
+        265,272
+        232,282
+        200,274
+        175,252
+        162,220
+        160,185
+        175,158
+        200,145
+        230,140
+        255,148
+      " fill="none" stroke="url(#copperGrad)" stroke-width="0.8" stroke-linejoin="bevel"/>
+    </g>
+
+    <!-- Layer 4: tighter approach -->
+    <g opacity="0.7" filter="url(#metalGlow)">
+      <polyline points="
+        248,168
+        262,190
+        256,218
+        264,240
+        248,258
+        225,264
+        205,258
+        188,242
+        180,220
+        180,195
+        190,176
+        208,168
+        228,165
+        244,168
+      " fill="none" stroke="url(#copperGrad)" stroke-width="1.0" stroke-linejoin="bevel"/>
+    </g>
+
+    <!-- Layer 5: inner core -->
+    <g opacity="0.85" filter="url(#metalGlow)">
+      <polyline points="
+        235,185
+        244,200
+        240,218
+        244,232
+        235,242
+        222,246
+        210,242
+        202,232
+        198,218
+        200,202
+        206,190
+        216,185
+        228,183
+        235,185
+      " fill="none" stroke="url(#copperGrad)" stroke-width="1.2" stroke-linejoin="bevel"/>
+    </g>
+
+    <!-- Center point -->
+    <circle cx="220" cy="213" r="2" fill="rgba(215,175,120,0.35)" filter="url(#metalGlow)"/>
+
+    <!-- Connecting angular lines between spiral layers — like gear teeth or fret markers -->
+    <g stroke="url(#steelFaint)" stroke-width="0.4" opacity="0.6">
+      <!-- Radial connectors at key vertices -->
+      <line x1="310" y1="100" x2="280" y2="125"/>
+      <line x1="280" y1="125" x2="265" y2="148"/>
+      <line x1="265" y1="148" x2="248" y2="168"/>
+      <line x1="248" y1="168" x2="235" y2="185"/>
+
+      <line x1="350" y1="260" x2="315" y2="255"/>
+      <line x1="315" y1="255" x2="288" y2="248"/>
+      <line x1="288" y1="248" x2="264" y2="240"/>
+      <line x1="264" y1="240" x2="244" y2="232"/>
+
+      <line x1="110" y1="240" x2="140" y2="228"/>
+      <line x1="140" y1="228" x2="162" y2="220"/>
+      <line x1="162" y1="220" x2="180" y2="220"/>
+      <line x1="180" y1="220" x2="198" y2="218"/>
+
+      <line x1="160" y1="100" x2="190" y2="120"/>
+      <line x1="190" y1="120" x2="200" y2="145"/>
+      <line x1="200" y1="145" x2="208" y2="168"/>
+      <line x1="208" y1="168" x2="216" y2="185"/>
+    </g>
+
+    <!-- Time signature markers — small tick groups, asymmetric (7 beats, not 8) -->
+    <g stroke="rgba(200,160,90,0.08)" stroke-width="0.4">
+      <!-- Group of 7 ticks — bottom -->
+      <line x1="155" y1="340" x2="155" y2="347"/>
+      <line x1="165" y1="340" x2="165" y2="347"/>
+      <line x1="175" y1="340" x2="175" y2="347"/>
+      <line x1="185" y1="340" x2="185" y2="347"/>
+      <line x1="195" y1="340" x2="195" y2="347"/>
+      <line x1="205" y1="340" x2="205" y2="347"/>
+      <line x1="215" y1="340" x2="215" y2="347"/>
+      <!-- Gap, then group of 5 -->
+      <line x1="235" y1="340" x2="235" y2="347"/>
+      <line x1="245" y1="340" x2="245" y2="347"/>
+      <line x1="255" y1="340" x2="255" y2="347"/>
+      <line x1="265" y1="340" x2="265" y2="347"/>
+      <line x1="275" y1="340" x2="275" y2="347"/>
+    </g>
+
+    <!-- Faint fibonacci-like construction arcs -->
+    <g opacity="0.03" fill="none" stroke="rgba(200,160,90,1)" stroke-width="0.3">
+      <path d="M 220,213 Q 220,150 280,150"/>
+      <path d="M 280,150 Q 340,150 340,213"/>
+      <path d="M 340,213 Q 340,310 245,310"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Progressive</span><br/>
+      <span class="line2">Metal</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

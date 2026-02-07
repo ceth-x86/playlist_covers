@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metalcore Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #060708;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #08090c;
+    overflow: hidden;
+  }
+
+  /* Hard black with cold blue-white edge */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(140, 160, 200, 0.03) 0%, transparent 40%),
+      linear-gradient(176deg, #0a0b10 0%, #08090c 50%, #060708 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Sharp split glow — two sources, not one,
+     representing the dual nature of the genre */
+  .glow1 {
+    position: absolute;
+    top: 35%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 160px;
+    border-radius: 40% 50% 50% 40%;
+    background: radial-gradient(ellipse, rgba(180, 195, 230, 0.04) 0%, transparent 60%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+
+  .glow2 {
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 130px;
+    border-radius: 50% 40% 40% 50%;
+    background: radial-gradient(ellipse, rgba(160, 175, 210, 0.03) 0%, transparent 60%);
+    filter: blur(20px);
+    z-index: 2;
+  }
+
+  /* Grain — series constant */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.26;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Hard vignette */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at center, transparent 33%, rgba(0,0,0,0.6) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 38px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(195, 210, 240, 0.85);
+    line-height: 1;
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(165, 180, 215, 0.17);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 96px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(165, 180, 215, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow1"></div>
+  <div class="glow2"></div>
+
+  <!-- Central form: the TOGGLE — metalcore's defining structure.
+       
+       Metalcore is built on contrast:
+       brutal → clean → brutal → clean
+       breakdown → melody → breakdown → melody
+       screaming → singing → screaming → singing
+       
+       The form shows alternating ZONES across the horizontal axis:
+       - AGGRESSIVE zones: dense, angular slash marks,
+         crowded, distorted, chaotic (the breakdown)
+       - CLEAN zones: open space with single precise geometric
+         shapes — circles or clean lines (the melodic passage)
+       
+       This binary toggle IS the genre. No other metal subgenre 
+       has this structural DNA. Thrash is all aggression.
+       Doom is all weight. Prog is continuous complexity.
+       Metalcore is the CUT between states.
+       
+       Converge, Killswitch Engage, Architects, Parkway Drive,
+       August Burns Red, As I Lay Dying — the sound of 
+       a light switch being thrown. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="aggroGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#8090b8;stop-opacity:0.05"/>
+        <stop offset="30%" style="stop-color:#a0b0d0;stop-opacity:0.3"/>
+        <stop offset="50%" style="stop-color:#b8c5e0;stop-opacity:0.5"/>
+        <stop offset="70%" style="stop-color:#a0b0d0;stop-opacity:0.3"/>
+        <stop offset="100%" style="stop-color:#8090b8;stop-opacity:0.05"/>
+      </linearGradient>
+      <linearGradient id="cleanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#7888b0;stop-opacity:0.03"/>
+        <stop offset="50%" style="stop-color:#98a8c8;stop-opacity:0.12"/>
+        <stop offset="100%" style="stop-color:#7888b0;stop-opacity:0.03"/>
+      </linearGradient>
+
+      <filter id="aggroDistort">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="sharpGlow" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="cleanGlow" x="-12%" y="-12%" width="124%" height="124%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- ======================= -->
+    <!-- ZONE A: BREAKDOWN (aggressive) -->
+    <!-- ======================= -->
+    <g filter="url(#aggroDistort)">
+      <!-- Dense angular slashes — chaos -->
+      <line x1="62" y1="110" x2="85" y2="270" stroke="url(#aggroGrad)" stroke-width="1.8" stroke-linecap="square"/>
+      <line x1="74" y1="105" x2="92" y2="275" stroke="url(#aggroGrad)" stroke-width="1.2" stroke-linecap="square"/>
+      <line x1="55" y1="125" x2="80" y2="260" stroke="url(#aggroGrad)" stroke-width="0.8" stroke-linecap="square"/>
+      <line x1="88" y1="115" x2="100" y2="265" stroke="url(#aggroGrad)" stroke-width="0.6" stroke-linecap="square"/>
+      <line x1="68" y1="100" x2="96" y2="280" stroke="url(#aggroGrad)" stroke-width="0.5" stroke-linecap="square"/>
+    </g>
+    <!-- Shrapnel from breakdown -->
+    <g opacity="0.15">
+      <line x1="95" y1="140" x2="108" y2="135" stroke="rgba(175,190,225,0.4)" stroke-width="0.5"/>
+      <line x1="90" y1="180" x2="106" y2="178" stroke="rgba(170,185,220,0.3)" stroke-width="0.4"/>
+      <line x1="92" y1="225" x2="107" y2="228" stroke="rgba(165,180,215,0.25)" stroke-width="0.4"/>
+    </g>
+
+
+    <!-- ======================= -->
+    <!-- ZONE B: CLEAN (melodic passage) -->
+    <!-- ======================= -->
+    <!-- Open space with a single clean circle — breathing room -->
+    <g filter="url(#cleanGlow)">
+      <circle cx="150" cy="190" r="22" fill="none"
+        stroke="url(#cleanGrad)" stroke-width="0.7"/>
+    </g>
+    <!-- Faint inner glow — the singing voice -->
+    <circle cx="150" cy="190" r="8" fill="rgba(155,170,210,0.03)" filter="url(#cleanGlow)"/>
+
+
+    <!-- ======================= -->
+    <!-- ZONE C: BREAKDOWN (aggressive, heavier) -->
+    <!-- ======================= -->
+    <g filter="url(#aggroDistort)">
+      <line x1="195" y1="100" x2="220" y2="280" stroke="url(#aggroGrad)" stroke-width="2.2" stroke-linecap="square"/>
+      <line x1="208" y1="95" x2="228" y2="285" stroke="url(#aggroGrad)" stroke-width="1.5" stroke-linecap="square"/>
+      <line x1="185" y1="108" x2="215" y2="275" stroke="url(#aggroGrad)" stroke-width="1.0" stroke-linecap="square"/>
+      <line x1="222" y1="102" x2="238" y2="278" stroke="url(#aggroGrad)" stroke-width="0.7" stroke-linecap="square"/>
+      <line x1="198" y1="92" x2="232" y2="290" stroke="url(#aggroGrad)" stroke-width="0.5" stroke-linecap="square"/>
+      <line x1="215" y1="98" x2="242" y2="282" stroke="url(#aggroGrad)" stroke-width="0.5" stroke-linecap="square"/>
+    </g>
+    <!-- More shrapnel — this breakdown is denser -->
+    <g opacity="0.12">
+      <line x1="240" y1="135" x2="255" y2="128" stroke="rgba(175,190,225,0.35)" stroke-width="0.5"/>
+      <line x1="238" y1="170" x2="256" y2="165" stroke="rgba(170,185,220,0.3)" stroke-width="0.4"/>
+      <line x1="235" y1="210" x2="252" y2="212" stroke="rgba(165,180,215,0.2)" stroke-width="0.4"/>
+      <line x1="237" y1="248" x2="254" y2="252" stroke="rgba(160,175,210,0.15)" stroke-width="0.3"/>
+    </g>
+
+
+    <!-- ======================= -->
+    <!-- ZONE D: CLEAN (wider, more open) -->
+    <!-- ======================= -->
+    <g filter="url(#cleanGlow)">
+      <circle cx="300" cy="185" r="18" fill="none"
+        stroke="url(#cleanGrad)" stroke-width="0.6"/>
+      <!-- Second concentric — harmony -->
+      <circle cx="300" cy="185" r="30" fill="none"
+        stroke="rgba(145,160,200,0.04)" stroke-width="0.4"/>
+    </g>
+    <circle cx="300" cy="185" r="5" fill="rgba(155,170,210,0.025)" filter="url(#cleanGlow)"/>
+
+
+    <!-- ======================= -->
+    <!-- ZONE E: FINAL BREAKDOWN (most aggressive) -->
+    <!-- ======================= -->
+    <g filter="url(#aggroDistort)">
+      <line x1="345" y1="105" x2="365" y2="275" stroke="url(#aggroGrad)" stroke-width="1.8" stroke-linecap="square"/>
+      <line x1="355" y1="98" x2="372" y2="280" stroke="url(#aggroGrad)" stroke-width="1.3" stroke-linecap="square"/>
+      <line x1="338" y1="112" x2="360" y2="268" stroke="url(#aggroGrad)" stroke-width="0.8" stroke-linecap="square"/>
+      <line x1="368" y1="108" x2="382" y2="272" stroke="url(#aggroGrad)" stroke-width="0.6" stroke-linecap="square"/>
+    </g>
+
+
+    <!-- === CUT LINES — the hard transitions between zones === -->
+    <!-- These vertical lines mark the INSTANT the song switches -->
+    <g stroke="rgba(170,185,220,0.05)" stroke-width="0.3" stroke-dasharray="3,5">
+      <line x1="113" y1="85" x2="113" y2="295"/>
+      <line x1="178" y1="85" x2="178" y2="295"/>
+      <line x1="258" y1="85" x2="258" y2="295"/>
+      <line x1="335" y1="85" x2="335" y2="295"/>
+    </g>
+
+    <!-- === STRUCTURE LABELS — barely visible === -->
+    <g fill="rgba(155,170,210,0.035)" font-family="'DM Mono', monospace" font-size="5" text-anchor="middle">
+      <text x="78" y="310">▓</text>
+      <text x="146" y="310">○</text>
+      <text x="218" y="310">▓</text>
+      <text x="297" y="310">○</text>
+      <text x="365" y="310">▓</text>
+    </g>
+
+    <!-- === INTENSITY GRAPH — bottom, showing the toggle pattern === -->
+    <g stroke="rgba(155,170,210,0.04)" stroke-width="0.4" fill="none">
+      <!-- Up = aggressive, down = clean -->
+      <polyline points="
+        55,348
+        60,335
+        113,335
+        113,355
+        178,355
+        178,330
+        258,330
+        258,355
+        335,355
+        335,335
+        395,335
+      "/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Metalcore</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

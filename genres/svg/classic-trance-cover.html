@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classic Trance Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #050810;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #060a14;
+    overflow: hidden;
+  }
+
+  /* Deep ocean-to-sky gradient — the trance ascent */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 35%, rgba(30, 100, 220, 0.1) 0%, transparent 55%),
+      radial-gradient(ellipse at 50% 55%, rgba(20, 60, 160, 0.06) 0%, transparent 40%),
+      radial-gradient(ellipse at 40% 30%, rgba(60, 180, 255, 0.04) 0%, transparent 35%),
+      linear-gradient(175deg, #0a1025 0%, #080e20 35%, #060a16 70%, #050810 100%);
+    z-index: 1;
+  }
+
+  /* Central SVG */
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Euphoric upper glow — the "heavens opening" */
+  .glow-top {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(50, 140, 255, 0.08) 0%, rgba(30, 100, 220, 0.03) 50%, transparent 70%);
+    filter: blur(40px);
+    z-index: 2;
+  }
+
+  /* Central luminous bloom */
+  .glow-center {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(80, 160, 255, 0.06) 0%, rgba(40, 120, 230, 0.02) 50%, transparent 65%);
+    filter: blur(30px);
+    z-index: 2;
+  }
+
+  /* Grain — series constant */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Soft atmospheric vignette */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(4,6,12,0.6) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 38px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(120, 185, 255, 0.85);
+  }
+
+  .genre-name .line2 {
+    color: rgba(80, 150, 240, 0.45);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(100, 165, 250, 0.22);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 108px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(100, 165, 250, 0.14);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow-top"></div>
+  <div class="glow-center"></div>
+
+  <!-- Central form: ascending arpeggiated arcs — 
+       the classic trance build, layers rising upward,
+       like the supersaw pad opening into euphoria.
+       Smooth, symmetrical, luminous — the opposite of noise rock's chaos
+       and techno's mechanical precision. This is emotional, soaring. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Horizontal fade for all arcs -->
+      <linearGradient id="arcFade" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0"/>
+        <stop offset="15%" style="stop-color:#3b82f6;stop-opacity:0.5"/>
+        <stop offset="50%" style="stop-color:#60a5fa;stop-opacity:1"/>
+        <stop offset="85%" style="stop-color:#3b82f6;stop-opacity:0.5"/>
+        <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="arcFade2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#3b82f6;stop-opacity:0.3"/>
+        <stop offset="50%" style="stop-color:#60a5fa;stop-opacity:0.6"/>
+        <stop offset="80%" style="stop-color:#3b82f6;stop-opacity:0.3"/>
+        <stop offset="100%" style="stop-color:#2563eb;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="arcGhost" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#1d4ed8;stop-opacity:0"/>
+        <stop offset="25%" style="stop-color:#3b82f6;stop-opacity:0.15"/>
+        <stop offset="50%" style="stop-color:#60a5fa;stop-opacity:0.25"/>
+        <stop offset="75%" style="stop-color:#3b82f6;stop-opacity:0.15"/>
+        <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="arcGlow" x="-15%" y="-30%" width="130%" height="160%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="softArcGlow" x="-15%" y="-30%" width="130%" height="160%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- Ghost arcs — outermost layer, ascending -->
+    <g filter="url(#softArcGlow)">
+      <!-- Arc 8 — highest, faintest -->
+      <path d="M 100,200 Q 220,55 340,200" fill="none" stroke="url(#arcGhost)" stroke-width="0.5" stroke-linecap="round"/>
+      <!-- Arc 7 -->
+      <path d="M 95,200 Q 220,75 345,200" fill="none" stroke="url(#arcGhost)" stroke-width="0.6" stroke-linecap="round"/>
+    </g>
+
+    <!-- Secondary arcs -->
+    <g filter="url(#softArcGlow)">
+      <!-- Arc 6 -->
+      <path d="M 90,210 Q 220,95 350,210" fill="none" stroke="url(#arcFade2)" stroke-width="0.7" stroke-linecap="round"/>
+      <!-- Arc 5 -->
+      <path d="M 95,215 Q 220,115 345,215" fill="none" stroke="url(#arcFade2)" stroke-width="0.8" stroke-linecap="round"/>
+      <!-- Arc 4 -->
+      <path d="M 100,220 Q 220,132 340,220" fill="none" stroke="url(#arcFade2)" stroke-width="0.9" stroke-linecap="round"/>
+    </g>
+
+    <!-- Primary arcs — brightest, the melodic core -->
+    <g filter="url(#arcGlow)">
+      <!-- Arc 3 -->
+      <path d="M 108,225 Q 220,150 332,225" fill="none" stroke="url(#arcFade)" stroke-width="1.0" stroke-linecap="round" opacity="0.7"/>
+      <!-- Arc 2 -->
+      <path d="M 115,230 Q 220,168 325,230" fill="none" stroke="url(#arcFade)" stroke-width="1.3" stroke-linecap="round" opacity="0.85"/>
+      <!-- Arc 1 — the main voice -->
+      <path d="M 125,235 Q 220,185 315,235" fill="none" stroke="url(#arcFade)" stroke-width="1.8" stroke-linecap="round"/>
+    </g>
+
+    <!-- Baseline — the anchor, where the drop sits -->
+    <g filter="url(#arcGlow)">
+      <line x1="130" y1="240" x2="310" y2="240" stroke="url(#arcFade)" stroke-width="0.8" stroke-linecap="round" opacity="0.4"/>
+    </g>
+
+    <!-- Descending mirror arcs below baseline — reflection/reverb -->
+    <g opacity="0.12" filter="url(#softArcGlow)">
+      <path d="M 130,245 Q 220,270 310,245" fill="none" stroke="#3b82f6" stroke-width="0.8" stroke-linecap="round"/>
+      <path d="M 120,248 Q 220,285 320,248" fill="none" stroke="#3b82f6" stroke-width="0.6" stroke-linecap="round"/>
+      <path d="M 110,250 Q 220,300 330,250" fill="none" stroke="#3b82f6" stroke-width="0.4" stroke-linecap="round"/>
+    </g>
+
+    <!-- Luminous peak dot — the apex -->
+    <circle cx="220" cy="185" r="2" fill="rgba(120,185,255,0.5)" filter="url(#arcGlow)"/>
+
+    <!-- Scattered star points — the euphoric shimmer -->
+    <g fill="rgba(140,195,255,0.2)">
+      <circle cx="180" cy="130" r="0.8"/>
+      <circle cx="260" cy="120" r="0.7"/>
+      <circle cx="150" cy="165" r="0.6"/>
+      <circle cx="290" cy="155" r="0.7"/>
+      <circle cx="210" cy="95" r="0.5"/>
+      <circle cx="240" cy="80" r="0.6"/>
+      <circle cx="170" cy="100" r="0.4"/>
+      <circle cx="275" cy="90" r="0.5"/>
+      <circle cx="195" cy="110" r="0.5"/>
+      <circle cx="250" cy="105" r="0.4"/>
+    </g>
+    <g fill="rgba(180,215,255,0.12)">
+      <circle cx="140" cy="140" r="0.5"/>
+      <circle cx="300" cy="130" r="0.4"/>
+      <circle cx="200" cy="75" r="0.4"/>
+      <circle cx="240" cy="65" r="0.3"/>
+      <circle cx="160" cy="85" r="0.3"/>
+      <circle cx="280" cy="75" r="0.4"/>
+    </g>
+
+    <!-- Very faint vertical axis — the build direction -->
+    <line x1="220" y1="60" x2="220" y2="310" stroke="rgba(100,165,250,0.025)" stroke-width="0.3"/>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Classic</span><br/>
+      <span class="line2">Trance</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mathcore Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #080806;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0c0c08;
+    overflow: hidden;
+  }
+
+  /* Near-black with the faintest sickly warmth —
+     not pure black (hardcore), not clean black (tech death).
+     The yellow cast of a fluorescent tube about to die
+     in a practice space ceiling. Hydra Head Records. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(190, 180, 80, 0.025) 0%, transparent 40%),
+      linear-gradient(180deg, #0e0e0a 0%, #0c0c08 50%, #080806 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* NO glow. Inherited from punk → hardcore lineage. */
+
+  /* Grain — harsh, xerox generation -->
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.36;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* NO vignette. Punk lineage. */
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 44px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: rgba(230, 220, 100, 0.88);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(210, 200, 80, 0.18);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 108px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(210, 200, 80, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <!-- NO glow. -->
+
+  <!-- Central form: hardcore's strikes SHATTERED and ROTATED.
+       
+       Hardcore: 12 horizontal bars, same thickness, stacked tight.
+       Mathcore: ~14 bars, EACH AT A DIFFERENT ANGLE, scattered.
+       
+       Hardcore is compressed but ORGANIZED — the strikes
+       stack neatly, same orientation, same intensity.
+       There's a brutal orderliness to it.
+       
+       Mathcore takes that orderliness and BREAKS it.
+       Each strike rotates to its own angle. No two are
+       parallel. Lengths vary wildly. Some overlap. Some
+       collide. The spacing is erratic.
+       
+       But — and this is the critical difference from noise
+       rock — there IS underlying structure. The angles
+       aren't random. They're precisely WRONG. Each one
+       chosen to maximally conflict with its neighbours.
+       Calculated chaos. Composed seizures.
+       
+       Tech death has multiple GRIDS (ordered systems
+       in polyrhythm). Mathcore has multiple ANGLES
+       (violent fragments in collision). Tech death is
+       three clocks at different speeds. Mathcore is
+       one clock smashed with a hammer, and the 
+       fragments still tick.
+       
+       Dillinger Escape Plan, Converge "Jane Doe",
+       Botch, Car Bomb, The Chariot, Frontierer —
+       the sound of a staircase collapsing while
+       someone counts every step. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="mathRough">
+        <feTurbulence type="turbulence" baseFrequency="0.035" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+
+    <!-- === THE SHATTERED BURST === -->
+    <!-- Each rect is centred approximately around (220, 205)
+         but rotated to a unique angle. No two angles repeat.
+         Lengths and positions vary. Thickness constant at 7px
+         (inherited from hardcore's uniform intensity). -->
+
+    <g filter="url(#mathRough)">
+
+      <!-- Strike 1 — nearly horizontal (reference to hardcore origin) -->
+      <rect x="128" y="138" width="135" height="7" rx="0.5"
+        fill="rgba(225,215,90,0.5)"
+        transform="rotate(-3, 195, 141)"/>
+
+      <!-- Strike 2 — sharp clockwise rotation -->
+      <rect x="198" y="125" width="95" height="7" rx="0.5"
+        fill="rgba(220,210,85,0.45)"
+        transform="rotate(38, 245, 128)"/>
+
+      <!-- Strike 3 — steep counter-clockwise -->
+      <rect x="145" y="148" width="68" height="7" rx="0.5"
+        fill="rgba(215,205,80,0.42)"
+        transform="rotate(-62, 179, 151)"/>
+
+      <!-- Strike 4 — moderate angle -->
+      <rect x="230" y="160" width="120" height="7" rx="0.5"
+        fill="rgba(228,218,92,0.52)"
+        transform="rotate(17, 290, 163)"/>
+
+      <!-- Strike 5 — nearly vertical (maximum departure from horizontal) -->
+      <rect x="170" y="155" width="48" height="7" rx="0.5"
+        fill="rgba(210,200,78,0.4)"
+        transform="rotate(-78, 194, 158)"/>
+
+      <!-- Strike 6 — crossing the centre -->
+      <rect x="135" y="198" width="155" height="7" rx="0.5"
+        fill="rgba(232,222,95,0.55)"
+        transform="rotate(8, 212, 201)"/>
+
+      <!-- Strike 7 — sharp opposite -->
+      <rect x="235" y="188" width="85" height="7" rx="0.5"
+        fill="rgba(218,208,82,0.44)"
+        transform="rotate(-42, 277, 191)"/>
+
+      <!-- Strike 8 — wide, crossing many others -->
+      <rect x="108" y="222" width="178" height="7" rx="0.5"
+        fill="rgba(230,220,90,0.52)"
+        transform="rotate(-14, 197, 225)"/>
+
+      <!-- Strike 9 — short, steep -->
+      <rect x="268" y="218" width="52" height="7" rx="0.5"
+        fill="rgba(208,198,75,0.38)"
+        transform="rotate(55, 294, 221)"/>
+
+      <!-- Strike 10 — medium, counter-angle to 9 -->
+      <rect x="148" y="248" width="108" height="7" rx="0.5"
+        fill="rgba(222,212,88,0.48)"
+        transform="rotate(28, 202, 251)"/>
+
+      <!-- Strike 11 — near-horizontal again (false resolution) -->
+      <rect x="188" y="268" width="130" height="7" rx="0.5"
+        fill="rgba(225,215,90,0.5)"
+        transform="rotate(-5, 253, 271)"/>
+
+      <!-- Strike 12 — immediately contradicts 11 with steep angle -->
+      <rect x="218" y="255" width="72" height="7" rx="0.5"
+        fill="rgba(215,205,80,0.42)"
+        transform="rotate(68, 254, 258)"/>
+
+      <!-- Strike 13 — wide slash across the lower field -->
+      <rect x="125" y="290" width="148" height="7" rx="0.5"
+        fill="rgba(228,218,92,0.48)"
+        transform="rotate(-22, 199, 293)"/>
+
+      <!-- Strike 14 — final short stab -->
+      <rect x="275" y="285" width="55" height="7" rx="0.5"
+        fill="rgba(210,200,78,0.38)"
+        transform="rotate(45, 302, 288)"/>
+    </g>
+
+
+    <!-- === COLLISION NODES — where strikes intersect === -->
+    <!-- These are the rhythmic collisions — accent points 
+         where downbeats from different time signatures 
+         coincide. Brighter than the strikes themselves. -->
+    <g opacity="0.15">
+      <circle cx="195" cy="168" r="2.5" fill="rgba(240,230,110,0.5)"/>
+      <circle cx="248" cy="195" r="2.2" fill="rgba(235,225,105,0.45)"/>
+      <circle cx="178" cy="218" r="2.0" fill="rgba(230,220,100,0.4)"/>
+      <circle cx="262" cy="248" r="2.0" fill="rgba(230,220,100,0.4)"/>
+      <circle cx="205" cy="260" r="2.2" fill="rgba(235,225,105,0.42)"/>
+    </g>
+
+
+    <!-- === TIME SIGNATURES — scattered around the form,
+         each one different, refusing to stabilize === -->
+    <g fill="rgba(210,200,80,0.025)" font-family="'DM Mono', monospace" font-size="4.5">
+      <text x="308" y="132" transform="rotate(5,308,132)">7/8</text>
+      <text x="125" y="172" transform="rotate(-8,125,172)">11/16</text>
+      <text x="340" y="198" transform="rotate(12,340,198)">5/4</text>
+      <text x="95" y="240" transform="rotate(-3,95,240)">13/8</text>
+      <text x="330" y="265" transform="rotate(-6,330,265)">9/16</text>
+      <text x="115" y="302" transform="rotate(4,115,302)">4/4</text><!-- the brief moment of 4/4, immediately broken -->
+      <text x="338" y="292" transform="rotate(8,338,292)">6/8</text>
+    </g>
+
+
+    <!-- === BPM — irregular, clustered, violent === -->
+    <!-- Not hardcore's 8 even ticks. Not tech death's 
+         layered polyrhythm. Mathcore's tempo STUTTERS. -->
+    <g stroke="rgba(215,205,80,0.04)" stroke-width="0.4">
+      <!-- Cluster 1 — tight burst -->
+      <line x1="135" y1="360" x2="135" y2="366"/>
+      <line x1="140" y1="360" x2="140" y2="366"/>
+      <line x1="144" y1="360" x2="144" y2="366"/>
+      <!-- Gap -->
+      <!-- Cluster 2 — single hit -->
+      <line x1="172" y1="360" x2="172" y2="366"/>
+      <!-- Gap -->
+      <!-- Cluster 3 — tight triplet -->
+      <line x1="198" y1="360" x2="198" y2="366"/>
+      <line x1="202" y1="360" x2="202" y2="366"/>
+      <line x1="207" y1="360" x2="207" y2="366"/>
+      <!-- Gap -->
+      <!-- Cluster 4 — burst of five -->
+      <line x1="238" y1="360" x2="238" y2="366"/>
+      <line x1="242" y1="360" x2="242" y2="366"/>
+      <line x1="245" y1="360" x2="245" y2="366"/>
+      <line x1="249" y1="360" x2="249" y2="366"/>
+      <line x1="254" y1="360" x2="254" y2="366"/>
+      <!-- Gap -->
+      <!-- Cluster 5 — two hits, wide spacing -->
+      <line x1="285" y1="360" x2="285" y2="366"/>
+      <line x1="298" y1="360" x2="298" y2="366"/>
+      <!-- Cluster 6 — single stab -->
+      <line x1="330" y1="360" x2="330" y2="366"/>
+    </g>
+  </svg>
+
+  <div class="grain"></div>
+
+  <!-- NO vignette. -->
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Mathcore</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

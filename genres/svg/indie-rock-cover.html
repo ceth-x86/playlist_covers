@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indie Rock Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #08080a;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0e0d10;
+    overflow: hidden;
+  }
+
+  /* Warm charcoal — not as warm as soft rock (walnut),
+     not as cold as post-punk (gunmetal).
+     The colour of a thrift-store cardigan.
+     Matador Records. Merge Records. Sub Pop pre-Nirvana.
+     A warmth that doesn't try to be warm —
+     it just IS, unintentionally. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(175, 145, 95, 0.035) 0%, transparent 45%),
+      radial-gradient(ellipse at 46% 46%, rgba(155, 128, 85, 0.02) 0%, transparent 35%),
+      linear-gradient(180deg, #100f12 0%, #0e0d10 45%, #08080a 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Modest glow — present but unassertive -->
+  .glow {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(180, 150, 100, 0.035) 0%, rgba(155, 125, 80, 0.012) 48%, transparent 65%);
+    filter: blur(25px);
+    z-index: 2;
+  }
+
+  /* Grain — lo-fi but not xerox. Cassette tape warmth.
+     Higher than soft rock, lower than punk.
+     The four-track recording aesthetic. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.26;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — natural, not styled */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at center, transparent 38%, rgba(5,5,6,0.48) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 34px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(200, 170, 115, 0.75);
+  }
+
+  .genre-name .line2 {
+    color: rgba(165, 138, 90, 0.36);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(175, 145, 95, 0.14);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 102px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(175, 145, 95, 0.08);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: two lines that ALMOST follow the same path.
+       
+       This is the core of indie rock's aesthetic:
+       DELIBERATE IMPERFECTION.
+       
+       Not punk's imperfection (don't care, won't try).
+       Not grunge's imperfection (pain leaking through).
+       Not lo-fi's imperfection (the medium failing).
+       Indie rock's imperfection is CHOSEN — the musicians
+       CAN play tighter, but the slight looseness is 
+       the point. It's the human hand.
+       
+       Two lines cross the frame roughly in parallel.
+       Guitar 1 and Guitar 2. But:
+       - They don't start at exactly the same point
+       - They diverge slightly in the middle
+       - Their curves don't quite match
+       - One is slightly thicker than the other
+       - They reconverge at the end but not perfectly
+       
+       This is Pavement — deliberately sloppy.
+       Built to Spill — two guitars weaving around
+       the same melody but never quite locking.
+       Modest Mouse — off-kilter but intentional.
+       Sonic Youth — tuned wrong on purpose.
+       
+       The space between the two lines IS the genre. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="indieGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#806828;stop-opacity:0.02"/>
+        <stop offset="12%" style="stop-color:#a08038;stop-opacity:0.15"/>
+        <stop offset="35%" style="stop-color:#c09848;stop-opacity:0.32"/>
+        <stop offset="55%" style="stop-color:#c8a050;stop-opacity:0.38"/>
+        <stop offset="75%" style="stop-color:#b89040;stop-opacity:0.28"/>
+        <stop offset="90%" style="stop-color:#987830;stop-opacity:0.12"/>
+        <stop offset="100%" style="stop-color:#786020;stop-opacity:0.02"/>
+      </linearGradient>
+      <linearGradient id="indieGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#706020;stop-opacity:0.01"/>
+        <stop offset="15%" style="stop-color:#907830;stop-opacity:0.1"/>
+        <stop offset="40%" style="stop-color:#b09040;stop-opacity:0.22"/>
+        <stop offset="60%" style="stop-color:#b89848;stop-opacity:0.26"/>
+        <stop offset="80%" style="stop-color:#a08838;stop-opacity:0.18"/>
+        <stop offset="92%" style="stop-color:#887028;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#685818;stop-opacity:0.01"/>
+      </linearGradient>
+
+      <filter id="fourTrack">
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="indieGlow" x="-5%" y="-10%" width="110%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- === LINE 1 — Guitar 1, the lead === -->
+    <!-- A gentle curve, not as smooth as soft rock's arc.
+         Slightly angular — there are inflection points
+         where the player changes direction. Not sharp 
+         (not post-hardcore), just... human. -->
+    <g filter="url(#fourTrack)">
+      <g filter="url(#indieGlow)">
+        <path d="M 30,208
+                 C 60,206 85,198 115,192
+                 C 145,186 170,182 200,184
+                 C 230,186 250,194 275,198
+                 C 300,202 325,196 350,190
+                 C 375,184 395,188 415,192"
+          fill="none" stroke="url(#indieGrad1)" stroke-width="1.6"
+          stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <!-- === LINE 2 — Guitar 2, following but not matching === -->
+    <!-- Same GENERAL shape, but:
+         - starts 7px lower (not exactly doubled)
+         - middle section diverges (wider gap)
+         - slightly thinner
+         - ends at a slightly different point -->
+    <g filter="url(#fourTrack)">
+      <path d="M 30,215
+               C 58,213 82,208 112,204
+               C 142,200 172,200 202,205
+               C 232,210 252,218 278,220
+               C 304,222 328,210 352,202
+               C 376,194 398,196 415,198"
+        fill="none" stroke="url(#indieGrad2)" stroke-width="1.1"
+        stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+
+    <!-- === THE SPACE BETWEEN — the gap is the genre === -->
+    <!-- Filled very faintly. The space varies:
+         narrow at the edges (they almost agree),
+         wider in the middle (they diverge). -->
+    <g opacity="0.008">
+      <path d="M 30,208
+               C 60,206 85,198 115,192
+               C 145,186 170,182 200,184
+               C 230,186 250,194 275,198
+               C 300,202 325,196 350,190
+               C 375,184 395,188 415,192
+               L 415,198
+               C 398,196 376,194 352,202
+               C 328,210 304,222 278,220
+               C 252,218 232,210 202,205
+               C 172,200 142,200 112,204
+               C 82,208 58,213 30,215
+               Z"
+        fill="rgba(195,162,105,1)"/>
+    </g>
+
+
+    <!-- === NEAR-UNISONS — points where the lines almost touch === -->
+    <!-- These are the moments when the two guitars 
+         accidentally lock together — brief, beautiful,
+         then they drift apart again. -->
+    <g opacity="0.12">
+      <circle cx="30" cy="211" r="1.5" fill="rgba(195,165,108,0.3)"/>
+      <circle cx="115" cy="198" r="1.8" fill="rgba(200,170,112,0.25)"/>
+      <circle cx="415" cy="195" r="1.5" fill="rgba(195,165,108,0.25)"/>
+    </g>
+
+    <!-- === MAXIMUM DIVERGENCE — where they're furthest apart === -->
+    <!-- A faint indicator at the widest gap. The verse
+         where each guitar does its own thing. -->
+    <g opacity="0.04">
+      <line x1="275" y1="198" x2="278" y2="220"
+        stroke="rgba(185,155,100,0.2)" stroke-width="0.3"
+        stroke-dasharray="1.5,3"/>
+    </g>
+
+
+    <!-- === STRAY NOTES — single dots that don't belong
+         to either line === -->
+    <!-- The accidental harmonics, the open string ringing,
+         the note that wasn't planned but stayed in the take. -->
+    <g opacity="0.06">
+      <circle cx="148" cy="172" r="1.0" fill="rgba(190,158,100,0.3)"/>
+      <circle cx="310" cy="230" r="0.8" fill="rgba(185,152,95,0.25)"/>
+      <circle cx="235" cy="228" r="0.9" fill="rgba(180,148,92,0.2)"/>
+      <circle cx="92" cy="215" r="0.7" fill="rgba(185,152,95,0.2)"/>
+      <circle cx="380" cy="178" r="0.8" fill="rgba(190,158,100,0.22)"/>
+    </g>
+
+
+    <!-- === BPM — moderate, loose === -->
+    <!-- Not metronomic like soft rock. Not irregular
+         like mathcore. The drummer plays in time but 
+         with a human FEEL — some ticks are subtly 
+         early or late. The push and pull of a 
+         live band that's played together for years. -->
+    <g stroke="rgba(175,145,95,0.03)" stroke-width="0.35">
+      <line x1="108" y1="345" x2="108" y2="352"/>
+      <line x1="132" y1="345" x2="132" y2="352"/>
+      <line x1="157" y1="345" x2="157" y2="352"/><!-- 1px late -->
+      <line x1="181" y1="345" x2="181" y2="352"/>
+      <line x1="204" y1="345" x2="204" y2="352"/><!-- 1px early -->
+      <line x1="230" y1="345" x2="230" y2="352"/><!-- 2px late -->
+      <line x1="253" y1="345" x2="253" y2="352"/>
+      <line x1="278" y1="345" x2="278" y2="352"/><!-- 1px late -->
+      <line x1="302" y1="345" x2="302" y2="352"/>
+      <line x1="327" y1="345" x2="327" y2="352"/>
+      <line x1="350" y1="345" x2="350" y2="352"/><!-- 1px early -->
+    </g>
+    <!-- Accents — loose 4/4 -->
+    <g stroke="rgba(185,155,100,0.04)" stroke-width="0.4">
+      <line x1="108" y1="344" x2="108" y2="353"/>
+      <line x1="181" y1="344" x2="181" y2="353"/>
+      <line x1="253" y1="344" x2="253" y2="353"/>
+      <line x1="327" y1="344" x2="327" y2="353"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Indie</span><br/>
+      <span class="line2">Rock</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Synthpop Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0a0a0f;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #08060e;
+    overflow: hidden;
+  }
+
+  /* Deep violet/indigo gradient base */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 45%, rgba(120, 30, 180, 0.15) 0%, transparent 55%),
+      radial-gradient(ellipse at 65% 60%, rgba(200, 30, 100, 0.08) 0%, transparent 40%),
+      linear-gradient(175deg, #0b0811 0%, #0f0a18 50%, #080510 100%);
+    z-index: 1;
+  }
+
+  /* Central SVG form */
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 400px;
+    height: 400px;
+  }
+
+  /* Horizontal scan lines */
+  .scanlines {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    opacity: 0.06;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(180, 140, 255, 0.3) 2px,
+      rgba(180, 140, 255, 0.3) 3px
+    );
+  }
+
+  /* Neon glow bloom behind form */
+  .glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(160, 50, 220, 0.2) 0%, rgba(200, 30, 120, 0.08) 40%, transparent 70%);
+    filter: blur(40px);
+    z-index: 2;
+  }
+
+  /* Grain overlay */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.65) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — same position as Grunge (system constant) */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 42px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #c084fc;
+    line-height: 1;
+  }
+
+  .genre-name span {
+    color: rgba(220, 160, 255, 0.5);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(192, 132, 252, 0.35);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 100px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(192, 132, 252, 0.2);
+    z-index: 10;
+  }
+
+  /* Subtle pulsing animation on the glow */
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  .glow { animation: pulse 4s ease-in-out infinite; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <!-- Neon bloom -->
+  <div class="glow"></div>
+
+  <!-- Central form: precise geometric waveform — like an oscilloscope trace frozen in crystal -->
+  <svg class="central-form" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="wave1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#6b21a8;stop-opacity:0.1"/>
+        <stop offset="30%" style="stop-color:#a855f7;stop-opacity:0.7"/>
+        <stop offset="50%" style="stop-color:#e879f9;stop-opacity:0.9"/>
+        <stop offset="70%" style="stop-color:#a855f7;stop-opacity:0.7"/>
+        <stop offset="100%" style="stop-color:#6b21a8;stop-opacity:0.1"/>
+      </linearGradient>
+      <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#7e22ce;stop-opacity:0.05"/>
+        <stop offset="30%" style="stop-color:#c026d3;stop-opacity:0.4"/>
+        <stop offset="50%" style="stop-color:#e879f9;stop-opacity:0.5"/>
+        <stop offset="70%" style="stop-color:#c026d3;stop-opacity:0.4"/>
+        <stop offset="100%" style="stop-color:#7e22ce;stop-opacity:0.05"/>
+      </linearGradient>
+      <linearGradient id="wave3" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#581c87;stop-opacity:0.02"/>
+        <stop offset="40%" style="stop-color:#9333ea;stop-opacity:0.2"/>
+        <stop offset="50%" style="stop-color:#a855f7;stop-opacity:0.3"/>
+        <stop offset="60%" style="stop-color:#9333ea;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#581c87;stop-opacity:0.02"/>
+      </linearGradient>
+
+      <!-- Glow filter for neon effect -->
+      <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- Background geometric grid — faint perspective lines -->
+    <g opacity="0.06">
+      <line x1="200" y1="80" x2="200" y2="320" stroke="#a855f7" stroke-width="0.5"/>
+      <line x1="80" y1="200" x2="320" y2="200" stroke="#a855f7" stroke-width="0.5"/>
+      <line x1="120" y1="120" x2="280" y2="280" stroke="#a855f7" stroke-width="0.3"/>
+      <line x1="280" y1="120" x2="120" y2="280" stroke="#a855f7" stroke-width="0.3"/>
+      <circle cx="200" cy="200" r="80" fill="none" stroke="#a855f7" stroke-width="0.3"/>
+      <circle cx="200" cy="200" r="120" fill="none" stroke="#a855f7" stroke-width="0.2"/>
+    </g>
+
+    <!-- Outermost waveform — widest, faintest -->
+    <g filter="url(#softGlow)">
+      <path d="M 50,200 
+               Q 80,200 95,175 
+               L 110,140 
+               L 120,180 
+               L 135,155 
+               Q 145,145 155,170 
+               L 165,195 
+               L 175,160 
+               L 185,130 
+               L 195,185 
+               L 200,210 
+               L 205,185 
+               L 215,130 
+               L 225,160 
+               L 235,195 
+               L 245,170 
+               Q 255,145 265,155 
+               L 280,180 
+               L 290,140 
+               L 305,175 
+               Q 320,200 350,200" 
+        fill="none" stroke="url(#wave3)" stroke-width="1" stroke-linecap="round"/>
+    </g>
+
+    <!-- Middle waveform — sharper, more angular -->
+    <g filter="url(#softGlow)">
+      <path d="M 60,200 
+               Q 85,200 100,180 
+               L 112,152 
+               L 122,185 
+               L 132,165 
+               Q 140,155 150,172 
+               L 160,190 
+               L 170,168 
+               L 182,138 
+               L 192,188 
+               L 200,205 
+               L 208,188 
+               L 218,138 
+               L 230,168 
+               L 240,190 
+               L 250,172 
+               Q 260,155 268,165 
+               L 278,185 
+               L 288,152 
+               L 300,180 
+               Q 315,200 340,200" 
+        fill="none" stroke="url(#wave2)" stroke-width="1.2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Primary waveform — sharp, bright, central -->
+    <g filter="url(#neonGlow)">
+      <path d="M 70,200 
+               Q 90,200 105,182 
+               L 115,158 
+               L 125,188 
+               L 133,170 
+               Q 140,162 148,175 
+               L 158,192 
+               L 168,172 
+               L 178,142 
+               L 190,190 
+               L 200,208 
+               L 210,190 
+               L 222,142 
+               L 232,172 
+               L 242,192 
+               L 252,175 
+               Q 260,162 267,170 
+               L 275,188 
+               L 285,158 
+               L 295,182 
+               Q 310,200 330,200" 
+        fill="none" stroke="url(#wave1)" stroke-width="1.8" stroke-linecap="round"/>
+    </g>
+
+    <!-- Bright center dot -->
+    <circle cx="200" cy="208" r="2.5" fill="#e879f9" opacity="0.8" filter="url(#neonGlow)"/>
+
+    <!-- Faint mirrored reflection below -->
+    <g opacity="0.08" transform="translate(0, 30) scale(1, -0.3)">
+      <path d="M 70,200 Q 90,200 105,182 L 115,158 L 125,188 L 133,170 Q 140,162 148,175 L 158,192 L 168,172 L 178,142 L 190,190 L 200,208 L 210,190 L 222,142 L 232,172 L 242,192 L 252,175 Q 260,162 267,170 L 275,188 L 285,158 L 295,182 Q 310,200 330,200" 
+        fill="none" stroke="#a855f7" stroke-width="1" stroke-linecap="round" transform="translate(0, 530)"/>
+    </g>
+  </svg>
+
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Dark <span>Synthpop</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hard Rock Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0a0806;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0e0a08;
+    overflow: hidden;
+  }
+
+  /* Deep warm black — hotter than soft rock's walnut
+     (which is cozy), cooler than sludge's tar 
+     (which is toxic). This is the black of a tube amp
+     pushed into overdrive — the chassis is warm to 
+     the touch. The black of Marshall stacks.
+     Atlantic Records, early Vertigo. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(210, 140, 50, 0.05) 0%, transparent 45%),
+      radial-gradient(ellipse at 48% 48%, rgba(190, 120, 40, 0.03) 0%, transparent 35%),
+      linear-gradient(178deg, #120e0a 0%, #0e0a08 42%, #0a0806 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Hot glow — concentrated, intense, tube amp warmth -->
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(220, 150, 55, 0.06) 0%, rgba(195, 125, 40, 0.025) 40%, transparent 62%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+
+  /* Grain — moderate, analogue heat -->
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.24;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — moderate, stage-lit -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 44%, transparent 32%, rgba(6,4,3,0.55) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 34px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(230, 165, 70, 0.85);
+  }
+
+  .genre-name .line2 {
+    color: rgba(195, 135, 55, 0.4);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(200, 140, 60, 0.15);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 102px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(200, 140, 60, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: ONE THICK POWERFUL STROKE.
+       
+       Hard rock sits BETWEEN soft rock and heavy metal 
+       in the evolutionary tree:
+       
+       Soft rock: gentle arc, thin, constant width (comfort)
+       HARD ROCK: bold stroke, thick, with dynamic HEAT
+       Heavy metal: pentagonal shield (codified, armoured)
+       
+       Soft rock's arc is a melody hummed.
+       Hard rock's stroke is a riff PLAYED LOUD.
+       Heavy metal's shield is a system built.
+       
+       The stroke has:
+       - THICKNESS: 4-6x thicker than soft rock's line.
+         This is gain. Volume. Amp saturation.
+       - DYNAMIC SHAPE: not a smooth arc (soft rock) but
+         a curve with ATTACK — it enters hard, peaks,
+         sustains. Like a power chord.
+       - HEAT GRADIENT: hottest at the centre (white-hot
+         core, like a tube amp's filament), cooling to
+         deep orange at the edges. Temperature IS volume.
+       - SLIGHT ROUGHNESS: feDisplacementMap at low level.
+         Not clean (electropop), not destroyed (grunge).
+         The natural distortion of a cranked amp.
+       
+       Led Zeppelin, AC/DC, Deep Purple, Aerosmith,
+       ZZ Top, Van Halen, Thin Lizzy —
+       the sound of electricity becoming heat. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Heat gradient — white-hot centre, orange edges -->
+      <linearGradient id="heatGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#804820;stop-opacity:0"/>
+        <stop offset="8%" style="stop-color:#a86830;stop-opacity:0.15"/>
+        <stop offset="22%" style="stop-color:#d09040;stop-opacity:0.35"/>
+        <stop offset="42%" style="stop-color:#e8b058;stop-opacity:0.55"/>
+        <stop offset="55%" style="stop-color:#f0c868;stop-opacity:0.65"/>
+        <stop offset="68%" style="stop-color:#e8b058;stop-opacity:0.55"/>
+        <stop offset="82%" style="stop-color:#c88838;stop-opacity:0.3"/>
+        <stop offset="94%" style="stop-color:#a06828;stop-opacity:0.1"/>
+        <stop offset="100%" style="stop-color:#804820;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Core heat — the white-hot filament at the centre -->
+      <linearGradient id="coreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#b08040;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#d0a050;stop-opacity:0.1"/>
+        <stop offset="45%" style="stop-color:#f0d080;stop-opacity:0.3"/>
+        <stop offset="55%" style="stop-color:#f8e0a0;stop-opacity:0.35"/>
+        <stop offset="80%" style="stop-color:#d0a050;stop-opacity:0.1"/>
+        <stop offset="100%" style="stop-color:#b08040;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Overdrive texture — slight roughness from tube saturation -->
+      <filter id="overdrive">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+
+      <filter id="ampGlow" x="-6%" y="-15%" width="112%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="heatHaze" x="-10%" y="-12%" width="120%" height="124%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+
+    <!-- === HEAT HAZE — the warmth radiating from the stroke === -->
+    <!-- Like heat shimmer off hot asphalt. The air around
+         the form is distorted by the volume. -->
+    <g filter="url(#heatHaze)" opacity="0.25">
+      <path d="M 25,210
+               C 80,208 130,178 185,168
+               C 240,158 290,170 340,185
+               C 370,194 400,205 420,210"
+        fill="none" stroke="url(#heatGrad)" stroke-width="18"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === THE STROKE — primary, with overdrive texture === -->
+    <g filter="url(#overdrive)">
+      <!-- Outer body — the full distorted tone -->
+      <g filter="url(#ampGlow)">
+        <path d="M 25,210
+                 C 80,208 130,178 185,168
+                 C 240,158 290,170 340,185
+                 C 370,194 400,205 420,210"
+          fill="none" stroke="url(#heatGrad)" stroke-width="8"
+          stroke-linecap="round"/>
+      </g>
+
+      <!-- Inner core — the white-hot centre of the tone -->
+      <g filter="url(#ampGlow)">
+        <path d="M 25,210
+                 C 80,208 130,178 185,168
+                 C 240,158 290,170 340,185
+                 C 370,194 400,205 420,210"
+          fill="none" stroke="url(#coreGrad)" stroke-width="2.5"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === SUSTAIN ZONE — where the riff HOLDS === -->
+    <!-- The thickest part of the stroke (centre)
+         has a visible sustain — the note rings.
+         A faint widening shows the sustain bloom. -->
+    <g filter="url(#heatHaze)" opacity="0.12">
+      <ellipse cx="235" cy="163" rx="55" ry="18"
+        fill="rgba(230,170,70,0.1)"/>
+    </g>
+
+
+    <!-- === ATTACK EDGE — where the riff HITS === -->
+    <!-- The left entry of the stroke is slightly 
+         brighter and sharper — the pick attack.
+         Soft rock has no attack (it enters gently).
+         Hard rock ENTERS. -->
+    <g filter="url(#ampGlow)" opacity="0.3">
+      <circle cx="75" cy="206" r="3.5" fill="rgba(235,180,80,0.15)"/>
+    </g>
+
+
+    <!-- === HARMONIC OVERTONES — ringing above the fundamental === -->
+    <!-- Thin ghost strokes above the main stroke.
+         The natural harmonics of a loud guitar. 
+         Not a separate voice (indie rock's two guitars) —
+         these are OVERTONES of the single source. -->
+    <g opacity="0.2">
+      <path d="M 80,195
+               C 125,190 165,168 210,160
+               C 255,152 295,160 340,172"
+        fill="none" stroke="rgba(220,165,70,0.08)" stroke-width="0.5"
+        stroke-linecap="round"/>
+    </g>
+    <g opacity="0.1">
+      <path d="M 110,185
+               C 150,178 185,162 225,155
+               C 265,148 300,154 335,164"
+        fill="none" stroke="rgba(215,160,65,0.06)" stroke-width="0.35"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === FEEDBACK RESONANCE — barely visible === -->
+    <!-- The faintest hint of feedback at the sustain point.
+         Not noise rock's chaotic feedback (explosion) —
+         this is CONTROLLED feedback, the note singing
+         back at the amp. Hendrix, Page. -->
+    <g opacity="0.03">
+      <circle cx="235" cy="163" r="28" fill="none"
+        stroke="rgba(225,170,72,0.15)" stroke-width="0.3"/>
+      <circle cx="235" cy="163" r="42" fill="none"
+        stroke="rgba(215,160,65,0.08)" stroke-width="0.2"/>
+    </g>
+
+
+    <!-- === BPM — driving, powerful, rock-solid 4/4 === -->
+    <!-- Heavier than soft rock, not as fast as thrash.
+         The GROOVE — headbang tempo. Bonham's kick drum. -->
+    <g stroke="rgba(205,145,58,0.03)" stroke-width="0.35">
+      <line x1="100" y1="345" x2="100" y2="353"/>
+      <line x1="122" y1="345" x2="122" y2="353"/>
+      <line x1="144" y1="345" x2="144" y2="353"/>
+      <line x1="166" y1="345" x2="166" y2="353"/>
+      <line x1="188" y1="345" x2="188" y2="353"/>
+      <line x1="210" y1="345" x2="210" y2="353"/>
+      <line x1="232" y1="345" x2="232" y2="353"/>
+      <line x1="254" y1="345" x2="254" y2="353"/>
+      <line x1="276" y1="345" x2="276" y2="353"/>
+      <line x1="298" y1="345" x2="298" y2="353"/>
+      <line x1="320" y1="345" x2="320" y2="353"/>
+      <line x1="342" y1="345" x2="342" y2="353"/>
+    </g>
+    <!-- HEAVY downbeats — Bonham's kick -->
+    <g stroke="rgba(220,160,68,0.055)" stroke-width="0.55">
+      <line x1="100" y1="343" x2="100" y2="355"/>
+      <line x1="166" y1="343" x2="166" y2="355"/>
+      <line x1="232" y1="343" x2="232" y2="355"/>
+      <line x1="298" y1="343" x2="298" y2="355"/>
+    </g>
+    <!-- Shuffle ghost note — the swing -->
+    <g stroke="rgba(195,135,52,0.02)" stroke-width="0.25">
+      <line x1="137" y1="346" x2="137" y2="352"/>
+      <line x1="203" y1="346" x2="203" y2="352"/>
+      <line x1="269" y1="346" x2="269" y2="352"/>
+      <line x1="335" y1="346" x2="335" y2="352"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Hard</span><br/>
+      <span class="line2">Rock</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

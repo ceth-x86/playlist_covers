@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classic Rock Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0a0806;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0e0c08;
+    overflow: hidden;
+  }
+
+  /* The warmest natural brown-black — the colour of
+     vinyl itself, of a well-worn album sleeve,
+     of the wood panelling in a 1972 recording studio.
+     Not the polished mahogany of symphonic prog 
+     (concert hall). Not the walnut of soft rock 
+     (living room). This is the STUDIO — analogue,
+     warm, real. The room where it all started. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(185, 150, 85, 0.045) 0%, transparent 48%),
+      radial-gradient(ellipse at 48% 48%, rgba(170, 135, 75, 0.028) 0%, transparent 38%),
+      linear-gradient(180deg, #110e0a 0%, #0e0c08 42%, #0a0806 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Warm, natural glow — like a single incandescent
+     bulb in a recording booth */
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(195, 158, 90, 0.045) 0%, rgba(170, 135, 75, 0.018) 42%, transparent 62%);
+    filter: blur(28px);
+    z-index: 2;
+  }
+
+  /* Grain — the vinyl press, the analogue tape.
+     More than soft rock (studio polish), less than
+     grunge (deliberate degradation). The natural
+     grain of 1970s recording. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — natural, unhurried */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 44%, transparent 36%, rgba(6,5,3,0.5) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(210, 172, 100, 0.78);
+  }
+
+  .genre-name .line2 {
+    color: rgba(175, 140, 80, 0.38);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(185, 148, 85, 0.14);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 100px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(185, 148, 85, 0.08);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE ROOT ARC — the trunk of the tree.
+       
+       Heavy metal's pentagonal shield is the ROOT
+       of all metal subgenres. Classic rock's arc is 
+       the ROOT of ALL rock — metal, punk, grunge,
+       indie, prog, soft, hard, arena, everything.
+       
+       The form must contain the DNA of every branch:
+       - Soft rock's gentleness (the curve)
+       - Hard rock's weight (the thickness)
+       - Punk's directness (the horizontal energy)
+       - Prog's aspiration (the slight upward arc)
+       - Arena's scale (the width across the frame)
+       
+       It's a BROAD, CONFIDENT ARC — thicker than 
+       soft rock but not as hot as hard rock. Warmer
+       than heavy metal but not as codified. Wider
+       than punk but not as radiating as arena rock.
+       
+       The ROOT FORM. Before specialization.
+       When "rock" was just "rock".
+       
+       Below: the RHYTHM SECTION — a bass line that's
+       its own voice (before prog made this complex,
+       before punk made it simple). And above: a hint
+       of lead guitar or keyboard — the improvisation
+       space (before prog made it epic, before punk 
+       removed it entirely).
+       
+       Rolling Stones "Exile on Main St.",
+       The Who "Who's Next", CCR, Hendrix,
+       The Doors, Lynyrd Skynyrd, Fleetwood Mac
+       (early), The Allman Brothers Band —
+       before the branches, the trunk. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="rootGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#785820;stop-opacity:0"/>
+        <stop offset="8%" style="stop-color:#987830;stop-opacity:0.12"/>
+        <stop offset="22%" style="stop-color:#b89840;stop-opacity:0.28"/>
+        <stop offset="45%" style="stop-color:#d0b050;stop-opacity:0.42"/>
+        <stop offset="58%" style="stop-color:#d8b858;stop-opacity:0.45"/>
+        <stop offset="78%" style="stop-color:#b89840;stop-opacity:0.28"/>
+        <stop offset="92%" style="stop-color:#987830;stop-opacity:0.1"/>
+        <stop offset="100%" style="stop-color:#785820;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="bassGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#604818;stop-opacity:0"/>
+        <stop offset="15%" style="stop-color:#806828;stop-opacity:0.08"/>
+        <stop offset="45%" style="stop-color:#a08838;stop-opacity:0.18"/>
+        <stop offset="60%" style="stop-color:#a89040;stop-opacity:0.2"/>
+        <stop offset="85%" style="stop-color:#806828;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#604818;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="leadGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#705020;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#907030;stop-opacity:0.05"/>
+        <stop offset="50%" style="stop-color:#b09040;stop-opacity:0.1"/>
+        <stop offset="80%" style="stop-color:#907030;stop-opacity:0.05"/>
+        <stop offset="100%" style="stop-color:#705020;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="analogueWarm" x="-5%" y="-10%" width="110%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="tapeHaze" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+      <!-- Minimal analogue warmth — not distortion,
+           just the natural softness of tape recording -->
+      <filter id="tapeWobble">
+        <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.2" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+
+
+    <!-- === TAPE WARMTH — the analogue haze === -->
+    <g filter="url(#tapeHaze)" opacity="0.2">
+      <path d="M 20,205
+               C 80,200 140,178 210,172
+               C 280,166 340,185 420,200"
+        fill="none" stroke="url(#rootGrad)" stroke-width="12"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === THE ROOT ARC — primary form === -->
+    <!-- Thicker than soft rock (3.5px vs 1.8px) but
+         not as thick as hard rock (8px). The MIDDLE
+         ground. Not demonstrating anything — just being. -->
+    <g filter="url(#tapeWobble)">
+      <g filter="url(#analogueWarm)">
+        <path d="M 20,205
+                 C 80,200 140,178 210,172
+                 C 280,166 340,185 420,200"
+          fill="none" stroke="url(#rootGrad)" stroke-width="3.5"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === BASS LINE — its own melody, underneath === -->
+    <!-- The rhythm section was already important in 
+         classic rock — Entwistle, John Paul Jones,
+         Berry Oakley. Not prog-complex, not punk-simple.
+         Just solid, melodic, independent. -->
+    <g filter="url(#tapeWobble)">
+      <g filter="url(#analogueWarm)" opacity="0.7">
+        <path d="M 30,242
+                 C 90,240 150,228 215,225
+                 C 280,222 340,232 415,238"
+          fill="none" stroke="url(#bassGrad)" stroke-width="1.8"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === LEAD SPACE — the improvisation zone above === -->
+    <!-- Lighter, freer, not quite structured. 
+         Where the solo happens. Where Hendrix plays.
+         Not as defined as prog (composed), not absent
+         like punk (refused). Just... space to play in. -->
+    <g filter="url(#tapeWobble)" opacity="0.4">
+      <path d="M 95,168
+               C 135,160 175,150 220,148
+               C 265,146 305,155 345,165"
+        fill="none" stroke="url(#leadGrad)" stroke-width="0.8"
+        stroke-linecap="round"/>
+    </g>
+    <!-- A second, fainter trace — the second take,
+         the variation, the moment of inspiration -->
+    <g filter="url(#tapeWobble)" opacity="0.2">
+      <path d="M 120,158
+               C 155,152 190,145 230,144
+               C 270,143 305,150 335,158"
+        fill="none" stroke="url(#leadGrad)" stroke-width="0.5"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === THE SPACE BETWEEN — rhythm section to melody === -->
+    <g opacity="0.005">
+      <path d="M 20,205
+               C 80,200 140,178 210,172
+               C 280,166 340,185 420,200
+               L 415,238
+               C 340,232 280,222 215,225
+               C 150,228 90,240 30,242
+               Z"
+        fill="rgba(195,160,90,1)"/>
+    </g>
+
+
+    <!-- === VINYL GROOVE — the record spinning === -->
+    <!-- A single faint arc above the form, like the 
+         groove of a vinyl record seen edge-on.
+         Classic rock IS vinyl. This is the only genre
+         where the MEDIUM is part of the identity. -->
+    <g opacity="0.015">
+      <circle cx="220" cy="195" r="125" fill="none"
+        stroke="rgba(185,148,85,0.2)" stroke-width="0.3"/>
+      <circle cx="220" cy="195" r="118" fill="none"
+        stroke="rgba(185,148,85,0.12)" stroke-width="0.2"/>
+    </g>
+
+
+    <!-- === BPM — moderate, with natural SWING === -->
+    <!-- The tempo that defines classic rock: mid-tempo,
+         with a groove. Not rigid (electronic), not 
+         frantic (punk), not ponderous (doom). 
+         Just... rocking. The natural human pulse. 
+         Charlie Watts, Keith Moon, John Bonham (early). -->
+    <g stroke="rgba(185,148,85,0.03)" stroke-width="0.35">
+      <line x1="105" y1="345" x2="105" y2="352"/>
+      <line x1="130" y1="345" x2="130" y2="352"/>
+      <line x1="156" y1="345" x2="156" y2="352"/><!-- slight push -->
+      <line x1="180" y1="345" x2="180" y2="352"/>
+      <line x1="205" y1="345" x2="205" y2="352"/>
+      <line x1="231" y1="345" x2="231" y2="352"/><!-- slight push -->
+      <line x1="255" y1="345" x2="255" y2="352"/>
+      <line x1="280" y1="345" x2="280" y2="352"/>
+      <line x1="306" y1="345" x2="306" y2="352"/><!-- slight push -->
+      <line x1="330" y1="345" x2="330" y2="352"/>
+    </g>
+    <!-- Natural downbeats -->
+    <g stroke="rgba(195,158,92,0.045)" stroke-width="0.45">
+      <line x1="105" y1="344" x2="105" y2="354"/>
+      <line x1="180" y1="344" x2="180" y2="354"/>
+      <line x1="255" y1="344" x2="255" y2="354"/>
+      <line x1="330" y1="344" x2="330" y2="354"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Classic</span><br/>
+      <span class="line2">Rock</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

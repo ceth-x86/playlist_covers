@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heavy Metal Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #070708;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0a0c;
+    overflow: hidden;
+  }
+
+  /* Pure black with blue-steel cold —
+     the original metal darkness, before it fractured
+     into subgenres. Not warm (no brown, no amber).
+     Not cosmic (no deep blue). Just iron. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 44%, rgba(130, 140, 165, 0.04) 0%, transparent 42%),
+      radial-gradient(ellipse at 50% 50%, rgba(100, 108, 130, 0.02) 0%, transparent 35%),
+      linear-gradient(180deg, #0c0c0f 0%, #0a0a0c 45%, #070708 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Steel glow — centred, solid, foundational */
+  .glow {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(150, 158, 185, 0.05) 0%, rgba(120, 128, 155, 0.02) 50%, transparent 65%);
+    filter: blur(25px);
+    z-index: 2;
+  }
+
+  /* Grain — series constant */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.24;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — classic, balanced */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at center, transparent 35%, rgba(4,4,6,0.6) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+
+  .genre-name .line1 {
+    color: rgba(195, 200, 220, 0.88);
+  }
+
+  .genre-name .line2 {
+    color: rgba(150, 155, 175, 0.4);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(160, 165, 185, 0.16);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 108px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(160, 165, 185, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: the ANVIL — a single monumental 
+       pentagonal shield, perfectly centred, perfectly symmetrical.
+       
+       This is the ROOT form. Every other metal subgenre
+       is a mutation of this:
+       - Thrash took the V (velocity)
+       - Doom took the horizontal mass (weight)
+       - Power took the upward rays (triumph)
+       - Prog took the spiral (complexity)
+       - Industrial took the grid (machinery)
+       
+       Heavy metal itself is NONE of those specialisations.
+       It is the complete, unbroken form before fragmentation.
+       A shield. An anvil. A coat of arms.
+       Symmetrical, because heavy metal believes in balance:
+       melody AND power, structure AND energy.
+       
+       The pentagon points downward — grounded, planted,
+       immovable. Not attacking (thrash), not ascending
+       (power), not pressing (doom). STANDING.
+       
+       Iron Maiden, Judas Priest, Black Sabbath, Dio,
+       Motörhead, Ozzy — the canon. The foundation
+       everything else was built on. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="steelGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+        <stop offset="0%" style="stop-color:#a0a8c0;stop-opacity:0.4"/>
+        <stop offset="30%" style="stop-color:#8890a8;stop-opacity:0.32"/>
+        <stop offset="60%" style="stop-color:#707898;stop-opacity:0.25"/>
+        <stop offset="100%" style="stop-color:#586080;stop-opacity:0.15"/>
+      </linearGradient>
+      <linearGradient id="steelEdge" x1="50%" y1="0%" x2="50%" y2="100%">
+        <stop offset="0%" style="stop-color:#b0b8d0;stop-opacity:0.5"/>
+        <stop offset="40%" style="stop-color:#9098b0;stop-opacity:0.35"/>
+        <stop offset="100%" style="stop-color:#687098;stop-opacity:0.2"/>
+      </linearGradient>
+      <linearGradient id="steelFaint" x1="50%" y1="0%" x2="50%" y2="100%">
+        <stop offset="0%" style="stop-color:#808898;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#505870;stop-opacity:0.03"/>
+      </linearGradient>
+
+      <filter id="forgeGlow" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="anvilGlow" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- === THE ANVIL — pentagonal shield === -->
+    <!-- Five vertices: top-left, top-right, mid-right,
+         bottom-apex, mid-left. Perfect bilateral symmetry. -->
+
+    <!-- Outer glow — the aura of the form -->
+    <g filter="url(#anvilGlow)" opacity="0.35">
+      <polygon points="
+        132,100
+        308,100
+        338,200
+        220,310
+        102,200
+      " fill="none" stroke="url(#steelGrad)" stroke-width="4" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Primary outline — the shield itself -->
+    <g filter="url(#forgeGlow)">
+      <polygon points="
+        132,100
+        308,100
+        338,200
+        220,310
+        102,200
+      " fill="none" stroke="url(#steelEdge)" stroke-width="1.8" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Inner structural lines — the heraldic divisions,
+         showing internal architecture -->
+    <!-- Vertical axis — the spine -->
+    <line x1="220" y1="100" x2="220" y2="310"
+      stroke="rgba(160,168,190,0.1)" stroke-width="0.6"/>
+
+    <!-- Horizontal bar — the cross-guard -->
+    <line x1="102" y1="200" x2="338" y2="200"
+      stroke="rgba(160,168,190,0.08)" stroke-width="0.5"/>
+
+    <!-- Diagonal braces — structural integrity -->
+    <g stroke="rgba(145,152,175,0.05)" stroke-width="0.4">
+      <line x1="132" y1="100" x2="220" y2="200"/>
+      <line x1="308" y1="100" x2="220" y2="200"/>
+      <line x1="220" y1="200" x2="220" y2="310"/>
+    </g>
+
+    <!-- === INNER SHIELD — smaller concentric pentagon === -->
+    <g opacity="0.4">
+      <polygon points="
+        165,130
+        275,130
+        298,200
+        220,275
+        142,200
+      " fill="url(#steelFaint)" stroke="rgba(150,158,180,0.06)" stroke-width="0.4" stroke-linejoin="round"/>
+    </g>
+
+    <!-- === CENTRE POINT — the origin === -->
+    <!-- This single point is where all metal begins.
+         The heaviest symbolic weight in the entire series. -->
+    <g filter="url(#forgeGlow)">
+      <circle cx="220" cy="195" r="3.5" fill="rgba(180,188,215,0.2)"/>
+    </g>
+    <circle cx="220" cy="195" r="1.5" fill="rgba(200,208,235,0.15)"/>
+
+    <!-- === VERTEX NODES — the five corners, forged bright === -->
+    <g filter="url(#forgeGlow)" opacity="0.6">
+      <circle cx="132" cy="100" r="2" fill="rgba(175,182,210,0.2)"/>
+      <circle cx="308" cy="100" r="2" fill="rgba(175,182,210,0.2)"/>
+      <circle cx="338" cy="200" r="2" fill="rgba(170,178,205,0.18)"/>
+      <circle cx="102" cy="200" r="2" fill="rgba(170,178,205,0.18)"/>
+      <circle cx="220" cy="310" r="2.5" fill="rgba(165,172,200,0.22)"/>
+    </g>
+
+    <!-- === RESONANCE — faint outer echo of the shape,
+         showing influence/radiation === -->
+    <g opacity="0.08">
+      <polygon points="
+        120,85
+        320,85
+        354,200
+        220,325
+        86,200
+      " fill="none" stroke="rgba(150,158,180,0.15)" stroke-width="0.3" stroke-linejoin="round" stroke-dasharray="4,8"/>
+    </g>
+
+    <!-- === BPM — moderate, driving, the original gallop === -->
+    <!-- Not thrash-fast (31 ticks), not doom-slow (4 ticks).
+         Heavy metal is 12-16 ticks: mid-tempo, propulsive. -->
+    <g stroke="rgba(155,162,185,0.04)" stroke-width="0.4">
+      <line x1="108" y1="365" x2="108" y2="372"/>
+      <line x1="126" y1="365" x2="126" y2="372"/>
+      <line x1="144" y1="365" x2="144" y2="372"/>
+      <line x1="162" y1="365" x2="162" y2="372"/>
+      <line x1="180" y1="365" x2="180" y2="372"/>
+      <line x1="198" y1="365" x2="198" y2="372"/>
+      <line x1="216" y1="365" x2="216" y2="372"/>
+      <line x1="234" y1="365" x2="234" y2="372"/>
+      <line x1="252" y1="365" x2="252" y2="372"/>
+      <line x1="270" y1="365" x2="270" y2="372"/>
+      <line x1="288" y1="365" x2="288" y2="372"/>
+      <line x1="306" y1="365" x2="306" y2="372"/>
+      <line x1="324" y1="365" x2="324" y2="372"/>
+      <line x1="342" y1="365" x2="342" y2="372"/>
+    </g>
+    <!-- Downbeat emphasis — every 4th, classic 4/4 -->
+    <g stroke="rgba(165,172,195,0.06)" stroke-width="0.5">
+      <line x1="108" y1="364" x2="108" y2="374"/>
+      <line x1="162" y1="364" x2="162" y2="374"/>
+      <line x1="216" y1="364" x2="216" y2="374"/>
+      <line x1="270" y1="364" x2="270" y2="374"/>
+      <line x1="324" y1="364" x2="324" y2="374"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Heavy</span><br/>
+      <span class="line2">Metal</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

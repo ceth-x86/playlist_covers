@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soft Rock Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0a0806;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0e0c08;
+    overflow: hidden;
+  }
+
+  /* The warmest, most hospitable black in the series.
+     Not the tar-black of sludge (toxic warmth),
+     not the amber-black of grunge (damaged warmth).
+     This is the brown-black of polished walnut,
+     of a dimly-lit living room with a record playing.
+     Welcoming. Safe. The only background in the series
+     that feels like INDOORS. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(180, 145, 80, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 48% 50%, rgba(160, 125, 65, 0.03) 0%, transparent 40%),
+      linear-gradient(178deg, #100e0a 0%, #0e0c08 40%, #0a0806 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Warm, wide glow — the broadest and softest in the series.
+     Where all other glows are concentrated, this one fills
+     the space. Soft rock fills the room. */
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(195, 160, 85, 0.045) 0%, rgba(165, 130, 65, 0.02) 45%, transparent 70%);
+    filter: blur(40px);
+    z-index: 2;
+  }
+
+  /* Grain — series constant, but the LOWEST opacity
+     in the entire series. Soft rock is clean, warm,
+     studio-polished. No lo-fi, no xerox, no grit. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.14;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — the gentlest in the series.
+     Barely there. The room has no dark corners. */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at center, transparent 48%, rgba(6,5,3,0.38) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 34px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(210, 175, 100, 0.72);
+  }
+
+  .genre-name .line2 {
+    color: rgba(175, 142, 78, 0.35);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(185, 150, 82, 0.14);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 102px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(185, 150, 82, 0.08);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: ONE GENTLE ARC.
+       
+       The polar opposite of mathcore's angular chaos.
+       The polar opposite of hardcore's compressed burst.
+       The polar opposite of punk's aggressive bar.
+       
+       One long, shallow Bézier curve crossing the frame
+       from left to right. Not a dramatic parabola 
+       (that would be too dynamic). Not a straight line
+       (that would be too rigid). A gentle rise and fall,
+       like a hill seen from a car window. Like a melody
+       you hum without thinking about it.
+       
+       The amplitude is small — maybe 40px from centre 
+       to peak. There's nothing extreme here. The curve
+       doesn't demand attention; it offers comfort.
+       
+       Below: a second arc, barely visible, a third lower
+       than the earth — root notes, bass, the harmonic
+       foundation so stable you forget it's there.
+       
+       Fleetwood Mac "Rumours", Eagles "Hotel California",
+       Bread, America, Carole King "Tapestry",
+       James Taylor — the sound of a perfectly crafted
+       song that sounds effortless. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#886828;stop-opacity:0"/>
+        <stop offset="12%" style="stop-color:#a88038;stop-opacity:0.12"/>
+        <stop offset="30%" style="stop-color:#c89848;stop-opacity:0.3"/>
+        <stop offset="50%" style="stop-color:#d8a858;stop-opacity:0.42"/>
+        <stop offset="70%" style="stop-color:#c89848;stop-opacity:0.3"/>
+        <stop offset="88%" style="stop-color:#a88038;stop-opacity:0.12"/>
+        <stop offset="100%" style="stop-color:#886828;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="arcGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#705820;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#907030;stop-opacity:0.06"/>
+        <stop offset="50%" style="stop-color:#a08038;stop-opacity:0.12"/>
+        <stop offset="80%" style="stop-color:#907030;stop-opacity:0.06"/>
+        <stop offset="100%" style="stop-color:#705820;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="arcGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#584818;stop-opacity:0"/>
+        <stop offset="25%" style="stop-color:#786028;stop-opacity:0.03"/>
+        <stop offset="50%" style="stop-color:#886830;stop-opacity:0.06"/>
+        <stop offset="75%" style="stop-color:#786028;stop-opacity:0.03"/>
+        <stop offset="100%" style="stop-color:#584818;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="warmBlur" x="-5%" y="-15%" width="110%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="deepBlur">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+    </defs>
+
+    <!-- === THE ARC — one gentle curve === -->
+
+    <!-- Warm aura — the broadest glow around the curve -->
+    <g filter="url(#deepBlur)" opacity="0.35">
+      <path d="M 15,215
+               C 80,215 140,178 220,175
+               C 300,172 360,208 425,215"
+        fill="none" stroke="url(#arcGrad)" stroke-width="8"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Primary arc — the melody -->
+    <g filter="url(#warmBlur)">
+      <path d="M 15,215
+               C 80,215 140,178 220,175
+               C 300,172 360,208 425,215"
+        fill="none" stroke="url(#arcGrad)" stroke-width="1.8"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Second arc — the harmony, slightly lower -->
+    <g filter="url(#warmBlur)" opacity="0.6">
+      <path d="M 15,232
+               C 85,232 145,202 220,200
+               C 295,198 360,225 425,232"
+        fill="none" stroke="url(#arcGrad2)" stroke-width="1.0"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Third arc — the bass, deeper, barely there -->
+    <g filter="url(#deepBlur)" opacity="0.4">
+      <path d="M 15,260
+               C 90,260 155,242 220,240
+               C 285,238 355,255 425,260"
+        fill="none" stroke="url(#arcGrad3)" stroke-width="0.7"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === THE SPACE BETWEEN === -->
+    <!-- Faint fill between melody and harmony arcs.
+         The warmth of the chord voicing — open, airy. -->
+    <g opacity="0.008">
+      <path d="M 15,215
+               C 80,215 140,178 220,175
+               C 300,172 360,208 425,215
+               L 425,232
+               C 360,225 295,198 220,200
+               C 145,202 85,232 15,232
+               Z"
+        fill="rgba(210,170,90,1)"/>
+    </g>
+
+    <!-- Fill between harmony and bass — deeper, warmer -->
+    <g opacity="0.005">
+      <path d="M 15,232
+               C 85,232 145,202 220,200
+               C 295,198 360,225 425,232
+               L 425,260
+               C 355,255 285,238 220,240
+               C 155,242 90,260 15,260
+               Z"
+        fill="rgba(190,150,75,1)"/>
+    </g>
+
+
+    <!-- === APEX — the highest point of the melody.
+         Not a dramatic peak. Just the gentlest crest.
+         A single warm node, barely brighter. === -->
+    <g filter="url(#warmBlur)" opacity="0.5">
+      <circle cx="220" cy="175" r="3.5" fill="rgba(215,178,95,0.12)"/>
+    </g>
+
+
+    <!-- === BPM — moderate, perfectly steady, the most
+         regular pulse in the entire series === -->
+    <!-- Where every other genre's BPM has SOME variation
+         (accents, gaps, clusters, syncopation),
+         soft rock's is absolutely even. Metronomic.
+         Not fast, not slow. Just steady. -->
+    <g stroke="rgba(185,150,82,0.03)" stroke-width="0.35">
+      <line x1="115" y1="345" x2="115" y2="352"/>
+      <line x1="140" y1="345" x2="140" y2="352"/>
+      <line x1="165" y1="345" x2="165" y2="352"/>
+      <line x1="190" y1="345" x2="190" y2="352"/>
+      <line x1="215" y1="345" x2="215" y2="352"/>
+      <line x1="240" y1="345" x2="240" y2="352"/>
+      <line x1="265" y1="345" x2="265" y2="352"/>
+      <line x1="290" y1="345" x2="290" y2="352"/>
+      <line x1="315" y1="345" x2="315" y2="352"/>
+      <line x1="340" y1="345" x2="340" y2="352"/>
+    </g>
+    <!-- Every 4th — but so gentle the accent barely registers -->
+    <g stroke="rgba(195,158,88,0.04)" stroke-width="0.4">
+      <line x1="115" y1="344" x2="115" y2="353"/>
+      <line x1="190" y1="344" x2="190" y2="353"/>
+      <line x1="265" y1="344" x2="265" y2="353"/>
+      <line x1="340" y1="344" x2="340" y2="353"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Soft</span><br/>
+      <span class="line2">Rock</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

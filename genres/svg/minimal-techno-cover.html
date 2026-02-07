@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minimal Techno Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #090909;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0a0a;
+    overflow: hidden;
+  }
+
+  /* Almost invisible gradient — barely-there depth */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(255, 255, 255, 0.012) 0%, transparent 40%),
+      linear-gradient(180deg, #0b0b0b 0%, #0a0a0a 100%);
+    z-index: 1;
+  }
+
+  /* Central SVG */
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 400px;
+    height: 400px;
+  }
+
+  /* Minimal grain — very subtle */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Very gentle vignette */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.4) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 38px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .genre-name .line2 {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.15);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 108px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <!-- Central form: single concentric ring system — 
+       the irreducible pulse, a kick drum visualized as geometry.
+       Maximum restraint. Nothing extra. -->
+  <svg class="central-form" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="ringGlow" cx="50%" cy="47%" r="25%">
+        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.03"/>
+        <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/>
+      </radialGradient>
+
+      <filter id="subtleBlur" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- Ambient glow — barely perceptible -->
+    <circle cx="200" cy="188" r="90" fill="url(#ringGlow)"/>
+
+    <!-- Outermost ring — ghost -->
+    <circle cx="200" cy="188" r="120" 
+      fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="0.5"/>
+
+    <!-- Third ring -->
+    <circle cx="200" cy="188" r="95" 
+      fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+
+    <!-- Second ring — slightly more visible -->
+    <circle cx="200" cy="188" r="70" 
+      fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="0.6"/>
+
+    <!-- Primary ring — the one element that matters -->
+    <g filter="url(#subtleBlur)">
+      <circle cx="200" cy="188" r="44" 
+        fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    </g>
+
+    <!-- Inner ring -->
+    <circle cx="200" cy="188" r="20" 
+      fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="0.5"/>
+
+    <!-- Center dot — the kick -->
+    <circle cx="200" cy="188" r="2" fill="rgba(255,255,255,0.35)"/>
+
+    <!-- Single horizontal line through center — timeline -->
+    <line x1="80" y1="188" x2="320" y2="188" 
+      stroke="rgba(255,255,255,0.03)" stroke-width="0.4"/>
+
+    <!-- Tick marks on the timeline — metronomic -->
+    <g stroke="rgba(255,255,255,0.05)" stroke-width="0.4">
+      <line x1="110" y1="184" x2="110" y2="192"/>
+      <line x1="140" y1="185" x2="140" y2="191"/>
+      <line x1="170" y1="184" x2="170" y2="192"/>
+      <line x1="230" y1="184" x2="230" y2="192"/>
+      <line x1="260" y1="185" x2="260" y2="191"/>
+      <line x1="290" y1="184" x2="290" y2="192"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Minimal</span><br/>
+      <span class="line2">Techno</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

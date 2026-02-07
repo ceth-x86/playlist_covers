@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hyperpop Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0c0810;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0e0a12;
+    overflow: hidden;
+  }
+
+  /* The BRIGHTEST, most SATURATED background in the series.
+     Not one colour — THREE fighting for dominance.
+     Pink, cyan, yellow — all radioactive, all clipping.
+     The background itself is overdriven. 
+     PC Music / 100 gecs / SOPHIE "Oil of Every Pearl's 
+     Un-Insides" — beauty and ugliness at max volume. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 35% 35%, rgba(255, 50, 150, 0.08) 0%, transparent 40%),
+      radial-gradient(ellipse at 65% 55%, rgba(0, 230, 255, 0.06) 0%, transparent 35%),
+      radial-gradient(ellipse at 50% 65%, rgba(255, 240, 0, 0.05) 0%, transparent 32%),
+      radial-gradient(ellipse at 50% 45%, rgba(200, 100, 255, 0.04) 0%, transparent 30%),
+      linear-gradient(170deg, #120e18 0%, #0e0a12 35%, #0a080e 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* TRIPLE glow — three colours fighting.
+     Strongest glow in the series by far. */
+  .glow1 {
+    position: absolute;
+    top: 30%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(255, 50, 150, 0.09) 0%, transparent 60%);
+    filter: blur(25px);
+    z-index: 2;
+  }
+  .glow2 {
+    position: absolute;
+    top: 45%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(0, 220, 255, 0.07) 0%, transparent 55%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+  .glow3 {
+    position: absolute;
+    top: 55%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 130px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(255, 230, 0, 0.055) 0%, transparent 55%);
+    filter: blur(20px);
+    z-index: 2;
+  }
+
+  /* Grain — moderate, digital compression artifacts */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.28;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — present but fighting with the brightness -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 44%, transparent 30%, rgba(8,5,10,0.52) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — BRIGHTEST text in the series */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 44px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.05;
+    color: rgba(255, 120, 200, 0.92);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(0, 210, 240, 0.2);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 105px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(255, 200, 50, 0.12);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow1"></div>
+  <div class="glow2"></div>
+  <div class="glow3"></div>
+
+  <!-- Central form: POP ARC, CLIPPING.
+       
+       Soft rock: one gentle arc (comfort).
+       Avant pop: arc refracted into prismatic fragments
+         (strange beauty).
+       Hyperpop: arc OVERDRIVEN until it CLIPS — the
+         waveform hits the ceiling and FLATTENS, distorts,
+         spawns artifacts.
+       
+       The original pop melody is still recognizable 
+       underneath, but it's been:
+       - Pitch-shifted UP (the arc is higher/compressed)
+       - Compressed until it clips (flat-top distortion)
+       - Layered with CONFLICTING colours (not prismatic
+         separation like avant pop — simultaneous CLASH)
+       - Surrounded by digital artifacts (not spectral
+         dust — GLITCH debris)
+       
+       100 gecs, SOPHIE, Charli XCX "how i'm feeling now",
+       A.G. Cook, Danny L Harle, Food House —
+       bubblegum in a blender. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="clipDistort">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="hyperGlow" x="-10%" y="-15%" width="120%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="smearGlow" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+
+      <!-- Clipping mask — the ceiling where the
+           waveform distorts -->
+      <clipPath id="clipCeiling">
+        <rect x="0" y="138" width="440" height="300"/>
+      </clipPath>
+    </defs>
+
+
+    <!-- === THE CLIPPING ARC — pop melody overdriven === -->
+
+    <!-- SMEAR — the distortion halo, three colours bleeding -->
+    <g filter="url(#smearGlow)" opacity="0.25">
+      <!-- Pink channel -->
+      <path d="M 30,230
+               C 80,225 130,160 180,130
+               C 230,100 280,95 320,115
+               C 360,135 390,180 420,210"
+        fill="none" stroke="rgba(255,60,160,0.3)" stroke-width="8"
+        stroke-linecap="round" transform="translate(-2,-1)"/>
+      <!-- Cyan channel — slightly offset (chromatic aberration) -->
+      <path d="M 30,230
+               C 80,225 130,160 180,130
+               C 230,100 280,95 320,115
+               C 360,135 390,180 420,210"
+        fill="none" stroke="rgba(0,220,255,0.25)" stroke-width="7"
+        stroke-linecap="round" transform="translate(3,2)"/>
+      <!-- Yellow channel — offset opposite direction -->
+      <path d="M 30,230
+               C 80,225 130,160 180,130
+               C 230,100 280,95 320,115
+               C 360,135 390,180 420,210"
+        fill="none" stroke="rgba(255,230,0,0.2)" stroke-width="6"
+        stroke-linecap="round" transform="translate(0,3)"/>
+    </g>
+
+    <!-- THE CLIPPING ZONE — where the waveform hits the ceiling
+         and goes FLAT. The apex doesn't curve — it CRUSHES
+         against a horizontal limit. -->
+    <g filter="url(#clipDistort)">
+      <!-- Pink layer — primary -->
+      <g filter="url(#hyperGlow)">
+        <path d="M 30,228
+                 C 70,224 110,185 145,158
+                 C 165,143 185,138 205,138
+                 L 265,138
+                 C 285,138 305,145 325,158
+                 C 360,180 390,210 420,218"
+          fill="none" stroke="rgba(255,70,170,0.55)" stroke-width="2.2"
+          stroke-linecap="round"/>
+      </g>
+
+      <!-- Cyan layer — offset, fighting -->
+      <g filter="url(#hyperGlow)">
+        <path d="M 32,232
+                 C 72,226 112,188 148,162
+                 C 168,147 188,142 208,142
+                 L 262,142
+                 C 282,142 302,148 322,162
+                 C 358,184 388,214 418,222"
+          fill="none" stroke="rgba(0,210,250,0.4)" stroke-width="1.6"
+          stroke-linecap="round"/>
+      </g>
+
+      <!-- Yellow layer — another offset, more fighting -->
+      <g filter="url(#hyperGlow)">
+        <path d="M 28,226
+                 C 68,220 108,182 142,155
+                 C 162,140 182,135 202,135
+                 L 268,135
+                 C 288,135 308,142 328,155
+                 C 362,178 392,208 422,215"
+          fill="none" stroke="rgba(255,225,0,0.3)" stroke-width="1.3"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === CLIPPING CEILING — the hard limit === -->
+    <!-- A faint horizontal line showing WHERE the 
+         waveform flattened. The limiter threshold. -->
+    <line x1="140" y1="138" x2="310" y2="138"
+      stroke="rgba(255,255,255,0.04)" stroke-width="0.4"
+      stroke-dasharray="3,5"/>
+
+    <!-- Clip indicator -->
+    <g fill="rgba(255,80,80,0.04)" font-family="'DM Mono', monospace" font-size="4">
+      <text x="315" y="136">CLIP</text>
+    </g>
+
+
+    <!-- === DIGITAL ARTIFACTS — glitch debris === -->
+    <!-- Not spectral dust (avant pop's delicate motes).
+         Not impact debris (hardcore's fragments).
+         These are DIGITAL ERRORS — rectangular pixels,
+         colour-shifted blocks, compression artifacts.
+         The DAW screaming. -->
+
+    <!-- Pixel blocks — rectangular, sharp-edged -->
+    <g opacity="0.12">
+      <rect x="155" y="125" width="6" height="3" fill="rgba(255,70,170,0.5)" transform="rotate(5,158,126)"/>
+      <rect x="248" y="128" width="4" height="5" fill="rgba(0,210,250,0.4)" transform="rotate(-8,250,130)"/>
+      <rect x="195" y="118" width="8" height="2" fill="rgba(255,225,0,0.4)" transform="rotate(12,199,119)"/>
+      <rect x="280" y="120" width="3" height="6" fill="rgba(255,70,170,0.35)" transform="rotate(-3,281,123)"/>
+      <rect x="170" y="132" width="5" height="3" fill="rgba(0,210,250,0.3)"/>
+      <rect x="230" y="115" width="7" height="2" fill="rgba(255,225,0,0.35)" transform="rotate(8,233,116)"/>
+    </g>
+
+    <!-- Scattered hot pixels — the most intense points -->
+    <g opacity="0.2">
+      <rect x="182" y="135" width="2" height="2" fill="rgba(255,255,255,0.5)"/>
+      <rect x="242" y="133" width="2" height="2" fill="rgba(255,255,255,0.45)"/>
+      <rect x="215" y="130" width="2" height="2" fill="rgba(255,255,255,0.4)"/>
+    </g>
+
+    <!-- Vertical glitch lines — brief scan errors -->
+    <g stroke="rgba(255,120,200,0.04)" stroke-width="0.4">
+      <line x1="178" y1="120" x2="178" y2="150"/>
+      <line x1="256" y1="118" x2="256" y2="148"/>
+    </g>
+    <g stroke="rgba(0,220,255,0.03)" stroke-width="0.3">
+      <line x1="210" y1="115" x2="210" y2="152"/>
+    </g>
+
+
+    <!-- === GHOST ARC — the pop melody that was === -->
+    <!-- Buried deep underneath, the original pop curve
+         that got overdriven. You can barely see it. -->
+    <path d="M 30,230
+             C 90,230 155,175 220,165
+             C 285,155 350,200 420,215"
+      fill="none" stroke="rgba(255,255,255,0.012)" stroke-width="0.5"
+      stroke-dasharray="2,8" stroke-linecap="round"/>
+
+
+    <!-- === BPM — fast, MAX density, but with STUTTERS === -->
+    <!-- The fastest BPM in the series — but some ticks
+         are DOUBLED (stutter edits) and some are MISSING
+         (the beat dropping out). -->
+    <g stroke="rgba(255,120,200,0.035)" stroke-width="0.35">
+      <!-- Dense burst -->
+      <line x1="85" y1="360" x2="85" y2="367"/>
+      <line x1="93" y1="360" x2="93" y2="367"/>
+      <line x1="101" y1="360" x2="101" y2="367"/>
+      <line x1="109" y1="360" x2="109" y2="367"/>
+      <!-- Stutter — double hit -->
+      <line x1="117" y1="360" x2="117" y2="367"/>
+      <line x1="120" y1="360" x2="120" y2="367"/>
+      <!-- Continue -->
+      <line x1="128" y1="360" x2="128" y2="367"/>
+      <line x1="136" y1="360" x2="136" y2="367"/>
+      <!-- DROP — gap where beat disappears -->
+      <!-- ... silence ... -->
+      <!-- Restart, faster -->
+      <line x1="168" y1="360" x2="168" y2="367"/>
+      <line x1="175" y1="360" x2="175" y2="367"/>
+      <line x1="182" y1="360" x2="182" y2="367"/>
+      <line x1="189" y1="360" x2="189" y2="367"/>
+      <line x1="196" y1="360" x2="196" y2="367"/>
+      <!-- Triple stutter -->
+      <line x1="203" y1="360" x2="203" y2="367"/>
+      <line x1="206" y1="360" x2="206" y2="367"/>
+      <line x1="209" y1="360" x2="209" y2="367"/>
+      <!-- Continue -->
+      <line x1="217" y1="360" x2="217" y2="367"/>
+      <line x1="224" y1="360" x2="224" y2="367"/>
+      <line x1="231" y1="360" x2="231" y2="367"/>
+      <!-- DROP 2 -->
+      <!-- ... -->
+      <!-- Final burst -->
+      <line x1="260" y1="360" x2="260" y2="367"/>
+      <line x1="267" y1="360" x2="267" y2="367"/>
+      <line x1="274" y1="360" x2="274" y2="367"/>
+      <line x1="281" y1="360" x2="281" y2="367"/>
+      <line x1="288" y1="360" x2="288" y2="367"/>
+      <line x1="295" y1="360" x2="295" y2="367"/>
+      <!-- Double stutter finish -->
+      <line x1="302" y1="360" x2="302" y2="367"/>
+      <line x1="305" y1="360" x2="305" y2="367"/>
+      <line x1="312" y1="360" x2="312" y2="367"/>
+      <line x1="319" y1="360" x2="319" y2="367"/>
+      <line x1="326" y1="360" x2="326" y2="367"/>
+      <line x1="333" y1="360" x2="333" y2="367"/>
+      <line x1="340" y1="360" x2="340" y2="367"/>
+      <line x1="347" y1="360" x2="347" y2="367"/>
+      <line x1="354" y1="360" x2="354" y2="367"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Hyperpop</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

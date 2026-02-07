@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sludge Metal Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #070604;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0906;
+    overflow: hidden;
+  }
+
+  /* Tar and swamp — the sickest background in the series.
+     Not clean black. DIRTY black. Oil slick. Bayou at midnight. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 48% 50%, rgba(90, 80, 20, 0.04) 0%, transparent 42%),
+      radial-gradient(ellipse at 55% 58%, rgba(70, 55, 15, 0.03) 0%, transparent 35%),
+      linear-gradient(182deg, #0c0b08 0%, #0a0906 40%, #070604 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Sick glow — low, wide, nauseous -->
+  .glow {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(110, 95, 20, 0.04) 0%, rgba(80, 65, 12, 0.015) 55%, transparent 70%);
+    filter: blur(30px);
+    z-index: 2;
+  }
+
+  /* Tar texture — unique to sludge, heavy low-frequency muck */
+  .tar {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    opacity: 0.03;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='tar'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.008' numOctaves='3' stitchTiles='stitch'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='discrete' tableValues='0 0.15'/%3E%3CfeFuncG type='discrete' tableValues='0 0.12'/%3E%3CfeFuncB type='discrete' tableValues='0 0.03'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23tar)'/%3E%3C/svg%3E");
+    background-size: 600px 600px;
+  }
+
+  /* Grain — series constant, extra heavy for sludge */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.32;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — heavy, oppressive */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 46%, transparent 25%, rgba(4,3,2,0.68) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 42px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+
+  .genre-name .line1 {
+    color: rgba(170, 150, 50, 0.75);
+  }
+
+  .genre-name .line2 {
+    color: rgba(130, 115, 35, 0.35);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(145, 128, 40, 0.15);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 108px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(145, 128, 40, 0.08);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: the SAGGING MASS — doom's monolith,
+       but melted, corroded, dripping downward.
+       
+       Doom's slab is ancient stone — eroded but solid,
+       holding its shape. It has geological dignity.
+       
+       Sludge's form has LOST structural integrity.
+       The same mass is present, but it's softening,
+       sagging under its own weight, dripping toxic
+       residue from its underside. The edges are not
+       just eroded — they're dissolving.
+       
+       Where doom is a sarcophagus, sludge is a
+       chemical spill. Where doom is cold stone,
+       sludge is hot tar.
+       
+       Eyehategod, Crowbar, Acid Bath, Melvins,
+       Grief, Iron Monkey — the sound of 
+       doom metal left in the Louisiana sun
+       until it melts and poisons the groundwater. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="sludgeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#7a6a18;stop-opacity:0.12"/>
+        <stop offset="25%" style="stop-color:#988020;stop-opacity:0.22"/>
+        <stop offset="50%" style="stop-color:#a89028;stop-opacity:0.3"/>
+        <stop offset="75%" style="stop-color:#8a7820;stop-opacity:0.25"/>
+        <stop offset="100%" style="stop-color:#6a5a12;stop-opacity:0.18"/>
+      </linearGradient>
+      <linearGradient id="dripGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+        <stop offset="0%" style="stop-color:#8a7820;stop-opacity:0.2"/>
+        <stop offset="40%" style="stop-color:#706010;stop-opacity:0.12"/>
+        <stop offset="100%" style="stop-color:#504008;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="sludgeFaint" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#5a4e10;stop-opacity:0.06"/>
+        <stop offset="50%" style="stop-color:#6a5c15;stop-opacity:0.1"/>
+        <stop offset="100%" style="stop-color:#4a4008;stop-opacity:0.04"/>
+      </linearGradient>
+
+      <filter id="melt">
+        <feTurbulence type="turbulence" baseFrequency="0.015" numOctaves="4" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="heavyMelt">
+        <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="5" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="sludgeGlow" x="-6%" y="-6%" width="112%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="dripBlur">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
+      </filter>
+    </defs>
+
+    <!-- === THE SAGGING MASS === -->
+    <!-- Main body — same general position as doom's monolith
+         (upper-center) but the bottom edge curves DOWNWARD
+         instead of remaining straight. Heavily distorted. -->
+    <g filter="url(#heavyMelt)">
+      <path d="M 75,115
+               L 365,115
+               L 368,140
+               L 370,170
+               Q 360,195 340,210
+               Q 310,230 280,240
+               Q 250,248 220,252
+               Q 190,248 160,240
+               Q 130,230 100,210
+               Q 80,195 70,170
+               L 72,140
+               Z"
+        fill="url(#sludgeGrad)" filter="url(#sludgeGlow)"/>
+    </g>
+
+    <!-- Internal striations — like doom, but warped -->
+    <g filter="url(#melt)" opacity="0.4">
+      <line x1="85" y1="135" x2="355" y2="135"
+        stroke="rgba(140,120,30,0.1)" stroke-width="0.6"/>
+      <line x1="82" y1="155" x2="358" y2="155"
+        stroke="rgba(135,115,28,0.12)" stroke-width="0.7"/>
+      <line x1="85" y1="175" x2="355" y2="175"
+        stroke="rgba(130,112,25,0.1)" stroke-width="0.6"/>
+    </g>
+
+    <!-- Top edge — crumbling, not as defined as doom -->
+    <g filter="url(#heavyMelt)">
+      <rect x="78" y="108" width="284" height="5" rx="1"
+        fill="rgba(120,105,25,0.1)"/>
+    </g>
+
+
+    <!-- === THE DRIPS — toxic runoff from the underside === -->
+    <!-- This is what separates sludge from doom:
+         doom holds its shape. Sludge LEAKS. -->
+
+    <g filter="url(#melt)">
+      <!-- Drip 1 — longest, centre -->
+      <path d="M 218,252 Q 216,270 220,295 Q 222,315 218,340 Q 216,352 219,360"
+        fill="none" stroke="url(#dripGrad)" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- Drip 2 — left of centre -->
+      <path d="M 172,242 Q 170,258 174,278 Q 176,295 172,310"
+        fill="none" stroke="url(#dripGrad)" stroke-width="2.5" stroke-linecap="round"/>
+
+      <!-- Drip 3 — right of centre -->
+      <path d="M 268,244 Q 270,262 266,285 Q 264,302 268,322"
+        fill="none" stroke="url(#dripGrad)" stroke-width="2.2" stroke-linecap="round"/>
+
+      <!-- Drip 4 — far left, thin -->
+      <path d="M 128,225 Q 126,240 130,258 Q 132,272 128,282"
+        fill="none" stroke="url(#dripGrad)" stroke-width="1.5" stroke-linecap="round"/>
+
+      <!-- Drip 5 — far right, thin -->
+      <path d="M 312,228 Q 314,244 310,262 Q 308,278 312,290"
+        fill="none" stroke="url(#dripGrad)" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- Drip terminations — pooling/accumulating at bottom -->
+    <g filter="url(#dripBlur)" opacity="0.08">
+      <ellipse cx="219" cy="362" rx="6" ry="3" fill="rgba(140,120,25,1)"/>
+      <ellipse cx="172" cy="312" rx="4" ry="2" fill="rgba(130,112,22,1)"/>
+      <ellipse cx="268" cy="324" rx="5" ry="2.5" fill="rgba(130,112,22,1)"/>
+    </g>
+
+
+    <!-- === TOXIC RESIDUE — pooling beneath the form === -->
+    <g filter="url(#dripBlur)" opacity="0.03">
+      <ellipse cx="220" cy="385" rx="120" ry="12"
+        fill="rgba(150,130,30,1)"/>
+    </g>
+
+    <!-- === CORROSION MARKS — on the surface of the mass === -->
+    <g opacity="0.06">
+      <circle cx="150" cy="148" r="5" fill="rgba(90,78,15,0.3)" filter="url(#melt)"/>
+      <circle cx="280" cy="155" r="7" fill="rgba(85,72,12,0.25)" filter="url(#melt)"/>
+      <circle cx="200" cy="168" r="4" fill="rgba(95,82,18,0.2)" filter="url(#melt)"/>
+      <circle cx="250" cy="140" r="6" fill="rgba(88,75,14,0.2)" filter="url(#melt)"/>
+    </g>
+
+
+    <!-- === BPM — doom-slow but UNEVEN, lurching === -->
+    <!-- Doom's 4 ticks are perfectly spaced.
+         Sludge's are irregular — the drummer is sick. -->
+    <g stroke="rgba(140,122,30,0.04)" stroke-width="0.4">
+      <line x1="115" y1="405" x2="115" y2="412"/>
+      <line x1="192" y1="405" x2="192" y2="412"/>
+      <line x1="255" y1="405" x2="255" y2="412"/>
+      <line x1="345" y1="405" x2="345" y2="412"/>
+    </g>
+    <!-- Uneven gaps labelled -->
+    <g fill="rgba(130,112,25,0.02)" font-family="'DM Mono', monospace" font-size="4">
+      <text x="153" y="420" text-anchor="middle">···</text>
+      <text x="223" y="420" text-anchor="middle">··</text>
+      <text x="300" y="420" text-anchor="middle">····</text>
+    </g>
+  </svg>
+
+  <div class="tar"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Sludge</span><br/>
+      <span class="line2">Metal</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

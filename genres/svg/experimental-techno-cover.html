@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experimental Techno Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #08070c;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a090e;
+    overflow: hidden;
+  }
+
+  /* Cold grey-violet, antiseptic */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 38% 42%, rgba(120, 110, 150, 0.03) 0%, transparent 40%),
+      radial-gradient(ellipse at 62% 58%, rgba(100, 90, 130, 0.02) 0%, transparent 30%),
+      linear-gradient(168deg, #0c0b12 0%, #0a090e 50%, #08070a 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* No warm glow — cold, clinical light leak */
+  .glow {
+    position: absolute;
+    top: 40%;
+    left: 44%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 100px;
+    border-radius: 40% 60% 50% 50%;
+    background: radial-gradient(ellipse, rgba(140, 130, 170, 0.04) 0%, transparent 65%);
+    filter: blur(25px);
+    z-index: 2;
+  }
+
+  /* Glitch bands — horizontal displacement artifacts */
+  .glitch-bands {
+    position: absolute;
+    z-index: 4;
+    pointer-events: none;
+    opacity: 0.04;
+  }
+
+  .glitch-band1 {
+    top: 28%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: rgba(160, 150, 190, 0.5);
+    transform: translateX(12px);
+  }
+
+  .glitch-band2 {
+    top: 47%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(160, 150, 190, 0.4);
+    transform: translateX(-8px);
+  }
+
+  .glitch-band3 {
+    top: 63%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(160, 150, 190, 0.3);
+    transform: translateX(20px);
+  }
+
+  /* Grain — series constant */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.25;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — asymmetric, off-center */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 45% 46%, transparent 35%, rgba(0,0,0,0.6) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .genre-name .line1 {
+    color: rgba(175, 165, 200, 0.78);
+  }
+
+  .genre-name .line2 {
+    color: rgba(135, 125, 160, 0.38);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(145, 135, 170, 0.15);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 100px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(145, 135, 170, 0.08);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+  <div class="glitch-bands glitch-band1"></div>
+  <div class="glitch-bands glitch-band2"></div>
+  <div class="glitch-bands glitch-band3"></div>
+
+  <!-- Central form: fragmented, asymmetric, rule-breaking.
+       
+       Where every other techno variant follows a visible logic
+       (circles, squares, pistons, spirals, waves), experimental
+       techno REFUSES pattern. The form starts as recognizable 
+       geometry — then interrupts itself, displaces, glitches.
+       
+       Elements are deliberately mis-aligned, incomplete,
+       rotated at irrational angles. Some shapes are clipped
+       mid-stroke. Others overlap in ways that shouldn't work.
+       
+       This is Emptyset, Objekt, Lee Gamble, Arca's club work,
+       Raster-Noton's grid — systems that malfunction beautifully. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="coldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#7a70a0;stop-opacity:0.06"/>
+        <stop offset="50%" style="stop-color:#a098c0;stop-opacity:0.22"/>
+        <stop offset="100%" style="stop-color:#7a70a0;stop-opacity:0.06"/>
+      </linearGradient>
+      <linearGradient id="coldGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#6a6090;stop-opacity:0.04"/>
+        <stop offset="50%" style="stop-color:#9088b0;stop-opacity:0.14"/>
+        <stop offset="100%" style="stop-color:#6a6090;stop-opacity:0.04"/>
+      </linearGradient>
+      <linearGradient id="coldFaint" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#5a5280;stop-opacity:0.02"/>
+        <stop offset="50%" style="stop-color:#8078a0;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#5a5280;stop-opacity:0.02"/>
+      </linearGradient>
+
+      <filter id="microGlitch">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="coldGlow" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+
+      <!-- Clip paths — to interrupt shapes mid-stroke -->
+      <clipPath id="clip1">
+        <rect x="0" y="0" width="440" height="185"/>
+      </clipPath>
+      <clipPath id="clip2">
+        <rect x="0" y="200" width="440" height="240"/>
+      </clipPath>
+      <clipPath id="clip3">
+        <rect x="140" y="0" width="300" height="440"/>
+      </clipPath>
+      <clipPath id="clip4">
+        <rect x="0" y="0" width="260" height="440"/>
+      </clipPath>
+    </defs>
+
+    <!-- === FRAGMENT A: circle that's been cut and displaced === -->
+    <!-- Top half — shifted left -->
+    <g clip-path="url(#clip1)" transform="translate(-8, 0)">
+      <circle cx="215" cy="190" r="85" fill="none" stroke="url(#coldGrad)" stroke-width="0.8"/>
+    </g>
+    <!-- Bottom half — shifted right (the halves don't align) -->
+    <g clip-path="url(#clip2)" transform="translate(14, 3)">
+      <circle cx="215" cy="190" r="85" fill="none" stroke="url(#coldGrad)" stroke-width="0.8"/>
+    </g>
+
+    <!-- === FRAGMENT B: rectangle, rotated at irrational angle, clipped === -->
+    <g clip-path="url(#clip3)" filter="url(#microGlitch)" opacity="0.6">
+      <rect x="155" y="130" width="120" height="120"
+        fill="none" stroke="url(#coldGrad2)" stroke-width="0.6"
+        transform="rotate(7.3, 215, 190)"/>
+    </g>
+
+    <!-- === FRAGMENT C: a second rectangle, different angle, only left portion visible === -->
+    <g clip-path="url(#clip4)" opacity="0.35">
+      <rect x="148" y="138" width="130" height="108"
+        fill="none" stroke="url(#coldFaint)" stroke-width="0.5"
+        transform="rotate(-11.7, 213, 192)"/>
+    </g>
+
+    <!-- === FRAGMENT D: line segments that should form a grid but don't === -->
+    <g filter="url(#coldGlow)" opacity="0.5">
+      <!-- Horizontal lines — varying lengths, not aligned -->
+      <line x1="125" y1="155" x2="218" y2="155" stroke="url(#coldGrad)" stroke-width="0.5"/>
+      <line x1="232" y1="158" x2="310" y2="158" stroke="url(#coldGrad)" stroke-width="0.4"/>
+      <!-- Gap — the line is broken -->
+      <line x1="140" y1="225" x2="195" y2="225" stroke="url(#coldGrad)" stroke-width="0.5"/>
+      <line x1="210" y1="223" x2="298" y2="223" stroke="url(#coldGrad)" stroke-width="0.4"/>
+
+      <!-- Vertical lines — also interrupted, offset -->
+      <line x1="175" y1="118" x2="175" y2="182" stroke="url(#coldGrad2)" stroke-width="0.4"/>
+      <line x1="177" y1="198" x2="177" y2="268" stroke="url(#coldGrad2)" stroke-width="0.4"/>
+      <line x1="255" y1="125" x2="255" y2="188" stroke="url(#coldGrad2)" stroke-width="0.4"/>
+      <line x1="252" y1="200" x2="252" y2="272" stroke="url(#coldGrad2)" stroke-width="0.5"/>
+    </g>
+
+    <!-- === FRAGMENT E: diagonal slash — alien element, doesn't belong === -->
+    <g filter="url(#coldGlow)" opacity="0.3">
+      <line x1="118" y1="280" x2="320" y2="108"
+        stroke="rgba(160,150,195,0.2)" stroke-width="0.4"
+        stroke-dasharray="40,15,8,15"/>
+    </g>
+
+    <!-- === FRAGMENT F: tiny data cluster — like corrupted output === -->
+    <g transform="translate(285, 140) rotate(3.5)" opacity="0.25">
+      <rect x="0" y="0" width="3" height="3" fill="rgba(150,140,180,0.3)"/>
+      <rect x="5" y="0" width="3" height="3" fill="rgba(150,140,180,0.2)"/>
+      <rect x="10" y="0" width="3" height="3" fill="rgba(150,140,180,0.35)"/>
+      <rect x="0" y="5" width="3" height="3" fill="rgba(150,140,180,0.15)"/>
+      <rect x="5" y="5" width="3" height="3" fill="rgba(150,140,180,0.4)"/>
+      <rect x="10" y="5" width="3" height="3" fill="rgba(150,140,180,0.1)"/>
+      <rect x="0" y="10" width="3" height="3" fill="rgba(150,140,180,0.25)"/>
+      <rect x="5" y="10" width="3" height="3" fill="rgba(150,140,180,0.1)"/>
+      <rect x="10" y="10" width="3" height="3" fill="rgba(150,140,180,0.3)"/>
+    </g>
+
+    <!-- Second data cluster — different position, rotated differently -->
+    <g transform="translate(128, 258) rotate(-5.2)" opacity="0.18">
+      <rect x="0" y="0" width="2.5" height="2.5" fill="rgba(150,140,180,0.25)"/>
+      <rect x="4" y="0" width="2.5" height="2.5" fill="rgba(150,140,180,0.35)"/>
+      <rect x="0" y="4" width="2.5" height="2.5" fill="rgba(150,140,180,0.4)"/>
+      <rect x="4" y="4" width="2.5" height="2.5" fill="rgba(150,140,180,0.15)"/>
+      <rect x="8" y="2" width="2.5" height="2.5" fill="rgba(150,140,180,0.2)"/>
+    </g>
+
+    <!-- === FRAGMENT G: arc that starts precise and dissolves === -->
+    <g filter="url(#microGlitch)" opacity="0.2">
+      <path d="M 160,160 A 70,70 0 0,1 270,160" fill="none"
+        stroke="rgba(140,130,175,0.3)" stroke-width="0.5"
+        stroke-dasharray="3,2,8,2,15,4,2,8"/>
+    </g>
+
+    <!-- Misaligned center markers — 
+         two crosshairs that don't agree on where center is -->
+    <g opacity="0.08">
+      <!-- Crosshair A -->
+      <line x1="210" y1="183" x2="210" y2="197" stroke="rgba(160,150,195,1)" stroke-width="0.3"/>
+      <line x1="203" y1="190" x2="217" y2="190" stroke="rgba(160,150,195,1)" stroke-width="0.3"/>
+    </g>
+    <g opacity="0.06">
+      <!-- Crosshair B — offset, disagreeing -->
+      <line x1="222" y1="186" x2="222" y2="200" stroke="rgba(160,150,195,1)" stroke-width="0.3"/>
+      <line x1="215" y1="193" x2="229" y2="193" stroke="rgba(160,150,195,1)" stroke-width="0.3"/>
+    </g>
+
+    <!-- Error coordinates — tiny monospace numbers, barely visible -->
+    <g fill="rgba(140,130,175,0.05)" font-family="'DM Mono', monospace" font-size="5.5">
+      <text x="308" y="112">ERR</text>
+      <text x="118" y="282">0x7F</text>
+      <text x="320" y="265">NaN</text>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Experimental</span><br/>
+      <span class="line2">Techno</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

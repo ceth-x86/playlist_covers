@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classic Synthpop Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0a0a12;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0c0a1a;
+    overflow: hidden;
+  }
+
+  /* Warm midnight blue with subtle magenta shift */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 40% 55%, rgba(0, 180, 220, 0.07) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 45%, rgba(230, 60, 150, 0.06) 0%, transparent 45%),
+      linear-gradient(170deg, #0e0b1e 0%, #110d22 40%, #0a0816 100%);
+    z-index: 1;
+  }
+
+  /* Perspective grid floor — classic 80s */
+  .grid-floor {
+    position: absolute;
+    bottom: 0;
+    left: -50%;
+    width: 200%;
+    height: 55%;
+    z-index: 2;
+    opacity: 0.12;
+    overflow: hidden;
+  }
+
+  /* Central SVG form */
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 420px;
+    height: 420px;
+  }
+
+  /* Warm glow bloom */
+  .glow {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 260px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(0, 210, 230, 0.12) 0%, rgba(230, 60, 180, 0.06) 50%, transparent 70%);
+    filter: blur(35px);
+    z-index: 2;
+  }
+
+  /* Horizon line glow */
+  .horizon-glow {
+    position: absolute;
+    top: 52%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 5%, rgba(0, 220, 240, 0.15) 30%, rgba(230, 80, 180, 0.12) 70%, transparent 95%);
+    z-index: 4;
+    filter: blur(1px);
+  }
+
+  /* Subtle scanlines — lighter than dark synthpop */
+  .scanlines {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    opacity: 0.035;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(100, 220, 255, 0.3) 3px,
+      rgba(100, 220, 255, 0.3) 4px
+    );
+  }
+
+  /* Grain overlay */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.28;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.55) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 38px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.15;
+    z-index: 10;
+  }
+
+  .genre-name .line1 {
+    color: #67e8f9;
+  }
+
+  .genre-name .line2 {
+    color: rgba(103, 232, 249, 0.5);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(103, 232, 249, 0.3);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 108px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(103, 232, 249, 0.18);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Perspective grid floor -->
+  <svg class="grid-floor" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="gridFade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" style="stop-color:#67e8f9;stop-opacity:0.6"/>
+        <stop offset="100%" style="stop-color:#67e8f9;stop-opacity:0"/>
+      </linearGradient>
+    </defs>
+    <!-- Horizontal perspective lines -->
+    <g stroke="url(#gridFade)" stroke-width="0.6">
+      <line x1="0" y1="0" x2="1200" y2="0"/>
+      <line x1="0" y1="30" x2="1200" y2="30"/>
+      <line x1="0" y1="65" x2="1200" y2="65"/>
+      <line x1="0" y1="105" x2="1200" y2="105"/>
+      <line x1="0" y1="155" x2="1200" y2="155"/>
+      <line x1="0" y1="215" x2="1200" y2="215"/>
+      <line x1="0" y1="290" x2="1200" y2="290"/>
+      <line x1="0" y1="380" x2="1200" y2="380"/>
+    </g>
+    <!-- Vertical converging lines -->
+    <g stroke="url(#gridFade)" stroke-width="0.5">
+      <line x1="600" y1="0" x2="0" y2="400"/>
+      <line x1="600" y1="0" x2="100" y2="400"/>
+      <line x1="600" y1="0" x2="200" y2="400"/>
+      <line x1="600" y1="0" x2="300" y2="400"/>
+      <line x1="600" y1="0" x2="400" y2="400"/>
+      <line x1="600" y1="0" x2="500" y2="400"/>
+      <line x1="600" y1="0" x2="600" y2="400"/>
+      <line x1="600" y1="0" x2="700" y2="400"/>
+      <line x1="600" y1="0" x2="800" y2="400"/>
+      <line x1="600" y1="0" x2="900" y2="400"/>
+      <line x1="600" y1="0" x2="1000" y2="400"/>
+      <line x1="600" y1="0" x2="1100" y2="400"/>
+      <line x1="600" y1="0" x2="1200" y2="400"/>
+    </g>
+  </svg>
+
+  <!-- Central form: smooth, elegant sine wave — clean electronic beauty, not jagged -->
+  <svg class="central-form" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="waveCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#0891b2;stop-opacity:0.05"/>
+        <stop offset="20%" style="stop-color:#22d3ee;stop-opacity:0.6"/>
+        <stop offset="50%" style="stop-color:#67e8f9;stop-opacity:0.9"/>
+        <stop offset="80%" style="stop-color:#22d3ee;stop-opacity:0.6"/>
+        <stop offset="100%" style="stop-color:#0891b2;stop-opacity:0.05"/>
+      </linearGradient>
+      <linearGradient id="wavePink" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#9d174d;stop-opacity:0.03"/>
+        <stop offset="25%" style="stop-color:#ec4899;stop-opacity:0.3"/>
+        <stop offset="50%" style="stop-color:#f472b6;stop-opacity:0.45"/>
+        <stop offset="75%" style="stop-color:#ec4899;stop-opacity:0.3"/>
+        <stop offset="100%" style="stop-color:#9d174d;stop-opacity:0.03"/>
+      </linearGradient>
+      <linearGradient id="waveGhost" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#155e75;stop-opacity:0.02"/>
+        <stop offset="30%" style="stop-color:#06b6d4;stop-opacity:0.15"/>
+        <stop offset="50%" style="stop-color:#22d3ee;stop-opacity:0.2"/>
+        <stop offset="70%" style="stop-color:#06b6d4;stop-opacity:0.15"/>
+        <stop offset="100%" style="stop-color:#155e75;stop-opacity:0.02"/>
+      </linearGradient>
+
+      <filter id="neonCyan" x="-15%" y="-30%" width="130%" height="160%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="softCyan" x="-15%" y="-30%" width="130%" height="160%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- Faint geometric circle — like a chrome ring -->
+    <circle cx="210" cy="200" r="100" fill="none" stroke="rgba(103,232,249,0.04)" stroke-width="0.8"/>
+    <circle cx="210" cy="200" r="130" fill="none" stroke="rgba(103,232,249,0.025)" stroke-width="0.5"/>
+
+    <!-- Ghost wave — outermost -->
+    <g filter="url(#softCyan)">
+      <path d="M 40,205
+               C 70,205 80,155 110,155
+               C 140,155 140,245 170,245
+               C 200,245 200,155 230,155
+               C 260,155 260,245 290,245
+               C 320,245 320,155 350,155
+               C 370,155 378,205 390,205"
+        fill="none" stroke="url(#waveGhost)" stroke-width="1" stroke-linecap="round"/>
+    </g>
+
+    <!-- Pink wave — offset, slightly behind -->
+    <g filter="url(#softCyan)">
+      <path d="M 55,200
+               C 82,200 88,162 115,162
+               C 142,162 142,238 170,238
+               C 198,238 198,162 226,162
+               C 254,162 254,238 282,238
+               C 310,238 310,162 338,162
+               C 355,162 362,200 375,200"
+        fill="none" stroke="url(#wavePink)" stroke-width="1.2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Primary cyan sine wave — smooth, clean, elegant -->
+    <g filter="url(#neonCyan)">
+      <path d="M 50,200
+               C 78,200 85,158 115,158
+               C 145,158 145,242 175,242
+               C 205,242 205,158 235,158
+               C 265,158 265,242 295,242
+               C 325,242 325,158 355,158
+               C 372,158 380,200 395,200"
+        fill="none" stroke="url(#waveCyan)" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Peak highlight dots -->
+    <circle cx="115" cy="158" r="2" fill="#67e8f9" opacity="0.5" filter="url(#neonCyan)"/>
+    <circle cx="175" cy="242" r="2" fill="#67e8f9" opacity="0.5" filter="url(#neonCyan)"/>
+    <circle cx="235" cy="158" r="2" fill="#67e8f9" opacity="0.6" filter="url(#neonCyan)"/>
+    <circle cx="295" cy="242" r="2" fill="#67e8f9" opacity="0.5" filter="url(#neonCyan)"/>
+    <circle cx="355" cy="158" r="2" fill="#67e8f9" opacity="0.5" filter="url(#neonCyan)"/>
+
+    <!-- Faint mirror reflection below -->
+    <g opacity="0.05" transform="translate(0, 75) scale(1, -0.25)">
+      <path d="M 50,200 C 78,200 85,158 115,158 C 145,158 145,242 175,242 C 205,242 205,158 235,158 C 265,158 265,242 295,242 C 325,242 325,158 355,158 C 372,158 380,200 395,200"
+        fill="none" stroke="#67e8f9" stroke-width="1.5" stroke-linecap="round" transform="translate(0,460)"/>
+    </g>
+  </svg>
+
+  <div class="horizon-glow"></div>
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Classic</span><br/>
+      <span class="line2">Synthpop</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

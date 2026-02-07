@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ambient IDM Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #06070c;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #090a12;
+    overflow: hidden;
+  }
+
+  /* Deep blue-black with warmth seeping through —
+     not the cold void of dark ambient (absence),
+     not the clean charcoal of classic IDM (neutral).
+     This is the colour of a VHS tape left in sunlight —
+     the blue is damaged, warm tones bleed through.
+     Music Has the Right to Children cover palette. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 48% 44%, rgba(160, 120, 140, 0.04) 0%, transparent 45%),
+      radial-gradient(ellipse at 54% 52%, rgba(130, 100, 130, 0.025) 0%, transparent 38%),
+      radial-gradient(ellipse at 40% 56%, rgba(140, 110, 100, 0.02) 0%, transparent 35%),
+      linear-gradient(175deg, #0b0c16 0%, #090a12 42%, #06070c 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Warm diffuse glow — broader and softer than classic IDM -->
+  .glow {
+    position: absolute;
+    top: 42%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(170, 130, 150, 0.04) 0%, rgba(140, 105, 125, 0.015) 50%, transparent 68%);
+    filter: blur(35px);
+    z-index: 2;
+  }
+
+  /* Tape decay texture — unique to ambient IDM,
+     the lo-fi warmth of degraded media */
+  .tape {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    opacity: 0.018;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='tp'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.006' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.2 0 0 0 0 0 0.15 0 0 0 0 0 0.12 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23tp)'/%3E%3C/svg%3E");
+    background-size: 600px 600px;
+  }
+
+  /* Grain — series constant */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.24;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — soft, enveloping, not oppressive */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 48% 44%, transparent 42%, rgba(4,5,9,0.5) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .genre-name .line1 {
+    color: rgba(200, 165, 180, 0.72);
+  }
+
+  .genre-name .line2 {
+    color: rgba(165, 135, 150, 0.35);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(175, 145, 158, 0.14);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 100px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(175, 145, 158, 0.08);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: the classic IDM grid DISSOLVED.
+       
+       Classic IDM has a 6×6 dot grid with subtle anomalies —
+       precision with glitches, the uncanny valley of pattern.
+       
+       Ambient IDM takes that same grid and DEFOCUSES it.
+       The dots become halos. The connections become gradients.
+       The anomalies become the most beautiful parts.
+       The precision softens into warmth.
+       
+       Where classic IDM's dots are r=1.8 and sharp,
+       ambient IDM's are r=8-15 and heavily blurred.
+       They OVERLAP, creating interference patterns
+       where halos meet — the sonic equivalent of
+       reverb tails merging.
+       
+       Not all dots survive the dissolution — some
+       have faded entirely, leaving only the faintest
+       trace. Others have grown, absorbing their neighbours.
+       
+       Boards of Canada "Music Has the Right to Children",
+       Aphex Twin "Selected Ambient Works Vol II",
+       Tycho "Dive", Bibio, Casino Versus Japan —
+       the moment a glitch becomes a lullaby. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="halo1">
+        <stop offset="0%" style="stop-color:#c098a8;stop-opacity:0.12"/>
+        <stop offset="40%" style="stop-color:#a88090;stop-opacity:0.06"/>
+        <stop offset="100%" style="stop-color:#886878;stop-opacity:0"/>
+      </radialGradient>
+      <radialGradient id="halo2">
+        <stop offset="0%" style="stop-color:#b090a0;stop-opacity:0.09"/>
+        <stop offset="45%" style="stop-color:#987888;stop-opacity:0.04"/>
+        <stop offset="100%" style="stop-color:#806068;stop-opacity:0"/>
+      </radialGradient>
+      <radialGradient id="halo3">
+        <stop offset="0%" style="stop-color:#a88898;stop-opacity:0.06"/>
+        <stop offset="50%" style="stop-color:#907078;stop-opacity:0.025"/>
+        <stop offset="100%" style="stop-color:#785860;stop-opacity:0"/>
+      </radialGradient>
+      <radialGradient id="haloWarm">
+        <stop offset="0%" style="stop-color:#c8a088;stop-opacity:0.08"/>
+        <stop offset="40%" style="stop-color:#b08870;stop-opacity:0.04"/>
+        <stop offset="100%" style="stop-color:#907060;stop-opacity:0"/>
+      </radialGradient>
+
+      <filter id="dissolve1">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+      </filter>
+      <filter id="dissolve2">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+      </filter>
+      <filter id="dissolve3">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="15"/>
+      </filter>
+      <filter id="gentleGlow" x="-15%" y="-15%" width="130%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- ============================================== -->
+    <!-- === THE DISSOLVED GRID — halos, not dots === -->
+    <!-- ============================================== -->
+    <!-- Same approximate positions as classic IDM's 6×6
+         but transformed: dots → halos, some merged,
+         some faded, some grown. -->
+
+    <!-- Large halos — the dots that grew and softened.
+         These are the sustained pads, the reverb tails. -->
+    <g filter="url(#dissolve2)">
+      <!-- Row 1-2 merger — top left cluster blends together -->
+      <circle cx="125" cy="118" r="18" fill="url(#halo1)"/>
+      <circle cx="168" cy="125" r="14" fill="url(#halo2)"/>
+
+      <!-- The central presence — where row 2-3 overlap.
+           The warmest point, the melodic centre. -->
+      <circle cx="215" cy="165" r="22" fill="url(#haloWarm)"/>
+
+      <!-- Row 3-4, right side — second warm cluster -->
+      <circle cx="305" cy="205" r="16" fill="url(#halo1)"/>
+
+      <!-- Row 5 — a low, wide halo, the bass note -->
+      <circle cx="195" cy="278" r="20" fill="url(#halo2)"/>
+    </g>
+
+    <!-- Medium halos — still recognizable as former grid points -->
+    <g filter="url(#dissolve1)">
+      <circle cx="258" cy="115" r="10" fill="url(#halo2)"/>
+      <circle cx="345" cy="118" r="9" fill="url(#halo3)"/>
+      <circle cx="300" cy="155" r="11" fill="url(#halo2)"/>
+      <circle cx="125" cy="198" r="10" fill="url(#halo3)"/>
+      <circle cx="170" cy="238" r="12" fill="url(#halo2)"/>
+      <circle cx="260" cy="242" r="10" fill="url(#halo3)"/>
+      <circle cx="340" cy="245" r="9" fill="url(#halo3)"/>
+      <circle cx="120" cy="280" r="8" fill="url(#halo3)"/>
+      <circle cx="280" cy="285" r="11" fill="url(#halo2)"/>
+      <circle cx="345" cy="282" r="8" fill="url(#halo3)"/>
+      <circle cx="128" cy="322" r="10" fill="url(#halo2)"/>
+      <circle cx="255" cy="318" r="9" fill="url(#halo3)"/>
+    </g>
+
+    <!-- Fading traces — the dots that almost disappeared.
+         Ghost notes, the memory of a beat. -->
+    <g filter="url(#dissolve3)">
+      <circle cx="165" cy="155" r="6" fill="url(#halo3)"/>
+      <circle cx="340" cy="195" r="5" fill="url(#halo3)"/>
+      <circle cx="210" cy="320" r="7" fill="url(#halo3)"/>
+      <circle cx="345" cy="320" r="5" fill="url(#halo3)"/>
+    </g>
+
+
+    <!-- === VESTIGIAL CONNECTIONS — the grid lines,
+         now barely-there gradients between halos === -->
+    <g stroke="rgba(175,145,160,0.02)" stroke-width="0.4" fill="none"
+       filter="url(#gentleGlow)">
+      <!-- Horizontal traces — barely perceptible -->
+      <line x1="125" y1="118" x2="168" y2="125"/>
+      <line x1="168" y1="125" x2="258" y2="115"/>
+      <line x1="170" y1="238" x2="260" y2="242"/>
+
+      <!-- Vertical traces -->
+      <line x1="125" y1="118" x2="125" y2="198"/>
+      <line x1="305" y1="205" x2="280" y2="285"/>
+
+      <!-- Diagonal — the anomalous connection from classic IDM,
+           now the warmest, most visible trace -->
+      <line x1="215" y1="165" x2="195" y2="278"
+        stroke="rgba(190,150,140,0.03)" stroke-width="0.6"/>
+    </g>
+
+
+    <!-- === THE ABSENT DOT'S ECHO — same position as 
+         classic IDM's missing dot (255,152) === -->
+    <!-- In classic IDM, it was marked by a dashed ring.
+         Here, the absence has become a PRESENCE — 
+         a faint warm glow where nothing should be.
+         The ghost became the most beautiful thing. -->
+    <g filter="url(#dissolve2)">
+      <circle cx="255" cy="155" r="12" fill="url(#haloWarm)" opacity="0.5"/>
+    </g>
+
+
+    <!-- === INTERFERENCE ZONES — where halos overlap === -->
+    <!-- These bright spots between halos are the 
+         emergent harmonics — overtones created by
+         the merging of reverb tails. Not designed,
+         discovered. -->
+    <g filter="url(#dissolve1)" opacity="0.5">
+      <circle cx="170" cy="142" r="5"
+        fill="rgba(190,155,165,0.06)"/><!-- between row 1 and central halo -->
+      <circle cx="248" cy="178" r="4"
+        fill="rgba(185,150,140,0.05)"/><!-- between central and right -->
+      <circle cx="185" cy="258" r="4"
+        fill="rgba(180,148,158,0.04)"/><!-- between central-low and bass -->
+    </g>
+
+
+    <!-- === SEQUENCE TRACE — bottom, showing rhythm 
+         dissolving into texture === -->
+    <!-- Where classic IDM's waveform had clustered bursts,
+         ambient IDM's has the same clusters but blurred
+         into continuous undulation. -->
+    <g filter="url(#gentleGlow)">
+      <path d="M 95,375
+               C 115,375 125,372 135,370
+               C 145,368 155,373 165,375
+               C 185,377 195,375 205,372
+               C 215,369 220,366 230,368
+               C 240,370 250,374 260,375
+               C 280,376 290,375 300,373
+               C 310,371 315,368 325,370
+               C 335,372 345,374 355,375"
+        fill="none" stroke="rgba(175,142,158,0.04)" stroke-width="0.8"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- === ROW ANNOTATIONS — matching classic IDM 
+         but degraded, partially illegible === -->
+    <g fill="rgba(160,132,148,0.018)" font-family="'DM Mono', monospace" font-size="4.5">
+      <text x="375" y="120">n</text>
+      <text x="375" y="160">n+■</text><!-- corrupted -->
+      <text x="375" y="200">···</text><!-- lost -->
+      <text x="375" y="242">n+2</text>
+      <text x="375" y="284">n+■</text>
+      <text x="375" y="322">n+∞</text><!-- dissolved into infinity -->
+    </g>
+  </svg>
+
+  <div class="tape"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Ambient</span><br/>
+      <span class="line2">IDM</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

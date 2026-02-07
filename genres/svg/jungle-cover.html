@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jungle Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #060804;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #080a06;
+    overflow: hidden;
+  }
+
+  /* Deep jungle dark — black with buried green-gold warmth,
+     pirate radio at 3am, a basement in Hackney 1994 */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 48% 45%, rgba(100, 120, 30, 0.04) 0%, transparent 45%),
+      radial-gradient(ellipse at 55% 55%, rgba(140, 110, 20, 0.025) 0%, transparent 35%),
+      linear-gradient(174deg, #0a0c06 0%, #080a06 45%, #060804 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Dual glow — green canopy + gold bassweight -->
+  .glow1 {
+    position: absolute;
+    top: 38%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(90, 110, 25, 0.04) 0%, rgba(70, 90, 15, 0.015) 50%, transparent 65%);
+    filter: blur(30px);
+    z-index: 2;
+  }
+
+  .glow2 {
+    position: absolute;
+    top: 60%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(150, 120, 25, 0.03) 0%, transparent 60%);
+    filter: blur(25px);
+    z-index: 2;
+  }
+
+  /* Grain — series constant */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.28;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at center, transparent 35%, rgba(4,5,3,0.6) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 56px;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    color: rgba(170, 180, 60, 0.82);
+    line-height: 1;
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(150, 160, 45, 0.18);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 108px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(150, 160, 45, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow1"></div>
+  <div class="glow2"></div>
+
+  <!-- Central form: chopped breakbeat fragments — the Amen break
+       sliced, rearranged, scattered across the field at
+       impossible angles and timings.
+       
+       Unlike ANY other genre in this series, jungle's rhythm
+       is NOT on a grid. The fragments are:
+       - Different lengths (16th notes, triplets, ghost notes)
+       - Different angles (each chop has its own orientation)
+       - Different weights (some hits loud, some barely there)
+       - Clustered in some areas, sparse in others
+       
+       Below the breakbeat chaos: a single deep, slow,
+       unwavering sub-bass presence — the half-time bassline
+       that anchors everything at 80 BPM while the breaks
+       fly at 160+.
+       
+       This is Goldie's Timeless, LTJ Bukem, Remarc,
+       Congo Natty, Shy FX — the sound of a drum solo 
+       put through a sampler and reassembled wrong, 
+       perfectly. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="breakGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#6a7218;stop-opacity:0.15"/>
+        <stop offset="50%" style="stop-color:#a0aa30;stop-opacity:0.55"/>
+        <stop offset="100%" style="stop-color:#6a7218;stop-opacity:0.15"/>
+      </linearGradient>
+      <linearGradient id="breakGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#585e12;stop-opacity:0.1"/>
+        <stop offset="50%" style="stop-color:#8a9028;stop-opacity:0.35"/>
+        <stop offset="100%" style="stop-color:#585e12;stop-opacity:0.1"/>
+      </linearGradient>
+      <linearGradient id="subGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#7a6015;stop-opacity:0"/>
+        <stop offset="15%" style="stop-color:#a08020;stop-opacity:0.12"/>
+        <stop offset="50%" style="stop-color:#b89028;stop-opacity:0.2"/>
+        <stop offset="85%" style="stop-color:#a08020;stop-opacity:0.12"/>
+        <stop offset="100%" style="stop-color:#7a6015;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="breakHit" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.8" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="subPulse" x="-10%" y="-20%" width="120%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- =========================================== -->
+    <!-- === THE BREAKS — chopped, scattered, wild === -->
+    <!-- =========================================== -->
+    <!-- Each rectangle = one breakbeat hit/slice.
+         Length = duration. Thickness = volume.
+         Angle = syncopation offset.
+         NO TWO are parallel. This is the anti-grid. -->
+
+    <g filter="url(#breakHit)">
+      <!-- Cluster 1 — dense, upper left (a rush of hits) -->
+      <rect x="85" y="118" width="38" height="5" rx="1" fill="url(#breakGrad)"
+        transform="rotate(-12, 104, 120)"/>
+      <rect x="95" y="132" width="22" height="4" rx="0.5" fill="url(#breakGrad2)"
+        transform="rotate(8, 106, 134)"/>
+      <rect x="78" y="140" width="14" height="3.5" rx="0.5" fill="url(#breakGrad)"
+        transform="rotate(-25, 85, 141)"/>
+      <rect x="108" y="125" width="8" height="3" rx="0.5" fill="url(#breakGrad2)"
+        transform="rotate(18, 112, 126)"/>
+      <rect x="88" y="148" width="30" height="4.5" rx="0.5" fill="url(#breakGrad)"
+        transform="rotate(-5, 103, 150)"/>
+
+      <!-- Cluster 2 — mid-right, sparser -->
+      <rect x="265" y="140" width="42" height="5.5" rx="1" fill="url(#breakGrad)"
+        transform="rotate(15, 286, 142)"/>
+      <rect x="280" y="155" width="18" height="3.5" rx="0.5" fill="url(#breakGrad2)"
+        transform="rotate(-22, 289, 156)"/>
+      <rect x="258" y="162" width="28" height="4" rx="0.5" fill="url(#breakGrad)"
+        transform="rotate(6, 272, 164)"/>
+
+      <!-- Cluster 3 — center, densest (the peak) -->
+      <rect x="165" y="175" width="45" height="6" rx="1" fill="url(#breakGrad)"
+        transform="rotate(-8, 187, 178)"/>
+      <rect x="185" y="188" width="32" height="5" rx="0.5" fill="url(#breakGrad)"
+        transform="rotate(20, 201, 190)"/>
+      <rect x="155" y="195" width="20" height="4" rx="0.5" fill="url(#breakGrad2)"
+        transform="rotate(-30, 165, 197)"/>
+      <rect x="200" y="182" width="12" height="3.5" rx="0.5" fill="url(#breakGrad2)"
+        transform="rotate(35, 206, 183)"/>
+      <rect x="175" y="205" width="35" height="5" rx="0.5" fill="url(#breakGrad)"
+        transform="rotate(-3, 192, 207)"/>
+      <rect x="210" y="195" width="15" height="3" rx="0.5" fill="url(#breakGrad2)"
+        transform="rotate(-42, 217, 196)"/>
+      <rect x="160" y="215" width="10" height="3" rx="0.5" fill="url(#breakGrad2)"
+        transform="rotate(28, 165, 216)"/>
+
+      <!-- Cluster 4 — lower left -->
+      <rect x="95" y="230" width="35" height="5" rx="1" fill="url(#breakGrad)"
+        transform="rotate(10, 112, 232)"/>
+      <rect x="110" y="242" width="16" height="3.5" rx="0.5" fill="url(#breakGrad2)"
+        transform="rotate(-18, 118, 243)"/>
+      <rect x="82" y="245" width="24" height="4" rx="0.5" fill="url(#breakGrad)"
+        transform="rotate(25, 94, 247)"/>
+
+      <!-- Cluster 5 — right, mid-low -->
+      <rect x="290" y="210" width="38" height="5" rx="1" fill="url(#breakGrad)"
+        transform="rotate(-15, 309, 212)"/>
+      <rect x="305" y="225" width="22" height="4" rx="0.5" fill="url(#breakGrad2)"
+        transform="rotate(12, 316, 227)"/>
+      <rect x="280" y="232" width="15" height="3.5" rx="0.5" fill="url(#breakGrad)"
+        transform="rotate(-35, 287, 233)"/>
+
+      <!-- Scattered singles — ghost notes -->
+      <rect x="340" y="170" width="10" height="2.5" rx="0.5" fill="url(#breakGrad2)"
+        transform="rotate(22, 345, 171)" opacity="0.5"/>
+      <rect x="135" y="160" width="8" height="2" rx="0.5" fill="url(#breakGrad2)"
+        transform="rotate(-40, 139, 161)" opacity="0.4"/>
+      <rect x="245" y="245" width="12" height="2.5" rx="0.5" fill="url(#breakGrad2)"
+        transform="rotate(30, 251, 246)" opacity="0.45"/>
+      <rect x="330" y="130" width="7" height="2" rx="0.5" fill="url(#breakGrad2)"
+        transform="rotate(-15, 333, 131)" opacity="0.3"/>
+      <rect x="68" y="195" width="9" height="2" rx="0.5" fill="url(#breakGrad2)"
+        transform="rotate(45, 72, 196)" opacity="0.35"/>
+      <rect x="355" y="215" width="11" height="2.5" rx="0.5" fill="url(#breakGrad2)"
+        transform="rotate(-28, 360, 216)" opacity="0.4"/>
+    </g>
+
+
+    <!-- =========================================== -->
+    <!-- === THE SUB-BASS — half-time, unwavering === -->
+    <!-- =========================================== -->
+    <!-- While breaks fly at 160 BPM, the bass moves at 80.
+         One slow, deep, steady presence underneath. -->
+
+    <g filter="url(#subPulse)">
+      <!-- Sub-bass body — wide, low, heavy -->
+      <rect x="70" y="295" width="300" height="12" rx="4"
+        fill="url(#subGrad)"/>
+    </g>
+
+    <!-- Sub-bass pulse markers — half-time, only 2 per bar -->
+    <g opacity="0.08">
+      <circle cx="140" cy="301" r="3" fill="rgba(180,140,35,0.4)" filter="url(#subPulse)"/>
+      <circle cx="300" cy="301" r="3" fill="rgba(180,140,35,0.4)" filter="url(#subPulse)"/>
+    </g>
+
+    <!-- The gap between breaks and bass — 
+         showing they operate at different speeds -->
+    <g stroke="rgba(140,150,40,0.02)" stroke-width="0.3" stroke-dasharray="1,8">
+      <line x1="140" y1="260" x2="140" y2="293"/>
+      <line x1="300" y1="260" x2="300" y2="293"/>
+    </g>
+
+    <!-- === SPEED INDICATOR — showing dual BPM === -->
+    <g fill="rgba(140,150,40,0.03)" font-family="'DM Mono', monospace" font-size="5">
+      <text x="375" y="195">160+</text>
+      <text x="375" y="302">80</text>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Jungle</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

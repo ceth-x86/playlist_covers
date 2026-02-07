@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progressive Death Metal Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #060406;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #080608;
+    overflow: hidden;
+  }
+
+  /* Near-black with deep crimson bleed */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 46% 42%, rgba(140, 20, 20, 0.07) 0%, transparent 40%),
+      radial-gradient(ellipse at 55% 55%, rgba(100, 10, 10, 0.04) 0%, transparent 35%),
+      linear-gradient(165deg, #0a080a 0%, #080608 40%, #060406 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 420px;
+    height: 420px;
+  }
+
+  /* Dark crimson core glow */
+  .glow {
+    position: absolute;
+    top: 42%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(150, 20, 15, 0.08) 0%, rgba(100, 10, 10, 0.03) 50%, transparent 65%);
+    filter: blur(25px);
+    z-index: 2;
+  }
+
+  /* Grain — series constant */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    opacity: 0.28;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Second grain layer — coarser, adds grit */
+  .grain2 {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    opacity: 0.07;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grit'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.4' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grit)'/%3E%3C/svg%3E");
+    background-size: 100px 100px;
+  }
+
+  /* Hard vignette */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: radial-gradient(ellipse at center, transparent 32%, rgba(0,0,0,0.65) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 26px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .genre-name .line1 {
+    color: rgba(200, 70, 60, 0.8);
+  }
+
+  .genre-name .line2 {
+    color: rgba(160, 45, 35, 0.5);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(170, 60, 50, 0.18);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 100px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(170, 60, 50, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: the prog metal spiral — but fractured, 
+       breaking apart as it expands outward.
+       Inner layers retain structure (the progressive discipline),
+       outer layers shatter into disconnected shards (death metal violence).
+       Where prog metal's spiral was intact and architectural,
+       here the architecture is collapsing under its own weight. -->
+  <svg class="central-form" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bloodGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#5a1010;stop-opacity:0.1"/>
+        <stop offset="35%" style="stop-color:#a82818;stop-opacity:0.4"/>
+        <stop offset="50%" style="stop-color:#c83020;stop-opacity:0.55"/>
+        <stop offset="65%" style="stop-color:#a82818;stop-opacity:0.4"/>
+        <stop offset="100%" style="stop-color:#5a1010;stop-opacity:0.1"/>
+      </linearGradient>
+      <linearGradient id="bloodGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#3a0808;stop-opacity:0.05"/>
+        <stop offset="40%" style="stop-color:#8a2018;stop-opacity:0.22"/>
+        <stop offset="60%" style="stop-color:#a02820;stop-opacity:0.3"/>
+        <stop offset="100%" style="stop-color:#3a0808;stop-opacity:0.05"/>
+      </linearGradient>
+      <linearGradient id="ashGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#666;stop-opacity:0.01"/>
+        <stop offset="50%" style="stop-color:#999;stop-opacity:0.05"/>
+        <stop offset="100%" style="stop-color:#666;stop-opacity:0.01"/>
+      </linearGradient>
+      <filter id="bloodGlow" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="shatter">
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+
+    <!-- === OUTER SHATTERED LAYERS — death metal disintegration === -->
+
+    <!-- Layer 1: outermost — broken fragments, barely connected -->
+    <g opacity="0.2" filter="url(#shatter)">
+      <!-- Fragment cluster — top right -->
+      <polyline points="295,88 328,135 318,165" fill="none" stroke="url(#bloodGrad2)" stroke-width="0.5" stroke-linejoin="bevel"/>
+      <!-- Fragment — right -->
+      <polyline points="340,195 345,245 320,280" fill="none" stroke="url(#bloodGrad2)" stroke-width="0.5" stroke-linejoin="bevel"/>
+      <!-- Fragment — bottom -->
+      <polyline points="285,310 240,332 195,325" fill="none" stroke="url(#bloodGrad2)" stroke-width="0.5" stroke-linejoin="bevel"/>
+      <!-- Fragment — left -->
+      <polyline points="130,295 105,250 98,200" fill="none" stroke="url(#bloodGrad2)" stroke-width="0.5" stroke-linejoin="bevel"/>
+      <!-- Fragment — top left -->
+      <polyline points="108,155 125,115 162,92" fill="none" stroke="url(#bloodGrad2)" stroke-width="0.4" stroke-linejoin="bevel"/>
+      <!-- Floating isolated shard -->
+      <line x1="350" y1="120" x2="358" y2="148" stroke="url(#bloodGrad2)" stroke-width="0.3"/>
+      <line x1="78" y1="280" x2="88" y2="305" stroke="url(#bloodGrad2)" stroke-width="0.3"/>
+      <line x1="250" y1="68" x2="268" y2="78" stroke="url(#bloodGrad2)" stroke-width="0.3"/>
+    </g>
+
+    <!-- Layer 2: partially broken — structure failing -->
+    <g opacity="0.32" filter="url(#shatter)">
+      <polyline points="
+        270,118
+        302,158
+        292,200
+      " fill="none" stroke="url(#bloodGrad2)" stroke-width="0.6" stroke-linejoin="bevel"/>
+      <polyline points="
+        305,248
+        278,285
+        238,300
+      " fill="none" stroke="url(#bloodGrad2)" stroke-width="0.6" stroke-linejoin="bevel"/>
+      <polyline points="
+        192,298
+        155,272
+        135,235
+      " fill="none" stroke="url(#bloodGrad2)" stroke-width="0.55" stroke-linejoin="bevel"/>
+      <polyline points="
+        130,185
+        142,142
+        175,118
+      " fill="none" stroke="url(#bloodGrad2)" stroke-width="0.55" stroke-linejoin="bevel"/>
+      <!-- Detached piece -->
+      <line x1="215" y1="108" x2="248" y2="112" stroke="url(#bloodGrad2)" stroke-width="0.4"/>
+    </g>
+
+    <!-- Layer 3: cracking but mostly intact -->
+    <g opacity="0.5">
+      <polyline points="
+        255,142
+        278,172
+        272,208
+        280,238
+        260,265
+        230,278
+        200,272
+        178,252
+        165,222
+        165,188
+        178,160
+        200,148
+        228,142
+        250,145
+      " fill="none" stroke="url(#bloodGrad)" stroke-width="0.7" stroke-linejoin="bevel"/>
+      <!-- Crack splitting off -->
+      <line x1="280" y1="238" x2="298" y2="255" stroke="url(#bloodGrad2)" stroke-width="0.4" opacity="0.5"/>
+      <line x1="165" y1="188" x2="148" y2="178" stroke="url(#bloodGrad2)" stroke-width="0.3" opacity="0.4"/>
+    </g>
+
+    <!-- === INNER INTACT LAYERS — progressive structure holds === -->
+
+    <!-- Layer 4: tight, still coherent -->
+    <g opacity="0.7" filter="url(#bloodGlow)">
+      <polyline points="
+        242,165
+        258,188
+        252,215
+        258,235
+        244,252
+        224,260
+        206,254
+        192,240
+        185,218
+        186,196
+        195,178
+        210,168
+        228,165
+        240,167
+      " fill="none" stroke="url(#bloodGrad)" stroke-width="0.9" stroke-linejoin="bevel"/>
+    </g>
+
+    <!-- Layer 5: innermost spiral — solid, unbroken -->
+    <g opacity="0.88" filter="url(#bloodGlow)">
+      <polyline points="
+        232,182
+        242,198
+        238,216
+        242,228
+        234,238
+        222,242
+        212,238
+        204,230
+        200,216
+        202,200
+        208,190
+        218,184
+        228,182
+        233,183
+      " fill="none" stroke="url(#bloodGrad)" stroke-width="1.2" stroke-linejoin="bevel"/>
+    </g>
+
+    <!-- Center point — the eye -->
+    <circle cx="218" cy="210" r="2.2" fill="rgba(200,60,45,0.4)" filter="url(#bloodGlow)"/>
+    <circle cx="218" cy="210" r="0.8" fill="rgba(240,100,80,0.5)"/>
+
+    <!-- Radial connectors — stressed, some broken -->
+    <g stroke="url(#ashGrad)" stroke-width="0.35" opacity="0.5">
+      <!-- Intact connectors (inner) -->
+      <line x1="232" y1="182" x2="242" y2="165"/>
+      <line x1="200" y1="216" x2="185" y2="218"/>
+      <line x1="242" y1="228" x2="258" y2="235"/>
+      <line x1="208" y1="190" x2="195" y2="178"/>
+    </g>
+    <g stroke="url(#ashGrad)" stroke-width="0.25" opacity="0.25">
+      <!-- Broken connectors (outer) — dotted effect via dasharray -->
+      <line x1="255" y1="142" x2="270" y2="118" stroke-dasharray="3,4"/>
+      <line x1="165" y1="222" x2="135" y2="235" stroke-dasharray="2,5"/>
+      <line x1="260" y1="265" x2="278" y2="285" stroke-dasharray="3,6"/>
+      <line x1="178" y1="160" x2="175" y2="118" stroke-dasharray="2,4"/>
+    </g>
+
+    <!-- Asymmetric time signature ticks — 7/8 + 5/8 pattern, same system as prog metal -->
+    <g stroke="rgba(180,50,40,0.06)" stroke-width="0.4">
+      <line x1="148" y1="345" x2="148" y2="352"/>
+      <line x1="158" y1="345" x2="158" y2="352"/>
+      <line x1="168" y1="345" x2="168" y2="352"/>
+      <line x1="178" y1="345" x2="178" y2="352"/>
+      <line x1="188" y1="345" x2="188" y2="352"/>
+      <line x1="198" y1="345" x2="198" y2="352"/>
+      <line x1="208" y1="345" x2="208" y2="352"/>
+      <!-- gap -->
+      <line x1="225" y1="345" x2="225" y2="352"/>
+      <line x1="235" y1="345" x2="235" y2="352"/>
+      <line x1="245" y1="345" x2="245" y2="352"/>
+      <line x1="255" y1="345" x2="255" y2="352"/>
+      <line x1="265" y1="345" x2="265" y2="352"/>
+    </g>
+
+    <!-- Debris particles — expelled fragments -->
+    <g fill="rgba(180,50,40,0.15)">
+      <circle cx="355" cy="130" r="1.0"/>
+      <circle cx="365" cy="175" r="0.7"/>
+      <circle cx="72" cy="270" r="0.9"/>
+      <circle cx="82" cy="310" r="0.6"/>
+      <circle cx="258" cy="72" r="0.8"/>
+      <circle cx="330" cy="298" r="0.7"/>
+      <circle cx="100" cy="120" r="0.5"/>
+    </g>
+    <g fill="rgba(140,30,25,0.1)">
+      <circle cx="370" cy="148" r="0.5"/>
+      <circle cx="65" cy="295" r="0.6"/>
+      <circle cx="348" cy="310" r="0.4"/>
+      <circle cx="90" cy="105" r="0.4"/>
+      <circle cx="275" cy="60" r="0.5"/>
+    </g>
+  </svg>
+
+  <div class="grain2"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Progressive</span><br/>
+      <span class="line2">Death Metal</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

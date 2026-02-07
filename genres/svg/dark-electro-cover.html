@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Electro Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #040804;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #060a06;
+    overflow: hidden;
+  }
+
+  /* The darkest green-black in the series.
+     Not industrial metal's yellow-green (factory acid).
+     Not sludge's swamp yellow-brown (organic decay).
+     This is the green of a dead CRT terminal —
+     phosphor afterglow in a lightless room.
+     The colour of a signal that shouldn't still 
+     be transmitting. Toxic, cold, digital, sick.
+     Metropolis Records, Dependent, Ant-Zen. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(30, 120, 50, 0.035) 0%, transparent 40%),
+      radial-gradient(ellipse at 48% 50%, rgba(20, 90, 40, 0.02) 0%, transparent 32%),
+      linear-gradient(180deg, #080c08 0%, #060a06 45%, #040804 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — concentrated, sickly, pulsing feel -->
+  .glow {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(35, 140, 55, 0.05) 0%, rgba(20, 100, 40, 0.015) 50%, transparent 65%);
+    filter: blur(18px);
+    z-index: 2;
+  }
+
+  /* Grain — moderate-high, digital static -->
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — deep, claustrophobic -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 48%, transparent 28%, rgba(2,4,2,0.62) 100%);
+    pointer-events: none;
+  }
+
+  /* Scanline texture — CRT monitor, phosphor decay -->
+  .scanlines {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    opacity: 0.04;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 2px,
+      rgba(20,80,30,0.12) 2px,
+      rgba(20,80,30,0.12) 3px
+    );
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(60, 180, 75, 0.8);
+  }
+
+  .genre-name .line2 {
+    color: rgba(40, 130, 55, 0.38);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(45, 150, 60, 0.15);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 100px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(45, 150, 60, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: HOSTILE SIGNAL — a waveform that 
+       flatlines then SPIKES violently.
+       
+       This is NOT:
+       - Industrial metal's stamp grid (physical, mechanical)
+       - Industrial techno's piston motion (rhythmic, driving)
+       - Dark synthpop's parallel lines (melancholic, paired)
+       - EBM's sequencer pulse (orderly, marching)
+       
+       Dark electro is the signal ITSELF gone wrong.
+       Long stretches of near-silence (the flatline —
+       tension, dread, the held breath) punctuated by
+       VIOLENT SPIKES (the attack — distorted, serrated,
+       asymmetric).
+       
+       The spikes go BOTH up and down (the waveform is
+       AC-coupled, alternating), creating a jagged 
+       oscillograph reading of something toxic.
+       
+       Suicide Commando, Hocico, Combichrist early work,
+       Velvet Acid Christ, Tactical Sekt, Psyclon Nine —
+       the sound of a machine having a nightmare. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="signalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#185018;stop-opacity:0.05"/>
+        <stop offset="10%" style="stop-color:#287028;stop-opacity:0.2"/>
+        <stop offset="30%" style="stop-color:#389038;stop-opacity:0.4"/>
+        <stop offset="50%" style="stop-color:#40a840;stop-opacity:0.52"/>
+        <stop offset="70%" style="stop-color:#389038;stop-opacity:0.4"/>
+        <stop offset="90%" style="stop-color:#287028;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#185018;stop-opacity:0.05"/>
+      </linearGradient>
+
+      <filter id="signalDistort">
+        <feTurbulence type="turbulence" baseFrequency="0.06" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="toxicGlow" x="-6%" y="-12%" width="112%" height="124%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="spikeFlare" x="-15%" y="-20%" width="130%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- === BASELINE — the zero-crossing reference === -->
+    <!-- The flatline that the spikes depart from 
+         and return to. The silence between attacks. -->
+    <line x1="20" y1="200" x2="420" y2="200"
+      stroke="rgba(35,120,45,0.025)" stroke-width="0.3"/>
+
+
+    <!-- === THE HOSTILE SIGNAL === -->
+    <!-- A single polyline: long flat segments at y=200
+         (the flatline / dread) punctuated by violent
+         vertical spikes (the attacks). Spikes alternate
+         up and down. Each spike cluster has different
+         character — some sharp, some serrated. -->
+
+    <!-- Signal glow — the phosphor bleed behind -->
+    <g filter="url(#spikeFlare)" opacity="0.2">
+      <polyline points="
+        20,200
+        65,200
+        68,200  70,152  72,200
+        75,200
+        120,200
+        123,200  125,235  127,168  129,218  131,185  133,200
+        136,200
+        195,200
+        198,200  199,142  201,200
+        203,200  205,248  207,200
+        210,200
+        250,200
+        253,200  255,230  257,162  259,242  261,158  263,225  265,175  267,200
+        270,200
+        338,200
+        341,200  343,148  345,200
+        348,200
+        365,200
+        368,200  370,238  372,165  374,228  376,178  378,200
+        381,200
+        420,200"
+        fill="none" stroke="rgba(45,160,55,0.35)" stroke-width="5"
+        stroke-linejoin="round"/>
+    </g>
+
+    <!-- Primary signal line -->
+    <g filter="url(#signalDistort)">
+      <g filter="url(#toxicGlow)">
+        <polyline points="
+          20,200
+          65,200
+          68,200  70,152  72,200
+          75,200
+          120,200
+          123,200  125,235  127,168  129,218  131,185  133,200
+          136,200
+          195,200
+          198,200  199,142  201,200
+          203,200  205,248  207,200
+          210,200
+          250,200
+          253,200  255,230  257,162  259,242  261,158  263,225  265,175  267,200
+          270,200
+          338,200
+          341,200  343,148  345,200
+          348,200
+          365,200
+          368,200  370,238  372,165  374,228  376,178  378,200
+          381,200
+          420,200"
+          fill="none" stroke="url(#signalGrad)" stroke-width="1.4"
+          stroke-linejoin="miter" stroke-linecap="butt"/>
+      </g>
+    </g>
+
+
+    <!-- === SPIKE ANNOTATIONS — oscilloscope readout === -->
+    <!-- Amplitude markers at the most violent spikes -->
+    <g fill="rgba(40,140,50,0.02)" font-family="'DM Mono', monospace" font-size="3.8">
+      <text x="195" y="136">-58dB</text>
+      <text x="253" y="152">-48dB</text>
+      <text x="259" y="252">+48dB</text>
+    </g>
+
+    <!-- Measurement brackets at the densest spike cluster -->
+    <g stroke="rgba(40,140,50,0.015)" stroke-width="0.25" fill="none">
+      <line x1="253" y1="155" x2="253" y2="248"/>
+      <line x1="267" y1="170" x2="267" y2="230"/>
+    </g>
+
+
+    <!-- === FLATLINE TENSION MARKERS === -->
+    <!-- Tiny dots on the flatline showing that the
+         signal is ALIVE but dormant — waiting to spike.
+         Irregular spacing = unpredictable attacks. -->
+    <g opacity="0.06">
+      <circle cx="42" cy="200" r="0.7" fill="#38a038"/>
+      <circle cx="88" cy="200" r="0.6" fill="#30902f"/>
+      <circle cx="105" cy="200" r="0.5" fill="#2a802a"/>
+      <circle cx="152" cy="200" r="0.7" fill="#38a038"/>
+      <circle cx="172" cy="200" r="0.5" fill="#2a802a"/>
+      <circle cx="228" cy="200" r="0.6" fill="#30902f"/>
+      <circle cx="240" cy="200" r="0.5" fill="#2a802a"/>
+      <circle cx="295" cy="200" r="0.7" fill="#38a038"/>
+      <circle cx="315" cy="200" r="0.6" fill="#30902f"/>
+      <circle cx="355" cy="200" r="0.5" fill="#2a802a"/>
+      <circle cx="398" cy="200" r="0.6" fill="#30902f"/>
+      <circle cx="412" cy="200" r="0.5" fill="#2a802a"/>
+    </g>
+
+
+    <!-- === PHOSPHOR DECAY — ghosting from previous spikes === -->
+    <!-- On a CRT, bright spikes leave afterimages.
+         These are faint echoes of past spike events,
+         decayed and shifted slightly. -->
+    <g opacity="0.02" filter="url(#toxicGlow)">
+      <polyline points="
+        123,200  125,228  127,178  129,212  131,190  133,200"
+        fill="none" stroke="rgba(45,160,55,0.3)" stroke-width="0.6"
+        stroke-linejoin="round" transform="translate(2,3)"/>
+      <polyline points="
+        253,200  255,222  257,172  259,232  261,168  263,218  265,180  267,200"
+        fill="none" stroke="rgba(45,160,55,0.3)" stroke-width="0.5"
+        stroke-linejoin="round" transform="translate(3,4)"/>
+    </g>
+
+
+    <!-- === BPM — mechanical EBM pulse underneath,
+         but with violent interruptions === -->
+    <!-- The sequencer grid is PRESENT (EBM heritage)
+         but gets DISRUPTED by the spike events. -->
+    <g stroke="rgba(40,140,50,0.03)" stroke-width="0.35">
+      <!-- Regular EBM pulse -->
+      <line x1="95" y1="350" x2="95" y2="357"/>
+      <line x1="115" y1="350" x2="115" y2="357"/>
+      <line x1="135" y1="350" x2="135" y2="357"/>
+      <line x1="155" y1="350" x2="155" y2="357"/>
+      <!-- DISRUPTION — irregular cluster -->
+      <line x1="170" y1="349" x2="170" y2="358"/>
+      <line x1="174" y1="349" x2="174" y2="358"/>
+      <!-- Resume -->
+      <line x1="195" y1="350" x2="195" y2="357"/>
+      <line x1="215" y1="350" x2="215" y2="357"/>
+      <line x1="235" y1="350" x2="235" y2="357"/>
+      <!-- DISRUPTION — longer -->
+      <line x1="248" y1="349" x2="248" y2="358"/>
+      <line x1="252" y1="349" x2="252" y2="358"/>
+      <line x1="255" y1="349" x2="255" y2="358"/>
+      <line x1="259" y1="349" x2="259" y2="358"/>
+      <!-- Resume, slower -->
+      <line x1="285" y1="350" x2="285" y2="357"/>
+      <line x1="305" y1="350" x2="305" y2="357"/>
+      <line x1="325" y1="350" x2="325" y2="357"/>
+      <line x1="345" y1="350" x2="345" y2="357"/>
+      <!-- Final disruption -->
+      <line x1="358" y1="349" x2="358" y2="358"/>
+      <line x1="362" y1="349" x2="362" y2="358"/>
+    </g>
+  </svg>
+
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Dark</span><br/>
+      <span class="line2">Electro</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

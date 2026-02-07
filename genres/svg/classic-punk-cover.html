@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classic Punk Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #080808;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0c0c0c;
+    overflow: hidden;
+  }
+
+  /* The flattest, least atmospheric background in the series.
+     No gradients. No radial glows in the base layer.
+     No colour cast. Just black. Punk doesn't do ambience.
+     
+     This is the ANTI-COVER — it rejects every design
+     principle the other covers share. Where they are
+     subtle, this is blunt. Where they layer textures,
+     this is raw. Three chords and the truth. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #0c0c0c;
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* NO glow element. Punk doesn't glow.
+     The only cover in the series without one. */
+
+  /* Grain — series constant, but cranked harsh.
+     Xerox machine grain, not vinyl grain. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.38;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Xerox texture — unique to punk, the photocopied zine aesthetic */
+  .xerox {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    opacity: 0.04;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='xr'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.15' numOctaves='2' stitchTiles='stitch'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='discrete' tableValues='0 1'/%3E%3CfeFuncG type='discrete' tableValues='0 1'/%3E%3CfeFuncB type='discrete' tableValues='0 1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23xr)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+
+  /* NO vignette. Punk doesn't frame itself gracefully.
+     Second cover principle deliberately broken. */
+
+  /* Typography — system constant, but pushed harder */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 56px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: rgba(230, 90, 50, 0.92);
+    line-height: 1;
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(210, 80, 45, 0.2);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 110px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(210, 80, 45, 0.12);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <!-- NO glow div. Deliberate absence. -->
+
+  <!-- Central form: ONE BAR.
+       
+       Every other cover in this series has a complex form:
+       spirals, grids, halos, trajectories, monoliths,
+       intertwining voices, polyrhythmic lattices.
+       
+       Punk has ONE horizontal bar.
+       
+       It bisects the frame. It doesn't curve, spiral,
+       dissolve, fragment, or evolve. It SITS THERE.
+       Thick, blunt, slightly rough at the edges.
+       
+       This is not minimalism (minimal techno's point + rings
+       is philosophically reductive — an intellectual choice).
+       This is REFUSAL. Punk doesn't lack complexity because
+       it sought simplicity. It lacks complexity because
+       complexity is bullshit.
+       
+       The bar is slightly off-centre — 46% from top,
+       not 50%. Not a calculated asymmetry (that would be
+       IDM). Just... not quite centred, because nobody
+       bothered to measure.
+       
+       Ramones, Sex Pistols, The Clash, Dead Kennedys,
+       Black Flag, Bad Brains — the sound of someone
+       who learned three chords yesterday and is already
+       on stage tonight. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="rough">
+        <feTurbulence type="turbulence" baseFrequency="0.025" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+
+    <!-- === THE BAR === -->
+    <!-- One rectangle. That's it. -->
+    <g filter="url(#rough)">
+      <rect x="40" y="195" width="360" height="18" rx="1"
+        fill="rgba(220, 85, 45, 0.65)"/>
+    </g>
+
+    <!-- A second, thinner bar ABOVE — the only concession
+         to structure. Two bars, like two power chords.
+         Not three (that would be prog). Not one (that 
+         would be drone). Two. Verse, chorus. Done. -->
+    <g filter="url(#rough)">
+      <rect x="40" y="175" width="360" height="6" rx="0.5"
+        fill="rgba(200, 75, 40, 0.3)"/>
+    </g>
+
+    <!-- Rough edge debris — the bar isn't clean,
+         it's been torn from something. Flecks of ink
+         where the xerox machine chewed the paper. -->
+    <g opacity="0.12">
+      <rect x="38" y="194" width="3" height="2" fill="rgba(210,80,42,0.4)" transform="rotate(-5,39,195)"/>
+      <rect x="398" y="210" width="4" height="2" fill="rgba(210,80,42,0.35)" transform="rotate(8,400,211)"/>
+      <rect x="125" y="192" width="2" height="2" fill="rgba(200,75,40,0.3)" transform="rotate(12,126,193)"/>
+      <rect x="280" y="214" width="3" height="1.5" fill="rgba(200,75,40,0.25)" transform="rotate(-10,281,214)"/>
+      <rect x="195" y="213" width="2" height="2" fill="rgba(200,75,40,0.2)"/>
+      <rect x="340" y="193" width="2.5" height="1.5" fill="rgba(210,80,42,0.3)" transform="rotate(6,341,193)"/>
+    </g>
+
+
+    <!-- === NO BPM TICKS === -->
+    <!-- Every other cover has BPM indication.
+         Punk doesn't count beats. It just goes.
+         
+         ...but there are three small marks. 
+         Three chords. The minimum. -->
+    <g stroke="rgba(210,80,45,0.06)" stroke-width="0.6">
+      <line x1="155" y1="340" x2="155" y2="348"/>
+      <line x1="220" y1="340" x2="220" y2="348"/>
+      <line x1="285" y1="340" x2="285" y2="348"/>
+    </g>
+
+  </svg>
+
+  <div class="xerox"></div>
+  <div class="grain"></div>
+
+  <!-- NO vignette div. Deliberate absence. -->
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Punk</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

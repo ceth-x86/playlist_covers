@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avant-Garde Rock Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #08080a;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0c0c0e;
+    overflow: hidden;
+  }
+
+  /* Cold neutral — neither warm (rock family) nor 
+     cool-blue (electronic family). Avant-garde rock
+     refuses the warmth of its heritage. But it's not
+     the flat black of punk (refusal of aesthetics) —
+     it's a deliberate NEUTRALITY, the grey of a 
+     concrete rehearsal space, of graph paper, of 
+     Stockhausen's manuscript paper.
+     No label colour — Cuneiform, ReR Megacorp,
+     Ipecac, Skin Graft. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 42% 38%, rgba(140, 140, 150, 0.025) 0%, transparent 35%),
+      radial-gradient(ellipse at 58% 56%, rgba(150, 130, 120, 0.015) 0%, transparent 30%),
+      linear-gradient(182deg, #0e0e10 0%, #0c0c0e 45%, #08080a 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — irregular, off-centre, not where you expect -->
+  .glow {
+    position: absolute;
+    top: 38%;
+    left: 44%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(160, 155, 145, 0.03) 0%, rgba(140, 135, 125, 0.01) 45%, transparent 60%);
+    filter: blur(20px);
+    z-index: 2;
+  }
+
+  /* Grain — moderate, deliberately unclassifiable -->
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.24;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — asymmetric, off-centre like the glow -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 44% 40%, transparent 32%, rgba(5,5,6,0.52) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .genre-name .line1 {
+    color: rgba(185, 180, 170, 0.72);
+  }
+
+  .genre-name .line2 {
+    color: rgba(150, 145, 135, 0.35);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(160, 155, 145, 0.13);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 96px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(160, 155, 145, 0.07);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE IMPOSSIBLE ARC — classic rock's
+       root arc DECONSTRUCTED into a self-contradicting object.
+       
+       Every other genre TRANSFORMS the arc:
+       - Soft rock smooths it (comfort)
+       - Hard rock thickens it (power)
+       - Punk flattens it (refusal)
+       - Prog spirals it (complexity)
+       - Noise rock explodes it (chaos)
+       - Grunge damages it (pain)
+       
+       Avant-garde rock INTERROGATES it.
+       
+       The line starts as a recognizable arc — you can
+       see the classic rock DNA — but then:
+       1. It reverses direction mid-stroke
+       2. It crosses its own path (creating an
+          impossible topology)
+       3. A section is MISSING (a gap where the line
+          should continue but doesn't)
+       4. It resumes at an impossible angle
+       5. The thickness changes abruptly (not gradually
+          like neo prog — ABRUPTLY, like a tape splice)
+       6. It ends by going back the way it came
+       
+       The result is a form that LOOKS like it should
+       be a simple arc but ISN'T — an impossible object,
+       like an Escher staircase. Your eye tries to 
+       follow the path and gets lost.
+       
+       But — crucially — it's not RANDOM (that's noise
+       rock). It's COMPOSED wrongness. Each contradiction
+       is deliberate, precise, considered. The difference
+       between throwing a piano down stairs (noise) and 
+       composing a piece where the piano plays itself
+       in reverse at half speed (avant-garde).
+       
+       Captain Beefheart "Trout Mask Replica",
+       This Heat, early Swans, Mr. Bungle,
+       Magma, Henry Cow, Ruins, Thinking Plague —
+       the sound of rock questioning itself. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="avantGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#787068;stop-opacity:0.02"/>
+        <stop offset="15%" style="stop-color:#988880;stop-opacity:0.2"/>
+        <stop offset="40%" style="stop-color:#b8a898;stop-opacity:0.38"/>
+        <stop offset="60%" style="stop-color:#a89888;stop-opacity:0.32"/>
+        <stop offset="85%" style="stop-color:#887870;stop-opacity:0.15"/>
+        <stop offset="100%" style="stop-color:#686058;stop-opacity:0.02"/>
+      </linearGradient>
+
+      <!-- Colour intrusion gradients — foreign hues that
+           appear briefly within the grey form, like
+           a wrong instrument entering a piece -->
+      <linearGradient id="intrudeRed" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#a05040;stop-opacity:0"/>
+        <stop offset="50%" style="stop-color:#c06850;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#a05040;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="intrudeBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#406080;stop-opacity:0"/>
+        <stop offset="50%" style="stop-color:#5880a0;stop-opacity:0.15"/>
+        <stop offset="100%" style="stop-color:#406080;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="composeRough">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="avantGlow" x="-5%" y="-10%" width="110%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+
+    <!-- === SEGMENT 1 — starts as a recognizable arc === -->
+    <!-- The first 30% of the form looks like classic rock.
+         Your brain thinks it knows where this is going. -->
+    <g filter="url(#composeRough)">
+      <g filter="url(#avantGlow)">
+        <path d="M 45,225
+                 C 75,222 105,205 135,192
+                 C 155,183 170,178 182,176"
+          fill="none" stroke="url(#avantGrad)" stroke-width="2.8"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === SEGMENT 2 — REVERSAL: the arc turns back === -->
+    <!-- Instead of continuing right, the line REVERSES
+         direction and goes UP and LEFT. The melody
+         turns inside out. -->
+    <g filter="url(#composeRough)">
+      <g filter="url(#avantGlow)">
+        <path d="M 182,176
+                 C 178,168 168,152 155,145
+                 C 142,138 128,140 118,148"
+          fill="none" stroke="url(#avantGrad)" stroke-width="2.8"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === THE CROSSING — the line passes over itself === -->
+    <!-- At this point the line crosses its own earlier path.
+         Impossible topology. The song contradicts itself. -->
+    <g filter="url(#avantGlow)" opacity="0.2">
+      <circle cx="148" cy="175" r="3" fill="rgba(185,175,165,0.15)"/>
+    </g>
+
+
+    <!-- === SEGMENT 3 — ABRUPT THICKNESS CHANGE === -->
+    <!-- From 2.8px suddenly to 1.0px. Not a fade —
+         a SPLICE. Like a tape edit. The texture
+         of the music changes without transition. -->
+    <g filter="url(#composeRough)">
+      <path d="M 118,148
+               C 125,160 145,170 168,168
+               C 192,166 215,155 235,150"
+        fill="none" stroke="url(#avantGrad)" stroke-width="1.0"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === GAP — the line STOPS === -->
+    <!-- From x=235 to x=275: NOTHING.
+         40px of void. The music stops.
+         Not silence (ambient IDM's dissolved dots) —
+         CESSATION. The piece refuses to continue
+         for a measured duration, then resumes
+         as if nothing happened. -->
+
+
+    <!-- === SEGMENT 4 — resumes at WRONG angle === -->
+    <!-- The line picks up again but at an angle that
+         doesn't follow from where it stopped.
+         And with a COLOUR INTRUSION — a brief flash
+         of warm red in the grey line. Foreign key. -->
+    <g filter="url(#composeRough)">
+      <g filter="url(#avantGlow)">
+        <path d="M 275,185
+                 C 290,178 305,188 318,198
+                 C 331,208 340,215 348,212"
+          fill="none" stroke="url(#intrudeRed)" stroke-width="2.2"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === SEGMENT 5 — returns to grey, goes VERTICAL === -->
+    <!-- The line suddenly goes straight down — 
+         another impossible move for an arc.
+         Arcs are horizontal. This one refuses. -->
+    <g filter="url(#composeRough)">
+      <g filter="url(#avantGlow)">
+        <path d="M 348,212
+                 C 350,225 348,248 342,268"
+          fill="none" stroke="url(#avantGrad)" stroke-width="2.2"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === SEGMENT 6 — BLUE INTRUSION + retrogression === -->
+    <!-- The line turns back LEFT — heading towards its 
+         starting point. With a blue colour intrusion.
+         The piece is eating itself. -->
+    <g filter="url(#composeRough)">
+      <path d="M 342,268
+               C 330,275 310,278 288,272
+               C 266,266 248,255 235,248"
+        fill="none" stroke="url(#intrudeBlue)" stroke-width="1.5"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === SEGMENT 7 — final thinning, trails off === -->
+    <!-- The line doesn't end — it just gets thinner
+         and thinner until it's below visibility.
+         The piece doesn't conclude. It evaporates. -->
+    <g filter="url(#composeRough)" opacity="0.6">
+      <path d="M 235,248
+               C 225,242 218,235 215,228"
+        fill="none" stroke="url(#avantGrad)" stroke-width="0.6"
+        stroke-linecap="round"/>
+    </g>
+    <g opacity="0.25">
+      <path d="M 215,228
+               C 213,224 212,220 212,216"
+        fill="none" stroke="url(#avantGrad)" stroke-width="0.3"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === GAP MARKERS — showing the deliberate void === -->
+    <!-- Two tiny marks at the edges of the gap,
+         proving it's COMPOSED silence, not accident. -->
+    <g stroke="rgba(165,158,148,0.03)" stroke-width="0.3">
+      <line x1="237" y1="148" x2="237" y2="153"/>
+      <line x1="273" y1="183" x2="273" y2="188"/>
+    </g>
+    <!-- Gap annotation -->
+    <g fill="rgba(155,148,138,0.02)" font-family="'DM Mono', monospace" font-size="4">
+      <text x="248" y="170">tacet</text>
+    </g>
+
+
+    <!-- === GHOST ARC — the classic rock arc that SHOULD have been === -->
+    <!-- Impossibly faint. The path not taken. -->
+    <path d="M 45,225
+             C 110,220 175,180 225,172
+             C 275,164 340,190 410,208"
+      fill="none" stroke="rgba(165,158,148,0.012)" stroke-width="0.4"
+      stroke-dasharray="2,10" stroke-linecap="round"/>
+
+
+    <!-- === CROSSING NODE — where impossible topology occurs === -->
+    <g opacity="0.06">
+      <circle cx="148" cy="175" r="8" fill="none"
+        stroke="rgba(175,168,158,0.12)" stroke-width="0.3"
+        stroke-dasharray="1,3"/>
+    </g>
+
+
+    <!-- === BPM — IRREGULAR with composed structure === -->
+    <!-- Not random (noise rock). Not clustered (mathcore).
+         Not even (rock). A sequence that follows its own
+         internal logic — each interval is DIFFERENT but 
+         part of a SYSTEM. Like Fibonacci or prime numbers
+         applied to rhythm. -->
+    <g stroke="rgba(160,153,143,0.025)" stroke-width="0.3">
+      <!-- Spacing: 8, 13, 8, 21, 5, 13, 8, 34, 8, 13 (Fibonacci-adjacent) -->
+      <line x1="105" y1="365" x2="105" y2="371"/>
+      <line x1="113" y1="365" x2="113" y2="371"/>
+      <line x1="126" y1="365" x2="126" y2="371"/>
+      <line x1="134" y1="365" x2="134" y2="371"/>
+      <line x1="155" y1="365" x2="155" y2="371"/>
+      <line x1="160" y1="365" x2="160" y2="371"/>
+      <line x1="173" y1="365" x2="173" y2="371"/>
+      <line x1="181" y1="365" x2="181" y2="371"/>
+      <!-- Long gap (tacet) -->
+      <line x1="215" y1="365" x2="215" y2="371"/>
+      <line x1="223" y1="365" x2="223" y2="371"/>
+      <line x1="236" y1="365" x2="236" y2="371"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Avant-Garde</span><br/>
+      <span class="line2">Rock</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

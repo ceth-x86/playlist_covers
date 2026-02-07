@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technical Death Metal Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #050608;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #08090c;
+    overflow: hidden;
+  }
+
+  /* Surgical black — the cleanest, coldest black
+     in the series. No warmth, no earth, no atmosphere.
+     An operating theatre with the lights off. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(130, 160, 190, 0.03) 0%, transparent 40%),
+      linear-gradient(180deg, #0a0b10 0%, #08090c 50%, #050608 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Clinical glow — tight, precise, not diffuse -->
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(140, 180, 210, 0.04) 0%, rgba(110, 145, 175, 0.015) 45%, transparent 60%);
+    filter: blur(18px);
+    z-index: 2;
+  }
+
+  /* Grain — series constant */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — moderate */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at center, transparent 36%, rgba(3,4,6,0.58) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .genre-name .line1 {
+    color: rgba(180, 205, 235, 0.82);
+  }
+
+  .genre-name .line2 {
+    color: rgba(145, 170, 205, 0.5);
+  }
+
+  .genre-name .line3 {
+    color: rgba(115, 140, 175, 0.3);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(150, 175, 210, 0.15);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 112px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(150, 175, 210, 0.09);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: polyrhythmic lattice — multiple
+       interlocking geometric patterns at DIFFERENT
+       time signatures running simultaneously.
+       
+       Prog metal has a spiral (one complex path).
+       Melodic death has two voices in counterpoint.
+       Tech death has MANY patterns operating at 
+       different mathematical intervals, creating 
+       an emergent lattice where no single pattern
+       dominates but their intersection creates
+       a structure of terrifying precision.
+       
+       Three rhythmic layers:
+       - Layer A: 7 vertical divisions (7/8 time)
+       - Layer B: 5 diagonal divisions (5/4 time)  
+       - Layer C: 11 horizontal micro-divisions (11/8)
+       Their intersection nodes = the attack points.
+       
+       This is Necrophagist, Spawn of Possession,
+       Obscura, Beyond Creation, Archspire —
+       music as competitive mathematics.
+       Death metal where the brutality comes not 
+       from heaviness but from DENSITY of information. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gridA" x1="50%" y1="0%" x2="50%" y2="100%">
+        <stop offset="0%" style="stop-color:#7090c0;stop-opacity:0.04"/>
+        <stop offset="30%" style="stop-color:#90b0d8;stop-opacity:0.2"/>
+        <stop offset="50%" style="stop-color:#a0c0e0;stop-opacity:0.3"/>
+        <stop offset="70%" style="stop-color:#90b0d8;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#7090c0;stop-opacity:0.04"/>
+      </linearGradient>
+      <linearGradient id="gridB" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#5878a8;stop-opacity:0.02"/>
+        <stop offset="30%" style="stop-color:#7898c0;stop-opacity:0.12"/>
+        <stop offset="50%" style="stop-color:#88a8d0;stop-opacity:0.18"/>
+        <stop offset="70%" style="stop-color:#7898c0;stop-opacity:0.12"/>
+        <stop offset="100%" style="stop-color:#5878a8;stop-opacity:0.02"/>
+      </linearGradient>
+      <linearGradient id="gridC" x1="0%" y1="50%" x2="100%" y2="50%">
+        <stop offset="0%" style="stop-color:#4868a0;stop-opacity:0.02"/>
+        <stop offset="25%" style="stop-color:#6888b8;stop-opacity:0.08"/>
+        <stop offset="50%" style="stop-color:#7898c8;stop-opacity:0.12"/>
+        <stop offset="75%" style="stop-color:#6888b8;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#4868a0;stop-opacity:0.02"/>
+      </linearGradient>
+
+      <filter id="precisionGlow" x="-4%" y="-4%" width="108%" height="108%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.8" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="nodeGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- ============================================= -->
+    <!-- === LAYER A — 7 vertical divisions (7/8) === -->
+    <!-- ============================================= -->
+    <!-- Seven lines at UNEVEN intervals — the 7/8 pulse.
+         Not a grid. A time signature. -->
+    <g stroke="url(#gridA)" stroke-width="0.6" filter="url(#precisionGlow)">
+      <line x1="98"  y1="95"  x2="98"  y2="310"/>
+      <line x1="140" y1="95"  x2="140" y2="310"/>
+      <line x1="178" y1="95"  x2="178" y2="310"/>
+      <line x1="220" y1="95"  x2="220" y2="310"/>
+      <line x1="258" y1="95"  x2="258" y2="310"/>
+      <line x1="300" y1="95"  x2="300" y2="310"/>
+      <line x1="342" y1="95"  x2="342" y2="310"/>
+    </g>
+
+    <!-- ================================================== -->
+    <!-- === LAYER B — 5 diagonal divisions (5/4 time) === -->
+    <!-- ================================================== -->
+    <!-- Five lines at a different angle, different spacing.
+         These CONFLICT with layer A — polyrhythm. -->
+    <g stroke="url(#gridB)" stroke-width="0.5" filter="url(#precisionGlow)">
+      <line x1="72"  y1="118" x2="175" y2="300"/>
+      <line x1="128" y1="95"  x2="235" y2="308"/>
+      <line x1="195" y1="85"  x2="295" y2="305"/>
+      <line x1="262" y1="88"  x2="345" y2="292"/>
+      <line x1="328" y1="100" x2="385" y2="268"/>
+    </g>
+
+    <!-- ===================================================== -->
+    <!-- === LAYER C — 11 horizontal micro-divisions (11/8) === -->
+    <!-- ===================================================== -->
+    <!-- Eleven thin lines at yet another interval.
+         The most alien time signature — 11 against 7 against 5. -->
+    <g stroke="url(#gridC)" stroke-width="0.35">
+      <line x1="82"  y1="108" x2="362" y2="108"/>
+      <line x1="82"  y1="126" x2="362" y2="126"/>
+      <line x1="82"  y1="144" x2="362" y2="144"/>
+      <line x1="82"  y1="162" x2="362" y2="162"/>
+      <line x1="82"  y1="180" x2="362" y2="180"/>
+      <line x1="82"  y1="198" x2="362" y2="198"/>
+      <line x1="82"  y1="216" x2="362" y2="216"/>
+      <line x1="82"  y1="234" x2="362" y2="234"/>
+      <line x1="82"  y1="252" x2="362" y2="252"/>
+      <line x1="82"  y1="270" x2="362" y2="270"/>
+      <line x1="82"  y1="288" x2="362" y2="288"/>
+    </g>
+
+
+    <!-- ====================================================== -->
+    <!-- === INTERSECTION NODES — where layers collide === -->
+    <!-- ====================================================== -->
+    <!-- These are the ATTACK POINTS — the moments where 
+         multiple time signatures align, creating the 
+         accents in the music. Brighter = more layers 
+         intersecting at once. -->
+
+    <!-- Triple intersections — all three layers meet (rarest, brightest) -->
+    <g filter="url(#nodeGlow)">
+      <circle cx="178" cy="180" r="2.8" fill="rgba(170,205,240,0.3)"/>
+      <circle cx="258" cy="198" r="2.5" fill="rgba(165,200,235,0.28)"/>
+      <circle cx="140" cy="144" r="2.2" fill="rgba(160,195,230,0.25)"/>
+      <circle cx="300" cy="234" r="2.5" fill="rgba(165,200,235,0.27)"/>
+      <circle cx="220" cy="162" r="3.0" fill="rgba(175,210,245,0.32)"/>
+    </g>
+
+    <!-- Double intersections — two layers meet (more common) -->
+    <g filter="url(#precisionGlow)" opacity="0.6">
+      <circle cx="98"  cy="126" r="1.5" fill="rgba(145,180,220,0.2)"/>
+      <circle cx="140" cy="180" r="1.5" fill="rgba(145,180,220,0.18)"/>
+      <circle cx="178" cy="216" r="1.5" fill="rgba(145,180,220,0.18)"/>
+      <circle cx="220" cy="252" r="1.5" fill="rgba(145,180,220,0.17)"/>
+      <circle cx="258" cy="144" r="1.5" fill="rgba(145,180,220,0.18)"/>
+      <circle cx="300" cy="270" r="1.5" fill="rgba(145,180,220,0.17)"/>
+      <circle cx="342" cy="180" r="1.5" fill="rgba(145,180,220,0.16)"/>
+      <circle cx="300" cy="162" r="1.4" fill="rgba(140,175,215,0.15)"/>
+      <circle cx="342" cy="216" r="1.4" fill="rgba(140,175,215,0.15)"/>
+      <circle cx="98"  cy="198" r="1.4" fill="rgba(140,175,215,0.15)"/>
+      <circle cx="220" cy="288" r="1.3" fill="rgba(140,175,215,0.14)"/>
+      <circle cx="140" cy="252" r="1.3" fill="rgba(140,175,215,0.14)"/>
+    </g>
+
+    <!-- Single intersections — faintest, most numerous -->
+    <g opacity="0.25">
+      <circle cx="98"  cy="162" r="0.8" fill="rgba(130,165,205,0.15)"/>
+      <circle cx="98"  cy="234" r="0.8" fill="rgba(130,165,205,0.15)"/>
+      <circle cx="140" cy="108" r="0.8" fill="rgba(130,165,205,0.15)"/>
+      <circle cx="140" cy="216" r="0.8" fill="rgba(130,165,205,0.15)"/>
+      <circle cx="178" cy="126" r="0.8" fill="rgba(130,165,205,0.15)"/>
+      <circle cx="178" cy="252" r="0.8" fill="rgba(130,165,205,0.15)"/>
+      <circle cx="220" cy="108" r="0.8" fill="rgba(130,165,205,0.15)"/>
+      <circle cx="258" cy="270" r="0.8" fill="rgba(130,165,205,0.15)"/>
+      <circle cx="300" cy="126" r="0.8" fill="rgba(130,165,205,0.15)"/>
+      <circle cx="342" cy="252" r="0.8" fill="rgba(130,165,205,0.15)"/>
+      <circle cx="342" cy="144" r="0.8" fill="rgba(130,165,205,0.15)"/>
+      <circle cx="258" cy="234" r="0.8" fill="rgba(130,165,205,0.15)"/>
+    </g>
+
+
+    <!-- === TIME SIGNATURE LABELS === -->
+    <g fill="rgba(130,165,205,0.03)" font-family="'DM Mono', monospace" font-size="5">
+      <text x="375" y="100">7/8</text>
+      <text x="392" y="278">5/4</text>
+      <text x="370" y="300">11/8</text>
+    </g>
+
+    <!-- === BPM — extremely dense, the fastest in the series === -->
+    <!-- 25 ticks at tight spacing — not as many as thrash (31)
+         but the SUBDIVISION is finer. Each tick subdivides. -->
+    <g stroke="rgba(140,175,215,0.03)" stroke-width="0.25">
+      <line x1="88"  y1="345" x2="88"  y2="350"/>
+      <line x1="99"  y1="345" x2="99"  y2="350"/>
+      <line x1="110" y1="345" x2="110" y2="350"/>
+      <line x1="121" y1="345" x2="121" y2="350"/>
+      <line x1="132" y1="345" x2="132" y2="350"/>
+      <line x1="143" y1="345" x2="143" y2="350"/>
+      <line x1="154" y1="345" x2="154" y2="350"/>
+      <line x1="165" y1="345" x2="165" y2="350"/>
+      <line x1="176" y1="345" x2="176" y2="350"/>
+      <line x1="187" y1="345" x2="187" y2="350"/>
+      <line x1="198" y1="345" x2="198" y2="350"/>
+      <line x1="209" y1="345" x2="209" y2="350"/>
+      <line x1="220" y1="345" x2="220" y2="350"/>
+      <line x1="231" y1="345" x2="231" y2="350"/>
+      <line x1="242" y1="345" x2="242" y2="350"/>
+      <line x1="253" y1="345" x2="253" y2="350"/>
+      <line x1="264" y1="345" x2="264" y2="350"/>
+      <line x1="275" y1="345" x2="275" y2="350"/>
+      <line x1="286" y1="345" x2="286" y2="350"/>
+      <line x1="297" y1="345" x2="297" y2="350"/>
+      <line x1="308" y1="345" x2="308" y2="350"/>
+      <line x1="319" y1="345" x2="319" y2="350"/>
+      <line x1="330" y1="345" x2="330" y2="350"/>
+      <line x1="341" y1="345" x2="341" y2="350"/>
+      <line x1="352" y1="345" x2="352" y2="350"/>
+    </g>
+    <!-- Accents at irregular intervals — the polyrhythmic downbeats -->
+    <g stroke="rgba(155,190,230,0.05)" stroke-width="0.4">
+      <line x1="88"  y1="344" x2="88"  y2="352"/>
+      <line x1="121" y1="344" x2="121" y2="352"/>
+      <line x1="165" y1="344" x2="165" y2="352"/>
+      <line x1="198" y1="344" x2="198" y2="352"/>
+      <line x1="242" y1="344" x2="242" y2="352"/>
+      <line x1="275" y1="344" x2="275" y2="352"/>
+      <line x1="319" y1="344" x2="319" y2="352"/>
+    </g>
+    <!-- Second accent layer — 5 subdivisions overlaid -->
+    <g stroke="rgba(145,180,220,0.035)" stroke-width="0.3">
+      <line x1="88"  y1="353" x2="88"  y2="358"/>
+      <line x1="143" y1="353" x2="143" y2="358"/>
+      <line x1="198" y1="353" x2="198" y2="358"/>
+      <line x1="253" y1="353" x2="253" y2="358"/>
+      <line x1="308" y1="353" x2="308" y2="358"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Technical</span><br/>
+      <span class="line2">Death</span><br/>
+      <span class="line3">Metal</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

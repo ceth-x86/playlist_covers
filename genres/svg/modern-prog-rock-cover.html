@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Progressive Rock Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #060806;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0c08;
+    overflow: hidden;
+  }
+
+  /* Deep forest earth — organic, patient, literate.
+     Not the clinical black of tech death (surgical),
+     not the walnut warmth of soft rock (domestic).
+     This is outdoors at dusk. Old growth forest.
+     Kscope Records, Burning Shed. The colour of 
+     a concept album's gatefold sleeve. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 48% 44%, rgba(80, 120, 70, 0.04) 0%, transparent 45%),
+      radial-gradient(ellipse at 55% 52%, rgba(140, 110, 60, 0.025) 0%, transparent 35%),
+      linear-gradient(178deg, #0c0e0a 0%, #0a0c08 42%, #060806 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Layered glow — green-amber, broad, atmospheric -->
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 220px;
+    border-radius: 50%;
+    background:
+      radial-gradient(ellipse at 45% 48%, rgba(85, 130, 75, 0.04) 0%, transparent 55%),
+      radial-gradient(ellipse at 55% 52%, rgba(160, 125, 65, 0.025) 0%, transparent 50%);
+    filter: blur(30px);
+    z-index: 2;
+  }
+
+  /* Grain — moderate, album-quality production */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.18;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — moderate, cinematic */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 46%, transparent 36%, rgba(4,5,3,0.55) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    line-height: 1.25;
+  }
+
+  .genre-name .line1 {
+    color: rgba(140, 180, 120, 0.7);
+  }
+
+  .genre-name .line2 {
+    color: rgba(120, 155, 100, 0.45);
+  }
+
+  .genre-name .line3 {
+    color: rgba(100, 130, 82, 0.28);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(125, 160, 105, 0.14);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 108px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(125, 160, 105, 0.08);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: GEOLOGICAL STRATA — overlapping 
+       translucent layers that shift and transform
+       as they cross the frame from left to right.
+       
+       Prog metal has a SPIRAL — complexity folding
+       inward, the virtuoso's obsession with structure.
+       
+       Modern prog rock has STRATA — horizontal layers
+       that gradually transform, merge, separate, and
+       recombine. Not about technical complexity but
+       about TEXTURAL EVOLUTION. The album as landscape.
+       
+       Each stratum is a long, shallow waveform at a
+       different vertical position. They start separated
+       (the quiet intro), converge in the centre (the
+       climax), then separate again (the resolution).
+       
+       The strata are translucent — you see through each
+       layer to the ones beneath. Where they overlap,
+       the colour shifts (green + amber = darker earth).
+       
+       Porcupine Tree "In Absentia", Steven Wilson 
+       "Hand. Cannot. Erase.", Tool "Lateralus",
+       Riverside "Second Life Syndrome", Opeth 
+       "Damnation" — the patient, literate approach
+       to rock complexity. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Green strata gradients — forest palette -->
+      <linearGradient id="strat1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#3a6830;stop-opacity:0"/>
+        <stop offset="10%" style="stop-color:#4a7840;stop-opacity:0.08"/>
+        <stop offset="35%" style="stop-color:#5a8850;stop-opacity:0.18"/>
+        <stop offset="55%" style="stop-color:#6a9860;stop-opacity:0.24"/>
+        <stop offset="75%" style="stop-color:#5a8850;stop-opacity:0.18"/>
+        <stop offset="92%" style="stop-color:#4a7840;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#3a6830;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="strat2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#486838;stop-opacity:0"/>
+        <stop offset="12%" style="stop-color:#587848;stop-opacity:0.06"/>
+        <stop offset="40%" style="stop-color:#688858;stop-opacity:0.15"/>
+        <stop offset="60%" style="stop-color:#789868;stop-opacity:0.2"/>
+        <stop offset="80%" style="stop-color:#688858;stop-opacity:0.15"/>
+        <stop offset="95%" style="stop-color:#587848;stop-opacity:0.06"/>
+        <stop offset="100%" style="stop-color:#486838;stop-opacity:0"/>
+      </linearGradient>
+      <!-- Amber strata — warmth layer -->
+      <linearGradient id="strat3" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#886828;stop-opacity:0"/>
+        <stop offset="15%" style="stop-color:#987838;stop-opacity:0.05"/>
+        <stop offset="45%" style="stop-color:#a88848;stop-opacity:0.12"/>
+        <stop offset="65%" style="stop-color:#b89858;stop-opacity:0.16"/>
+        <stop offset="85%" style="stop-color:#a88848;stop-opacity:0.1"/>
+        <stop offset="100%" style="stop-color:#886828;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="strat4" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#405828;stop-opacity:0"/>
+        <stop offset="18%" style="stop-color:#506838;stop-opacity:0.05"/>
+        <stop offset="50%" style="stop-color:#607848;stop-opacity:0.14"/>
+        <stop offset="78%" style="stop-color:#506838;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#405828;stop-opacity:0"/>
+      </linearGradient>
+      <!-- Deep earth stratum -->
+      <linearGradient id="strat5" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#584830;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#685838;stop-opacity:0.04"/>
+        <stop offset="50%" style="stop-color:#786848;stop-opacity:0.1"/>
+        <stop offset="80%" style="stop-color:#685838;stop-opacity:0.04"/>
+        <stop offset="100%" style="stop-color:#584830;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="stratBlur" x="-2%" y="-5%" width="104%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="deepBlur">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+    </defs>
+
+    <!-- === STRATUM 1 — highest, thinnest, the lead melody.
+         Enters late, exits early. The vocal line. === -->
+    <g filter="url(#stratBlur)">
+      <path d="M 60,155
+               C 100,155 130,148 170,142
+               C 210,136 240,132 270,138
+               C 300,144 330,155 370,158"
+        fill="none" stroke="url(#strat1)" stroke-width="1.2"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- === STRATUM 2 — the harmony guitar/keys layer.
+         Broader, slightly lower. Runs the full width. === -->
+    <g filter="url(#stratBlur)">
+      <path d="M 25,188
+               C 65,188 100,180 145,172
+               C 190,164 225,162 260,168
+               C 295,174 340,186 380,192
+               C 395,194 410,196 420,198"
+        fill="none" stroke="url(#strat2)" stroke-width="1.5"
+        stroke-linecap="round"/>
+    </g>
+    <!-- Stratum 2 fill — the body of this layer -->
+    <g opacity="0.006">
+      <path d="M 25,188
+               C 65,188 100,180 145,172
+               C 190,164 225,162 260,168
+               C 295,174 340,186 380,192
+               C 395,194 410,196 420,198
+               L 420,210
+               C 410,208 395,206 380,204
+               C 340,198 295,186 260,180
+               C 225,174 190,176 145,184
+               C 100,192 65,200 25,200
+               Z"
+        fill="rgba(100,150,85,1)"/>
+    </g>
+
+    <!-- === STRATUM 3 — the amber warmth, the Rhodes/mellotron.
+         Starts wide, converges toward the centre. === -->
+    <g filter="url(#stratBlur)">
+      <path d="M 20,218
+               C 60,222 105,215 155,205
+               C 205,195 235,190 265,195
+               C 295,200 335,212 380,220
+               C 400,224 415,226 425,228"
+        fill="none" stroke="url(#strat3)" stroke-width="1.3"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- === STRATUM 4 — the rhythm guitar, steady pulse.
+         The most horizontal of all strata. === -->
+    <g filter="url(#stratBlur)">
+      <path d="M 18,248
+               C 55,250 100,245 155,238
+               C 210,231 250,228 290,232
+               C 330,236 370,245 420,250"
+        fill="none" stroke="url(#strat4)" stroke-width="1.1"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- === STRATUM 5 — the bass, deepest, most stable.
+         Almost flat. The geological bedrock. === -->
+    <g filter="url(#deepBlur)" opacity="0.7">
+      <path d="M 15,278
+               C 60,280 115,275 175,270
+               C 235,265 280,264 325,268
+               C 370,272 400,278 425,280"
+        fill="none" stroke="url(#strat5)" stroke-width="0.9"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === CONVERGENCE ZONE — where all strata come closest.
+         The climax of the album. The strata compress
+         toward each other around x=250, creating density. === -->
+    <g filter="url(#deepBlur)" opacity="0.015">
+      <ellipse cx="255" cy="210" rx="60" ry="50"
+        fill="rgba(120,155,90,1)"/>
+    </g>
+
+
+    <!-- === SEPARATION MARKERS — showing how strata 
+         diverge and converge === -->
+    <!-- Left side: strata are spread (intro, spacious) -->
+    <g stroke="rgba(110,145,90,0.015)" stroke-width="0.3"
+       stroke-dasharray="2,6">
+      <line x1="65" y1="155" x2="65" y2="280"/>
+    </g>
+    <!-- Centre: strata compress (climax) -->
+    <g stroke="rgba(110,145,90,0.02)" stroke-width="0.3"
+       stroke-dasharray="2,6">
+      <line x1="255" y1="138" x2="255" y2="268"/>
+    </g>
+    <!-- Right side: strata separate again (resolution) -->
+    <g stroke="rgba(110,145,90,0.015)" stroke-width="0.3"
+       stroke-dasharray="2,6">
+      <line x1="385" y1="158" x2="385" y2="278"/>
+    </g>
+
+    <!-- Vertical span annotations -->
+    <g fill="rgba(110,145,90,0.02)" font-family="'DM Mono', monospace" font-size="4">
+      <text x="55" y="150" text-anchor="end">125px</text>
+      <text x="245" y="133" text-anchor="end">130px</text>
+      <text x="395" y="153">120px</text>
+    </g>
+
+
+    <!-- === TRANSFORMATION MARKERS === -->
+    <!-- Labels showing how parts evolve across the form -->
+    <g fill="rgba(110,145,90,0.018)" font-family="'DM Mono', monospace" font-size="4.5">
+      <text x="65" y="310">I</text>
+      <text x="140" y="310">II</text>
+      <text x="220" y="310">III</text>
+      <text x="300" y="310">IV</text>
+      <text x="375" y="310">V</text>
+    </g>
+
+
+    <!-- === BPM — moderate, patient, evolving === -->
+    <!-- Starts sparse (intro), gets denser in centre
+         (climax), returns to sparse (outro).
+         The BPM itself has DYNAMICS — unique in the series. -->
+    <g stroke="rgba(110,145,90,0.03)" stroke-width="0.35">
+      <!-- Sparse intro -->
+      <line x1="90" y1="365" x2="90" y2="372"/>
+      <line x1="118" y1="365" x2="118" y2="372"/>
+      <line x1="146" y1="365" x2="146" y2="372"/>
+      <!-- Densifying -->
+      <line x1="168" y1="365" x2="168" y2="372"/>
+      <line x1="185" y1="365" x2="185" y2="372"/>
+      <line x1="200" y1="365" x2="200" y2="372"/>
+      <!-- Dense climax -->
+      <line x1="212" y1="365" x2="212" y2="372"/>
+      <line x1="222" y1="365" x2="222" y2="372"/>
+      <line x1="232" y1="365" x2="232" y2="372"/>
+      <line x1="242" y1="365" x2="242" y2="372"/>
+      <line x1="252" y1="365" x2="252" y2="372"/>
+      <!-- Thinning -->
+      <line x1="268" y1="365" x2="268" y2="372"/>
+      <line x1="288" y1="365" x2="288" y2="372"/>
+      <line x1="312" y1="365" x2="312" y2="372"/>
+      <!-- Sparse outro -->
+      <line x1="342" y1="365" x2="342" y2="372"/>
+      <line x1="375" y1="365" x2="375" y2="372"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Modern</span><br/>
+      <span class="line2">Progressive</span><br/>
+      <span class="line3">Rock</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

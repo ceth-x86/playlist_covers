@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Techno Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #050608;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #06070a;
+    overflow: hidden;
+  }
+
+  /* Abyssal — the deepest background in the techno family,
+     not pure black (that's minimal), but the colour of 
+     ocean at 3000 meters — black with a memory of blue */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 65%, rgba(40, 50, 90, 0.04) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 45%, rgba(30, 38, 70, 0.025) 0%, transparent 30%),
+      linear-gradient(180deg, #080910 0%, #06070a 40%, #050608 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Deep pressure glow — elongated vertically, pulled downward */
+  .glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    width: 80px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(50, 60, 110, 0.05) 0%, rgba(35, 42, 80, 0.02) 50%, transparent 70%);
+    filter: blur(30px);
+    z-index: 2;
+  }
+
+  /* Pressure gradient — gets darker toward bottom, like water column */
+  .pressure {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    pointer-events: none;
+    background: linear-gradient(180deg, 
+      rgba(25,30,55,0.02) 0%, 
+      transparent 30%, 
+      transparent 60%,
+      rgba(8,10,18,0.06) 100%);
+  }
+
+  /* Grain — series constant */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.23;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — heavier at bottom, asymmetric vertical */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 40%, transparent 35%, rgba(4,5,7,0.6) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 42px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(100, 115, 170, 0.75);
+  }
+
+  .genre-name .line2 {
+    color: rgba(75, 88, 140, 0.35);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(85, 98, 150, 0.14);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 108px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(85, 98, 150, 0.08);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: a vertical descent — the only form 
+       in the entire series oriented DOWNWARD.
+       
+       Trance goes UP (euphoria, release).
+       Progressive techno goes UP (evolution).
+       Deep techno goes DOWN (gravity, pressure, submersion).
+       
+       The form is a vertical column of horizontal strata —
+       like geological layers or depth markings on a diving chart.
+       Each stratum gets wider (more pressure), denser, and darker
+       as it descends. The topmost is thin and barely visible.
+       The bottom ones are thick, heavy, oppressive.
+       
+       A single narrow vertical line runs through them all —
+       the descent path, the thread of consciousness at 4am
+       when the floor drops away.
+       
+       This is Shed, Ben Klock's slower sets, Marcel Dettmann,
+       Surgeon's deep work, Regis — techno as gravitational force. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="depthGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#3a4578;stop-opacity:0"/>
+        <stop offset="25%" style="stop-color:#4a5590;stop-opacity:0.6"/>
+        <stop offset="50%" style="stop-color:#5565a0;stop-opacity:1"/>
+        <stop offset="75%" style="stop-color:#4a5590;stop-opacity:0.6"/>
+        <stop offset="100%" style="stop-color:#3a4578;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="depthGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#2a3260;stop-opacity:0"/>
+        <stop offset="30%" style="stop-color:#3a4278;stop-opacity:0.4"/>
+        <stop offset="50%" style="stop-color:#4a5288;stop-opacity:0.7"/>
+        <stop offset="70%" style="stop-color:#3a4278;stop-opacity:0.4"/>
+        <stop offset="100%" style="stop-color:#2a3260;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="depthBlur1">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.5"/>
+      </filter>
+      <filter id="depthBlur2">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.2"/>
+      </filter>
+      <filter id="depthBlur3">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+      </filter>
+    </defs>
+
+    <!-- === THE DESCENT LINE — vertical thread through all strata === -->
+    <line x1="220" y1="55" x2="220" y2="375"
+      stroke="rgba(75,88,140,0.06)" stroke-width="0.5"/>
+
+    <!-- === STRATA — horizontal depth layers, descending === -->
+    <!-- Each stratum: wider, thicker, more opaque as depth increases -->
+
+    <!-- Stratum 1 — surface, barely there -->
+    <rect x="195" y="72" width="50" height="1" rx="0.5"
+      fill="rgba(85,100,160,0.06)" filter="url(#depthBlur1)"/>
+
+    <!-- Stratum 2 -->
+    <rect x="188" y="98" width="64" height="1.5" rx="0.5"
+      fill="rgba(82,96,155,0.08)" filter="url(#depthBlur1)"/>
+
+    <!-- Stratum 3 -->
+    <rect x="182" y="122" width="76" height="2" rx="0.5"
+      fill="rgba(78,92,150,0.1)" filter="url(#depthBlur1)"/>
+
+    <!-- Stratum 4 -->
+    <rect x="175" y="145" width="90" height="2.5" rx="0.5"
+      fill="rgba(75,88,145,0.12)" filter="url(#depthBlur2)"/>
+
+    <!-- Stratum 5 — entering the deep zone -->
+    <rect x="168" y="168" width="104" height="3" rx="1"
+      fill="url(#depthGrad2)" opacity="0.12" filter="url(#depthBlur2)"/>
+
+    <!-- Stratum 6 -->
+    <rect x="160" y="190" width="120" height="3.5" rx="1"
+      fill="url(#depthGrad2)" opacity="0.15" filter="url(#depthBlur2)"/>
+
+    <!-- Stratum 7 — the main zone -->
+    <rect x="152" y="212" width="136" height="4" rx="1"
+      fill="url(#depthGrad)" opacity="0.14" filter="url(#depthBlur2)"/>
+
+    <!-- Stratum 8 -->
+    <rect x="145" y="234" width="150" height="5" rx="1"
+      fill="url(#depthGrad)" opacity="0.16" filter="url(#depthBlur2)"/>
+
+    <!-- Stratum 9 — heavy -->
+    <rect x="138" y="256" width="164" height="5.5" rx="1.5"
+      fill="url(#depthGrad)" opacity="0.18" filter="url(#depthBlur3)"/>
+
+    <!-- Stratum 10 — heavier -->
+    <rect x="130" y="278" width="180" height="6" rx="1.5"
+      fill="url(#depthGrad)" opacity="0.2" filter="url(#depthBlur3)"/>
+
+    <!-- Stratum 11 — crushing -->
+    <rect x="122" y="302" width="196" height="7" rx="2"
+      fill="url(#depthGrad)" opacity="0.2" filter="url(#depthBlur3)"/>
+
+    <!-- Stratum 12 — the floor -->
+    <rect x="115" y="328" width="210" height="8" rx="2"
+      fill="url(#depthGrad)" opacity="0.18" filter="url(#depthBlur3)"/>
+
+
+    <!-- === DEPTH MARKERS — left side, like a sonar reading === -->
+    <g stroke="rgba(70,82,135,0.04)" stroke-width="0.3">
+      <line x1="105" y1="72" x2="115" y2="72"/>
+      <line x1="100" y1="122" x2="115" y2="122"/>
+      <line x1="95" y1="168" x2="115" y2="168"/>
+      <line x1="90" y1="212" x2="115" y2="212"/>
+      <line x1="85" y1="256" x2="115" y2="256"/>
+      <line x1="80" y1="302" x2="115" y2="302"/>
+      <line x1="78" y1="332" x2="115" y2="332"/>
+    </g>
+
+    <!-- Depth numbers — left margin -->
+    <g fill="rgba(70,82,135,0.035)" font-family="'DM Mono', monospace" font-size="5">
+      <text x="88" y="75" text-anchor="end">10</text>
+      <text x="83" y="125" text-anchor="end">50</text>
+      <text x="78" y="171" text-anchor="end">100</text>
+      <text x="73" y="215" text-anchor="end">200</text>
+      <text x="68" y="259" text-anchor="end">500</text>
+      <text x="63" y="305" text-anchor="end">1k</text>
+      <text x="61" y="335" text-anchor="end">∞</text>
+    </g>
+
+    <!-- === SUB-BASS PRESENCE — below the lowest stratum,
+         a formless weight that you feel, not hear === -->
+    <rect x="110" y="340" width="220" height="40" rx="3"
+      fill="rgba(40,48,85,0.03)" filter="url(#depthBlur3)"/>
+
+    <!-- === PRESSURE NODES — points where the descent line 
+         crosses each stratum, growing brighter with depth === -->
+    <g>
+      <circle cx="220" cy="72" r="0.8" fill="rgba(90,105,165,0.06)"/>
+      <circle cx="220" cy="98" r="0.9" fill="rgba(88,102,162,0.07)"/>
+      <circle cx="220" cy="122" r="1.0" fill="rgba(85,100,158,0.08)"/>
+      <circle cx="220" cy="145" r="1.1" fill="rgba(82,96,155,0.1)"/>
+      <circle cx="220" cy="168" r="1.2" fill="rgba(80,94,152,0.12)"/>
+      <circle cx="220" cy="190" r="1.4" fill="rgba(78,92,150,0.14)"/>
+      <circle cx="220" cy="212" r="1.5" fill="rgba(75,88,145,0.16)" filter="url(#depthBlur1)"/>
+      <circle cx="220" cy="234" r="1.7" fill="rgba(72,85,142,0.18)" filter="url(#depthBlur1)"/>
+      <circle cx="220" cy="256" r="1.9" fill="rgba(70,82,140,0.2)" filter="url(#depthBlur2)"/>
+      <circle cx="220" cy="278" r="2.1" fill="rgba(68,80,138,0.2)" filter="url(#depthBlur2)"/>
+      <circle cx="220" cy="302" r="2.3" fill="rgba(65,78,135,0.2)" filter="url(#depthBlur2)"/>
+      <circle cx="220" cy="328" r="2.5" fill="rgba(62,75,132,0.18)" filter="url(#depthBlur3)"/>
+    </g>
+  </svg>
+
+  <div class="pressure"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Deep</span><br/>
+      <span class="line2">Techno</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

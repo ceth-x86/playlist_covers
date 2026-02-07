@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indietronica Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #060a0e;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0e12;
+    overflow: hidden;
+  }
+
+  /* Muted dark blue-grey — between indie rock's warm
+     charcoal and minimal techno's cold slate.
+     Not fully warm, not fully cold. The temperature
+     of a loft with both guitar amps and synths.
+     DFA Records, Mute Records, Domino. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(80, 160, 155, 0.035) 0%, transparent 42%),
+      radial-gradient(ellipse at 48% 48%, rgba(100, 145, 140, 0.02) 0%, transparent 35%),
+      linear-gradient(178deg, #0c1016 0%, #0a0e12 42%, #060a0e 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Teal glow — warm-cool hybrid */
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(85, 170, 165, 0.04) 0%, rgba(70, 145, 140, 0.015) 45%, transparent 62%);
+    filter: blur(24px);
+    z-index: 2;
+  }
+
+  /* Grain — between indie's cassette and techno's clean */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — gentle */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at center, transparent 38%, rgba(4,6,8,0.48) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: rgba(120, 195, 190, 0.82);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(100, 170, 165, 0.15);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 95px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(100, 170, 165, 0.09);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: TWO LAYERS COEXISTING.
+       
+       Layer 1 (below): An electronic PULSE GRID —
+       evenly spaced dots forming a subtle matrix.
+       Inherited from minimal techno's perfect geometry,
+       but softer, less dogmatic.
+       
+       Layer 2 (above): Two imperfect hand-drawn lines
+       crossing the frame — inherited from indie rock's
+       deliberate looseness.
+       
+       The two layers DON'T MERGE. They coexist.
+       The organic lines float OVER the electronic grid.
+       Sometimes a line passes through a grid dot, and
+       that dot brightens slightly — the moment where
+       the guitar locks with the sequencer. But mostly
+       they operate in parallel dimensions.
+       
+       This is what makes indietronica different from:
+       - Synthpop (electronic IS the voice)
+       - Post-punk (tension between organic and mechanical)
+       - Indie rock (no electronic grid at all)
+       - IDM (no organic element)
+       
+       LCD Soundsystem "Sound of Silver",
+       Hot Chip "The Warning",
+       MGMT "Oracular Spectacular",
+       Cut Copy, Postal Service, Metronomy —
+       dancing in a gallery opening. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="indietronGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#387068;stop-opacity:0.02"/>
+        <stop offset="12%" style="stop-color:#509088;stop-opacity:0.15"/>
+        <stop offset="35%" style="stop-color:#68a8a0;stop-opacity:0.32"/>
+        <stop offset="55%" style="stop-color:#70b0a8;stop-opacity:0.38"/>
+        <stop offset="78%" style="stop-color:#60a098;stop-opacity:0.28"/>
+        <stop offset="92%" style="stop-color:#488880;stop-opacity:0.1"/>
+        <stop offset="100%" style="stop-color:#387068;stop-opacity:0.02"/>
+      </linearGradient>
+      <linearGradient id="indietronGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#306058;stop-opacity:0.01"/>
+        <stop offset="15%" style="stop-color:#488078;stop-opacity:0.1"/>
+        <stop offset="42%" style="stop-color:#609890;stop-opacity:0.22"/>
+        <stop offset="62%" style="stop-color:#68a098;stop-opacity:0.26"/>
+        <stop offset="82%" style="stop-color:#589088;stop-opacity:0.15"/>
+        <stop offset="95%" style="stop-color:#407870;stop-opacity:0.06"/>
+        <stop offset="100%" style="stop-color:#306058;stop-opacity:0.01"/>
+      </linearGradient>
+
+      <filter id="handDrawn">
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="lineGlow" x="-5%" y="-10%" width="110%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+
+    <!-- ============================================= -->
+    <!-- LAYER 1: THE ELECTRONIC PULSE GRID            -->
+    <!-- ============================================= -->
+    <!-- A 9×5 grid of dots, perfectly spaced.
+         Quiet, steady, the machine underneath.
+         Less dense than minimal techno (which has ~16 dots
+         in its circle). These are just enough to feel 
+         the pattern, like a drum machine on low volume
+         in the next room. -->
+
+    <g opacity="0.06">
+      <!-- Row 1 (y=155) -->
+      <circle cx="100" cy="155" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="140" cy="155" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="180" cy="155" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="220" cy="155" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="260" cy="155" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="300" cy="155" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="340" cy="155" r="1.3" fill="rgba(100,180,175,0.6)"/>
+
+      <!-- Row 2 (y=190) -->
+      <circle cx="100" cy="190" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="140" cy="190" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="180" cy="190" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="220" cy="190" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="260" cy="190" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="300" cy="190" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="340" cy="190" r="1.3" fill="rgba(100,180,175,0.6)"/>
+
+      <!-- Row 3 (y=225) -->
+      <circle cx="100" cy="225" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="140" cy="225" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="180" cy="225" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="220" cy="225" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="260" cy="225" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="300" cy="225" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="340" cy="225" r="1.3" fill="rgba(100,180,175,0.6)"/>
+
+      <!-- Row 4 (y=260) -->
+      <circle cx="100" cy="260" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="140" cy="260" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="180" cy="260" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="220" cy="260" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="260" cy="260" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="300" cy="260" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="340" cy="260" r="1.3" fill="rgba(100,180,175,0.6)"/>
+
+      <!-- Row 5 (y=295) -->
+      <circle cx="100" cy="295" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="140" cy="295" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="180" cy="295" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="220" cy="295" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="260" cy="295" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="300" cy="295" r="1.3" fill="rgba(100,180,175,0.6)"/>
+      <circle cx="340" cy="295" r="1.3" fill="rgba(100,180,175,0.6)"/>
+    </g>
+
+
+    <!-- ============================================= -->
+    <!-- LAYER 2: THE ORGANIC LINES (over the grid)    -->
+    <!-- ============================================= -->
+    <!-- Two hand-drawn lines from indie rock —
+         imperfect, warm, human. They float ABOVE
+         the electronic grid, touching it at points
+         but never becoming part of it. -->
+
+    <!-- Line 1 — the lead vocal/guitar -->
+    <g filter="url(#handDrawn)">
+      <g filter="url(#lineGlow)">
+        <path d="M 35,210
+                 C 65,208 95,198 130,192
+                 C 165,186 195,185 225,190
+                 C 255,195 280,205 310,210
+                 C 340,215 365,208 400,200"
+          fill="none" stroke="url(#indietronGrad1)" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <!-- Line 2 — following but not matching -->
+    <g filter="url(#handDrawn)">
+      <path d="M 35,220
+               C 62,218 90,211 128,207
+               C 166,203 198,205 228,212
+               C 258,219 282,228 312,230
+               C 342,232 368,222 400,212"
+        fill="none" stroke="url(#indietronGrad2)" stroke-width="1.0"
+        stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+
+    <!-- === RESONANCE POINTS — where organic lines
+         pass through electronic grid dots === -->
+    <!-- These dots brighten when the guitar syncs
+         with the sequencer — brief moments of lock. -->
+    <g filter="url(#lineGlow)">
+      <!-- Near (140, 190) — line crosses grid row 2 -->
+      <circle cx="140" cy="192" r="2.2" fill="rgba(110,195,190,0.1)"/>
+      <!-- Near (220, 190) — another intersection -->
+      <circle cx="222" cy="191" r="2.5" fill="rgba(115,200,195,0.12)"/>
+      <!-- Near (300, 225) — line 2 near grid row 3 -->
+      <circle cx="302" cy="226" r="2.0" fill="rgba(108,190,185,0.09)"/>
+    </g>
+
+
+    <!-- === THE SPACE BETWEEN LINES === -->
+    <g opacity="0.006">
+      <path d="M 35,210
+               C 65,208 95,198 130,192
+               C 165,186 195,185 225,190
+               C 255,195 280,205 310,210
+               C 340,215 365,208 400,200
+               L 400,212
+               C 368,222 342,232 312,230
+               C 282,228 258,219 228,212
+               C 198,205 166,203 128,207
+               C 90,211 62,218 35,220
+               Z"
+        fill="rgba(100,185,180,1)"/>
+    </g>
+
+
+    <!-- === STRAY NOTES — human accidents === -->
+    <g opacity="0.05">
+      <circle cx="160" cy="178" r="0.8" fill="rgba(105,185,180,0.3)"/>
+      <circle cx="270" cy="240" r="0.7" fill="rgba(100,180,175,0.25)"/>
+      <circle cx="350" cy="195" r="0.7" fill="rgba(100,180,175,0.2)"/>
+    </g>
+
+
+    <!-- === BPM — dual layer: electronic grid + human feel === -->
+    <!-- Bottom layer: perfectly even electronic ticks.
+         Top layer: slightly off-grid organic accents.
+         The two tempos ALMOST match but not quite —
+         like a drummer playing along to a click track
+         but slightly behind it. -->
+
+    <!-- Electronic layer — perfect grid -->
+    <g stroke="rgba(85,165,160,0.025)" stroke-width="0.3">
+      <line x1="100" y1="358" x2="100" y2="363"/>
+      <line x1="120" y1="358" x2="120" y2="363"/>
+      <line x1="140" y1="358" x2="140" y2="363"/>
+      <line x1="160" y1="358" x2="160" y2="363"/>
+      <line x1="180" y1="358" x2="180" y2="363"/>
+      <line x1="200" y1="358" x2="200" y2="363"/>
+      <line x1="220" y1="358" x2="220" y2="363"/>
+      <line x1="240" y1="358" x2="240" y2="363"/>
+      <line x1="260" y1="358" x2="260" y2="363"/>
+      <line x1="280" y1="358" x2="280" y2="363"/>
+      <line x1="300" y1="358" x2="300" y2="363"/>
+      <line x1="320" y1="358" x2="320" y2="363"/>
+      <line x1="340" y1="358" x2="340" y2="363"/>
+    </g>
+
+    <!-- Organic layer — slightly off-grid, offset up -->
+    <g stroke="rgba(110,190,185,0.035)" stroke-width="0.35">
+      <line x1="101" y1="350" x2="101" y2="355"/>
+      <line x1="141" y1="350" x2="141" y2="355"/><!-- 1px off -->
+      <line x1="179" y1="350" x2="179" y2="355"/><!-- 1px early -->
+      <line x1="221" y1="350" x2="221" y2="355"/><!-- 1px late -->
+      <line x1="260" y1="350" x2="260" y2="355"/>
+      <line x1="299" y1="350" x2="299" y2="355"/><!-- 1px early -->
+      <line x1="341" y1="350" x2="341" y2="355"/><!-- 1px late -->
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Indietronica</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

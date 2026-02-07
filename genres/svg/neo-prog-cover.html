@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neo Prog Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #08060c;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0c0a12;
+    overflow: hidden;
+  }
+
+  /* Deep purple-black — not the cold violet of dark synthpop
+     (electronic), not the lavender-grey of classic IDM
+     (cerebral). This is the JEWEL purple of stage lighting,
+     theatrical fog machines, gatefold vinyl sleeves.
+     The colour of a 12-minute song about a dream.
+     Marillion's "Script for a Jester's Tear". */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 42%, rgba(140, 70, 140, 0.045) 0%, transparent 45%),
+      radial-gradient(ellipse at 45% 50%, rgba(120, 55, 120, 0.03) 0%, transparent 38%),
+      linear-gradient(176deg, #0e0c16 0%, #0c0a12 42%, #08060c 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Theatrical glow — rich, concentrated, dramatic */
+  .glow {
+    position: absolute;
+    top: 40%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(155, 75, 150, 0.05) 0%, rgba(125, 55, 120, 0.02) 45%, transparent 65%);
+    filter: blur(28px);
+    z-index: 2;
+  }
+
+  /* Grain — moderate, studio quality but not sterile */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — theatrical, frames the performance -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 48% 42%, transparent 34%, rgba(5,3,8,0.58) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 34px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(200, 130, 195, 0.8);
+  }
+
+  .genre-name .line2 {
+    color: rgba(165, 100, 160, 0.38);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(175, 110, 170, 0.15);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 102px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(175, 110, 170, 0.09);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: the DRAMATIC SWEEP —
+       prog metal's spiral UNFURLED into a grand arc.
+       
+       Prog metal's spiral converges inward — complexity
+       folding into itself, mathematical, structural.
+       
+       Neo prog UNFURLS that spiral into a single 
+       sweeping gesture that crosses the entire frame.
+       Not a simple arc (soft rock — too passive).
+       Not a straight line (punk — too blunt).
+       A DRAMATIC CURVE with dynamic thickness — 
+       thin where quiet, thick where loud, with
+       dramatic swells and diminuendos built into 
+       the stroke weight itself.
+       
+       The curve starts thin at bottom-left (the quiet
+       intro — piano, whispered vocal), swells through
+       the middle (the building verse — layers of
+       keyboards and guitars), reaches MAXIMUM thickness
+       at the apex (the chorus — full band, soaring
+       vocal), then gracefully thins again as it exits
+       (the outro — returning to stillness).
+       
+       Below: dynamic contour lines showing the 
+       intensity envelope — the arrangement's
+       crescendos and diminuendos.
+       
+       Marillion "Misplaced Childhood",
+       Porcupine Tree "Fear of a Blank Planet",
+       IQ "The Road of Bones",
+       Pendragon, Arena, Riverside. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="sweepGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#682068;stop-opacity:0.04"/>
+        <stop offset="8%" style="stop-color:#883888;stop-opacity:0.15"/>
+        <stop offset="20%" style="stop-color:#a050a0;stop-opacity:0.3"/>
+        <stop offset="40%" style="stop-color:#b868b8;stop-opacity:0.48"/>
+        <stop offset="55%" style="stop-color:#c878c0;stop-opacity:0.6"/>
+        <stop offset="70%" style="stop-color:#b868b8;stop-opacity:0.48"/>
+        <stop offset="85%" style="stop-color:#a050a0;stop-opacity:0.3"/>
+        <stop offset="95%" style="stop-color:#883888;stop-opacity:0.12"/>
+        <stop offset="100%" style="stop-color:#682068;stop-opacity:0.02"/>
+      </linearGradient>
+      <linearGradient id="dynamicGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#582058;stop-opacity:0.02"/>
+        <stop offset="20%" style="stop-color:#783878;stop-opacity:0.08"/>
+        <stop offset="50%" style="stop-color:#905090;stop-opacity:0.15"/>
+        <stop offset="80%" style="stop-color:#783878;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#582058;stop-opacity:0.02"/>
+      </linearGradient>
+
+      <filter id="theatreGlow" x="-6%" y="-12%" width="112%" height="124%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="stageLight" x="-12%" y="-15%" width="124%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- === STAGE LIGHT WASH — atmospheric haze behind the form === -->
+    <g filter="url(#stageLight)" opacity="0.2">
+      <path d="M 40,290
+               C 80,280 130,230 180,185
+               C 230,140 270,120 300,128
+               C 330,136 360,175 400,210"
+        fill="none" stroke="url(#sweepGrad)" stroke-width="12"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- === THE DRAMATIC SWEEP — variable-width main curve === -->
+    <!-- Built from multiple overlapping paths at different widths
+         to simulate the crescendo/diminuendo of the arrangement.
+         Thin → thick → thin. -->
+
+    <!-- Widest layer — the full-band chorus zone (centre) -->
+    <g filter="url(#theatreGlow)">
+      <path d="M 120,255
+               C 155,225 195,170 235,148
+               C 275,126 310,135 345,162"
+        fill="none" stroke="url(#sweepGrad)" stroke-width="5"
+        stroke-linecap="round" opacity="0.6"/>
+    </g>
+
+    <!-- Medium layer — verse/build zones (wider coverage) -->
+    <g filter="url(#theatreGlow)">
+      <path d="M 65,285
+               C 100,265 145,215 195,175
+               C 245,135 285,125 330,148
+               C 355,160 375,180 395,205"
+        fill="none" stroke="url(#sweepGrad)" stroke-width="2.5"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Thinnest layer — the full gesture, intro to outro -->
+    <g filter="url(#theatreGlow)">
+      <path d="M 35,298
+               C 60,288 95,260 135,228
+               C 175,196 210,162 250,142
+               C 290,122 320,128 350,150
+               C 380,172 398,198 410,218"
+        fill="none" stroke="url(#sweepGrad)" stroke-width="1.2"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === APEX NODE — the emotional climax === -->
+    <g filter="url(#stageLight)">
+      <circle cx="265" cy="130" r="5" fill="rgba(195,115,190,0.1)"/>
+    </g>
+    <g filter="url(#theatreGlow)">
+      <circle cx="265" cy="130" r="2.5" fill="rgba(210,130,205,0.15)"/>
+    </g>
+
+
+    <!-- === DYNAMIC CONTOUR LINES — the arrangement envelope === -->
+    <!-- Thin lines below the main sweep showing the 
+         intensity dynamics — how the arrangement 
+         builds and recedes over the song's duration.
+         These are the layered instruments entering 
+         and exiting. -->
+
+    <!-- Contour 1 — keyboards enter early -->
+    <g opacity="0.4">
+      <path d="M 55,310
+               C 90,300 130,275 175,258
+               C 220,241 260,238 300,248
+               C 340,258 370,272 400,280"
+        fill="none" stroke="url(#dynamicGrad)" stroke-width="0.5"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Contour 2 — bass and drums, slightly delayed -->
+    <g opacity="0.3">
+      <path d="M 80,320
+               C 115,312 150,295 195,280
+               C 240,265 275,262 310,270
+               C 345,278 372,290 395,298"
+        fill="none" stroke="url(#dynamicGrad)" stroke-width="0.4"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Contour 3 — second guitar, enters latest -->
+    <g opacity="0.2">
+      <path d="M 110,332
+               C 140,326 175,312 215,300
+               C 255,288 285,286 315,292
+               C 345,298 368,308 385,316"
+        fill="none" stroke="url(#dynamicGrad)" stroke-width="0.35"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === SECTION MARKERS — the song's architecture === -->
+    <!-- Neo prog thinks in movements, not verse/chorus. -->
+    <g fill="rgba(165,98,160,0.02)" font-family="'DM Mono', monospace" font-size="4.5">
+      <text x="48" y="305">i</text>
+      <text x="125" y="248">ii</text>
+      <text x="225" y="158">iii</text>
+      <text x="340" y="170">iv</text>
+      <text x="402" y="225">v</text>
+    </g>
+
+    <!-- Section dividers — faint vertical marks -->
+    <g stroke="rgba(155,90,150,0.015)" stroke-width="0.3"
+       stroke-dasharray="2,6">
+      <line x1="95" y1="270" x2="95" y2="340"/>
+      <line x1="175" y1="195" x2="175" y2="320"/>
+      <line x1="300" y1="135" x2="300" y2="300"/>
+      <line x1="375" y1="185" x2="375" y2="320"/>
+    </g>
+
+
+    <!-- === BPM — moderate, with dynamic variation === -->
+    <!-- Neo prog tempo is NOT constant. It breathes.
+         The spacing between ticks varies subtly — 
+         rubato, pushing and pulling with the emotion. -->
+    <g stroke="rgba(165,100,160,0.03)" stroke-width="0.35">
+      <line x1="108" y1="380" x2="108" y2="387"/>
+      <line x1="133" y1="380" x2="133" y2="387"/><!-- standard -->
+      <line x1="160" y1="380" x2="160" y2="387"/><!-- slightly wide (breath) -->
+      <line x1="183" y1="380" x2="183" y2="387"/><!-- tighter (building) -->
+      <line x1="205" y1="380" x2="205" y2="387"/>
+      <line x1="225" y1="380" x2="225" y2="387"/><!-- tightest (climax) -->
+      <line x1="244" y1="380" x2="244" y2="387"/>
+      <line x1="264" y1="380" x2="264" y2="387"/><!-- easing back -->
+      <line x1="290" y1="380" x2="290" y2="387"/><!-- wider -->
+      <line x1="318" y1="380" x2="318" y2="387"/><!-- widest (outro) -->
+      <line x1="348" y1="380" x2="348" y2="387"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Neo</span><br/>
+      <span class="line2">Prog</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

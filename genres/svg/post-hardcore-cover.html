@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Hardcore Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #080706;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0b0a08;
+    overflow: hidden;
+  }
+
+  /* Warm charcoal — not black-black like metal,
+     not brown like grunge. The colour of a rehearsal space
+     concrete wall. Dischord Records cardboard. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 47%, rgba(170, 110, 60, 0.03) 0%, transparent 42%),
+      radial-gradient(ellipse at 45% 52%, rgba(140, 85, 40, 0.02) 0%, transparent 32%),
+      linear-gradient(175deg, #0d0c0a 0%, #0b0a08 48%, #080706 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Contained heat — not a blast, a smoulder */
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(185, 115, 55, 0.035) 0%, rgba(150, 90, 40, 0.012) 50%, transparent 65%);
+    filter: blur(28px);
+    z-index: 2;
+  }
+
+  /* Grain — series constant */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.27;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — moderate, not claustrophobic */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at center, transparent 36%, rgba(5,4,3,0.58) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .genre-name .line1 {
+    color: rgba(210, 145, 75, 0.8);
+  }
+
+  .genre-name .line2 {
+    color: rgba(175, 115, 55, 0.38);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(185, 125, 60, 0.16);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 100px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(185, 125, 60, 0.09);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: angular lines under tension —
+       bending, straining, but NOT breaking.
+       
+       This is the essential difference:
+       - Screamo BREAKS (the line ruptures, clipping peaks)
+       - Metalcore TOGGLES (alternating zones, on/off)
+       - Noise rock EXPLODES (radial burst)
+       - Post-hardcore BENDS (lines strain to their limit 
+         but hold their structural integrity)
+       
+       The form shows angular polylines that create
+       an asymmetric tension field — like guitar strings
+       being bent to the breaking point but released
+       just before snapping. Each line follows its own
+       trajectory but they're aware of each other,
+       creating a composed architecture of stress.
+       
+       Fugazi, At the Drive-In, Refused, Drive Like Jehu,
+       Quicksand, Unwound — the sound of intelligence
+       applied to rage. Discipline holding back explosion. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="tensionGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#6a4020;stop-opacity:0"/>
+        <stop offset="12%" style="stop-color:#a06830;stop-opacity:0.25"/>
+        <stop offset="35%" style="stop-color:#c88040;stop-opacity:0.5"/>
+        <stop offset="55%" style="stop-color:#d89048;stop-opacity:0.6"/>
+        <stop offset="78%" style="stop-color:#c08038;stop-opacity:0.45"/>
+        <stop offset="100%" style="stop-color:#6a4020;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="tensionGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#584018;stop-opacity:0"/>
+        <stop offset="15%" style="stop-color:#8a5828;stop-opacity:0.15"/>
+        <stop offset="50%" style="stop-color:#b07035;stop-opacity:0.3"/>
+        <stop offset="85%" style="stop-color:#8a5828;stop-opacity:0.15"/>
+        <stop offset="100%" style="stop-color:#584018;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="tensionFaint" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#483010;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#6a4820;stop-opacity:0.06"/>
+        <stop offset="50%" style="stop-color:#886028;stop-opacity:0.1"/>
+        <stop offset="80%" style="stop-color:#6a4820;stop-opacity:0.06"/>
+        <stop offset="100%" style="stop-color:#483010;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="tenseGlow" x="-6%" y="-10%" width="112%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="stressGlow" x="-8%" y="-12%" width="116%" height="124%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- === TENSION LINE 1 — primary, the main riff === -->
+    <!-- Angular bends — each vertex is a point of maximum stress.
+         The line doesn't curve (that would be prog).
+         It BENDS at sharp angles, then holds. -->
+    <g filter="url(#tenseGlow)">
+      <polyline points="
+        55,210
+        95,208
+        120,195
+        148,168
+        165,190
+        195,145
+        218,195
+        245,138
+        270,192
+        298,155
+        320,188
+        345,172
+        370,195
+        395,200
+      " fill="none" stroke="url(#tensionGrad)" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="8"/>
+    </g>
+
+    <!-- === TENSION LINE 2 — counter-riff, different phase === -->
+    <g filter="url(#tenseGlow)">
+      <polyline points="
+        50,195
+        88,200
+        115,215
+        140,240
+        168,212
+        200,255
+        228,205
+        258,260
+        285,210
+        310,248
+        340,218
+        365,230
+        395,215
+      " fill="none" stroke="url(#tensionGrad2)" stroke-width="1.2"
+        stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="8"/>
+    </g>
+
+    <!-- The two lines create a diamond-shaped tension field
+         between them — they diverge and converge but never touch.
+         That space between is the HELD tension. -->
+
+    <!-- === TENSION LINE 3 — ghost, highest amplitude === -->
+    <g filter="url(#stressGlow)" opacity="0.4">
+      <polyline points="
+        70,205
+        105,200
+        135,178
+        158,125
+        182,185
+        210,108
+        238,188
+        265,115
+        290,182
+        315,135
+        342,180
+        375,198
+      " fill="none" stroke="url(#tensionFaint)" stroke-width="0.7"
+        stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="8"/>
+    </g>
+
+    <!-- === TENSION LINE 4 — ghost, lowest amplitude === -->
+    <g filter="url(#stressGlow)" opacity="0.35">
+      <polyline points="
+        65,202
+        100,210
+        132,228
+        155,275
+        180,215
+        208,290
+        235,212
+        262,285
+        288,218
+        312,270
+        340,225
+        372,210
+      " fill="none" stroke="url(#tensionFaint)" stroke-width="0.6"
+        stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="8"/>
+    </g>
+
+    <!-- === STRESS NODES — vertices under maximum bend === -->
+    <!-- Points where the angle is sharpest — 
+         where the line almost breaks but doesn't -->
+    <g filter="url(#tenseGlow)">
+      <circle cx="195" cy="145" r="2.0" fill="rgba(220,150,65,0.2)"/>
+      <circle cx="245" cy="138" r="2.2" fill="rgba(225,155,68,0.25)"/>
+      <circle cx="200" cy="255" r="1.8" fill="rgba(200,130,55,0.15)"/>
+      <circle cx="258" cy="260" r="1.8" fill="rgba(200,130,55,0.15)"/>
+    </g>
+
+    <!-- Stress radiators — tiny lines emanating from
+         the highest-stress nodes, like micro-fractures
+         that DON'T propagate -->
+    <g stroke="rgba(210,140,60,0.06)" stroke-width="0.3">
+      <line x1="195" y1="145" x2="188" y2="132"/>
+      <line x1="195" y1="145" x2="202" y2="133"/>
+      <line x1="245" y1="138" x2="238" y2="125"/>
+      <line x1="245" y1="138" x2="253" y2="126"/>
+      <line x1="200" y1="255" x2="193" y2="268"/>
+      <line x1="200" y1="255" x2="208" y2="267"/>
+      <line x1="258" y1="260" x2="251" y2="273"/>
+      <line x1="258" y1="260" x2="266" y2="272"/>
+    </g>
+
+    <!-- === HELD SPACE — the diamond between lines 1 and 2 === -->
+    <!-- A barely visible fill showing the tension field -->
+    <g opacity="0.015">
+      <polygon points="
+        148,168 195,145 245,138 298,155 345,172
+        340,218 310,248 258,260 200,255 140,240
+      " fill="rgba(200,130,55,1)"/>
+    </g>
+
+    <!-- === STRUCTURE MARKERS — the discipline === -->
+    <!-- Unlike screamo's rawness, post-hardcore is composed.
+         Faint structural notation showing awareness of form. -->
+    <g stroke="rgba(170,110,50,0.025)" stroke-width="0.3">
+      <!-- Measure lines — the discipline underneath -->
+      <line x1="120" y1="105" x2="120" y2="300"/>
+      <line x1="195" y1="100" x2="195" y2="305"/>
+      <line x1="270" y1="100" x2="270" y2="305"/>
+      <line x1="345" y1="105" x2="345" y2="300"/>
+    </g>
+
+    <!-- Section labels -->
+    <g fill="rgba(170,110,50,0.025)" font-family="'DM Mono', monospace" font-size="5">
+      <text x="155" y="320" text-anchor="middle">A</text>
+      <text x="232" y="320" text-anchor="middle">B</text>
+      <text x="308" y="320" text-anchor="middle">A'</text>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Post</span><br/>
+      <span class="line2">Hardcore</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

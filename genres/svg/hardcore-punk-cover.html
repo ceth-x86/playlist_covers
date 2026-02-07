@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hardcore Punk Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #080808;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0a0a;
+    overflow: hidden;
+  }
+
+  /* The same flat black as classic punk — no gradient,
+     no colour cast. Hardcore didn't soften the black 
+     (pop punk's navy) or warm it (grunge's brown).
+     It made it MORE black by making everything else
+     MORE white. Maximum contrast. SST Records. 
+     Dischord Records. Photocopied flyers. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #0a0a0a;
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* NO glow. Like punk. Hardcore inherits punk's refusals
+     and doubles down on them. */
+
+  /* Grain — even harsher than punk. The xerox of a xerox.
+     Basement show flyer fifth generation. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.42;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Xerox — inherited from punk, intensified */
+  .xerox {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    opacity: 0.06;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='xr'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.18' numOctaves='2' stitchTiles='stitch'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='discrete' tableValues='0 1'/%3E%3CfeFuncG type='discrete' tableValues='0 1'/%3E%3CfeFuncB type='discrete' tableValues='0 1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23xr)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+  }
+
+  /* NO vignette. Inherited from punk. */
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(240, 240, 240, 0.92);
+  }
+
+  .genre-name .line2 {
+    color: rgba(200, 200, 200, 0.45);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(220, 220, 220, 0.15);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 100px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(220, 220, 220, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <!-- NO glow. -->
+
+  <!-- Central form: punk's bar, SHORTENED and MULTIPLIED.
+       
+       Punk has one long horizontal bar spanning the frame.
+       It's a manifesto: one statement, take it or leave it.
+       
+       Hardcore took that bar and CHOPPED IT into 
+       a rapid burst of short strikes. Same horizontal
+       energy, but now it's a machine-gun burst, not 
+       a single slash. Each strike is a song — 45 seconds,
+       90 seconds, done.
+       
+       The strikes are COMPRESSED into a tight vertical 
+       band (not spread across the frame). Hardcore doesn't
+       sprawl. It concentrates. Everything in the first 
+       30 seconds. No intros, no solos, no fade-outs.
+       
+       Punk: ━━━━━━━━━━━━━━━━━━━━━ (one bar)
+       Hardcore: ━━  ━━━  ━━  ━━━━  ━━  ━━━  ━━ (burst)
+       
+       The strikes vary in length (not all songs are the 
+       same duration) but share the same thickness (same 
+       intensity — there is no quiet part).
+       
+       Black Flag "Damaged", Minor Threat, Bad Brains,
+       Cro-Mags, Agnostic Front, Gorilla Biscuits —
+       18 songs in 22 minutes. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="hcRough">
+        <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+
+    <!-- === THE BURST — short horizontal strikes === -->
+    <!-- All centred horizontally around x=220.
+         Varying lengths (40-140px) = varying song durations.
+         Constant height (8px) = constant intensity.
+         Tight vertical spacing (5-6px gap) = no breathing room.
+         Slightly rough edges (feDisplacementMap). -->
+
+    <g filter="url(#hcRough)">
+      <!-- Strike 1 — short opener, straight in -->
+      <rect x="158" y="128" width="80" height="8" rx="0.5"
+        fill="rgba(235,235,235,0.55)"/>
+
+      <!-- Strike 2 — longer, the first real song -->
+      <rect x="138" y="141" width="130" height="8" rx="0.5"
+        fill="rgba(230,230,230,0.52)"/>
+
+      <!-- Strike 3 — short blast -->
+      <rect x="175" y="154" width="65" height="8" rx="0.5"
+        fill="rgba(225,225,225,0.48)"/>
+
+      <!-- Strike 4 — medium -->
+      <rect x="148" y="167" width="110" height="8" rx="0.5"
+        fill="rgba(235,235,235,0.55)"/>
+
+      <!-- Strike 5 — the longest track -->
+      <rect x="120" y="180" width="168" height="8" rx="0.5"
+        fill="rgba(240,240,240,0.6)"/>
+
+      <!-- Strike 6 — short -->
+      <rect x="168" y="193" width="72" height="8" rx="0.5"
+        fill="rgba(225,225,225,0.48)"/>
+
+      <!-- Strike 7 — short -->
+      <rect x="178" y="206" width="58" height="8" rx="0.5"
+        fill="rgba(220,220,220,0.45)"/>
+
+      <!-- Strike 8 — medium-long -->
+      <rect x="132" y="219" width="145" height="8" rx="0.5"
+        fill="rgba(235,235,235,0.55)"/>
+
+      <!-- Strike 9 — shortest — the 22-second track -->
+      <rect x="188" y="232" width="42" height="8" rx="0.5"
+        fill="rgba(215,215,215,0.42)"/>
+
+      <!-- Strike 10 — medium -->
+      <rect x="152" y="245" width="105" height="8" rx="0.5"
+        fill="rgba(230,230,230,0.52)"/>
+
+      <!-- Strike 11 — long closer -->
+      <rect x="128" y="258" width="152" height="8" rx="0.5"
+        fill="rgba(238,238,238,0.58)"/>
+
+      <!-- Strike 12 — one more, because you thought it was over -->
+      <rect x="165" y="271" width="82" height="8" rx="0.5"
+        fill="rgba(225,225,225,0.48)"/>
+    </g>
+
+
+    <!-- === IMPACT MARKS — tiny debris around the burst === -->
+    <!-- The strikes hit so hard they throw off fragments -->
+    <g opacity="0.08">
+      <rect x="152" y="130" width="3" height="2" fill="#ddd" transform="rotate(-8,153,131)"/>
+      <rect x="290" y="183" width="4" height="1.5" fill="#ddd" transform="rotate(12,292,183)"/>
+      <rect x="117" y="222" width="3" height="1.5" fill="#ddd" transform="rotate(-5,118,222)"/>
+      <rect x="282" y="260" width="3" height="2" fill="#ddd" transform="rotate(10,283,261)"/>
+      <rect x="230" y="233" width="2" height="1.5" fill="#ddd" transform="rotate(15,231,233)"/>
+      <rect x="126" y="181" width="2.5" height="1.5" fill="#ddd" transform="rotate(-12,127,181)"/>
+      <rect x="250" y="155" width="2" height="1.5" fill="#ddd" transform="rotate(6,251,155)"/>
+    </g>
+
+
+    <!-- === DURATION MARKER — showing how compressed it is === -->
+    <!-- Total runtime timeline: impossibly short.
+         Where post-metal shows 0:00-12:00 for one song,
+         hardcore shows the ENTIRE ALBUM. -->
+    <g fill="rgba(220,220,220,0.025)" font-family="'DM Mono', monospace" font-size="4.5">
+      <text x="108" y="125">0:00</text>
+      <text x="108" y="280">22:00</text>
+    </g>
+    <!-- Thin timeline bar on the left -->
+    <line x1="105" y1="128" x2="105" y2="278"
+      stroke="rgba(220,220,220,0.025)" stroke-width="0.3"/>
+
+
+    <!-- === NO PROPER BPM TICKS === -->
+    <!-- Like punk, hardcore doesn't count.
+         But it's FASTER than punk's 3 ticks —
+         it's a blur of 8 undifferentiated strikes. -->
+    <g stroke="rgba(225,225,225,0.04)" stroke-width="0.5">
+      <line x1="170" y1="345" x2="170" y2="350"/>
+      <line x1="180" y1="345" x2="180" y2="350"/>
+      <line x1="190" y1="345" x2="190" y2="350"/>
+      <line x1="200" y1="345" x2="200" y2="350"/>
+      <line x1="210" y1="345" x2="210" y2="350"/>
+      <line x1="220" y1="345" x2="220" y2="350"/>
+      <line x1="230" y1="345" x2="230" y2="350"/>
+      <line x1="240" y1="345" x2="240" y2="350"/>
+    </g>
+  </svg>
+
+  <div class="xerox"></div>
+  <div class="grain"></div>
+
+  <!-- NO vignette. -->
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Hardcore</span><br/>
+      <span class="line2">Punk</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

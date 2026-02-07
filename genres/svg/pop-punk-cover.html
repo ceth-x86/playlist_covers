@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pop Punk Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #060818;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #080a1c;
+    overflow: hidden;
+  }
+
+  /* Clean dark navy — not pure black (punk's refusal)
+     but not atmospheric either (not post-rock depth).
+     The colour of a summer night in the suburbs.
+     Clean, readable, accessible. Punk's black 
+     went through the wash with a blue t-shirt. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(200, 80, 140, 0.04) 0%, transparent 42%),
+      linear-gradient(178deg, #0a0c20 0%, #080a1c 50%, #060818 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Pop punk gets its glow BACK — punk refused it,
+     but pop punk unrefused it. Bright, bubbly. */
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(220, 90, 150, 0.05) 0%, rgba(190, 70, 130, 0.018) 50%, transparent 65%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+
+  /* Grain — series constant, but lighter than punk.
+     Pop punk is recorded in a real studio, not a basement.
+     Well, sometimes a basement. But a nice one. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — BACK. Punk refused it. Pop punk brought it
+     back, because pop punk cares about looking good. -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(4,5,14,0.5) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 36px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(235, 105, 165, 0.88);
+  }
+
+  .genre-name .line2 {
+    color: rgba(200, 80, 140, 0.42);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(210, 90, 150, 0.18);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 104px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(210, 90, 150, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: punk's bar, BENT INTO A BOUNCE.
+       
+       Classic punk has one flat horizontal bar.
+       Post-hardcore has angular lines under tension.
+       Screamo has one line that ruptures.
+       
+       Pop punk takes punk's bar and makes it BOUNCE.
+       The same horizontal energy, but now it's a sine
+       wave — up, down, up, down — the palm-muted
+       power chord gallop of every pop punk chorus.
+       
+       It's thicker and more visible than punk's bar
+       (pop punk is louder, more produced).
+       It's REGULAR — the bounces are even, predictable.
+       You know what's coming. That's the point.
+       The joy is in the anticipation, not the surprise.
+       
+       Below: a second wave, slightly offset — the octave
+       root note that doubles every power chord.
+       
+       Blink-182, Green Day, The Offspring, New Found Glory,
+       Sum 41, MxPx — the sound of a parking lot
+       on a Friday night with the windows down. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bounceGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#a03870;stop-opacity:0.1"/>
+        <stop offset="10%" style="stop-color:#d05898;stop-opacity:0.4"/>
+        <stop offset="30%" style="stop-color:#e868a8;stop-opacity:0.6"/>
+        <stop offset="50%" style="stop-color:#f078b0;stop-opacity:0.7"/>
+        <stop offset="70%" style="stop-color:#e868a8;stop-opacity:0.6"/>
+        <stop offset="90%" style="stop-color:#d05898;stop-opacity:0.4"/>
+        <stop offset="100%" style="stop-color:#a03870;stop-opacity:0.1"/>
+      </linearGradient>
+      <linearGradient id="bounceGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#802858;stop-opacity:0.05"/>
+        <stop offset="15%" style="stop-color:#b04880;stop-opacity:0.15"/>
+        <stop offset="50%" style="stop-color:#c85898;stop-opacity:0.25"/>
+        <stop offset="85%" style="stop-color:#b04880;stop-opacity:0.15"/>
+        <stop offset="100%" style="stop-color:#802858;stop-opacity:0.05"/>
+      </linearGradient>
+
+      <filter id="punkRough">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="popGlow" x="-5%" y="-10%" width="110%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- === THE BOUNCE — punk's bar as sine wave === -->
+
+    <!-- Glow layer — the produced, polished version -->
+    <g filter="url(#popGlow)" opacity="0.4">
+      <path d="M 25,200
+               C 45,200 55,158 80,158
+               C 105,158 115,242 140,242
+               C 165,242 175,158 200,158
+               C 225,158 235,242 260,242
+               C 285,242 295,158 320,158
+               C 345,158 355,242 380,242
+               C 395,242 405,200 415,200"
+        fill="none" stroke="url(#bounceGrad)" stroke-width="6"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Primary wave — the bounce -->
+    <g filter="url(#punkRough)">
+      <path d="M 25,200
+               C 45,200 55,158 80,158
+               C 105,158 115,242 140,242
+               C 165,242 175,158 200,158
+               C 225,158 235,242 260,242
+               C 285,242 295,158 320,158
+               C 345,158 355,242 380,242
+               C 395,242 405,200 415,200"
+        fill="none" stroke="url(#bounceGrad)" stroke-width="2.5"
+        stroke-linecap="round" filter="url(#popGlow)"/>
+    </g>
+
+    <!-- Secondary wave — octave doubling, offset 12px down -->
+    <g opacity="0.5">
+      <path d="M 25,212
+               C 45,212 55,175 80,175
+               C 105,175 115,250 140,250
+               C 165,250 175,175 200,175
+               C 225,175 235,250 260,250
+               C 285,250 295,175 320,175
+               C 345,175 355,250 380,250
+               C 395,250 405,212 415,212"
+        fill="none" stroke="url(#bounceGrad2)" stroke-width="1.2"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === PEAK MARKERS — the downbeats, where you jump === -->
+    <g filter="url(#popGlow)">
+      <circle cx="80" cy="158" r="3" fill="rgba(240,120,180,0.25)"/>
+      <circle cx="200" cy="158" r="3" fill="rgba(240,120,180,0.25)"/>
+      <circle cx="320" cy="158" r="3" fill="rgba(240,120,180,0.25)"/>
+    </g>
+
+    <!-- Trough markers — where you land -->
+    <g opacity="0.4">
+      <circle cx="140" cy="242" r="2" fill="rgba(210,90,150,0.15)"/>
+      <circle cx="260" cy="242" r="2" fill="rgba(210,90,150,0.15)"/>
+      <circle cx="380" cy="242" r="2" fill="rgba(210,90,150,0.15)"/>
+    </g>
+
+
+    <!-- === THE GAP — space between primary and secondary wave.
+         Filled very faintly to show the BODY of the sound === -->
+    <g opacity="0.012">
+      <path d="M 25,200
+               C 45,200 55,158 80,158
+               C 105,158 115,242 140,242
+               C 165,242 175,158 200,158
+               C 225,158 235,242 260,242
+               C 285,242 295,158 320,158
+               C 345,158 355,242 380,242
+               C 395,242 405,200 415,200
+               L 415,212
+               C 405,212 395,250 380,250
+               C 355,250 345,175 320,175
+               C 295,175 285,250 260,250
+               C 235,250 225,175 200,175
+               C 175,175 165,250 140,250
+               C 115,250 105,175 80,175
+               C 55,175 45,212 25,212
+               Z"
+        fill="rgba(230,100,165,1)"/>
+    </g>
+
+
+    <!-- === BPM — fast and EVEN. Perfectly regular.
+         Punk's 3 irregular ticks made regular.
+         Pop punk is RELIABLE. === -->
+    <g stroke="rgba(210,90,150,0.045)" stroke-width="0.4">
+      <line x1="80" y1="340" x2="80" y2="348"/>
+      <line x1="100" y1="340" x2="100" y2="348"/>
+      <line x1="120" y1="340" x2="120" y2="348"/>
+      <line x1="140" y1="340" x2="140" y2="348"/>
+      <line x1="160" y1="340" x2="160" y2="348"/>
+      <line x1="180" y1="340" x2="180" y2="348"/>
+      <line x1="200" y1="340" x2="200" y2="348"/>
+      <line x1="220" y1="340" x2="220" y2="348"/>
+      <line x1="240" y1="340" x2="240" y2="348"/>
+      <line x1="260" y1="340" x2="260" y2="348"/>
+      <line x1="280" y1="340" x2="280" y2="348"/>
+      <line x1="300" y1="340" x2="300" y2="348"/>
+      <line x1="320" y1="340" x2="320" y2="348"/>
+      <line x1="340" y1="340" x2="340" y2="348"/>
+      <line x1="360" y1="340" x2="360" y2="348"/>
+    </g>
+    <!-- Every 4th — the 4/4 that never changes -->
+    <g stroke="rgba(225,100,160,0.06)" stroke-width="0.5">
+      <line x1="80" y1="339" x2="80" y2="350"/>
+      <line x1="160" y1="339" x2="160" y2="350"/>
+      <line x1="240" y1="339" x2="240" y2="350"/>
+      <line x1="320" y1="339" x2="320" y2="350"/>
+    </g>
+
+    <!-- === STRUCTURE LABEL — the simplest possible === -->
+    <g fill="rgba(200,85,145,0.025)" font-family="'DM Mono', monospace" font-size="5" text-anchor="middle">
+      <text x="110" y="300">v</text>
+      <text x="220" y="300">ch</text>
+      <text x="330" y="300">v</text>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Pop</span><br/>
+      <span class="line2">Punk</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

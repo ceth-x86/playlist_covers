@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industrial Metal Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #070806;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0b08;
+    overflow: hidden;
+  }
+
+  /* Scorched black with toxic chemical undertone */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(140, 150, 30, 0.04) 0%, transparent 40%),
+      radial-gradient(ellipse at 48% 52%, rgba(100, 110, 15, 0.02) 0%, transparent 30%),
+      linear-gradient(178deg, #0c0d0a 0%, #0a0b08 50%, #080806 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 420px;
+    height: 420px;
+  }
+
+  /* Toxic glow — sickly, not warm */
+  .glow {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(160, 170, 30, 0.04) 0%, rgba(120, 130, 15, 0.015) 50%, transparent 65%);
+    filter: blur(25px);
+    z-index: 2;
+  }
+
+  /* Hazard stripes — diagonal, industrial warning */
+  .hazard {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    opacity: 0.012;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 20px,
+      rgba(180, 190, 40, 0.3) 20px,
+      rgba(180, 190, 40, 0.3) 22px
+    );
+  }
+
+  /* Grain — series constant, heavy */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Industrial grit — coarse */
+  .grit {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    opacity: 0.05;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grit'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.4' numOctaves='2' stitchTiles='stitch'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='discrete' tableValues='0 0.25'/%3E%3CfeFuncG type='discrete' tableValues='0 0.28'/%3E%3CfeFuncB type='discrete' tableValues='0 0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grit)'/%3E%3C/svg%3E");
+    background-size: 150px 150px;
+  }
+
+  /* Hard vignette */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.65) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(195, 205, 55, 0.82);
+  }
+
+  .genre-name .line2 {
+    color: rgba(155, 165, 35, 0.4);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(165, 175, 40, 0.16);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 104px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(165, 175, 40, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: a stamping press grid — 
+       a 4×4 matrix of squares where some cells are CRUSHED
+       (filled, distorted, collapsed) and others remain intact.
+       
+       This is the fundamental difference from Industrial Techno:
+       - Industrial TECHNO = pistons (vertical, mechanical, continuous)
+       - Industrial METAL = stamp press (grid, binary, violent impact)
+       
+       Industrial techno is a machine RUNNING.
+       Industrial metal is a machine HITTING.
+       
+       The grid represents the locked-in, quantized riff.
+       Crushed cells = the downtuned guitar power chord.
+       Empty cells = the silence between hits.
+       The pattern is 4/4 but brutal — every beat is a punch.
+       
+       Ministry's Psalm 69, Godflesh's Streetcleaner,
+       Fear Factory's Demanufacture, KMFDM, Nine Inch Nails —
+       the assembly line of destruction. -->
+  <svg class="central-form" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="toxicGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#7a8218;stop-opacity:0.15"/>
+        <stop offset="50%" style="stop-color:#a0aa28;stop-opacity:0.35"/>
+        <stop offset="100%" style="stop-color:#7a8218;stop-opacity:0.15"/>
+      </linearGradient>
+      <linearGradient id="toxicGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#606818;stop-opacity:0.1"/>
+        <stop offset="50%" style="stop-color:#888e22;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#606818;stop-opacity:0.1"/>
+      </linearGradient>
+      <filter id="stamp">
+        <feTurbulence type="turbulence" baseFrequency="0.035" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="heavyStamp">
+        <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="4" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="toxicGlow" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- === THE GRID — 4×4 matrix of cells === -->
+    <!-- Grid lines — the structure -->
+    <g stroke="rgba(160,170,35,0.08)" stroke-width="0.5">
+      <!-- Verticals -->
+      <line x1="115" y1="80" x2="115" y2="330"/>
+      <line x1="170" y1="80" x2="170" y2="330"/>
+      <line x1="225" y1="80" x2="225" y2="330"/>
+      <line x1="280" y1="80" x2="280" y2="330"/>
+      <line x1="335" y1="80" x2="335" y2="330"/>
+      <!-- Horizontals -->
+      <line x1="115" y1="80" x2="335" y2="80"/>
+      <line x1="115" y1="142" x2="335" y2="142"/>
+      <line x1="115" y1="204" x2="335" y2="204"/>
+      <line x1="115" y1="266" x2="335" y2="266"/>
+      <line x1="115" y1="328" x2="335" y2="328"/>
+    </g>
+
+    <!-- === CRUSHED CELLS — filled, distorted, the HITS === -->
+    <!-- Row 1: hit, _, hit, _ -->
+    <g filter="url(#heavyStamp)">
+      <rect x="118" y="83" width="49" height="56" rx="1"
+        fill="url(#toxicGrad)" filter="url(#toxicGlow)"/>
+    </g>
+    <g filter="url(#heavyStamp)">
+      <rect x="228" y="83" width="49" height="56" rx="1"
+        fill="url(#toxicGrad)"/>
+    </g>
+
+    <!-- Row 2: _, hit, _, hit -->
+    <g filter="url(#heavyStamp)">
+      <rect x="173" y="145" width="49" height="56" rx="1"
+        fill="url(#toxicGrad)"/>
+    </g>
+    <g filter="url(#heavyStamp)">
+      <rect x="283" y="145" width="49" height="56" rx="1"
+        fill="url(#toxicGrad2)"/>
+    </g>
+
+    <!-- Row 3: hit, hit, _, _ -->
+    <g filter="url(#heavyStamp)">
+      <rect x="118" y="207" width="49" height="56" rx="1"
+        fill="url(#toxicGrad)" filter="url(#toxicGlow)"/>
+    </g>
+    <g filter="url(#stamp)">
+      <rect x="173" y="207" width="49" height="56" rx="1"
+        fill="url(#toxicGrad2)"/>
+    </g>
+
+    <!-- Row 4: _, _, hit, hit -->
+    <g filter="url(#heavyStamp)">
+      <rect x="228" y="269" width="49" height="56" rx="1"
+        fill="url(#toxicGrad2)"/>
+    </g>
+    <g filter="url(#heavyStamp)">
+      <rect x="283" y="269" width="49" height="56" rx="1"
+        fill="url(#toxicGrad)" filter="url(#toxicGlow)"/>
+    </g>
+
+    <!-- === IMPACT MARKS — stress fractures at crushed cell corners === -->
+    <g stroke="rgba(170,180,38,0.06)" stroke-width="0.4">
+      <!-- Cell 1,1 impacts -->
+      <line x1="115" y1="80" x2="108" y2="73"/>
+      <line x1="167" y1="80" x2="174" y2="73"/>
+      <line x1="115" y1="139" x2="108" y2="146"/>
+
+      <!-- Cell 1,3 impacts -->
+      <line x1="280" y1="80" x2="286" y2="73"/>
+      <line x1="225" y1="139" x2="218" y2="146"/>
+
+      <!-- Cell 3,1 impacts -->
+      <line x1="115" y1="204" x2="108" y2="197"/>
+      <line x1="167" y1="263" x2="174" y2="270"/>
+
+      <!-- Cell 4,4 impacts -->
+      <line x1="335" y1="328" x2="342" y2="335"/>
+      <line x1="335" y1="266" x2="342" y2="259"/>
+    </g>
+
+    <!-- === STRESS CRACKS — running through the grid === -->
+    <g stroke="rgba(150,160,30,0.04)" stroke-width="0.3">
+      <path d="M 115,110 L 108,115 L 102,108" fill="none"/>
+      <path d="M 335,190 L 342,195 L 348,188" fill="none"/>
+      <path d="M 220,328 L 225,336 L 218,342" fill="none"/>
+    </g>
+
+    <!-- === VIBRATION LINES — around crushed cells, 
+         the resonance of impact === -->
+    <g opacity="0.06">
+      <!-- Around cell 1,1 -->
+      <rect x="112" y="77" width="55" height="62" rx="2" fill="none"
+        stroke="rgba(180,190,40,1)" stroke-width="0.4"/>
+      <!-- Around cell 3,1 -->
+      <rect x="112" y="201" width="55" height="62" rx="2" fill="none"
+        stroke="rgba(180,190,40,1)" stroke-width="0.4"/>
+      <!-- Around cell 4,4 -->
+      <rect x="277" y="263" width="55" height="62" rx="2" fill="none"
+        stroke="rgba(180,190,40,1)" stroke-width="0.4"/>
+    </g>
+
+    <!-- === EMPTY CELLS — residue marks showing the press withdrew === -->
+    <g opacity="0.03">
+      <!-- Ghost imprint in empty cell 1,2 -->
+      <rect x="175" y="86" width="43" height="50" rx="1"
+        fill="rgba(150,160,30,1)" filter="url(#stamp)"/>
+      <!-- Ghost in 2,1 -->
+      <rect x="120" y="148" width="43" height="50" rx="1"
+        fill="rgba(150,160,30,1)" filter="url(#stamp)"/>
+    </g>
+
+    <!-- === SEQUENCE INDICATOR — bottom, showing the hit pattern === -->
+    <g fill="rgba(170,180,38,0.06)" font-family="'DM Mono', monospace" font-size="6" text-anchor="middle">
+      <text x="142" y="355">1</text>
+      <text x="197" y="355">0</text>
+      <text x="252" y="355">1</text>
+      <text x="307" y="355">0</text>
+    </g>
+    <g fill="rgba(170,180,38,0.04)" font-family="'DM Mono', monospace" font-size="6" text-anchor="middle">
+      <text x="142" y="365">0</text>
+      <text x="197" y="365">1</text>
+      <text x="252" y="365">0</text>
+      <text x="307" y="365">1</text>
+    </g>
+
+    <!-- Row numbers — left margin -->
+    <g fill="rgba(160,170,35,0.04)" font-family="'DM Mono', monospace" font-size="5.5">
+      <text x="100" y="114" text-anchor="end">01</text>
+      <text x="100" y="176" text-anchor="end">02</text>
+      <text x="100" y="238" text-anchor="end">03</text>
+      <text x="100" y="300" text-anchor="end">04</text>
+    </g>
+  </svg>
+
+  <div class="hazard"></div>
+  <div class="grit"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Industrial</span><br/>
+      <span class="line2">Metal</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

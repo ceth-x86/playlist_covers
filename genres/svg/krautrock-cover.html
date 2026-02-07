@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krautrock Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0a0908;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0e0c0a;
+    overflow: hidden;
+  }
+
+  /* Warm analogue brown — like aged vinyl sleeve cardboard,
+     tobacco-stained studio walls in Cologne 1972 */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(140, 110, 55, 0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at 40% 45%, rgba(100, 95, 45, 0.025) 0%, transparent 35%),
+      linear-gradient(172deg, #100e0a 0%, #0e0c0a 45%, #0a0908 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Warm amber glow — like a tube amplifier in a dark room */
+  .glow {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(160, 125, 55, 0.04) 0%, rgba(130, 100, 40, 0.015) 50%, transparent 65%);
+    filter: blur(30px);
+    z-index: 2;
+  }
+
+  /* Vinyl surface texture — warm, analogue feel */
+  .vinyl {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    opacity: 0.03;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='vin'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.3 0 0 0 0 0.25 0 0 0 0 0.1 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23vin)'/%3E%3C/svg%3E");
+    background-size: 400px 400px;
+  }
+
+  /* Grain — series constant */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    opacity: 0.28;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — warm-tinted */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(8,6,4,0.55) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 48px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: rgba(195, 160, 80, 0.8);
+    line-height: 1;
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(175, 140, 65, 0.2);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 100px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(175, 140, 65, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: two coexisting systems —
+       
+       1) THE MOTORIK: a perfectly steady horizontal pulse at the bottom —
+          the unchanging 4/4 that Jaki Liebezeit / Klaus Dinger invented.
+          Evenly spaced, metronomic, hypnotic. 
+          This is the autobahn — the road that never ends.
+       
+       2) THE KOSMISCHE: above the motorik, organic drifting curves
+          that wander freely — modular synthesizer explorations,
+          guitar feedback arcs, flute improvisations.
+          These are NOT locked to the grid. They float, 
+          overlap, breathe at their own pace.
+       
+       The two systems coexist but don't interact —
+       the motorik doesn't change, the kosmische doesn't land.
+       That tension IS krautrock.
+       
+       This is Can, Neu!, early Tangerine Dream, Cluster,
+       Faust, Amon Düül II — the sound of Germany 
+       reinventing music from zero. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="motorikGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#8a7030;stop-opacity:0"/>
+        <stop offset="8%" style="stop-color:#b09040;stop-opacity:0.35"/>
+        <stop offset="50%" style="stop-color:#c8a850;stop-opacity:0.5"/>
+        <stop offset="92%" style="stop-color:#b09040;stop-opacity:0.35"/>
+        <stop offset="100%" style="stop-color:#8a7030;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="kosmischeGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#6a6028;stop-opacity:0"/>
+        <stop offset="15%" style="stop-color:#9a8838;stop-opacity:0.2"/>
+        <stop offset="50%" style="stop-color:#b8a048;stop-opacity:0.35"/>
+        <stop offset="85%" style="stop-color:#9a8838;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#6a6028;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="kosmischeGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#585218;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#887830;stop-opacity:0.1"/>
+        <stop offset="50%" style="stop-color:#a09038;stop-opacity:0.18"/>
+        <stop offset="80%" style="stop-color:#887830;stop-opacity:0.1"/>
+        <stop offset="100%" style="stop-color:#585218;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="kosmischeGhost" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#484210;stop-opacity:0"/>
+        <stop offset="25%" style="stop-color:#787028;stop-opacity:0.05"/>
+        <stop offset="50%" style="stop-color:#908830;stop-opacity:0.08"/>
+        <stop offset="75%" style="stop-color:#787028;stop-opacity:0.05"/>
+        <stop offset="100%" style="stop-color:#484210;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="analogueWarm" x="-10%" y="-15%" width="120%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="cosmicDrift" x="-10%" y="-15%" width="120%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- ============================================= -->
+    <!-- === THE MOTORIK — bottom zone, relentless === -->
+    <!-- ============================================= -->
+
+    <!-- Baseline -->
+    <line x1="40" y1="295" x2="400" y2="295"
+      stroke="url(#motorikGrad)" stroke-width="0.6" filter="url(#analogueWarm)"/>
+
+    <!-- Perfectly even tick marks — the heartbeat, never changes -->
+    <g stroke="url(#motorikGrad)" stroke-width="0.5" filter="url(#analogueWarm)">
+      <line x1="72" y1="289" x2="72" y2="301"/>
+      <line x1="100" y1="289" x2="100" y2="301"/>
+      <line x1="128" y1="289" x2="128" y2="301"/>
+      <line x1="156" y1="289" x2="156" y2="301"/>
+      <line x1="184" y1="289" x2="184" y2="301"/>
+      <line x1="212" y1="289" x2="212" y2="301"/>
+      <line x1="240" y1="289" x2="240" y2="301"/>
+      <line x1="268" y1="289" x2="268" y2="301"/>
+      <line x1="296" y1="289" x2="296" y2="301"/>
+      <line x1="324" y1="289" x2="324" y2="301"/>
+      <line x1="352" y1="289" x2="352" y2="301"/>
+      <line x1="380" y1="289" x2="380" y2="301"/>
+    </g>
+
+    <!-- Beat emphasis — every 4th tick slightly brighter -->
+    <g fill="rgba(195,165,70,0.15)" filter="url(#analogueWarm)">
+      <circle cx="72" cy="295" r="1.8"/>
+      <circle cx="156" cy="295" r="1.8"/>
+      <circle cx="240" cy="295" r="1.8"/>
+      <circle cx="324" cy="295" r="1.8"/>
+    </g>
+
+    <!-- Motorik continues beyond edges — it never stops -->
+    <g stroke="rgba(160,135,55,0.06)" stroke-width="0.4">
+      <line x1="15" y1="295" x2="38" y2="295"/>
+      <line x1="402" y1="295" x2="425" y2="295"/>
+    </g>
+    <!-- Arrows suggesting infinity -->
+    <g fill="rgba(160,135,55,0.04)">
+      <polygon points="10,295 18,292 18,298"/>
+      <polygon points="430,295 422,292 422,298"/>
+    </g>
+
+
+    <!-- =============================================== -->
+    <!-- === THE KOSMISCHE — above, free, wandering === -->
+    <!-- =============================================== -->
+
+    <!-- Ghost layer — highest, most diffuse -->
+    <g filter="url(#cosmicDrift)">
+      <path d="M 35,115
+               C 80,125 100,95 140,88
+               C 180,81 200,110 230,118
+               C 260,126 290,85 320,78
+               C 350,71 380,100 410,108"
+        fill="none" stroke="url(#kosmischeGhost)" stroke-width="0.6" stroke-linecap="round"/>
+    </g>
+
+    <!-- Drift layer 3 -->
+    <g filter="url(#cosmicDrift)">
+      <path d="M 30,148
+               C 75,138 105,160 145,168
+               C 185,176 205,142 235,132
+               C 265,122 300,155 335,162
+               C 370,169 395,145 415,140"
+        fill="none" stroke="url(#kosmischeGrad2)" stroke-width="0.8" stroke-linecap="round"/>
+    </g>
+
+    <!-- Drift layer 2 — the modular synth voice -->
+    <g filter="url(#analogueWarm)">
+      <path d="M 38,188
+               C 70,182 95,198 130,205
+               C 165,212 185,178 215,170
+               C 245,162 275,195 310,202
+               C 345,209 370,185 405,178"
+        fill="none" stroke="url(#kosmischeGrad1)" stroke-width="1.0" stroke-linecap="round"/>
+    </g>
+
+    <!-- Primary drift — the guitar/flute/voice, warmest -->
+    <g filter="url(#analogueWarm)">
+      <path d="M 42,228
+               C 72,220 98,240 135,245
+               C 172,250 195,218 225,210
+               C 255,202 285,232 315,240
+               C 345,248 375,225 408,218"
+        fill="none" stroke="url(#kosmischeGrad1)" stroke-width="1.4" stroke-linecap="round"/>
+    </g>
+
+    <!-- === THE GAP — the space between kosmische and motorik.
+         Nothing here. This emptiness is the point:
+         the two systems don't touch. === -->
+
+    <!-- A single faint horizontal line marking the border zone -->
+    <line x1="80" y1="265" x2="360" y2="265"
+      stroke="rgba(160,135,55,0.025)" stroke-width="0.3"/>
+
+
+    <!-- === WANDERING NODES — moments where the kosmische 
+         briefly almost aligns with something === -->
+    <g filter="url(#analogueWarm)">
+      <circle cx="135" cy="245" r="1.8" fill="rgba(185,155,65,0.15)"/>
+      <circle cx="225" cy="210" r="2.0" fill="rgba(185,155,65,0.18)"/>
+      <circle cx="315" cy="240" r="1.8" fill="rgba(185,155,65,0.15)"/>
+    </g>
+
+    <!-- Faint drift trails — the kosmische leaves traces 
+         as it wanders, like synth delay trails -->
+    <g opacity="0.03" stroke="rgba(160,140,60,1)" stroke-width="0.3" fill="none">
+      <path d="M 135,245 Q 145,260 155,250"/>
+      <path d="M 225,210 Q 232,225 240,218"/>
+      <path d="M 315,240 Q 322,255 330,248"/>
+    </g>
+
+    <!-- === SIDE NOTATION — the Conny Plank approach:
+         minimal markings, like tape reel notations === -->
+    <g fill="rgba(150,125,55,0.03)" font-family="'DM Mono', monospace" font-size="5">
+      <text x="415" y="228" text-anchor="start">A</text>
+      <text x="415" y="295" text-anchor="start">B</text>
+    </g>
+  </svg>
+
+  <div class="vinyl"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Krautrock</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

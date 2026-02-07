@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melodic Death Metal Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #060810;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #080a14;
+    overflow: hidden;
+  }
+
+  /* Nordic winter blue-black — Scandinavian cold,
+     not the royal blue of power metal (warm, heroic)
+     but the blue of Swedish winter dawn, ice on the Baltic.
+     Gothenburg at 4am in December. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(100, 130, 180, 0.04) 0%, transparent 42%),
+      radial-gradient(ellipse at 48% 50%, rgba(70, 95, 140, 0.025) 0%, transparent 35%),
+      linear-gradient(178deg, #0a0c18 0%, #080a14 45%, #060810 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Cold glow — northern, spread wide */
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 260px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(110, 140, 195, 0.04) 0%, rgba(80, 105, 155, 0.015) 50%, transparent 65%);
+    filter: blur(28px);
+    z-index: 2;
+  }
+
+  /* Frost texture — delicate, crystalline */
+  .frost {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    opacity: 0.015;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='fr'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.025' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23fr)'/%3E%3C/svg%3E");
+    background-size: 400px 400px;
+  }
+
+  /* Grain — series constant */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.24;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at center, transparent 35%, rgba(4,5,10,0.6) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — system constant */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 24px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .genre-name .line1 {
+    color: rgba(170, 195, 235, 0.78);
+  }
+
+  .genre-name .line2 {
+    color: rgba(130, 155, 200, 0.5);
+  }
+
+  .genre-name .line3 {
+    color: rgba(105, 130, 175, 0.3);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(140, 165, 210, 0.15);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 110px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(140, 165, 210, 0.09);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: two voices running in counterpoint —
+       one brutal, one melodic — SIMULTANEOUSLY.
+       
+       This is the critical distinction:
+       - Metalcore ALTERNATES between heavy and clean (toggle)
+       - Melodic death metal plays both AT THE SAME TIME
+       
+       The brutal voice: a jagged angular line,
+       thick, with distortion, moving aggressively.
+       
+       The melodic voice: a smooth Bézier curve,
+       thinner, clean, singing above/below/through the chaos.
+       
+       They weave around each other — sometimes diverging
+       (verse, where growl dominates), sometimes converging
+       (chorus, where harmony guitar leads), sometimes
+       crossing (the solo, where melody pierces through).
+       
+       This is At the Gates "Slaughter of the Soul",
+       In Flames "The Jester Race", Dark Tranquillity
+       "The Gallery" — the Gothenburg school where
+       Iron Maiden harmonies were played through
+       death metal distortion. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="brutalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#3a4868;stop-opacity:0"/>
+        <stop offset="8%" style="stop-color:#5a6888;stop-opacity:0.15"/>
+        <stop offset="25%" style="stop-color:#7888a8;stop-opacity:0.35"/>
+        <stop offset="50%" style="stop-color:#90a0c0;stop-opacity:0.5"/>
+        <stop offset="75%" style="stop-color:#7888a8;stop-opacity:0.35"/>
+        <stop offset="92%" style="stop-color:#5a6888;stop-opacity:0.15"/>
+        <stop offset="100%" style="stop-color:#3a4868;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="melodyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#5068a0;stop-opacity:0"/>
+        <stop offset="10%" style="stop-color:#7088c0;stop-opacity:0.2"/>
+        <stop offset="30%" style="stop-color:#90a8d8;stop-opacity:0.45"/>
+        <stop offset="50%" style="stop-color:#a8c0e8;stop-opacity:0.65"/>
+        <stop offset="70%" style="stop-color:#90a8d8;stop-opacity:0.45"/>
+        <stop offset="90%" style="stop-color:#7088c0;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#5068a0;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="crossGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+        <stop offset="0%" style="stop-color:#80a0d0;stop-opacity:0.4"/>
+        <stop offset="100%" style="stop-color:#80a0d0;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="brutalDistort">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="melodyGlow" x="-5%" y="-10%" width="110%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="crossGlow" x="-15%" y="-15%" width="130%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- === THE BRUTAL VOICE — growl, distortion, aggression === -->
+    <!-- Angular, jagged, thick — the death metal component -->
+    <g filter="url(#brutalDistort)">
+      <polyline points="
+        30,200
+        52,198
+        68,195
+        82,190
+        95,182
+        105,175
+        118,185
+        128,168
+        140,188
+        150,160
+        162,192
+        175,155
+        188,195
+        198,150
+        210,198
+        222,148
+        232,195
+        245,152
+        255,190
+        268,158
+        278,185
+        290,165
+        302,180
+        312,170
+        325,178
+        338,175
+        352,182
+        368,188
+        385,195
+        402,198
+        420,200
+      " fill="none" stroke="url(#brutalGrad)" stroke-width="2.2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+
+    <!-- === THE MELODIC VOICE — harmony, singing, beauty === -->
+    <!-- Smooth Bézier curves, clean, luminous — 
+         the Iron Maiden DNA in death metal -->
+    <g filter="url(#melodyGlow)">
+      <path d="M 30,200
+               C 60,200 80,220 110,235
+               C 140,250 160,260 190,255
+               C 220,250 240,230 260,210
+               C 280,190 290,170 310,158
+               C 330,146 350,148 370,160
+               C 390,172 400,188 420,200"
+        fill="none" stroke="url(#melodyGrad)" stroke-width="1.2"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Second melodic voice — harmony guitar, slightly offset -->
+    <g filter="url(#melodyGlow)" opacity="0.45">
+      <path d="M 30,200
+               C 55,198 75,215 105,228
+               C 135,241 158,250 188,248
+               C 218,246 238,228 258,210
+               C 278,192 295,178 315,168
+               C 335,158 352,160 372,170
+               C 392,180 405,192 420,200"
+        fill="none" stroke="url(#melodyGrad)" stroke-width="0.7"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === CROSSING POINTS — where melody pierces through brutality === -->
+    <!-- These are the moments where both voices occupy the same
+         pitch space — the fusion point of the genre -->
+    <g filter="url(#crossGlow)">
+      <!-- They start together at the origin -->
+      <circle cx="30" cy="200" r="2" fill="rgba(145,175,220,0.15)"/>
+
+      <!-- First crossing — melody dips below, then rises through -->
+      <circle cx="162" cy="192" r="2.5" fill="rgba(155,185,230,0.2)"/>
+
+      <!-- Central crossing — the climax -->
+      <circle cx="260" cy="210" r="3" fill="rgba(165,195,240,0.25)"/>
+
+      <!-- Final convergence -->
+      <circle cx="420" cy="200" r="2" fill="rgba(145,175,220,0.15)"/>
+    </g>
+
+    <!-- Crossing flares — tiny vertical lines at intersection -->
+    <g stroke="rgba(160,190,235,0.06)" stroke-width="0.3">
+      <line x1="162" y1="182" x2="162" y2="202"/>
+      <line x1="260" y1="198" x2="260" y2="222"/>
+    </g>
+
+
+    <!-- === SPACE BETWEEN — the gap between the voices,
+         showing how they diverge and converge === -->
+    <!-- Maximum separation zone — verse, where growl dominates -->
+    <g opacity="0.012">
+      <path d="M 105,175 L 105,235 L 190,255 L 190,195 Z"
+        fill="rgba(130,160,210,1)"/>
+    </g>
+    <!-- Convergence zone — chorus, voices close together -->
+    <g opacity="0.008">
+      <path d="M 260,210 L 310,158 L 310,168 L 260,210 Z"
+        fill="rgba(140,170,220,1)"/>
+    </g>
+
+
+    <!-- === DUAL VOICE LABELS — bottom === -->
+    <g fill="rgba(130,160,210,0.025)" font-family="'DM Mono', monospace" font-size="5">
+      <text x="80" y="325">▲ growl</text>
+      <text x="80" y="338">▼ melody</text>
+    </g>
+
+    <!-- Divergence/convergence markers -->
+    <g fill="rgba(130,160,210,0.02)" font-family="'DM Mono', monospace" font-size="4.5" text-anchor="middle">
+      <text x="148" y="280">diverge</text>
+      <text x="285" y="280">converge</text>
+    </g>
+
+    <!-- === BPM — fast, driving, Gothenburg tempo === -->
+    <g stroke="rgba(130,160,210,0.035)" stroke-width="0.3">
+      <line x1="90" y1="365" x2="90" y2="372"/>
+      <line x1="104" y1="365" x2="104" y2="372"/>
+      <line x1="118" y1="365" x2="118" y2="372"/>
+      <line x1="132" y1="365" x2="132" y2="372"/>
+      <line x1="146" y1="365" x2="146" y2="372"/>
+      <line x1="160" y1="365" x2="160" y2="372"/>
+      <line x1="174" y1="365" x2="174" y2="372"/>
+      <line x1="188" y1="365" x2="188" y2="372"/>
+      <line x1="202" y1="365" x2="202" y2="372"/>
+      <line x1="216" y1="365" x2="216" y2="372"/>
+      <line x1="230" y1="365" x2="230" y2="372"/>
+      <line x1="244" y1="365" x2="244" y2="372"/>
+      <line x1="258" y1="365" x2="258" y2="372"/>
+      <line x1="272" y1="365" x2="272" y2="372"/>
+      <line x1="286" y1="365" x2="286" y2="372"/>
+      <line x1="300" y1="365" x2="300" y2="372"/>
+      <line x1="314" y1="365" x2="314" y2="372"/>
+      <line x1="328" y1="365" x2="328" y2="372"/>
+      <line x1="342" y1="365" x2="342" y2="372"/>
+      <line x1="356" y1="365" x2="356" y2="372"/>
+    </g>
+  </svg>
+
+  <div class="frost"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Melodic</span><br/>
+      <span class="line2">Death</span><br/>
+      <span class="line3">Metal</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arena Rock Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #080608;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0c0a0c;
+    overflow: hidden;
+  }
+
+  /* Pure deep black with the faintest warm cast —
+     the black of a stadium before the lights hit.
+     Not cold (techno), not brown (soft rock),
+     not purple (prog). Just BIG black. The void
+     that makes the light show possible. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 44%, rgba(220, 180, 100, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 44%, rgba(200, 160, 85, 0.03) 0%, transparent 35%),
+      linear-gradient(180deg, #0e0c0e 0%, #0c0a0c 40%, #080608 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* The BIGGEST glow in the series — stadium floods.
+     Fills nearly the entire frame. */
+  .glow {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    height: 340px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(225, 185, 105, 0.06) 0%, rgba(200, 160, 85, 0.03) 35%, rgba(180, 140, 70, 0.01) 55%, transparent 70%);
+    filter: blur(35px);
+    z-index: 2;
+  }
+
+  /* Grain — low, polished, big-budget production */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.17;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — DRAMATIC, theatrical framing */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 42%, transparent 28%, rgba(5,3,5,0.62) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 34px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(230, 195, 120, 0.85);
+  }
+
+  .genre-name .line2 {
+    color: rgba(195, 160, 95, 0.4);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(200, 165, 100, 0.15);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 102px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(200, 165, 100, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE BURST — radiating outward 
+       from a single centre point to fill the frame.
+       
+       This is the BIGGEST, most SYMMETRICAL form 
+       in the entire series. 
+       
+       Where every other genre's form is restrained,
+       asymmetric, subtle — arena rock's form is 
+       HUGE, perfectly bilateral, and designed for
+       maximum visual impact at maximum distance.
+       
+       Eight rays radiate from the centre, each one
+       a thick gradient stroke that fades as it 
+       extends outward. Between the rays: secondary
+       rays, thinner, creating a starburst.
+       
+       The form is perfectly centred, perfectly 
+       symmetrical. Arena rock has nothing to hide.
+       No irony, no ambiguity, no restraint.
+       
+       Power metal also radiates upward (ascending rays).
+       Arena rock radiates in ALL DIRECTIONS — it fills
+       the room, not the sky.
+       
+       Queen "A Night at the Opera",
+       Def Leppard "Hysteria",
+       Journey "Escape",
+       Bon Jovi, U2, Foreigner, Boston —
+       the lighter in the air. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="burstCentre" cx="50%" cy="45%" r="50%">
+        <stop offset="0%" style="stop-color:#e8c878;stop-opacity:0.35"/>
+        <stop offset="15%" style="stop-color:#d8b868;stop-opacity:0.2"/>
+        <stop offset="40%" style="stop-color:#c8a858;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#a88838;stop-opacity:0"/>
+      </radialGradient>
+
+      <filter id="stageBlur" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="floodBlur" x="-12%" y="-12%" width="124%" height="124%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- === CENTRE CORE — the hot point, the spotlight === -->
+    <g filter="url(#floodBlur)">
+      <circle cx="220" cy="195" r="18" fill="url(#burstCentre)"/>
+    </g>
+    <g filter="url(#stageBlur)">
+      <circle cx="220" cy="195" r="6" fill="rgba(235,200,120,0.18)"/>
+    </g>
+    <circle cx="220" cy="195" r="2.5" fill="rgba(245,215,140,0.25)"/>
+
+
+    <!-- === PRIMARY RAYS — 8 directions, thick === -->
+    <!-- Perfectly symmetrical. Each ray is a line
+         from centre radiating outward, fading. -->
+
+    <g filter="url(#stageBlur)">
+      <!-- Up -->
+      <line x1="220" y1="195" x2="220" y2="55"
+        stroke="rgba(225,190,110,0.2)" stroke-width="2.5"
+        stroke-linecap="round"/>
+      <!-- Down -->
+      <line x1="220" y1="195" x2="220" y2="345"
+        stroke="rgba(225,190,110,0.2)" stroke-width="2.5"
+        stroke-linecap="round"/>
+      <!-- Left -->
+      <line x1="220" y1="195" x2="60" y2="195"
+        stroke="rgba(225,190,110,0.2)" stroke-width="2.5"
+        stroke-linecap="round"/>
+      <!-- Right -->
+      <line x1="220" y1="195" x2="380" y2="195"
+        stroke="rgba(225,190,110,0.2)" stroke-width="2.5"
+        stroke-linecap="round"/>
+      <!-- Up-Left -->
+      <line x1="220" y1="195" x2="107" y2="82"
+        stroke="rgba(225,190,110,0.18)" stroke-width="2.2"
+        stroke-linecap="round"/>
+      <!-- Up-Right -->
+      <line x1="220" y1="195" x2="333" y2="82"
+        stroke="rgba(225,190,110,0.18)" stroke-width="2.2"
+        stroke-linecap="round"/>
+      <!-- Down-Left -->
+      <line x1="220" y1="195" x2="107" y2="308"
+        stroke="rgba(225,190,110,0.18)" stroke-width="2.2"
+        stroke-linecap="round"/>
+      <!-- Down-Right -->
+      <line x1="220" y1="195" x2="333" y2="308"
+        stroke="rgba(225,190,110,0.18)" stroke-width="2.2"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === SECONDARY RAYS — 8 more, thinner, between primaries === -->
+    <g filter="url(#stageBlur)" opacity="0.6">
+      <!-- NNE -->
+      <line x1="220" y1="195" x2="272" y2="68"
+        stroke="rgba(215,180,105,0.12)" stroke-width="1.0"
+        stroke-linecap="round"/>
+      <!-- ENE -->
+      <line x1="220" y1="195" x2="365" y2="138"
+        stroke="rgba(215,180,105,0.12)" stroke-width="1.0"
+        stroke-linecap="round"/>
+      <!-- ESE -->
+      <line x1="220" y1="195" x2="365" y2="252"
+        stroke="rgba(215,180,105,0.12)" stroke-width="1.0"
+        stroke-linecap="round"/>
+      <!-- SSE -->
+      <line x1="220" y1="195" x2="272" y2="325"
+        stroke="rgba(215,180,105,0.12)" stroke-width="1.0"
+        stroke-linecap="round"/>
+      <!-- SSW -->
+      <line x1="220" y1="195" x2="168" y2="325"
+        stroke="rgba(215,180,105,0.12)" stroke-width="1.0"
+        stroke-linecap="round"/>
+      <!-- WSW -->
+      <line x1="220" y1="195" x2="75" y2="252"
+        stroke="rgba(215,180,105,0.12)" stroke-width="1.0"
+        stroke-linecap="round"/>
+      <!-- WNW -->
+      <line x1="220" y1="195" x2="75" y2="138"
+        stroke="rgba(215,180,105,0.12)" stroke-width="1.0"
+        stroke-linecap="round"/>
+      <!-- NNW -->
+      <line x1="220" y1="195" x2="168" y2="68"
+        stroke="rgba(215,180,105,0.12)" stroke-width="1.0"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === TERTIARY SHIMMER — faintest rays === -->
+    <g opacity="0.2">
+      <line x1="220" y1="195" x2="245" y2="60"
+        stroke="rgba(210,175,100,0.08)" stroke-width="0.4"
+        stroke-linecap="round"/>
+      <line x1="220" y1="195" x2="195" y2="60"
+        stroke="rgba(210,175,100,0.08)" stroke-width="0.4"
+        stroke-linecap="round"/>
+      <line x1="220" y1="195" x2="375" y2="168"
+        stroke="rgba(210,175,100,0.08)" stroke-width="0.4"
+        stroke-linecap="round"/>
+      <line x1="220" y1="195" x2="375" y2="222"
+        stroke="rgba(210,175,100,0.08)" stroke-width="0.4"
+        stroke-linecap="round"/>
+      <line x1="220" y1="195" x2="65" y2="168"
+        stroke="rgba(210,175,100,0.08)" stroke-width="0.4"
+        stroke-linecap="round"/>
+      <line x1="220" y1="195" x2="65" y2="222"
+        stroke="rgba(210,175,100,0.08)" stroke-width="0.4"
+        stroke-linecap="round"/>
+      <line x1="220" y1="195" x2="245" y2="340"
+        stroke="rgba(210,175,100,0.08)" stroke-width="0.4"
+        stroke-linecap="round"/>
+      <line x1="220" y1="195" x2="195" y2="340"
+        stroke="rgba(210,175,100,0.08)" stroke-width="0.4"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === CONCENTRIC RINGS — the sound waves expanding === -->
+    <!-- Three faint circles at increasing radii from centre,
+         like sound pressure waves hitting the back row. -->
+    <g fill="none" stroke="rgba(215,180,105,0.025)" stroke-width="0.3">
+      <circle cx="220" cy="195" r="55"/>
+      <circle cx="220" cy="195" r="95"/>
+      <circle cx="220" cy="195" r="140"/>
+    </g>
+
+
+    <!-- === BPM — loud, anthemic, perfectly on the beat === -->
+    <!-- The most EMPHATIC accents in the series.
+         Every downbeat is a stadium clap.
+         4/4, no ambiguity, no subtlety. -->
+    <g stroke="rgba(210,175,100,0.03)" stroke-width="0.35">
+      <line x1="100" y1="375" x2="100" y2="382"/>
+      <line x1="118" y1="375" x2="118" y2="382"/>
+      <line x1="136" y1="375" x2="136" y2="382"/>
+      <line x1="154" y1="375" x2="154" y2="382"/>
+      <line x1="172" y1="375" x2="172" y2="382"/>
+      <line x1="190" y1="375" x2="190" y2="382"/>
+      <line x1="208" y1="375" x2="208" y2="382"/>
+      <line x1="226" y1="375" x2="226" y2="382"/>
+      <line x1="244" y1="375" x2="244" y2="382"/>
+      <line x1="262" y1="375" x2="262" y2="382"/>
+      <line x1="280" y1="375" x2="280" y2="382"/>
+      <line x1="298" y1="375" x2="298" y2="382"/>
+      <line x1="316" y1="375" x2="316" y2="382"/>
+      <line x1="334" y1="375" x2="334" y2="382"/>
+    </g>
+    <!-- Downbeats — HEAVY, the stomp -->
+    <g stroke="rgba(225,190,115,0.06)" stroke-width="0.6">
+      <line x1="100" y1="373" x2="100" y2="384"/>
+      <line x1="172" y1="373" x2="172" y2="384"/>
+      <line x1="244" y1="373" x2="244" y2="384"/>
+      <line x1="316" y1="373" x2="316" y2="384"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Arena</span><br/>
+      <span class="line2">Rock</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>
