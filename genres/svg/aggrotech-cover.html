@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aggrotech Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #060804;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0c06;
+    overflow: hidden;
+  }
+
+  /* Pitch black with sickly green cast — the colour
+     of a CRT monitor showing a fatal error. Not
+     EBM's factory-floor blue-grey (disciplined).
+     Not industrial metal's rust-black (organic decay).
+     This is DIGITAL corruption — phosphor green
+     burning into black plastic.
+     Metropolis Records, Out of Line, Dependent,
+     Alfa Matrix. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(100, 135, 30, 0.04) 0%, transparent 40%),
+      radial-gradient(ellipse at 52% 50%, rgba(130, 150, 20, 0.02) 0%, transparent 30%),
+      linear-gradient(180deg, #0c0e08 0%, #0a0c06 42%, #060804 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — harsh, concentrated, the overdriven
+     LED on a distortion unit. Greener and tighter
+     than EBM's diffuse fluorescent. -->
+  .glow {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(110, 148, 25, 0.05) 0%, rgba(85, 118, 18, 0.018) 40%, transparent 58%);
+    filter: blur(18px);
+    z-index: 2;
+  }
+
+  /* Grain — HEAVY, digital, aliased. The highest
+     grain in the electronic family. Not tape warmth
+     or vinyl crackle — bitcrushed noise. -->
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — harsh, tight -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 48%, transparent 26%, rgba(4,5,2,0.62) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: rgba(135, 168, 42, 0.85);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(110, 138, 35, 0.16);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 96px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(115, 142, 38, 0.1);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE CORRUPTED MARCH.
+       
+       EBM: 11 identical vertical bars, perfectly
+       spaced, perfectly uniform. The machine body.
+       Strobe flash on one bar. Butt caps. Precision.
+       
+       Aggrotech: the SAME march but OVERLOADED.
+       The sequencer has been pushed past its limits.
+       The bars are recognizably EBM's bars — same
+       vertical orientation, same spacing rhythm —
+       but each one is now DAMAGED:
+       
+       - Bars have JAGGED TOPS — clipping artifacts,
+         as if the waveform has been pushed past 0dB
+         and the peaks have been cut/distorted
+       - Some bars are THICKER than others (the gain
+         varies wildly, the compressor has given up)
+       - DIGITAL NOISE between bars — small horizontal
+         glitch rectangles in the spaces where EBM
+         had clean silence
+       - The colour has shifted from clinical blue-grey
+         to toxic neon green — the healthy signal has
+         become poisoned
+       - Multiple STROBE flashes, not just one — the
+         strobing is out of control
+       
+       The effect: you can SEE that this was once EBM.
+       The DNA is the same. But the system is
+       overdriving, clipping, failing. The body
+       machine is having a seizure.
+       
+       Combichrist "Today We Are All Demons",
+       Hocico "Memorias Atrás", 
+       Suicide Commando "Bind, Torture, Kill",
+       Grendel, Psyclon Nine, Tactical Sekt,
+       Amduscia, C-Lekktor —
+       the sequencer at redline. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Toxic green bar gradient — overdriven -->
+      <linearGradient id="toxicBar" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#58802a;stop-opacity:0.12"/>
+        <stop offset="10%" style="stop-color:#78a832;stop-opacity:0.35"/>
+        <stop offset="35%" style="stop-color:#88b838;stop-opacity:0.45"/>
+        <stop offset="65%" style="stop-color:#88b838;stop-opacity:0.45"/>
+        <stop offset="90%" style="stop-color:#78a832;stop-opacity:0.35"/>
+        <stop offset="100%" style="stop-color:#58802a;stop-opacity:0.12"/>
+      </linearGradient>
+
+      <!-- Clipping flash — harsh white-green -->
+      <linearGradient id="clipGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#a8d848;stop-opacity:0.5"/>
+        <stop offset="20%" style="stop-color:#c8f058;stop-opacity:0.7"/>
+        <stop offset="50%" style="stop-color:#d8ff68;stop-opacity:0.75"/>
+        <stop offset="80%" style="stop-color:#c8f058;stop-opacity:0.7"/>
+        <stop offset="100%" style="stop-color:#a8d848;stop-opacity:0.5"/>
+      </linearGradient>
+
+      <!-- Distortion filter — heavy displacement -->
+      <filter id="distort">
+        <feTurbulence type="turbulence" baseFrequency="0.06" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="overdriveGlow" x="-8%" y="-5%" width="116%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="clipFlash" x="-15%" y="-8%" width="130%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="glitchHaze" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+      </filter>
+    </defs>
+
+
+    <!-- === THE CORRUPTED MARCH === -->
+    <!-- Same x positions as EBM (30px intervals from 72)
+         but bars are now distorted, varying in width,
+         with jagged clipping artifacts at tops. -->
+
+    <g filter="url(#distort)">
+      <g filter="url(#overdriveGlow)">
+        <!-- Bar 1 — slightly wider than EBM -->
+        <line x1="72" y1="152" x2="72" y2="268"
+          stroke="url(#toxicBar)" stroke-width="3.5"
+          stroke-linecap="butt"/>
+        <!-- Bar 2 — narrower, signal dipping -->
+        <line x1="102" y1="148" x2="102" y2="272"
+          stroke="url(#toxicBar)" stroke-width="2.8"
+          stroke-linecap="butt"/>
+        <!-- Bar 3 — THICK, gain spike -->
+        <line x1="132" y1="145" x2="132" y2="275"
+          stroke="url(#toxicBar)" stroke-width="4.2"
+          stroke-linecap="butt"/>
+        <!-- Bar 4 -->
+        <line x1="162" y1="150" x2="162" y2="270"
+          stroke="url(#toxicBar)" stroke-width="3.2"
+          stroke-linecap="butt"/>
+      </g>
+    </g>
+
+    <!-- === STROBE FLASH 1 — clipping hard === -->
+    <g filter="url(#glitchHaze)" opacity="0.2">
+      <line x1="192" y1="138" x2="192" y2="282"
+        stroke="rgba(165,210,55,0.12)" stroke-width="16"/>
+    </g>
+    <g filter="url(#distort)">
+      <g filter="url(#clipFlash)">
+        <line x1="192" y1="142" x2="192" y2="278"
+          stroke="url(#clipGrad)" stroke-width="4.0"
+          stroke-linecap="butt"/>
+      </g>
+    </g>
+
+    <g filter="url(#distort)">
+      <g filter="url(#overdriveGlow)">
+        <!-- Bar 6 — compressed thin after flash -->
+        <line x1="222" y1="155" x2="222" y2="265"
+          stroke="url(#toxicBar)" stroke-width="2.5"
+          stroke-linecap="butt"/>
+        <!-- Bar 7 — recovering, wider -->
+        <line x1="252" y1="148" x2="252" y2="272"
+          stroke="url(#toxicBar)" stroke-width="3.8"
+          stroke-linecap="butt"/>
+        <!-- Bar 8 -->
+        <line x1="282" y1="150" x2="282" y2="270"
+          stroke="url(#toxicBar)" stroke-width="3.4"
+          stroke-linecap="butt"/>
+      </g>
+    </g>
+
+    <!-- === STROBE FLASH 2 — second clipping event === -->
+    <g filter="url(#glitchHaze)" opacity="0.15">
+      <line x1="312" y1="140" x2="312" y2="280"
+        stroke="rgba(155,200,48,0.1)" stroke-width="14"/>
+    </g>
+    <g filter="url(#distort)">
+      <g filter="url(#clipFlash)">
+        <line x1="312" y1="144" x2="312" y2="276"
+          stroke="url(#clipGrad)" stroke-width="3.8"
+          stroke-linecap="butt"/>
+      </g>
+    </g>
+
+    <g filter="url(#distort)">
+      <g filter="url(#overdriveGlow)">
+        <!-- Bar 10 — WIDEST, gain maxed -->
+        <line x1="342" y1="142" x2="342" y2="278"
+          stroke="url(#toxicBar)" stroke-width="4.8"
+          stroke-linecap="butt"/>
+        <!-- Bar 11 — thin, signal dying -->
+        <line x1="372" y1="158" x2="372" y2="262"
+          stroke="url(#toxicBar)" stroke-width="2.2"
+          stroke-linecap="butt"/>
+      </g>
+    </g>
+
+
+    <!-- === CLIPPING ARTIFACTS — jagged tops === -->
+    <!-- Horizontal lines at the top of bars where the
+         signal has been clipped flat. The waveform
+         SHOULD peak, but it's been cut off. -->
+    <g opacity="0.12">
+      <line x1="129" y1="145" x2="135" y2="145"
+        stroke="rgba(155,200,48,0.35)" stroke-width="0.6"
+        stroke-linecap="butt"/>
+      <line x1="189" y1="142" x2="195" y2="142"
+        stroke="rgba(165,210,55,0.4)" stroke-width="0.7"
+        stroke-linecap="butt"/>
+      <line x1="309" y1="144" x2="315" y2="144"
+        stroke="rgba(160,205,50,0.38)" stroke-width="0.65"
+        stroke-linecap="butt"/>
+      <line x1="339" y1="142" x2="345" y2="142"
+        stroke="rgba(155,200,48,0.35)" stroke-width="0.6"
+        stroke-linecap="butt"/>
+    </g>
+
+
+    <!-- === DIGITAL NOISE — glitch rectangles between bars === -->
+    <!-- Where EBM has clean silence between bars,
+         aggrotech has ARTIFACTS — small rectangles
+         of noise, digital debris, buffer overflow
+         fragments. The silence has been corrupted. -->
+    <g opacity="0.08">
+      <rect x="84" y="188" width="8" height="2.5" rx="0"
+        fill="rgba(120,158,35,0.25)"/>
+      <rect x="112" y="225" width="10" height="2" rx="0"
+        fill="rgba(115,152,32,0.2)"/>
+      <rect x="145" y="175" width="6" height="3" rx="0"
+        fill="rgba(125,162,38,0.22)"/>
+      <rect x="204" y="210" width="9" height="2" rx="0"
+        fill="rgba(118,155,34,0.2)"/>
+      <rect x="234" y="192" width="7" height="2.5" rx="0"
+        fill="rgba(120,158,35,0.22)"/>
+      <rect x="264" y="248" width="8" height="2" rx="0"
+        fill="rgba(112,148,30,0.18)"/>
+      <rect x="325" y="198" width="6" height="2.5" rx="0"
+        fill="rgba(118,155,34,0.2)"/>
+      <rect x="355" y="235" width="9" height="2" rx="0"
+        fill="rgba(115,152,32,0.18)"/>
+    </g>
+
+    <!-- Scan line artifacts — horizontal interference -->
+    <g opacity="0.02">
+      <line x1="60" y1="185" x2="390" y2="185"
+        stroke="rgba(130,165,40,0.08)" stroke-width="0.3"/>
+      <line x1="60" y1="228" x2="390" y2="228"
+        stroke="rgba(125,160,38,0.06)" stroke-width="0.25"/>
+      <line x1="60" y1="255" x2="390" y2="255"
+        stroke="rgba(120,155,35,0.05)" stroke-width="0.2"/>
+    </g>
+
+
+    <!-- === OVERLOAD BASS — distorted, clipping === -->
+    <g opacity="0.08">
+      <line x1="72" y1="272" x2="372" y2="272"
+        stroke="rgba(95,128,28,0.18)" stroke-width="1.2"
+        stroke-linecap="butt"/>
+    </g>
+    <!-- Bass is THICKER than EBM's (0.8px → 1.2px) — overdriven -->
+
+
+    <!-- === GHOST BARS — reaching further at edges === -->
+    <g filter="url(#distort)" opacity="0.25">
+      <line x1="42" y1="155" x2="42" y2="265"
+        stroke="url(#toxicBar)" stroke-width="2.8"
+        stroke-linecap="butt"/>
+    </g>
+    <g filter="url(#distort)" opacity="0.12">
+      <line x1="16" y1="160" x2="16" y2="260"
+        stroke="url(#toxicBar)" stroke-width="2.2"
+        stroke-linecap="butt"/>
+    </g>
+    <g filter="url(#distort)" opacity="0.25">
+      <line x1="402" y1="155" x2="402" y2="265"
+        stroke="url(#toxicBar)" stroke-width="2.8"
+        stroke-linecap="butt"/>
+    </g>
+    <g filter="url(#distort)" opacity="0.12">
+      <line x1="428" y1="160" x2="428" y2="260"
+        stroke="url(#toxicBar)" stroke-width="2.2"
+        stroke-linecap="butt"/>
+    </g>
+
+
+    <!-- === BPM — OVERDRIVEN, faster, distorted === -->
+    <!-- EBM's subdivision ticks (15px) compressed to
+         12px — the tempo has been pushed higher.
+         Downbeats THICKER, LOUDER than EBM.
+         The machine is running too hot. -->
+    <g stroke="rgba(100,132,28,0.022)" stroke-width="0.28">
+      <line x1="72" y1="345" x2="72" y2="352"/>
+      <line x1="84" y1="345" x2="84" y2="352"/>
+      <line x1="96" y1="345" x2="96" y2="352"/>
+      <line x1="108" y1="345" x2="108" y2="352"/>
+      <line x1="120" y1="345" x2="120" y2="352"/>
+      <line x1="132" y1="345" x2="132" y2="352"/>
+      <line x1="144" y1="345" x2="144" y2="352"/>
+      <line x1="156" y1="345" x2="156" y2="352"/>
+      <line x1="168" y1="345" x2="168" y2="352"/>
+      <line x1="180" y1="345" x2="180" y2="352"/>
+      <line x1="192" y1="345" x2="192" y2="352"/>
+      <line x1="204" y1="345" x2="204" y2="352"/>
+      <line x1="216" y1="345" x2="216" y2="352"/>
+      <line x1="228" y1="345" x2="228" y2="352"/>
+      <line x1="240" y1="345" x2="240" y2="352"/>
+      <line x1="252" y1="345" x2="252" y2="352"/>
+      <line x1="264" y1="345" x2="264" y2="352"/>
+      <line x1="276" y1="345" x2="276" y2="352"/>
+      <line x1="288" y1="345" x2="288" y2="352"/>
+      <line x1="300" y1="345" x2="300" y2="352"/>
+      <line x1="312" y1="345" x2="312" y2="352"/>
+      <line x1="324" y1="345" x2="324" y2="352"/>
+      <line x1="336" y1="345" x2="336" y2="352"/>
+      <line x1="348" y1="345" x2="348" y2="352"/>
+      <line x1="360" y1="345" x2="360" y2="352"/>
+      <line x1="372" y1="345" x2="372" y2="352"/>
+    </g>
+    <!-- Overdriven downbeats — LOUDER, thicker than EBM -->
+    <g stroke="rgba(128,165,38,0.055)" stroke-width="0.55">
+      <line x1="72" y1="342" x2="72" y2="355"/>
+      <line x1="108" y1="342" x2="108" y2="355"/>
+      <line x1="144" y1="342" x2="144" y2="355"/>
+      <line x1="180" y1="342" x2="180" y2="355"/>
+      <line x1="216" y1="342" x2="216" y2="355"/>
+      <line x1="252" y1="342" x2="252" y2="355"/>
+      <line x1="288" y1="342" x2="288" y2="355"/>
+      <line x1="324" y1="342" x2="324" y2="355"/>
+      <line x1="360" y1="342" x2="360" y2="355"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Aggrotech</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

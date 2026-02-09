@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melodic Black Metal Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #060810;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0c12;
+    overflow: hidden;
+  }
+
+  /* Deep blue-black — colder than atmospheric BM
+     (which was neutral grey-violet) but with more
+     COLOUR than raw BM (achromatic). The blue is
+     definite here — nocturnal, Scandinavian winter
+     night with starlight. Not warm. But CLEAR.
+     The sky is cloudless. The melody cuts through
+     cold air like a blade.
+     No Fashion, Regain, Osmose, Debemur Morti. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 44%, rgba(80, 95, 140, 0.04) 0%, transparent 45%),
+      radial-gradient(ellipse at 48% 42%, rgba(125, 115, 80, 0.012) 0%, transparent 25%),
+      linear-gradient(180deg, #0e0e18 0%, #0a0c12 42%, #060810 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — moderate, focused on the melodic arc's
+     apex. Not vast (atmospheric's landscape glow)
+     but not absent (raw's void). The melody creates
+     its own light source. -->
+  .glow {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(85, 98, 142, 0.04) 0%, rgba(70, 80, 118, 0.015) 40%, transparent 58%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+
+  /* Grain — moderate black metal grain. Between
+     raw (44%) and atmospheric (28%). The production
+     is intentional but not polished. -->
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.32;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 44%, transparent 30%, rgba(3,4,8,0.55) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+
+  .genre-name .line1 {
+    color: rgba(130, 138, 165, 0.65);
+  }
+
+  .genre-name .line2 {
+    color: rgba(112, 118, 142, 0.3);
+  }
+
+  .genre-name .line3 {
+    color: rgba(98, 102, 122, 0.18);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(100, 105, 125, 0.1);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 90px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(105, 110, 130, 0.05);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE MELODIC TREMOLO.
+       
+       Raw BM: tremolo zigzag, FLAT trajectory (±6px,
+       stays on one note). Hostile. No melody.
+       
+       Atmospheric BM: same flat tremolo, but
+       SURROUNDED by space (reverb halos, horizon).
+       Still no melodic motion in the line itself.
+       
+       Melodic BM: the tremolo zigzag now TRACES A
+       LARGER ARC as it oscillates. The high-frequency
+       picking remains, but the centre-line of the
+       zigzag RISES AND FALLS — the melody.
+       
+       Imagine the raw BM line laid along a CURVED
+       PATH instead of a straight one. Each peak and
+       trough of the zigzag still vibrates ±6px, but
+       the axis itself sweeps through a melodic phrase:
+       rising from y=210 to y=175 (ascending melody),
+       then falling back to y=205 (resolution).
+       
+       This is the KEY DISTINCTION:
+       - Raw BM: zigzag on a STRAIGHT axis (one note)
+       - Atmospheric BM: zigzag on a straight axis
+         with SPACE around it
+       - Melodic BM: zigzag on a CURVED axis
+         (melodic phrase)
+       
+       The melody adds the faintest WARMTH — a golden
+       thread woven into the cold blue-silver. Not warm
+       like rock (that would betray the genre). But
+       warmer than pure grey. The human voice entering
+       the frozen landscape through harmonic motion.
+       
+       Dissection "Storm of the Light's Bane",
+       Naglfar "Diabolical", Sacramentum
+       "Far Away from the Sun", Mgła "Exercises
+       in Futility", Unanimated, Dawn, Vinterland,
+       Thulcandra —
+       the blade that sings as it cuts. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Cold blue-silver with faint gold at apex -->
+      <linearGradient id="melodicTrem" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#606878;stop-opacity:0"/>
+        <stop offset="6%" style="stop-color:#788090;stop-opacity:0.08"/>
+        <stop offset="18%" style="stop-color:#8890a2;stop-opacity:0.2"/>
+        <stop offset="35%" style="stop-color:#98a0b5;stop-opacity:0.32"/>
+        <stop offset="50%" style="stop-color:#a0a8b8;stop-opacity:0.36"/>
+        <stop offset="65%" style="stop-color:#98a0b5;stop-opacity:0.32"/>
+        <stop offset="82%" style="stop-color:#8890a2;stop-opacity:0.2"/>
+        <stop offset="94%" style="stop-color:#788090;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#606878;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Melodic warmth — the golden thread -->
+      <linearGradient id="melodyWarmth" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#787058;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#908068;stop-opacity:0.04"/>
+        <stop offset="45%" style="stop-color:#a89878;stop-opacity:0.08"/>
+        <stop offset="55%" style="stop-color:#a89878;stop-opacity:0.08"/>
+        <stop offset="80%" style="stop-color:#908068;stop-opacity:0.04"/>
+        <stop offset="100%" style="stop-color:#787058;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="frozenEdge">
+        <feTurbulence type="turbulence" baseFrequency="0.055" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="melodyGlow" x="-5%" y="-10%" width="110%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="phraseHalo" x="-6%" y="-12%" width="112%" height="124%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+    </defs>
+
+
+    <!-- === MELODIC ARC — the ghost of the phrase === -->
+    <!-- The underlying melodic shape that the tremolo
+         follows. Visible as the faintest curved guide. -->
+    <g filter="url(#phraseHalo)" opacity="0.06">
+      <path d="M 25,208
+               C 80,200 140,182 200,175
+               C 260,168 320,178 380,192
+               C 400,196 415,202 425,206"
+        fill="none" stroke="rgba(95,102,132,0.08)" stroke-width="2.5"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === MELODY WARMTH — the golden thread === -->
+    <!-- A barely-visible warm trace along the melodic
+         arc. The warmth that melody brings to the frozen
+         tremolo. Only visible at the apex (centre) where
+         the melody reaches its highest, most expressive
+         point. -->
+    <g filter="url(#phraseHalo)" opacity="0.08">
+      <path d="M 120,188
+               C 160,178 200,172 240,175
+               C 280,178 320,185 340,190"
+        fill="none" stroke="url(#melodyWarmth)" stroke-width="4"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === THE MELODIC TREMOLO LINE === -->
+    <!-- The tremolo zigzag now follows the curved
+         melodic axis. Each point oscillates ±6px from
+         the melodic arc's position at that x.
+         
+         Left section (x=25-140): y-centre descends
+         from 208 to ~185 (ascending melody).
+         
+         Apex (x=140-280): y-centre around 175-178
+         (the melodic peak, held).
+         
+         Right section (x=280-425): y-centre rises
+         back to ~200 (descending, resolving). -->
+    <g filter="url(#frozenEdge)">
+      <g filter="url(#melodyGlow)">
+        <polyline points="
+          25,208
+          33,202
+          41,214
+          49,200
+          57,212
+          65,198
+          73,210
+          81,197
+          89,208
+          97,194
+          105,206
+          113,192
+          121,203
+          129,190
+          137,200
+          145,186
+          153,198
+          161,184
+          169,196
+          177,182
+          185,194
+          193,180
+          201,191
+          209,177
+          217,189
+          225,175
+          233,186
+          241,174
+          249,185
+          257,173
+          265,184
+          273,175
+          281,186
+          289,178
+          297,190
+          305,180
+          313,192
+          321,183
+          329,195
+          337,185
+          345,197
+          353,188
+          361,200
+          369,190
+          377,202
+          385,193
+          393,204
+          401,196
+          409,205
+          417,198
+          425,206"
+          fill="none" stroke="url(#melodicTrem)" stroke-width="0.75"
+          stroke-linejoin="miter"/>
+      </g>
+    </g>
+
+
+    <!-- === HARMONIC SECOND VOICE — the lead guitar === -->
+    <!-- In melodic black metal, there are often TWO
+         guitar lines playing harmonized melodies
+         (thirds, fifths). This second line follows a
+         PARALLEL melodic arc, offset by a fixed
+         interval (visually: ~12px above).
+         
+         Thinner, quieter — the harmony, not the lead.
+         Same tremolo frequency but the axis traces
+         a parallel melodic phrase. -->
+    <g filter="url(#frozenEdge)" opacity="0.5">
+      <polyline points="
+        60,196
+        68,190
+        76,200
+        84,188
+        92,198
+        100,185
+        108,195
+        116,183
+        124,192
+        132,180
+        140,190
+        148,177
+        156,187
+        164,174
+        172,184
+        180,172
+        188,182
+        196,170
+        204,180
+        212,168
+        220,178
+        228,166
+        236,176
+        244,164
+        252,174
+        260,165
+        268,175
+        276,167
+        284,177
+        292,170
+        300,180
+        308,172
+        316,182
+        324,175
+        332,185
+        340,178
+        348,188
+        356,180
+        364,190
+        372,183
+        380,192"
+        fill="none" stroke="rgba(105,115,142,0.2)" stroke-width="0.45"
+        stroke-linejoin="miter"/>
+    </g>
+
+
+    <!-- === APEX MARK — the melodic peak === -->
+    <!-- At the highest point of the melody, the
+         faintest warm glow — the note that matters
+         most, the peak of the phrase. Not a dot or
+         circle (too decorative for black metal) but
+         a small zone of slightly increased brightness
+         where the two voices converge most closely. -->
+    <g filter="url(#phraseHalo)" opacity="0.06">
+      <circle cx="250" cy="172" r="10"
+        fill="rgba(120,115,90,0.04)"/>
+    </g>
+
+
+    <!-- === BLAST BEAT — disciplined, supporting melody === -->
+    <!-- The blast beat in melodic BM is not noise
+         (raw) or texture (atmospheric). It's RHYTHM
+         that SERVES the melody — fast, relentless,
+         but clearly structured with accents that
+         follow the harmonic motion. -->
+    <g stroke="rgba(90,98,120,0.016)" stroke-width="0.2">
+      <line x1="72" y1="340" x2="72" y2="348"/>
+      <line x1="84" y1="340" x2="84" y2="348"/>
+      <line x1="96" y1="340" x2="96" y2="348"/>
+      <line x1="108" y1="340" x2="108" y2="348"/>
+      <line x1="120" y1="340" x2="120" y2="348"/>
+      <line x1="132" y1="340" x2="132" y2="348"/>
+      <line x1="144" y1="340" x2="144" y2="348"/>
+      <line x1="156" y1="340" x2="156" y2="348"/>
+      <line x1="168" y1="340" x2="168" y2="348"/>
+      <line x1="180" y1="340" x2="180" y2="348"/>
+      <line x1="192" y1="340" x2="192" y2="348"/>
+      <line x1="204" y1="340" x2="204" y2="348"/>
+      <line x1="216" y1="340" x2="216" y2="348"/>
+      <line x1="228" y1="340" x2="228" y2="348"/>
+      <line x1="240" y1="340" x2="240" y2="348"/>
+      <line x1="252" y1="340" x2="252" y2="348"/>
+      <line x1="264" y1="340" x2="264" y2="348"/>
+      <line x1="276" y1="340" x2="276" y2="348"/>
+      <line x1="288" y1="340" x2="288" y2="348"/>
+      <line x1="300" y1="340" x2="300" y2="348"/>
+      <line x1="312" y1="340" x2="312" y2="348"/>
+      <line x1="324" y1="340" x2="324" y2="348"/>
+      <line x1="336" y1="340" x2="336" y2="348"/>
+      <line x1="348" y1="340" x2="348" y2="348"/>
+      <line x1="360" y1="340" x2="360" y2="348"/>
+      <line x1="372" y1="340" x2="372" y2="348"/>
+    </g>
+    <!-- Harmonic accents — following the melodic arc.
+         Accents get slightly BRIGHTER toward the apex
+         and dimmer at the edges, mapping the melody's
+         intensity onto the blast beat. -->
+    <g stroke="rgba(108,118,142,0.03)" stroke-width="0.32">
+      <line x1="96" y1="339" x2="96" y2="349"/>
+      <line x1="132" y1="339" x2="132" y2="349"/>
+      <line x1="168" y1="339" x2="168" y2="349"/>
+    </g>
+    <g stroke="rgba(115,125,150,0.04)" stroke-width="0.38">
+      <line x1="204" y1="338" x2="204" y2="350"/>
+      <line x1="240" y1="338" x2="240" y2="350"/>
+      <line x1="264" y1="338" x2="264" y2="350"/>
+    </g>
+    <g stroke="rgba(108,118,142,0.03)" stroke-width="0.32">
+      <line x1="300" y1="339" x2="300" y2="349"/>
+      <line x1="336" y1="339" x2="336" y2="349"/>
+      <line x1="372" y1="339" x2="372" y2="349"/>
+    </g>
+
+
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Melodic</span><br/>
+      <span class="line2">Black</span><br/>
+      <span class="line3">Metal</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

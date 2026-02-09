@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rave Techno Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #06080a;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0c0e;
+    overflow: hidden;
+  }
+
+  /* Dark warm-tinted — NOT cold (Berlin/Detroit).
+     The warmth of 2000 bodies in a warehouse, the
+     heat rising, the condensation on the ceiling.
+     The black of a field at 3am lit only by lasers
+     and glowsticks. Energy, not architecture.
+     XL Recordings, Warp, R&S Records,
+     Reinforced, Moving Shadow, Suburban Base. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(135, 148, 55, 0.05) 0%, transparent 35%),
+      radial-gradient(ellipse at 50% 48%, rgba(48, 118, 128, 0.03) 0%, transparent 42%),
+      linear-gradient(180deg, #0c0e10 0%, #0a0c0e 42%, #06080a 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — THE BRIGHTEST in any techno variant.
+     Hot, central, the laser/strobe hitting the
+     smoke machine. Energy RADIATES from the centre.
+     Yellow-green with cyan edge. */
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(128, 145, 48, 0.06) 0%, rgba(48, 108, 118, 0.025) 38%, transparent 55%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+
+  /* Grain — low-moderate. Clean production but
+     there's ENERGY in the noise — not the quietness
+     of Detroit's studio or Berlin's concrete, but
+     the haze of a smoke machine and the hiss of
+     a PA system at full tilt. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.19;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — wide, warm, the field extends */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 46%, transparent 32%, rgba(3,4,5,0.5) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .genre-name .line1 {
+    color: rgba(158, 172, 62, 0.85);
+  }
+
+  .genre-name .line2 {
+    color: rgba(68, 132, 140, 0.4);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(108, 128, 58, 0.15);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 92px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(118, 135, 55, 0.09);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE DETONATED GRID.
+
+       Detroit techno: clean grid — chrome, equal,
+       futuristic, spatial.
+
+       Berlin techno: heavy grid — concrete, tight,
+       oppressive, weighted.
+
+       Rave techno: the grid EXPLODING. The same
+       structural DNA (horizontal + vertical lines)
+       but a SHOCKWAVE from the centre is pushing
+       the lines OUTWARD. The grid bends. The
+       intersections become FLASH POINTS instead of
+       nodes or lights. The structure is still
+       recognizable but it's being OVERWHELMED by
+       energy.
+
+       The detonation:
+       - Grid lines CURVE OUTWARD from centre
+         (convex, pushed by central energy)
+       - The centre is EMPTY — a flash zone where
+         the energy originated (the drop, the
+         breakdown, the moment the bass comes back)
+       - Lines are BRIGHTER near centre, dimming
+         outward (energy dissipating)
+       - SCATTER PARTICLES radiate from centre —
+         the euphoria, the hands in the air, the
+         confetti/laser reflections
+       - Everything has a warm-to-cool gradient:
+         yellow-green at centre (heat, energy)
+         fading to cyan at edges (the night air)
+
+       The Prodigy "Experience",
+       Orbital "Orbital 2",
+       Altern-8 "Full On.. Mask Hysteria",
+       SL2 "On A Ragga Tip",
+       Joey Beltram "Energy Flash",
+       Acen "Trip II the Moon",
+       Second Phase "Mentasm",
+       Underworld (early), Bizarre Inc —
+       the grid, detonated by joy. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Yellow-green to cyan gradient — the rave spectrum -->
+      <linearGradient id="raveH" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#48788a;stop-opacity:0.00"/>
+        <stop offset="10%" style="stop-color:#58909a;stop-opacity:0.20"/>
+        <stop offset="25%" style="stop-color:#78a878;stop-opacity:0.45"/>
+        <stop offset="45%" style="stop-color:#a0b858;stop-opacity:0.70"/>
+        <stop offset="55%" style="stop-color:#a0b858;stop-opacity:0.70"/>
+        <stop offset="75%" style="stop-color:#78a878;stop-opacity:0.45"/>
+        <stop offset="90%" style="stop-color:#58909a;stop-opacity:0.20"/>
+        <stop offset="100%" style="stop-color:#48788a;stop-opacity:0.00"/>
+      </linearGradient>
+      <linearGradient id="raveV" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#48788a;stop-opacity:0.00"/>
+        <stop offset="10%" style="stop-color:#58909a;stop-opacity:0.20"/>
+        <stop offset="25%" style="stop-color:#78a878;stop-opacity:0.45"/>
+        <stop offset="45%" style="stop-color:#a0b858;stop-opacity:0.70"/>
+        <stop offset="55%" style="stop-color:#a0b858;stop-opacity:0.70"/>
+        <stop offset="75%" style="stop-color:#78a878;stop-opacity:0.45"/>
+        <stop offset="90%" style="stop-color:#58909a;stop-opacity:0.20"/>
+        <stop offset="100%" style="stop-color:#48788a;stop-opacity:0.00"/>
+      </linearGradient>
+
+      <filter id="energyGlow" x="-5%" y="-5%" width="110%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="flashPoint" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+      <filter id="detonation" x="-15%" y="-15%" width="130%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+      </filter>
+      <filter id="scatterBlur" x="-15%" y="-15%" width="130%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
+      </filter>
+    </defs>
+
+
+    <!-- === THE DETONATION CENTRE === -->
+    <!-- The EMPTY core — where the drop hit,
+         where the energy originated. Too bright
+         to see. The grid doesn't exist here —
+         it was vaporized. -->
+    <g filter="url(#detonation)" opacity="0.250">
+      <circle cx="220" cy="210" r="25"
+        fill="rgba(145,158,55,0.20)"/>
+    </g>
+    <g filter="url(#flashPoint)" opacity="0.200">
+      <circle cx="220" cy="210" r="12"
+        fill="rgba(158,172,62,0.25)"/>
+    </g>
+
+
+    <!-- === DETONATED GRID — horizontal, CURVED OUTWARD === -->
+    <!-- The horizontal lines BEND AWAY from the centre.
+         Above centre: convex upward (pushed up).
+         Below centre: convex downward (pushed down).
+         Near centre: MORE curvature (stronger force).
+         Far from centre: LESS curvature (weakening). -->
+    <g filter="url(#energyGlow)">
+      <!-- H1 — far above centre, minimal curve -->
+      <path d="M 72,162
+               C 150,158 220,155 290,158
+               C 330,160 368,162 368,162"
+        fill="none" stroke="url(#raveH)" stroke-width="0.7"
+        stroke-linecap="round"/>
+
+      <!-- H2 — closer, more curve, pushed UP -->
+      <path d="M 68,192
+               C 130,185 180,180 220,178
+               C 260,180 310,185 372,192"
+        fill="none" stroke="url(#raveH)" stroke-width="0.85"
+        stroke-linecap="round"/>
+
+      <!-- H3 — closest BELOW centre, most curve, pushed DOWN -->
+      <path d="M 68,232
+               C 130,240 180,245 220,247
+               C 260,245 310,240 372,232"
+        fill="none" stroke="url(#raveH)" stroke-width="0.85"
+        stroke-linecap="round"/>
+
+      <!-- H4 — far below, minimal curve -->
+      <path d="M 72,264
+               C 150,268 220,270 290,268
+               C 330,266 368,264 368,264"
+        fill="none" stroke="url(#raveH)" stroke-width="0.7"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === DETONATED GRID — vertical, CURVED OUTWARD === -->
+    <g filter="url(#energyGlow)">
+      <!-- V1 — far left, minimal curve, pushed LEFT -->
+      <path d="M 122,148
+               C 118,190 116,210 118,230
+               C 120,260 122,284 122,284"
+        fill="none" stroke="url(#raveV)" stroke-width="0.7"
+        stroke-linecap="round"/>
+
+      <!-- V2 — closer, more curve, pushed LEFT -->
+      <path d="M 172,144
+               C 165,185 160,205 162,215
+               C 165,230 168,260 172,288"
+        fill="none" stroke="url(#raveV)" stroke-width="0.85"
+        stroke-linecap="round"/>
+
+      <!-- V3 — closer to right, more curve, pushed RIGHT -->
+      <path d="M 268,144
+               C 275,185 280,205 278,215
+               C 275,230 272,260 268,288"
+        fill="none" stroke="url(#raveV)" stroke-width="0.85"
+        stroke-linecap="round"/>
+
+      <!-- V4 — far right, minimal curve, pushed RIGHT -->
+      <path d="M 318,148
+               C 322,190 324,210 322,230
+               C 320,260 318,284 318,284"
+        fill="none" stroke="url(#raveV)" stroke-width="0.7"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === FLASH POINTS — where bent lines ALMOST cross === -->
+    <!-- The intersections are now SPREAD — the lines
+         that used to cross cleanly now pass nearby
+         but don't quite meet. The gap between them
+         is a FLASH — energy leaking through. -->
+
+    <!-- Inner 4 — brightest, closest to detonation -->
+    <g filter="url(#flashPoint)" opacity="0.350">
+      <circle cx="168" cy="187" r="6" fill="rgba(128,148,55,0.15)"/>
+      <circle cx="272" cy="187" r="6" fill="rgba(128,148,55,0.15)"/>
+      <circle cx="168" cy="240" r="6" fill="rgba(118,142,55,0.14)"/>
+      <circle cx="272" cy="240" r="6" fill="rgba(118,142,55,0.14)"/>
+    </g>
+
+    <!-- Mid — less bright -->
+    <g filter="url(#flashPoint)" opacity="0.200">
+      <circle cx="122" cy="190" r="4.5" fill="rgba(68,118,125,0.10)"/>
+      <circle cx="318" cy="190" r="4.5" fill="rgba(68,118,125,0.10)"/>
+      <circle cx="122" cy="236" r="4.5" fill="rgba(65,115,122,0.09)"/>
+      <circle cx="318" cy="236" r="4.5" fill="rgba(65,115,122,0.09)"/>
+    </g>
+
+    <!-- Outer corners — faintest, cyan-tinted -->
+    <g filter="url(#flashPoint)" opacity="0.125">
+      <circle cx="122" cy="162" r="3.5" fill="rgba(58,105,115,0.07)"/>
+      <circle cx="318" cy="162" r="3.5" fill="rgba(58,105,115,0.07)"/>
+      <circle cx="122" cy="265" r="3" fill="rgba(55,102,112,0.06)"/>
+      <circle cx="318" cy="265" r="3" fill="rgba(55,102,112,0.06)"/>
+    </g>
+
+
+    <!-- === SCATTER PARTICLES — euphoria radiating === -->
+    <!-- From the detonation centre, particles
+         scatter outward in all directions — the
+         confetti, the laser reflections, the
+         glowstick traces, the hands reaching up.
+         Each particle is a small bright dot moving
+         OUTWARD from centre, yellow-green near
+         centre, fading to cyan at edges.
+         
+         NOT embers (pagan — rising from fire).
+         NOT catharsis (melodic HC — rising from crack).
+         NOT debris (dance-punk — from collision).
+         EUPHORIA — radiating omnidirectionally
+         from a moment of pure joy. -->
+    <g filter="url(#scatterBlur)">
+      <!-- Inner scatter — bright, yellow-green -->
+      <circle cx="198" cy="192" r="1.2" fill="rgba(142,158,52,0.55)" opacity="0.600"/>
+      <circle cx="245" cy="195" r="1.0" fill="rgba(138,155,50,0.50)" opacity="0.600"/>
+      <circle cx="208" cy="228" r="1.1" fill="rgba(135,152,48,0.50)" opacity="0.600"/>
+      <circle cx="238" cy="225" r="1.3" fill="rgba(140,156,52,0.55)" opacity="0.600"/>
+      <circle cx="220" cy="188" r="0.9" fill="rgba(148,162,55,0.60)" opacity="0.600"/>
+      <circle cx="225" cy="235" r="1.0" fill="rgba(145,160,52,0.55)" opacity="0.600"/>
+
+      <!-- Mid scatter — transitioning to teal -->
+      <circle cx="155" cy="175" r="0.9" fill="rgba(95,135,68,0.35)" opacity="0.600"/>
+      <circle cx="285" cy="178" r="0.8" fill="rgba(92,132,65,0.30)" opacity="0.600"/>
+      <circle cx="150" cy="245" r="0.8" fill="rgba(88,128,62,0.30)" opacity="0.600"/>
+      <circle cx="290" cy="248" r="0.9" fill="rgba(90,130,65,0.33)" opacity="0.600"/>
+      <circle cx="192" cy="165" r="0.7" fill="rgba(98,138,72,0.30)" opacity="0.600"/>
+      <circle cx="252" cy="252" r="0.7" fill="rgba(85,125,62,0.25)" opacity="0.600"/>
+
+      <!-- Outer scatter — faint, cyan -->
+      <circle cx="115" cy="168" r="0.6" fill="rgba(58,108,118,0.20)" opacity="0.600"/>
+      <circle cx="328" cy="172" r="0.5" fill="rgba(55,105,115,0.18)" opacity="0.550"/>
+      <circle cx="110" cy="258" r="0.5" fill="rgba(52,102,112,0.15)" opacity="0.500"/>
+      <circle cx="332" cy="255" r="0.6" fill="rgba(55,105,115,0.18)" opacity="0.550"/>
+      <circle cx="175" cy="150" r="0.4" fill="rgba(50,98,108,0.12)" opacity="0.450"/>
+      <circle cx="268" cy="275" r="0.4" fill="rgba(48,95,105,0.12)" opacity="0.400"/>
+    </g>
+
+
+    <!-- === HOOVER / MENTASM — the rave sound === -->
+    <!-- The hoover bass — the tearing mid-frequency
+         sound that defines rave. A broad, blurred
+         presence across the centre. Not a clean bass
+         line — a MASS of mid-frequency energy. -->
+    <g filter="url(#detonation)" opacity="0.060">
+      <ellipse cx="220" cy="212" rx="90" ry="18"
+        fill="rgba(108,128,55,0.10)"/>
+    </g>
+
+
+    <!-- === BPM — FAST, BUILDING, with THE DROP === -->
+    <!-- Rave techno BPM has a unique feature: the
+         BUILD. The ticks accelerate toward a central
+         moment (the drop) where everything EXPLODES,
+         then resume at full intensity. -->
+
+    <!-- Pre-drop — building, ticks getting closer -->
+    <g stroke="rgba(58,105,115,0.04)" stroke-width="0.2">
+      <line x1="72" y1="345" x2="72" y2="352"/>
+      <line x1="92" y1="345" x2="92" y2="352"/>
+      <line x1="110" y1="345" x2="110" y2="352"/>
+      <line x1="126" y1="345" x2="126" y2="352"/>
+      <line x1="140" y1="345" x2="140" y2="352"/>
+      <line x1="152" y1="345" x2="152" y2="352"/>
+      <line x1="162" y1="345" x2="162" y2="352"/>
+      <line x1="170" y1="345" x2="170" y2="352"/>
+      <line x1="177" y1="345" x2="177" y2="352"/>
+      <line x1="183" y1="345" x2="183" y2="352"/>
+      <line x1="188" y1="345" x2="188" y2="352"/>
+    </g>
+
+    <!-- THE DROP — the moment of detonation,
+         a heavier mark, a flash in the BPM -->
+    <g stroke="rgba(142,158,55,0.15)" stroke-width="0.6">
+      <line x1="200" y1="340" x2="200" y2="357"/>
+    </g>
+
+    <!-- Post-drop — full intensity, even spacing -->
+    <g stroke="rgba(108,132,55,0.05)" stroke-width="0.25">
+      <line x1="216" y1="345" x2="216" y2="352"/>
+      <line x1="232" y1="345" x2="232" y2="352"/>
+      <line x1="248" y1="345" x2="248" y2="352"/>
+      <line x1="264" y1="345" x2="264" y2="352"/>
+      <line x1="280" y1="345" x2="280" y2="352"/>
+      <line x1="296" y1="345" x2="296" y2="352"/>
+      <line x1="312" y1="345" x2="312" y2="352"/>
+      <line x1="328" y1="345" x2="328" y2="352"/>
+      <line x1="344" y1="345" x2="344" y2="352"/>
+      <line x1="360" y1="345" x2="360" y2="352"/>
+      <line x1="376" y1="345" x2="376" y2="352"/>
+    </g>
+    <!-- Post-drop kick — pounding, euphoric -->
+    <g stroke="rgba(128,148,52,0.10)" stroke-width="0.4">
+      <line x1="216" y1="342" x2="216" y2="355"/>
+      <line x1="264" y1="342" x2="264" y2="355"/>
+      <line x1="312" y1="342" x2="312" y2="355"/>
+      <line x1="360" y1="342" x2="360" y2="355"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Rave</span><br/>
+      <span class="line2">Techno</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

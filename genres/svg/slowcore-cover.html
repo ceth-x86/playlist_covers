@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slowcore Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #060608;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0a0c;
+    overflow: hidden;
+  }
+
+  /* Deep quiet black — not hostile (raw BM) and not
+     warm (rock). Not empty (void) and not full
+     (landscape). The black of a room at 4am when
+     you can't sleep and the radiator is ticking.
+     The black of patience. The black of waiting
+     for the next note.
+     Kranky, Sub Pop (early), Slumberland,
+     Up Records, Crank! -->
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(95, 100, 118, 0.02) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 50%, rgba(110, 98, 85, 0.008) 0%, transparent 25%),
+      linear-gradient(180deg, #0c0c0e 0%, #0a0a0c 45%, #060608 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — the dimmest WARM glow in the series.
+     Not absent (raw BM) but barely there. The
+     warmth of a radiator in a cold room. You can
+     feel it if you put your hand close enough. -->
+  .glow {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(105, 98, 88, 0.02) 0%, rgba(85, 80, 72, 0.006) 45%, transparent 58%);
+    filter: blur(25px);
+    z-index: 2;
+  }
+
+  /* Grain — low. The silence is clean. You can hear
+     the room. Not lo-fi (that would be an aesthetic
+     choice). Just QUIET. -->
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.15;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — gentle, wide, the darkness is even
+     and patient, not dramatic -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 48%, transparent 36%, rgba(3,3,4,0.42) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography -->
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: rgba(128, 125, 118, 0.55);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(108, 105, 98, 0.1);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 86px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(108, 105, 98, 0.05);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE STILL LINE.
+       
+       Cool jazz: a BREATH LINE that drifts gently,
+       with placed notes floating nearby. Restraint
+       as aesthetic choice. The musician CHOOSING
+       to leave space.
+       
+       Slowcore: a line that barely moves AT ALL.
+       Not because the musician chooses restraint
+       but because each note has WEIGHT — physical,
+       emotional weight that makes it sink slightly
+       below the horizontal. The silence between
+       notes isn't space (cool jazz) — it's the
+       effort of lifting the next note.
+       
+       The line is:
+       - Nearly HORIZONTAL (the flattest primary
+         line in the series — ±4px from centre)
+       - INTERRUPTED by gaps (the silence)
+       - HEAVY at its lowest points (notes that
+         sag below the line from their own weight)
+       
+       The notes are not "placed" (cool jazz —
+       deliberate, elegant). They are DROPPED —
+       heavy objects falling into still water,
+       creating small downward depressions in
+       the line before it slowly recovers.
+       
+       Low "I Could Live in Hope", "Things We
+       Lost in the Fire",
+       Codeine "Frigid Stars",
+       Red House Painters (self-titled),
+       Bedhead "WhatFunLifeWas",
+       Duster "Stratosphere",
+       Idaho "Year After Year" —
+       the weight of each note. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Muted grey-blue with barely-there warmth -->
+      <linearGradient id="stillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#686870;stop-opacity:0"/>
+        <stop offset="8%" style="stop-color:#808088;stop-opacity:0.06"/>
+        <stop offset="20%" style="stop-color:#8a8a90;stop-opacity:0.16"/>
+        <stop offset="40%" style="stop-color:#929298;stop-opacity:0.22"/>
+        <stop offset="50%" style="stop-color:#94948e;stop-opacity:0.24"/>
+        <stop offset="60%" style="stop-color:#929298;stop-opacity:0.22"/>
+        <stop offset="80%" style="stop-color:#8a8a90;stop-opacity:0.16"/>
+        <stop offset="92%" style="stop-color:#808088;stop-opacity:0.06"/>
+        <stop offset="100%" style="stop-color:#686870;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="weightGlow" x="-4%" y="-10%" width="108%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.8" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="sinkHalo" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+      <filter id="roomTone" x="-5%" y="-5%" width="110%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+      </filter>
+    </defs>
+
+
+    <!-- === ROOM TONE — the silence has a shape === -->
+    <!-- The faintest possible presence — the sound
+         of the room itself. Not atmosphere (atmospheric
+         BM's reverb), not air (cool jazz's diffuse
+         glow). ROOM TONE — the hum of existence
+         in a quiet space. A barely-visible horizontal
+         band that says: something is here, waiting. -->
+    <g filter="url(#roomTone)" opacity="0.025">
+      <line x1="30" y1="205" x2="415" y2="205"
+        stroke="rgba(100,98,92,0.04)" stroke-width="6"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === THE STILL LINE — interrupted, weighted === -->
+    <!-- Five segments with GAPS between them. Each
+         segment sags slightly at its centre — the
+         weight of the note pulling the line down
+         before it recovers.
+         
+         The gaps are the SILENCE. They are longer
+         than the segments. More time is spent in
+         silence than in sound. -->
+
+    <g filter="url(#weightGlow)">
+      <!-- Segment 1 — short, the first note, tentative -->
+      <path d="M 42,204
+               C 52,204 60,206 68,208
+               C 76,206 82,204 88,204"
+        fill="none" stroke="url(#stillGrad)" stroke-width="1.0"
+        stroke-linecap="round"/>
+
+      <!-- GAP — 42px of silence -->
+
+      <!-- Segment 2 — longer, sinks deeper -->
+      <path d="M 130,204
+               C 142,205 155,208 168,210
+               C 180,208 192,205 202,204"
+        fill="none" stroke="url(#stillGrad)" stroke-width="1.1"
+        stroke-linecap="round"/>
+
+      <!-- GAP — 48px of silence (longer — the effort grows) -->
+
+      <!-- Segment 3 — the HEAVIEST note, deepest sag -->
+      <path d="M 250,204
+               C 260,206 270,210 280,212
+               C 290,210 298,206 305,204"
+        fill="none" stroke="url(#stillGrad)" stroke-width="1.2"
+        stroke-linecap="round"/>
+
+      <!-- GAP — 52px (longest silence — recovering) -->
+
+      <!-- Segment 4 — shorter, lighter, the weight lifting -->
+      <path d="M 357,204
+               C 365,205 373,207 380,208
+               C 387,206 393,205 400,204"
+        fill="none" stroke="url(#stillGrad)" stroke-width="0.9"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === SINK POINTS — where notes land heaviest === -->
+    <!-- At the lowest point of each sag, a faint
+         downward halo — the weight of the note
+         pressing into the silence below.
+         Not a bright flash (collision) or a warm
+         glow (catharsis). A DEPRESSION — the water
+         where the stone landed. -->
+
+    <!-- Sink 1 — small -->
+    <g filter="url(#sinkHalo)" opacity="0.03">
+      <circle cx="68" cy="210" r="6"
+        fill="rgba(100,98,90,0.03)"/>
+    </g>
+
+    <!-- Sink 2 — medium -->
+    <g filter="url(#sinkHalo)" opacity="0.04">
+      <circle cx="168" cy="212" r="8"
+        fill="rgba(102,100,92,0.035)"/>
+    </g>
+
+    <!-- Sink 3 — the HEAVIEST, deepest depression -->
+    <g filter="url(#sinkHalo)" opacity="0.05">
+      <circle cx="280" cy="215" r="10"
+        fill="rgba(105,102,94,0.04)"/>
+    </g>
+
+    <!-- Sink 4 — lightest, almost gone -->
+    <g filter="url(#sinkHalo)" opacity="0.025">
+      <circle cx="380" cy="210" r="5"
+        fill="rgba(98,96,88,0.025)"/>
+    </g>
+
+
+    <!-- === RIPPLES — the note's effect on silence === -->
+    <!-- Below each sink point, faint concentric arcs —
+         like ripples spreading outward from where a
+         stone broke the surface of still water.
+         Only on the two heaviest notes. -->
+
+    <!-- Ripples from sink 2 -->
+    <g opacity="0.012">
+      <path d="M 148,218 C 158,222 178,222 188,218"
+        fill="none" stroke="rgba(95,93,85,0.04)" stroke-width="0.25"
+        stroke-linecap="round"/>
+      <path d="M 142,225 C 155,230 182,230 195,225"
+        fill="none" stroke="rgba(90,88,82,0.025)" stroke-width="0.2"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Ripples from sink 3 — the heaviest -->
+    <g opacity="0.015">
+      <path d="M 258,220 C 268,225 292,225 302,220"
+        fill="none" stroke="rgba(98,96,88,0.04)" stroke-width="0.3"
+        stroke-linecap="round"/>
+      <path d="M 250,228 C 262,234 298,234 310,228"
+        fill="none" stroke="rgba(92,90,84,0.03)" stroke-width="0.22"
+        stroke-linecap="round"/>
+      <path d="M 244,236 C 258,242 302,242 316,236"
+        fill="none" stroke="rgba(88,86,80,0.018)" stroke-width="0.18"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === BPM — THE SLOWEST, most GAPPED pulse === -->
+    <!-- The minimum. Fewer ticks than any other cover
+         that HAS a pulse (forest folk has none).
+         The spacing is the WIDEST. And there are GAPS
+         in the pulse itself — missing beats where
+         the drummer simply... didn't play.
+         
+         5 ticks total. 3 missing positions (shown as
+         ghost marks). The slowest measurable pulse
+         in the series. -->
+
+    <!-- The beats that exist -->
+    <g stroke="rgba(95,92,85,0.015)" stroke-width="0.2">
+      <line x1="100" y1="345" x2="100" y2="352"/>
+      <!-- gap — tick missing -->
+      <line x1="185" y1="345" x2="185" y2="352"/>
+      <!-- gap — tick missing -->
+      <!-- gap — tick missing -->
+      <line x1="268" y1="345" x2="268" y2="352"/>
+      <line x1="310" y1="345" x2="310" y2="352"/>
+      <!-- gap — tick missing -->
+      <line x1="395" y1="345" x2="395" y2="352"/>
+    </g>
+
+    <!-- Ghost positions — where beats SHOULD be but aren't -->
+    <g stroke="rgba(85,82,78,0.005)" stroke-width="0.12">
+      <line x1="142" y1="347" x2="142" y2="350"/>
+      <line x1="226" y1="347" x2="226" y2="350"/>
+      <line x1="352" y1="347" x2="352" y2="350"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Slowcore</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

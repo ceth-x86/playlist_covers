@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hypnotic Techno Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #060606; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0a0a08; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 48%, rgba(95,88,68,0.05) 0%, transparent 42%), linear-gradient(180deg, #0c0c0a 0%, #0a0a08 42%, #060606 100%); z-index: 1; }
+  .central-form { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -54%); z-index: 3; width: 440px; height: 440px; }
+  .glow { position: absolute; top: 47%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(ellipse, rgba(95,88,62,0.05) 0%, rgba(72,68,48,0.02) 42%, transparent 55%); filter: blur(20px); z-index: 2; }
+  .grain { position: absolute; inset: 0; z-index: 7; opacity: 0.20; mix-blend-mode: overlay; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 128px 128px; }
+  .vignette { position: absolute; inset: 0; z-index: 6; background: radial-gradient(ellipse at 50% 48%, transparent 28%, rgba(3,3,3,0.55) 100%); pointer-events: none; }
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name { font-family: 'Anton', sans-serif; font-size: 16px; letter-spacing: 4px; text-transform: uppercase; line-height: 1.2; }
+  .genre-name .line1 { color: rgba(142,135,108,0.8); }
+  .genre-name .line2 { color: rgba(108,102,78,0.35); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(98,92,68,0.14); margin-top: 10px; }
+  .rule { position: absolute; bottom: 84px; left: 40px; width: 80px; height: 1px; background: rgba(102,95,72,0.08); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="glow"></div>
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="loopBlur" x="-5%" y="-5%" width="110%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.8" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="phaseWash" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+    </defs>
+
+    <!-- CONCENTRIC LOOPS — circles at slightly
+         different rotations, creating phase patterns.
+         Each circle is slightly elliptical and
+         rotated 3-5° from the previous, so they
+         ALMOST align but never perfectly — the
+         phasing that creates the hypnotic effect.
+         The loop made visual. -->
+
+    <!-- Core pulse — the kick -->
+    <g filter="url(#phaseWash)" opacity="0.15">
+      <circle cx="220" cy="210" r="15" fill="rgba(115,108,78,0.08)"/>
+    </g>
+    <circle cx="220" cy="210" r="2.5" fill="rgba(138,128,92,0.35)"/>
+
+    <g filter="url(#loopBlur)">
+      <!-- Loop 1 — innermost, tightest -->
+      <ellipse cx="220" cy="210" rx="28" ry="26" fill="none"
+        stroke="rgba(128,120,88,0.38)" stroke-width="0.6"
+        transform="rotate(0 220 210)"/>
+
+      <!-- Loop 2 — slightly rotated -->
+      <ellipse cx="220" cy="210" rx="45" ry="42" fill="none"
+        stroke="rgba(125,118,85,0.34)" stroke-width="0.55"
+        transform="rotate(4 220 210)"/>
+
+      <!-- Loop 3 -->
+      <ellipse cx="220" cy="210" rx="62" ry="58" fill="none"
+        stroke="rgba(122,115,82,0.3)" stroke-width="0.5"
+        transform="rotate(-3 220 210)"/>
+
+      <!-- Loop 4 -->
+      <ellipse cx="220" cy="210" rx="80" ry="74" fill="none"
+        stroke="rgba(118,112,78,0.26)" stroke-width="0.45"
+        transform="rotate(6 220 210)"/>
+
+      <!-- Loop 5 -->
+      <ellipse cx="220" cy="210" rx="98" ry="90" fill="none"
+        stroke="rgba(115,108,75,0.22)" stroke-width="0.4"
+        transform="rotate(-5 220 210)"/>
+
+      <!-- Loop 6 — outermost, faintest -->
+      <ellipse cx="220" cy="210" rx="118" ry="108" fill="none"
+        stroke="rgba(110,105,72,0.18)" stroke-width="0.35"
+        transform="rotate(3 220 210)"/>
+    </g>
+
+    <!-- PHASE POINTS — where adjacent loops
+         come closest together, the near-alignment
+         moments. The subtle phasing that creates
+         the hypnotic pull. -->
+    <g filter="url(#phaseWash)" opacity="0.08">
+      <circle cx="220" cy="183" r="3" fill="rgba(125,118,85,0.06)"/>
+      <circle cx="220" cy="237" r="3" fill="rgba(122,115,82,0.05)"/>
+      <circle cx="192" cy="210" r="2.5" fill="rgba(118,112,78,0.05)"/>
+      <circle cx="248" cy="210" r="2.5" fill="rgba(118,112,78,0.05)"/>
+    </g>
+
+    <!-- BPM — relentless, IDENTICAL spacing,
+         the loop embodied. No variation.
+         Every tick the same distance.
+         The most EVEN BPM in the series. -->
+    <g stroke="rgba(102,95,68,0.05)" stroke-width="0.2">
+      <line x1="72" y1="345" x2="72" y2="352"/><line x1="89" y1="345" x2="89" y2="352"/>
+      <line x1="106" y1="345" x2="106" y2="352"/><line x1="123" y1="345" x2="123" y2="352"/>
+      <line x1="140" y1="345" x2="140" y2="352"/><line x1="157" y1="345" x2="157" y2="352"/>
+      <line x1="174" y1="345" x2="174" y2="352"/><line x1="191" y1="345" x2="191" y2="352"/>
+      <line x1="208" y1="345" x2="208" y2="352"/><line x1="225" y1="345" x2="225" y2="352"/>
+      <line x1="242" y1="345" x2="242" y2="352"/><line x1="259" y1="345" x2="259" y2="352"/>
+      <line x1="276" y1="345" x2="276" y2="352"/><line x1="293" y1="345" x2="293" y2="352"/>
+      <line x1="310" y1="345" x2="310" y2="352"/><line x1="327" y1="345" x2="327" y2="352"/>
+      <line x1="344" y1="345" x2="344" y2="352"/><line x1="361" y1="345" x2="361" y2="352"/>
+      <line x1="378" y1="345" x2="378" y2="352"/>
+    </g>
+    <!-- Kick — identical, relentless -->
+    <g stroke="rgba(128,120,85,0.1)" stroke-width="0.38">
+      <line x1="72" y1="342" x2="72" y2="355"/><line x1="140" y1="342" x2="140" y2="355"/>
+      <line x1="208" y1="342" x2="208" y2="355"/><line x1="276" y1="342" x2="276" y2="355"/>
+      <line x1="344" y1="342" x2="344" y2="355"/>
+    </g>
+  </svg>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Hypnotic</span><br/><span class="line2">Techno</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+</body>
+</html>

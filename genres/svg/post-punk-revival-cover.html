@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Punk Revival Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #040608; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0a0c10; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 46%, rgba(95,105,128,0.05) 0%, transparent 38%), linear-gradient(180deg, #0c0e14 0%, #0a0c10 42%, #040608 100%); z-index: 1; }
+  .central-form { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -54%); z-index: 3; width: 440px; height: 440px; }
+  .glow { position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); width: 220px; height: 180px; border-radius: 50%; background: radial-gradient(ellipse, rgba(88,100,135,0.06) 0%, rgba(65,78,108,0.02) 42%, transparent 58%); filter: blur(20px); z-index: 2; }
+  .grain { position: absolute; inset: 0; z-index: 7; opacity: 0.16; mix-blend-mode: overlay; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 128px 128px; }
+  .vignette { position: absolute; inset: 0; z-index: 6; background: radial-gradient(ellipse at 50% 46%, transparent 30%, rgba(2,3,5,0.52) 100%); pointer-events: none; }
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name { font-family: 'Anton', sans-serif; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; line-height: 1.2; }
+  .genre-name .line1 { color: rgba(155,162,178,0.85); }
+  .genre-name .line2 { color: rgba(108,118,142,0.38); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(95,105,128,0.16); margin-top: 10px; }
+  .rule { position: absolute; bottom: 82px; left: 40px; width: 80px; height: 1px; background: rgba(100,110,135,0.1); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="glow"></div>
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Cold silver-white — cleaner than post-punk's grey -->
+      <linearGradient id="revivalLine" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#708098;stop-opacity:0"/>
+        <stop offset="10%" style="stop-color:#8898b0;stop-opacity:0.3"/>
+        <stop offset="25%" style="stop-color:#a0b0c8;stop-opacity:0.55"/>
+        <stop offset="45%" style="stop-color:#b0c0d5;stop-opacity:0.72"/>
+        <stop offset="55%" style="stop-color:#b0c0d5;stop-opacity:0.72"/>
+        <stop offset="75%" style="stop-color:#a0b0c8;stop-opacity:0.55"/>
+        <stop offset="90%" style="stop-color:#8898b0;stop-opacity:0.3"/>
+        <stop offset="100%" style="stop-color:#708098;stop-opacity:0"/>
+      </linearGradient>
+      <!-- Ice-blue for secondary elements -->
+      <linearGradient id="iceAccent" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#6888b0;stop-opacity:0"/>
+        <stop offset="25%" style="stop-color:#7898c0;stop-opacity:0.3"/>
+        <stop offset="50%" style="stop-color:#88a8d0;stop-opacity:0.45"/>
+        <stop offset="75%" style="stop-color:#7898c0;stop-opacity:0.3"/>
+        <stop offset="100%" style="stop-color:#6888b0;stop-opacity:0"/>
+      </linearGradient>
+      <filter id="cleanGlow" x="-4%" y="-4%" width="108%" height="108%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="nodeShine" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+    </defs>
+
+    <!-- THE ANGULAR COMPOSITION — intersecting
+         straight lines forming a composed, deliberate
+         geometric figure. ZERO displacement — this
+         is CHOSEN precision, not machine precision
+         (techno) or decay (post-punk).
+         
+         Three angular lines cross, creating a
+         constellation of intersection points.
+         Tighter, cleaner, more COMPOSED than the
+         original post-punk angularity. Interpol's
+         Carlos D bass lines made visual — geometric
+         but with emotional weight. -->
+
+    <!-- Primary angular line — the lead guitar/bass
+         riff, sharp angles, high contrast -->
+    <g filter="url(#cleanGlow)">
+      <polyline points="
+        65,235
+        120,180
+        175,220
+        230,170
+        285,215
+        340,175
+        385,205"
+        fill="none" stroke="url(#revivalLine)" stroke-width="1.3"
+        stroke-linecap="butt" stroke-linejoin="miter"/>
+    </g>
+
+    <!-- Secondary angular line — crossing the first,
+         creating intersections. The second guitar or
+         the bass counterpoint. -->
+    <g filter="url(#cleanGlow)" opacity="0.65">
+      <polyline points="
+        75,178
+        135,225
+        195,175
+        255,230
+        315,178
+        370,225"
+        fill="none" stroke="url(#revivalLine)" stroke-width="0.9"
+        stroke-linecap="butt" stroke-linejoin="miter"/>
+    </g>
+
+    <!-- Vertical accent lines — the rhythm guitar's
+         staccato, marking the angular peaks -->
+    <g filter="url(#cleanGlow)" opacity="0.3">
+      <line x1="120" y1="172" x2="120" y2="232" stroke="url(#iceAccent)" stroke-width="0.5" stroke-linecap="butt"/>
+      <line x1="230" y1="162" x2="230" y2="238" stroke="url(#iceAccent)" stroke-width="0.5" stroke-linecap="butt"/>
+      <line x1="340" y1="168" x2="340" y2="232" stroke="url(#iceAccent)" stroke-width="0.5" stroke-linecap="butt"/>
+    </g>
+
+    <!-- INTERSECTION NODES — where lines cross,
+         clean bright points. Not heavy (Berlin nodes)
+         or warm (Detroit glow). SHARP, defined,
+         the clarity of modern production. -->
+    <g filter="url(#nodeShine)" opacity="0.25">
+      <circle cx="128" cy="200" r="6" fill="rgba(120,138,175,0.1)"/>
+      <circle cx="185" cy="198" r="5.5" fill="rgba(118,135,172,0.09)"/>
+      <circle cx="242" cy="200" r="6" fill="rgba(120,138,175,0.1)"/>
+      <circle cx="300" cy="196" r="5.5" fill="rgba(118,135,172,0.09)"/>
+      <circle cx="355" cy="200" r="5" fill="rgba(115,132,168,0.08)"/>
+    </g>
+
+    <!-- Bass presence — the low-end foundation,
+         clean and defined (not fuzzy or blurred).
+         Paul Banks' bass guitar: precise, cold, melodic. -->
+    <g opacity="0.06">
+      <line x1="90" y1="248" x2="360" y2="248"
+        stroke="rgba(88,105,142,0.08)" stroke-width="1.5"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Reverb tail — the big-room production,
+         the spaciousness of modern post-punk -->
+    <g filter="url(#nodeShine)" opacity="0.04">
+      <ellipse cx="220" cy="202" rx="110" ry="35"
+        fill="rgba(82,98,135,0.04)"/>
+    </g>
+
+    <!-- BPM — driving, precise, the motorik-influenced
+         rhythm. Clean, relentless, modern. -->
+    <g stroke="rgba(78,92,125,0.06)" stroke-width="0.22">
+      <line x1="72" y1="345" x2="72" y2="352"/><line x1="90" y1="345" x2="90" y2="352"/>
+      <line x1="108" y1="345" x2="108" y2="352"/><line x1="126" y1="345" x2="126" y2="352"/>
+      <line x1="144" y1="345" x2="144" y2="352"/><line x1="162" y1="345" x2="162" y2="352"/>
+      <line x1="180" y1="345" x2="180" y2="352"/><line x1="198" y1="345" x2="198" y2="352"/>
+      <line x1="216" y1="345" x2="216" y2="352"/><line x1="234" y1="345" x2="234" y2="352"/>
+      <line x1="252" y1="345" x2="252" y2="352"/><line x1="270" y1="345" x2="270" y2="352"/>
+      <line x1="288" y1="345" x2="288" y2="352"/><line x1="306" y1="345" x2="306" y2="352"/>
+      <line x1="324" y1="345" x2="324" y2="352"/><line x1="342" y1="345" x2="342" y2="352"/>
+      <line x1="360" y1="345" x2="360" y2="352"/>
+    </g>
+    <!-- Kick on 4/4 — clean, driving -->
+    <g stroke="rgba(100,118,158,0.12)" stroke-width="0.4">
+      <line x1="72" y1="342" x2="72" y2="355"/>
+      <line x1="144" y1="342" x2="144" y2="355"/>
+      <line x1="216" y1="342" x2="216" y2="355"/>
+      <line x1="288" y1="342" x2="288" y2="355"/>
+      <line x1="360" y1="342" x2="360" y2="355"/>
+    </g>
+    <!-- Hi-hat on 8ths — Bloc Party's driving 8th-note feel -->
+    <g stroke="rgba(88,105,142,0.04)" stroke-width="0.15">
+      <line x1="108" y1="346" x2="108" y2="351"/>
+      <line x1="180" y1="346" x2="180" y2="351"/>
+      <line x1="252" y1="346" x2="252" y2="351"/>
+      <line x1="324" y1="346" x2="324" y2="351"/>
+    </g>
+  </svg>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Post-Punk</span><br/><span class="line2">Revival</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+</body>
+</html>

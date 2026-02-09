@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berlin Techno Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #060606; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0a0a0a; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 48%, rgba(95,95,95,0.04) 0%, transparent 38%), linear-gradient(180deg, #0c0c0c 0%, #0a0a0a 42%, #060606 100%); z-index: 1; }
+  .central-form { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -54%); z-index: 3; width: 440px; height: 440px; }
+  .glow { position: absolute; top: 46%; left: 50%; transform: translate(-50%, -50%); width: 220px; height: 140px; border-radius: 50%; background: radial-gradient(ellipse, rgba(120,120,120,0.08) 0%, rgba(90,90,90,0.03) 45%, transparent 58%); filter: blur(18px); z-index: 2; }
+  .grain { position: absolute; inset: 0; z-index: 7; opacity: 0.22; mix-blend-mode: overlay; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 128px 128px; }
+  .vignette { position: absolute; inset: 0; z-index: 6; background: radial-gradient(ellipse at 50% 48%, transparent 30%, rgba(3,3,3,0.52) 100%); pointer-events: none; }
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name { font-family: 'Anton', sans-serif; font-size: 20px; letter-spacing: 4px; text-transform: uppercase; line-height: 1.2; }
+  .genre-name .line1 { color: rgba(155, 155, 155, 0.88); }
+  .genre-name .line2 { color: rgba(125, 125, 125, 0.45); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(115, 115, 115, 0.18); margin-top: 10px; }
+  .rule { position: absolute; bottom: 90px; left: 40px; width: 80px; height: 1px; background: rgba(120, 120, 120, 0.1); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="glow"></div>
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bunkerH" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#999;stop-opacity:0"/>
+        <stop offset="10%" style="stop-color:#aaa;stop-opacity:0.22"/>
+        <stop offset="25%" style="stop-color:#bbb;stop-opacity:0.45"/>
+        <stop offset="45%" style="stop-color:#c5c5c5;stop-opacity:0.58"/>
+        <stop offset="55%" style="stop-color:#c5c5c5;stop-opacity:0.58"/>
+        <stop offset="75%" style="stop-color:#bbb;stop-opacity:0.45"/>
+        <stop offset="90%" style="stop-color:#aaa;stop-opacity:0.22"/>
+        <stop offset="100%" style="stop-color:#999;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="bunkerV" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#999;stop-opacity:0"/>
+        <stop offset="10%" style="stop-color:#aaa;stop-opacity:0.22"/>
+        <stop offset="25%" style="stop-color:#bbb;stop-opacity:0.45"/>
+        <stop offset="45%" style="stop-color:#c5c5c5;stop-opacity:0.58"/>
+        <stop offset="55%" style="stop-color:#c5c5c5;stop-opacity:0.58"/>
+        <stop offset="75%" style="stop-color:#bbb;stop-opacity:0.45"/>
+        <stop offset="90%" style="stop-color:#aaa;stop-opacity:0.22"/>
+        <stop offset="100%" style="stop-color:#999;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="kickCol" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#bbb;stop-opacity:0"/>
+        <stop offset="15%" style="stop-color:#ccc;stop-opacity:0.35"/>
+        <stop offset="40%" style="stop-color:#ddd;stop-opacity:0.65"/>
+        <stop offset="50%" style="stop-color:#e0e0e0;stop-opacity:0.75"/>
+        <stop offset="60%" style="stop-color:#ddd;stop-opacity:0.65"/>
+        <stop offset="85%" style="stop-color:#ccc;stop-opacity:0.35"/>
+        <stop offset="100%" style="stop-color:#bbb;stop-opacity:0"/>
+      </linearGradient>
+      <filter id="concrete">
+        <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="nodeGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2.5"/>
+      </filter>
+      <filter id="kickPressure" x="-15%" y="-5%" width="130%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+      </filter>
+      <filter id="lineGlow" x="-3%" y="-3%" width="106%" height="106%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.8" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+
+    <!-- KICK COLUMN -->
+    <g filter="url(#kickPressure)" opacity="0.22">
+      <rect x="213" y="130" width="14" height="180" rx="7" fill="rgba(150,150,150,0.12)"/>
+    </g>
+    <g filter="url(#concrete)">
+      <line x1="220" y1="140" x2="220" y2="300" stroke="url(#kickCol)" stroke-width="2.8" stroke-linecap="butt"/>
+    </g>
+
+    <!-- BUNKER GRID — horizontal -->
+    <g filter="url(#concrete)">
+      <g filter="url(#lineGlow)">
+        <line x1="80" y1="178" x2="360" y2="178" stroke="url(#bunkerH)" stroke-width="1.2" stroke-linecap="butt"/>
+        <line x1="75" y1="200" x2="365" y2="200" stroke="url(#bunkerH)" stroke-width="1.5" stroke-linecap="butt"/>
+        <line x1="80" y1="222" x2="360" y2="222" stroke="url(#bunkerH)" stroke-width="1.2" stroke-linecap="butt"/>
+        <line x1="85" y1="244" x2="355" y2="244" stroke="url(#bunkerH)" stroke-width="1.1" stroke-linecap="butt"/>
+        <line x1="90" y1="266" x2="350" y2="266" stroke="url(#bunkerH)" stroke-width="1.0" stroke-linecap="butt"/>
+      </g>
+    </g>
+
+    <!-- BUNKER GRID — vertical -->
+    <g filter="url(#concrete)">
+      <g filter="url(#lineGlow)">
+        <line x1="112" y1="158" x2="112" y2="280" stroke="url(#bunkerV)" stroke-width="0.8" stroke-linecap="butt"/>
+        <line x1="148" y1="152" x2="148" y2="286" stroke="url(#bunkerV)" stroke-width="1.0" stroke-linecap="butt"/>
+        <line x1="184" y1="148" x2="184" y2="290" stroke="url(#bunkerV)" stroke-width="1.1" stroke-linecap="butt"/>
+        <line x1="256" y1="148" x2="256" y2="290" stroke="url(#bunkerV)" stroke-width="1.1" stroke-linecap="butt"/>
+        <line x1="292" y1="152" x2="292" y2="286" stroke="url(#bunkerV)" stroke-width="1.0" stroke-linecap="butt"/>
+        <line x1="328" y1="158" x2="328" y2="280" stroke="url(#bunkerV)" stroke-width="0.8" stroke-linecap="butt"/>
+      </g>
+    </g>
+
+    <!-- STRUCTURAL NODES — row 2 -->
+    <g filter="url(#nodeGlow)" opacity="0.25">
+      <circle cx="112" cy="200" r="5" fill="rgba(160,160,160,0.1)"/>
+      <circle cx="148" cy="200" r="6" fill="rgba(165,165,165,0.12)"/>
+      <circle cx="184" cy="200" r="7" fill="rgba(170,170,170,0.14)"/>
+      <circle cx="220" cy="200" r="9" fill="rgba(180,180,180,0.18)"/>
+      <circle cx="256" cy="200" r="7" fill="rgba(170,170,170,0.14)"/>
+      <circle cx="292" cy="200" r="6" fill="rgba(165,165,165,0.12)"/>
+      <circle cx="328" cy="200" r="5" fill="rgba(160,160,160,0.1)"/>
+    </g>
+    <!-- Kick column nodes -->
+    <g filter="url(#nodeGlow)" opacity="0.16">
+      <circle cx="220" cy="178" r="7" fill="rgba(170,170,170,0.12)"/>
+      <circle cx="220" cy="222" r="7" fill="rgba(170,170,170,0.12)"/>
+      <circle cx="220" cy="244" r="6" fill="rgba(160,160,160,0.1)"/>
+      <circle cx="220" cy="266" r="5" fill="rgba(155,155,155,0.08)"/>
+    </g>
+    <!-- Outer nodes -->
+    <g filter="url(#nodeGlow)" opacity="0.1">
+      <circle cx="148" cy="222" r="4.5" fill="rgba(150,150,150,0.08)"/>
+      <circle cx="292" cy="222" r="4.5" fill="rgba(150,150,150,0.08)"/>
+      <circle cx="184" cy="244" r="4" fill="rgba(145,145,145,0.06)"/>
+      <circle cx="256" cy="244" r="4" fill="rgba(145,145,145,0.06)"/>
+    </g>
+
+    <!-- STROBE LINE -->
+    <g opacity="0.25">
+      <line x1="100" y1="200" x2="340" y2="200" stroke="rgba(220,220,220,0.15)" stroke-width="0.5" stroke-linecap="butt"/>
+    </g>
+
+    <!-- BASS PRESSURE -->
+    <g filter="url(#kickPressure)" opacity="0.08">
+      <ellipse cx="220" cy="290" rx="120" ry="18" fill="rgba(130,130,130,0.08)"/>
+    </g>
+
+    <!-- RESIDUAL ECHO -->
+    <g opacity="0.06">
+      <line x1="90" y1="204" x2="350" y2="204" stroke="rgba(140,140,140,0.1)" stroke-width="0.8" stroke-linecap="butt"/>
+    </g>
+    <g opacity="0.03">
+      <line x1="100" y1="208" x2="340" y2="208" stroke="rgba(130,130,130,0.08)" stroke-width="0.5" stroke-linecap="butt"/>
+    </g>
+
+    <!-- BPM subdivisions -->
+    <g stroke="rgba(130,130,130,0.06)" stroke-width="0.25">
+      <line x1="72" y1="345" x2="72" y2="352"/><line x1="90" y1="345" x2="90" y2="352"/>
+      <line x1="108" y1="345" x2="108" y2="352"/><line x1="126" y1="345" x2="126" y2="352"/>
+      <line x1="144" y1="345" x2="144" y2="352"/><line x1="162" y1="345" x2="162" y2="352"/>
+      <line x1="180" y1="345" x2="180" y2="352"/><line x1="198" y1="345" x2="198" y2="352"/>
+      <line x1="216" y1="345" x2="216" y2="352"/><line x1="234" y1="345" x2="234" y2="352"/>
+      <line x1="252" y1="345" x2="252" y2="352"/><line x1="270" y1="345" x2="270" y2="352"/>
+      <line x1="288" y1="345" x2="288" y2="352"/><line x1="306" y1="345" x2="306" y2="352"/>
+      <line x1="324" y1="345" x2="324" y2="352"/><line x1="342" y1="345" x2="342" y2="352"/>
+      <line x1="360" y1="345" x2="360" y2="352"/><line x1="378" y1="345" x2="378" y2="352"/>
+    </g>
+    <!-- Kick downbeats -->
+    <g stroke="rgba(170,170,170,0.15)" stroke-width="0.6">
+      <line x1="72" y1="341" x2="72" y2="356"/><line x1="144" y1="341" x2="144" y2="356"/>
+      <line x1="216" y1="341" x2="216" y2="356"/><line x1="288" y1="341" x2="288" y2="356"/>
+      <line x1="360" y1="341" x2="360" y2="356"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Berlin</span><br/><span class="line2">Techno</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+</body>
+</html>

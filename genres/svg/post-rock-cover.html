@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post Rock Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #06080c;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0c12;
+    overflow: hidden;
+  }
+
+  /* Deep oceanic blue-grey — not the warm blacks of
+     rock family, not the cold slates of techno.
+     The blue of deep water, of a horizon at 4am,
+     of the Iceland that Sigur Rós sees.
+     Constellation Records, Kranky, Temporary
+     Residence Ltd, Fat Cat Records. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 68% 46%, rgba(100, 130, 165, 0.04) 0%, transparent 45%),
+      radial-gradient(ellipse at 72% 48%, rgba(85, 115, 150, 0.025) 0%, transparent 38%),
+      linear-gradient(178deg, #0c0e16 0%, #0a0c12 42%, #06080c 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — shifted RIGHT toward the crescendo zone.
+     The build gathers light as it goes. */
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(110, 140, 175, 0.045) 0%, rgba(90, 120, 155, 0.018) 42%, transparent 60%);
+    filter: blur(28px);
+    z-index: 2;
+  }
+
+  /* Grain — low, cinematic, wide-screen clarity */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.18;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — wide, cinematic, horizon-like */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 58% 44%, transparent 34%, rgba(4,5,8,0.52) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(140, 168, 195, 0.78);
+  }
+
+  .genre-name .line2 {
+    color: rgba(108, 135, 162, 0.36);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(115, 142, 168, 0.14);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 98px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(115, 142, 168, 0.08);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE LONG BUILD — a horizontal
+       landscape that accumulates from silence to roar.
+       
+       Post-metal has crescendo arcs — but those are
+       SINGLE gestures, one arc rising. Post rock is
+       LAYERED accumulation: instruments enter one at a
+       time over minutes, each adding to the texture,
+       until the mass of sound is overwhelming.
+       
+       The form starts at the LEFT with almost nothing —
+       a single thin line, barely visible — and 
+       ACCUMULATES layers moving right. Each new layer
+       enters below or above the previous ones. By the
+       right third of the frame, there are 5-6 layers
+       stacked, thick, luminous — the full band.
+       
+       This is NOT a crescendo arc (curved up). It's a
+       HORIZON — fundamentally horizontal, spreading
+       WIDE rather than rising. The build is in DENSITY
+       and BRIGHTNESS, not height. Post rock fills the
+       room, not the sky.
+       
+       Then, at the far right edge, the layers BEGIN TO
+       THIN — the piece doesn't end at climax. It recedes.
+       The ocean pulling back from the shore.
+       
+       Godspeed You! Black Emperor "Lift Your Skinny
+       Fists Like Antennas to Heaven",
+       Mogwai "Young Team", Explosions in the Sky,
+       Sigur Rós "( )", Tortoise, Slint (proto),
+       Talk Talk "Laughing Stock" —
+       the sound of weather crossing a landscape. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Progressive brightness gradient — dark left, bright right, dim far-right -->
+      <linearGradient id="buildGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#506880;stop-opacity:0.02"/>
+        <stop offset="10%" style="stop-color:#607888;stop-opacity:0.06"/>
+        <stop offset="35%" style="stop-color:#7898a8;stop-opacity:0.18"/>
+        <stop offset="60%" style="stop-color:#90b0c0;stop-opacity:0.35"/>
+        <stop offset="78%" style="stop-color:#a0c0d0;stop-opacity:0.42"/>
+        <stop offset="90%" style="stop-color:#88a8b8;stop-opacity:0.25"/>
+        <stop offset="100%" style="stop-color:#607888;stop-opacity:0.05"/>
+      </linearGradient>
+      <linearGradient id="buildGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#506078;stop-opacity:0"/>
+        <stop offset="18%" style="stop-color:#607080;stop-opacity:0.04"/>
+        <stop offset="40%" style="stop-color:#788898;stop-opacity:0.14"/>
+        <stop offset="62%" style="stop-color:#8898a8;stop-opacity:0.28"/>
+        <stop offset="80%" style="stop-color:#98a8b8;stop-opacity:0.35"/>
+        <stop offset="92%" style="stop-color:#8090a0;stop-opacity:0.18"/>
+        <stop offset="100%" style="stop-color:#586878;stop-opacity:0.03"/>
+      </linearGradient>
+      <linearGradient id="buildGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#485868;stop-opacity:0"/>
+        <stop offset="25%" style="stop-color:#586878;stop-opacity:0.02"/>
+        <stop offset="48%" style="stop-color:#708090;stop-opacity:0.1"/>
+        <stop offset="68%" style="stop-color:#8898a8;stop-opacity:0.24"/>
+        <stop offset="82%" style="stop-color:#98a8b8;stop-opacity:0.32"/>
+        <stop offset="93%" style="stop-color:#7888a0;stop-opacity:0.15"/>
+        <stop offset="100%" style="stop-color:#506070;stop-opacity:0.02"/>
+      </linearGradient>
+      <linearGradient id="buildGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#405060;stop-opacity:0"/>
+        <stop offset="32%" style="stop-color:#506070;stop-opacity:0"/>
+        <stop offset="55%" style="stop-color:#687888;stop-opacity:0.08"/>
+        <stop offset="72%" style="stop-color:#808fa0;stop-opacity:0.2"/>
+        <stop offset="85%" style="stop-color:#90a0b2;stop-opacity:0.28"/>
+        <stop offset="95%" style="stop-color:#708098;stop-opacity:0.1"/>
+        <stop offset="100%" style="stop-color:#485868;stop-opacity:0.01"/>
+      </linearGradient>
+      <linearGradient id="buildGrad5" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#384858;stop-opacity:0"/>
+        <stop offset="40%" style="stop-color:#485868;stop-opacity:0"/>
+        <stop offset="62%" style="stop-color:#607080;stop-opacity:0.05"/>
+        <stop offset="76%" style="stop-color:#788898;stop-opacity:0.15"/>
+        <stop offset="86%" style="stop-color:#8898a8;stop-opacity:0.22"/>
+        <stop offset="96%" style="stop-color:#607888;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#405060;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Crescendo glow — only at the climax zone -->
+      <linearGradient id="climaxGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#7898b0;stop-opacity:0"/>
+        <stop offset="60%" style="stop-color:#90b0c8;stop-opacity:0"/>
+        <stop offset="78%" style="stop-color:#a8c8e0;stop-opacity:0.15"/>
+        <stop offset="88%" style="stop-color:#b0d0e8;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#90b0c8;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="horizonBlur" x="-3%" y="-8%" width="106%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="massBlur" x="-5%" y="-10%" width="110%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+    </defs>
+
+
+    <!-- === THE MASS — accumulated sound as blurred haze === -->
+    <!-- The sum of all layers, visible as a wide atmospheric
+         smear that's bright on the right, absent on the left -->
+    <g filter="url(#massBlur)" opacity="0.2">
+      <path d="M 20,210
+               L 420,210
+               L 420,180
+               C 380,175 340,172 300,178
+               C 260,184 220,198 180,206
+               C 140,212 100,212 60,212
+               L 20,212 Z"
+        fill="url(#climaxGrad)"/>
+    </g>
+
+
+    <!-- === LAYER 1 — the first instrument, enters at the start
+         (guitar, tremolo-picked, very quiet) === -->
+    <g filter="url(#horizonBlur)">
+      <path d="M 15,208
+               C 60,207 110,205 165,203
+               C 220,201 280,198 335,194
+               C 365,192 395,192 420,194"
+        fill="none" stroke="url(#buildGrad1)" stroke-width="1.2"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === LAYER 2 — second instrument enters ~25% in
+         (bass, low, steady) === -->
+    <g filter="url(#horizonBlur)">
+      <path d="M 15,218
+               C 55,217 100,216 150,216
+               C 200,216 255,214 310,210
+               C 345,208 385,206 420,208"
+        fill="none" stroke="url(#buildGrad2)" stroke-width="1.0"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === LAYER 3 — enters ~40% in
+         (second guitar, different register) === -->
+    <g filter="url(#horizonBlur)">
+      <path d="M 15,198
+               C 80,198 145,197 200,196
+               C 255,195 300,190 345,184
+               C 375,180 405,180 420,182"
+        fill="none" stroke="url(#buildGrad3)" stroke-width="1.0"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === LAYER 4 — enters ~55% in
+         (drums build, the dynamic shifts) === -->
+    <g filter="url(#horizonBlur)">
+      <path d="M 15,225
+               C 110,225 200,224 260,222
+               C 310,220 345,216 375,212
+               C 395,210 415,210 420,212"
+        fill="none" stroke="url(#buildGrad4)" stroke-width="0.9"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === LAYER 5 — enters ~70% in
+         (the full band, climax approaching) === -->
+    <g filter="url(#horizonBlur)">
+      <path d="M 15,192
+               C 150,192 250,191 310,188
+               C 345,186 370,180 390,175
+               C 408,172 420,174 425,178"
+        fill="none" stroke="url(#buildGrad5)" stroke-width="0.8"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === CLIMAX ZONE — where all layers converge and
+         the sound is at maximum density === -->
+    <!-- A vertical concentration of brightness at ~78%
+         of the frame width. Not a point (arena rock's
+         centre) — a ZONE, a column of accumulated sound. -->
+    <g filter="url(#horizonBlur)" opacity="0.15">
+      <line x1="345" y1="168" x2="345" y2="228"
+        stroke="rgba(145,180,210,0.12)" stroke-width="0.5"/>
+      <line x1="360" y1="170" x2="360" y2="225"
+        stroke="rgba(140,175,205,0.1)" stroke-width="0.4"/>
+      <line x1="375" y1="172" x2="375" y2="220"
+        stroke="rgba(135,170,200,0.08)" stroke-width="0.3"/>
+    </g>
+
+
+    <!-- === ACCUMULATION FILLS — between adjacent layers === -->
+    <!-- As layers get closer together (right side), the
+         space between them fills with warmth. The texture
+         THICKENS. -->
+    <g opacity="0.006">
+      <!-- Between layers 1 and 3 — widens right-side -->
+      <path d="M 280,198
+               C 310,194 340,188 370,182
+               L 370,192
+               C 340,194 310,196 280,198 Z"
+        fill="rgba(130,168,200,1)"/>
+    </g>
+    <g opacity="0.005">
+      <!-- Between layers 2 and 4 -->
+      <path d="M 300,214
+               C 330,212 360,210 390,210
+               L 390,214
+               C 360,216 330,218 300,218 Z"
+        fill="rgba(120,158,190,1)"/>
+    </g>
+
+
+    <!-- === THE RECESSION — layers thinning at far right === -->
+    <!-- Post rock doesn't end at climax. The piece
+         recedes. Each layer thins and fades.
+         Shown by the gradients going to 0 opacity
+         at x=100%. The ocean pulling back. -->
+
+
+    <!-- === HORIZON LINE — barely visible === -->
+    <!-- The ONE constant through the entire piece:
+         a barely-there horizontal datum line.
+         The ground over which weather passes. -->
+    <g opacity="0.015">
+      <line x1="15" y1="210" x2="425" y2="210"
+        stroke="rgba(130,160,188,0.1)" stroke-width="0.3"/>
+    </g>
+
+
+    <!-- === BPM — BUILDING, from sparse to dense === -->
+    <!-- The pulse itself accumulates, matching the layers.
+         Left: wide spacing (sparse).
+         Right: tighter spacing (dense).
+         Then recedes again at far right. -->
+    <g stroke="rgba(115,145,172,0.02)" stroke-width="0.25">
+      <!-- Sparse opening — wide gaps -->
+      <line x1="80" y1="348" x2="80" y2="354"/>
+      <line x1="110" y1="348" x2="110" y2="354"/>
+      <!-- Slightly closer -->
+      <line x1="135" y1="348" x2="135" y2="354"/>
+      <line x1="158" y1="348" x2="158" y2="354"/>
+      <line x1="178" y1="348" x2="178" y2="354"/>
+      <!-- Building density -->
+      <line x1="195" y1="348" x2="195" y2="354"/>
+      <line x1="210" y1="348" x2="210" y2="354"/>
+      <line x1="224" y1="348" x2="224" y2="354"/>
+      <line x1="236" y1="348" x2="236" y2="354"/>
+      <!-- Dense climax zone -->
+      <line x1="247" y1="348" x2="247" y2="354"/>
+      <line x1="256" y1="348" x2="256" y2="354"/>
+      <line x1="264" y1="348" x2="264" y2="354"/>
+      <line x1="272" y1="348" x2="272" y2="354"/>
+      <line x1="280" y1="348" x2="280" y2="354"/>
+      <line x1="288" y1="348" x2="288" y2="354"/>
+      <line x1="296" y1="348" x2="296" y2="354"/>
+      <!-- Receding — gaps widen again -->
+      <line x1="310" y1="348" x2="310" y2="354"/>
+      <line x1="328" y1="348" x2="328" y2="354"/>
+      <line x1="350" y1="348" x2="350" y2="354"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Post</span><br/>
+      <span class="line2">Rock</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

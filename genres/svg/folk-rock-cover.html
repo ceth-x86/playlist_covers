@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Folk Rock Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0a0806;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0e0c08;
+    overflow: hidden;
+  }
+
+  /* Deep soil-black — warmer than classic rock's 
+     studio brown-black, with a living GREEN undertone.
+     Not indie folk's forest-at-night (intimate, cold
+     outdoors). Folk rock is FIELDS — open land, 
+     afternoon light, the Laurel Canyon warmth.
+     The soil from which classic rock grew.
+     Columbia Records (60s), Island Records, 
+     A&M Records, Elektra. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(170, 140, 80, 0.04) 0%, transparent 48%),
+      radial-gradient(ellipse at 48% 46%, rgba(130, 125, 70, 0.025) 0%, transparent 38%),
+      linear-gradient(180deg, #110e08 0%, #0e0c08 44%, #0a0806 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Warm, wide glow — afternoon sun on a field -->
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(175, 148, 85, 0.04) 0%, rgba(150, 128, 72, 0.015) 42%, transparent 62%);
+    filter: blur(28px);
+    z-index: 2;
+  }
+
+  /* Grain — warm, analogue, like classic rock but
+     with more air. Open-reel tape outdoors. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.21;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — open, wider than indie folk -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 46%, transparent 38%, rgba(6,5,3,0.48) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(195, 165, 95, 0.78);
+  }
+
+  .genre-name .line2 {
+    color: rgba(158, 135, 78, 0.36);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(165, 142, 82, 0.13);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 98px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(165, 142, 82, 0.08);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE TWIN ARC — two melodic lines
+       running together, one older (folk tradition) and
+       one newer (rock amplification).
+       
+       Classic rock: single root arc with bass and lead
+       space (the full band, the trunk).
+       
+       Indie folk: two THIN threads braiding in intimate
+       intertwine (cabin, one mic, close).
+       
+       Folk rock: two MEDIUM arcs running in the SAME
+       direction, one ABOVE the other, touching at 
+       moments but NOT braiding (not intertwining like
+       indie folk). Instead, they run PARALLEL but at
+       DIFFERENT REGISTERS — the folk melody (older,
+       simpler, lower, like a ballad passed down) and
+       the rock voice (newer, brighter, amplified).
+       
+       The folk line is:
+       - LOWER (the foundation, the tradition)
+       - THINNER (acoustic, unamplified origin)
+       - WARMER in colour (earth, not electricity)
+       - More REGULAR in curve (following a known
+         melody, a song structure that existed before)
+       
+       The rock line is:
+       - HIGHER (amplified, projected further)
+       - THICKER (electrified, more energy)
+       - Brighter (amber-gold, studio presence)
+       - More VARIED in curve (the interpretation,
+         the band's rearrangement)
+       
+       Where they TOUCH: unison moments, where the
+       old song and the new arrangement align perfectly.
+       Wider and warmer nodes than indie folk's crossings
+       because this is a BAND, not a bedroom.
+       
+       Bob Dylan "Bringing It All Back Home",
+       Fairport Convention "Liege & Lief",
+       Crosby Stills & Nash, Simon & Garfunkel,
+       Joni Mitchell (early), The Byrds (folk side),
+       Nick Drake (band recordings), Sandy Denny —
+       an ancient song played through an amplifier. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Rock voice — brighter, amber-gold -->
+      <linearGradient id="rockVoiceGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#786030;stop-opacity:0"/>
+        <stop offset="8%" style="stop-color:#988038;stop-opacity:0.12"/>
+        <stop offset="25%" style="stop-color:#b89848;stop-opacity:0.3"/>
+        <stop offset="48%" style="stop-color:#d0b058;stop-opacity:0.42"/>
+        <stop offset="58%" style="stop-color:#d0b058;stop-opacity:0.42"/>
+        <stop offset="78%" style="stop-color:#b89848;stop-opacity:0.28"/>
+        <stop offset="92%" style="stop-color:#988038;stop-opacity:0.1"/>
+        <stop offset="100%" style="stop-color:#786030;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Folk tradition — warmer, earthier, slightly green -->
+      <linearGradient id="folkVoiceGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#605028;stop-opacity:0"/>
+        <stop offset="10%" style="stop-color:#807030;stop-opacity:0.08"/>
+        <stop offset="28%" style="stop-color:#a09038;stop-opacity:0.2"/>
+        <stop offset="50%" style="stop-color:#b0a040;stop-opacity:0.28"/>
+        <stop offset="72%" style="stop-color:#a09038;stop-opacity:0.2"/>
+        <stop offset="90%" style="stop-color:#807030;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#605028;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Warm tape texture — gentler than hard rock -->
+      <filter id="folkTape">
+        <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="fieldGlow" x="-5%" y="-10%" width="110%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="sunHaze" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+    </defs>
+
+
+    <!-- === FIELD HAZE — the open air between the voices === -->
+    <g filter="url(#sunHaze)" opacity="0.15">
+      <path d="M 25,200
+               C 95,194 170,182 225,180
+               C 280,178 345,188 415,198"
+        fill="none" stroke="rgba(170,145,82,0.12)" stroke-width="12"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === FOLK TRADITION LINE — the older melody, underneath === -->
+    <!-- This melody existed BEFORE the band. It's a ballad,
+         a song passed down, a simpler curve. Lower register,
+         thinner, warmer, more regular. -->
+    <g filter="url(#folkTape)">
+      <g filter="url(#fieldGlow)">
+        <path d="M 25,222
+                 C 70,220 120,214 170,210
+                 C 220,206 270,205 320,210
+                 C 355,214 390,218 420,220"
+          fill="none" stroke="url(#folkVoiceGrad)" stroke-width="1.5"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === ROCK VOICE LINE — the electrified interpretation === -->
+    <!-- Higher, thicker, more varied — the band's version.
+         Follows the SAME general arc but with more movement,
+         more dynamic range. The amplified reinterpretation. -->
+    <g filter="url(#folkTape)">
+      <g filter="url(#fieldGlow)">
+        <path d="M 25,202
+                 C 65,200 105,190 150,184
+                 C 195,178 235,177 275,182
+                 C 315,187 355,196 395,200
+                 C 408,202 418,204 420,205"
+          fill="none" stroke="url(#rockVoiceGrad)" stroke-width="2.5"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === THE SPACE BETWEEN — the arrangement === -->
+    <!-- The gap between folk and rock widens and narrows.
+         Where it's WIDE: the band has departed from the
+         original (electric solo, new bridge).
+         Where it's NARROW: the band follows the traditional
+         melody closely (verse, chorus). -->
+    <g opacity="0.006">
+      <path d="M 25,202
+               C 65,200 105,190 150,184
+               C 195,178 235,177 275,182
+               C 315,187 355,196 395,200
+               C 408,202 418,204 420,205
+               L 420,220
+               C 390,218 355,214 320,210
+               C 270,205 220,206 170,210
+               C 120,214 70,220 25,222
+               Z"
+        fill="rgba(165,142,82,1)"/>
+    </g>
+
+
+    <!-- === UNISON NODES — where tradition and amplification meet === -->
+    <!-- The arcs touch or nearly touch at these points.
+         Wider, warmer than indie folk's crossing nodes
+         (band scale, not cabin scale). These are the
+         CHORUS moments — where the old song and the new
+         arrangement are the same note. -->
+    <g filter="url(#fieldGlow)">
+      <circle cx="95" cy="208" r="3.5" fill="rgba(178,152,88,0.1)"/>
+      <circle cx="250" cy="194" r="4.0" fill="rgba(182,158,92,0.12)"/>
+      <circle cx="380" cy="210" r="3.5" fill="rgba(178,152,88,0.1)"/>
+    </g>
+    <g filter="url(#sunHaze)" opacity="0.15">
+      <circle cx="95" cy="208" r="12" fill="rgba(172,148,85,0.06)"/>
+      <circle cx="250" cy="194" r="14" fill="rgba(175,150,88,0.07)"/>
+      <circle cx="380" cy="210" r="12" fill="rgba(172,148,85,0.06)"/>
+    </g>
+
+
+    <!-- === HARMONIC VOICES — additional singers/instruments === -->
+    <!-- Folk rock often has HARMONY VOCALS — a third voice
+         (or fourth) singing above or below. These are faint
+         traces above the rock line. CSN's three-part harmony,
+         Simon & Garfunkel's parallel thirds. -->
+    <g filter="url(#folkTape)" opacity="0.1">
+      <path d="M 70,190
+               C 120,184 175,175 230,172
+               C 285,170 340,180 395,190"
+        fill="none" stroke="rgba(165,142,82,0.08)" stroke-width="0.5"
+        stroke-linecap="round"/>
+    </g>
+    <g filter="url(#folkTape)" opacity="0.05">
+      <path d="M 100,186
+               C 150,180 200,172 250,170
+               C 300,168 350,176 385,185"
+        fill="none" stroke="rgba(160,138,78,0.06)" stroke-width="0.35"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === ROOTS — below the folk line, barely there === -->
+    <!-- The tradition goes DEEPER than the folk melody.
+         Faint traces below — the ballads that inspired
+         the ballad, the songs older than memory. -->
+    <g opacity="0.025">
+      <path d="M 60,238
+               C 120,236 190,232 260,230
+               C 330,228 380,232 410,234"
+        fill="none" stroke="rgba(140,122,68,0.1)" stroke-width="0.4"
+        stroke-linecap="round" stroke-dasharray="4,8"/>
+    </g>
+
+
+    <!-- === BPM — acoustic-rooted, moderate, with harmony === -->
+    <!-- Steady, neither rushed nor dragging. The tempo of
+         a campfire song that's been given a backbeat.
+         More structured than indie folk's fingerpicking,
+         less driving than classic rock. -->
+    <g stroke="rgba(165,142,82,0.022)" stroke-width="0.28">
+      <line x1="100" y1="345" x2="100" y2="352"/>
+      <line x1="125" y1="345" x2="125" y2="352"/>
+      <line x1="150" y1="345" x2="150" y2="352"/>
+      <line x1="175" y1="345" x2="175" y2="352"/>
+      <line x1="200" y1="345" x2="200" y2="352"/>
+      <line x1="225" y1="345" x2="225" y2="352"/>
+      <line x1="250" y1="345" x2="250" y2="352"/>
+      <line x1="275" y1="345" x2="275" y2="352"/>
+      <line x1="300" y1="345" x2="300" y2="352"/>
+      <line x1="325" y1="345" x2="325" y2="352"/>
+      <line x1="350" y1="345" x2="350" y2="352"/>
+    </g>
+    <!-- Natural downbeats — moderate weight -->
+    <g stroke="rgba(178,152,88,0.038)" stroke-width="0.4">
+      <line x1="100" y1="344" x2="100" y2="354"/>
+      <line x1="175" y1="344" x2="175" y2="354"/>
+      <line x1="250" y1="344" x2="250" y2="354"/>
+      <line x1="325" y1="344" x2="325" y2="354"/>
+    </g>
+    <!-- Acoustic upstroke — the strum return -->
+    <g stroke="rgba(155,135,78,0.018)" stroke-width="0.22">
+      <line x1="138" y1="346" x2="138" y2="352"/>
+      <line x1="213" y1="346" x2="213" y2="352"/>
+      <line x1="288" y1="346" x2="288" y2="352"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Folk</span><br/>
+      <span class="line2">Rock</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

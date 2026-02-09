@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modal Jazz Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #06080c;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0c10;
+    overflow: hidden;
+  }
+
+  /* Deep warm midnight — warmer than cool jazz
+     (which was the coldest blue-black). Modal jazz
+     brought WARMTH back — the warmth of harmonic
+     depth, of sustained chords, of open space that
+     has COLOUR rather than pure temperature.
+     The midnight of a recording session where the
+     red light is on and the musicians are listening
+     to each other breathe before the next mode
+     change.
+     Blue Note, Columbia, Impulse!, Prestige,
+     Riverside. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 44%, rgba(110, 105, 130, 0.03) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 46%, rgba(125, 110, 85, 0.015) 0%, transparent 30%),
+      linear-gradient(180deg, #0c0e14 0%, #0a0c10 42%, #06080c 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — warm-silver, broader than cool jazz.
+     The harmonic space is WIDER, more resonant.
+     The modes open the room up. */
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(110, 105, 120, 0.03) 0%, rgba(95, 90, 105, 0.012) 40%, transparent 58%);
+    filter: blur(28px);
+    z-index: 2;
+  }
+
+  /* Grain — minimal, the cleanest jazz production.
+     Rudy Van Gelder's studio. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.14;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — wide, warm */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 44%, transparent 36%, rgba(3,4,6,0.46) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 23px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .genre-name .line1 {
+    color: rgba(138, 132, 150, 0.7);
+  }
+
+  .genre-name .line2 {
+    color: rgba(112, 108, 125, 0.3);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(108, 105, 120, 0.11);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 92px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(112, 108, 122, 0.06);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE MODE FIELD.
+       
+       Cool jazz: a breath line with placed notes
+       floating in UNDIFFERENTIATED silence. Each note
+       exists in its own space, equidistant from
+       meaning. The space is FLAT — no harmonic gravity.
+       
+       Modal jazz: the space is STRUCTURED by invisible
+       vertical axes — the MODES. The horizontal plane
+       is divided into REGIONS, each with its own
+       harmonic character. Notes don't float freely —
+       they GRAVITATE toward mode columns, clustering
+       in zones.
+       
+       Visual concept:
+       - VERTICAL MODE COLUMNS — faint vertical lines
+         that divide the space into harmonic regions.
+         Not rigid gridlines (techno) but GRAVITATIONAL
+         FIELDS — soft, attracting, suggesting.
+       - NOTES cluster near these columns, not
+         equidistant in free space (cool jazz) but
+         ORGANIZED by harmonic affinity
+       - The BREATH LINE still exists but now it
+         BENDS slightly as it passes through each
+         mode — the melody inflected by the harmonic
+         colour of each region
+       - COLOUR SHIFTS across the frame — each mode
+         region has a subtly different tonal warmth,
+         from cooler (Dorian) to warmer (Mixolydian)
+         to deep (Aeolian)
+       
+       The distinction from cool jazz:
+       Cool jazz = notes in SILENCE (flat space)
+       Modal jazz = notes in MODES (structured space)
+       
+       Miles Davis "Kind of Blue",
+       John Coltrane "A Love Supreme",
+       McCoy Tyner "The Real McCoy",
+       Herbie Hancock "Maiden Voyage",
+       Bill Evans "Explorations",
+       Wayne Shorter "Speak No Evil",
+       Joe Henderson "Inner Urge" —
+       the space between chords has colour. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Warm amber-silver — warmer than cool jazz's
+           pure silver-blue -->
+      <linearGradient id="modalLine" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#68687a;stop-opacity:0.00"/>
+        <stop offset="8%" style="stop-color:#808090;stop-opacity:0.18"/>
+        <stop offset="20%" style="stop-color:#9090a0;stop-opacity:0.45"/>
+        <stop offset="40%" style="stop-color:#a0a0a8;stop-opacity:0.70"/>
+        <stop offset="50%" style="stop-color:#a5a09a;stop-opacity:0.75"/>
+        <stop offset="60%" style="stop-color:#a0a0a8;stop-opacity:0.70"/>
+        <stop offset="80%" style="stop-color:#9090a0;stop-opacity:0.45"/>
+        <stop offset="92%" style="stop-color:#808090;stop-opacity:0.18"/>
+        <stop offset="100%" style="stop-color:#68687a;stop-opacity:0.00"/>
+      </linearGradient>
+
+      <!-- Mode column colours — each slightly different -->
+      <linearGradient id="modeDorian" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#7880a0;stop-opacity:0.00"/>
+        <stop offset="30%" style="stop-color:#7880a0;stop-opacity:0.06"/>
+        <stop offset="50%" style="stop-color:#7880a0;stop-opacity:0.09"/>
+        <stop offset="70%" style="stop-color:#7880a0;stop-opacity:0.06"/>
+        <stop offset="100%" style="stop-color:#7880a0;stop-opacity:0.00"/>
+      </linearGradient>
+      <linearGradient id="modeMixolydian" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#a09878;stop-opacity:0.00"/>
+        <stop offset="30%" style="stop-color:#a09878;stop-opacity:0.06"/>
+        <stop offset="50%" style="stop-color:#a09878;stop-opacity:0.09"/>
+        <stop offset="70%" style="stop-color:#a09878;stop-opacity:0.06"/>
+        <stop offset="100%" style="stop-color:#a09878;stop-opacity:0.00"/>
+      </linearGradient>
+      <linearGradient id="modeAeolian" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#887888;stop-opacity:0.00"/>
+        <stop offset="30%" style="stop-color:#887888;stop-opacity:0.06"/>
+        <stop offset="50%" style="stop-color:#887888;stop-opacity:0.09"/>
+        <stop offset="70%" style="stop-color:#887888;stop-opacity:0.06"/>
+        <stop offset="100%" style="stop-color:#887888;stop-opacity:0.00"/>
+      </linearGradient>
+      <linearGradient id="modeLydian" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#90a088;stop-opacity:0.00"/>
+        <stop offset="30%" style="stop-color:#90a088;stop-opacity:0.05"/>
+        <stop offset="50%" style="stop-color:#90a088;stop-opacity:0.07"/>
+        <stop offset="70%" style="stop-color:#90a088;stop-opacity:0.05"/>
+        <stop offset="100%" style="stop-color:#90a088;stop-opacity:0.00"/>
+      </linearGradient>
+
+      <filter id="modeGlow" x="-4%" y="-8%" width="108%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="columnHaze" x="-30%" y="-5%" width="160%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+      </filter>
+      <filter id="noteHalo" x="-25%" y="-25%" width="150%" height="150%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2.5"/>
+      </filter>
+      <filter id="chordWash" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+    </defs>
+
+
+    <!-- === MODE COLUMNS — the harmonic gravity fields === -->
+    <!-- Four vertical regions, each a different mode,
+         each with a subtly different colour temperature.
+         Not gridlines (hard boundaries) but FIELDS
+         (soft gradients, gravitational, suggesting). -->
+
+    <!-- Mode I — Dorian (cool blue, left) -->
+    <g filter="url(#columnHaze)">
+      <rect x="70" y="120" width="30" height="200" rx="15"
+        fill="url(#modeDorian)" opacity="0.600"/>
+    </g>
+
+    <!-- Mode II — Mixolydian (warm amber, left-centre) -->
+    <g filter="url(#columnHaze)">
+      <rect x="165" y="118" width="30" height="204" rx="15"
+        fill="url(#modeMixolydian)" opacity="0.600"/>
+    </g>
+
+    <!-- Mode III — Aeolian (deep violet, right-centre) -->
+    <g filter="url(#columnHaze)">
+      <rect x="268" y="120" width="30" height="200" rx="15"
+        fill="url(#modeAeolian)" opacity="0.600"/>
+    </g>
+
+    <!-- Mode IV — Lydian (silvery green, right) -->
+    <g filter="url(#columnHaze)">
+      <rect x="358" y="122" width="28" height="196" rx="14"
+        fill="url(#modeLydian)" opacity="0.600"/>
+    </g>
+
+
+    <!-- === MODE AXES — the faintest vertical lines === -->
+    <!-- The gravitational centres of each mode column.
+         Barely visible — you feel them more than
+         see them. -->
+    <g opacity="0.036">
+      <line x1="85" y1="140" x2="85" y2="300"
+        stroke="rgba(115,122,155,0.15)" stroke-width="0.3"/>
+      <line x1="180" y1="138" x2="180" y2="302"
+        stroke="rgba(155,145,115,0.15)" stroke-width="0.3"/>
+      <line x1="283" y1="140" x2="283" y2="300"
+        stroke="rgba(132,115,132,0.15)" stroke-width="0.3"/>
+      <line x1="372" y1="142" x2="372" y2="298"
+        stroke="rgba(138,152,132,0.12)" stroke-width="0.25"/>
+    </g>
+
+
+    <!-- === THE MODAL LINE — breath line inflected === -->
+    <!-- The breath line from cool jazz, but now it
+         BENDS as it passes through each mode — the
+         melody shaped by harmonic gravity. It dips
+         toward each mode axis, pulled by the
+         harmonic field. -->
+    <g filter="url(#modeGlow)">
+      <path d="M 30,200
+               C 50,198 65,194 85,190
+               C 105,194 125,199 145,200
+               C 160,200 170,196 180,191
+               C 190,196 215,201 240,202
+               C 255,202 270,197 283,192
+               C 295,197 320,202 345,201
+               C 355,200 365,196 372,192
+               C 380,196 395,200 415,201"
+        fill="none" stroke="url(#modalLine)" stroke-width="1.0"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === NOTES — clustered near mode columns === -->
+    <!-- Unlike cool jazz's equidistant placed notes,
+         these GRAVITATE toward the mode axes. Each
+         cluster has 2-3 notes near its mode column,
+         creating HARMONIC GROUPS rather than
+         isolated individuals. -->
+
+    <!-- Dorian cluster (cool) -->
+    <g filter="url(#noteHalo)" opacity="0.325">
+      <circle cx="80" cy="184" r="5" fill="rgba(112,118,148,0.15)"/>
+    </g>
+    <circle cx="80" cy="184" r="1.2" fill="rgba(125,132,162,0.50)" opacity="0.600"/>
+    <g filter="url(#noteHalo)" opacity="0.250">
+      <circle cx="92" cy="196" r="4.5" fill="rgba(108,115,142,0.12)"/>
+    </g>
+    <circle cx="92" cy="196" r="1.0" fill="rgba(122,128,158,0.40)" opacity="0.600"/>
+
+    <!-- Mixolydian cluster (warm) -->
+    <g filter="url(#noteHalo)" opacity="0.375">
+      <circle cx="175" cy="185" r="5.5" fill="rgba(142,132,108,0.15)"/>
+    </g>
+    <circle cx="175" cy="185" r="1.4" fill="rgba(155,145,118,0.55)" opacity="0.600"/>
+    <g filter="url(#noteHalo)" opacity="0.300">
+      <circle cx="185" cy="198" r="5" fill="rgba(138,128,105,0.14)"/>
+    </g>
+    <circle cx="185" cy="198" r="1.1" fill="rgba(148,138,112,0.45)" opacity="0.600"/>
+    <g filter="url(#noteHalo)" opacity="0.200">
+      <circle cx="172" cy="205" r="4" fill="rgba(135,125,102,0.10)"/>
+    </g>
+    <circle cx="172" cy="205" r="0.8" fill="rgba(145,135,110,0.30)" opacity="0.600"/>
+
+    <!-- Aeolian cluster (deep) -->
+    <g filter="url(#noteHalo)" opacity="0.350">
+      <circle cx="278" cy="186" r="5.5" fill="rgba(128,112,128,0.15)"/>
+    </g>
+    <circle cx="278" cy="186" r="1.3" fill="rgba(142,125,142,0.50)" opacity="0.600"/>
+    <g filter="url(#noteHalo)" opacity="0.250">
+      <circle cx="290" cy="198" r="4.5" fill="rgba(125,110,125,0.12)"/>
+    </g>
+    <circle cx="290" cy="198" r="1.0" fill="rgba(138,122,138,0.40)" opacity="0.600"/>
+
+    <!-- Lydian cluster (silvery) -->
+    <g filter="url(#noteHalo)" opacity="0.275">
+      <circle cx="368" cy="186" r="5" fill="rgba(132,142,128,0.14)"/>
+    </g>
+    <circle cx="368" cy="186" r="1.1" fill="rgba(145,155,140,0.45)" opacity="0.600"/>
+    <g filter="url(#noteHalo)" opacity="0.175">
+      <circle cx="378" cy="197" r="4" fill="rgba(128,138,125,0.10)"/>
+    </g>
+    <circle cx="378" cy="197" r="0.8" fill="rgba(140,150,135,0.30)" opacity="0.600"/>
+
+
+    <!-- === CHORD SUSTAIN — the held voicings === -->
+    <!-- In modal jazz, chords are SUSTAINED — held
+         for long durations while the soloist explores.
+         A faint wash at each mode column represents
+         the piano/keyboard holding the voicing. -->
+    <g filter="url(#chordWash)" opacity="0.060">
+      <ellipse cx="85" cy="205" rx="20" ry="35"
+        fill="rgba(112,118,148,0.10)"/>
+      <ellipse cx="180" cy="204" rx="22" ry="38"
+        fill="rgba(142,132,108,0.10)"/>
+      <ellipse cx="283" cy="205" rx="20" ry="35"
+        fill="rgba(128,112,128,0.10)"/>
+      <ellipse cx="372" cy="206" rx="18" ry="32"
+        fill="rgba(132,142,128,0.07)"/>
+    </g>
+
+
+    <!-- === WALKING BASS — same as cool jazz but
+         inflected by mode changes === -->
+    <g opacity="0.054">
+      <circle cx="85" cy="262" r="0.6" fill="rgba(112,118,145,0.25)"/>
+      <circle cx="132" cy="262" r="0.5" fill="rgba(118,115,128,0.20)"/>
+      <circle cx="180" cy="262" r="0.6" fill="rgba(138,128,108,0.25)"/>
+      <circle cx="232" cy="262" r="0.5" fill="rgba(128,120,118,0.20)"/>
+      <circle cx="283" cy="262" r="0.6" fill="rgba(125,112,125,0.25)"/>
+      <circle cx="328" cy="262" r="0.5" fill="rgba(128,125,125,0.20)"/>
+      <circle cx="372" cy="262" r="0.6" fill="rgba(130,138,128,0.25)"/>
+    </g>
+
+
+    <!-- === TRANSITION MOMENTS — between modes === -->
+    <!-- At the midpoint between two mode columns, a
+         faint mark — the moment of harmonic CHANGE,
+         where one mode gives way to another. The pivot.
+         Not a collision (dance-punk) but a TRANSITION —
+         smooth, inevitable, like weather changing. -->
+    <g opacity="0.032">
+      <circle cx="132" cy="200" r="1.5" fill="rgba(125,120,130,0.15)"/>
+      <circle cx="232" cy="202" r="1.5" fill="rgba(130,122,120,0.15)"/>
+      <circle cx="328" cy="201" r="1.2" fill="rgba(128,120,128,0.12)"/>
+    </g>
+
+
+    <!-- === BPM — BRUSHES with MODE-ALIGNED accents === -->
+    <!-- Same gentle brush pulse as cool jazz, but now
+         the accents ALIGN with mode changes — slightly
+         brighter ticks where mode columns are,
+         reflecting the harmonic rhythm. -->
+    <g stroke="rgba(105,102,118,0.03)" stroke-width="0.2">
+      <line x1="85" y1="342" x2="85" y2="349"/>
+      <line x1="115" y1="342" x2="115" y2="349"/>
+      <line x1="148" y1="342" x2="148" y2="349"/>
+      <line x1="180" y1="342" x2="180" y2="349"/>
+      <line x1="210" y1="342" x2="210" y2="349"/>
+      <line x1="245" y1="342" x2="245" y2="349"/>
+      <line x1="283" y1="342" x2="283" y2="349"/>
+      <line x1="315" y1="342" x2="315" y2="349"/>
+      <line x1="345" y1="342" x2="345" y2="349"/>
+      <line x1="372" y1="342" x2="372" y2="349"/>
+    </g>
+    <!-- Mode-change accents — on 2 and 4, aligned
+         with mode columns for harmonic rhythm -->
+    <g stroke="rgba(118,115,132,0.05)" stroke-width="0.28">
+      <line x1="85" y1="341" x2="85" y2="350"/>
+      <line x1="180" y1="341" x2="180" y2="350"/>
+      <line x1="283" y1="341" x2="283" y2="350"/>
+      <line x1="372" y1="341" x2="372" y2="350"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Modal</span><br/>
+      <span class="line2">Jazz</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

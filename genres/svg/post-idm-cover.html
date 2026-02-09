@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-IDM Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #060408; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0c0810; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 48% 48%, rgba(118,72,95,0.06) 0%, transparent 42%), radial-gradient(ellipse at 52% 50%, rgba(105,82,58,0.03) 0%, transparent 35%), linear-gradient(180deg, #0e0a12 0%, #0c0810 42%, #060408 100%); z-index: 1; }
+  .central-form { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -52%); z-index: 3; width: 440px; height: 440px; }
+  .glow { position: absolute; top: 48%; left: 50%; transform: translate(-50%, -50%); width: 260px; height: 220px; border-radius: 50%; background: radial-gradient(ellipse, rgba(108,68,88,0.06) 0%, rgba(85,58,72,0.025) 42%, transparent 58%); filter: blur(24px); z-index: 2; }
+  .grain { position: absolute; inset: 0; z-index: 7; opacity: 0.18; mix-blend-mode: overlay; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 128px 128px; }
+  .vignette { position: absolute; inset: 0; z-index: 6; background: radial-gradient(ellipse at 50% 48%, transparent 34%, rgba(3,2,4,0.48) 100%); pointer-events: none; }
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name { font-family: 'Anton', sans-serif; font-size: 18px; letter-spacing: 4px; text-transform: uppercase; line-height: 1.2; }
+  .genre-name .line1 { color: rgba(158,108,132,0.8); }
+  .genre-name .line2 { color: rgba(118,82,102,0.35); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(108,75,92,0.14); margin-top: 10px; }
+  .rule { position: absolute; bottom: 86px; left: 40px; width: 80px; height: 1px; background: rgba(112,78,95,0.08); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="glow"></div>
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="veilBlur" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+      </filter>
+      <filter id="toneWash" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+      <filter id="memoryBlur" x="-6%" y="-6%" width="112%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
+      </filter>
+    </defs>
+
+    <!-- LAYERED VEILS — overlapping translucent shapes.
+         Each veil is a different emotional layer.
+         They create depth through TRANSPARENCY.
+         Boards of Canada's warmth, Four Tet's
+         intricacy, Jon Hopkins' emotional arcs. -->
+
+    <!-- Deepest veil — the memory, the VHS decay -->
+    <g filter="url(#veilBlur)" opacity="0.12">
+      <ellipse cx="215" cy="215" rx="95" ry="75" fill="rgba(118,72,92,0.07)"/>
+    </g>
+
+    <!-- Middle veil — warmth, amber-tinted -->
+    <g filter="url(#veilBlur)" opacity="0.1">
+      <ellipse cx="228" cy="205" rx="80" ry="65" fill="rgba(128,95,68,0.06)" transform="rotate(-8 228 205)"/>
+    </g>
+
+    <!-- Upper veil — rose, the emotional surface -->
+    <g filter="url(#veilBlur)" opacity="0.08">
+      <ellipse cx="220" cy="198" rx="68" ry="52" fill="rgba(138,82,105,0.06)" transform="rotate(5 220 198)"/>
+    </g>
+
+    <!-- TEXTURE MARKS — delicate marks within the veils,
+         inherited from IDM's precision but softened.
+         Not glitch rectangles, not IDM's sharp geometry.
+         ORGANIC fragments — the human inside the digital. -->
+    <g filter="url(#toneWash)" opacity="0.15">
+      <circle cx="195" cy="195" r="2.5" fill="rgba(138,92,112,0.1)"/>
+      <circle cx="245" cy="205" r="2.8" fill="rgba(142,98,78,0.1)"/>
+      <circle cx="210" cy="225" r="2.2" fill="rgba(132,88,108,0.08)"/>
+      <circle cx="238" cy="190" r="2" fill="rgba(128,85,72,0.08)"/>
+    </g>
+
+    <!-- MEMORY PARTICLES — the lo-fi warmth,
+         tape hiss as visual dust. Suspended,
+         warm, nostalgic. -->
+    <g filter="url(#memoryBlur)" opacity="0.2">
+      <circle cx="178" cy="202" r="1" fill="rgba(148,108,85,0.15)"/>
+      <circle cx="262" cy="198" r="0.9" fill="rgba(142,102,82,0.12)"/>
+      <circle cx="192" cy="230" r="0.8" fill="rgba(138,95,78,0.1)"/>
+      <circle cx="250" cy="218" r="1.1" fill="rgba(145,105,88,0.14)"/>
+      <circle cx="215" cy="182" r="0.7" fill="rgba(135,92,75,0.09)"/>
+      <circle cx="235" cy="235" r="0.8" fill="rgba(138,95,78,0.1)"/>
+    </g>
+
+    <!-- BPM — gentle, warm, irregular but with
+         an underlying organic pulse. Not mechanical,
+         not random — HUMAN tempo. -->
+    <g stroke="rgba(108,72,88,0.05)" stroke-width="0.2">
+      <line x1="72" y1="345" x2="72" y2="352"/><line x1="95" y1="345" x2="95" y2="352"/>
+      <line x1="118" y1="345" x2="118" y2="352"/><line x1="140" y1="345" x2="140" y2="352"/>
+      <line x1="164" y1="345" x2="164" y2="352"/><line x1="186" y1="345" x2="186" y2="352"/>
+      <line x1="210" y1="345" x2="210" y2="352"/><line x1="232" y1="345" x2="232" y2="352"/>
+      <line x1="256" y1="345" x2="256" y2="352"/><line x1="278" y1="345" x2="278" y2="352"/>
+      <line x1="302" y1="345" x2="302" y2="352"/><line x1="324" y1="345" x2="324" y2="352"/>
+      <line x1="348" y1="345" x2="348" y2="352"/><line x1="370" y1="345" x2="370" y2="352"/>
+    </g>
+    <g stroke="rgba(132,88,108,0.08)" stroke-width="0.32">
+      <line x1="72" y1="343" x2="72" y2="354"/><line x1="164" y1="343" x2="164" y2="354"/>
+      <line x1="256" y1="343" x2="256" y2="354"/><line x1="348" y1="343" x2="348" y2="354"/>
+    </g>
+  </svg>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Post</span><br/><span class="line2">IDM</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nu Metal Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0a0608;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0e0a0c;
+    overflow: hidden;
+  }
+
+  /* Dark red-brown black — not the clean oil-black
+     of groove metal (pure). Not the purple of prog
+     (sophisticated). Something MUDDIER, deliberately
+     impure, the colour of a mid-90s music video shot
+     on miniDV in a warehouse.
+     Immortal Records, Flip Records, Roadrunner
+     (late 90s era). */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 48% 50%, rgba(155, 60, 50, 0.04) 0%, transparent 40%),
+      radial-gradient(ellipse at 55% 42%, rgba(120, 125, 40, 0.02) 0%, transparent 30%),
+      linear-gradient(176deg, #120c10 0%, #0e0a0c 42%, #0a0608 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Split glow — two colours that shouldn't coexist -->
+  .glow1 {
+    position: absolute;
+    top: 46%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(160, 65, 55, 0.045) 0%, transparent 55%);
+    filter: blur(20px);
+    z-index: 2;
+  }
+  .glow2 {
+    position: absolute;
+    top: 42%;
+    left: 56%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(115, 125, 40, 0.03) 0%, transparent 50%);
+    filter: blur(18px);
+    z-index: 2;
+  }
+
+  /* Grain — heavy, lo-fi, compressed -->
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.28;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — aggressive -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 46%, transparent 28%, rgba(6,3,5,0.58) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(185, 78, 65, 0.82);
+  }
+
+  .genre-name .line2 {
+    color: rgba(150, 60, 50, 0.38);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(130, 135, 50, 0.16);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 98px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(160, 68, 58, 0.09);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow1"></div>
+  <div class="glow2"></div>
+
+  <!-- Central form: CONTAMINATED GROOVE.
+       
+       Groove metal: clean sawtooth of 4 downstrokes
+       with chugs. Pure metal, one vocabulary.
+       
+       Nu metal: that sawtooth INVADED by non-metal
+       elements. The downstrokes are still there — you
+       can see the groove metal DNA — but they're:
+       
+       1. INTERRUPTED by rectangular HIP-HOP BLOCKS
+          (rhythmic elements that are NOT strokes —
+          they're flat, horizontal, percussive, like
+          a sampled beat cutting into the riff)
+       
+       2. OVERLAID with SCRATCH MARKS (diagonal thin
+          lines crossing the strokes, like turntable
+          scratches or DJ cuts)
+       
+       3. CONTAMINATED with a second colour (sickly
+          green-yellow) that doesn't belong in the
+          metal palette — the electronic/hip-hop 
+          element bleeding into the metal form
+       
+       The result is a HYBRID form — neither pure metal
+       (groove's clean sawtooth) nor pure hip-hop
+       (which would be blocks only). It's BOTH,
+       uncomfortably, productively, messily.
+       
+       Korn "Korn", Limp Bizkit, Deftones,
+       Slipknot, Linkin Park "Hybrid Theory",
+       System of a Down, P.O.D., Papa Roach —
+       the sound of genres refusing to stay separate. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Metal layer — dark red-brown, groove's colour desaturated -->
+      <linearGradient id="nuMetalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#602820;stop-opacity:0.02"/>
+        <stop offset="8%" style="stop-color:#884030;stop-opacity:0.18"/>
+        <stop offset="25%" style="stop-color:#a85840;stop-opacity:0.38"/>
+        <stop offset="50%" style="stop-color:#b86848;stop-opacity:0.48"/>
+        <stop offset="75%" style="stop-color:#a85840;stop-opacity:0.38"/>
+        <stop offset="92%" style="stop-color:#884030;stop-opacity:0.18"/>
+        <stop offset="100%" style="stop-color:#602820;stop-opacity:0.02"/>
+      </linearGradient>
+
+      <!-- Hip-hop/electronic layer — sickly green-yellow -->
+      <linearGradient id="alienGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#405010;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#607020;stop-opacity:0.1"/>
+        <stop offset="50%" style="stop-color:#808828;stop-opacity:0.2"/>
+        <stop offset="80%" style="stop-color:#607020;stop-opacity:0.1"/>
+        <stop offset="100%" style="stop-color:#405010;stop-opacity:0"/>
+      </linearGrad>
+
+      <filter id="nuCrush">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="nuGlow" x="-5%" y="-10%" width="110%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="nuHaze" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+    </defs>
+
+
+    <!-- === HAZE — muddier than groove metal === -->
+    <g filter="url(#nuHaze)" opacity="0.15">
+      <path d="M 55,185
+               L 105,220
+               L 145,200
+               L 205,232
+               L 265,210
+               L 330,240
+               L 390,215"
+        fill="none" stroke="url(#nuMetalGrad)" stroke-width="12"
+        stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+
+    <!-- === METAL LAYER — groove's downstrokes, degraded === -->
+    <g filter="url(#nuCrush)">
+
+      <!-- Stroke 1 — recognizable groove metal downstroke -->
+      <g filter="url(#nuGlow)">
+        <line x1="60" y1="188" x2="105" y2="222"
+          stroke="url(#nuMetalGrad)" stroke-width="4.0"
+          stroke-linecap="round"/>
+      </g>
+
+      <!-- Chug 1→2 -->
+      <path d="M 105,222
+               C 115,216 125,208 140,202"
+        fill="none" stroke="rgba(155,65,55,0.12)" stroke-width="1.8"
+        stroke-linecap="round"/>
+
+      <!-- Stroke 2 -->
+      <g filter="url(#nuGlow)">
+        <line x1="148" y1="200" x2="205" y2="235"
+          stroke="url(#nuMetalGrad)" stroke-width="4.5"
+          stroke-linecap="round"/>
+      </g>
+
+      <!-- Chug 2→3 -->
+      <path d="M 205,235
+               C 218,228 235,218 258,212"
+        fill="none" stroke="rgba(155,65,55,0.12)" stroke-width="1.8"
+        stroke-linecap="round"/>
+
+      <!-- Stroke 3 — heaviest -->
+      <g filter="url(#nuGlow)">
+        <line x1="258" y1="212" x2="328" y2="242"
+          stroke="url(#nuMetalGrad)" stroke-width="5.0"
+          stroke-linecap="round"/>
+      </g>
+
+      <!-- Chug 3→4 -->
+      <path d="M 328,242
+               C 340,236 352,226 365,218"
+        fill="none" stroke="rgba(155,65,55,0.12)" stroke-width="1.6"
+        stroke-linecap="round"/>
+
+      <!-- Stroke 4 — cut short by end -->
+      <g filter="url(#nuGlow)">
+        <line x1="365" y1="218" x2="400" y2="235"
+          stroke="url(#nuMetalGrad)" stroke-width="3.5"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === HIP-HOP BLOCKS — rectangular, flat, alien === -->
+    <!-- These are NOT part of metal vocabulary. They're
+         HORIZONTAL RECTANGLES — sampled beats, programmed
+         drums, the DJ's contribution. They sit ON TOP of
+         the metal strokes, interrupting them. -->
+    <g filter="url(#nuGlow)">
+      <!-- Block 1 — sits across chug zone 1→2 -->
+      <rect x="108" y="207" width="32" height="6" rx="1"
+        fill="rgba(110,118,38,0.15)"
+        transform="rotate(-2,124,210)"/>
+
+      <!-- Block 2 — interrupts stroke 2 -->
+      <rect x="165" y="215" width="28" height="5" rx="1"
+        fill="rgba(115,122,40,0.18)"
+        transform="rotate(3,179,217)"/>
+
+      <!-- Block 3 — largest, sits across the heaviest zone -->
+      <rect x="270" y="222" width="38" height="7" rx="1"
+        fill="rgba(118,125,42,0.2)"
+        transform="rotate(-1,289,225)"/>
+
+      <!-- Block 4 — small, tail end -->
+      <rect x="358" y="224" width="22" height="5" rx="1"
+        fill="rgba(108,115,36,0.14)"
+        transform="rotate(2,369,226)"/>
+    </g>
+
+
+    <!-- === SCRATCH MARKS — turntable/DJ cuts === -->
+    <!-- Thin diagonal lines crossing the metal strokes.
+         Fast, sharp, NOT metal. The sound of vinyl
+         being scratched back and forth over the riff. -->
+    <g stroke="rgba(125,130,48,0.06)" stroke-width="0.4"
+       stroke-linecap="round">
+      <!-- Scratches across stroke 1 -->
+      <line x1="72" y1="192" x2="88" y2="212"/>
+      <line x1="80" y1="196" x2="95" y2="216"/>
+      <!-- Scratches across stroke 2 -->
+      <line x1="162" y1="205" x2="180" y2="228"/>
+      <line x1="175" y1="212" x2="192" y2="232"/>
+      <line x1="185" y1="218" x2="198" y2="234"/>
+      <!-- Scratches across stroke 3 (most) -->
+      <line x1="272" y1="215" x2="292" y2="238"/>
+      <line x1="288" y1="222" x2="305" y2="240"/>
+      <line x1="300" y1="228" x2="318" y2="242"/>
+      <line x1="312" y1="232" x2="325" y2="244"/>
+    </g>
+
+    <!-- Reverse scratches — opposite angle (the scratch back) -->
+    <g stroke="rgba(130,135,50,0.04)" stroke-width="0.3"
+       stroke-linecap="round">
+      <line x1="90" y1="215" x2="78" y2="198"/>
+      <line x1="188" y1="232" x2="172" y2="210"/>
+      <line x1="305" y1="242" x2="285" y2="220"/>
+    </g>
+
+
+    <!-- === COLLISION ZONES — where metal and hip-hop overlap === -->
+    <!-- At these points, both systems are active at once.
+         The metal stroke passes THROUGH a hip-hop block.
+         The colour bleeds and muddies. -->
+    <g filter="url(#nuGlow)" opacity="0.08">
+      <circle cx="124" cy="210" r="8" fill="rgba(140,95,45,0.12)"/>
+      <circle cx="179" cy="218" r="9" fill="rgba(145,98,48,0.14)"/>
+      <circle cx="290" cy="228" r="11" fill="rgba(148,100,50,0.16)"/>
+    </g>
+
+
+    <!-- === STATIC INTERFERENCE — digital compression artifacts === -->
+    <!-- Not the clean pixel glitches of hyperpop.
+         DIRTY interference — the sound of two signals
+         fighting for the same frequency space.
+         Late-90s overcompressed CD mastering. -->
+    <g opacity="0.04">
+      <rect x="130" y="198" width="3" height="2" fill="rgba(140,145,55,0.3)"/>
+      <rect x="215" y="230" width="4" height="2" fill="rgba(135,60,50,0.3)"/>
+      <rect x="310" y="218" width="3" height="3" fill="rgba(140,145,55,0.25)"/>
+      <rect x="245" y="208" width="2" height="3" fill="rgba(135,60,50,0.25)"/>
+      <rect x="350" y="232" width="3" height="2" fill="rgba(140,145,55,0.2)"/>
+    </g>
+
+
+    <!-- === BPM — HYBRID: metal stomp + hip-hop bounce === -->
+    <!-- Two systems in one pulse: heavy metal downbeats
+         AND syncopated hip-hop accents, competing. -->
+    <g stroke="rgba(160,68,58,0.025)" stroke-width="0.3">
+      <line x1="90" y1="345" x2="90" y2="353"/>
+      <line x1="112" y1="345" x2="112" y2="353"/>
+      <line x1="134" y1="345" x2="134" y2="353"/>
+      <line x1="156" y1="345" x2="156" y2="353"/>
+      <line x1="178" y1="345" x2="178" y2="353"/>
+      <line x1="200" y1="345" x2="200" y2="353"/>
+      <line x1="222" y1="345" x2="222" y2="353"/>
+      <line x1="244" y1="345" x2="244" y2="353"/>
+      <line x1="266" y1="345" x2="266" y2="353"/>
+      <line x1="288" y1="345" x2="288" y2="353"/>
+      <line x1="310" y1="345" x2="310" y2="353"/>
+      <line x1="332" y1="345" x2="332" y2="353"/>
+    </g>
+    <!-- Metal stomp — on the downbeat (red) -->
+    <g stroke="rgba(175,75,62,0.055)" stroke-width="0.55">
+      <line x1="90" y1="343" x2="90" y2="355"/>
+      <line x1="156" y1="343" x2="156" y2="355"/>
+      <line x1="222" y1="343" x2="222" y2="355"/>
+      <line x1="288" y1="343" x2="288" y2="355"/>
+    </g>
+    <!-- Hip-hop bounce — syncopated, OFF the grid (green) -->
+    <g stroke="rgba(115,122,42,0.04)" stroke-width="0.4">
+      <line x1="105" y1="344" x2="105" y2="354"/>
+      <line x1="142" y1="344" x2="142" y2="354"/>
+      <line x1="193" y1="344" x2="193" y2="354"/>
+      <line x1="237" y1="344" x2="237" y2="354"/>
+      <line x1="280" y1="344" x2="280" y2="354"/>
+      <line x1="325" y1="344" x2="325" y2="354"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Nu</span><br/>
+      <span class="line2">Metal</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

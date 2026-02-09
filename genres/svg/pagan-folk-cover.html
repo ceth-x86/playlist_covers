@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagan Folk Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #080a06;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0c0e08;
+    overflow: hidden;
+  }
+
+  /* Earth-black with deep moss green — the darkest
+     forest floor, peat, wet bark, the soil before
+     dawn at a solstice gathering. Not indie folk's
+     night-forest (intimate, contemplative). This is
+     RITUAL darkness — the grove, the stone circle,
+     the fire pit before it's lit.
+     By Norse Music, Prophecy Productions, Season
+     of Mist (folk side). */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(120, 95, 40, 0.04) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 48%, rgba(65, 85, 45, 0.03) 0%, transparent 35%),
+      linear-gradient(180deg, #0e1008 0%, #0c0e08 44%, #080a06 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — firelit, centred, the bonfire.
+     Warmer and more ORANGE than any folk-family glow.
+     Not the candle of indie folk, not the alabaster
+     of neoclassical folk. This is FIRE — living,
+     shifting, outdoor. -->
+  .glow {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(165, 105, 40, 0.05) 0%, rgba(130, 78, 28, 0.02) 38%, transparent 58%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+
+  /* Grain — heavy, outdoor, primal.
+     The most grain in the folk family. Fire crackle,
+     wind, the sound of being outside at night. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.27;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — circular, even, like firelight radius -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(circle at 50% 48%, transparent 26%, rgba(4,5,3,0.6) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 24px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .genre-name .line1 {
+    color: rgba(185, 135, 65, 0.78);
+  }
+
+  .genre-name .line2 {
+    color: rgba(148, 108, 52, 0.35);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(130, 105, 50, 0.13);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 94px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(150, 115, 55, 0.07);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE RITUAL CIRCLE.
+       
+       Neoclassical folk: ONE precise arc, LINEAR,
+       calligraphic, manuscript on parchment.
+       Left to right, beginning to end. The BOOK.
+       
+       Pagan folk: the same single melody but CURVED
+       INTO A CIRCLE. The song doesn't travel from
+       beginning to end — it CYCLES, returning to its
+       origin. The WHEEL. Seasonal, solstice, cyclical
+       time. A song sung around a fire has no beginning
+       and no end — you join it and leave it.
+       
+       The circle is:
+       - NOT perfect (displacement scale=3 — the
+         heaviest in the folk family, wind and weather
+         and outdoor imperfection)
+       - NOT closed (there's a GAP at the bottom —
+         the circle is nearly complete but the
+         cycle hasn't quite returned to its start,
+         or the gap is where you ENTER the song)
+       - SINGLE-VOICED (like neoclassical folk,
+         not the dualities of folk rock or indie folk)
+       
+       Inside the circle: EMBERS — warm dots that
+       float upward from the gap (the bonfire at
+       the centre of the ritual).
+       
+       Outside the circle: SEASONAL MARKS at the
+       four cardinal points — solstice/equinox,
+       the wheel of the year.
+       
+       Wardruna, Heilung "Lifa", Danheim, Faun,
+       Omnia, Garmarna, Hedningarna —
+       the oldest song, sung in a circle. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Firelit amber — warm, flickering, organic -->
+      <linearGradient id="ritualGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#b08838;stop-opacity:0.35"/>
+        <stop offset="25%" style="stop-color:#c89840;stop-opacity:0.42"/>
+        <stop offset="50%" style="stop-color:#a07830;stop-opacity:0.3"/>
+        <stop offset="75%" style="stop-color:#c09038;stop-opacity:0.4"/>
+        <stop offset="100%" style="stop-color:#906828;stop-opacity:0.2"/>
+      </linearGradient>
+
+      <!-- Heavy wind displacement — the most in folk family -->
+      <filter id="windWeather">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="fireGlow" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="smokeRise" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3.5"/>
+      </filter>
+      <filter id="emberGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
+      </filter>
+    </defs>
+
+
+    <!-- === FIRE SMOKE — rising from the centre === -->
+    <g filter="url(#smokeRise)" opacity="0.1">
+      <path d="M 215,215
+               C 218,195 222,175 220,155
+               C 218,140 215,128 218,115"
+        fill="none" stroke="rgba(155,115,48,0.08)" stroke-width="8"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === THE RITUAL CIRCLE — the melody curved into a wheel === -->
+    <!-- Gap at the bottom (6 o'clock position) — where you
+         enter and leave the song. The cycle nearly complete. -->
+    <g filter="url(#windWeather)">
+      <g filter="url(#fireGlow)">
+        <!-- Arc from ~7 o'clock to ~5 o'clock 
+             (gap at 6 o'clock, about 50° opening) -->
+        <path d="M 168,268
+                 C 132,248 108,218 102,185
+                 C 96,148 110,115 140,95
+                 C 170,75 210,68 250,72
+                 C 290,76 325,95 345,122
+                 C 365,148 368,182 355,212
+                 C 342,242 318,260 290,272"
+          fill="none" stroke="url(#ritualGrad)" stroke-width="2.0"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === THE GAP — entry point of the cycle === -->
+    <!-- The space between the circle's two ends.
+         Not a break (the song continues) but a 
+         THRESHOLD — where you step into the ring.
+         The gap faces downward (earth, grounding). -->
+
+    <!-- Gap end markers — two small warm points -->
+    <g filter="url(#fireGlow)">
+      <circle cx="168" cy="268" r="2.5" fill="rgba(180,130,55,0.12)"/>
+      <circle cx="290" cy="272" r="2.5" fill="rgba(180,130,55,0.12)"/>
+    </g>
+
+
+    <!-- === EMBERS — rising from the fire at centre === -->
+    <!-- Warm dots that float UPWARD from the gap.
+         The bonfire at the centre of the ritual.
+         Unlike indie folk's dust (room sound) or
+         jangle pop's sparkles (overtones), these are
+         FIRE — ascending, warm, dying as they rise. -->
+    <g filter="url(#emberGlow)">
+      <!-- Low embers — bright, just risen -->
+      <circle cx="215" cy="258" r="1.5" fill="rgba(195,140,55,0.2)"/>
+      <circle cx="238" cy="250" r="1.2" fill="rgba(190,135,50,0.18)"/>
+      <circle cx="225" cy="242" r="1.8" fill="rgba(200,145,58,0.22)"/>
+      <!-- Mid embers — dimming -->
+      <circle cx="210" cy="228" r="1.3" fill="rgba(185,128,48,0.14)"/>
+      <circle cx="235" cy="220" r="1.0" fill="rgba(178,122,45,0.12)"/>
+      <circle cx="220" cy="208" r="1.5" fill="rgba(180,125,46,0.13)"/>
+      <!-- High embers — fading, almost gone -->
+      <circle cx="228" cy="190" r="0.8" fill="rgba(168,115,42,0.08)"/>
+      <circle cx="215" cy="178" r="0.6" fill="rgba(160,108,38,0.06)"/>
+      <circle cx="222" cy="165" r="0.5" fill="rgba(155,105,35,0.04)"/>
+    </g>
+
+
+    <!-- === SEASONAL MARKS — the four quarters of the wheel === -->
+    <!-- At cardinal positions OUTSIDE the circle:
+         the solstices and equinoxes. Not manuscript
+         ornaments (neoclassical) — these are OLDER.
+         Scratched marks, tally strokes, the simplest
+         way to mark the passage of the year. -->
+
+    <!-- NORTH — Winter Solstice (top, single vertical stroke) -->
+    <g opacity="0.08">
+      <line x1="220" y1="56" x2="220" y2="68"
+        stroke="rgba(155,118,52,0.2)" stroke-width="0.5"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- EAST — Spring Equinox (right, two crossing strokes) -->
+    <g opacity="0.07">
+      <line x1="368" y1="178" x2="380" y2="178"
+        stroke="rgba(155,118,52,0.18)" stroke-width="0.5"
+        stroke-linecap="round"/>
+      <line x1="374" y1="172" x2="374" y2="184"
+        stroke="rgba(155,118,52,0.18)" stroke-width="0.5"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- SOUTH — Summer Solstice (bottom, three tally marks
+         — the longest day, the most marks) -->
+    <g opacity="0.06">
+      <line x1="216" y1="310" x2="216" y2="320"
+        stroke="rgba(165,125,55,0.2)" stroke-width="0.4"
+        stroke-linecap="round"/>
+      <line x1="220" y1="310" x2="220" y2="322"
+        stroke="rgba(168,128,58,0.22)" stroke-width="0.5"
+        stroke-linecap="round"/>
+      <line x1="224" y1="310" x2="224" y2="320"
+        stroke="rgba(165,125,55,0.2)" stroke-width="0.4"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- WEST — Autumn Equinox (left, declining stroke) -->
+    <g opacity="0.07">
+      <line x1="72" y1="175" x2="62" y2="182"
+        stroke="rgba(148,112,48,0.18)" stroke-width="0.5"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === DRONE — circular, not linear === -->
+    <!-- Neoclassical folk's drone is a straight horizontal
+         line (the harmonium sustains on a flat plane).
+         Pagan folk's drone is a SECOND CIRCLE — concentric,
+         inner, the deeper voice that circles with the melody
+         but lower. The framework drum's resonance. -->
+    <g filter="url(#windWeather)" opacity="0.02">
+      <circle cx="220" cy="180" r="55"
+        fill="none" stroke="rgba(145,108,45,0.12)"
+        stroke-width="0.6"/>
+    </g>
+
+
+    <!-- === EARTH LINE — the ground of the ritual site === -->
+    <!-- A faint horizontal at the bottom of the circle.
+         Where the performers stand. The level earth. -->
+    <g opacity="0.01">
+      <line x1="120" y1="290" x2="340" y2="290"
+        stroke="rgba(130,100,42,0.12)" stroke-width="0.4"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === BPM — RITUAL PULSE, drum circle === -->
+    <!-- The frame drum, the bodhrán. Not fingerpicked
+         (neoclassical), not strummed (folk rock).
+         STRUCK. Repetitive, hypnotic, designed to
+         induce trance. Every beat the same weight —
+         no accent, no hierarchy. The circle has
+         no beginning. -->
+    <g stroke="rgba(155,115,50,0.025)" stroke-width="0.35">
+      <line x1="95" y1="348" x2="95" y2="356"/>
+      <line x1="130" y1="348" x2="130" y2="356"/>
+      <line x1="165" y1="348" x2="165" y2="356"/>
+      <line x1="200" y1="348" x2="200" y2="356"/>
+      <line x1="235" y1="348" x2="235" y2="356"/>
+      <line x1="270" y1="348" x2="270" y2="356"/>
+      <line x1="305" y1="348" x2="305" y2="356"/>
+      <line x1="340" y1="348" x2="340" y2="356"/>
+    </g>
+    <!-- NO accented downbeats. Every beat is equal.
+         The drum circle has no hierarchy. This is the
+         ONLY BPM in the series with perfectly uniform
+         tick weight. The trance pulse. -->
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Pagan</span><br/>
+      <span class="line2">Folk</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

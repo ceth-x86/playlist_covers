@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trip Hop Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #08060a;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0c0a10;
+    overflow: hidden;
+  }
+
+  /* Smoky navy-purple — the colour of cigarette smoke
+     in ultraviolet light. Not the clean lavender of
+     classic IDM (cerebral clarity). Not the saturated
+     navy of electropop (nightclub energy). This is
+     MURKY, HEAVY, DOWNWARD — the colour sinks.
+     The basement of the Blue Note in Bristol, 1994.
+     Massive Attack's "Mezzanine" blue.
+     Wild Bunch, Durban Poison, Mo' Wax, Ninja Tune. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 58%, rgba(95, 60, 90, 0.045) 0%, transparent 42%),
+      radial-gradient(ellipse at 48% 55%, rgba(70, 55, 85, 0.03) 0%, transparent 35%),
+      linear-gradient(182deg, #0e0c14 0%, #0c0a10 40%, #08060a 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow shifted DOWN — gravity pulls everything low.
+     The only electronic-family glow centred BELOW
+     the geometric midpoint. Trip hop sinks. */
+  .glow {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(100, 65, 95, 0.05) 0%, rgba(80, 52, 78, 0.02) 42%, transparent 58%);
+    filter: blur(24px);
+    z-index: 2;
+  }
+
+  /* Grain — smoky, heavy, vinyl-sourced */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.24;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — heavy, pressing down from above, 
+     slightly more open at the bottom */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 56%, transparent 28%, rgba(5,3,6,0.58) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(155, 105, 135, 0.8);
+  }
+
+  .genre-name .line2 {
+    color: rgba(125, 82, 110, 0.38);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(130, 88, 115, 0.15);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 98px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(135, 90, 118, 0.09);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE SINKING LINE.
+       
+       Most forms in the series exist at the CENTRE
+       of the frame — balanced, floating, neutral.
+       
+       Trip hop's primary gesture DESCENDS. It starts
+       at the centre-left and curves DOWNWARD toward
+       the lower-right. The melody sinks into the bass.
+       The vocal drops into reverb. Everything is
+       pulled DOWN by the weight of the beat.
+       
+       Below the descending line: a BASS MASS — not
+       a line but a PRESENCE, a heavy blurred zone
+       that represents the slowed-down breakbeat,
+       the sub-bass that you feel in your sternum.
+       The heaviest low-end in the electronic family.
+       
+       Above the descending line: SAMPLE FRAGMENTS —
+       small isolated shapes (rectangles, short lines)
+       that float disconnected. Vinyl crackle, film
+       dialogue snippets, orchestral stabs lifted from
+       spy soundtracks. These fragments don't connect
+       to each other or to the main line — they're
+       SOURCED from elsewhere, pasted in.
+       
+       The overall effect: a form that's HEAVY AT THE
+       BOTTOM, sparse at the top. The inverse of post-
+       rock (which builds upward/rightward). Trip hop
+       presses everything into the floor.
+       
+       Massive Attack "Mezzanine",
+       Portishead "Dummy", Tricky "Maxinquaye",
+       Morcheeba, UNKLE "Psyence Fiction",
+       DJ Shadow "Endtroducing....." —
+       the sound of gravity made audible. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Descending vocal line — dusty rose, fading -->
+      <linearGradient id="sinkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#604050;stop-opacity:0.03"/>
+        <stop offset="10%" style="stop-color:#886070;stop-opacity:0.18"/>
+        <stop offset="30%" style="stop-color:#a87888;stop-opacity:0.32"/>
+        <stop offset="55%" style="stop-color:#b88898;stop-opacity:0.4"/>
+        <stop offset="75%" style="stop-color:#a87888;stop-opacity:0.3"/>
+        <stop offset="90%" style="stop-color:#886070;stop-opacity:0.15"/>
+        <stop offset="100%" style="stop-color:#685060;stop-opacity:0.02"/>
+      </linearGradient>
+
+      <!-- Bass mass gradient — deep purple-black -->
+      <linearGradient id="bassGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#382035;stop-opacity:0"/>
+        <stop offset="15%" style="stop-color:#483040;stop-opacity:0.06"/>
+        <stop offset="40%" style="stop-color:#584050;stop-opacity:0.14"/>
+        <stop offset="60%" style="stop-color:#604858;stop-opacity:0.18"/>
+        <stop offset="80%" style="stop-color:#584050;stop-opacity:0.12"/>
+        <stop offset="100%" style="stop-color:#382035;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="smokeBlur" x="-5%" y="-8%" width="110%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="bassMass" x="-8%" y="-10%" width="116%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+      </filter>
+      <filter id="vinylHaze" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+      <filter id="reverbTail">
+        <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+
+
+    <!-- === BASS MASS — the sub-bass presence below === -->
+    <!-- Not a line. A ZONE. The slowed breakbeat, the
+         sub-bass that vibrates the floor. The heaviest
+         low-end in the electronic family. -->
+    <g filter="url(#bassMass)" opacity="0.35">
+      <path d="M 40,235
+               C 100,240 180,248 260,255
+               C 330,260 380,258 420,252"
+        fill="none" stroke="url(#bassGrad)" stroke-width="22"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Bass pulse nodes — the kick drum, slowed to ~80bpm -->
+    <g filter="url(#bassMass)" opacity="0.12">
+      <circle cx="120" cy="244" r="10" fill="rgba(75,45,68,0.08)"/>
+      <circle cx="220" cy="252" r="12" fill="rgba(80,48,72,0.1)"/>
+      <circle cx="320" cy="258" r="10" fill="rgba(75,45,68,0.08)"/>
+    </g>
+
+
+    <!-- === THE SINKING LINE — the vocal/melody, descending === -->
+    <g filter="url(#reverbTail)">
+      <g filter="url(#smokeBlur)">
+        <path d="M 30,195
+                 C 80,198 135,205 190,215
+                 C 245,225 300,235 355,240
+                 C 385,243 410,244 425,244"
+          fill="none" stroke="url(#sinkGrad)" stroke-width="1.8"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- Reverb trail — the voice dissolving into space -->
+    <g filter="url(#vinylHaze)" opacity="0.08">
+      <path d="M 290,236
+               C 330,242 370,246 420,248"
+        fill="none" stroke="rgba(145,95,125,0.1)" stroke-width="4"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === SAMPLE FRAGMENTS — floating above the line === -->
+    <!-- These are DISCONNECTED — sourced from vinyl,
+         film, found sound. They don't belong to the
+         melody or the beat. They're CUT and PASTED.
+         
+         Rectangles (sampled loops), short lines
+         (scratches/stabs), circles (reverb tails
+         of orchestral hits). Each one isolated. -->
+
+    <!-- Orchestral stab — rectangular, sharp -->
+    <g filter="url(#smokeBlur)" opacity="0.2">
+      <rect x="85" y="172" width="18" height="4" rx="0.5"
+        fill="rgba(140,95,125,0.2)"
+        transform="rotate(-5,94,174)"/>
+    </g>
+
+    <!-- Film dialogue snippet — thin horizontal -->
+    <g opacity="0.08">
+      <line x1="148" y1="180" x2="172" y2="178"
+        stroke="rgba(150,100,130,0.2)" stroke-width="0.6"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Vinyl crackle cluster -->
+    <g opacity="0.06">
+      <circle cx="210" cy="170" r="0.7" fill="rgba(155,105,135,0.2)"/>
+      <circle cx="215" cy="168" r="0.5" fill="rgba(150,100,130,0.15)"/>
+      <circle cx="218" cy="172" r="0.6" fill="rgba(152,102,132,0.18)"/>
+    </g>
+
+    <!-- Orchestral sample — bigger, string hit -->
+    <g filter="url(#smokeBlur)" opacity="0.18">
+      <rect x="255" y="185" width="22" height="5" rx="0.5"
+        fill="rgba(135,90,118,0.18)"
+        transform="rotate(3,266,187)"/>
+    </g>
+
+    <!-- Spy soundtrack stab -->
+    <g opacity="0.1">
+      <line x1="315" y1="195" x2="330" y2="192"
+        stroke="rgba(145,98,128,0.15)" stroke-width="0.8"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Distant piano note — reverbed to a ghost -->
+    <g filter="url(#vinylHaze)" opacity="0.06">
+      <circle cx="370" cy="200" r="4" fill="rgba(140,92,122,0.08)"/>
+    </g>
+
+    <!-- Vinyl surface noise — scattered specks -->
+    <g opacity="0.03">
+      <circle cx="70" cy="182" r="0.4" fill="rgba(130,88,115,0.15)"/>
+      <circle cx="132" cy="168" r="0.35" fill="rgba(128,85,112,0.12)"/>
+      <circle cx="188" cy="178" r="0.4" fill="rgba(130,88,115,0.15)"/>
+      <circle cx="288" cy="188" r="0.35" fill="rgba(128,85,112,0.12)"/>
+      <circle cx="340" cy="198" r="0.3" fill="rgba(125,82,110,0.1)"/>
+      <circle cx="395" cy="208" r="0.35" fill="rgba(128,85,112,0.12)"/>
+    </g>
+
+
+    <!-- === GRAVITY FILL — the space between vocal and bass === -->
+    <!-- The vocal sinks INTO the bass. The space between
+         is not empty — it's filled with SMOKE, reverb,
+         the atmosphere of a room. -->
+    <g opacity="0.004">
+      <path d="M 30,195
+               C 80,198 135,205 190,215
+               C 245,225 300,235 355,240
+               C 385,243 410,244 425,244
+               L 425,252
+               C 380,258 330,260 260,255
+               C 180,248 100,240 40,235
+               Z"
+        fill="rgba(90,58,82,1)"/>
+    </g>
+
+
+    <!-- === BPM — the SLOWEST, HEAVIEST electronic pulse === -->
+    <!-- ~80-90 BPM: half the speed of house, a third of
+         drum & bass. Each beat LANDS with weight.
+         The spacing is WIDE (slow tempo) and the 
+         downbeats are THICK (heavy presence).
+         Between beats: silence. Trip hop lives in 
+         the GAPS between hits. -->
+    <g stroke="rgba(125,82,110,0.02)" stroke-width="0.28">
+      <line x1="90" y1="340" x2="90" y2="348"/>
+      <line x1="125" y1="340" x2="125" y2="348"/>
+      <line x1="160" y1="340" x2="160" y2="348"/>
+      <line x1="195" y1="340" x2="195" y2="348"/>
+      <line x1="230" y1="340" x2="230" y2="348"/>
+      <line x1="265" y1="340" x2="265" y2="348"/>
+      <line x1="300" y1="340" x2="300" y2="348"/>
+      <line x1="335" y1="340" x2="335" y2="348"/>
+    </g>
+    <!-- Heavy kick — lands hard, slow tempo,
+         the THICKEST electronic downbeat in series -->
+    <g stroke="rgba(145,95,125,0.055)" stroke-width="0.6">
+      <line x1="90" y1="338" x2="90" y2="350"/>
+      <line x1="195" y1="338" x2="195" y2="350"/>
+      <line x1="300" y1="338" x2="300" y2="350"/>
+    </g>
+    <!-- Snare — heavy, late, dragging -->
+    <g stroke="rgba(135,88,118,0.035)" stroke-width="0.4">
+      <line x1="147" y1="339" x2="147" y2="349"/>
+      <line x1="252" y1="339" x2="252" y2="349"/>
+      <line x1="357" y1="339" x2="357" y2="349"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Trip</span><br/>
+      <span class="line2">Hop</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

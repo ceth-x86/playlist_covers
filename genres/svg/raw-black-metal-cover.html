@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raw Black Metal Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #040404;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #080808;
+    overflow: hidden;
+  }
+
+  /* ABSOLUTE BLACK — no colour cast. Not warm
+     (rock), not cold (electronic), not green (folk),
+     not purple (trip hop), not blue (cool jazz).
+     TRUE achromatic black. The refusal of colour.
+     The colour of a 4-track cassette recorded in
+     a freezing rehearsal space with one overhead
+     light. The colour of not caring what colour
+     anything is.
+     Peaceville (early), Deathlike Silence,
+     Osmose Productions, No Colours Records. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(120, 125, 130, 0.015) 0%, transparent 35%),
+      linear-gradient(180deg, #0a0a0a 0%, #080808 50%, #040404 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — BARELY EXISTS. The most suppressed glow
+     in the series. Raw black metal does not glow.
+     Raw black metal does not illuminate. There is
+     a faint grey presence because the form must
+     be BARELY visible, not invisible. -->
+  .glow {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(115, 118, 122, 0.012) 0%, transparent 50%);
+    filter: blur(15px);
+    z-index: 2;
+  }
+
+  /* Grain — THE MAXIMUM. 44%. Higher than any other
+     cover. The grain IS the aesthetic. The lo-fi
+     recording, the tape hiss, the rehearsal room
+     noise floor, the blizzard. The grain is not
+     texture — it's the MEDIUM. You're hearing
+     the cassette as much as the music. -->
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.44;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — barely there, the darkness is EVEN.
+     No dramatic framing. No composition. The anti-
+     aesthetic rejects even vignetting as decorative. -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 48%, transparent 42%, rgba(2,2,2,0.3) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography — deliberately harsh, no grace -->
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 16px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+
+  .genre-name .line1 {
+    color: rgba(135, 138, 142, 0.55);
+  }
+
+  .genre-name .line2 {
+    color: rgba(120, 122, 125, 0.25);
+  }
+
+  .genre-name .line3 {
+    color: rgba(108, 110, 112, 0.15);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(105, 108, 110, 0.08);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 92px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(110, 112, 115, 0.04);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE TREMOLO LINE.
+       
+       Heavy metal: pentagonal shield (structure,
+       power, the FORTRESS).
+       
+       Thrash: single V-downstroke (speed, attack).
+       
+       Doom: inverted monolith (weight, descent).
+       
+       Raw black metal: a SINGLE THIN LINE vibrating
+       at high frequency across the frame. That's it.
+       
+       The tremolo-picked guitar: one note held and
+       picked so fast it becomes a TEXTURE rather
+       than a sequence of notes. The line doesn't
+       rise or fall dramatically — it BUZZES,
+       oscillating in a narrow band, like a frozen
+       power line in a blizzard.
+       
+       Properties:
+       - THIN (0.7px — thinner even than cool jazz,
+         which is 0.9px. Not because of delicacy
+         but because of HOSTILITY to presence)
+       - HIGH-FREQUENCY oscillation (tight zigzag,
+         ~8px wavelength — the fastest oscillation
+         in the series)
+       - FLAT trajectory (barely rises or falls —
+         the tremolo stays on ONE NOTE or moves
+         in semitones, not dramatic intervals)
+       - GREY (no colour — the most achromatic
+         form in the series, pure grey)
+       - HARSH displacement (scale=3, but type=
+         "turbulence" not "fractalNoise" — more
+         jagged, less organic)
+       
+       No harmonics. No overtones. No warmth.
+       No decorative elements. No halos. No glow.
+       
+       Darkthrone "A Blaze in the Northern Sky",
+       "Transilvanian Hunger",
+       Burzum "Hvis Lyset Tar Oss",
+       Mayhem "De Mysteriis Dom Sathanas",
+       Immortal "Pure Holocaust",
+       Bathory "Under the Sign of the Black Mark",
+       Gorgoroth, Taake, Craft —
+       the frozen line. Nothing else. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Pure grey — zero chroma -->
+      <linearGradient id="tremoloGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#606060;stop-opacity:0"/>
+        <stop offset="5%" style="stop-color:#787878;stop-opacity:0.08"/>
+        <stop offset="15%" style="stop-color:#888888;stop-opacity:0.2"/>
+        <stop offset="35%" style="stop-color:#959595;stop-opacity:0.3"/>
+        <stop offset="50%" style="stop-color:#989898;stop-opacity:0.32"/>
+        <stop offset="65%" style="stop-color:#959595;stop-opacity:0.3"/>
+        <stop offset="85%" style="stop-color:#888888;stop-opacity:0.2"/>
+        <stop offset="95%" style="stop-color:#787878;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#606060;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Harsh jagged displacement -->
+      <filter id="blizzard">
+        <feTurbulence type="turbulence" baseFrequency="0.06" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <!-- No glow filter. Raw black metal does not glow. -->
+    </defs>
+
+
+    <!-- === THE TREMOLO LINE === -->
+    <!-- A single high-frequency zigzag. The tremolo
+         pick. Each peak is ~8px from the next.
+         The line barely moves vertically — oscillating
+         in a band of about ±6px around y=200.
+         
+         This is the LEAST decorated form in the series.
+         One line. No accompaniment. No atmosphere.
+         No secondary elements. The anti-aesthetic. -->
+    <g filter="url(#blizzard)">
+      <polyline points="
+        20,200
+        28,194
+        36,206
+        44,193
+        52,207
+        60,194
+        68,205
+        76,195
+        84,206
+        92,193
+        100,207
+        108,194
+        116,205
+        124,196
+        132,204
+        140,195
+        148,206
+        156,193
+        164,207
+        172,194
+        180,205
+        188,196
+        196,204
+        204,194
+        212,206
+        220,193
+        228,207
+        236,195
+        244,204
+        252,196
+        260,206
+        268,193
+        276,207
+        284,195
+        292,204
+        300,196
+        308,205
+        316,194
+        324,206
+        332,193
+        340,207
+        348,195
+        356,204
+        364,196
+        372,205
+        380,194
+        388,206
+        396,195
+        404,204
+        412,196
+        420,200"
+        fill="none" stroke="url(#tremoloGrad)" stroke-width="0.7"
+        stroke-linejoin="miter"/>
+    </g>
+
+
+    <!-- === BLAST BEAT — not below the form, IN the form === -->
+    <!-- The blast beat is so fast (~200+ BPM) that it
+         becomes indistinguishable from NOISE. Instead of
+         discrete ticks, it's a continuous thin band of
+         interference — the snare drum as white noise.
+         
+         This replaces the traditional BPM ticks. -->
+    <g opacity="0.02">
+      <line x1="25" y1="200" x2="420" y2="200"
+        stroke="rgba(120,120,120,0.06)" stroke-width="0.3"/>
+    </g>
+
+    <!-- Ghost of the blast — a second line, barely offset,
+         creating the thinnest possible band of noise -->
+    <g opacity="0.012">
+      <line x1="30" y1="202" x2="415" y2="202"
+        stroke="rgba(110,110,110,0.04)" stroke-width="0.2"/>
+      <line x1="35" y1="198" x2="410" y2="198"
+        stroke="rgba(110,110,110,0.04)" stroke-width="0.2"/>
+    </g>
+
+
+    <!-- === NOTHING ELSE === -->
+    <!-- No harmonics. No bass walk. No glow halos.
+         No atmospheric fill. No decorative elements.
+         No seasonal marks. No grid fragments. No
+         secondary voices. No dust. No embers. No ash.
+         No dappled light. No placed notes.
+         
+         The form is the tremolo line and the blast
+         beat noise floor. That's the entire composition.
+         
+         Every other cover has at least 4-5 distinct
+         visual layers. Raw black metal has TWO:
+         1. The tremolo line
+         2. The blast noise
+         
+         This is not minimalism (which is a deliberate
+         aesthetic choice, like cool jazz's sparse
+         placed notes). This is HOSTILITY toward
+         decoration. The refusal to give you anything
+         more than the absolute minimum needed to
+         exist as a form.
+         
+         The grain at 44% does more visual work than
+         any element in the SVG. The medium overwhelms
+         the message. The cassette hiss is louder
+         than the music. This is correct. -->
+
+
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Raw</span><br/>
+      <span class="line2">Black</span><br/>
+      <span class="line3">Metal</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

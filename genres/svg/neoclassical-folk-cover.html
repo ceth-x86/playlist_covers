@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neoclassical Folk Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #08080a;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0e0e10;
+    overflow: hidden;
+  }
+
+  /* Deep charcoal — not warm (folk/rock family) and
+     not cold (electronic family). NEUTRAL, the colour
+     of stone, of parchment's shadow, of a room with
+     high ceilings and bare walls. The absence of
+     era — equally 1320 and 2010.
+     4AD (this side), Drag City, Ba Da Bing,
+     Durtro/Jnana. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 44%, rgba(165, 155, 130, 0.03) 0%, transparent 42%),
+      radial-gradient(ellipse at 50% 42%, rgba(145, 138, 115, 0.015) 0%, transparent 32%),
+      linear-gradient(180deg, #101012 0%, #0e0e10 42%, #08080a 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — the most RESTRAINED in the series.
+     Barely visible. Like candlelight through
+     alabaster — you know it's there because the
+     stone seems warm, not because you see flame. */
+  .glow {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(158, 148, 120, 0.028) 0%, rgba(140, 132, 108, 0.01) 40%, transparent 56%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+
+  /* Grain — minimal, precise. Not the warmth of
+     tape or the grit of vinyl. The grain of STONE,
+     of handmade paper, of a room's silence. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.16;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — even, symmetric, like a frame
+     on a medieval manuscript */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 44%, transparent 32%, rgba(5,5,6,0.52) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.25;
+  }
+
+  .genre-name .line1 {
+    color: rgba(178, 168, 140, 0.72);
+  }
+
+  .genre-name .line2 {
+    color: rgba(145, 138, 115, 0.32);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(150, 142, 118, 0.12);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 92px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(150, 142, 118, 0.06);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE ILLUMINATED ARC.
+       
+       Folk rock: two parallel arcs (tradition +
+       amplification, band scale, open field).
+       
+       Indie folk: two thin threads braiding
+       (voice + guitar, intimate, cabin).
+       
+       Neoclassical folk: ONE arc — but drawn with
+       the precision of a CALLIGRAPHER. Not the
+       casual imperfection of indie folk (human
+       warmth), not the robust width of folk rock
+       (band energy). A single line that is:
+       
+       - PRECISE (no displacement filter — the only
+         folk-family form with zero roughness)
+       - THIN but CLEAR (like ink on vellum)
+       - SYMMETRICAL in its rise and fall (the 
+         arc follows a near-mathematical curve,
+         as if composed by someone who studied
+         counterpoint before they learned guitar)
+       
+       The arc carries TWO qualities simultaneously:
+       - Classical FORMALISM (the precision, the
+         symmetry, the composed quality)
+       - Folk ANTIQUITY (the warmth of the colour,
+         the single unaccompanied voice, the sense
+         of something very old)
+       
+       Around the arc: ILLUMINATION MARKS — tiny
+       decorative elements placed at precise intervals
+       along the line, like the gold leaf details in
+       a medieval manuscript. Not random (indie folk's
+       dust), not rhythmic (jangle pop's notes) — 
+       COMPOSED, placed with intent.
+       
+       Below: a single DRONE — the thinnest possible
+       horizontal sustain, the harmonium or hurdy-gurdy
+       that holds one note beneath the melody.
+       
+       Joanna Newsom "Ys", Vashti Bunyan,
+       Current 93 (acoustic), Nico "The Marble Index",
+       Dead Can Dance, Midlake, Six Organs of Admittance,
+       Espers —
+       a medieval song transcribed by a modern hand. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Ivory-silver gradient — the colour of old parchment
+           lit from behind. Not gold (power/warmth), not pure
+           silver (cold/electronic). Warm ivory that remembers
+           being white. -->
+      <linearGradient id="ivoryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#908870;stop-opacity:0"/>
+        <stop offset="8%" style="stop-color:#a8a088;stop-opacity:0.1"/>
+        <stop offset="22%" style="stop-color:#c0b898;stop-opacity:0.28"/>
+        <stop offset="42%" style="stop-color:#d0c8a8;stop-opacity:0.4"/>
+        <stop offset="58%" style="stop-color:#d0c8a8;stop-opacity:0.4"/>
+        <stop offset="78%" style="stop-color:#c0b898;stop-opacity:0.28"/>
+        <stop offset="92%" style="stop-color:#a8a088;stop-opacity:0.1"/>
+        <stop offset="100%" style="stop-color:#908870;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="inkGlow" x="-4%" y="-8%" width="108%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="parchmentHaze" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+    </defs>
+
+
+    <!-- === PARCHMENT HAZE — the softest possible atmosphere === -->
+    <g filter="url(#parchmentHaze)" opacity="0.1">
+      <path d="M 55,198
+               C 130,182 220,174 310,182
+               C 370,188 400,196 415,200"
+        fill="none" stroke="rgba(165,158,132,0.08)" stroke-width="8"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === THE CALLIGRAPHIC ARC — one precise melody === -->
+    <!-- NO displacement filter. The ONLY folk-family form
+         with zero roughness. This line is DRAWN, not played.
+         It rises and falls in a near-perfect arch — the
+         melodic contour of a composed piece, not an
+         improvisation. But the warmth of the colour and
+         the gradient keep it from being cold. -->
+    <g filter="url(#inkGlow)">
+      <path d="M 45,210
+               C 80,204 125,192 175,182
+               C 225,172 275,172 325,182
+               C 375,192 400,204 420,210"
+        fill="none" stroke="url(#ivoryGrad)" stroke-width="1.6"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === ILLUMINATION MARKS — manuscript decorations === -->
+    <!-- Placed at PRECISE intervals along the arc.
+         Not random dust (indie folk), not overtone
+         sparkles (jangle pop). COMPOSED ornaments —
+         tiny marks placed where a scribe would place
+         a gold leaf detail. Each one different. -->
+
+    <!-- Mark 1 — a small cross (sacred symbol) -->
+    <g opacity="0.12">
+      <line x1="105" y1="193" x2="105" y2="187"
+        stroke="rgba(185,178,150,0.25)" stroke-width="0.3"/>
+      <line x1="102" y1="190" x2="108" y2="190"
+        stroke="rgba(185,178,150,0.25)" stroke-width="0.3"/>
+    </g>
+
+    <!-- Mark 2 — a dot with a tiny ring (neume notation) -->
+    <g opacity="0.15">
+      <circle cx="160" cy="180" r="1.2" fill="rgba(190,182,155,0.2)"/>
+      <circle cx="160" cy="180" r="3.5" fill="none"
+        stroke="rgba(180,172,145,0.06)" stroke-width="0.25"/>
+    </g>
+
+    <!-- Mark 3 — apex ornament (the largest, at the crown) -->
+    <g opacity="0.18">
+      <circle cx="250" cy="172" r="1.5" fill="rgba(195,188,158,0.22)"/>
+      <circle cx="250" cy="172" r="5" fill="none"
+        stroke="rgba(185,178,150,0.05)" stroke-width="0.3"/>
+      <!-- Tiny rays — not arena rock's starburst,
+           just four small marks of emphasis -->
+      <line x1="250" y1="165" x2="250" y2="167"
+        stroke="rgba(185,178,150,0.08)" stroke-width="0.2"/>
+      <line x1="256" y1="172" x2="254" y2="172"
+        stroke="rgba(185,178,150,0.08)" stroke-width="0.2"/>
+      <line x1="250" y1="179" x2="250" y2="177"
+        stroke="rgba(185,178,150,0.08)" stroke-width="0.2"/>
+      <line x1="244" y1="172" x2="246" y2="172"
+        stroke="rgba(185,178,150,0.08)" stroke-width="0.2"/>
+    </g>
+
+    <!-- Mark 4 — a dot with descending tail (descending neume) -->
+    <g opacity="0.14">
+      <circle cx="335" cy="183" r="1.0" fill="rgba(185,178,150,0.18)"/>
+      <line x1="335" y1="184" x2="335" y2="189"
+        stroke="rgba(178,170,142,0.08)" stroke-width="0.25"/>
+    </g>
+
+    <!-- Mark 5 — a pair of dots (double stop, two strings) -->
+    <g opacity="0.1">
+      <circle cx="385" cy="197" r="0.8" fill="rgba(180,172,145,0.15)"/>
+      <circle cx="388" cy="195" r="0.8" fill="rgba(180,172,145,0.15)"/>
+    </g>
+
+
+    <!-- === THE DRONE — sustained beneath the melody === -->
+    <!-- The hurdy-gurdy, the harmonium, the tanpura, the
+         open string that rings throughout. A single 
+         HORIZONTAL line at a constant height — it doesn't
+         rise or fall. It simply SUSTAINS. -->
+    <g opacity="0.025">
+      <line x1="55" y1="235" x2="415" y2="235"
+        stroke="rgba(155,148,122,0.12)" stroke-width="0.5"
+        stroke-linecap="round"/>
+    </g>
+    <!-- Drone harmonics — the overtone series of the
+         sustained note. Two faint parallels. -->
+    <g opacity="0.012">
+      <line x1="80" y1="230" x2="400" y2="230"
+        stroke="rgba(148,142,118,0.08)" stroke-width="0.25"
+        stroke-linecap="round"/>
+      <line x1="100" y1="240" x2="385" y2="240"
+        stroke="rgba(142,136,112,0.06)" stroke-width="0.2"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === MODAL INTERVALS — precise vertical marks
+         showing the scale degrees === -->
+    <!-- Neoclassical folk uses MODAL scales (Dorian,
+         Mixolydian, Aeolian) — ancient pitch relationships.
+         These are marked as EXACT vertical ticks at
+         calculated positions along the arc — the notes
+         of the mode, precisely spaced. -->
+    <g stroke="rgba(168,160,135,0.025)" stroke-width="0.2"
+       stroke-linecap="round">
+      <!-- 7 modal degrees, evenly distributed -->
+      <line x1="95" y1="195" x2="95" y2="200"/>
+      <line x1="148" y1="183" x2="148" y2="188"/>
+      <line x1="198" y1="176" x2="198" y2="181"/>
+      <line x1="250" y1="172" x2="250" y2="177"/>
+      <line x1="302" y1="176" x2="302" y2="181"/>
+      <line x1="352" y1="185" x2="352" y2="190"/>
+      <line x1="398" y1="198" x2="398" y2="203"/>
+    </g>
+
+
+    <!-- === BPM — the most SPARSE, most COMPOSED pulse === -->
+    <!-- Not fingerpicked (indie folk), not strummed
+         (folk rock). PLUCKED — each note placed
+         individually with silence around it.
+         Harp arpeggiation, not guitar rhythm.
+         The widest spacing in the folk family. -->
+    <g stroke="rgba(155,148,122,0.018)" stroke-width="0.25">
+      <line x1="110" y1="340" x2="110" y2="347"/>
+      <line x1="148" y1="340" x2="148" y2="347"/>
+      <line x1="186" y1="340" x2="186" y2="347"/>
+      <line x1="224" y1="340" x2="224" y2="347"/>
+      <line x1="262" y1="340" x2="262" y2="347"/>
+      <line x1="300" y1="340" x2="300" y2="347"/>
+      <line x1="338" y1="340" x2="338" y2="347"/>
+    </g>
+    <!-- Downbeats — precise, not heavy -->
+    <g stroke="rgba(165,158,132,0.028)" stroke-width="0.32">
+      <line x1="110" y1="339" x2="110" y2="348"/>
+      <line x1="224" y1="339" x2="224" y2="348"/>
+      <line x1="338" y1="339" x2="338" y2="348"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Neoclassical</span><br/>
+      <span class="line2">Folk</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

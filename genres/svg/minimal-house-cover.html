@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minimal House Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #080806; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0e0c0a; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 47%, rgba(128,108,72,0.05) 0%, transparent 42%), linear-gradient(180deg, #100e0c 0%, #0e0c0a 42%, #080806 100%); z-index: 1; }
+  .central-form { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -54%); z-index: 3; width: 440px; height: 440px; }
+  .glow { position: absolute; top: 47%; left: 50%; transform: translate(-50%, -50%); width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(ellipse, rgba(118,98,65,0.06) 0%, rgba(88,72,48,0.02) 42%, transparent 55%); filter: blur(20px); z-index: 2; }
+  .grain { position: absolute; inset: 0; z-index: 7; opacity: 0.16; mix-blend-mode: overlay; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 128px 128px; }
+  .vignette { position: absolute; inset: 0; z-index: 6; background: radial-gradient(ellipse at 50% 47%, transparent 32%, rgba(4,4,3,0.48) 100%); pointer-events: none; }
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name { font-family: 'Anton', sans-serif; font-size: 16px; letter-spacing: 4px; text-transform: uppercase; line-height: 1.2; }
+  .genre-name .line1 { color: rgba(158,135,88,0.78); }
+  .genre-name .line2 { color: rgba(122,102,68,0.35); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(112,95,62,0.14); margin-top: 10px; }
+  .rule { position: absolute; bottom: 84px; left: 40px; width: 80px; height: 1px; background: rgba(118,98,65,0.08); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="glow"></div>
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="kickWash" x="-15%" y="-15%" width="130%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+      <filter id="orbitalBlur" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
+      </filter>
+    </defs>
+
+    <!-- THE SINGLE PULSE — one circle, the kick.
+         Everything else orbits this. -->
+    <g filter="url(#kickWash)" opacity="0.2">
+      <circle cx="220" cy="210" r="28" fill="rgba(128,108,72,0.08)"/>
+    </g>
+    <circle cx="220" cy="210" r="18" fill="none"
+      stroke="rgba(148,125,82,0.42)" stroke-width="0.8"/>
+    <circle cx="220" cy="210" r="2" fill="rgba(155,132,88,0.35)"/>
+
+    <!-- ORBITAL RINGS — the few elements that
+         circle the kick: hi-hat, a click, a micro-loop.
+         Concentric circles, each fainter. -->
+    <g filter="url(#orbitalBlur)" opacity="0.15">
+      <circle cx="220" cy="210" r="42" fill="none"
+        stroke="rgba(128,108,72,0.2)" stroke-width="0.4"/>
+      <circle cx="220" cy="210" r="68" fill="none"
+        stroke="rgba(118,98,65,0.14)" stroke-width="0.35"/>
+      <circle cx="220" cy="210" r="95" fill="none"
+        stroke="rgba(108,90,58,0.1)" stroke-width="0.3"/>
+    </g>
+
+    <!-- ORBITAL ELEMENTS — 4 tiny dots on the rings,
+         the minimal percussion: hi-hat, rim, click, shuffle -->
+    <g opacity="0.3">
+      <circle cx="250" cy="182" r="1.0" fill="rgba(142,120,78,0.4)"/>
+      <circle cx="190" cy="242" r="0.8" fill="rgba(135,115,75,0.32)"/>
+      <circle cx="280" cy="232" r="0.7" fill="rgba(128,108,72,0.28)"/>
+      <circle cx="155" cy="198" r="0.6" fill="rgba(122,102,68,0.22)"/>
+    </g>
+
+    <!-- BPM — warm, steady, hypnotic minimal pulse -->
+    <g stroke="rgba(108,90,58,0.05)" stroke-width="0.2">
+      <line x1="72" y1="345" x2="72" y2="352"/><line x1="92" y1="345" x2="92" y2="352"/>
+      <line x1="112" y1="345" x2="112" y2="352"/><line x1="132" y1="345" x2="132" y2="352"/>
+      <line x1="152" y1="345" x2="152" y2="352"/><line x1="172" y1="345" x2="172" y2="352"/>
+      <line x1="192" y1="345" x2="192" y2="352"/><line x1="212" y1="345" x2="212" y2="352"/>
+      <line x1="232" y1="345" x2="232" y2="352"/><line x1="252" y1="345" x2="252" y2="352"/>
+      <line x1="272" y1="345" x2="272" y2="352"/><line x1="292" y1="345" x2="292" y2="352"/>
+      <line x1="312" y1="345" x2="312" y2="352"/><line x1="332" y1="345" x2="332" y2="352"/>
+      <line x1="352" y1="345" x2="352" y2="352"/><line x1="372" y1="345" x2="372" y2="352"/>
+    </g>
+    <g stroke="rgba(138,118,78,0.1)" stroke-width="0.35">
+      <line x1="72" y1="342" x2="72" y2="355"/><line x1="152" y1="342" x2="152" y2="355"/>
+      <line x1="232" y1="342" x2="232" y2="355"/><line x1="312" y1="342" x2="312" y2="355"/>
+    </g>
+  </svg>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Minimal</span><br/><span class="line2">House</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+</body>
+</html>

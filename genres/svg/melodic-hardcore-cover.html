@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melodic Hardcore Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0a0808;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0e0c0a;
+    overflow: hidden;
+  }
+
+  /* Dark warm-black — warmer than hardcore punk
+     (which is cold grey-black, pure negation).
+     The warmth is the melody bleeding in. The
+     amber light behind the wall of noise. Still
+     dark, still harsh — but there's a crack where
+     something human gets through.
+     Epitaph, Deathwish Inc., Bridge Nine,
+     Equal Vision, Topshelf. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(155, 95, 40, 0.035) 0%, transparent 42%),
+      radial-gradient(ellipse at 48% 44%, rgba(135, 65, 45, 0.02) 0%, transparent 30%),
+      linear-gradient(180deg, #100e0a 0%, #0e0c0a 42%, #0a0808 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — the warmth trying to get through.
+     Amber, not red (hardcore) or grey (punk).
+     Positioned at the melodic arc's apex. -->
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(162, 102, 45, 0.045) 0%, rgba(138, 78, 38, 0.015) 42%, transparent 58%);
+    filter: blur(20px);
+    z-index: 2;
+  }
+
+  /* Grain — high, but below hardcore's maximum.
+     The production is better than raw hardcore
+     (you can hear the melody through the noise). -->
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.36;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — tight, aggressive -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 46%, transparent 26%, rgba(5,4,4,0.6) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.25;
+  }
+
+  .genre-name .line1 {
+    color: rgba(178, 115, 55, 0.78);
+  }
+
+  .genre-name .line2 {
+    color: rgba(148, 82, 48, 0.35);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(140, 78, 42, 0.13);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 88px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(145, 82, 42, 0.08);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE CRACKED WALL.
+       
+       Punk: single slash (rejection).
+       Hardcore punk: DOUBLE slash (maximum rejection,
+       the wall of noise).
+       
+       Melodic hardcore: the double slash IS STILL
+       THERE — the hardcore aggression remains. But
+       now a MELODIC ARC pushes through the space
+       BETWEEN the two slashes. The wall has CRACKED
+       and something human is emerging.
+       
+       Visual concept:
+       - TWO HARDCORE SLASHES (the violence, the
+         scream, displaced, aggressive) — inherited
+         from hardcore punk, same angles, same
+         displacement, same aggression
+       - A MELODIC ARC between them — a curved line
+         that finds its way through the gap, warmer
+         in colour (amber vs red-grey), smoother in
+         texture (less displacement), representing
+         the sung melody, the cathartic release
+       - FRACTURE LIGHT — where the melodic arc
+         crosses or approaches a slash, warm light
+         LEAKS through — the crack in the wall
+         where emotion escapes
+       
+       Converge "Jane Doe",
+       Touché Amoré "Stage Four",
+       La Dispute "Wildlife",
+       Defeater "Empty Days & Sleepless Nights",
+       Have Heart "The Things We Carry",
+       Modern Life Is War, Comeback Kid,
+       The Ghost Inside —
+       the scream that breaks into singing. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Harsh red-grey for slashes — hardcore DNA -->
+      <linearGradient id="hcSlash1" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#685040;stop-opacity:0.04"/>
+        <stop offset="15%" style="stop-color:#886050;stop-opacity:0.25"/>
+        <stop offset="40%" style="stop-color:#a87058;stop-opacity:0.38"/>
+        <stop offset="60%" style="stop-color:#a87058;stop-opacity:0.38"/>
+        <stop offset="85%" style="stop-color:#886050;stop-opacity:0.25"/>
+        <stop offset="100%" style="stop-color:#685040;stop-opacity:0.04"/>
+      </linearGradient>
+      <linearGradient id="hcSlash2" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#604838;stop-opacity:0.04"/>
+        <stop offset="15%" style="stop-color:#805848;stop-opacity:0.22"/>
+        <stop offset="40%" style="stop-color:#986850;stop-opacity:0.35"/>
+        <stop offset="60%" style="stop-color:#986850;stop-opacity:0.35"/>
+        <stop offset="85%" style="stop-color:#805848;stop-opacity:0.22"/>
+        <stop offset="100%" style="stop-color:#604838;stop-opacity:0.04"/>
+      </linearGradient>
+
+      <!-- Warm amber for melodic arc — the human voice -->
+      <linearGradient id="melodyArc" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#886838;stop-opacity:0"/>
+        <stop offset="10%" style="stop-color:#a88048;stop-opacity:0.08"/>
+        <stop offset="25%" style="stop-color:#c09858;stop-opacity:0.22"/>
+        <stop offset="45%" style="stop-color:#d0a862;stop-opacity:0.32"/>
+        <stop offset="55%" style="stop-color:#d0a862;stop-opacity:0.32"/>
+        <stop offset="75%" style="stop-color:#c09858;stop-opacity:0.22"/>
+        <stop offset="90%" style="stop-color:#a88048;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#886838;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Hardcore displacement — heavy, jagged -->
+      <filter id="hardcoreEdge">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <!-- Melodic displacement — present but reduced -->
+      <filter id="melodyEdge">
+        <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="slashGlow" x="-6%" y="-6%" width="112%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="melodyGlow" x="-5%" y="-8%" width="110%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="fractureLight" x="-15%" y="-15%" width="130%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+      </filter>
+      <filter id="crackGlow" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+    </defs>
+
+
+    <!-- === SLASH 1 — left, steeper, the opening scream === -->
+    <g filter="url(#hardcoreEdge)">
+      <g filter="url(#slashGlow)">
+        <line x1="98" y1="272" x2="188" y2="138"
+          stroke="url(#hcSlash1)" stroke-width="3.2"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- === SLASH 2 — right, slightly different angle === -->
+    <g filter="url(#hardcoreEdge)">
+      <g filter="url(#slashGlow)">
+        <line x1="252" y1="268" x2="352" y2="142"
+          stroke="url(#hcSlash2)" stroke-width="2.8"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === FRACTURE LIGHT — warm light leaking through
+         the cracks where melody meets violence === -->
+
+    <!-- Fracture 1 — between slashes, left area -->
+    <g filter="url(#fractureLight)" opacity="0.08">
+      <circle cx="175" cy="190" r="14"
+        fill="rgba(185,128,55,0.05)"/>
+    </g>
+
+    <!-- Fracture 2 — THE MAIN CRACK, centre,
+         where the melodic arc reaches its peak
+         and the gap between slashes is widest -->
+    <g filter="url(#fractureLight)" opacity="0.12">
+      <circle cx="220" cy="178" r="18"
+        fill="rgba(192,135,58,0.06)"/>
+    </g>
+
+    <!-- Fracture 3 — right area, closing -->
+    <g filter="url(#fractureLight)" opacity="0.06">
+      <circle cx="275" cy="195" r="12"
+        fill="rgba(178,122,52,0.04)"/>
+    </g>
+
+
+    <!-- === THE MELODIC ARC — pushing through === -->
+    <!-- A curved line that finds its way through the
+         SPACE BETWEEN the two slashes. Warmer colour
+         (amber), less displacement (fractalNoise not
+         turbulence, scale=2 not 4), rounder — the
+         sung melody emerging from the screamed verse.
+         
+         The arc doesn't exist outside the slash zone —
+         it only appears in the GAP between the two
+         slashes, as if it can only exist where the
+         wall of noise has been cracked open. -->
+    <g filter="url(#melodyEdge)">
+      <g filter="url(#melodyGlow)">
+        <path d="M 145,228
+                 C 165,210 185,192 205,180
+                 C 225,168 245,172 265,182
+                 C 285,192 305,210 320,228"
+          fill="none" stroke="url(#melodyArc)" stroke-width="1.4"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- Melodic sustain — the note held at the apex,
+         the moment the scream becomes a voice -->
+    <g filter="url(#crackGlow)" opacity="0.06">
+      <path d="M 195,180
+               C 210,172 230,170 245,175"
+        fill="none" stroke="rgba(195,142,62,0.1)" stroke-width="2.5"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === CATHARSIS PARTICLES — rising from the crack === -->
+    <!-- Warm embers rising from the fracture points.
+         Not fire (pagan folk's bonfire) and not ash
+         (apocalyptic folk's descent). These are
+         CATHARSIS — emotion released through the
+         crack in the wall of noise. They rise because
+         catharsis is RELEASE, lifting. -->
+    <g opacity="0.5">
+      <!-- Lower, brighter — just released -->
+      <circle cx="205" cy="188" r="1.2" fill="rgba(188,130,58,0.18)"/>
+      <circle cx="235" cy="185" r="1.0" fill="rgba(182,125,55,0.16)"/>
+      <circle cx="218" cy="178" r="1.3" fill="rgba(192,135,60,0.2)"/>
+
+      <!-- Mid — rising, dimming -->
+      <circle cx="195" cy="168" r="0.9" fill="rgba(175,118,52,0.12)"/>
+      <circle cx="228" cy="162" r="1.0" fill="rgba(178,122,55,0.13)"/>
+      <circle cx="248" cy="170" r="0.8" fill="rgba(172,115,50,0.1)"/>
+
+      <!-- Upper — fading, almost gone -->
+      <circle cx="210" cy="148" r="0.6" fill="rgba(165,110,48,0.06)"/>
+      <circle cx="238" cy="145" r="0.5" fill="rgba(162,108,45,0.05)"/>
+      <circle cx="222" cy="138" r="0.4" fill="rgba(158,105,42,0.035)"/>
+    </g>
+
+
+    <!-- === SLASH DEBRIS — the violence persists === -->
+    <!-- Angular fragments around the slashes — the
+         hardcore energy doesn't disappear, it coexists
+         with the melody. Harsher colour than the
+         catharsis particles. -->
+    <g opacity="0.04">
+      <line x1="112" y1="245" x2="120" y2="240"
+        stroke="rgba(148,85,52,0.15)" stroke-width="0.5"/>
+      <line x1="178" y1="155" x2="185" y2="148"
+        stroke="rgba(145,82,50,0.14)" stroke-width="0.45"/>
+      <line x1="265" y1="250" x2="272" y2="244"
+        stroke="rgba(142,80,48,0.13)" stroke-width="0.45"/>
+      <line x1="338" y1="158" x2="344" y2="152"
+        stroke="rgba(138,78,45,0.12)" stroke-width="0.4"/>
+      <line x1="160" y1="210" x2="166" y2="205"
+        stroke="rgba(140,80,48,0.12)" stroke-width="0.4"/>
+      <line x1="302" y1="200" x2="308" y2="195"
+        stroke="rgba(135,76,44,0.1)" stroke-width="0.35"/>
+    </g>
+
+
+    <!-- === BPM — FAST with melodic SWELLS === -->
+    <!-- Hardcore speed (fast, dense) but with
+         dynamic accents that follow the melodic arc —
+         louder/more intense at the centre where
+         the melody peaks, creating a CRESCENDO
+         pattern in the BPM. -->
+
+    <!-- Fast subdivision — hardcore inherited -->
+    <g stroke="rgba(128,75,40,0.018)" stroke-width="0.22">
+      <line x1="72" y1="345" x2="72" y2="352"/>
+      <line x1="85" y1="345" x2="85" y2="352"/>
+      <line x1="98" y1="345" x2="98" y2="352"/>
+      <line x1="111" y1="345" x2="111" y2="352"/>
+      <line x1="124" y1="345" x2="124" y2="352"/>
+      <line x1="137" y1="345" x2="137" y2="352"/>
+      <line x1="150" y1="345" x2="150" y2="352"/>
+      <line x1="163" y1="345" x2="163" y2="352"/>
+      <line x1="176" y1="345" x2="176" y2="352"/>
+      <line x1="189" y1="345" x2="189" y2="352"/>
+      <line x1="202" y1="345" x2="202" y2="352"/>
+      <line x1="215" y1="345" x2="215" y2="352"/>
+      <line x1="228" y1="345" x2="228" y2="352"/>
+      <line x1="241" y1="345" x2="241" y2="352"/>
+      <line x1="254" y1="345" x2="254" y2="352"/>
+      <line x1="267" y1="345" x2="267" y2="352"/>
+      <line x1="280" y1="345" x2="280" y2="352"/>
+      <line x1="293" y1="345" x2="293" y2="352"/>
+      <line x1="306" y1="345" x2="306" y2="352"/>
+      <line x1="319" y1="345" x2="319" y2="352"/>
+      <line x1="332" y1="345" x2="332" y2="352"/>
+      <line x1="345" y1="345" x2="345" y2="352"/>
+      <line x1="358" y1="345" x2="358" y2="352"/>
+      <line x1="371" y1="345" x2="371" y2="352"/>
+    </g>
+    <!-- Downbeats — growing toward centre (crescendo)
+         then fading (the catharsis wave) -->
+    <g stroke="rgba(148,88,42,0.025)" stroke-width="0.3">
+      <line x1="72" y1="344" x2="72" y2="354"/>
+      <line x1="124" y1="344" x2="124" y2="354"/>
+    </g>
+    <g stroke="rgba(168,105,50,0.04)" stroke-width="0.4">
+      <line x1="176" y1="343" x2="176" y2="355"/>
+      <line x1="215" y1="343" x2="215" y2="355"/>
+      <line x1="254" y1="343" x2="254" y2="355"/>
+    </g>
+    <g stroke="rgba(148,88,42,0.025)" stroke-width="0.3">
+      <line x1="306" y1="344" x2="306" y2="354"/>
+      <line x1="358" y1="344" x2="358" y2="354"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Melodic</span><br/>
+      <span class="line2">Hardcore</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

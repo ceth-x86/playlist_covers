@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detroit Techno Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #04060a;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #080a10;
+    overflow: hidden;
+  }
+
+  /* Deep blue-black — NOT grey (Berlin), NOT pure
+     black (industrial). The blue-black of a midnight
+     highway viewed from the roof of the Packard Plant.
+     The colour of POSSIBILITY — dark, but with the
+     faintest electric promise. The future seen from
+     1988 Detroit: Metroplex, Transmat, KMS,
+     Planet E, Underground Resistance. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(70, 95, 130, 0.04) 0%, transparent 45%),
+      radial-gradient(ellipse at 52% 48%, rgba(55, 78, 115, 0.02) 0%, transparent 30%),
+      linear-gradient(180deg, #0a0c14 0%, #080a10 42%, #04060a 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — silvery cyan, clean, OPEN. Higher and
+     brighter than Berlin. The grid EMITS light,
+     it doesn't absorb it. Chrome reflects. */
+  .glow {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 260px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(65, 95, 135, 0.04) 0%, rgba(50, 75, 112, 0.015) 42%, transparent 58%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+
+  /* Grain — LOW. The cleanest electronic production.
+     The TR-909 into a Mackie mixer into DAT tape.
+     Precision, not texture. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.16;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — WIDE, open. The space extends.
+     Not closing in (Berlin) but opening out.
+     The vignette is gentler — you can see further. */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 46%, transparent 34%, rgba(2,3,6,0.48) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .genre-name .line1 {
+    color: rgba(100, 135, 175, 0.82);
+  }
+
+  .genre-name .line2 {
+    color: rgba(75, 105, 145, 0.38);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(65, 92, 128, 0.15);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 90px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(70, 98, 132, 0.08);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE CHROME GRID.
+       
+       Berlin techno: bunker grid — concrete, heavy,
+       tight spacing, weighted nodes, kick column,
+       oppressive. Built from RUINS.
+       
+       Detroit techno: chrome grid — light, open,
+       equal spacing, clean crossings, no dominant
+       axis, SPATIAL. Built from IMAGINATION.
+       
+       The Detroit grid is:
+       - LIGHTER lines (the wireframe, not the wall)
+       - WIDER spacing (the space between lines is
+         as important as the lines — ROOM TO MOVE)
+       - EQUAL in all directions (no hierarchy,
+         no kick column — democratic geometry)
+       - MACHINE-PERFECT (zero displacement —
+         the machine IS the instrument, not a
+         metaphor for decay)
+       - Has a GLOW at intersections — the grid
+         points EMIT light (chrome reflects,
+         possibility shines)
+       
+       Juan Atkins "No UFO's",
+       Derrick May "Strings of Life",
+       Kevin Saunderson "Big Fun",
+       Jeff Mills "The Bells",
+       Robert Hood "Minimal Nation",
+       Underground Resistance, Carl Craig,
+       Stacey Pullen, Eddie Fowlkes —
+       the future, drawn in light. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Silvery cyan — the Detroit colour -->
+      <linearGradient id="gridH" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#506888;stop-opacity:0.00"/>
+        <stop offset="8%" style="stop-color:#608098;stop-opacity:0.15"/>
+        <stop offset="20%" style="stop-color:#7090a8;stop-opacity:0.38"/>
+        <stop offset="40%" style="stop-color:#80a0b8;stop-opacity:0.55"/>
+        <stop offset="50%" style="stop-color:#85a5c0;stop-opacity:0.62"/>
+        <stop offset="60%" style="stop-color:#80a0b8;stop-opacity:0.55"/>
+        <stop offset="80%" style="stop-color:#7090a8;stop-opacity:0.38"/>
+        <stop offset="92%" style="stop-color:#608098;stop-opacity:0.15"/>
+        <stop offset="100%" style="stop-color:#506888;stop-opacity:0.00"/>
+      </linearGradient>
+      <linearGradient id="gridV" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#506888;stop-opacity:0.00"/>
+        <stop offset="8%" style="stop-color:#608098;stop-opacity:0.15"/>
+        <stop offset="20%" style="stop-color:#7090a8;stop-opacity:0.38"/>
+        <stop offset="40%" style="stop-color:#80a0b8;stop-opacity:0.55"/>
+        <stop offset="50%" style="stop-color:#85a5c0;stop-opacity:0.62"/>
+        <stop offset="60%" style="stop-color:#80a0b8;stop-opacity:0.55"/>
+        <stop offset="80%" style="stop-color:#7090a8;stop-opacity:0.38"/>
+        <stop offset="92%" style="stop-color:#608098;stop-opacity:0.15"/>
+        <stop offset="100%" style="stop-color:#506888;stop-opacity:0.00"/>
+      </linearGradient>
+
+      <filter id="chromeGlow" x="-4%" y="-4%" width="108%" height="108%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.8" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="nodeLight" x="-25%" y="-25%" width="150%" height="150%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2.5"/>
+      </filter>
+      <filter id="fieldGlow" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+      </filter>
+    </defs>
+
+
+    <!-- === THE CHROME GRID — horizontal lines === -->
+    <!-- 5 lines, EQUAL spacing (32px), EQUAL weight.
+         No hierarchy. Democratic geometry.
+         Zero displacement — machine-perfect. -->
+    <g filter="url(#chromeGlow)">
+      <line x1="72" y1="168" x2="368" y2="168"
+        stroke="url(#gridH)" stroke-width="0.7"
+        stroke-linecap="round"/>
+      <line x1="68" y1="200" x2="372" y2="200"
+        stroke="url(#gridH)" stroke-width="0.7"
+        stroke-linecap="round"/>
+      <line x1="72" y1="232" x2="368" y2="232"
+        stroke="url(#gridH)" stroke-width="0.7"
+        stroke-linecap="round"/>
+      <line x1="78" y1="264" x2="362" y2="264"
+        stroke="url(#gridH)" stroke-width="0.65"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === THE CHROME GRID — vertical lines === -->
+    <!-- 5 lines, EQUAL spacing (60px), same weight
+         as horizontals. No dominant axis. No kick
+         column. Every line equal. -->
+    <g filter="url(#chromeGlow)">
+      <line x1="130" y1="148" x2="130" y2="284"
+        stroke="url(#gridV)" stroke-width="0.7"
+        stroke-linecap="round"/>
+      <line x1="190" y1="144" x2="190" y2="288"
+        stroke="url(#gridV)" stroke-width="0.7"
+        stroke-linecap="round"/>
+      <line x1="250" y1="144" x2="250" y2="288"
+        stroke="url(#gridV)" stroke-width="0.7"
+        stroke-linecap="round"/>
+      <line x1="310" y1="148" x2="310" y2="284"
+        stroke="url(#gridV)" stroke-width="0.7"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === NODE LIGHTS — intersections that GLOW === -->
+    <!-- Where Detroit's grid lines cross, the
+         intersections EMIT light — chrome reflecting,
+         possibility concentrated at each junction.
+         
+         Berlin's nodes are heavy (mass, weight).
+         Detroit's nodes are BRIGHT (light, energy).
+         
+         All 16 intersection points, equal brightness
+         at the centre, dimming toward edges. -->
+
+    <!-- Inner 4 — the brightest zone -->
+    <g filter="url(#nodeLight)" opacity="0.300">
+      <circle cx="190" cy="200" r="5" fill="rgba(90,125,168,0.15)"/>
+      <circle cx="250" cy="200" r="5" fill="rgba(90,125,168,0.15)"/>
+      <circle cx="190" cy="232" r="5" fill="rgba(88,122,165,0.14)"/>
+      <circle cx="250" cy="232" r="5" fill="rgba(88,122,165,0.14)"/>
+    </g>
+
+    <!-- Mid ring — slightly dimmer -->
+    <g filter="url(#nodeLight)" opacity="0.200">
+      <circle cx="130" cy="200" r="4.5" fill="rgba(82,115,155,0.12)"/>
+      <circle cx="310" cy="200" r="4.5" fill="rgba(82,115,155,0.12)"/>
+      <circle cx="190" cy="168" r="4.5" fill="rgba(82,115,155,0.12)"/>
+      <circle cx="250" cy="168" r="4.5" fill="rgba(82,115,155,0.12)"/>
+      <circle cx="130" cy="232" r="4" fill="rgba(80,112,152,0.11)"/>
+      <circle cx="310" cy="232" r="4" fill="rgba(80,112,152,0.11)"/>
+      <circle cx="190" cy="264" r="4" fill="rgba(80,112,152,0.11)"/>
+      <circle cx="250" cy="264" r="4" fill="rgba(80,112,152,0.11)"/>
+    </g>
+
+    <!-- Outer corners — dimmest -->
+    <g filter="url(#nodeLight)" opacity="0.125">
+      <circle cx="130" cy="168" r="3.5" fill="rgba(75,108,148,0.10)"/>
+      <circle cx="310" cy="168" r="3.5" fill="rgba(75,108,148,0.10)"/>
+      <circle cx="130" cy="264" r="3.5" fill="rgba(75,108,148,0.09)"/>
+      <circle cx="310" cy="264" r="3.5" fill="rgba(75,108,148,0.09)"/>
+    </g>
+
+
+    <!-- === THE FIELD — the space the grid defines === -->
+    <!-- Detroit techno isn't about the grid ITSELF
+         (that's minimal techno). It's about the SPACE
+         the grid creates — the field of possibility
+         between the lines. A faint presence at the
+         geometric centre — the dancefloor, the
+         imagined future, the space where Kraftwerk
+         meets Parliament. -->
+    <g filter="url(#fieldGlow)" opacity="0.090">
+      <ellipse cx="220" cy="216" rx="75" ry="45"
+        fill="rgba(72,102,142,0.10)"/>
+    </g>
+
+
+    <!-- === STRING SHIMMER — the melodic possibility === -->
+    <!-- Detroit techno has MELODY — "Strings of Life",
+         the synth pads, the human element that
+         separates it from Berlin's functionalism.
+         Faint horizontal traces above and below
+         the grid — the strings, the pads, the human
+         voice of the machine. -->
+    <g opacity="0.045">
+      <line x1="110" y1="152" x2="330" y2="152"
+        stroke="rgba(75,108,148,0.12)" stroke-width="0.3"
+        stroke-linecap="round"/>
+      <line x1="115" y1="280" x2="325" y2="280"
+        stroke="rgba(72,105,145,0.10)" stroke-width="0.25"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Pad wash — the warmest element, the soul -->
+    <g filter="url(#fieldGlow)" opacity="0.036">
+      <line x1="140" y1="148" x2="300" y2="148"
+        stroke="rgba(85,110,148,0.10)" stroke-width="3"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === 909 ELEMENTS — the rhythmic DNA === -->
+    <!-- The TR-909 hi-hat: tiny marks between grid
+         intersections. Not texture (Berlin's room
+         reverb) but PATTERN — the 16-step sequencer
+         as visual rhythm. Precise, even, quantized. -->
+    <g opacity="0.036">
+      <!-- Hi-hat between nodes on row 2 -->
+      <circle cx="160" cy="200" r="0.5" fill="rgba(78,108,148,0.15)"/>
+      <circle cx="220" cy="200" r="0.5" fill="rgba(78,108,148,0.15)"/>
+      <circle cx="280" cy="200" r="0.5" fill="rgba(78,108,148,0.15)"/>
+      <!-- Hi-hat between nodes on row 3 -->
+      <circle cx="160" cy="232" r="0.4" fill="rgba(75,105,145,0.12)"/>
+      <circle cx="220" cy="232" r="0.4" fill="rgba(75,105,145,0.12)"/>
+      <circle cx="280" cy="232" r="0.4" fill="rgba(75,105,145,0.12)"/>
+    </g>
+
+
+    <!-- === BPM — CLEAN, EVEN, the 909 pattern === -->
+    <!-- Not as heavy as Berlin (no need to pound).
+         Not as fast as DnB. The PERFECT 4/4 —
+         steady, unwavering, the 909 kick that
+         launched a genre. Equal weight, equal
+         spacing. Democratic rhythm. -->
+
+    <!-- 16th-note subdivisions — the sequencer grid -->
+    <g stroke="rgba(60,88,125,0.04)" stroke-width="0.2">
+      <line x1="80" y1="345" x2="80" y2="352"/>
+      <line x1="98" y1="345" x2="98" y2="352"/>
+      <line x1="116" y1="345" x2="116" y2="352"/>
+      <line x1="134" y1="345" x2="134" y2="352"/>
+      <line x1="152" y1="345" x2="152" y2="352"/>
+      <line x1="170" y1="345" x2="170" y2="352"/>
+      <line x1="188" y1="345" x2="188" y2="352"/>
+      <line x1="206" y1="345" x2="206" y2="352"/>
+      <line x1="224" y1="345" x2="224" y2="352"/>
+      <line x1="242" y1="345" x2="242" y2="352"/>
+      <line x1="260" y1="345" x2="260" y2="352"/>
+      <line x1="278" y1="345" x2="278" y2="352"/>
+      <line x1="296" y1="345" x2="296" y2="352"/>
+      <line x1="314" y1="345" x2="314" y2="352"/>
+      <line x1="332" y1="345" x2="332" y2="352"/>
+      <line x1="350" y1="345" x2="350" y2="352"/>
+    </g>
+    <!-- 909 kick — 4/4, EQUAL weight, clean -->
+    <g stroke="rgba(78,110,150,0.09)" stroke-width="0.35">
+      <line x1="80" y1="343" x2="80" y2="354"/>
+      <line x1="152" y1="343" x2="152" y2="354"/>
+      <line x1="224" y1="343" x2="224" y2="354"/>
+      <line x1="296" y1="343" x2="296" y2="354"/>
+    </g>
+    <!-- Open hi-hat — on the AND of 2 and 4,
+         the groove that makes it MOVE -->
+    <g stroke="rgba(68,98,138,0.06)" stroke-width="0.25">
+      <line x1="188" y1="344" x2="188" y2="353"/>
+      <line x1="332" y1="344" x2="332" y2="353"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Detroit</span><br/>
+      <span class="line2">Techno</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

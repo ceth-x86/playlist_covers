@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Art Rock Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #08080e;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0c0c14;
+    overflow: hidden;
+  }
+
+  /* Deep charcoal-blue — cooler than classic rock
+     (which is warm studio-brown), more blue than
+     avant-garde rock (which is true grey). The colour
+     of a gallery at night, track lighting off, only
+     the exit signs casting faint violet. Sophisticated
+     but not cold. Calculated warmth.
+     Island Records (Roxy), Sire (Heads), RCA (Bowie),
+     EMI (Bush/Gabriel), Virgin (Japan). */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 46% 42%, rgba(120, 108, 148, 0.035) 0%, transparent 42%),
+      radial-gradient(ellipse at 54% 48%, rgba(140, 128, 155, 0.02) 0%, transparent 32%),
+      linear-gradient(178deg, #0e0e18 0%, #0c0c14 44%, #08080e 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — precise, positioned off-centre UPWARD.
+     Not the warm spread of rock (below centre) but
+     the focused track lighting of a gallery (above). -->
+  .glow {
+    position: absolute;
+    top: 40%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(125, 112, 152, 0.04) 0%, rgba(108, 98, 135, 0.015) 42%, transparent 56%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+
+  /* Grain — low, controlled, refined production -->
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.17;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — slightly asymmetric, gallery framing -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 48% 43%, transparent 32%, rgba(5,5,9,0.52) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(155, 140, 178, 0.78);
+  }
+
+  .genre-name .line2 {
+    color: rgba(125, 112, 148, 0.35);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(125, 115, 148, 0.13);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 96px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(125, 115, 148, 0.07);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE ANGULAR GESTURE.
+       
+       Classic rock: a smooth root arc — the natural,
+       unself-conscious gesture of a musician playing.
+       
+       Prog rock: the arc with added harmonic layers
+       and time signature changes — virtuosity.
+       
+       Avant-garde rock: the arc with an anomaly
+       inserted — one unexpected element in a known
+       structure.
+       
+       Art rock: the arc DELIBERATELY ANGULARIZED.
+       The same left-to-right journey, the same general
+       shape as a rock arc, but rendered as FIVE STRAIGHT
+       SEGMENTS with angular joints between them. Each
+       segment is a different width and opacity —
+       a different movement, passage, or mood.
+       
+       The difference from prog: prog ADDS complexity
+       to the arc (more layers, more voices). Art rock
+       DEFORMS the arc itself — makes it angular,
+       self-aware, deliberately uncomfortable.
+       
+       The difference from avant-garde: avant-garde
+       inserts ONE anomaly in a normal structure.
+       Art rock makes the ENTIRE structure anomalous.
+       
+       The angles are DELIBERATE, not random. They're
+       composed, considered, the way an architect might
+       take a natural curve and make it into a series
+       of precise facets. Not chaos — DESIGN.
+       
+       Roxy Music "For Your Pleasure",
+       Talking Heads "Remain in Light",
+       David Bowie "Low"/"Heroes",
+       Kate Bush "Hounds of Love",
+       Peter Gabriel "So", Japan "Tin Drum",
+       Talk Talk "Spirit of Eden",
+       Scott Walker (late) —
+       rock that knows it's art, art that remembers
+       it's rock. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Segment gradients — each section a different
+           opacity/intensity, like movements in a suite -->
+      <linearGradient id="seg1Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#706088;stop-opacity:0.05"/>
+        <stop offset="100%" style="stop-color:#887098;stop-opacity:0.22"/>
+      </linearGradient>
+      <linearGradient id="seg2Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#887098;stop-opacity:0.22"/>
+        <stop offset="100%" style="stop-color:#a088b0;stop-opacity:0.38"/>
+      </linearGradient>
+      <linearGradient id="seg3Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#a088b0;stop-opacity:0.38"/>
+        <stop offset="100%" style="stop-color:#b098c0;stop-opacity:0.42"/>
+      </linearGradient>
+      <linearGradient id="seg4Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#b098c0;stop-opacity:0.42"/>
+        <stop offset="100%" style="stop-color:#9880a8;stop-opacity:0.3"/>
+      </linearGradient>
+      <linearGradient id="seg5Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#9880a8;stop-opacity:0.3"/>
+        <stop offset="100%" style="stop-color:#786890;stop-opacity:0.08"/>
+      </linearGradient>
+
+      <filter id="galleryGlow" x="-5%" y="-10%" width="110%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="trackLight" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3.5"/>
+      </filter>
+    </defs>
+
+
+    <!-- === GALLERY LIGHT — track-lit atmosphere === -->
+    <g filter="url(#trackLight)" opacity="0.1">
+      <polyline points="35,210 115,188 210,178 295,195 365,182 420,200"
+        fill="none" stroke="rgba(130,118,158,0.08)" stroke-width="10"
+        stroke-linejoin="miter"/>
+    </g>
+
+
+    <!-- === THE ANGULAR GESTURE — 5 segments === -->
+    <!-- Each segment: different width, different angle,
+         different opacity. The arc made self-conscious. -->
+
+    <g filter="url(#galleryGlow)">
+      <!-- Segment 1: Introduction — thin, ascending, tentative -->
+      <line x1="35" y1="210" x2="115" y2="188"
+        stroke="url(#seg1Grad)" stroke-width="1.2"
+        stroke-linecap="round"/>
+
+      <!-- Segment 2: Development — thicker, continuing up,
+           gaining confidence -->
+      <line x1="115" y1="188" x2="210" y2="178"
+        stroke="url(#seg2Grad)" stroke-width="2.0"
+        stroke-linecap="round"/>
+
+      <!-- Segment 3: TURN — the dramatic angle change.
+           This segment drops DOWN where a rock arc would
+           continue rising. The self-aware deviation. -->
+      <line x1="210" y1="178" x2="295" y2="195"
+        stroke="url(#seg3Grad)" stroke-width="2.8"
+        stroke-linecap="round"/>
+
+      <!-- Segment 4: Ascent again — the unexpected
+           recovery, going UP when the listener expects
+           continued descent. Thinner (vulnerability). -->
+      <line x1="295" y1="195" x2="365" y2="182"
+        stroke="url(#seg4Grad)" stroke-width="1.8"
+        stroke-linecap="round"/>
+
+      <!-- Segment 5: Exit — trailing off,
+           at a different angle than the entry.
+           The piece doesn't end where it began. -->
+      <line x1="365" y1="182" x2="420" y2="200"
+        stroke="url(#seg5Grad)" stroke-width="1.0"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === JOINT NODES — the angular meeting points === -->
+    <!-- Where segments meet at angles. Unlike unison
+         nodes (folk rock, warm circles) these are
+         SHARP — small diamonds or angular marks that
+         emphasize the deliberate angularity. -->
+
+    <!-- Joint 1 — entry to development -->
+    <g filter="url(#galleryGlow)" opacity="0.12">
+      <rect x="113" y="186" width="4" height="4" rx="0.3"
+        fill="rgba(142,125,168,0.18)"
+        transform="rotate(45,115,188)"/>
+    </g>
+
+    <!-- Joint 2 — the TURN (most prominent) -->
+    <g filter="url(#galleryGlow)" opacity="0.18">
+      <rect x="207.5" y="175.5" width="5" height="5" rx="0.3"
+        fill="rgba(162,140,185,0.2)"
+        transform="rotate(45,210,178)"/>
+    </g>
+    <g filter="url(#trackLight)" opacity="0.1">
+      <circle cx="210" cy="178" r="10" fill="rgba(150,132,175,0.04)"/>
+    </g>
+
+    <!-- Joint 3 — descent to recovery -->
+    <g filter="url(#galleryGlow)" opacity="0.14">
+      <rect x="293" y="193" width="4" height="4" rx="0.3"
+        fill="rgba(148,130,172,0.16)"
+        transform="rotate(45,295,195)"/>
+    </g>
+
+    <!-- Joint 4 — recovery to exit -->
+    <g filter="url(#galleryGlow)" opacity="0.1">
+      <rect x="363" y="180" width="3.5" height="3.5" rx="0.3"
+        fill="rgba(138,122,162,0.14)"
+        transform="rotate(45,365,182)"/>
+    </g>
+
+
+    <!-- === GEOMETRIC ACCENTS — the art references === -->
+    <!-- Small precise geometric shapes placed near the
+         form — not random (organic) and not repetitive
+         (mechanical). Each one DIFFERENT, referencing
+         visual art vocabulary: the triangle, the line,
+         the rectangle. Gallery elements. -->
+
+    <!-- Accent 1 — small triangle, above segment 2 -->
+    <g opacity="0.05">
+      <polygon points="165,168 170,160 175,168"
+        fill="none" stroke="rgba(148,132,172,0.15)"
+        stroke-width="0.3"/>
+    </g>
+
+    <!-- Accent 2 — precise horizontal line, below segment 3 -->
+    <g opacity="0.04">
+      <line x1="235" y1="210" x2="268" y2="210"
+        stroke="rgba(142,128,168,0.12)" stroke-width="0.35"
+        stroke-linecap="butt"/>
+    </g>
+
+    <!-- Accent 3 — small rectangle, near joint 3 -->
+    <g opacity="0.04">
+      <rect x="308" y="188" width="12" height="4" rx="0.3"
+        fill="none" stroke="rgba(138,122,162,0.1)"
+        stroke-width="0.25"/>
+    </g>
+
+    <!-- Accent 4 — two parallel short lines,
+         below segment 1 (art direction marks) -->
+    <g opacity="0.03">
+      <line x1="72" y1="222" x2="88" y2="222"
+        stroke="rgba(130,118,155,0.1)" stroke-width="0.25"
+        stroke-linecap="butt"/>
+      <line x1="72" y1="226" x2="88" y2="226"
+        stroke="rgba(130,118,155,0.08)" stroke-width="0.25"
+        stroke-linecap="butt"/>
+    </g>
+
+
+    <!-- === REFLECTION LINE — self-awareness === -->
+    <!-- A faint MIRROR of the angular gesture below it,
+         inverted and dimmer. The form looking at itself.
+         Art rock's self-consciousness made literal —
+         the shape is aware of its own shape. -->
+    <g opacity="0.012">
+      <polyline points="55,228 125,242 215,250 300,238 370,248 405,235"
+        fill="none" stroke="rgba(128,115,152,0.08)" stroke-width="0.4"
+        stroke-linejoin="miter" stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === BPM — ANGULAR, with time signature implications === -->
+    <!-- Not straight 4/4 (rock), not fractured (avant-garde).
+         GROUPED unevenly — ticks clustered in groups of
+         different sizes, suggesting changing time signatures
+         or deliberate rhythmic asymmetry. But still PULSE,
+         not chaos. Composed irregularity. -->
+    <g stroke="rgba(118,108,142,0.02)" stroke-width="0.25">
+      <!-- Group of 3 -->
+      <line x1="95" y1="345" x2="95" y2="352"/>
+      <line x1="115" y1="345" x2="115" y2="352"/>
+      <line x1="135" y1="345" x2="135" y2="352"/>
+      <!-- gap -->
+      <!-- Group of 2 -->
+      <line x1="172" y1="345" x2="172" y2="352"/>
+      <line x1="192" y1="345" x2="192" y2="352"/>
+      <!-- gap -->
+      <!-- Group of 4 -->
+      <line x1="228" y1="345" x2="228" y2="352"/>
+      <line x1="248" y1="345" x2="248" y2="352"/>
+      <line x1="268" y1="345" x2="268" y2="352"/>
+      <line x1="288" y1="345" x2="288" y2="352"/>
+      <!-- gap -->
+      <!-- Group of 2 -->
+      <line x1="322" y1="345" x2="322" y2="352"/>
+      <line x1="342" y1="345" x2="342" y2="352"/>
+      <!-- gap -->
+      <!-- Group of 3 -->
+      <line x1="372" y1="345" x2="372" y2="352"/>
+      <line x1="392" y1="345" x2="392" y2="352"/>
+    </g>
+    <!-- Downbeats — first of each group, angular emphasis -->
+    <g stroke="rgba(135,122,162,0.035)" stroke-width="0.38">
+      <line x1="95" y1="344" x2="95" y2="354"/>
+      <line x1="172" y1="344" x2="172" y2="354"/>
+      <line x1="228" y1="344" x2="228" y2="354"/>
+      <line x1="322" y1="344" x2="322" y2="354"/>
+      <line x1="372" y1="344" x2="372" y2="354"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Art</span><br/>
+      <span class="line2">Rock</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

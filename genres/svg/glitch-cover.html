@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glitch Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #020204; }
+  .cover { position: relative; width: 600px; height: 600px; background: #060608; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 46%, rgba(72,82,98,0.04) 0%, transparent 35%), linear-gradient(180deg, #08080a 0%, #060608 42%, #020204 100%); z-index: 1; }
+  .central-form { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -54%); z-index: 3; width: 440px; height: 440px; }
+  .glow { position: absolute; top: 46%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: 160px; border-radius: 50%; background: radial-gradient(ellipse, rgba(78,92,118,0.05) 0%, rgba(55,65,85,0.02) 42%, transparent 55%); filter: blur(18px); z-index: 2; }
+  .grain { position: absolute; inset: 0; z-index: 7; opacity: 0.14; mix-blend-mode: overlay; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 128px 128px; }
+  .vignette { position: absolute; inset: 0; z-index: 6; background: radial-gradient(ellipse at 50% 46%, transparent 30%, rgba(1,1,2,0.5) 100%); pointer-events: none; }
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name { font-family: 'Anton', sans-serif; font-size: 22px; letter-spacing: 5px; text-transform: uppercase; line-height: 1; color: rgba(148,162,188,0.82); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(92,105,128,0.16); margin-top: 10px; }
+  .rule { position: absolute; bottom: 78px; left: 40px; width: 80px; height: 1px; background: rgba(88,100,125,0.08); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="glow"></div>
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="pixelGlow" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.5" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="errorWash" x="-12%" y="-12%" width="124%" height="124%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+    </defs>
+
+    <!-- CORRUPTED SIGNAL — the ghost of transmitted data -->
+    <g filter="url(#errorWash)" opacity="0.06">
+      <rect x="140" y="190" width="160" height="40" rx="2" fill="rgba(78,92,118,0.05)"/>
+    </g>
+
+    <!-- SCATTERED FRAGMENTS — pixel-rectangles,
+         data artifacts, broken transmission.
+         Each fragment is a tiny rect — the PIXEL
+         as fundamental unit. Irregularly distributed
+         but loosely clustering around centre. -->
+    <g filter="url(#pixelGlow)">
+      <!-- Large fragments — data blocks -->
+      <rect x="178" y="195" width="8" height="3" fill="rgba(148,165,198,0.5)" rx="0"/>
+      <rect x="218" y="202" width="12" height="2" fill="rgba(155,172,205,0.55)" rx="0"/>
+      <rect x="252" y="198" width="6" height="4" fill="rgba(142,158,192,0.45)" rx="0"/>
+      <rect x="195" y="212" width="10" height="2.5" fill="rgba(148,165,198,0.5)" rx="0"/>
+      <rect x="238" y="215" width="7" height="3" fill="rgba(145,162,195,0.48)" rx="0"/>
+      <rect x="270" y="208" width="5" height="2" fill="rgba(138,155,188,0.42)" rx="0"/>
+
+      <!-- Medium fragments -->
+      <rect x="162" y="188" width="4" height="2" fill="rgba(128,145,178,0.35)" rx="0"/>
+      <rect x="288" y="192" width="5" height="1.5" fill="rgba(125,142,175,0.32)" rx="0"/>
+      <rect x="205" y="225" width="6" height="2" fill="rgba(132,148,182,0.38)" rx="0"/>
+      <rect x="260" y="222" width="4" height="2.5" fill="rgba(128,145,178,0.35)" rx="0"/>
+      <rect x="182" y="205" width="3" height="5" fill="rgba(135,152,185,0.4)" rx="0"/>
+      <rect x="300" y="205" width="3" height="4" fill="rgba(122,138,172,0.3)" rx="0"/>
+
+      <!-- Tiny fragments — pixel scatter -->
+      <rect x="150" y="200" width="2" height="1" fill="rgba(115,132,165,0.25)" rx="0"/>
+      <rect x="310" y="198" width="2" height="1.5" fill="rgba(112,128,162,0.22)" rx="0"/>
+      <rect x="172" y="220" width="1.5" height="1" fill="rgba(108,125,158,0.2)" rx="0"/>
+      <rect x="318" y="212" width="2" height="1" fill="rgba(108,125,158,0.2)" rx="0"/>
+      <rect x="140" y="208" width="1.5" height="2" fill="rgba(105,122,155,0.18)" rx="0"/>
+      <rect x="330" y="202" width="1" height="1.5" fill="rgba(102,118,152,0.16)" rx="0"/>
+      <rect x="155" y="215" width="1" height="1" fill="rgba(100,115,148,0.14)" rx="0"/>
+      <rect x="340" y="195" width="1.5" height="1" fill="rgba(98,112,145,0.12)" rx="0"/>
+
+      <!-- Stray pixels — furthest scatter -->
+      <rect x="120" y="195" width="1" height="1" fill="rgba(92,108,138,0.1)" rx="0"/>
+      <rect x="355" y="210" width="1" height="1" fill="rgba(88,105,135,0.08)" rx="0"/>
+      <rect x="128" y="225" width="1" height="0.5" fill="rgba(85,102,132,0.08)" rx="0"/>
+      <rect x="348" y="188" width="0.5" height="1" fill="rgba(82,98,128,0.06)" rx="0"/>
+    </g>
+
+    <!-- SCAN LINE — a single horizontal disruption,
+         the moment of error -->
+    <g opacity="0.12">
+      <line x1="135" y1="207" x2="305" y2="207"
+        stroke="rgba(148,165,198,0.15)" stroke-width="0.3" stroke-linecap="butt"/>
+    </g>
+
+    <!-- BPM — irregular, fragmented, the rhythm
+         of error. Ticks at uneven intervals. -->
+    <g stroke="rgba(82,98,128,0.05)" stroke-width="0.18">
+      <line x1="72" y1="345" x2="72" y2="350"/><line x1="85" y1="345" x2="85" y2="350"/>
+      <line x1="102" y1="345" x2="102" y2="350"/><line x1="108" y1="345" x2="108" y2="350"/>
+      <line x1="130" y1="345" x2="130" y2="350"/><line x1="148" y1="345" x2="148" y2="350"/>
+      <line x1="152" y1="345" x2="152" y2="350"/><line x1="178" y1="345" x2="178" y2="350"/>
+      <line x1="195" y1="345" x2="195" y2="350"/><line x1="198" y1="345" x2="198" y2="350"/>
+      <line x1="225" y1="345" x2="225" y2="350"/><line x1="240" y1="345" x2="240" y2="350"/>
+      <line x1="260" y1="345" x2="260" y2="350"/><line x1="262" y1="345" x2="262" y2="350"/>
+      <line x1="290" y1="345" x2="290" y2="350"/><line x1="315" y1="345" x2="315" y2="350"/>
+      <line x1="318" y1="345" x2="318" y2="350"/><line x1="345" y1="345" x2="345" y2="350"/>
+      <line x1="370" y1="345" x2="370" y2="350"/><line x1="372" y1="345" x2="372" y2="350"/>
+    </g>
+  </svg>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Glitch</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+</body>
+</html>

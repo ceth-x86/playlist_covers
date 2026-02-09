@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Space Rock Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #04040c;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #06061a;
+    overflow: hidden;
+  }
+
+  /* The DEEPEST, most SATURATED black in the series —
+     not the brown-black of rock family (earth),
+     not the blue-grey of post rock (ocean),
+     not the neutral of avant-garde (concrete).
+     This is SPACE itself — the absolute void between
+     stars, with the faintest indigo tint from distant
+     nebulae. The only background that feels INFINITE.
+     Spacemen 3, Hawkwind, Spiritualized, the furthest
+     thing from a room. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 38% 36%, rgba(90, 60, 150, 0.03) 0%, transparent 40%),
+      radial-gradient(ellipse at 62% 58%, rgba(60, 80, 160, 0.02) 0%, transparent 35%),
+      linear-gradient(175deg, #08081e 0%, #06061a 40%, #04040c 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — distant, diffuse, like a nebula 
+     NOT centred — shifted toward the trajectory's
+     vanishing point (upper right) -->
+  .glow {
+    position: absolute;
+    top: 36%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(90, 70, 160, 0.035) 0%, rgba(70, 55, 140, 0.012) 42%, transparent 60%);
+    filter: blur(30px);
+    z-index: 2;
+  }
+
+  /* Grain — minimal, the void is clean -->
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.15;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — the DEEPEST in the series, pulling
+     everything toward the centre trajectory -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 52% 42%, transparent 22%, rgba(2,2,8,0.65) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(140, 120, 195, 0.78);
+  }
+
+  .genre-name .line2 {
+    color: rgba(108, 92, 160, 0.35);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(110, 95, 165, 0.14);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 98px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(120, 100, 170, 0.07);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE ESCAPE TRAJECTORY — classic rock's
+       arc given escape velocity.
+       
+       Classic rock: a broad arc CONTAINED within the frame.
+       The form starts and ends inside the canvas — it has
+       boundaries, it belongs to a room, a stage, a city.
+       
+       Space rock: that arc EXTENDED until it leaves.
+       The trajectory enters from the lower-left edge
+       of the frame (already in motion when we see it)
+       and exits through the upper-right, getting THINNER
+       and DIMMER as it recedes into depth.
+       
+       This is the ONLY form in the series that
+       deliberately LEAVES THE FRAME. Every other genre
+       is contained. Space rock refuses containment.
+       
+       The depth perspective is key:
+       - NEAR (lower-left): bright, thick, warm —
+         the riff as it passes close to you
+       - FAR (upper-right): dim, thin, cool —
+         the riff receding toward the vanishing point
+       
+       This creates a Z-AXIS — the only form in the
+       series with implied depth. Everything else is
+       flat (2D pattern). Space rock implies 3D space.
+       
+       Along the trajectory: DOPPLER SHIFT. The colour
+       shifts from warmer (near) to cooler (far), like
+       a star's redshift/blueshift.
+       
+       Hawkwind "Space Ritual", Spiritualized 
+       "Ladies and Gentlemen We Are Floating in Space",
+       Spacemen 3, Monster Magnet, Failure, 
+       My Bloody Valentine (adjacent), Hum —
+       the sound leaving the atmosphere. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Trajectory gradient — warm near, cool far (Doppler shift) -->
+      <linearGradient id="trajectGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#c0a080;stop-opacity:0.42"/>
+        <stop offset="15%" style="stop-color:#b898a0;stop-opacity:0.38"/>
+        <stop offset="35%" style="stop-color:#a888b8;stop-opacity:0.3"/>
+        <stop offset="55%" style="stop-color:#9078c0;stop-opacity:0.22"/>
+        <stop offset="75%" style="stop-color:#7868c0;stop-opacity:0.14"/>
+        <stop offset="90%" style="stop-color:#6058b8;stop-opacity:0.06"/>
+        <stop offset="100%" style="stop-color:#4848a8;stop-opacity:0.01"/>
+      </linearGradient>
+
+      <!-- Engine glow — the near-point where thrust is visible -->
+      <radialGradient id="thrustGrad" cx="12%" cy="85%" r="25%">
+        <stop offset="0%" style="stop-color:#d0a878;stop-opacity:0.15"/>
+        <stop offset="40%" style="stop-color:#c09870;stop-opacity:0.06"/>
+        <stop offset="100%" style="stop-color:#b08860;stop-opacity:0"/>
+      </radialGradient>
+
+      <filter id="cosmicBlur" x="-5%" y="-8%" width="110%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="nebulaHaze" x="-12%" y="-12%" width="124%" height="124%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+      </filter>
+      <filter id="depthFade" x="-3%" y="-3%" width="106%" height="106%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.8"/>
+      </filter>
+    </defs>
+
+
+    <!-- === STARFIELD — distant fixed points === -->
+    <!-- The only genre with STARS. Not sparkles (jangle),
+         not dust (indie folk), not pixels (hyperpop).
+         These are FIXED POINTS at infinite distance —
+         they don't move, the trajectory passes through them. -->
+    <g opacity="0.08">
+      <circle cx="85" cy="92" r="0.5" fill="rgba(180,175,200,0.5)"/>
+      <circle cx="340" cy="68" r="0.4" fill="rgba(170,165,195,0.4)"/>
+      <circle cx="390" cy="148" r="0.45" fill="rgba(175,170,198,0.45)"/>
+      <circle cx="55" cy="285" r="0.4" fill="rgba(180,172,195,0.4)"/>
+      <circle cx="150" cy="340" r="0.5" fill="rgba(178,170,198,0.45)"/>
+      <circle cx="380" cy="310" r="0.35" fill="rgba(165,160,188,0.35)"/>
+      <circle cx="260" cy="55" r="0.4" fill="rgba(172,168,195,0.4)"/>
+      <circle cx="42" cy="168" r="0.4" fill="rgba(175,170,195,0.4)"/>
+      <circle cx="310" cy="350" r="0.35" fill="rgba(168,162,190,0.35)"/>
+      <circle cx="180" cy="78" r="0.45" fill="rgba(175,170,198,0.42)"/>
+      <circle cx="398" cy="240" r="0.35" fill="rgba(165,160,188,0.35)"/>
+      <circle cx="65" cy="380" r="0.4" fill="rgba(170,165,192,0.38)"/>
+      <circle cx="420" cy="58" r="0.3" fill="rgba(160,155,185,0.3)"/>
+      <circle cx="22" cy="45" r="0.35" fill="rgba(165,160,188,0.35)"/>
+    </g>
+
+
+    <!-- === THRUST GLOW — the near-end engine burn === -->
+    <g filter="url(#nebulaHaze)" opacity="0.25">
+      <ellipse cx="50" cy="360" rx="40" ry="35"
+        fill="url(#thrustGrad)"/>
+    </g>
+
+
+    <!-- === NEBULA TRAIL — exhaust/wake behind the trajectory === -->
+    <g filter="url(#nebulaHaze)" opacity="0.12">
+      <path d="M 8,390
+               C 40,370 80,320 140,270
+               C 200,220 260,178 320,140
+               C 360,115 390,95 410,80"
+        fill="none" stroke="url(#trajectGrad)" stroke-width="20"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === THE TRAJECTORY — primary form === -->
+    <!-- Enters from lower-left EDGE, exits upper-right EDGE.
+         The line is already moving when the frame begins.
+         It's STILL moving when the frame ends. -->
+
+    <!-- Width decreases along the path: 3.0px → 0.4px
+         (perspective: near = thick, far = thin) -->
+
+    <!-- Near segment — warm, bright, thick -->
+    <g filter="url(#cosmicBlur)">
+      <path d="M -5,400
+               C 20,380 50,355 85,325
+               C 120,295 155,265 190,238"
+        fill="none" stroke="url(#trajectGrad)" stroke-width="3.0"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Mid segment — transitioning -->
+    <g filter="url(#cosmicBlur)">
+      <path d="M 190,238
+               C 220,215 250,192 280,172
+               C 310,152 335,136 355,124"
+        fill="none" stroke="url(#trajectGrad)" stroke-width="1.8"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Far segment — cool, dim, thin -->
+    <g filter="url(#depthFade)">
+      <path d="M 355,124
+               C 370,114 385,105 400,96
+               C 415,87 430,80 445,72"
+        fill="none" stroke="url(#trajectGrad)" stroke-width="0.8"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Vanishing trace — barely visible, exits frame -->
+    <g opacity="0.3">
+      <path d="M 445,72
+               C 452,68 458,64 465,60"
+        fill="none" stroke="rgba(80,68,160,0.05)" stroke-width="0.3"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === DOPPLER NODES — frequency markers along trajectory === -->
+    <!-- Bright near, dim far. The pitch shifting as the
+         sound source recedes. Each node is smaller and
+         cooler than the last. -->
+    <g filter="url(#cosmicBlur)">
+      <!-- Near (warm, bright) -->
+      <circle cx="55" cy="368" r="3.5" fill="rgba(195,165,120,0.15)"/>
+      <circle cx="120" cy="295" r="3.0" fill="rgba(180,150,145,0.12)"/>
+      <!-- Mid (transitioning) -->
+      <circle cx="195" cy="235" r="2.5" fill="rgba(155,130,170,0.1)"/>
+      <circle cx="265" cy="180" r="2.0" fill="rgba(135,110,180,0.08)"/>
+      <!-- Far (cool, dim) -->
+      <circle cx="330" cy="142" r="1.5" fill="rgba(115,95,175,0.06)"/>
+      <circle cx="385" cy="105" r="1.0" fill="rgba(95,80,165,0.04)"/>
+    </g>
+
+
+    <!-- === PARALLAX DUST — debris field at varying depths === -->
+    <!-- NOT starfield (fixed, distant, static).
+         These are CLOSER particles that show motion —
+         longer streaks near the trajectory path,
+         proving that WE are moving through them. -->
+    <g opacity="0.04">
+      <!-- Near streaks — longer, brighter -->
+      <line x1="70" y1="340" x2="78" y2="332"
+        stroke="rgba(185,160,130,0.2)" stroke-width="0.3"/>
+      <line x1="135" y1="278" x2="142" y2="272"
+        stroke="rgba(170,148,155,0.18)" stroke-width="0.25"/>
+      <!-- Mid streaks -->
+      <line x1="215" y1="218" x2="220" y2="214"
+        stroke="rgba(148,128,168,0.15)" stroke-width="0.2"/>
+      <line x1="288" y1="162" x2="292" y2="159"
+        stroke="rgba(128,108,170,0.12)" stroke-width="0.18"/>
+      <!-- Far — almost points, barely streaked -->
+      <line x1="358" y1="118" x2="360" y2="116"
+        stroke="rgba(108,92,162,0.08)" stroke-width="0.15"/>
+    </g>
+
+
+    <!-- === BPM — DECELERATING (Doppler effect on rhythm) === -->
+    <!-- Near (left): faster ticks, closer together.
+         Far (right): slower ticks, wider apart.
+         The pulse red-shifts as it recedes.
+         The ONLY BPM in the series with directional
+         deceleration (post-rock accumulates;
+         space rock RECEDES). -->
+    <g stroke="rgba(120,100,168,0.022)" stroke-width="0.25">
+      <!-- Near — fast, dense -->
+      <line x1="70" y1="380" x2="70" y2="386"/>
+      <line x1="80" y1="380" x2="80" y2="386"/>
+      <line x1="90" y1="380" x2="90" y2="386"/>
+      <line x1="100" y1="380" x2="100" y2="386"/>
+      <line x1="112" y1="380" x2="112" y2="386"/>
+      <line x1="124" y1="380" x2="124" y2="386"/>
+      <!-- Mid — decelerating -->
+      <line x1="138" y1="380" x2="138" y2="386"/>
+      <line x1="154" y1="380" x2="154" y2="386"/>
+      <line x1="172" y1="380" x2="172" y2="386"/>
+      <line x1="192" y1="380" x2="192" y2="386"/>
+      <!-- Far — slow, sparse -->
+      <line x1="216" y1="380" x2="216" y2="386"/>
+      <line x1="244" y1="380" x2="244" y2="386"/>
+      <line x1="278" y1="380" x2="278" y2="386"/>
+      <line x1="318" y1="380" x2="318" y2="386"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Space</span><br/>
+      <span class="line2">Rock</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

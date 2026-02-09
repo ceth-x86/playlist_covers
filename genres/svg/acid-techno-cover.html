@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acid Techno Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #060804; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0a0c06; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 46%, rgba(128,148,18,0.06) 0%, transparent 38%), linear-gradient(180deg, #0c0e08 0%, #0a0c06 42%, #060804 100%); z-index: 1; }
+  .central-form { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -54%); z-index: 3; width: 440px; height: 440px; }
+  .glow { position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); width: 260px; height: 160px; border-radius: 50%; background: radial-gradient(ellipse, rgba(138,158,18,0.08) 0%, rgba(98,118,12,0.03) 42%, transparent 58%); filter: blur(20px); z-index: 2; }
+  .grain { position: absolute; inset: 0; z-index: 7; opacity: 0.20; mix-blend-mode: overlay; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 128px 128px; }
+  .vignette { position: absolute; inset: 0; z-index: 6; background: radial-gradient(ellipse at 50% 46%, transparent 30%, rgba(3,4,2,0.52) 100%); pointer-events: none; }
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name { font-family: 'Anton', sans-serif; font-size: 22px; letter-spacing: 3px; text-transform: uppercase; line-height: 1.2; }
+  .genre-name .line1 { color: rgba(168,185,28,0.88); }
+  .genre-name .line2 { color: rgba(118,135,22,0.4); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(118,135,22,0.16); margin-top: 10px; }
+  .rule { position: absolute; bottom: 92px; left: 40px; width: 80px; height: 1px; background: rgba(128,148,22,0.1); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="glow"></div>
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="acidLine" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#7a8a10;stop-opacity:0"/>
+        <stop offset="8%" style="stop-color:#8a9a15;stop-opacity:0.25"/>
+        <stop offset="20%" style="stop-color:#9aaa1a;stop-opacity:0.5"/>
+        <stop offset="40%" style="stop-color:#a8b820;stop-opacity:0.7"/>
+        <stop offset="50%" style="stop-color:#b0c025;stop-opacity:0.78"/>
+        <stop offset="60%" style="stop-color:#a8b820;stop-opacity:0.7"/>
+        <stop offset="80%" style="stop-color:#9aaa1a;stop-opacity:0.5"/>
+        <stop offset="92%" style="stop-color:#8a9a15;stop-opacity:0.25"/>
+        <stop offset="100%" style="stop-color:#7a8a10;stop-opacity:0"/>
+      </linearGradient>
+      <!-- Dissolved grid — the remnant structure acid is eating -->
+      <linearGradient id="acidGrid" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#666;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#777;stop-opacity:0.12"/>
+        <stop offset="50%" style="stop-color:#888;stop-opacity:0.18"/>
+        <stop offset="80%" style="stop-color:#777;stop-opacity:0.12"/>
+        <stop offset="100%" style="stop-color:#666;stop-opacity:0"/>
+      </linearGradient>
+      <filter id="acidGlow" x="-5%" y="-8%" width="110%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="resGlow" x="-15%" y="-15%" width="130%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+      <filter id="dissolve">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+
+    <!-- DISSOLVED GRID — the structure acid is corroding.
+         Faint, broken, displaced by turbulence.
+         The grid USED to be here. The 303 ate it. -->
+    <g filter="url(#dissolve)" opacity="0.25">
+      <line x1="75" y1="185" x2="365" y2="185" stroke="url(#acidGrid)" stroke-width="0.5" stroke-linecap="butt"/>
+      <line x1="75" y1="215" x2="365" y2="215" stroke="url(#acidGrid)" stroke-width="0.5" stroke-linecap="butt"/>
+      <line x1="75" y1="245" x2="365" y2="245" stroke="url(#acidGrid)" stroke-width="0.4" stroke-linecap="butt"/>
+    </g>
+    <g filter="url(#dissolve)" opacity="0.18">
+      <line x1="145" y1="155" x2="145" y2="275" stroke="url(#acidGrid)" stroke-width="0.4" stroke-linecap="butt"/>
+      <line x1="220" y1="155" x2="220" y2="275" stroke="url(#acidGrid)" stroke-width="0.4" stroke-linecap="butt"/>
+      <line x1="295" y1="155" x2="295" y2="275" stroke="url(#acidGrid)" stroke-width="0.4" stroke-linecap="butt"/>
+    </g>
+
+    <!-- THE 303 LINE — the acid squeal.
+         A polyline that oscillates with INCREASING
+         amplitude as the filter resonance opens,
+         then closes. The line WRITHES — the 303's
+         filter sweep is the visual form. -->
+    <g filter="url(#acidGlow)">
+      <polyline points="
+        35,215
+        50,212 58,218 66,210 74,220
+        82,208 90,222 98,205 106,225
+        114,200 122,228 130,195 138,232
+        146,188 154,238 162,182 170,242
+        178,176 186,248 194,170 202,252
+        210,168 218,255 226,168 234,252
+        242,172 250,248 258,178 266,242
+        274,185 282,235 290,192 298,228
+        306,198 314,222 322,205 330,218
+        338,210 346,215 354,212 362,214
+        370,213 380,214 390,213 400,214"
+        fill="none" stroke="url(#acidLine)" stroke-width="1.3"
+        stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- RESONANCE PEAKS — where the filter opens fully,
+         the brightest nodes on the 303 line.
+         The SQUEAL moments. -->
+    <g filter="url(#resGlow)" opacity="0.35">
+      <circle cx="194" cy="170" r="8" fill="rgba(158,178,25,0.12)"/>
+      <circle cx="210" cy="168" r="9" fill="rgba(165,185,28,0.14)"/>
+      <circle cx="226" cy="168" r="9" fill="rgba(165,185,28,0.14)"/>
+      <circle cx="242" cy="172" r="8" fill="rgba(158,178,25,0.12)"/>
+    </g>
+
+    <!-- Resonance trail — the filter sweep's afterglow -->
+    <g filter="url(#resGlow)" opacity="0.08">
+      <ellipse cx="218" cy="210" rx="80" ry="35" fill="rgba(128,148,20,0.06)"/>
+    </g>
+
+    <!-- ACID DRIP — corrosive droplets below the line,
+         where the frequency has eaten through -->
+    <g opacity="0.3">
+      <circle cx="130" cy="240" r="1.0" fill="rgba(138,158,22,0.35)"/>
+      <circle cx="162" cy="250" r="0.8" fill="rgba(128,148,20,0.28)"/>
+      <circle cx="210" cy="262" r="1.2" fill="rgba(148,168,25,0.4)"/>
+      <circle cx="248" cy="258" r="0.9" fill="rgba(135,155,22,0.32)"/>
+      <circle cx="290" cy="242" r="0.7" fill="rgba(125,145,18,0.25)"/>
+      <circle cx="178" cy="256" r="0.6" fill="rgba(120,140,18,0.22)"/>
+      <circle cx="268" cy="252" r="0.8" fill="rgba(130,150,20,0.28)"/>
+    </g>
+
+    <!-- BPM — fast, mechanical, but with ACID ACCENT
+         where the 303 pattern hits its peak -->
+    <g stroke="rgba(100,110,20,0.06)" stroke-width="0.22">
+      <line x1="72" y1="345" x2="72" y2="352"/><line x1="88" y1="345" x2="88" y2="352"/>
+      <line x1="104" y1="345" x2="104" y2="352"/><line x1="120" y1="345" x2="120" y2="352"/>
+      <line x1="136" y1="345" x2="136" y2="352"/><line x1="152" y1="345" x2="152" y2="352"/>
+      <line x1="168" y1="345" x2="168" y2="352"/><line x1="184" y1="345" x2="184" y2="352"/>
+      <line x1="200" y1="345" x2="200" y2="352"/><line x1="216" y1="345" x2="216" y2="352"/>
+      <line x1="232" y1="345" x2="232" y2="352"/><line x1="248" y1="345" x2="248" y2="352"/>
+      <line x1="264" y1="345" x2="264" y2="352"/><line x1="280" y1="345" x2="280" y2="352"/>
+      <line x1="296" y1="345" x2="296" y2="352"/><line x1="312" y1="345" x2="312" y2="352"/>
+      <line x1="328" y1="345" x2="328" y2="352"/><line x1="344" y1="345" x2="344" y2="352"/>
+      <line x1="360" y1="345" x2="360" y2="352"/><line x1="376" y1="345" x2="376" y2="352"/>
+    </g>
+    <!-- 303 sequence accents — irregular, following the acid pattern -->
+    <g stroke="rgba(148,168,25,0.14)" stroke-width="0.45">
+      <line x1="88" y1="342" x2="88" y2="355"/>
+      <line x1="136" y1="342" x2="136" y2="355"/>
+      <line x1="168" y1="342" x2="168" y2="355"/>
+      <line x1="200" y1="341" x2="200" y2="356"/>
+      <line x1="248" y1="341" x2="248" y2="356"/>
+      <line x1="296" y1="342" x2="296" y2="355"/>
+      <line x1="344" y1="342" x2="344" y2="355"/>
+    </g>
+  </svg>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Acid</span><br/><span class="line2">Techno</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+</body>
+</html>

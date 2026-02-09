@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apocalyptic Folk Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #080806;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0c0c0a;
+    overflow: hidden;
+  }
+
+  /* Void-black — neither the warm earth-blacks of the
+     folk family nor the cold electronic blacks. This
+     black is EXHAUSTED — the colour after the fire has
+     gone out, after the soil has dried, after the ritual
+     has failed. The absence of the warmth that was.
+     World Serpent Distribution, Nero's Neptune,
+     Tesco Organisation, Cold Meat Industry. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(95, 72, 48, 0.025) 0%, transparent 38%),
+      radial-gradient(ellipse at 48% 52%, rgba(80, 45, 35, 0.02) 0%, transparent 30%),
+      linear-gradient(182deg, #0e0e0c 0%, #0c0c0a 44%, #080806 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — the DYING ember. Shifted slightly down and
+     dimmer than pagan folk's bonfire. The fire is going
+     out. The last light before darkness. */
+  .glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(120, 65, 35, 0.035) 0%, rgba(95, 48, 25, 0.012) 38%, transparent 55%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+
+  /* Grain — heavy, dry, ashen. Dust, not fire crackle. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.26;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — collapsing inward, tighter than
+     pagan folk's even circle. The light contracts. */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 50%, transparent 22%, rgba(5,5,3,0.62) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.25;
+  }
+
+  .genre-name .line1 {
+    color: rgba(148, 115, 72, 0.72);
+  }
+
+  .genre-name .line2 {
+    color: rgba(118, 88, 55, 0.32);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(115, 88, 52, 0.12);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 90px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(120, 90, 55, 0.06);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE BROKEN WHEEL.
+       
+       Pagan folk: a nearly-complete circle, firelit,
+       with embers rising and seasonal marks at the
+       cardinal points. The wheel of the year TURNING.
+       
+       Apocalyptic folk: the SAME wheel, but CRACKED.
+       The cycle has broken. The ritual that knows it's
+       the last one. Three fragments of the circle
+       remain — recognizable as pieces of pagan folk's
+       arc — but they've separated, drifted, some
+       have FALLEN. The wheel no longer turns.
+       
+       The fragments:
+       1. UPPER-LEFT arc — the largest surviving piece,
+          still roughly in position but tilted
+       2. RIGHT arc — smaller, drifting outward
+       3. LOWER piece — has FALLEN below its position,
+          pulled down by gravity, nearly horizontal
+          (the collapse, the thing becoming linear
+          again as cyclical time breaks)
+       
+       The gap from pagan folk has WIDENED — the entry
+       threshold has become a WOUND, a breach that
+       can't be closed.
+       
+       Where pagan folk has embers rising: apocalyptic
+       folk has ASH falling. The particles descend
+       instead of ascending. Fire → ash. Hope → elegy.
+       
+       The seasonal marks are DAMAGED:
+       - One remains intact (memory)
+       - One is partially erased
+       - Two are missing entirely
+       
+       Death in June "But, What Ends When the
+       Symbols Shatter?",
+       Current 93 "Thunder Perfect Mind",
+       Sol Invictus "In the Rain",
+       Rome, Spiritual Front, Of the Wand & the Moon,
+       Boyd Rice (acoustic), Tony Wakeford —
+       the last fire, the broken circle. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Ashen amber — the colour of pagan folk's fire
+           after it has cooled. Still warm, but dying. -->
+      <linearGradient id="ashGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#786038;stop-opacity:0.08"/>
+        <stop offset="30%" style="stop-color:#987840;stop-opacity:0.28"/>
+        <stop offset="60%" style="stop-color:#a88848;stop-opacity:0.35"/>
+        <stop offset="100%" style="stop-color:#887040;stop-opacity:0.15"/>
+      </linearGradient>
+      <linearGradient id="ashGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#685030;stop-opacity:0.06"/>
+        <stop offset="40%" style="stop-color:#886838;stop-opacity:0.22"/>
+        <stop offset="80%" style="stop-color:#987840;stop-opacity:0.28"/>
+        <stop offset="100%" style="stop-color:#786038;stop-opacity:0.1"/>
+      </linearGradient>
+      <linearGradient id="ashGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#685030;stop-opacity:0.08"/>
+        <stop offset="35%" style="stop-color:#806038;stop-opacity:0.2"/>
+        <stop offset="70%" style="stop-color:#886838;stop-opacity:0.25"/>
+        <stop offset="100%" style="stop-color:#705830;stop-opacity:0.06"/>
+      </linearGradient>
+
+      <!-- Dying ember red — the last warmth -->
+      <radialGradient id="dyingEmber" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" style="stop-color:#8a4528;stop-opacity:0.06"/>
+        <stop offset="60%" style="stop-color:#6a3520;stop-opacity:0.02"/>
+        <stop offset="100%" style="stop-color:#4a2518;stop-opacity:0"/>
+      </radialGradient>
+
+      <!-- Heavy weathering — same scale as pagan but
+           more FRACTURED, torn -->
+      <filter id="crackWeather">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="ashGlow" x="-6%" y="-8%" width="112%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="coldHaze" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+    </defs>
+
+
+    <!-- === DYING EMBER — the centre, going cold === -->
+    <circle cx="220" cy="195" r="45"
+      fill="url(#dyingEmber)" opacity="0.5"/>
+
+
+    <!-- === FRAGMENT 1 — upper-left arc (largest piece) === -->
+    <!-- Still roughly in position but TILTED 8° clockwise.
+         The most intact piece — memory of the whole. -->
+    <g filter="url(#crackWeather)"
+       transform="rotate(8, 160, 145)">
+      <g filter="url(#ashGlow)">
+        <path d="M 148,228
+                 C 112,208 95,178 95,148
+                 C 95,118 115,92 148,80
+                 C 178,70 212,68 242,75"
+          fill="none" stroke="url(#ashGrad1)" stroke-width="1.8"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === FRAGMENT 2 — right arc (drifting outward) === -->
+    <!-- Smaller, displaced 12px outward from where the
+         circle should be. Pulling away. -->
+    <g filter="url(#crackWeather)"
+       transform="translate(12, -4) rotate(-5, 330, 165)">
+      <g filter="url(#ashGlow)">
+        <path d="M 298,80
+                 C 328,95 348,120 352,155
+                 C 355,182 342,208 325,228"
+          fill="none" stroke="url(#ashGrad2)" stroke-width="1.6"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === FRAGMENT 3 — lower piece (FALLEN) === -->
+    <!-- Has dropped below its original position.
+         Nearly HORIZONTAL — cyclical time collapsing
+         back into linear. The wheel becoming a line.
+         The return to entropy. -->
+    <g filter="url(#crackWeather)"
+       transform="translate(0, 22) rotate(12, 240, 280)">
+      <g filter="url(#ashGlow)">
+        <path d="M 165,272
+                 C 188,278 215,280 248,278
+                 C 275,276 298,270 310,265"
+          fill="none" stroke="url(#ashGrad3)" stroke-width="1.5"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === FRACTURE POINTS — where the circle broke === -->
+    <!-- The ends of each fragment. Exposed, raw.
+         Dimmer than pagan folk's gap markers (which 
+         were warm entry points). These are WOUNDS. -->
+    <g filter="url(#ashGlow)" opacity="0.06">
+      <!-- Fragment 1 ends -->
+      <circle cx="148" cy="228" r="2.0" fill="rgba(140,105,55,0.12)"/>
+      <circle cx="242" cy="75" r="1.8" fill="rgba(135,100,52,0.1)"/>
+      <!-- Fragment 2 ends -->
+      <circle cx="310" cy="80" r="1.5" fill="rgba(130,95,48,0.08)"/>
+      <circle cx="337" cy="228" r="1.8" fill="rgba(135,100,52,0.1)"/>
+      <!-- Fragment 3 ends -->
+      <circle cx="165" cy="294" r="1.5" fill="rgba(128,92,45,0.08)"/>
+      <circle cx="310" cy="287" r="1.5" fill="rgba(128,92,45,0.08)"/>
+    </g>
+
+
+    <!-- === ASH — falling, not rising === -->
+    <!-- Where pagan folk has EMBERS ascending (fire, hope),
+         apocalyptic folk has ASH descending (cold, ending).
+         The particles FALL. Grey-brown, not amber. Cooling. -->
+    <g filter="url(#coldHaze)" opacity="0.08">
+      <!-- Upper ash — just released, still warm -->
+      <circle cx="212" cy="195" r="0.8" fill="rgba(135,108,68,0.12)"/>
+      <circle cx="228" cy="200" r="0.7" fill="rgba(130,105,65,0.1)"/>
+      <!-- Mid ash — cooling -->
+      <circle cx="218" cy="218" r="0.9" fill="rgba(120,98,60,0.08)"/>
+      <circle cx="235" cy="225" r="0.6" fill="rgba(118,95,58,0.07)"/>
+      <circle cx="205" cy="232" r="0.7" fill="rgba(115,92,55,0.06)"/>
+      <!-- Low ash — cold, nearly invisible -->
+      <circle cx="222" cy="248" r="0.5" fill="rgba(108,85,50,0.04)"/>
+      <circle cx="210" cy="258" r="0.4" fill="rgba(105,82,48,0.03)"/>
+      <circle cx="232" cy="265" r="0.5" fill="rgba(105,82,48,0.03)"/>
+      <circle cx="218" cy="278" r="0.35" fill="rgba(100,78,45,0.02)"/>
+    </g>
+
+
+    <!-- === SURVIVING SEASONAL MARK — Winter Solstice === -->
+    <!-- Of pagan folk's four seasonal marks, only ONE
+         remains fully intact: Winter Solstice (North).
+         The darkest day. Of course it survives. -->
+    <g opacity="0.07">
+      <line x1="220" y1="52" x2="220" y2="64"
+        stroke="rgba(135,105,55,0.18)" stroke-width="0.5"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Spring Equinox — PARTIALLY ERASED
+         (only the vertical stroke remains, the 
+         horizontal is gone — spring won't come) -->
+    <g opacity="0.035">
+      <line x1="378" y1="170" x2="378" y2="182"
+        stroke="rgba(125,95,48,0.12)" stroke-width="0.4"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Summer Solstice — ERASED (no marks remain) -->
+    <!-- Autumn Equinox — ERASED (no marks remain) -->
+
+    <!-- Ghost positions of erased marks — the faintest
+         memory that something was here -->
+    <g opacity="0.008">
+      <circle cx="220" cy="318" r="3" fill="rgba(100,78,42,0.08)"/>
+      <circle cx="62" cy="178" r="3" fill="rgba(100,78,42,0.08)"/>
+    </g>
+
+
+    <!-- === THE GHOST CIRCLE — where the wheel was === -->
+    <!-- The complete circle that should have been.
+         Pagan folk's ritual arc, but as an absence.
+         Barely perceptible. The memory of wholeness. -->
+    <g opacity="0.006">
+      <circle cx="220" cy="180" r="100"
+        fill="none" stroke="rgba(120,95,55,0.08)"
+        stroke-width="0.3" stroke-dasharray="2,8"/>
+    </g>
+
+
+    <!-- === BPM — IRREGULAR, FALTERING === -->
+    <!-- Pagan folk: perfectly even ticks, no accents,
+         trance pulse, the drum circle never stopping.
+         
+         Apocalyptic folk: the SAME pulse but BREAKING
+         DOWN. Uneven spacing. Some ticks missing.
+         Some weaker than others. The drummer is 
+         losing strength. The ritual is ending. -->
+    <g stroke="rgba(128,98,55,0.02)" stroke-width="0.3">
+      <line x1="95" y1="348" x2="95" y2="355"/>
+      <!-- gap — missing tick -->
+      <line x1="138" y1="348" x2="138" y2="355"/>
+      <line x1="168" y1="348" x2="168" y2="355"/>
+      <!-- gap — missing tick -->
+      <!-- gap — double missing -->
+      <line x1="238" y1="348" x2="238" y2="355"/>
+      <line x1="268" y1="348" x2="268" y2="355"/>
+      <line x1="295" y1="348" x2="295" y2="355"/>
+      <!-- gap -->
+      <line x1="345" y1="348" x2="345" y2="355"/>
+    </g>
+    <!-- Weakening beats — some ticks are FADING -->
+    <g stroke="rgba(118,90,48,0.01)" stroke-width="0.2">
+      <line x1="168" y1="349" x2="168" y2="354"/>
+      <line x1="295" y1="349" x2="295" y2="354"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Apocalyptic</span><br/>
+      <span class="line2">Folk</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

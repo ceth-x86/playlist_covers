@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EBM Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #06080a;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0a0c10;
+    overflow: hidden;
+  }
+
+  /* Oil-black with blue-grey cast — colder than
+     industrial metal (which has warm rust).
+     The colour of a factory floor under fluorescent
+     light at 3am. Concrete, steel, PVC.
+     Wax Trax!, Mute Records, Nettwerk,
+     Play It Again Sam, Zoth Ommog. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(100, 115, 140, 0.04) 0%, transparent 42%),
+      linear-gradient(180deg, #0c0e14 0%, #0a0c10 42%, #06080a 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — cold, flat, fluorescent. Not a warm
+     point source (fire/amp) but an even, clinical
+     strip of light from above. -->
+  .glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(110, 125, 150, 0.04) 0%, rgba(90, 105, 130, 0.015) 45%, transparent 60%);
+    filter: blur(20px);
+    z-index: 2;
+  }
+
+  /* Grain — low, precise, digital. The clean output
+     of a drum machine. No tape warmth. -->
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.17;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — even, flat, industrial lighting -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 46%, transparent 34%, rgba(4,5,7,0.52) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 52px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: rgba(148, 162, 178, 0.85);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(125, 138, 152, 0.15);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 108px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(125, 138, 152, 0.09);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: THE MARCH — a sequence of identical
+       vertical bars crossing the frame at perfect intervals.
+       
+       Industrial metal: the STAMP — a matrix of uneven
+       pressure marks (chaos controlled by machine).
+       
+       Techno: the GRID — dots arranged spatially in
+       two dimensions (the plane of sound).
+       
+       EBM: the MARCH — vertical bars in ONE dimension
+       (time). Not spatial (grid) but TEMPORAL. A sequence
+       that moves LEFT TO RIGHT like a timeline, like a
+       sequencer display, like soldiers marching past.
+       
+       Each bar is:
+       - IDENTICAL in height and width (the machine
+         doesn't deviate, the body repeats)
+       - VERTICAL (the body standing upright, rigid)
+       - Evenly spaced (the tempo is metronomic,
+         inhuman, relentless)
+       
+       The bars are NOT notes or musical events. They're
+       PULSES — the heartbeat regulated to mechanical
+       precision. The body disciplined into clockwork.
+       
+       STROBE FLASH: one bar near the centre is BRIGHTER
+       than the others — the strobe light that fires on
+       the downbeat, the flash that turns the dance floor
+       into a series of freeze-frames.
+       
+       Front 242 "Geography", Nitzer Ebb "That Total Age",
+       DAF "Alles Ist Gut", Skinny Puppy, Ministry
+       (pre-metal), Portion Control, Click Click,
+       Leæther Strip —
+       the body as machine, the machine as body. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Cold bar gradient — each bar identical -->
+      <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#708098;stop-opacity:0.08"/>
+        <stop offset="15%" style="stop-color:#8898b0;stop-opacity:0.28"/>
+        <stop offset="40%" style="stop-color:#98a8c0;stop-opacity:0.38"/>
+        <stop offset="60%" style="stop-color:#98a8c0;stop-opacity:0.38"/>
+        <stop offset="85%" style="stop-color:#8898b0;stop-opacity:0.28"/>
+        <stop offset="100%" style="stop-color:#708098;stop-opacity:0.08"/>
+      </linearGradient>
+
+      <!-- Strobe flash gradient — brighter, whiter -->
+      <linearGradient id="strobeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#8898a8;stop-opacity:0.12"/>
+        <stop offset="15%" style="stop-color:#a8b8c8;stop-opacity:0.42"/>
+        <stop offset="35%" style="stop-color:#c0d0e0;stop-opacity:0.58"/>
+        <stop offset="50%" style="stop-color:#d0dce8;stop-opacity:0.62"/>
+        <stop offset="65%" style="stop-color:#c0d0e0;stop-opacity:0.58"/>
+        <stop offset="85%" style="stop-color:#a8b8c8;stop-opacity:0.42"/>
+        <stop offset="100%" style="stop-color:#8898a8;stop-opacity:0.12"/>
+      </linearGradient>
+
+      <filter id="machineGlow" x="-10%" y="-5%" width="120%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="strobeFlash" x="-15%" y="-5%" width="130%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="strobeHaze" x="-20%" y="-10%" width="140%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+      </filter>
+    </defs>
+
+
+    <!-- === THE MARCH — 12 identical vertical bars === -->
+    <!-- Perfectly spaced. Perfectly identical. The sequence.
+         y range: 145 to 275 (130px tall each).
+         x positions: 72, 102, 132, 162, 192, 222, 252, 282, 312, 342, 372 (30px intervals)
+         Plus the strobe bar. -->
+
+    <g filter="url(#machineGlow)">
+      <!-- Bar 1 -->
+      <line x1="72" y1="148" x2="72" y2="272"
+        stroke="url(#barGrad)" stroke-width="3.0"
+        stroke-linecap="butt"/>
+      <!-- Bar 2 -->
+      <line x1="102" y1="148" x2="102" y2="272"
+        stroke="url(#barGrad)" stroke-width="3.0"
+        stroke-linecap="butt"/>
+      <!-- Bar 3 -->
+      <line x1="132" y1="148" x2="132" y2="272"
+        stroke="url(#barGrad)" stroke-width="3.0"
+        stroke-linecap="butt"/>
+      <!-- Bar 4 -->
+      <line x1="162" y1="148" x2="162" y2="272"
+        stroke="url(#barGrad)" stroke-width="3.0"
+        stroke-linecap="butt"/>
+      <!-- Bar 5 -->
+      <line x1="192" y1="148" x2="192" y2="272"
+        stroke="url(#barGrad)" stroke-width="3.0"
+        stroke-linecap="butt"/>
+    </g>
+
+    <!-- === STROBE BAR — Bar 6 (the flash) === -->
+    <g filter="url(#strobeHaze)" opacity="0.25">
+      <line x1="222" y1="138" x2="222" y2="282"
+        stroke="rgba(180,200,220,0.15)" stroke-width="14"/>
+    </g>
+    <g filter="url(#strobeFlash)">
+      <line x1="222" y1="145" x2="222" y2="275"
+        stroke="url(#strobeGrad)" stroke-width="3.5"
+        stroke-linecap="butt"/>
+    </g>
+
+    <g filter="url(#machineGlow)">
+      <!-- Bar 7 -->
+      <line x1="252" y1="148" x2="252" y2="272"
+        stroke="url(#barGrad)" stroke-width="3.0"
+        stroke-linecap="butt"/>
+      <!-- Bar 8 -->
+      <line x1="282" y1="148" x2="282" y2="272"
+        stroke="url(#barGrad)" stroke-width="3.0"
+        stroke-linecap="butt"/>
+      <!-- Bar 9 -->
+      <line x1="312" y1="148" x2="312" y2="272"
+        stroke="url(#barGrad)" stroke-width="3.0"
+        stroke-linecap="butt"/>
+      <!-- Bar 10 -->
+      <line x1="342" y1="148" x2="342" y2="272"
+        stroke="url(#barGrad)" stroke-width="3.0"
+        stroke-linecap="butt"/>
+      <!-- Bar 11 -->
+      <line x1="372" y1="148" x2="372" y2="272"
+        stroke="url(#barGrad)" stroke-width="3.0"
+        stroke-linecap="butt"/>
+    </g>
+
+
+    <!-- === BASS PULSE — the sequencer baseline === -->
+    <!-- A single horizontal line connecting the BASE
+         of all bars. The bass sequence that drives
+         everything. Relentless, one note, the body's
+         core frequency. -->
+    <g opacity="0.06">
+      <line x1="72" y1="272" x2="372" y2="272"
+        stroke="rgba(100,118,142,0.15)" stroke-width="0.8"
+        stroke-linecap="butt"/>
+    </g>
+
+    <!-- Bass pulse nodes — slight thickening at each
+         bar base, the kick drum landing -->
+    <g opacity="0.04">
+      <circle cx="72" cy="272" r="1.5" fill="rgba(105,122,148,0.15)"/>
+      <circle cx="102" cy="272" r="1.5" fill="rgba(105,122,148,0.15)"/>
+      <circle cx="132" cy="272" r="1.5" fill="rgba(105,122,148,0.15)"/>
+      <circle cx="162" cy="272" r="1.5" fill="rgba(105,122,148,0.15)"/>
+      <circle cx="192" cy="272" r="1.5" fill="rgba(105,122,148,0.15)"/>
+      <circle cx="222" cy="272" r="2.0" fill="rgba(130,148,172,0.18)"/>
+      <circle cx="252" cy="272" r="1.5" fill="rgba(105,122,148,0.15)"/>
+      <circle cx="282" cy="272" r="1.5" fill="rgba(105,122,148,0.15)"/>
+      <circle cx="312" cy="272" r="1.5" fill="rgba(105,122,148,0.15)"/>
+      <circle cx="342" cy="272" r="1.5" fill="rgba(105,122,148,0.15)"/>
+      <circle cx="372" cy="272" r="1.5" fill="rgba(105,122,148,0.15)"/>
+    </g>
+
+
+    <!-- === TOP RAIL — the ceiling, the factory roof === -->
+    <g opacity="0.03">
+      <line x1="72" y1="148" x2="372" y2="148"
+        stroke="rgba(95,112,135,0.12)" stroke-width="0.5"
+        stroke-linecap="butt"/>
+    </g>
+
+
+    <!-- === GHOST BARS — the bars before and after the
+         visible sequence, fading at the edges.
+         The march continues beyond what you see.
+         It started before you arrived. It won't stop. === -->
+    <g filter="url(#machineGlow)" opacity="0.3">
+      <line x1="42" y1="152" x2="42" y2="268"
+        stroke="url(#barGrad)" stroke-width="2.5"
+        stroke-linecap="butt"/>
+    </g>
+    <g filter="url(#machineGlow)" opacity="0.15">
+      <line x1="18" y1="156" x2="18" y2="264"
+        stroke="url(#barGrad)" stroke-width="2.0"
+        stroke-linecap="butt"/>
+    </g>
+    <g filter="url(#machineGlow)" opacity="0.3">
+      <line x1="402" y1="152" x2="402" y2="268"
+        stroke="url(#barGrad)" stroke-width="2.5"
+        stroke-linecap="butt"/>
+    </g>
+    <g filter="url(#machineGlow)" opacity="0.15">
+      <line x1="426" y1="156" x2="426" y2="264"
+        stroke="url(#barGrad)" stroke-width="2.0"
+        stroke-linecap="butt"/>
+    </g>
+
+
+    <!-- === NO DISPLACEMENT, NO ROUGHNESS === -->
+    <!-- Zero feTurbulence, zero organic texture.
+         The cleanest, most mechanical form alongside
+         electropop's sine wave. But where electropop
+         is SMOOTH (continuous curve), EBM is DISCRETE
+         (separate identical units). -->
+
+
+    <!-- === BPM — THE FORM IS THE BPM === -->
+    <!-- In every other cover, the BPM is a separate
+         element at the bottom. In EBM, the central
+         form IS the rhythm. The bars ARE the beats.
+         
+         But we still include a secondary pulse below
+         to show the SUBDIVISION — the hi-hat between
+         the kicks, the sixteenth notes that fill the
+         space between bars. -->
+    <g stroke="rgba(105,118,138,0.018)" stroke-width="0.25">
+      <line x1="72" y1="345" x2="72" y2="352"/>
+      <line x1="87" y1="345" x2="87" y2="352"/>
+      <line x1="102" y1="345" x2="102" y2="352"/>
+      <line x1="117" y1="345" x2="117" y2="352"/>
+      <line x1="132" y1="345" x2="132" y2="352"/>
+      <line x1="147" y1="345" x2="147" y2="352"/>
+      <line x1="162" y1="345" x2="162" y2="352"/>
+      <line x1="177" y1="345" x2="177" y2="352"/>
+      <line x1="192" y1="345" x2="192" y2="352"/>
+      <line x1="207" y1="345" x2="207" y2="352"/>
+      <line x1="222" y1="345" x2="222" y2="352"/>
+      <line x1="237" y1="345" x2="237" y2="352"/>
+      <line x1="252" y1="345" x2="252" y2="352"/>
+      <line x1="267" y1="345" x2="267" y2="352"/>
+      <line x1="282" y1="345" x2="282" y2="352"/>
+      <line x1="297" y1="345" x2="297" y2="352"/>
+      <line x1="312" y1="345" x2="312" y2="352"/>
+      <line x1="327" y1="345" x2="327" y2="352"/>
+      <line x1="342" y1="345" x2="342" y2="352"/>
+      <line x1="357" y1="345" x2="357" y2="352"/>
+      <line x1="372" y1="345" x2="372" y2="352"/>
+    </g>
+    <!-- Downbeats — perfectly aligned with bars above -->
+    <g stroke="rgba(120,135,155,0.035)" stroke-width="0.4">
+      <line x1="72" y1="343" x2="72" y2="354"/>
+      <line x1="102" y1="343" x2="102" y2="354"/>
+      <line x1="132" y1="343" x2="132" y2="354"/>
+      <line x1="162" y1="343" x2="162" y2="354"/>
+      <line x1="192" y1="343" x2="192" y2="354"/>
+      <line x1="222" y1="343" x2="222" y2="354"/>
+      <line x1="252" y1="343" x2="252" y2="354"/>
+      <line x1="282" y1="343" x2="282" y2="354"/>
+      <line x1="312" y1="343" x2="312" y2="354"/>
+      <line x1="342" y1="343" x2="342" y2="354"/>
+      <line x1="372" y1="343" x2="372" y2="354"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">EBM</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

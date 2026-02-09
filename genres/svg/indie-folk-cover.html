@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indie Folk Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #080a06;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0c0e0a;
+    overflow: hidden;
+  }
+
+  /* Deep forest-black — the darkest green that's still
+     green. Not the brown-black of classic rock (studio),
+     not the warm walnut of soft rock (living room).
+     This is OUTDOORS at night — pine needles, damp earth,
+     the smell of a dying campfire. The black of a
+     Wisconsin cabin in November.
+     Jagjaguwar, Sub Pop (quiet side), Secretly Canadian,
+     4AD (intimate side). */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(140, 135, 95, 0.03) 0%, transparent 45%),
+      radial-gradient(ellipse at 48% 46%, rgba(120, 125, 85, 0.018) 0%, transparent 38%),
+      linear-gradient(180deg, #0e100c 0%, #0c0e0a 44%, #080a06 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Warm, dim glow — a single candle, or the last
+     ember of a fire */
+  .glow {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 170px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(155, 140, 90, 0.035) 0%, rgba(135, 125, 80, 0.012) 45%, transparent 60%);
+    filter: blur(24px);
+    z-index: 2;
+  }
+
+  /* Grain — present, warm, the sound of a room.
+     More than electropop (digital silence).
+     Less than grunge (amplified damage).
+     The grain of a condenser mic in a wooden room. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.23;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — deep, intimate, close */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 46%, transparent 30%, rgba(5,6,3,0.55) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .genre-name .line1 {
+    color: rgba(180, 165, 110, 0.75);
+  }
+
+  .genre-name .line2 {
+    color: rgba(148, 138, 92, 0.35);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(155, 145, 98, 0.13);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 98px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(155, 145, 98, 0.07);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <!-- Central form: TWO THREADS BRAIDING.
+       
+       Indie rock: two imperfect PARALLEL lines —
+       they share the space but never touch.
+       Guitar 1 and Guitar 2, independent.
+       
+       Indie folk: two threads that INTERTWINE —
+       they cross over and under each other,
+       meeting, separating, meeting again.
+       Voice and guitar in a cabin, one mic,
+       so close that they weave together.
+       
+       The braid is the key insight:
+       - Indie rock's lines are PARALLEL (electric
+         guitars in separate channels, distinct)
+       - Indie folk's lines CROSS (voice and acoustic
+         guitar sharing one intimate space, entwined)
+       
+       The threads are thinner than indie rock's lines
+       (acoustic is quieter than electric) and have 
+       MORE texture (wood grain, not amplifier grain).
+       
+       At several points the threads touch, creating
+       small NODES — the moments where voice and guitar
+       are in unison, where the melody is the same in
+       both. These nodes are the warmest points.
+       
+       Bon Iver "For Emma, Forever Ago",
+       Fleet Foxes, Iron & Wine, Sufjan Stevens,
+       Elliott Smith, Nick Drake, Big Thief —
+       two voices, one room, one candle. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="thread1Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#706038;stop-opacity:0"/>
+        <stop offset="10%" style="stop-color:#907848;stop-opacity:0.12"/>
+        <stop offset="28%" style="stop-color:#b09858;stop-opacity:0.3"/>
+        <stop offset="50%" style="stop-color:#c0a868;stop-opacity:0.38"/>
+        <stop offset="72%" style="stop-color:#b09858;stop-opacity:0.3"/>
+        <stop offset="90%" style="stop-color:#907848;stop-opacity:0.12"/>
+        <stop offset="100%" style="stop-color:#706038;stop-opacity:0"/>
+      </linearGradient>
+      <linearGradient id="thread2Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#586838;stop-opacity:0"/>
+        <stop offset="12%" style="stop-color:#788848;stop-opacity:0.08"/>
+        <stop offset="30%" style="stop-color:#98a858;stop-opacity:0.22"/>
+        <stop offset="52%" style="stop-color:#a8b868;stop-opacity:0.28"/>
+        <stop offset="75%" style="stop-color:#98a858;stop-opacity:0.22"/>
+        <stop offset="92%" style="stop-color:#788848;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#586838;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Wood grain texture — organic, not electronic -->
+      <filter id="woodGrain">
+        <feTurbulence type="fractalNoise" baseFrequency="0.055" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="candleGlow" x="-8%" y="-12%" width="116%" height="124%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="warmHaze" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+    </defs>
+
+
+    <!-- === WARM HAZE — the room sound === -->
+    <g filter="url(#warmHaze)" opacity="0.15">
+      <path d="M 35,210
+               C 90,205 145,195 200,200
+               C 255,205 310,200 375,208"
+        fill="none" stroke="rgba(160,148,95,0.15)" stroke-width="10"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === THREAD 1 — Voice (ochre, warmer) === -->
+    <!-- The voice weaves: starts above thread 2,
+         crosses UNDER at point A, emerges ABOVE 
+         at point B, crosses under again at C. -->
+    <g filter="url(#woodGrain)">
+      <g filter="url(#candleGlow)">
+        <path d="M 35,205
+                 C 60,203 85,198 108,195
+                 C 130,192 148,196 165,205
+                 C 182,214 198,218 218,212
+                 C 238,206 255,195 275,192
+                 C 295,189 315,196 335,205
+                 C 350,212 365,212 380,210"
+          fill="none" stroke="url(#thread1Grad)" stroke-width="1.3"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === THREAD 2 — Guitar (sage, cooler) === -->
+    <!-- The guitar follows the opposite weave:
+         starts below, crosses OVER at point A,
+         goes under at B, comes over at C. -->
+    <g filter="url(#woodGrain)">
+      <g filter="url(#candleGlow)">
+        <path d="M 35,215
+                 C 60,213 85,210 110,210
+                 C 132,210 150,204 167,196
+                 C 184,188 200,188 220,195
+                 C 240,202 258,212 278,215
+                 C 298,218 316,210 334,200
+                 C 348,193 362,198 380,205"
+          fill="none" stroke="url(#thread2Grad)" stroke-width="1.0"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === CROSSING NODES — where voice and guitar
+         are in unison === -->
+    <!-- These are the warmest, brightest points.
+         Where the two threads touch, a small node
+         of warmth appears — the shared note. -->
+    <g filter="url(#candleGlow)">
+      <!-- Crossing A (~x=135) — first intertwine -->
+      <circle cx="137" cy="200" r="2.5" fill="rgba(175,160,100,0.12)"/>
+      <!-- Crossing B (~x=208) — mid-point braid -->
+      <circle cx="210" cy="205" r="3.0" fill="rgba(180,165,105,0.14)"/>
+      <!-- Crossing C (~x=305) — third intertwine -->
+      <circle cx="307" cy="203" r="2.5" fill="rgba(175,160,100,0.12)"/>
+    </g>
+
+    <!-- Faint halos at crossings -->
+    <g filter="url(#warmHaze)" opacity="0.18">
+      <circle cx="137" cy="200" r="8" fill="rgba(170,155,98,0.08)"/>
+      <circle cx="210" cy="205" r="10" fill="rgba(175,160,102,0.09)"/>
+      <circle cx="307" cy="203" r="8" fill="rgba(170,155,98,0.08)"/>
+    </g>
+
+
+    <!-- === THE BRAID SPACE — between the threads === -->
+    <!-- Where the threads diverge, the space between
+         them is the softest, most intimate part.
+         Not the gap of indie rock (independence) —
+         the BREATH between two voices singing together. -->
+    <g opacity="0.005">
+      <path d="M 35,205
+               C 60,203 85,198 108,195
+               C 130,192 148,196 165,205
+               C 182,214 198,218 218,212
+               C 238,206 255,195 275,192
+               C 295,189 315,196 335,205
+               C 350,212 365,212 380,210
+               L 380,205
+               C 362,198 348,193 334,200
+               C 316,210 298,218 278,215
+               C 258,212 240,202 220,195
+               C 200,188 184,188 167,196
+               C 150,204 132,210 110,210
+               C 85,210 60,213 35,215
+               Z"
+        fill="rgba(160,148,95,1)"/>
+    </g>
+
+
+    <!-- === HARMONICS — the overtones of acoustic wood === -->
+    <!-- Fainter than hard rock's overtones (electric
+         amplification). These are the NATURAL harmonics
+         of wood and gut/nylon — barely there. -->
+    <g opacity="0.08">
+      <path d="M 100,188
+               C 140,182 190,182 235,190
+               C 280,198 320,192 355,195"
+        fill="none" stroke="rgba(150,140,90,0.06)" stroke-width="0.35"
+        stroke-linecap="round"/>
+    </g>
+    <g opacity="0.04">
+      <path d="M 80,225
+               C 130,228 190,222 240,218
+               C 290,214 340,220 370,218"
+        fill="none" stroke="rgba(145,135,88,0.05)" stroke-width="0.25"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === ROOM DUST — the microphone picking up
+         the space itself === -->
+    <!-- Not stray notes (indie rock's accidents).
+         Not sparkles (jangle pop's overtones).
+         DUST — the sound of air in the room, 
+         the floor creaking, the chair shifting. -->
+    <g opacity="0.04">
+      <circle cx="90" cy="222" r="0.5" fill="rgba(145,135,88,0.15)"/>
+      <circle cx="175" cy="182" r="0.4" fill="rgba(140,130,85,0.12)"/>
+      <circle cx="250" cy="225" r="0.5" fill="rgba(145,135,88,0.15)"/>
+      <circle cx="320" cy="185" r="0.4" fill="rgba(140,130,85,0.12)"/>
+      <circle cx="155" cy="230" r="0.3" fill="rgba(138,128,82,0.1)"/>
+      <circle cx="280" cy="178" r="0.35" fill="rgba(140,130,85,0.1)"/>
+      <circle cx="360" cy="220" r="0.4" fill="rgba(142,132,86,0.12)"/>
+    </g>
+
+
+    <!-- === BPM — fingerpicked, gentle, breathing === -->
+    <!-- The quietest, most delicate pulse in the series.
+         Not even a drum — just the thumb hitting the
+         bass string of an acoustic guitar, with 
+         fingerpicks between. The tempo breathes. -->
+    <g stroke="rgba(155,145,92,0.02)" stroke-width="0.25">
+      <line x1="115" y1="348" x2="115" y2="354"/>
+      <line x1="138" y1="348" x2="138" y2="354"/>
+      <line x1="160" y1="348" x2="160" y2="354"/>
+      <line x1="184" y1="348" x2="184" y2="354"/>
+      <line x1="207" y1="348" x2="207" y2="354"/>
+      <line x1="232" y1="348" x2="232" y2="354"/>
+      <line x1="255" y1="348" x2="255" y2="354"/>
+      <line x1="280" y1="348" x2="280" y2="354"/>
+      <line x1="303" y1="348" x2="303" y2="354"/>
+      <line x1="328" y1="348" x2="328" y2="354"/>
+    </g>
+    <!-- Thumb-bass accents — gentle, not heavy -->
+    <g stroke="rgba(162,152,98,0.03)" stroke-width="0.32">
+      <line x1="115" y1="347" x2="115" y2="355"/>
+      <line x1="184" y1="347" x2="184" y2="355"/>
+      <line x1="255" y1="347" x2="255" y2="355"/>
+      <line x1="328" y1="347" x2="328" y2="355"/>
+    </g>
+    <!-- Fingerpick upstrokes — between beats, softer -->
+    <g stroke="rgba(148,140,90,0.015)" stroke-width="0.2">
+      <line x1="126" y1="349" x2="126" y2="353"/>
+      <line x1="149" y1="349" x2="149" y2="353"/>
+      <line x1="195" y1="349" x2="195" y2="353"/>
+      <line x1="220" y1="349" x2="220" y2="353"/>
+      <line x1="268" y1="349" x2="268" y2="353"/>
+      <line x1="292" y1="349" x2="292" y2="353"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Indie</span><br/>
+      <span class="line2">Folk</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

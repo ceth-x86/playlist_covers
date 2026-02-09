@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Symphonic Metal Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #08060c;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0c0a12;
+    overflow: hidden;
+  }
+
+  /* Rich dark purple-black — deeper and more regal than
+     neo prog's violet-black (theatrical), warmer than
+     symphonic prog's mahogany (orchestral).
+     This is the STAINED GLASS darkness of a gothic
+     cathedral — where metal's darkness meets classical
+     grandeur. Nuclear Blast, Napalm Records, Century
+     Media. The colour of velvet and iron together. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 44%, rgba(140, 55, 85, 0.05) 0%, transparent 45%),
+      radial-gradient(ellipse at 52% 46%, rgba(120, 100, 150, 0.03) 0%, transparent 38%),
+      linear-gradient(180deg, #0e0c16 0%, #0c0a12 42%, #08060c 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Dual glow — crimson warmth + silver shimmer -->
+  .glow1 {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(150, 60, 80, 0.045) 0%, rgba(130, 50, 70, 0.018) 42%, transparent 60%);
+    filter: blur(24px);
+    z-index: 2;
+  }
+  .glow2 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(180, 170, 200, 0.025) 0%, transparent 50%);
+    filter: blur(20px);
+    z-index: 2;
+  }
+
+  /* Grain — low, polished, cinematic production -->
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.18;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — dramatic, cathedral framing -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 42%, transparent 30%, rgba(5,3,8,0.58) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .genre-name .line1 {
+    color: rgba(190, 85, 105, 0.8);
+  }
+
+  .genre-name .line2 {
+    color: rgba(155, 65, 82, 0.38);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(160, 150, 175, 0.14);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 96px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(170, 80, 100, 0.09);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow1"></div>
+  <div class="glow2"></div>
+
+  <!-- Central form: THE ADORNED SHIELD — heavy metal's
+       pentagonal structure wrapped in symphonic voices.
+       
+       Heavy metal: bare pentagonal shield (structure,
+       defence, monolithic strength).
+       
+       Symphonic prog: five layered voices in harmonic
+       counterpoint (orchestral complexity).
+       
+       Symphonic metal: the shield IS the cathedral.
+       The pentagon remains — you can see the structural
+       bones — but every surface is adorned with 
+       orchestral detail. The five voices of symphonic
+       prog don't float freely (as in that genre) but
+       are BOUND to the shield's geometry, tracing its
+       edges, filling its facets, making the armour SING.
+       
+       The shield's five edges each carry a different
+       orchestral voice:
+       - Top-left edge: strings/choir (silver, highest)
+       - Top-right edge: brass/keys (warm gold)
+       - Lower-left: guitar melody (crimson, primary)
+       - Lower-right: rhythm guitar (darker crimson)
+       - Base: bass/drums (deep, structural)
+       
+       Inside the shield: a ROSE WINDOW — concentric
+       decorative arcs that recall both gothic 
+       architecture and the harmonic series. The
+       metal structure CONTAINS beauty.
+       
+       Nightwish "Once", Epica "The Phantom Agony",
+       Within Temptation, Therion, Dimmu Borgir,
+       Rhapsody of Fire, Kamelot —
+       iron singing. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Shield edge gradients — each face a different voice -->
+      <linearGradient id="shieldCrimson" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#a04058;stop-opacity:0.38"/>
+        <stop offset="50%" style="stop-color:#c05068;stop-opacity:0.48"/>
+        <stop offset="100%" style="stop-color:#a04058;stop-opacity:0.38"/>
+      </linearGradient>
+      <linearGradient id="shieldSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#908898;stop-opacity:0.2"/>
+        <stop offset="50%" style="stop-color:#b0a8b8;stop-opacity:0.32"/>
+        <stop offset="100%" style="stop-color:#908898;stop-opacity:0.2"/>
+      </linearGradient>
+      <linearGradient id="shieldGold" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#987050;stop-opacity:0.18"/>
+        <stop offset="50%" style="stop-color:#b88860;stop-opacity:0.28"/>
+        <stop offset="100%" style="stop-color:#987050;stop-opacity:0.18"/>
+      </linearGradient>
+      <linearGradient id="shieldDeep" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#683048;stop-opacity:0.22"/>
+        <stop offset="50%" style="stop-color:#883858;stop-opacity:0.32"/>
+        <stop offset="100%" style="stop-color:#683048;stop-opacity:0.22"/>
+      </linearGradient>
+      <linearGradient id="shieldBase" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#482838;stop-opacity:0.15"/>
+        <stop offset="50%" style="stop-color:#603048;stop-opacity:0.25"/>
+        <stop offset="100%" style="stop-color:#482838;stop-opacity:0.15"/>
+      </linearGradient>
+
+      <!-- Rose window radial gradient -->
+      <radialGradient id="roseGrad" cx="50%" cy="46%" r="50%">
+        <stop offset="0%" style="stop-color:#c8789a;stop-opacity:0.12"/>
+        <stop offset="25%" style="stop-color:#a86080;stop-opacity:0.06"/>
+        <stop offset="50%" style="stop-color:#885068;stop-opacity:0.03"/>
+        <stop offset="100%" style="stop-color:#684058;stop-opacity:0"/>
+      </radialGradient>
+
+      <filter id="cathedralGlow" x="-6%" y="-6%" width="112%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="choirBlur" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3.5"/>
+      </filter>
+      <filter id="stainedGlass" x="-5%" y="-5%" width="110%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+      </filter>
+    </defs>
+
+
+    <!-- === THE PENTAGONAL SHIELD — heavy metal's structure === -->
+    <!-- Same five vertices as heavy metal, same proportions.
+         The skeleton is IDENTICAL. But every edge is now
+         a different colour (orchestral voice) and the
+         interior is filled with decoration. -->
+
+    <!-- Pentagon vertices:
+         Top:          (220, 105)
+         Upper-right:  (330, 180)
+         Lower-right:  (295, 295)
+         Lower-left:   (145, 295)
+         Upper-left:   (110, 180)  -->
+
+    <!-- Choir haze — the sum of all orchestral voices 
+         as a warm atmospheric presence inside the shield -->
+    <g filter="url(#choirBlur)" opacity="0.2">
+      <polygon points="220,105 330,180 295,295 145,295 110,180"
+        fill="url(#roseGrad)"/>
+    </g>
+
+
+    <!-- === SHIELD EDGES — each one an orchestral voice === -->
+
+    <!-- Edge 1: Top-left — Strings/Choir (silver, highest register) -->
+    <g filter="url(#cathedralGlow)">
+      <line x1="110" y1="180" x2="220" y2="105"
+        stroke="url(#shieldSilver)" stroke-width="1.6"
+        stroke-linecap="round"/>
+    </g>
+    <!-- Choir overtone — parallel to edge, offset outward -->
+    <line x1="105" y1="175" x2="217" y2="98"
+      stroke="rgba(160,152,172,0.04)" stroke-width="0.4"
+      stroke-linecap="round"/>
+
+    <!-- Edge 2: Top-right — Brass/Keys (warm gold) -->
+    <g filter="url(#cathedralGlow)">
+      <line x1="220" y1="105" x2="330" y2="180"
+        stroke="url(#shieldGold)" stroke-width="1.6"
+        stroke-linecap="round"/>
+    </g>
+    <line x1="223" y1="98" x2="335" y2="175"
+      stroke="rgba(165,125,85,0.04)" stroke-width="0.4"
+      stroke-linecap="round"/>
+
+    <!-- Edge 3: Lower-left — Guitar melody (crimson, primary voice) -->
+    <g filter="url(#cathedralGlow)">
+      <line x1="145" y1="295" x2="110" y2="180"
+        stroke="url(#shieldCrimson)" stroke-width="1.8"
+        stroke-linecap="round"/>
+    </g>
+    <line x1="139" y1="298" x2="104" y2="178"
+      stroke="rgba(175,70,92,0.05)" stroke-width="0.4"
+      stroke-linecap="round"/>
+
+    <!-- Edge 4: Lower-right — Rhythm guitar (deeper crimson) -->
+    <g filter="url(#cathedralGlow)">
+      <line x1="330" y1="180" x2="295" y2="295"
+        stroke="url(#shieldDeep)" stroke-width="1.8"
+        stroke-linecap="round"/>
+    </g>
+    <line x1="336" y1="178" x2="301" y2="298"
+      stroke="rgba(120,48,72,0.04)" stroke-width="0.4"
+      stroke-linecap="round"/>
+
+    <!-- Edge 5: Base — Bass/Drums (structural foundation) -->
+    <g filter="url(#cathedralGlow)">
+      <line x1="145" y1="295" x2="295" y2="295"
+        stroke="url(#shieldBase)" stroke-width="2.0"
+        stroke-linecap="round"/>
+    </g>
+    <line x1="143" y1="301" x2="297" y2="301"
+      stroke="rgba(85,42,62,0.04)" stroke-width="0.5"
+      stroke-linecap="round"/>
+
+
+    <!-- === VERTEX JEWELS — where voices meet === -->
+    <!-- Each vertex glows where two orchestral voices
+         converge — the harmonic meeting points. -->
+    <g filter="url(#cathedralGlow)">
+      <!-- Apex — strings meet brass (silver+gold = brightest) -->
+      <circle cx="220" cy="105" r="3.5" fill="rgba(185,170,180,0.15)"/>
+      <!-- Upper-left — strings meet guitar melody -->
+      <circle cx="110" cy="180" r="3.0" fill="rgba(160,100,130,0.12)"/>
+      <!-- Upper-right — brass meets rhythm -->
+      <circle cx="330" cy="180" r="3.0" fill="rgba(145,95,105,0.12)"/>
+      <!-- Lower-left — melody meets bass -->
+      <circle cx="145" cy="295" r="2.8" fill="rgba(140,68,85,0.1)"/>
+      <!-- Lower-right — rhythm meets bass -->
+      <circle cx="295" cy="295" r="2.8" fill="rgba(125,55,72,0.1)"/>
+    </g>
+
+    <!-- Apex jewel — extra halo (the soprano's high note) -->
+    <g filter="url(#choirBlur)" opacity="0.15">
+      <circle cx="220" cy="105" r="12" fill="rgba(180,168,190,0.08)"/>
+    </g>
+
+
+    <!-- === ROSE WINDOW — concentric arcs inside the shield === -->
+    <!-- Gothic cathedral tracery: decorative arcs that
+         make the metal structure sing with harmonic detail.
+         Three concentric rings, each with different 
+         segmentation — the harmonic series made visual. -->
+
+    <g fill="none" filter="url(#stainedGlass)">
+      <!-- Outer ring — 5 segments matching pentagon edges -->
+      <circle cx="220" cy="200" r="72"
+        stroke="rgba(165,72,95,0.04)" stroke-width="0.4"/>
+
+      <!-- Middle ring — 8 segments (octave) -->
+      <circle cx="220" cy="200" r="48"
+        stroke="rgba(155,65,88,0.05)" stroke-width="0.35"/>
+
+      <!-- Inner ring — bright, the fundamental -->
+      <circle cx="220" cy="200" r="24"
+        stroke="rgba(175,82,105,0.06)" stroke-width="0.3"/>
+    </g>
+
+    <!-- Radial tracery — lines from centre to outer ring,
+         dividing the rose window into petals -->
+    <g stroke="rgba(155,70,90,0.02)" stroke-width="0.2"
+       stroke-linecap="round">
+      <line x1="220" y1="200" x2="220" y2="128"/>
+      <line x1="220" y1="200" x2="288" y2="165"/>
+      <line x1="220" y1="200" x2="272" y2="258"/>
+      <line x1="220" y1="200" x2="168" y2="258"/>
+      <line x1="220" y1="200" x2="152" y2="165"/>
+      <!-- Secondary divisions -->
+      <line x1="220" y1="200" x2="258" y2="135"/>
+      <line x1="220" y1="200" x2="290" y2="218"/>
+      <line x1="220" y1="200" x2="250" y2="270"/>
+      <line x1="220" y1="200" x2="190" y2="270"/>
+      <line x1="220" y1="200" x2="150" y2="218"/>
+      <line x1="220" y1="200" x2="182" y2="135"/>
+    </g>
+
+    <!-- Rose window centre — the heart note -->
+    <g filter="url(#cathedralGlow)">
+      <circle cx="220" cy="200" r="4" fill="rgba(180,80,105,0.1)"/>
+    </g>
+    <circle cx="220" cy="200" r="1.5" fill="rgba(200,100,125,0.15)"/>
+
+
+    <!-- === ORCHESTRAL VOICES — flowing along the edges === -->
+    <!-- Thin melodic lines that follow the shield edges
+         but with slight curves — the music flowing through
+         the architecture. Not straight (those are the 
+         shield edges themselves) but gently arcing,
+         as if the melody breathes within the structure. -->
+
+    <!-- Soprano line — follows top-left edge, arcing inward -->
+    <g opacity="0.12">
+      <path d="M 115,178
+               C 140,155 175,128 220,115
+               C 245,108 260,115 265,125"
+        fill="none" stroke="rgba(170,160,185,0.2)" stroke-width="0.5"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Contralto — follows top-right, arcing inward -->
+    <g opacity="0.1">
+      <path d="M 220,115
+               C 260,125 290,148 318,172
+               C 325,178 322,185 315,190"
+        fill="none" stroke="rgba(165,128,95,0.18)" stroke-width="0.45"
+        stroke-linecap="round"/>
+    </g>
+
+    <!-- Lead guitar arc — follows lower-left inside -->
+    <g opacity="0.1">
+      <path d="M 118,185
+               C 125,210 132,245 142,280"
+        fill="none" stroke="rgba(180,75,100,0.2)" stroke-width="0.5"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === BPM — double-bass precision + orchestral dynamics === -->
+    <!-- The pulse is metal (locked, heavy) but with
+         ORCHESTRAL SWELLS — some beats are louder than 
+         others in a composed pattern, not just accented
+         downbeats but a dynamic SHAPE across the bar. -->
+    <g stroke="rgba(160,70,90,0.022)" stroke-width="0.3">
+      <line x1="95" y1="350" x2="95" y2="357"/>
+      <line x1="112" y1="350" x2="112" y2="357"/>
+      <line x1="129" y1="350" x2="129" y2="357"/>
+      <line x1="146" y1="350" x2="146" y2="357"/>
+      <line x1="163" y1="350" x2="163" y2="357"/>
+      <line x1="180" y1="350" x2="180" y2="357"/>
+      <line x1="197" y1="350" x2="197" y2="357"/>
+      <line x1="214" y1="350" x2="214" y2="357"/>
+      <line x1="231" y1="350" x2="231" y2="357"/>
+      <line x1="248" y1="350" x2="248" y2="357"/>
+      <line x1="265" y1="350" x2="265" y2="357"/>
+      <line x1="282" y1="350" x2="282" y2="357"/>
+      <line x1="299" y1="350" x2="299" y2="357"/>
+      <line x1="316" y1="350" x2="316" y2="357"/>
+      <line x1="333" y1="350" x2="333" y2="357"/>
+      <line x1="350" y1="350" x2="350" y2="357"/>
+    </g>
+    <!-- Metal downbeats -->
+    <g stroke="rgba(178,78,100,0.05)" stroke-width="0.5">
+      <line x1="95" y1="348" x2="95" y2="359"/>
+      <line x1="163" y1="348" x2="163" y2="359"/>
+      <line x1="231" y1="348" x2="231" y2="359"/>
+      <line x1="299" y1="348" x2="299" y2="359"/>
+    </g>
+    <!-- Orchestral swell accent — crescendo to 3rd beat -->
+    <g stroke="rgba(155,145,170,0.03)" stroke-width="0.35">
+      <line x1="146" y1="349" x2="146" y2="358"/>
+      <line x1="214" y1="349" x2="214" y2="358"/>
+      <line x1="282" y1="349" x2="282" y2="358"/>
+      <line x1="350" y1="349" x2="350" y2="358"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">
+      <span class="line1">Symphonic</span><br/>
+      <span class="line2">Metal</span>
+    </div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

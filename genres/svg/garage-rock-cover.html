@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garage Rock Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #0a0604; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0e0a06; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 46%, rgba(165,62,28,0.07) 0%, transparent 38%), linear-gradient(180deg, #100c08 0%, #0e0a06 42%, #0a0604 100%); z-index: 1; }
+  .central-form { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -54%); z-index: 3; width: 440px; height: 440px; }
+  .glow { position: absolute; top: 46%; left: 50%; transform: translate(-50%, -50%); width: 260px; height: 140px; border-radius: 50%; background: radial-gradient(ellipse, rgba(175,68,30,0.08) 0%, rgba(135,52,22,0.03) 42%, transparent 58%); filter: blur(18px); z-index: 2; }
+  .grain { position: absolute; inset: 0; z-index: 7; opacity: 0.32; mix-blend-mode: overlay; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 128px 128px; }
+  .vignette { position: absolute; inset: 0; z-index: 6; background: radial-gradient(ellipse at 50% 46%, transparent 28%, rgba(5,3,2,0.55) 100%); pointer-events: none; }
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name { font-family: 'Anton', sans-serif; font-size: 20px; letter-spacing: 3px; text-transform: uppercase; line-height: 1.2; }
+  .genre-name .line1 { color: rgba(195,78,32,0.88); }
+  .genre-name .line2 { color: rgba(155,62,28,0.4); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(148,62,28,0.16); margin-top: 10px; }
+  .rule { position: absolute; bottom: 90px; left: 40px; width: 80px; height: 1px; background: rgba(158,65,30,0.1); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="glow"></div>
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="fuzzLine" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#8a3818;stop-opacity:0"/>
+        <stop offset="8%" style="stop-color:#a04820;stop-opacity:0.3"/>
+        <stop offset="20%" style="stop-color:#b85828;stop-opacity:0.55"/>
+        <stop offset="40%" style="stop-color:#c86830;stop-opacity:0.72"/>
+        <stop offset="50%" style="stop-color:#d07035;stop-opacity:0.8"/>
+        <stop offset="60%" style="stop-color:#c86830;stop-opacity:0.72"/>
+        <stop offset="80%" style="stop-color:#b85828;stop-opacity:0.55"/>
+        <stop offset="92%" style="stop-color:#a04820;stop-opacity:0.3"/>
+        <stop offset="100%" style="stop-color:#8a3818;stop-opacity:0"/>
+      </linearGradient>
+      <filter id="fuzz" x="-3%" y="-8%" width="106%" height="116%">
+        <feTurbulence type="turbulence" baseFrequency="0.025" numOctaves="4" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="ampGlow" x="-4%" y="-8%" width="108%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="buzzField" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+      </filter>
+    </defs>
+
+    <!-- AMP BUZZ — the overdriven amplifier's hum,
+         the constant low-level fuzz that fills the
+         garage before anyone plays a note. -->
+    <g filter="url(#buzzField)" opacity="0.1">
+      <ellipse cx="220" cy="210" rx="130" ry="22"
+        fill="rgba(155,62,28,0.08)"/>
+    </g>
+
+    <!-- THE FUZZ LINE — thick, distorted, buzzing.
+         Not a clean wave (rock), not a sharp slash
+         (punk), not precise blocks (djent).
+         A FAT line with maximum fuzz displacement,
+         the sound of a guitar amp cranked past 10.
+         Simple. Loud. Immediate. -->
+    <g filter="url(#fuzz)">
+      <g filter="url(#ampGlow)">
+        <polyline points="
+          40,210
+          55,205 70,218 85,198 100,222
+          115,195 130,225 145,192 160,228
+          175,195 190,225 205,198 220,222
+          235,195 250,228 265,192 280,225
+          295,198 310,222 325,195 340,225
+          355,200 370,218 385,205 400,215"
+          fill="none" stroke="url(#fuzzLine)" stroke-width="2.8"
+          stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <!-- FUZZ TRAIL — the distortion's sustain,
+         a blurred echo of the main line -->
+    <g filter="url(#fuzz)" opacity="0.2">
+      <g filter="url(#buzzField)">
+        <polyline points="
+          50,212
+          70,207 90,220 110,198 130,224
+          150,195 170,226 190,198 210,224
+          230,196 250,228 270,194 290,225
+          310,200 330,222 350,198 370,220
+          390,208"
+          fill="none" stroke="rgba(155,62,28,0.12)" stroke-width="4"
+          stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <!-- FEEDBACK SPARKS — the moments where the
+         fuzz clips and sparks fly. Not controlled
+         (resonance peaks). Random, hot, immediate. -->
+    <g opacity="0.4">
+      <circle cx="145" cy="190" r="1.5" fill="rgba(195,82,35,0.5)"/>
+      <circle cx="265" cy="188" r="1.8" fill="rgba(200,85,38,0.55)"/>
+      <circle cx="175" cy="228" r="1.2" fill="rgba(185,75,32,0.42)"/>
+      <circle cx="310" cy="224" r="1.3" fill="rgba(188,78,34,0.45)"/>
+      <circle cx="235" cy="196" r="1.0" fill="rgba(178,72,30,0.38)"/>
+    </g>
+
+    <!-- BPM — fast, raw, the garage beat.
+         Driving, slightly sloppy (not quantized),
+         the drummer hitting hard and slightly early. -->
+    <g stroke="rgba(148,62,28,0.07)" stroke-width="0.25">
+      <line x1="72" y1="345" x2="72" y2="352"/><line x1="90" y1="345" x2="90" y2="352"/>
+      <line x1="108" y1="345" x2="108" y2="352"/><line x1="125" y1="345" x2="125" y2="352"/>
+      <line x1="143" y1="345" x2="143" y2="352"/><line x1="160" y1="345" x2="160" y2="352"/>
+      <line x1="178" y1="345" x2="178" y2="352"/><line x1="195" y1="345" x2="195" y2="352"/>
+      <line x1="213" y1="345" x2="213" y2="352"/><line x1="230" y1="345" x2="230" y2="352"/>
+      <line x1="248" y1="345" x2="248" y2="352"/><line x1="265" y1="345" x2="265" y2="352"/>
+      <line x1="283" y1="345" x2="283" y2="352"/><line x1="300" y1="345" x2="300" y2="352"/>
+      <line x1="318" y1="345" x2="318" y2="352"/><line x1="335" y1="345" x2="335" y2="352"/>
+      <line x1="353" y1="345" x2="353" y2="352"/><line x1="370" y1="345" x2="370" y2="352"/>
+    </g>
+    <!-- Kick/snare — hard, slightly uneven spacing (sloppy) -->
+    <g stroke="rgba(185,75,32,0.14)" stroke-width="0.5">
+      <line x1="72" y1="342" x2="72" y2="356"/>
+      <line x1="143" y1="342" x2="143" y2="356"/>
+      <line x1="213" y1="342" x2="213" y2="356"/>
+      <line x1="283" y1="342" x2="283" y2="356"/>
+      <line x1="353" y1="342" x2="353" y2="356"/>
+    </g>
+  </svg>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Garage</span><br/><span class="line2">Rock</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+</body>
+</html>

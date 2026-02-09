@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leftfield Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #080a0c;
+  }
+
+  .cover {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #0c0e10;
+    overflow: hidden;
+  }
+
+  /* Neutral dark grey — deliberately between families.
+     Not the warm blacks of rock/folk, not the cold
+     blues of techno/IDM, not the purples of trip hop.
+     GREY. The colour of refusal to belong. The colour
+     of the record shop section marked "Electronic /
+     Other". Warp (big tent), XL Recordings, Junior
+     Boy's Own, Skint. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 42% 38%, rgba(110, 135, 160, 0.035) 0%, transparent 40%),
+      radial-gradient(ellipse at 62% 58%, rgba(170, 130, 70, 0.02) 0%, transparent 32%),
+      linear-gradient(165deg, #0e1014 0%, #0c0e10 42%, #080a0c 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — SPLIT between two zones, two temperatures.
+     Cool upper-left, warm lower-right. The form
+     passes through both. Neither dominates. */
+  .glow1 {
+    position: absolute;
+    top: 36%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(100, 130, 160, 0.035) 0%, transparent 55%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+  .glow2 {
+    position: absolute;
+    top: 56%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+    width: 130px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(165, 125, 65, 0.025) 0%, transparent 50%);
+    filter: blur(18px);
+    z-index: 2;
+  }
+
+  /* Grain — moderate, neither clean nor dirty */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — asymmetric, matching the diagonal -->
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 48% 46%, transparent 32%, rgba(5,6,8,0.52) 100%);
+    pointer-events: none;
+  }
+
+  /* Typography */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 38px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: rgba(148, 158, 165, 0.82);
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(135, 142, 148, 0.14);
+    margin-top: 10px;
+  }
+
+  .rule {
+    position: absolute;
+    bottom: 100px;
+    left: 40px;
+    width: 80px;
+    height: 1px;
+    background: rgba(135, 142, 148, 0.08);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+
+  <div class="glow1"></div>
+  <div class="glow2"></div>
+
+  <!-- Central form: THE DIAGONAL.
+       
+       Every other form in this series operates on
+       expected axes:
+       - HORIZONTAL: rock arcs, folk threads, post-rock
+         layers, trip hop's sinking line
+       - VERTICAL: metal shields, arena rock starburst,
+         doom's monolith
+       - CIRCULAR: pagan folk, apocalyptic folk
+       - GRID: IDM/techno families
+       
+       Leftfield cuts DIAGONALLY across the frame —
+       upper-left to lower-right. The ONLY form in
+       the series with a primary diagonal axis. It
+       doesn't align with any family's orientation.
+       It literally comes from LEFT FIELD.
+       
+       The diagonal carries elements borrowed from
+       multiple families but assembled WRONG:
+       
+       - It has the WEIGHT of an electronic bass line
+         (thick, pulsing) but the ORGANIC texture of
+         a folk instrument (displacement, warmth)
+       - Along its length are GRID FRAGMENTS (techno
+         DNA) that don't form a complete grid
+       - It passes through TWO COLOUR TEMPERATURES
+         (cool upper → warm lower) in a single gesture
+       - Small ARC FRAGMENTS orbit nearby — pieces of
+         rock vocabulary floating free
+       
+       The form is a CHIMERA — recognizable parts
+       from known families, assembled into something
+       that belongs to none of them.
+       
+       Leftfield "Leftism", Underworld "dubnobasswith
+       myheadman", Orbital "Snivilisation",
+       The Chemical Brothers "Dig Your Own Hole",
+       Boards of Canada "Music Has the Right to 
+       Children", Amon Tobin, FSOL, Nightmares on Wax,
+       Trentemøller —
+       the genre that exists between genres. -->
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Dual-temperature gradient along the diagonal -->
+      <linearGradient id="diagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#506878;stop-opacity:0.02"/>
+        <stop offset="8%" style="stop-color:#688090;stop-opacity:0.15"/>
+        <stop offset="25%" style="stop-color:#8098a8;stop-opacity:0.32"/>
+        <stop offset="45%" style="stop-color:#909898;stop-opacity:0.38"/>
+        <stop offset="60%" style="stop-color:#a89880;stop-opacity:0.35"/>
+        <stop offset="78%" style="stop-color:#b8a070;stop-opacity:0.3"/>
+        <stop offset="92%" style="stop-color:#987848;stop-opacity:0.12"/>
+        <stop offset="100%" style="stop-color:#786038;stop-opacity:0.02"/>
+      </linearGradient>
+
+      <!-- Crossover zone gradient — where cool meets warm -->
+      <linearGradient id="crossGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#708898;stop-opacity:0.06"/>
+        <stop offset="50%" style="stop-color:#989088;stop-opacity:0.1"/>
+        <stop offset="100%" style="stop-color:#a89870;stop-opacity:0.06"/>
+      </linearGradient>
+
+      <!-- Organic-electronic hybrid texture -->
+      <filter id="hybridTexture">
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="fieldGlow" x="-5%" y="-8%" width="110%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="fieldHaze" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+    </defs>
+
+
+    <!-- === DIAGONAL HAZE — the path's atmosphere === -->
+    <g filter="url(#fieldHaze)" opacity="0.15">
+      <line x1="65" y1="105" x2="380" y2="305"
+        stroke="url(#crossGrad)" stroke-width="18"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === THE DIAGONAL — primary gesture === -->
+    <g filter="url(#hybridTexture)">
+      <g filter="url(#fieldGlow)">
+        <path d="M 58,100
+                 C 95,130 140,165 190,200
+                 C 240,235 300,268 345,290
+                 C 365,300 378,306 388,310"
+          fill="none" stroke="url(#diagGrad)" stroke-width="2.8"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === GRID FRAGMENTS — techno DNA, incomplete === -->
+    <!-- Fragments of a grid that was never whole.
+         Not classic IDM's 6×6 (complete), not minimal
+         techno's sparse dots (systematic). These are
+         PIECES — like finding parts of a circuit board
+         in a forest. Near the diagonal but not on it. -->
+
+    <!-- Fragment cluster 1 — upper-left (cool zone) -->
+    <g opacity="0.04">
+      <circle cx="98" cy="128" r="1.2" fill="rgba(100,130,158,0.3)"/>
+      <circle cx="115" cy="128" r="1.2" fill="rgba(100,130,158,0.3)"/>
+      <circle cx="98" cy="145" r="1.2" fill="rgba(100,130,158,0.3)"/>
+      <!-- Fourth position MISSING — grid incomplete -->
+      <line x1="98" y1="128" x2="115" y2="128"
+        stroke="rgba(100,130,158,0.06)" stroke-width="0.2"/>
+      <line x1="98" y1="128" x2="98" y2="145"
+        stroke="rgba(100,130,158,0.06)" stroke-width="0.2"/>
+    </g>
+
+    <!-- Fragment cluster 2 — mid zone -->
+    <g opacity="0.035">
+      <circle cx="205" cy="188" r="1.0" fill="rgba(135,135,128,0.25)"/>
+      <circle cx="220" cy="188" r="1.0" fill="rgba(135,135,128,0.25)"/>
+      <circle cx="205" cy="203" r="1.0" fill="rgba(135,135,128,0.25)"/>
+      <circle cx="220" cy="203" r="1.0" fill="rgba(135,135,128,0.25)"/>
+      <circle cx="235" cy="195" r="1.0" fill="rgba(135,135,128,0.25)"/>
+      <line x1="205" y1="188" x2="220" y2="188"
+        stroke="rgba(135,135,128,0.05)" stroke-width="0.2"/>
+      <line x1="205" y1="203" x2="220" y2="203"
+        stroke="rgba(135,135,128,0.05)" stroke-width="0.2"/>
+      <line x1="205" y1="188" x2="205" y2="203"
+        stroke="rgba(135,135,128,0.05)" stroke-width="0.2"/>
+      <line x1="220" y1="188" x2="220" y2="203"
+        stroke="rgba(135,135,128,0.05)" stroke-width="0.2"/>
+      <!-- Fifth dot — outside the grid, doesn't fit -->
+    </g>
+
+    <!-- Fragment cluster 3 — lower-right (warm zone) -->
+    <g opacity="0.03">
+      <circle cx="318" cy="268" r="1.2" fill="rgba(165,125,68,0.25)"/>
+      <circle cx="335" cy="268" r="1.2" fill="rgba(165,125,68,0.25)"/>
+      <!-- Only two dots — barely a grid at all -->
+      <line x1="318" y1="268" x2="335" y2="268"
+        stroke="rgba(165,125,68,0.05)" stroke-width="0.2"/>
+    </g>
+
+
+    <!-- === ARC FRAGMENTS — rock vocabulary, floating free === -->
+    <!-- Small pieces of curved lines that recall rock
+         family arcs but are too short and disconnected
+         to be gestures. They orbit the diagonal like
+         debris around a different gravity. -->
+    <g filter="url(#fieldGlow)" opacity="0.08">
+      <!-- Cool arc fragment — above diagonal, upper area -->
+      <path d="M 125,148
+               C 135,142 148,140 160,142"
+        fill="none" stroke="rgba(108,138,162,0.2)" stroke-width="0.8"
+        stroke-linecap="round"/>
+    </g>
+
+    <g filter="url(#fieldGlow)" opacity="0.06">
+      <!-- Warm arc fragment — below diagonal, lower area -->
+      <path d="M 290,262
+               C 298,268 310,270 320,268"
+        fill="none" stroke="rgba(172,132,72,0.18)" stroke-width="0.7"
+        stroke-linecap="round"/>
+    </g>
+
+    <g filter="url(#fieldGlow)" opacity="0.05">
+      <!-- Neutral arc fragment — near the centre -->
+      <path d="M 228,218
+               C 235,212 245,210 255,214"
+        fill="none" stroke="rgba(145,142,130,0.15)" stroke-width="0.6"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === TEMPERATURE CROSSOVER POINT — the centre === -->
+    <!-- Where the diagonal passes through the midpoint,
+         cool becomes warm. A brief node of ambiguity
+         where the form is NEITHER. The temperature
+         uncertainty that defines the genre. -->
+    <g filter="url(#fieldGlow)" opacity="0.06">
+      <circle cx="215" cy="200" r="4" fill="rgba(145,138,120,0.08)"/>
+    </g>
+    <g filter="url(#fieldHaze)" opacity="0.08">
+      <circle cx="215" cy="200" r="12" fill="rgba(140,135,118,0.04)"/>
+    </g>
+
+
+    <!-- === FREQUENCY MARKERS — neither rhythmic nor melodic === -->
+    <!-- Along the diagonal: small perpendicular ticks
+         that could be BPM ticks rotated, or could be
+         frequency markers, or harmonic nodes. Their
+         function is AMBIGUOUS — they resist categorization
+         just as the genre does. -->
+    <g stroke="rgba(140,142,138,0.02)" stroke-width="0.2"
+       stroke-linecap="round"
+       transform="rotate(38.5, 220, 200)">
+      <line x1="80" y1="200" x2="80" y2="206"/>
+      <line x1="108" y1="200" x2="108" y2="206"/>
+      <line x1="136" y1="200" x2="136" y2="206"/>
+      <line x1="164" y1="200" x2="164" y2="206"/>
+      <line x1="192" y1="200" x2="192" y2="206"/>
+      <line x1="220" y1="200" x2="220" y2="206"/>
+      <line x1="248" y1="200" x2="248" y2="206"/>
+      <line x1="276" y1="200" x2="276" y2="206"/>
+      <line x1="304" y1="200" x2="304" y2="206"/>
+      <line x1="332" y1="200" x2="332" y2="206"/>
+      <line x1="360" y1="200" x2="360" y2="206"/>
+    </g>
+
+
+    <!-- === BPM — ROTATED, following the diagonal === -->
+    <!-- The BPM ticks are NOT horizontal (as in every
+         other cover). They follow the diagonal's angle.
+         The ONLY BPM in the series that's not at the
+         bottom of the frame — it's integrated into the
+         form itself, rotated ~38°. The pulse IS the form.
+         Not separate rhythm section but rhythm AS shape. -->
+    <g stroke="rgba(140,148,152,0.025)" stroke-width="0.3"
+       transform="rotate(38.5, 220, 200)">
+      <!-- Ticks perpendicular to diagonal -->
+      <line x1="80" y1="193" x2="80" y2="200"/>
+      <line x1="108" y1="193" x2="108" y2="200"/>
+      <line x1="136" y1="193" x2="136" y2="200"/>
+      <line x1="164" y1="193" x2="164" y2="200"/>
+      <line x1="192" y1="193" x2="192" y2="200"/>
+      <line x1="220" y1="193" x2="220" y2="200"/>
+      <line x1="248" y1="193" x2="248" y2="200"/>
+      <line x1="276" y1="193" x2="276" y2="200"/>
+      <line x1="304" y1="193" x2="304" y2="200"/>
+      <line x1="332" y1="193" x2="332" y2="200"/>
+      <line x1="360" y1="193" x2="360" y2="200"/>
+    </g>
+    <!-- Accents — not regular downbeats, offset positions -->
+    <g stroke="rgba(145,152,158,0.035)" stroke-width="0.38"
+       transform="rotate(38.5, 220, 200)">
+      <line x1="108" y1="192" x2="108" y2="201"/>
+      <line x1="192" y1="192" x2="192" y2="201"/>
+      <line x1="304" y1="192" x2="304" y2="201"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Leftfield</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>
