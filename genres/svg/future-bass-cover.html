@@ -1,0 +1,426 @@
+<!--
+  FUTURE BASS — Playlist Cover
+  Design System: Playlist Cover v1
+
+  SONIC DNA ANALYSIS:
+  ═══════════════════
+  Future Bass's defining sonic features:
+  1. SUPERSAW CHORDS — massive stacked detuned sawtooth waves that swell and bloom
+  2. VOCAL CHOPS — pitched, chopped vocal fragments used as melodic texture
+  3. SIDECHAIN PUMP — rhythmic compression ducking that makes the mix "breathe"
+  4. BRIGHT EMOTIONAL DROPS — major key, euphoric, wide stereo field
+  5. HALF-TIME BOUNCE — 150 BPM on paper but feels bouncy/swung, not aggressive
+  6. SHIMMER — lots of high-frequency sparkle, reverb tails, atmospheric pads
+
+  VISUAL TRANSLATION:
+  ═══════════════════
+  Background: Deep navy-teal (#060d1a) — the pre-drop darkness before the bloom
+  Central form: RISING SUPERSAW — 5-7 stacked wave layers (detuned harmonics)
+    that fan upward and outward from a focal point, representing the supersaw
+    chord voicing. Each layer is slightly offset in phase and colour, creating
+    the visual equivalent of detuned oscillators. The stack rises and BLOOMS
+    at the top — widening like a chord opening up in the stereo field.
+  Glow: Warm pink-coral + cyan dual glow (0.08) — the genre's signature
+    pastel warmth, emanating from the chord bloom point
+  Grain: 14% — clean modern production, polished but not sterile
+  Displacement: scale=1 — minimal, just a subtle shimmer on the layers
+  Blur: stdDev=10 on bloom glow — soft, dreamy, emotional reverb tail
+  Particles: 10 shimmer motes — vocal chop fragments and high-freq sparkle
+    scattered above the supersaw, representing the airy vocal textures
+  BPM: 150 BPM → 22 ticks at 14px spacing, kick weight 0.4px (light),
+    sidechain pump accents (opacity dips) creating the breathing pattern
+
+  FAMILY PLACEMENT:
+  ═══════════════════
+  Bass music evolution: Dubstep (dark wobble) → Future Bass (bright supersaw)
+  Also draws from: Trap (hi-hats, 808 sub), J-pop/K-pop (melodic sensibility)
+  Compared to Dubstep: same half-time backbone but INVERTED emotionally —
+    where dubstep descends into darkness, future bass RISES into light
+  Compared to Electropop: more bass weight, more rhythmic complexity
+  Compared to Happy Hardcore: similar optimism but sophisticated, not naive
+  Key artists: Flume, San Holo, Marshmello, Porter Robinson, Louis The Child
+
+  COLOUR RATIONALE:
+  ═══════════════════
+  Navy-teal (#060d1a): the deep base allows the pastels to glow
+  Coral-pink (#ff6b9d → #ff8fa3): warmth, emotion, the "future" feeling
+  Cyan (#4dd9ff): digital clarity, the synthetic edge beneath the warmth
+  Soft lavender (#b388ff): the bridge between warm and cool — the supersaw
+    sits in this harmonic middle ground between pink and blue
+  This is explicitly pastel-neon, NOT the hard neon of electro or the
+  UV purple of dubstep — future bass lives in softer, warmer frequencies
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=600, height=600">
+<title>future bass — playlist cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #060d1a;
+    position: relative;
+    font-family: 'Anton', sans-serif;
+  }
+
+  /* === VIGNETTE === */
+  .vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(
+      ellipse 60% 60% at 50% 45%,
+      transparent 0%,
+      rgba(4, 8, 18, 0.35) 55%,
+      rgba(4, 8, 18, 0.8) 100%
+    );
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* === GRAIN OVERLAY — 14% opacity (clean production) === */
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 11;
+    pointer-events: none;
+    opacity: 0.14;
+  }
+
+  /* === BLOOM GLOW — warm pink-coral + cyan, emanates from chord bloom point === */
+  .bloom-glow {
+    position: absolute;
+    width: 280px;
+    height: 200px;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      ellipse 100% 90% at 50% 60%,
+      rgba(255, 107, 157, 0.08) 0%,
+      rgba(179, 136, 255, 0.04) 40%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+  .bloom-glow-cyan {
+    position: absolute;
+    width: 200px;
+    height: 160px;
+    top: 42%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      ellipse 80% 80% at 50% 50%,
+      rgba(77, 217, 255, 0.05) 0%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* === CENTRAL FORM === */
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  /* === BPM STRIP === */
+  .bpm-strip {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  /* === TYPOGRAPHY === */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 15;
+  }
+  .rule {
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+  }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 48px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>
+</head>
+<body>
+
+<!-- BLOOM GLOWS -->
+<div class="bloom-glow"></div>
+<div class="bloom-glow-cyan"></div>
+
+<!-- CENTRAL FORM: Rising supersaw chord + shimmer particles -->
+<svg class="central-form" width="440" height="440" viewBox="0 0 440 440">
+  <defs>
+    <!-- Subtle shimmer displacement: scale=1 -->
+    <filter id="shimmerDisplace" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="turbulence" baseFrequency="0.02 0.06" numOctaves="2" seed="77" result="turb"/>
+      <feDisplacementMap in="SourceGraphic" in2="turb" scale="1" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Bloom blur: stdDev=10 — soft dreamy reverb tail -->
+    <filter id="bloomBlur">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+
+    <!-- Supersaw glow -->
+    <filter id="sawGlow">
+      <feGaussianBlur stdDeviation="3" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Particle shimmer -->
+    <filter id="moteGlow">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+
+    <!--
+      SUPERSAW GRADIENT LAYERS
+      Each harmonic layer gets its own colour in the pink→cyan spectrum,
+      representing detuned oscillators in a supersaw patch
+    -->
+    <linearGradient id="saw1" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#ff6b9d" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#ff6b9d" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ff8fa3" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="saw2" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#e87bb5" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#d88bc8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#b388ff" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="saw3" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#b388ff" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#b388ff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#88b8ff" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="saw4" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#88b8ff" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#6dc8ff" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#4dd9ff" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="saw5" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#4dd9ff" stop-opacity="0.08"/>
+      <stop offset="50%" stop-color="#4dd9ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#4dd9ff" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <!--
+    THE RISING SUPERSAW
+    ═══════════════════
+    5 stacked wave layers representing detuned oscillators in a supersaw chord.
+    Each layer:
+    - Is slightly offset in vertical position (voicing spread)
+    - Has its own colour (pink → lavender → cyan = warm → cool harmonics)
+    - Fans outward as it rises (stereo field widening)
+    - Increases in amplitude toward the bloom point (the chord swelling)
+
+    The BLOOM happens at the top where the layers spread widest —
+    this is the moment the chord fully opens, the drop hits,
+    and the supersaw fills the entire stereo field.
+
+    Key contrast with Dubstep: where dubstep's wobble DESCENDS into
+    the bass mass, future bass's supersaw RISES into the bloom.
+    Inverted emotional vector — darkness vs light.
+  -->
+
+  <!-- Bloom halo — blurred glow behind the chord bloom point -->
+  <ellipse cx="220" cy="175" rx="80" ry="35"
+    fill="#b388ff" filter="url(#bloomBlur)" opacity="0.06"/>
+  <ellipse cx="220" cy="180" rx="50" ry="20"
+    fill="#ff6b9d" filter="url(#bloomBlur)" opacity="0.04"/>
+
+  <!-- Supersaw layers with shimmer displacement -->
+  <g filter="url(#shimmerDisplace)">
+
+    <!-- Layer 1 (lowest/warmest — pink, tightest oscillation) -->
+    <path d="
+      M 150,280
+      C 160,275 168,285 178,278
+      C 188,272 195,282 205,274
+      C 212,268 218,276 225,268
+      C 232,262 238,270 248,264
+      C 255,260 262,266 272,262
+      C 278,260 284,264 290,262
+    "
+    stroke="url(#saw1)" stroke-width="1.8" fill="none"
+    stroke-linecap="round" filter="url(#sawGlow)"/>
+
+    <!-- Layer 2 (pink-lavender, wider) -->
+    <path d="
+      M 138,258
+      C 150,250 160,262 172,252
+      C 182,244 190,256 202,246
+      C 210,240 218,250 228,240
+      C 236,234 244,244 254,236
+      C 262,232 270,238 280,234
+      C 286,232 294,236 302,234
+    "
+    stroke="url(#saw2)" stroke-width="1.6" fill="none"
+    stroke-linecap="round" filter="url(#sawGlow)"/>
+
+    <!-- Layer 3 (center — lavender, the harmonic core) -->
+    <path d="
+      M 125,234
+      C 140,222 152,238 168,224
+      C 178,214 190,230 205,218
+      C 214,210 224,224 236,212
+      C 244,206 256,218 268,208
+      C 276,204 286,212 298,206
+      C 306,204 312,208 318,206
+    "
+    stroke="url(#saw3)" stroke-width="1.8" fill="none"
+    stroke-linecap="round" filter="url(#sawGlow)"/>
+
+    <!-- Layer 4 (lavender-cyan, spreading wider) -->
+    <path d="
+      M 112,210
+      C 128,196 144,214 162,198
+      C 174,188 190,206 208,190
+      C 218,182 230,198 245,184
+      C 254,178 266,192 280,180
+      C 290,176 300,184 312,178
+      C 320,176 326,180 332,178
+    "
+    stroke="url(#saw4)" stroke-width="1.4" fill="none"
+    stroke-linecap="round" filter="url(#sawGlow)"/>
+
+    <!-- Layer 5 (highest/coolest — cyan, widest spread = stereo bloom) -->
+    <path d="
+      M 98,188
+      C 118,170 138,192 160,174
+      C 174,162 192,182 212,164
+      C 224,154 238,174 256,158
+      C 268,150 282,166 298,154
+      C 308,150 318,156 330,152
+      C 338,150 344,154 350,152
+    "
+    stroke="url(#saw5)" stroke-width="1.2" fill="none"
+    stroke-linecap="round" filter="url(#sawGlow)"/>
+
+  </g>
+
+  <!--
+    SHIMMER MOTES — 10 particles
+    ═══════════════════
+    Vocal chop fragments + high-frequency sparkle.
+    Scattered above and around the supersaw bloom point.
+    Small circles with soft glow — representing the airy,
+    pitched vocal textures and reverb shimmer that float
+    above the chord in every future bass drop.
+    Concentrated near the bloom (top of supersaw).
+  -->
+  <g>
+    <circle cx="195" cy="155" r="1.5" fill="#ff8fa3" filter="url(#moteGlow)" opacity="0.5"/>
+    <circle cx="248" cy="140" r="1.2" fill="#4dd9ff" filter="url(#moteGlow)" opacity="0.45"/>
+    <circle cx="172" cy="172" r="1" fill="#b388ff" filter="url(#moteGlow)" opacity="0.4"/>
+    <circle cx="280" cy="148" r="1.3" fill="#ff6b9d" filter="url(#moteGlow)" opacity="0.35"/>
+    <circle cx="220" cy="135" r="1.8" fill="#b388ff" filter="url(#moteGlow)" opacity="0.5"/>
+    <circle cx="155" cy="185" r="1" fill="#4dd9ff" filter="url(#moteGlow)" opacity="0.3"/>
+    <circle cx="305" cy="160" r="1.1" fill="#ff8fa3" filter="url(#moteGlow)" opacity="0.35"/>
+    <circle cx="235" cy="148" r="0.9" fill="#4dd9ff" filter="url(#moteGlow)" opacity="0.4"/>
+    <circle cx="265" cy="135" r="1.4" fill="#b388ff" filter="url(#moteGlow)" opacity="0.45"/>
+    <circle cx="190" cy="140" r="1.1" fill="#ff6b9d" filter="url(#moteGlow)" opacity="0.3"/>
+  </g>
+
+</svg>
+
+<!--
+  BPM STRIP — 150 BPM
+  ═══════════════════
+  22 ticks at 14px spacing (total width: 294px, centered)
+  Kick weight: 0.4px (lighter than dubstep — future bass is bouncy, not crushing)
+  Sidechain pump: opacity dips on off-beats create the breathing compression pattern
+  Half-time bounce feel: accented beats every 4th tick
+  Starting x = (600 - 21*14) / 2 = 153
+-->
+<svg class="bpm-strip" width="600" height="600" viewBox="0 0 600 600">
+  <g stroke="#ffffff" stroke-linecap="round">
+    <!-- Sidechain breathing pattern: strong → dip → dip → accent -->
+    <!-- Beat group 1 -->
+    <line x1="153" y1="342" x2="153" y2="348" stroke-width="0.4" opacity="0.45"/>
+    <line x1="167" y1="343" x2="167" y2="347" stroke-width="0.3" opacity="0.18"/>
+    <line x1="181" y1="343" x2="181" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <line x1="195" y1="343" x2="195" y2="347" stroke-width="0.3" opacity="0.28"/>
+    <!-- Beat group 2 — snare bounce -->
+    <line x1="209" y1="341" x2="209" y2="349" stroke-width="0.4" opacity="0.5"/>
+    <line x1="223" y1="343" x2="223" y2="347" stroke-width="0.3" opacity="0.16"/>
+    <line x1="237" y1="343" x2="237" y2="347" stroke-width="0.3" opacity="0.2"/>
+    <line x1="251" y1="343" x2="251" y2="347" stroke-width="0.3" opacity="0.26"/>
+    <!-- Beat group 3 -->
+    <line x1="265" y1="342" x2="265" y2="348" stroke-width="0.4" opacity="0.45"/>
+    <line x1="279" y1="343" x2="279" y2="347" stroke-width="0.3" opacity="0.18"/>
+    <line x1="293" y1="343" x2="293" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <line x1="307" y1="343" x2="307" y2="347" stroke-width="0.3" opacity="0.28"/>
+    <!-- Beat group 4 — snare bounce -->
+    <line x1="321" y1="341" x2="321" y2="349" stroke-width="0.4" opacity="0.5"/>
+    <line x1="335" y1="343" x2="335" y2="347" stroke-width="0.3" opacity="0.16"/>
+    <line x1="349" y1="343" x2="349" y2="347" stroke-width="0.3" opacity="0.2"/>
+    <line x1="363" y1="343" x2="363" y2="347" stroke-width="0.3" opacity="0.26"/>
+    <!-- Beat group 5 -->
+    <line x1="377" y1="342" x2="377" y2="348" stroke-width="0.4" opacity="0.45"/>
+    <line x1="391" y1="343" x2="391" y2="347" stroke-width="0.3" opacity="0.18"/>
+    <line x1="405" y1="343" x2="405" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <line x1="419" y1="343" x2="419" y2="347" stroke-width="0.3" opacity="0.2"/>
+    <!-- Trailing -->
+    <line x1="433" y1="342" x2="433" y2="348" stroke-width="0.4" opacity="0.4"/>
+    <line x1="447" y1="343" x2="447" y2="347" stroke-width="0.3" opacity="0.15"/>
+  </g>
+</svg>
+
+<!-- GRAIN OVERLAY -->
+<svg class="grain" width="600" height="600" viewBox="0 0 600 600">
+  <filter id="grainFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- VIGNETTE -->
+<div class="vignette"></div>
+
+<!-- TYPOGRAPHY -->
+<div class="text-block">
+  <div class="rule"></div>
+  <div class="genre-name">future bass</div>
+  <div class="subtitle">playlist</div>
+</div>
+
+</body>
+</html>

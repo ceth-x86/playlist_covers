@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gothic Rock Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #060408; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0c0810; overflow: hidden; }
+
+  /* Deep purple-black — darker than darkwave's
+     violet, warmer than coldwave's grey. The colour
+     of a church nave at midnight — stone, candle
+     smoke, old velvet. NOT dance-club purple (mainstream
+     hardcore) but ECCLESIASTICAL purple — the purple
+     of authority, mourning, and mystery.
+     4AD, Beggars Banquet, Situation Two. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(88,32,52,0.07) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 46%, rgba(68,48,72,0.04) 0%, transparent 35%),
+      linear-gradient(180deg, #0e0a12 0%, #0c0810 44%, #060408 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — LARGE, diffuse, the reverb chamber.
+     The sound filling a cathedral space. Not
+     concentrated (hardcore) or positioned (prog
+     trance) but OMNIPRESENT — the reverb IS
+     the architecture. */
+  .glow {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+      rgba(78,32,52,0.07) 0%,
+      rgba(62,28,45,0.04) 30%,
+      rgba(48,22,38,0.02) 50%,
+      transparent 60%);
+    filter: blur(26px);
+    z-index: 2;
+  }
+
+  /* Grain — 22%. The texture of old stone, the
+     dust of crypts, tape saturation on early
+     4AD recordings. Between darkwave's 18%
+     and raw BM's 44%. HEAVIER than synth genres
+     because guitar is dirtier than synth. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 48%, transparent 28%, rgba(3,2,4,0.58) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .genre-name .line1 { color: rgba(148,78,98,0.82); }
+  .genre-name .line2 { color: rgba(108,58,78,0.38); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(88,48,62,0.14); margin-top: 10px; }
+  .rule { position: absolute; bottom: 82px; left: 40px; width: 80px; height: 1px; background: rgba(95,52,68,0.08); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Crimson-purple for the guitar wave -->
+      <linearGradient id="gothWave" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#6a2842;stop-opacity:0"/>
+        <stop offset="8%" style="stop-color:#7a3252;stop-opacity:0.2"/>
+        <stop offset="20%" style="stop-color:#8a3c5e;stop-opacity:0.42"/>
+        <stop offset="38%" style="stop-color:#984868;stop-opacity:0.58"/>
+        <stop offset="50%" style="stop-color:#a05070;stop-opacity:0.65"/>
+        <stop offset="62%" style="stop-color:#984868;stop-opacity:0.58"/>
+        <stop offset="80%" style="stop-color:#8a3c5e;stop-opacity:0.42"/>
+        <stop offset="92%" style="stop-color:#7a3252;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#6a2842;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Silver-grey for overtones -->
+      <linearGradient id="overtoneSilver" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#686878;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#787888;stop-opacity:0.12"/>
+        <stop offset="50%" style="stop-color:#888898;stop-opacity:0.22"/>
+        <stop offset="80%" style="stop-color:#787888;stop-opacity:0.12"/>
+        <stop offset="100%" style="stop-color:#686878;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="guitarGlow" x="-4%" y="-8%" width="108%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <!-- Reverb halo — MASSIVE blur radius.
+           The cathedral space. The largest sustained
+           blur in the guitar family. -->
+      <filter id="reverbHalo" x="-20%" y="-25%" width="140%" height="150%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="12"/>
+      </filter>
+
+      <filter id="chorusWash" x="-12%" y="-12%" width="124%" height="124%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+      </filter>
+
+      <filter id="sustainBlur" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+
+      <!-- Guitar displacement — more than darkwave's
+           zero, less than garage rock's 6. The chorus
+           pedal's micro-detuning. -->
+      <filter id="chorusDetune">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+
+
+    <!-- === REVERB HALOS === -->
+    <!-- The CATHEDRAL — enormous blurred ellipses
+         behind the wave. The reverb space itself.
+         Not a glow (point source) but a HALO —
+         the sound bouncing off stone walls, filling
+         the nave, sustaining for seconds.
+         
+         3 halos at different sizes/opacities —
+         the early reflections, the body, and the
+         infinite tail. -->
+    <g filter="url(#reverbHalo)">
+      <!-- Halo 1 — the body of the reverb, largest -->
+      <ellipse cx="220" cy="210" rx="130" ry="58"
+        fill="rgba(82,32,52,0.04)" opacity="0.35"/>
+
+      <!-- Halo 2 — early reflections, tighter -->
+      <ellipse cx="220" cy="208" rx="95" ry="42"
+        fill="rgba(88,38,56,0.05)" opacity="0.3"/>
+
+      <!-- Halo 3 — infinite tail, widest, faintest -->
+      <ellipse cx="220" cy="214" rx="155" ry="72"
+        fill="rgba(72,28,45,0.025)" opacity="0.25"/>
+    </g>
+
+
+    <!-- === CHORUS WASH === -->
+    <!-- The Roland Dimension D chorus — the signature
+         goth rock guitar effect. A warm doubling
+         that sits BEHIND the main wave. Not a second
+         line (darkwave echo) but a THICKENING — the
+         same note made wider. -->
+    <g filter="url(#chorusWash)" opacity="0.12">
+      <path d="M 50,208
+               C 90,208 100,192 130,192
+               C 160,192 170,224 200,224
+               C 230,224 240,192 270,194
+               C 300,196 310,226 340,226
+               C 370,226 380,210 400,212"
+        fill="none" stroke="rgba(98,48,68,0.1)" stroke-width="4"
+        stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+
+    <!-- === THE STANDING WAVE === -->
+    <!-- The guitar chord — NOT descending (darkwave)
+         or flat (coldwave) or angular (new wave).
+         A STANDING WAVE — the guitar rings at its
+         resonant frequency, sustaining in the reverb
+         chamber. The wave doesn't travel left-right;
+         it VIBRATES in place, the amplitude sustained
+         by the room itself.
+         
+         Slight organic displacement from the chorus
+         pedal — this is GUITAR, analogue, physical.
+         Strings vibrating, wood resonating, pickups
+         humming. More organic than synth waves but
+         less wild than garage rock's fuzz. -->
+    <g filter="url(#chorusDetune)">
+      <g filter="url(#guitarGlow)">
+        <path d="M 45,210
+                 C 75,210 85,190 110,190
+                 C 135,190 145,228 170,228
+                 C 195,228 205,188 230,188
+                 C 255,188 265,230 290,230
+                 C 315,230 325,192 350,192
+                 C 375,192 385,210 405,210"
+          fill="none" stroke="url(#gothWave)" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+
+    <!-- === OVERTONE STRINGS === -->
+    <!-- Silver-grey lines above and below the wave —
+         the harmonic overtones of the guitar chord.
+         The 12th fret harmonics ringing, the high
+         strings sustaining. Not melody (darkwave vocal
+         highlight) but RESONANCE — frequencies
+         excited by the fundamental. -->
+    <g filter="url(#sustainBlur)" opacity="0.15">
+      <path d="M 72,196
+               C 102,196 112,188 135,188
+               C 158,188 168,202 190,202
+               C 212,202 222,186 245,186
+               C 268,186 278,204 300,204
+               C 322,204 332,190 355,190
+               C 378,190 388,196 398,196"
+        fill="none" stroke="url(#overtoneSilver)" stroke-width="0.45"
+        stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g filter="url(#sustainBlur)" opacity="0.1">
+      <path d="M 68,224
+               C 98,224 108,234 135,234
+               C 162,234 172,218 198,218
+               C 224,218 234,236 260,236
+               C 286,236 296,220 322,220
+               C 348,220 358,232 382,232
+               C 396,232 400,224 405,224"
+        fill="none" stroke="url(#overtoneSilver)" stroke-width="0.4"
+        stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+
+    <!-- === SUSTAIN PARTICLES === -->
+    <!-- Motes of sound hanging in the reverb —
+         the sustain trails, the harmonics ringing
+         in the cathedral. These don't fall (darkwave)
+         or drift (ambient) — they HANG, suspended
+         in the reverb field, slowly decaying. -->
+    <g filter="url(#sustainBlur)" opacity="0.18">
+      <circle cx="138" cy="195" r="1.2" fill="rgba(118,62,82,0.15)"/>
+      <circle cx="198" cy="225" r="1.4" fill="rgba(122,65,85,0.18)"/>
+      <circle cx="262" cy="192" r="1.3" fill="rgba(115,58,78,0.14)"/>
+      <circle cx="325" cy="228" r="1.1" fill="rgba(112,55,75,0.12)"/>
+      <circle cx="170" cy="205" r="0.9" fill="rgba(108,52,72,0.1)"/>
+      <circle cx="290" cy="215" r="1.0" fill="rgba(110,54,74,0.11)"/>
+    </g>
+
+
+    <!-- === BPM === -->
+    <!-- Mid-tempo, DRIVING. 115-130 BPM —
+         similar to darkwave but with MORE WEIGHT.
+         The bass guitar is a physical presence.
+         Andrew Eldritch's drum machine set to
+         march tempo. The bass drum has BODY. -->
+    <g stroke="rgba(68,32,48,0.05)" stroke-width="0.2">
+      <line x1="72" y1="345" x2="72" y2="352"/><line x1="92" y1="345" x2="92" y2="352"/>
+      <line x1="112" y1="345" x2="112" y2="352"/><line x1="132" y1="345" x2="132" y2="352"/>
+      <line x1="152" y1="345" x2="152" y2="352"/><line x1="172" y1="345" x2="172" y2="352"/>
+      <line x1="192" y1="345" x2="192" y2="352"/><line x1="212" y1="345" x2="212" y2="352"/>
+      <line x1="232" y1="345" x2="232" y2="352"/><line x1="252" y1="345" x2="252" y2="352"/>
+      <line x1="272" y1="345" x2="272" y2="352"/><line x1="292" y1="345" x2="292" y2="352"/>
+      <line x1="312" y1="345" x2="312" y2="352"/><line x1="332" y1="345" x2="332" y2="352"/>
+      <line x1="352" y1="345" x2="352" y2="352"/><line x1="372" y1="345" x2="372" y2="352"/>
+    </g>
+    <!-- Kick — heavier than darkwave, march-like.
+         The Sisters' Doktor Avalanche on full power. -->
+    <g stroke="rgba(108,52,72,0.12)" stroke-width="0.45">
+      <line x1="72" y1="341" x2="72" y2="356"/>
+      <line x1="152" y1="341" x2="152" y2="356"/>
+      <line x1="232" y1="341" x2="232" y2="356"/>
+      <line x1="312" y1="341" x2="312" y2="356"/>
+    </g>
+    <!-- Bass pulse — the physical weight beneath.
+         Peter Hook's high bass line, Patricia
+         Morrison's low rumble. -->
+    <g stroke="rgba(82,38,55,0.06)" stroke-width="0.3">
+      <line x1="112" y1="343" x2="112" y2="354"/>
+      <line x1="192" y1="343" x2="192" y2="354"/>
+      <line x1="272" y1="343" x2="272" y2="354"/>
+      <line x1="352" y1="343" x2="352" y2="354"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Gothic</span><br/><span class="line2">Rock</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

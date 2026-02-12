@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech House Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #050606; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0c0e0c; overflow: hidden; }
+
+  /* Neutral dark with green-grey undertone —
+     between deep house's warm brown and Berlin's
+     cold blue-black. The most NEUTRAL colour
+     in the electronic family. The colour of
+     a well-lit DJ booth, functional spaces,
+     Ibiza terrace at 3am.
+     Toolroom, Hot Creations, Elrow, Relief. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(78,82,68,0.05) 0%, transparent 38%),
+      radial-gradient(ellipse at 50% 52%, rgba(98,82,48,0.02) 0%, transparent 28%),
+      linear-gradient(180deg, #0e100e 0%, #0c0e0c 48%, #050606 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — moderate, functional, centred.
+     Neither deep house's enveloping warmth
+     nor techno's cold absence. The glow of
+     a TOOL — present but not dramatic. */
+  .glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+      rgba(88,82,52,0.05) 0%,
+      rgba(68,72,55,0.025) 40%,
+      transparent 55%);
+    filter: blur(18px);
+    z-index: 2;
+  }
+
+  /* Grain — 16%. Moderate. Not clean (dance pop)
+     or dirty (punk). FUNCTIONAL — the texture
+     of a well-mixed track. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.16;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 50%, transparent 32%, rgba(3,3,3,0.45) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .genre-name .line1 { color: rgba(138,132,82,0.82); }
+  .genre-name .line2 { color: rgba(98,102,78,0.38); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(78,82,62,0.14); margin-top: 10px; }
+  .rule { position: absolute; bottom: 86px; left: 40px; width: 80px; height: 1px; background: rgba(85,88,68,0.07); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Warm grey-green for grid lines -->
+      <linearGradient id="techGrid" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#687062;stop-opacity:0"/>
+        <stop offset="15%" style="stop-color:#788072;stop-opacity:0.3"/>
+        <stop offset="50%" style="stop-color:#889082;stop-opacity:0.42"/>
+        <stop offset="85%" style="stop-color:#788072;stop-opacity:0.3"/>
+        <stop offset="100%" style="stop-color:#687062;stop-opacity:0"/>
+      </linearGradient>
+
+      <linearGradient id="techGridV" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#687062;stop-opacity:0"/>
+        <stop offset="15%" style="stop-color:#788072;stop-opacity:0.25"/>
+        <stop offset="50%" style="stop-color:#889082;stop-opacity:0.35"/>
+        <stop offset="85%" style="stop-color:#788072;stop-opacity:0.25"/>
+        <stop offset="100%" style="stop-color:#687062;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Amber groove pulse -->
+      <radialGradient id="groovePulse" cx="50%" cy="50%" r="40%">
+        <stop offset="0%" style="stop-color:#b89042;stop-opacity:0.35"/>
+        <stop offset="35%" style="stop-color:#a88038;stop-opacity:0.18"/>
+        <stop offset="70%" style="stop-color:#987030;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#886828;stop-opacity:0"/>
+      </radialGradient>
+
+      <filter id="toolGlow" x="-4%" y="-5%" width="108%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.8" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <filter id="pulseBlur" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+
+      <filter id="grooveBlur" x="-6%" y="-6%" width="112%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+      </filter>
+    </defs>
+
+
+    <!-- === GROOVE PULSE === -->
+    <!-- The house element — a warm pulse at the
+         centre of the grid. Where minimal house
+         has a single circle in empty space, tech
+         house has a pulse WITHIN a grid. The groove
+         that makes it HOUSE, not just techno. -->
+    <g filter="url(#pulseBlur)" opacity="0.35">
+      <circle cx="220" cy="210" r="52"
+        fill="url(#groovePulse)"/>
+    </g>
+
+
+    <!-- === THE HYBRID GRID === -->
+    <!-- A COMPACT grid — shorter and narrower than
+         Berlin techno's expansive grid, but still
+         a grid. Where Berlin fills the frame (the
+         grid IS the world), tech house's grid is
+         CONTAINED — a tool, a framework, efficient.
+         
+         4 horizontal × 4 vertical = a functional
+         16-cell structure. Not 5×5 (Detroit) or
+         expansive (Berlin). COMPACT — no wasted
+         space, no empty cells. Every element serves
+         the groove.
+         
+         Grid lines are WARMER than techno — grey-green
+         not blue-steel. The grid inherited from techno
+         but softened by house's warmth. -->
+
+    <g filter="url(#toolGlow)">
+      <!-- Horizontal grid lines -->
+      <line x1="120" y1="186" x2="320" y2="186"
+        stroke="url(#techGrid)" stroke-width="0.55"
+        stroke-linecap="butt"/>
+      <line x1="120" y1="202" x2="320" y2="202"
+        stroke="url(#techGrid)" stroke-width="0.6"
+        stroke-linecap="butt"/>
+      <line x1="120" y1="218" x2="320" y2="218"
+        stroke="url(#techGrid)" stroke-width="0.6"
+        stroke-linecap="butt"/>
+      <line x1="120" y1="234" x2="320" y2="234"
+        stroke="url(#techGrid)" stroke-width="0.55"
+        stroke-linecap="butt"/>
+
+      <!-- Vertical grid lines -->
+      <line x1="170" y1="175" x2="170" y2="245"
+        stroke="url(#techGridV)" stroke-width="0.5"
+        stroke-linecap="butt"/>
+      <line x1="220" y1="175" x2="220" y2="245"
+        stroke="url(#techGridV)" stroke-width="0.55"
+        stroke-linecap="butt"/>
+      <line x1="270" y1="175" x2="270" y2="245"
+        stroke="url(#techGridV)" stroke-width="0.5"
+        stroke-linecap="butt"/>
+    </g>
+
+
+    <!-- === GROOVE NODES === -->
+    <!-- Where grid lines intersect — small bright
+         dots. But NOT every intersection (that's
+         pure techno). Select intersections only —
+         the ones where the GROOVE lands. The
+         house influence choosing which beats
+         to emphasize.
+         
+         The pattern: a syncopated selection of
+         intersections, not all of them. The grid
+         is there but the groove CHOOSES which
+         points to activate. -->
+    <g filter="url(#toolGlow)">
+      <!-- Active nodes — the groove pattern -->
+      <circle cx="170" cy="202" r="2.2"
+        fill="rgba(158,128,62,0.45)"/>
+      <circle cx="220" cy="186" r="2.0"
+        fill="rgba(152,122,58,0.4)"/>
+      <circle cx="270" cy="218" r="2.3"
+        fill="rgba(162,132,65,0.48)"/>
+      <circle cx="170" cy="234" r="1.8"
+        fill="rgba(148,118,55,0.35)"/>
+      <circle cx="220" cy="218" r="2.5"
+        fill="rgba(168,138,68,0.52)"/>
+      <circle cx="270" cy="202" r="1.9"
+        fill="rgba(155,125,60,0.38)"/>
+
+      <!-- Ghost nodes — faint, the grid remembers
+           but the groove doesn't activate -->
+      <circle cx="170" cy="186" r="1.2"
+        fill="rgba(108,108,82,0.12)"/>
+      <circle cx="270" cy="186" r="1.1"
+        fill="rgba(105,105,80,0.1)"/>
+      <circle cx="220" cy="234" r="1.3"
+        fill="rgba(112,112,85,0.14)"/>
+      <circle cx="170" cy="218" r="1.0"
+        fill="rgba(102,102,78,0.08)"/>
+      <circle cx="270" cy="234" r="1.0"
+        fill="rgba(100,100,75,0.08)"/>
+      <circle cx="220" cy="202" r="1.1"
+        fill="rgba(105,105,80,0.1)"/>
+    </g>
+
+
+    <!-- === PERCUSSIVE SCATTER === -->
+    <!-- Small marks between grid nodes — the
+         percussion elements: congas, bongos,
+         shakers, claps. The elements that make
+         tech house GROOVY, not mechanical.
+         Not on the grid — BETWEEN it. -->
+    <g filter="url(#grooveBlur)" opacity="0.15">
+      <circle cx="192" cy="194" r="0.9" fill="rgba(128,118,72,0.18)"/>
+      <circle cx="245" cy="208" r="1.0" fill="rgba(132,122,75,0.2)"/>
+      <circle cx="198" cy="225" r="0.8" fill="rgba(125,115,68,0.15)"/>
+      <circle cx="248" cy="192" r="0.7" fill="rgba(122,112,65,0.12)"/>
+      <circle cx="183" cy="212" r="0.9" fill="rgba(128,118,72,0.16)"/>
+      <circle cx="258" cy="228" r="0.8" fill="rgba(125,115,68,0.14)"/>
+      <circle cx="205" cy="196" r="0.6" fill="rgba(118,108,62,0.1)"/>
+      <circle cx="235" cy="222" r="0.7" fill="rgba(120,110,65,0.12)"/>
+    </g>
+
+
+    <!-- === BPM === -->
+    <!-- 124-130 BPM — slightly faster than deep
+         house, slightly slower than Berlin techno.
+         The FUNCTIONAL tempo — fast enough to drive,
+         slow enough to groove. The DJ weapon tempo.
+         
+         Kick is MEDIUM — heavier than deep house's
+         soft pulse, lighter than Berlin's bunker
+         weight. EFFECTIVE, not dramatic. -->
+    <g stroke="rgba(68,72,58,0.05)" stroke-width="0.2">
+      <line x1="72" y1="345" x2="72" y2="352"/><line x1="90" y1="345" x2="90" y2="352"/>
+      <line x1="108" y1="345" x2="108" y2="352"/><line x1="126" y1="345" x2="126" y2="352"/>
+      <line x1="144" y1="345" x2="144" y2="352"/><line x1="162" y1="345" x2="162" y2="352"/>
+      <line x1="180" y1="345" x2="180" y2="352"/><line x1="198" y1="345" x2="198" y2="352"/>
+      <line x1="216" y1="345" x2="216" y2="352"/><line x1="234" y1="345" x2="234" y2="352"/>
+      <line x1="252" y1="345" x2="252" y2="352"/><line x1="270" y1="345" x2="270" y2="352"/>
+      <line x1="288" y1="345" x2="288" y2="352"/><line x1="306" y1="345" x2="306" y2="352"/>
+      <line x1="324" y1="345" x2="324" y2="352"/><line x1="342" y1="345" x2="342" y2="352"/>
+      <line x1="360" y1="345" x2="360" y2="352"/><line x1="378" y1="345" x2="378" y2="352"/>
+    </g>
+    <!-- Kick — medium, functional -->
+    <g stroke="rgba(118,105,58,0.11)" stroke-width="0.42">
+      <line x1="72" y1="342" x2="72" y2="355"/>
+      <line x1="144" y1="342" x2="144" y2="355"/>
+      <line x1="216" y1="342" x2="216" y2="355"/>
+      <line x1="288" y1="342" x2="288" y2="355"/>
+      <line x1="360" y1="342" x2="360" y2="355"/>
+    </g>
+    <!-- Percussion offbeat — the groove element -->
+    <g stroke="rgba(98,92,58,0.06)" stroke-width="0.25">
+      <line x1="108" y1="344" x2="108" y2="353"/>
+      <line x1="180" y1="344" x2="180" y2="353"/>
+      <line x1="252" y1="344" x2="252" y2="353"/>
+      <line x1="324" y1="344" x2="324" y2="353"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Tech</span><br/><span class="line2">House</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

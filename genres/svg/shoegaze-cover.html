@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shoegaze Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #06060e; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0c0c16; overflow: hidden; }
+
+  /* Deep blue-dark — darker and denser than
+     dream pop's pre-dawn blue. Where dream pop
+     is the sky BEFORE sunrise, shoegaze is the
+     sky DURING a blizzard — you can't see
+     through it. Creation Records, 4AD, Relapse. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(98,82,118,0.07) 0%, transparent 40%),
+      radial-gradient(ellipse at 52% 50%, rgba(108,98,88,0.03) 0%, transparent 30%),
+      linear-gradient(180deg, #0e0e18 0%, #0c0c16 44%, #06060e 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — WIDE, DIFFUSE, HEAVY. Not dream pop's
+     gentle luminance — a PRESSURE of light behind
+     the wall. You know there's brightness somewhere
+     behind all that guitar, you just can't reach it.
+     Like headlights in fog. -->
+  .glow {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+      rgba(108,88,118,0.08) 0%,
+      rgba(88,75,98,0.05) 28%,
+      rgba(72,62,82,0.025) 45%,
+      transparent 58%);
+    filter: blur(28px);
+    z-index: 2;
+  }
+
+  /* Grain — 28%. HEAVY. The opposite of dream
+     pop's pristine 12%. The grain is the guitar
+     distortion, the tape saturation, the noise
+     floor of 15 stacked effects pedals. The
+     texture IS the music. Kevin Shields'
+     Jazzmaster through a Yamaha SPX90 through
+     a Marshall through a reverse reverb through
+     a tremolo through another reverb. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.28;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 48%, transparent 28%, rgba(3,3,7,0.52) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: rgba(148,128,158,0.78);
+  }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(102,88,108,0.14); margin-top: 10px; }
+  .rule { position: absolute; bottom: 78px; left: 40px; width: 80px; height: 1px; background: rgba(112,95,118,0.07); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Grey-violet for the wall -->
+      <linearGradient id="wallGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#706088;stop-opacity:0"/>
+        <stop offset="8%" style="stop-color:#807098;stop-opacity:0.18"/>
+        <stop offset="22%" style="stop-color:#9080a8;stop-opacity:0.35"/>
+        <stop offset="42%" style="stop-color:#9888b0;stop-opacity:0.48"/>
+        <stop offset="58%" style="stop-color:#9888b0;stop-opacity:0.48"/>
+        <stop offset="78%" style="stop-color:#9080a8;stop-opacity:0.35"/>
+        <stop offset="92%" style="stop-color:#807098;stop-opacity:0.18"/>
+        <stop offset="100%" style="stop-color:#706088;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Pale feedback white for overtone -->
+      <linearGradient id="feedbackWhite" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#a098a8;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#b8b0c0;stop-opacity:0.08"/>
+        <stop offset="50%" style="stop-color:#c8c0d0;stop-opacity:0.15"/>
+        <stop offset="80%" style="stop-color:#b8b0c0;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#a098a8;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- THE WALL BLUR — the combined effect of
+           all the pedals. Multiple blur stages that
+           merge the lines together.
+           stdDeviation=14 — second only to dream
+           pop's 16, but applied to DENSE content
+           not sparse circles, creating MORE visual
+           mass than any other cover. -->
+      <filter id="wallBlur" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="14"/>
+      </filter>
+
+      <filter id="pedalBlur" x="-12%" y="-12%" width="124%" height="124%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+      </filter>
+
+      <filter id="tremoloBlur" x="-6%" y="-6%" width="112%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <!-- Tremolo displacement — the vibrato arm,
+           the chorus pedal, the slight detuning.
+           Scale 3 — between gothic rock's 2.5 and
+           garage rock's heavy displacement. -->
+      <filter id="tremoloShake">
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+
+      <filter id="buriedBlur" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+
+      <filter id="feedbackGlow" x="-4%" y="-4%" width="108%" height="108%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
+      </filter>
+    </defs>
+
+
+    <!-- === THE WALL — DEEP LAYER === -->
+    <!-- The deepest layer: the blurred mass of
+         ALL the guitars merged together. Individual
+         lines are still there but they've been so
+         heavily processed they've become a single
+         FIELD of sound. This is what you hear when
+         you stand in front of the amp stack at an
+         MBV show — not individual notes but a
+         PRESSURE of frequency. -->
+    <g filter="url(#wallBlur)" opacity="0.35">
+      <line x1="40" y1="195" x2="400" y2="195"
+        stroke="rgba(108,88,118,0.12)" stroke-width="5"/>
+      <line x1="40" y1="205" x2="400" y2="205"
+        stroke="rgba(112,92,122,0.14)" stroke-width="6"/>
+      <line x1="40" y1="215" x2="400" y2="215"
+        stroke="rgba(108,88,118,0.12)" stroke-width="5"/>
+      <line x1="40" y1="225" x2="400" y2="225"
+        stroke="rgba(105,85,115,0.1)" stroke-width="4"/>
+    </g>
+
+
+    <!-- === THE WALL — MID LAYER === -->
+    <!-- The pedal chain layer: individual guitar
+         lines still distinguishable but heavily
+         blurred. 7 PARALLEL LINES stacked vertically,
+         each one a guitar track (or the same guitar
+         multi-tracked, or two guitars in stereo,
+         or one guitar through 3 amps).
+         
+         PARALLEL — not converging (post-punk),
+         not diverging (prog), not crossing (nu metal).
+         PARALLEL — every line does the same thing
+         at the same time. The wall has no counterpoint,
+         no dialogue. Just MASS. -->
+    <g filter="url(#tremoloShake)">
+      <g filter="url(#pedalBlur)" opacity="0.35">
+        <line x1="50" y1="190" x2="390" y2="190"
+          stroke="url(#wallGrad)" stroke-width="1.2"
+          stroke-linecap="round"/>
+        <line x1="45" y1="197" x2="395" y2="197"
+          stroke="url(#wallGrad)" stroke-width="1.4"
+          stroke-linecap="round"/>
+        <line x1="48" y1="204" x2="392" y2="204"
+          stroke="url(#wallGrad)" stroke-width="1.5"
+          stroke-linecap="round"/>
+        <line x1="42" y1="211" x2="398" y2="211"
+          stroke="url(#wallGrad)" stroke-width="1.6"
+          stroke-linecap="round"/>
+        <line x1="48" y1="218" x2="392" y2="218"
+          stroke="url(#wallGrad)" stroke-width="1.5"
+          stroke-linecap="round"/>
+        <line x1="45" y1="225" x2="395" y2="225"
+          stroke="url(#wallGrad)" stroke-width="1.3"
+          stroke-linecap="round"/>
+        <line x1="50" y1="232" x2="390" y2="232"
+          stroke="url(#wallGrad)" stroke-width="1.1"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === THE WALL — SURFACE LAYER === -->
+    <!-- The top: the tremolo-picked guitar that
+         you can ALMOST distinguish from the wall.
+         The lead that's buried in the mix but
+         still there. Thinner, slightly brighter.
+         With tremoloBlur — visible but not sharp. -->
+    <g filter="url(#tremoloShake)">
+      <g filter="url(#tremoloBlur)" opacity="0.25">
+        <line x1="62" y1="200" x2="378" y2="200"
+          stroke="rgba(148,128,162,0.35)" stroke-width="0.8"
+          stroke-linecap="round"/>
+        <line x1="58" y1="210" x2="382" y2="210"
+          stroke="rgba(152,132,168,0.38)" stroke-width="0.9"
+          stroke-linecap="round"/>
+        <line x1="65" y1="220" x2="375" y2="220"
+          stroke="rgba(145,125,158,0.32)" stroke-width="0.75"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === BURIED VOCAL === -->
+    <!-- The voice INSIDE the wall. Not above it
+         (dream pop's vocal bloom), not below it
+         (hip-hop's flow), not riding it (dance pop's
+         highlight). INSIDE — you can barely hear it
+         through all the guitar. Bilinda Butcher
+         singing from behind 15 Marshall stacks.
+         
+         A faint, diffuse, horizontal shape WITHIN
+         the wall, slightly lighter in colour.
+         You can ALMOST see it. Almost. -->
+    <g filter="url(#buriedBlur)" opacity="0.12">
+      <ellipse cx="220" cy="210" rx="85" ry="8"
+        fill="rgba(148,138,128,0.08)"/>
+    </g>
+
+
+    <!-- === FEEDBACK PARTICLES === -->
+    <!-- Pale points of light — the feedback
+         harmonics that emerge from the wall
+         unpredictably. NOT sparkles (happy HC)
+         or shimmer (dream pop). FEEDBACK —
+         sharp, brief, white-hot tones that
+         pierce the wall for an instant.
+         Fewer and brighter than dream pop's
+         many soft motes. -->
+    <g filter="url(#feedbackGlow)" opacity="0.2">
+      <circle cx="175" cy="202" r="1.4" fill="rgba(178,168,185,0.28)"/>
+      <circle cx="260" cy="208" r="1.6" fill="rgba(182,172,190,0.32)"/>
+      <circle cx="148" cy="215" r="1.0" fill="rgba(168,158,178,0.2)"/>
+      <circle cx="295" cy="198" r="1.2" fill="rgba(172,162,182,0.24)"/>
+      <circle cx="210" cy="225" r="1.1" fill="rgba(165,155,175,0.18)"/>
+    </g>
+
+
+    <!-- === BPM === -->
+    <!-- Mid-tempo, BURIED. The drums are there
+         but you can barely hear them beneath
+         the wall of guitar. The kick is present
+         but submerged — more felt than heard.
+         118-128 BPM, similar to alternative rock
+         but the WEIGHT of the wall makes it feel
+         slower. -->
+    <g stroke="rgba(72,62,82,0.04)" stroke-width="0.18">
+      <line x1="72" y1="345" x2="72" y2="351"/><line x1="92" y1="345" x2="92" y2="351"/>
+      <line x1="112" y1="345" x2="112" y2="351"/><line x1="132" y1="345" x2="132" y2="351"/>
+      <line x1="152" y1="345" x2="152" y2="351"/><line x1="172" y1="345" x2="172" y2="351"/>
+      <line x1="192" y1="345" x2="192" y2="351"/><line x1="212" y1="345" x2="212" y2="351"/>
+      <line x1="232" y1="345" x2="232" y2="351"/><line x1="252" y1="345" x2="252" y2="351"/>
+      <line x1="272" y1="345" x2="272" y2="351"/><line x1="292" y1="345" x2="292" y2="351"/>
+      <line x1="312" y1="345" x2="312" y2="351"/><line x1="332" y1="345" x2="332" y2="351"/>
+      <line x1="352" y1="345" x2="352" y2="351"/><line x1="372" y1="345" x2="372" y2="351"/>
+    </g>
+    <!-- Kick — present but submerged in the wall -->
+    <g stroke="rgba(112,95,118,0.08)" stroke-width="0.35">
+      <line x1="72" y1="342" x2="72" y2="355"/>
+      <line x1="152" y1="342" x2="152" y2="355"/>
+      <line x1="232" y1="342" x2="232" y2="355"/>
+      <line x1="312" y1="342" x2="312" y2="355"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Shoegaze</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

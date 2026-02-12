@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breakbeat Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #060606; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0e0c0a; overflow: hidden; }
+
+  /* Dark warm grey — not cold (Berlin techno) or
+     hot (big beat). Neutral warm — the colour of
+     a warehouse breakbeat night, concrete and
+     sweat and bass bins. Finger Lickin', Botchit
+     & Scarper, Marine Parade. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(128,92,42,0.05) 0%, transparent 40%),
+      radial-gradient(ellipse at 48% 50%, rgba(42,82,128,0.02) 0%, transparent 30%),
+      linear-gradient(180deg, #100e0c 0%, #0e0c0a 45%, #060606 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — warm, low, diffuse. The bass weight
+     beneath the scattered breaks. */
+  .glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 260px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+      rgba(118,82,38,0.05) 0%,
+      rgba(88,62,28,0.025) 38%,
+      transparent 55%);
+    filter: blur(20px);
+    z-index: 2;
+  }
+
+  /* Grain — 20%. Warehouse texture, not polished
+     (dance pop) or destroyed (grindcore). The
+     grit of breakbeat culture — functional dirt. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.20;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 48%, transparent 32%, rgba(3,3,3,0.48) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: rgba(178,128,58,0.85);
+  }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(118,85,42,0.15); margin-top: 10px; }
+  .rule { position: absolute; bottom: 78px; left: 40px; width: 80px; height: 1px; background: rgba(125,90,45,0.08); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Warm amber-orange for kicks -->
+      <radialGradient id="kickImpact" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" style="stop-color:#c89038;stop-opacity:0.65"/>
+        <stop offset="40%" style="stop-color:#a87830;stop-opacity:0.35"/>
+        <stop offset="100%" style="stop-color:#886028;stop-opacity:0"/>
+      </radialGradient>
+
+      <!-- Electric blue for snare accents -->
+      <radialGradient id="snareHit" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" style="stop-color:#4898c8;stop-opacity:0.55"/>
+        <stop offset="45%" style="stop-color:#3880b0;stop-opacity:0.28"/>
+        <stop offset="100%" style="stop-color:#286898;stop-opacity:0"/>
+      </radialGradient>
+
+      <filter id="impactBlur" x="-15%" y="-15%" width="130%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+
+      <filter id="hitGlow" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <filter id="ghostBlur" x="-6%" y="-6%" width="112%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+      </filter>
+    </defs>
+
+
+    <!-- === BASS PRESSURE === -->
+    <!-- The sub-bass field beneath the scattered
+         hits — breakbeat's low end is HEAVY,
+         holding the chaos together. -->
+    <g filter="url(#impactBlur)" opacity="0.08">
+      <ellipse cx="220" cy="215" rx="125" ry="25"
+        fill="rgba(108,78,35,0.05)"/>
+    </g>
+
+
+    <!-- === THE SCATTERED IMPACTS === -->
+    <!-- The central form: IMPACT MARKS at irregular
+         positions. Each one is a drum hit — kicks
+         and snares landing at unpredictable positions
+         across a horizontal field.
+         
+         vs DnB: DnB's break is DENSE (23 marks,
+         clustered, fast). Breakbeat's is SPREAD
+         (fewer marks, wider spacing, mid-tempo).
+         
+         vs Garage: garage's 2-step is PATTERN
+         (organized rows, specific skip logic).
+         Breakbeat is SCATTER — the hits could
+         land anywhere.
+         
+         vs House: house is 4/4 GRID (every beat
+         accounted for). Breakbeat is the grid
+         SHATTERED.
+         
+         HORIZONTAL arrangement — all hits on
+         approximately the same y-axis, scattered
+         across x. This is RHYTHM, not melody. -->
+
+    <g filter="url(#hitGlow)">
+      <!-- KICK IMPACTS — large amber circles at
+           irregular x positions. The breakbeat's
+           signature: the kick lands OFF the grid.
+           Varying sizes = varying accent weight. -->
+
+      <!-- Kick 1 — strong, left of centre -->
+      <circle cx="118" cy="208" r="8" fill="url(#kickImpact)" opacity="0.45"/>
+      <circle cx="118" cy="208" r="3.5" fill="rgba(168,118,48,0.55)"/>
+
+      <!-- Kick 2 — early, unexpected position -->
+      <circle cx="195" cy="210" r="7" fill="url(#kickImpact)" opacity="0.38"/>
+      <circle cx="195" cy="210" r="3.0" fill="rgba(162,112,45,0.5)"/>
+
+      <!-- Kick 3 — ghost kick, lighter -->
+      <circle cx="248" cy="212" r="5" fill="url(#kickImpact)" opacity="0.22"/>
+      <circle cx="248" cy="212" r="2.0" fill="rgba(148,102,40,0.35)"/>
+
+      <!-- Kick 4 — strong, right of centre -->
+      <circle cx="328" cy="209" r="8.5" fill="url(#kickImpact)" opacity="0.48"/>
+      <circle cx="328" cy="209" r="3.8" fill="rgba(172,122,50,0.58)"/>
+    </g>
+
+    <g filter="url(#hitGlow)">
+      <!-- SNARE HITS — electric blue, BETWEEN the
+           kicks. Smaller, sharper. The crack that
+           punctuates the break. -->
+
+      <!-- Snare 1 — offbeat, sharp -->
+      <circle cx="155" cy="206" r="5" fill="url(#snareHit)" opacity="0.4"/>
+      <circle cx="155" cy="206" r="2.2" fill="rgba(72,142,192,0.5)"/>
+
+      <!-- Snare 2 — late, syncopated -->
+      <circle cx="278" cy="211" r="5.5" fill="url(#snareHit)" opacity="0.42"/>
+      <circle cx="278" cy="211" r="2.4" fill="rgba(75,148,198,0.52)"/>
+
+      <!-- Snare 3 — ghost snare -->
+      <circle cx="362" cy="210" r="3.5" fill="url(#snareHit)" opacity="0.25"/>
+      <circle cx="362" cy="210" r="1.5" fill="rgba(62,128,178,0.35)"/>
+    </g>
+
+
+    <!-- === HI-HAT SCATTER === -->
+    <!-- Tiny marks between and around the kicks
+         and snares — the hi-hat pattern that
+         ties the scattered impacts together.
+         Rapid, light, filling the gaps. -->
+    <g filter="url(#ghostBlur)" opacity="0.2">
+      <circle cx="98" cy="208" r="1.0" fill="rgba(138,108,58,0.2)"/>
+      <circle cx="138" cy="207" r="0.8" fill="rgba(132,102,55,0.18)"/>
+      <circle cx="172" cy="209" r="0.9" fill="rgba(135,105,56,0.19)"/>
+      <circle cx="218" cy="211" r="0.7" fill="rgba(128,98,52,0.16)"/>
+      <circle cx="232" cy="210" r="1.0" fill="rgba(138,108,58,0.2)"/>
+      <circle cx="262" cy="211" r="0.8" fill="rgba(132,102,55,0.18)"/>
+      <circle cx="302" cy="209" r="0.9" fill="rgba(135,105,56,0.19)"/>
+      <circle cx="345" cy="210" r="0.7" fill="rgba(128,98,52,0.16)"/>
+      <circle cx="382" cy="210" r="0.8" fill="rgba(132,102,55,0.18)"/>
+    </g>
+
+
+    <!-- === IMPACT RINGS === -->
+    <!-- Faint circles around the strongest kicks —
+         the bass pressure radiating outward from
+         each hit. Smaller than hardcore's shockwaves,
+         more organic than techno's grid. -->
+    <g opacity="0.08">
+      <circle cx="118" cy="208" r="18" fill="none"
+        stroke="rgba(148,108,42,0.1)" stroke-width="0.4"/>
+      <circle cx="328" cy="209" r="20" fill="none"
+        stroke="rgba(152,112,45,0.12)" stroke-width="0.45"/>
+    </g>
+
+
+    <!-- === BPM === -->
+    <!-- 125-140 BPM — between house's 120-128
+         and DnB's 170+. The BREAKBEAT tempo.
+         
+         Irregular tick spacing — NOT even (techno),
+         NOT swung (garage). BROKEN — the kick
+         pattern itself determines where the
+         emphasis falls.
+         
+         The ticks reflect the scattered form:
+         clusters and gaps. -->
+    <g stroke="rgba(98,72,35,0.05)" stroke-width="0.2">
+      <line x1="72" y1="345" x2="72" y2="352"/>
+      <line x1="88" y1="345" x2="88" y2="352"/>
+      <line x1="104" y1="345" x2="104" y2="352"/>
+      <line x1="118" y1="345" x2="118" y2="352"/>
+      <line x1="138" y1="345" x2="138" y2="352"/>
+      <line x1="148" y1="345" x2="148" y2="352"/>
+      <line x1="168" y1="345" x2="168" y2="352"/>
+      <line x1="186" y1="345" x2="186" y2="352"/>
+      <line x1="198" y1="345" x2="198" y2="352"/>
+      <line x1="218" y1="345" x2="218" y2="352"/>
+      <line x1="238" y1="345" x2="238" y2="352"/>
+      <line x1="250" y1="345" x2="250" y2="352"/>
+      <line x1="268" y1="345" x2="268" y2="352"/>
+      <line x1="288" y1="345" x2="288" y2="352"/>
+      <line x1="298" y1="345" x2="298" y2="352"/>
+      <line x1="318" y1="345" x2="318" y2="352"/>
+      <line x1="338" y1="345" x2="338" y2="352"/>
+      <line x1="350" y1="345" x2="350" y2="352"/>
+      <line x1="368" y1="345" x2="368" y2="352"/>
+      <line x1="388" y1="345" x2="388" y2="352"/>
+    </g>
+    <!-- Kick accents — irregular, matching the
+         scattered impact positions above -->
+    <g stroke="rgba(148,108,48,0.12)" stroke-width="0.45">
+      <line x1="72" y1="341" x2="72" y2="356"/>
+      <line x1="148" y1="341" x2="148" y2="356"/>
+      <line x1="198" y1="341" x2="198" y2="356"/>
+      <line x1="298" y1="341" x2="298" y2="356"/>
+    </g>
+    <!-- Snare — blue-tinted offbeats -->
+    <g stroke="rgba(52,108,148,0.08)" stroke-width="0.3">
+      <line x1="118" y1="343" x2="118" y2="354"/>
+      <line x1="238" y1="343" x2="238" y2="354"/>
+      <line x1="338" y1="343" x2="338" y2="354"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Breakbeat</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!--
+  POWER NOISE — Playlist Cover
+  Design System: Playlist Cover v1
+
+  SONIC DNA ANALYSIS:
+  ═══════════════════
+  Power Noise (aka Rhythmic Noise, Rhythmic Industrial) defining features:
+  1. RHYTHM FROM NOISE — the genre's fundamental innovation: beat patterns
+     constructed ENTIRELY from noise sources. No clean kicks, no tonal synths,
+     no melodic content. The rhythm itself is made of distortion, static,
+     and processed noise. Unlike power electronics (arrhythmic wall) or
+     EBM (clean sequenced beats), power noise is STRUCTURED CHAOS —
+     recognizable rhythm patterns built from unrecognizable sound sources.
+  2. EXTREME DISTORTION CHAINS — sound is routed through multiple distortion
+     stages until the original signal is unrecognizable. But unlike a wall
+     of noise, the RHYTHM survives the processing.
+  3. INDUSTRIAL PERCUSSION AS ABSTRACTION — metal strikes, machine impacts,
+     factory rhythms pushed through so much processing they become texture
+     rather than identifiable sounds.
+  4. NO MELODY — zero tonal/pitched content. This is pure rhythm and texture.
+     The most austere genre in the industrial family after power electronics.
+  5. AGGRESSIVE TEMPO — 130-160 BPM, dancefloor-functional but punishing.
+     Faster than EBM, structured where power electronics is not.
+  6. TEXTURAL DENSITY — every frequency band is filled with noise content.
+     Dense, oppressive, but rhythmically navigable.
+
+  VISUAL TRANSLATION:
+  ═══════════════════
+  Background: True black with cold undertone (#060608) — the void,
+    no warmth, no colour bias. Darker than electro-industrial.
+  Central form: THE NOISE LATTICE — a grid pattern of beat impact points,
+    BUT each impact is rendered as a BURST OF STATIC rather than a clean
+    geometric shape. Where electro-industrial has clean dots corrupting,
+    power noise has NO clean source material — everything IS noise from
+    the start. The lattice shows rhythm (grid structure) through texture
+    (noise bursts). This is the genre's core innovation visualized.
+    4 rows × 8 columns of noise bursts, some stronger (kick equivalent),
+    some weaker (hat equivalent), some absent (rests).
+  Glow: NONE — 0.02 (near-zero). Power noise is anti-aesthetic,
+    anti-beauty. Almost no glow, just raw texture.
+    Second-lowest non-zero glow after grindcore (0.02), tied.
+  Grain: 40% — EXTREME. Fourth-highest in the entire system after
+    power electronics (48%), raw black metal (44%), and hardcore punk (42%).
+    The grain IS the aesthetic — the cover should look noisy.
+  Displacement: scale=6 — HEAVY. Tied with garage rock for second-highest
+    in the system. Everything is distorted, warped, unstable.
+  Blur: stdDev=1 — MINIMAL. Power noise is harsh and immediate,
+    not diffused. The lowest blur in this session.
+  Particles: 0 — like trap, power noise has zero decorative elements.
+    But where trap's emptiness is about negative space, power noise's
+    emptiness is because EVERYTHING is already texture — there's no
+    room for particles when the entire field is noise.
+  BPM: 145 BPM → 21 ticks at 14px, kick weight 0.65px (heavy),
+    with IRREGULAR accents — the rhythm is recognizable but the
+    emphasis shifts unpredictably, reflecting how noise-source
+    percussion creates unstable dynamic patterns.
+
+  FAMILY PLACEMENT:
+  ═══════════════════
+  Power Noise branches from the Industrial/EBM family:
+  Industrial Noise (no rhythm, all chaos) + EBM (all rhythm, clean) →
+    Power Noise (rhythm MADE OF noise — the synthesis of both)
+  Also connects to:
+  - Power Electronics: shares the noise aesthetic but PE removes rhythm;
+    PN keeps it. PE is the system's most hostile cover (grain 48%, zero glow).
+    PN is the second-most hostile.
+  - Electro Industrial: shares the corruption concept but EI starts clean
+    and degrades; PN starts degraded and finds structure within.
+  - Frenchcore: shares the distorted-kick concept but frenchcore distorts
+    a KICK; power noise builds a kick FROM noise.
+  Key artists: Converter, Winterkälte, Imminent Starvation, Noisex,
+    Hypnoskull, Sonar, P·A·L, Esplendor Geométrico
+
+  COLOUR RATIONALE:
+  ═══════════════════
+  True black (#060608): the void. No warmth (not house), no coolness
+    (not techno). Just absence.
+  Grey-white (#a0a0a0 → #606060): the colour of static/noise on an
+    untuned television. Raw signal with no tonal information.
+  Dull amber (#8a6830): the only colour — faint warmth from distortion
+    saturation. When you push noise through analog distortion, it
+    develops a slight warm bias. Very subtle.
+  NO green (not digital like electro-industrial), NO red (not error state),
+    NO purple (not dark aesthetic). Power noise is ACHROMATIC —
+    monochrome with texture, because noise has no pitch and therefore
+    no colour.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=600, height=600">
+<title>power noise — playlist cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #060608;
+    position: relative;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(
+      ellipse 50% 50% at 50% 50%,
+      transparent 0%,
+      rgba(4, 4, 5, 0.45) 45%,
+      rgba(4, 4, 5, 0.92) 100%
+    );
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* === GRAIN — 40% (EXTREME — the grain IS the aesthetic) === */
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 11;
+    pointer-events: none;
+    opacity: 0.40;
+  }
+
+  /* === NEAR-ZERO GLOW — 0.02, barely visible === */
+  .anti-glow {
+    position: absolute;
+    width: 240px;
+    height: 180px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      ellipse 80% 70% at 50% 50%,
+      rgba(138, 104, 48, 0.02) 0%,
+      transparent 70%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  .bpm-strip {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 15;
+  }
+  .rule {
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+  }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 42px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>
+</head>
+<body>
+
+<!-- NEAR-ZERO GLOW -->
+<div class="anti-glow"></div>
+
+<!-- CENTRAL FORM: The Noise Lattice -->
+<svg class="central-form" width="440" height="440" viewBox="0 0 440 440">
+  <defs>
+    <!--
+      HEAVY DISPLACEMENT: scale=6
+      Tied for second-highest in the system (with garage rock).
+      Everything warps. The lattice structure is BARELY holding.
+    -->
+    <filter id="noiseDistort" x="-15%" y="-15%" width="130%" height="130%">
+      <feTurbulence type="turbulence" baseFrequency="0.035 0.07" numOctaves="4" seed="303" result="turb"/>
+      <feDisplacementMap in="SourceGraphic" in2="turb" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Minimal blur: stdDev=1 (harsh, immediate) -->
+    <filter id="harshBlur">
+      <feGaussianBlur stdDeviation="1"/>
+    </filter>
+
+    <!--
+      NOISE BURST FILTER — the key innovation for this cover
+      Each "beat" in the lattice is rendered through its own noise texture,
+      simulating the way power noise builds percussive sounds from static.
+      feTurbulence generates the noise; feComposite clips it to the shape.
+    -->
+    <filter id="noiseBurst" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.15" numOctaves="5" seed="140" result="staticNoise"/>
+      <feColorMatrix type="saturate" values="0" in="staticNoise" result="greyNoise"/>
+      <feComposite operator="in" in="greyNoise" in2="SourceGraphic" result="clipped"/>
+      <feGaussianBlur stdDeviation="0.8" in="clipped"/>
+    </filter>
+
+    <!-- Secondary noise texture for variation -->
+    <filter id="noiseBurst2" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.2" numOctaves="4" seed="250" result="staticNoise"/>
+      <feColorMatrix type="saturate" values="0" in="staticNoise" result="greyNoise"/>
+      <feComposite operator="in" in="greyNoise" in2="SourceGraphic" result="clipped"/>
+      <feGaussianBlur stdDeviation="0.6" in="clipped"/>
+    </filter>
+  </defs>
+
+  <!--
+    THE NOISE LATTICE
+    ═══════════════════
+    4 rows × 8 columns of noise bursts — a beat grid where every
+    impact is rendered as static rather than a clean shape.
+
+    CRITICAL DISTINCTION from other grid forms in the system:
+    - Detroit Techno grid: clean lines, chrome, precise → FUNCTIONAL MACHINE
+    - Electro Industrial grid: clean→corrupted progression → FAILING MACHINE
+    - Power Noise lattice: no clean source, all noise → NOISE IS THE MACHINE
+
+    The grid structure (rows/columns) is RHYTHM.
+    The noise texture of each cell IS THE SOUND.
+    Rhythm exists, but it's made of chaos.
+
+    Impact sizes vary:
+    - LARGE (r=12-14): kick-equivalent — loudest noise burst
+    - MEDIUM (r=8-10): snare-equivalent
+    - SMALL (r=5-6): hat-equivalent — quietest burst
+    - ABSENT: rest — negative space in the pattern
+
+    All impacts are circles rendered through the noiseBurst filter,
+    so they appear as irregular static clusters, not clean dots.
+  -->
+
+  <g filter="url(#noiseDistort)">
+
+    <!--
+      ROW 1 (y=178): Primary kick pattern
+      Large bursts on downbeats, rests between
+    -->
+    <circle cx="110" cy="178" r="13" fill="#a0a0a0" filter="url(#noiseBurst)" opacity="0.55"/>
+    <circle cx="150" cy="178" r="6" fill="#808080" filter="url(#noiseBurst2)" opacity="0.25"/>
+    <!-- rest -->
+    <circle cx="220" cy="178" r="14" fill="#a0a0a0" filter="url(#noiseBurst)" opacity="0.5"/>
+    <circle cx="258" cy="178" r="5" fill="#707070" filter="url(#noiseBurst2)" opacity="0.2"/>
+    <circle cx="290" cy="178" r="12" fill="#a0a0a0" filter="url(#noiseBurst)" opacity="0.5"/>
+    <!-- rest -->
+    <circle cx="348" cy="178" r="13" fill="#a0a0a0" filter="url(#noiseBurst)" opacity="0.45"/>
+
+    <!--
+      ROW 2 (y=213): Snare/clap pattern
+      Off-beat emphasis, medium bursts
+    -->
+    <!-- rest -->
+    <circle cx="140" cy="213" r="9" fill="#909090" filter="url(#noiseBurst)" opacity="0.4"/>
+    <circle cx="180" cy="213" r="6" fill="#707070" filter="url(#noiseBurst2)" opacity="0.22"/>
+    <circle cx="215" cy="213" r="10" fill="#909090" filter="url(#noiseBurst)" opacity="0.42"/>
+    <!-- rest -->
+    <circle cx="278" cy="213" r="9" fill="#909090" filter="url(#noiseBurst)" opacity="0.38"/>
+    <circle cx="318" cy="213" r="6" fill="#707070" filter="url(#noiseBurst2)" opacity="0.2"/>
+    <circle cx="350" cy="213" r="10" fill="#909090" filter="url(#noiseBurst)" opacity="0.4"/>
+
+    <!--
+      ROW 3 (y=248): Hi-hat pattern
+      Small, rapid, dense — noise crackle
+    -->
+    <circle cx="108" cy="248" r="5" fill="#808080" filter="url(#noiseBurst2)" opacity="0.28"/>
+    <circle cx="138" cy="248" r="5" fill="#808080" filter="url(#noiseBurst2)" opacity="0.25"/>
+    <circle cx="168" cy="248" r="6" fill="#808080" filter="url(#noiseBurst2)" opacity="0.3"/>
+    <circle cx="198" cy="248" r="5" fill="#707070" filter="url(#noiseBurst2)" opacity="0.22"/>
+    <circle cx="228" cy="248" r="6" fill="#808080" filter="url(#noiseBurst2)" opacity="0.3"/>
+    <circle cx="258" cy="248" r="5" fill="#808080" filter="url(#noiseBurst2)" opacity="0.25"/>
+    <circle cx="288" cy="248" r="5" fill="#707070" filter="url(#noiseBurst2)" opacity="0.22"/>
+    <circle cx="318" cy="248" r="6" fill="#808080" filter="url(#noiseBurst2)" opacity="0.28"/>
+    <circle cx="348" cy="248" r="5" fill="#808080" filter="url(#noiseBurst2)" opacity="0.25"/>
+
+    <!--
+      ROW 4 (y=283): Sub-bass noise floor
+      Large but FAINT — the low-frequency noise rumble
+      beneath the rhythm. Few hits, maximum weight.
+    -->
+    <circle cx="120" cy="283" r="14" fill="#8a6830" filter="url(#noiseBurst)" opacity="0.2"/>
+    <!-- long rest -->
+    <circle cx="220" cy="283" r="16" fill="#8a6830" filter="url(#noiseBurst)" opacity="0.22"/>
+    <!-- long rest -->
+    <circle cx="330" cy="283" r="14" fill="#8a6830" filter="url(#noiseBurst)" opacity="0.18"/>
+
+  </g>
+
+  <!--
+    ZERO PARTICLES.
+    Not because of minimalism (trap) but because the ENTIRE FIELD
+    is already texture. There's no room for decorative elements
+    when every surface is noise. The grain at 40% fills the space
+    that particles would occupy in other covers.
+  -->
+
+  <!--
+    LATTICE GHOST GRID — extremely faint structural lines
+    showing where the grid WOULD be if the noise weren't
+    destroying it. The skeleton of rhythm beneath the chaos.
+  -->
+  <g stroke="#404040" stroke-width="0.3" opacity="0.04">
+    <!-- Horizontal row guides -->
+    <line x1="90" y1="178" x2="370" y2="178"/>
+    <line x1="90" y1="213" x2="370" y2="213"/>
+    <line x1="90" y1="248" x2="370" y2="248"/>
+    <line x1="90" y1="283" x2="370" y2="283"/>
+    <!-- Vertical column guides -->
+    <line x1="110" y1="165" x2="110" y2="296"/>
+    <line x1="150" y1="165" x2="150" y2="296"/>
+    <line x1="190" y1="165" x2="190" y2="296"/>
+    <line x1="230" y1="165" x2="230" y2="296"/>
+    <line x1="270" y1="165" x2="270" y2="296"/>
+    <line x1="310" y1="165" x2="310" y2="296"/>
+    <line x1="350" y1="165" x2="350" y2="296"/>
+  </g>
+
+</svg>
+
+<!--
+  BPM STRIP — 145 BPM
+  ═══════════════════
+  21 ticks at 14px, kick weight 0.65px (HEAVY)
+  IRREGULAR accents — the emphasis shifts unpredictably.
+  Because the percussion is built from noise, the dynamic
+  envelope of each hit varies. Some hits are louder/taller
+  than expected, some quieter. The rhythm is there but
+  the dynamics are unstable.
+  Starting x = (600 - 20*14) / 2 = 160
+-->
+<svg class="bpm-strip" width="600" height="600" viewBox="0 0 600 600">
+  <g stroke="#ffffff" stroke-linecap="round">
+    <!-- Irregular accent pattern — dynamics shift unpredictably -->
+    <line x1="160" y1="341" x2="160" y2="349" stroke-width="0.65" opacity="0.48"/>
+    <line x1="174" y1="343" x2="174" y2="347" stroke-width="0.35" opacity="0.22"/>
+    <line x1="188" y1="342" x2="188" y2="349" stroke-width="0.6" opacity="0.4"/>
+    <line x1="202" y1="343" x2="202" y2="347" stroke-width="0.3" opacity="0.18"/>
+    <line x1="216" y1="341" x2="216" y2="350" stroke-width="0.65" opacity="0.5"/>
+    <line x1="230" y1="342" x2="230" y2="348" stroke-width="0.5" opacity="0.32"/>
+    <line x1="244" y1="343" x2="244" y2="347" stroke-width="0.3" opacity="0.2"/>
+    <line x1="258" y1="341" x2="258" y2="349" stroke-width="0.65" opacity="0.45"/>
+    <line x1="272" y1="343" x2="272" y2="348" stroke-width="0.4" opacity="0.28"/>
+    <line x1="286" y1="342" x2="286" y2="349" stroke-width="0.6" opacity="0.42"/>
+    <line x1="300" y1="343" x2="300" y2="347" stroke-width="0.35" opacity="0.2"/>
+    <line x1="314" y1="341" x2="314" y2="350" stroke-width="0.65" opacity="0.5"/>
+    <line x1="328" y1="343" x2="328" y2="347" stroke-width="0.3" opacity="0.18"/>
+    <line x1="342" y1="342" x2="342" y2="349" stroke-width="0.55" opacity="0.38"/>
+    <line x1="356" y1="341" x2="356" y2="349" stroke-width="0.65" opacity="0.48"/>
+    <line x1="370" y1="343" x2="370" y2="347" stroke-width="0.35" opacity="0.22"/>
+    <line x1="384" y1="342" x2="384" y2="349" stroke-width="0.6" opacity="0.42"/>
+    <line x1="398" y1="343" x2="398" y2="348" stroke-width="0.45" opacity="0.3"/>
+    <line x1="412" y1="341" x2="412" y2="349" stroke-width="0.65" opacity="0.45"/>
+    <line x1="426" y1="343" x2="426" y2="347" stroke-width="0.3" opacity="0.18"/>
+    <line x1="440" y1="342" x2="440" y2="348" stroke-width="0.55" opacity="0.35"/>
+  </g>
+</svg>
+
+<!-- GRAIN OVERLAY -->
+<svg class="grain" width="600" height="600" viewBox="0 0 600 600">
+  <filter id="grainFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- VIGNETTE -->
+<div class="vignette"></div>
+
+<!-- TYPOGRAPHY -->
+<div class="text-block">
+  <div class="rule"></div>
+  <div class="genre-name">power noise</div>
+  <div class="subtitle">playlist</div>
+</div>
+
+</body>
+</html>

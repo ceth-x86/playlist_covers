@@ -1,0 +1,440 @@
+<!--
+  INDIE SYNTHPOP — Playlist Cover
+  Design System: Playlist Cover v1
+
+  SONIC DNA ANALYSIS:
+  ═══════════════════
+  Indie Synthpop's defining sonic features:
+  1. THE PERSONAL MACHINE — synthesizers used not for spectacle
+     (classic synthpop) or dance function (electropop) but for
+     INTIMACY. The synth becomes a confessional tool. Bedroom
+     production with analog machines, the hum of a Juno-60 in a
+     small room, the warmth of tape saturation on a drum machine.
+     The machine is personal, not industrial.
+  2. LO-FI SYNTH WARMTH — deliberately imperfect synthesis. Detuned
+     oscillators, tape wow/flutter, VHS-quality reverb, chorus that
+     wobbles. Where classic synthpop was clean and polished (Vince
+     Clarke's precision), indie synthpop is warm and hazy (Washed Out's
+     blur, Toro y Moi's saturated fog).
+  3. DRUM MACHINE AS HEARTBEAT — the 808/606/LinnDrum not as
+     dance-floor driver (house, techno) but as steady, personal
+     pulse. Understated, present, the room's heartbeat rather than
+     the club's kick.
+  4. INTROSPECTIVE LYRICS — emotional vulnerability wrapped in synth
+     textures. Nostalgia, yearning, memory, the bittersweetness of
+     growing up. The lyrics could be indie folk; the instruments are
+     electronic.
+  5. CHILLWAVE/GLOW-FI AESTHETIC — the warm, hazy, sun-drenched
+     quality that characterized the late 2000s wave. Not the cold
+     chrome of 80s synthpop or the hard neon of electropop. Instead:
+     sunset tones, VHS warmth, memory-filtered light.
+  6. DIY PRODUCTION — recorded at home, on limited equipment, with
+     deliberate imperfection as aesthetic. The bedroom as studio,
+     the limitations as creative choices.
+
+  VISUAL TRANSLATION:
+  ═══════════════════
+  Background: Warm dark navy (#0a0810) — warmer than electropop's
+    clinical blue, cooler than pop rock's neutral grey. The colour
+    of a bedroom at dusk, with the synth's LEDs providing the only
+    light. Has a subtle purple-warm undertone — the VHS aesthetic.
+  Central form: THE SOFT-EDGED PULSE GRID — a small, intimate grid
+    of synth pulses (3×3 or 4×3 grid of rounded rectangles) that
+    represents the drum machine/sequencer interface, BUT with
+    deliberately softened edges. The grid is the MACHINE; the soft
+    edges are the HUMAN TOUCH. Classic synthpop would render this
+    grid with sharp chrome edges. Indie synthpop BLURS them.
+    The pulses glow with warm colours — sunset tones, VHS warmth —
+    not cold neon. Some pulses are brighter (active steps in the
+    sequence), some dimmer (inactive/resting), creating a pattern
+    that suggests a beat in progress.
+  Glow: Warm sunset haze (0.07) — the golden-hour quality, the
+    VHS-warmth wash. Not sharp and directional (stage lighting) but
+    diffuse and enveloping (memory-filtered).
+  Grain: 22% — deliberately HIGHER than classic synthpop would be.
+    This is the lo-fi texture: tape hiss, VHS artifacts, the warm
+    noise floor of bedroom production. Higher than pop rock (12%)
+    or baroque pop (14%) but lower than industrial genres.
+  Displacement: scale=1 — subtle analog wobble. The VCO drift,
+    the tape flutter, the slight detuning that makes analog synths
+    feel alive. Not deliberate warping (psychedelic) but organic
+    imperfection (human).
+  Blur: stdDev=6 — SIGNIFICANT. The haze, the glow, the
+    chillwave fog. More blur than pop rock (3) or chamber pop (2).
+    This is the VHS quality — the warm, slightly unfocused quality
+    of memory.
+  Particles: 4 warm motes — sunset-coloured, drifting gently.
+    Representing the nostalgic quality: each particle is a memory
+    fragment, a warm detail floating in the haze. Not organized
+    (baroque pop's placed filigree) but not chaotic (psychedelic's
+    spectrum scatter). Just... floating. Warmly.
+  BPM: ~115 BPM → 16 ticks at 18px, kick weight 0.35px (light,
+    understated). Drum machine pulse — even, steady, unpretentious.
+    Neither club-heavy nor absent. The heartbeat of a bedroom.
+
+  FAMILY PLACEMENT:
+  ═══════════════════
+  Indie Synthpop bridges two family trees:
+  FROM SYNTHPOP: Classic Synthpop → Electropop → (branch) Indie Synthpop
+  FROM INDIE: Indie Rock → Indie Pop → (branch) Indie Synthpop
+  The convergence point where indie's DIY intimacy meets synth's
+  electronic palette.
+  Connects to:
+  - Classic Synthpop: shares the synth palette but OPPOSITE aesthetic —
+    classic is polished/maximal, indie is lo-fi/intimate.
+  - Dream Pop: shares the haze, the blur, the atmospheric wash.
+    Indie synthpop is dream pop with a drum machine instead of
+    reverb guitar.
+  - Chillwave: indie synthpop's most hazy, nostalgic variant.
+    Washed Out, Neon Indian, Toro y Moi.
+  - Chamber Pop: shares the intimacy and care, but different
+    instrument palette (synths vs strings).
+  Key artists: MGMT (early), M83, CHVRCHES, Passion Pit, Washed Out,
+    Toro y Moi, Neon Indian, Purity Ring, Grimes (early),
+    Beach House (bridges dream pop), LCD Soundsystem (bridges dance-punk)
+
+  COLOUR RATIONALE:
+  ═══════════════════
+  Warm dark navy (#0a0810): bedroom dusk, VHS warmth
+  Sunset amber-peach (#d8a060 → #c89050): the golden-hour light,
+    the warm colour of nostalgia. Not the sharp gold of house or
+    the bright amber of jazz. This is SOFTER, more peach, more
+    sunset — the quality of light filtered through memory.
+  Soft lavender-pink (#c090b8 → #b080a8): the synth pad colour —
+    warm, slightly purple, the glow of an analog synth's LED
+    reflecting off a bedroom wall. Connects to the VHS aesthetic.
+  Warm cream (#e0d0b8): the brightest pulses, the active steps —
+    still warm, never harsh white.
+  The palette is WARM PASTELS — not neon (electropop), not chrome
+    (classic synthpop), not vivid (psychedelic). Soft, muted,
+    warm. The colours of a Polaroid left in the sun.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=600, height=600">
+<title>indie synthpop — playlist cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #0a0810;
+    position: relative;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(
+      ellipse 58% 58% at 50% 48%,
+      transparent 0%,
+      rgba(6, 4, 10, 0.3) 55%,
+      rgba(6, 4, 10, 0.86) 100%
+    );
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* === GRAIN — 22% (lo-fi tape warmth) === */
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 11;
+    pointer-events: none;
+    opacity: 0.22;
+  }
+
+  /* === SUNSET HAZE GLOW — warm, diffuse, memory-filtered === */
+  .sunset-haze {
+    position: absolute;
+    width: 300px;
+    height: 260px;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      ellipse 85% 80% at 50% 50%,
+      rgba(216, 160, 96, 0.07) 0%,
+      rgba(200, 144, 80, 0.04) 35%,
+      rgba(192, 144, 184, 0.025) 55%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  .bpm-strip {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 15;
+  }
+  .rule {
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+  }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 34px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>
+</head>
+<body>
+
+<!-- SUNSET HAZE -->
+<div class="sunset-haze"></div>
+
+<!-- CENTRAL FORM: The Soft-Edged Pulse Grid -->
+<svg class="central-form" width="440" height="440" viewBox="0 0 440 440">
+  <defs>
+    <!-- Analog wobble displacement: scale=1 -->
+    <filter id="analogWobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="turbulence" baseFrequency="0.01 0.02" numOctaves="2" seed="2009" result="turb"/>
+      <feDisplacementMap in="SourceGraphic" in2="turb" scale="1" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- VHS haze blur: stdDev=6 (the chillwave fog) -->
+    <filter id="vhsHaze">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+
+    <!-- Pulse glow — warm, soft-edged -->
+    <filter id="pulseGlow">
+      <feGaussianBlur stdDeviation="3" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Softer pulse for inactive steps -->
+    <filter id="dimPulse">
+      <feGaussianBlur stdDeviation="4" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Memory mote glow -->
+    <filter id="memoryGlow">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+  </defs>
+
+  <!--
+    THE SOFT-EDGED PULSE GRID
+    ═══════════════════
+    A 4×3 grid of rounded rectangles — the drum machine/sequencer
+    interface, the step sequencer's visual language. BUT with
+    deliberately soft edges, warm colours, and a haze filter.
+
+    CRITICAL DISTINCTION from other grid forms:
+    - Detroit Techno grid: sharp chrome, precise, FUNCTIONAL
+    - Electro Industrial sequencer: clean-to-corrupted, DEGRADING
+    - Power Noise lattice: noise-filled cells, TEXTURAL
+    - Indie Synthpop pulse grid: soft-edged, warm, INTIMATE
+
+    The grid is SMALL relative to the canvas — it doesn't fill the
+    space aggressively. It's a small, personal machine in a warm
+    room. The negative space around it IS the room — the bedroom
+    where the music is made.
+
+    4 columns × 3 rows = 12 steps, suggesting a 4/4 beat pattern.
+    Active steps (bright warm) vs inactive (dim) create a visible
+    rhythm pattern within the grid.
+  -->
+
+  <!-- Warm ambient field behind the grid — the room -->
+  <ellipse cx="220" cy="218" rx="80" ry="55"
+    fill="#d8a060" filter="url(#vhsHaze)" opacity="0.04"/>
+
+  <g filter="url(#analogWobble)">
+
+    <!--
+      Row 1: KICK pattern
+      Active on beats 1 and 3 (brighter), inactive on 2 and 4
+    -->
+    <!-- Beat 1 — ACTIVE (kick) -->
+    <rect x="168" y="190" width="26" height="16" rx="4" ry="4"
+      fill="#e0d0b8" filter="url(#pulseGlow)" opacity="0.55"/>
+    <!-- Beat 2 — inactive -->
+    <rect x="200" y="190" width="26" height="16" rx="4" ry="4"
+      fill="#c89050" filter="url(#dimPulse)" opacity="0.15"/>
+    <!-- Beat 3 — ACTIVE (kick) -->
+    <rect x="232" y="190" width="26" height="16" rx="4" ry="4"
+      fill="#e0d0b8" filter="url(#pulseGlow)" opacity="0.5"/>
+    <!-- Beat 4 — inactive -->
+    <rect x="264" y="190" width="26" height="16" rx="4" ry="4"
+      fill="#c89050" filter="url(#dimPulse)" opacity="0.15"/>
+
+    <!--
+      Row 2: SNARE/CLAP pattern
+      Active on beats 2 and 4 (the backbeat)
+    -->
+    <!-- Beat 1 — inactive -->
+    <rect x="168" y="214" width="26" height="16" rx="4" ry="4"
+      fill="#b080a8" filter="url(#dimPulse)" opacity="0.15"/>
+    <!-- Beat 2 — ACTIVE (clap) -->
+    <rect x="200" y="214" width="26" height="16" rx="4" ry="4"
+      fill="#c090b8" filter="url(#pulseGlow)" opacity="0.48"/>
+    <!-- Beat 3 — inactive -->
+    <rect x="232" y="214" width="26" height="16" rx="4" ry="4"
+      fill="#b080a8" filter="url(#dimPulse)" opacity="0.15"/>
+    <!-- Beat 4 — ACTIVE (clap) -->
+    <rect x="264" y="214" width="26" height="16" rx="4" ry="4"
+      fill="#c090b8" filter="url(#pulseGlow)" opacity="0.45"/>
+
+    <!--
+      Row 3: HI-HAT pattern
+      Active on all beats (the steady pulse) but varying brightness
+    -->
+    <!-- Beat 1 — active (medium) -->
+    <rect x="168" y="238" width="26" height="16" rx="4" ry="4"
+      fill="#d8a060" filter="url(#pulseGlow)" opacity="0.35"/>
+    <!-- Beat 2 — active (brighter, open hat) -->
+    <rect x="200" y="238" width="26" height="16" rx="4" ry="4"
+      fill="#d8a060" filter="url(#pulseGlow)" opacity="0.42"/>
+    <!-- Beat 3 — active (medium) -->
+    <rect x="232" y="238" width="26" height="16" rx="4" ry="4"
+      fill="#d8a060" filter="url(#pulseGlow)" opacity="0.35"/>
+    <!-- Beat 4 — active (brightest, accent) -->
+    <rect x="264" y="238" width="26" height="16" rx="4" ry="4"
+      fill="#d8a060" filter="url(#pulseGlow)" opacity="0.45"/>
+
+  </g>
+
+  <!--
+    GRID STRUCTURE LINES — extremely faint, warm
+    The grid's structural frame — warmer and softer than
+    techno's chrome grid or electro-industrial's green lines.
+    These are the borders of the drum machine's step display,
+    glowing softly in the bedroom darkness.
+  -->
+  <g stroke="#c89050" stroke-width="0.3" opacity="0.06">
+    <!-- Horizontal guides -->
+    <line x1="164" y1="188" x2="294" y2="188"/>
+    <line x1="164" y1="212" x2="294" y2="212"/>
+    <line x1="164" y1="236" x2="294" y2="236"/>
+    <line x1="164" y1="258" x2="294" y2="258"/>
+    <!-- Vertical guides -->
+    <line x1="164" y1="188" x2="164" y2="258"/>
+    <line x1="198" y1="188" x2="198" y2="258"/>
+    <line x1="230" y1="188" x2="230" y2="258"/>
+    <line x1="262" y1="188" x2="262" y2="258"/>
+    <line x1="294" y1="188" x2="294" y2="258"/>
+  </g>
+
+  <!--
+    MEMORY MOTES — 4 particles
+    ═══════════════════
+    Nostalgic fragments floating in the warm haze.
+    Each is a different warm tone — sunset amber, peach,
+    lavender-pink, cream. The colours of a Polaroid.
+
+    Not organized (baroque pop's placed filigree) and not
+    chaotic (psychedelic's spectrum scatter). Just... floating.
+    Warmly. Like memories drifting through the haze of a
+    bedroom at sunset.
+  -->
+  <circle cx="150" cy="200" r="1.5"
+    fill="#d8a060" filter="url(#memoryGlow)" opacity="0.3"/>
+  <circle cx="300" cy="210" r="1.3"
+    fill="#c090b8" filter="url(#memoryGlow)" opacity="0.28"/>
+  <circle cx="180" cy="265" r="1.2"
+    fill="#e0d0b8" filter="url(#memoryGlow)" opacity="0.25"/>
+  <circle cx="280" cy="180" r="1.4"
+    fill="#d8a060" filter="url(#memoryGlow)" opacity="0.28"/>
+
+</svg>
+
+<!--
+  BPM STRIP — ~115 BPM, bedroom heartbeat
+  ═══════════════════
+  16 ticks at 18px, kick weight 0.35px (light, understated).
+  Even, steady, unpretentious. Drum machine pulse — the 808/606
+  providing a personal heartbeat, not a club foundation.
+  Neither heavy (house) nor complex (jazz) nor absent (ambient).
+  Just... present. The rhythm of a bedroom at night.
+
+  Starting x = (600 - 15*18) / 2 = 165
+-->
+<svg class="bpm-strip" width="600" height="600" viewBox="0 0 600 600">
+  <g stroke="#ffffff" stroke-linecap="round">
+    <!-- Bedroom heartbeat — steady, warm, personal -->
+    <line x1="165" y1="342.5" x2="165" y2="347.5" stroke-width="0.35" opacity="0.35"/>
+    <line x1="183" y1="343.5" x2="183" y2="346.5" stroke-width="0.25" opacity="0.2"/>
+    <line x1="201" y1="342.5" x2="201" y2="347.5" stroke-width="0.35" opacity="0.33"/>
+    <line x1="219" y1="343.5" x2="219" y2="346.5" stroke-width="0.25" opacity="0.2"/>
+    <line x1="237" y1="342.5" x2="237" y2="347.5" stroke-width="0.35" opacity="0.35"/>
+    <line x1="255" y1="343.5" x2="255" y2="346.5" stroke-width="0.25" opacity="0.2"/>
+    <line x1="273" y1="342.5" x2="273" y2="347.5" stroke-width="0.35" opacity="0.33"/>
+    <line x1="291" y1="343.5" x2="291" y2="346.5" stroke-width="0.25" opacity="0.2"/>
+    <line x1="309" y1="342.5" x2="309" y2="347.5" stroke-width="0.35" opacity="0.35"/>
+    <line x1="327" y1="343.5" x2="327" y2="346.5" stroke-width="0.25" opacity="0.2"/>
+    <line x1="345" y1="342.5" x2="345" y2="347.5" stroke-width="0.35" opacity="0.33"/>
+    <line x1="363" y1="343.5" x2="363" y2="346.5" stroke-width="0.25" opacity="0.2"/>
+    <line x1="381" y1="342.5" x2="381" y2="347.5" stroke-width="0.35" opacity="0.33"/>
+    <line x1="399" y1="343.5" x2="399" y2="346.5" stroke-width="0.25" opacity="0.18"/>
+    <line x1="417" y1="342.5" x2="417" y2="347.5" stroke-width="0.35" opacity="0.3"/>
+    <line x1="435" y1="343.5" x2="435" y2="346.5" stroke-width="0.25" opacity="0.16"/>
+  </g>
+</svg>
+
+<!-- GRAIN OVERLAY -->
+<svg class="grain" width="600" height="600" viewBox="0 0 600 600">
+  <filter id="grainFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- VIGNETTE -->
+<div class="vignette"></div>
+
+<!-- TYPOGRAPHY -->
+<div class="text-block">
+  <div class="rule"></div>
+  <div class="genre-name">indie synthpop</div>
+  <div class="subtitle">playlist</div>
+</div>
+
+</body>
+</html>

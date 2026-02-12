@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mainstream Hardcore Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #080408; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0e080e; overflow: hidden; }
+
+  /* Dark magenta-black — the colour of a Q-Dance
+     mainstage at midnight, lasers cutting through
+     haze. Not warm (big beat) or cold (Berlin).
+     HOT — the heat of 40,000 people and the
+     hardest kick drum in electronic music.
+     Scantraxx, Dirty Workz, Q-Dance. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(168,42,98,0.1) 0%, transparent 35%),
+      radial-gradient(ellipse at 50% 44%, rgba(42,148,188,0.03) 0%, transparent 28%),
+      linear-gradient(180deg, #100a12 0%, #0e080e 42%, #080408 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — INTENSE, magenta-pink, the largest
+     and hottest electronic glow after rave.
+     The kick impact's thermal bloom. */
+  .glow {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+      rgba(178,48,108,0.1) 0%,
+      rgba(148,38,88,0.05) 28%,
+      rgba(108,28,68,0.02) 45%,
+      transparent 58%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+
+  /* Grain — 22%. High energy, compressed,
+     the distortion on the kick is deliberate
+     but the production is CLEAN around it.
+     Not lo-fi (garage) — PRECISION loudness. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 46%, transparent 26%, rgba(4,2,4,0.58) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .genre-name .line1 { color: rgba(198,62,128,0.88); }
+  .genre-name .line2 { color: rgba(158,48,102,0.4); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(138,38,85,0.16); margin-top: 10px; }
+  .rule { position: absolute; bottom: 82px; left: 40px; width: 80px; height: 1px; background: rgba(148,42,92,0.1); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Hot magenta for kick impact -->
+      <radialGradient id="impactCore" cx="50%" cy="48%" r="22%">
+        <stop offset="0%" style="stop-color:#d84898;stop-opacity:0.65"/>
+        <stop offset="30%" style="stop-color:#c84088;stop-opacity:0.4"/>
+        <stop offset="60%" style="stop-color:#b83878;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#a83068;stop-opacity:0"/>
+      </radialGradient>
+
+      <!-- Shockwave rings — expanding from impact -->
+      <radialGradient id="shockRing" cx="50%" cy="48%" r="40%">
+        <stop offset="60%" style="stop-color:#c84088;stop-opacity:0"/>
+        <stop offset="75%" style="stop-color:#d84898;stop-opacity:0.18"/>
+        <stop offset="80%" style="stop-color:#d84898;stop-opacity:0.22"/>
+        <stop offset="85%" style="stop-color:#d84898;stop-opacity:0.18"/>
+        <stop offset="100%" style="stop-color:#c84088;stop-opacity:0"/>
+      </radialGradient>
+
+      <!-- Cyan for euphoric streaks -->
+      <linearGradient id="euphoricStreak" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#38a8d8;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#48b8e0;stop-opacity:0.22"/>
+        <stop offset="50%" style="stop-color:#58c8e8;stop-opacity:0.35"/>
+        <stop offset="80%" style="stop-color:#48b8e0;stop-opacity:0.22"/>
+        <stop offset="100%" style="stop-color:#38a8d8;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="kickBlast" x="-15%" y="-15%" width="130%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+      </filter>
+
+      <filter id="shockGlow" x="-5%" y="-5%" width="110%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <filter id="streakGlow" x="-4%" y="-8%" width="108%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <filter id="debrisBlur" x="-6%" y="-6%" width="112%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
+      </filter>
+    </defs>
+
+
+    <!-- === THE IMPACT CRATER === -->
+    <!-- The hardest kick drum in electronic music.
+         Not a pulse (minimal house), not a column
+         (Berlin), not a flash (rave). An IMPACT —
+         the moment the distorted kick hits at 160BPM
+         and the entire frequency spectrum detonates.
+         
+         Central radial blast — the kick itself. -->
+    <g filter="url(#kickBlast)" opacity="0.5">
+      <circle cx="220" cy="208" r="28" fill="url(#impactCore)"/>
+    </g>
+
+    <!-- Thermal bloom — the kick's sub-bass pressure -->
+    <g filter="url(#kickBlast)" opacity="0.15">
+      <circle cx="220" cy="210" r="55" fill="rgba(168,42,92,0.06)"/>
+    </g>
+
+
+    <!-- === SHOCKWAVE RINGS === -->
+    <!-- Expanding outward from impact point —
+         the compression wave of the distorted
+         kick travelling through the PA system.
+         Each ring = a frequency band blown outward.
+         
+         vs Rave (bent grid lines): rave's energy
+         bends existing structure. Hardcore's energy
+         CREATES new structure from the blast. -->
+    <g filter="url(#shockGlow)">
+      <!-- Ring 1 — closest, strongest -->
+      <circle cx="220" cy="208" r="52" fill="none"
+        stroke="rgba(198,58,118,0.38)" stroke-width="1.2"/>
+
+      <!-- Ring 2 -->
+      <circle cx="220" cy="208" r="78" fill="none"
+        stroke="rgba(188,52,108,0.28)" stroke-width="0.9"/>
+
+      <!-- Ring 3 -->
+      <circle cx="220" cy="208" r="105" fill="none"
+        stroke="rgba(178,48,98,0.2)" stroke-width="0.7"/>
+
+      <!-- Ring 4 — outermost, faintest -->
+      <circle cx="220" cy="208" r="132" fill="none"
+        stroke="rgba(168,42,88,0.12)" stroke-width="0.5"/>
+    </g>
+
+
+    <!-- === EUPHORIC STREAKS === -->
+    <!-- CYAN lines cutting through the magenta
+         devastation — the MELODY, the pitched-up
+         vocal, the euphoric lead synth that makes
+         hardcore simultaneously the hardest AND
+         the most uplifting electronic music.
+         
+         These streaks are DIAGONAL — cutting
+         upward through the shockwaves, the
+         euphoria piercing through the violence.
+         The Dutch paradox made visual. -->
+    <g filter="url(#streakGlow)">
+      <!-- Primary streak — upward left to right -->
+      <line x1="115" y1="252" x2="325" y2="168"
+        stroke="url(#euphoricStreak)" stroke-width="0.8"
+        stroke-linecap="round"/>
+
+      <!-- Secondary streak — parallel, fainter -->
+      <line x1="125" y1="262" x2="335" y2="178"
+        stroke="url(#euphoricStreak)" stroke-width="0.5"
+        stroke-linecap="round" opacity="0.5"/>
+
+      <!-- Counter-streak — crossing, the harmonic -->
+      <line x1="130" y1="165" x2="310" y2="255"
+        stroke="url(#euphoricStreak)" stroke-width="0.45"
+        stroke-linecap="round" opacity="0.35"/>
+    </g>
+
+
+    <!-- === KICK DEBRIS === -->
+    <!-- Fragments blown outward by the impact —
+         hot magenta sparks, the distortion artifacts
+         of the kick at maximum compression. -->
+    <g filter="url(#debrisBlur)" opacity="0.35">
+      <circle cx="162" cy="172" r="1.8" fill="rgba(198,58,118,0.45)"/>
+      <circle cx="285" cy="175" r="1.5" fill="rgba(192,55,112,0.4)"/>
+      <circle cx="148" cy="242" r="2.0" fill="rgba(202,62,122,0.5)"/>
+      <circle cx="298" cy="238" r="1.6" fill="rgba(195,58,115,0.42)"/>
+      <circle cx="175" cy="148" r="1.2" fill="rgba(185,50,108,0.35)"/>
+      <circle cx="268" cy="268" r="1.4" fill="rgba(188,52,110,0.38)"/>
+      <circle cx="310" cy="195" r="1.0" fill="rgba(178,48,102,0.3)"/>
+      <circle cx="132" cy="208" r="1.3" fill="rgba(182,50,105,0.32)"/>
+    </g>
+
+    <!-- Cyan sparks — euphoric fragments mixed in -->
+    <g filter="url(#debrisBlur)" opacity="0.25">
+      <circle cx="192" cy="158" r="0.8" fill="rgba(58,178,218,0.35)"/>
+      <circle cx="255" cy="262" r="0.7" fill="rgba(52,168,208,0.3)"/>
+      <circle cx="302" cy="182" r="0.6" fill="rgba(48,158,198,0.25)"/>
+    </g>
+
+
+    <!-- === BPM === -->
+    <!-- 160-180 BPM — SECOND FASTEST after DnB
+         but with heavier kicks. 10px spacing
+         (faster than standard techno 17-18px,
+         slower than DnB's 8px).
+         The kicks are MASSIVE — the heaviest
+         in the entire electronic series. -->
+    <g stroke="rgba(128,35,78,0.05)" stroke-width="0.18">
+      <line x1="60" y1="345" x2="60" y2="351"/><line x1="70" y1="345" x2="70" y2="351"/>
+      <line x1="80" y1="345" x2="80" y2="351"/><line x1="90" y1="345" x2="90" y2="351"/>
+      <line x1="100" y1="345" x2="100" y2="351"/><line x1="110" y1="345" x2="110" y2="351"/>
+      <line x1="120" y1="345" x2="120" y2="351"/><line x1="130" y1="345" x2="130" y2="351"/>
+      <line x1="140" y1="345" x2="140" y2="351"/><line x1="150" y1="345" x2="150" y2="351"/>
+      <line x1="160" y1="345" x2="160" y2="351"/><line x1="170" y1="345" x2="170" y2="351"/>
+      <line x1="180" y1="345" x2="180" y2="351"/><line x1="190" y1="345" x2="190" y2="351"/>
+      <line x1="200" y1="345" x2="200" y2="351"/><line x1="210" y1="345" x2="210" y2="351"/>
+      <line x1="220" y1="345" x2="220" y2="351"/><line x1="230" y1="345" x2="230" y2="351"/>
+      <line x1="240" y1="345" x2="240" y2="351"/><line x1="250" y1="345" x2="250" y2="351"/>
+      <line x1="260" y1="345" x2="260" y2="351"/><line x1="270" y1="345" x2="270" y2="351"/>
+      <line x1="280" y1="345" x2="280" y2="351"/><line x1="290" y1="345" x2="290" y2="351"/>
+      <line x1="300" y1="345" x2="300" y2="351"/><line x1="310" y1="345" x2="310" y2="351"/>
+      <line x1="320" y1="345" x2="320" y2="351"/><line x1="330" y1="345" x2="330" y2="351"/>
+      <line x1="340" y1="345" x2="340" y2="351"/><line x1="350" y1="345" x2="350" y2="351"/>
+      <line x1="360" y1="345" x2="360" y2="351"/><line x1="370" y1="345" x2="370" y2="351"/>
+      <line x1="380" y1="345" x2="380" y2="351"/>
+    </g>
+    <!-- DISTORTED KICKS — the heaviest downbeats
+         in any electronic cover. 0.75px, 18%.
+         Each one an impact event. -->
+    <g stroke="rgba(198,58,118,0.18)" stroke-width="0.75">
+      <line x1="60" y1="339" x2="60" y2="358"/>
+      <line x1="140" y1="339" x2="140" y2="358"/>
+      <line x1="220" y1="339" x2="220" y2="358"/>
+      <line x1="300" y1="339" x2="300" y2="358"/>
+      <line x1="380" y1="339" x2="380" y2="358"/>
+    </g>
+    <!-- Offbeat — the shuffled snare/clap -->
+    <g stroke="rgba(178,48,98,0.08)" stroke-width="0.35">
+      <line x1="100" y1="342" x2="100" y2="355"/>
+      <line x1="180" y1="342" x2="180" y2="355"/>
+      <line x1="260" y1="342" x2="260" y2="355"/>
+      <line x1="340" y1="342" x2="340" y2="355"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Mainstream</span><br/><span class="line2">Hardcore</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

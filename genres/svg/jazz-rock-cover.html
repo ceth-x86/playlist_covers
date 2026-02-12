@@ -1,0 +1,484 @@
+<!--
+  JAZZ ROCK — Playlist Cover
+  Design System: Playlist Cover v1
+
+  SONIC DNA ANALYSIS:
+  ═══════════════════
+  Jazz Rock (Jazz Fusion) defining sonic features:
+  1. THE INTERPLAY — jazz improvisation and rock power coexisting in
+     real time. Not jazz with a rock beat OR rock with jazz chords —
+     the two languages speaking simultaneously, weaving around each
+     other. Musicians trained in both idioms playing the SPACE BETWEEN.
+  2. ELECTRIC INSTRUMENTS — Rhodes piano, Fender bass, distorted guitar,
+     Moog synthesizer, Oberheim. The electrification of jazz is the
+     literal bridge: acoustic jazz vocabulary through electric rock
+     amplification.
+  3. COMPLEX TIME SIGNATURES — 7/8, 5/4, 11/8, shifting meters.
+     The rhythmic complexity of jazz applied to rock's intensity.
+     You can head-bang in 7.
+  4. VIRTUOSIC SOLOING — extended improvisations at high technical
+     level, but with rock energy and volume. McLaughlin's sheets of
+     flame, Corea's cascading runs, Shorter's angular lines.
+  5. DYNAMIC RANGE — from delicate Rhodes passages to screaming
+     distorted guitar, within the same piece. Jazz's dynamics
+     multiplied by rock's amplification.
+  6. HARMONIC DENSITY — jazz chord extensions (9ths, 11ths, 13ths,
+     altered dominants) over rock bass motion. Rich but muscular.
+
+  VISUAL TRANSLATION:
+  ═══════════════════
+  Background: Deep warm charcoal (#0c0a08) — the darkness of a
+    1970s club stage, warm because this music is analog and ALIVE.
+    Similar warmth to Chicago House but darker — jazz rock plays
+    in smaller, more intense rooms.
+  Central form: THE INTERPLAY — two distinct line systems weaving
+    through each other:
+    LINE A (JAZZ): curved, flowing, melodic — represents the
+      improvisation, the saxophone/keyboard solo, the harmonic
+      exploration. Warm amber-gold (the jazz tradition).
+    LINE B (ROCK): angular, powerful, rhythmic — represents the
+      electric guitar riff, the driving bass, the amplified energy.
+      Cool blue-white (electric current, amplification).
+    The two lines cross, diverge, run parallel, and entangle —
+    neither dominates. At crossing points, the colours blend briefly.
+    This is the first DUAL-LINE interacting system in the covers.
+  Glow: Warm amber + cool blue DUAL glow (0.06 each) — the two
+    traditions illuminating the space from different angles
+  Grain: 18% — analog tape warmth, vinyl warmth, but sophisticated
+    production. Same as Chicago House — both are analog-era music
+    recorded with care.
+  Displacement: scale=1 — subtle vibrato/tremolo. Jazz rock is
+    controlled chaos, not distortion. The displacement is just
+    the natural movement of hand-played instruments.
+  Blur: stdDev=4 — moderate room reverb. Club acoustics, not stadium
+    (arena rock) or studio (progressive rock).
+  Particles: 4 harmonic overtone motes — representing the rich
+    harmonic extensions (9ths, 11ths, 13ths) that float above
+    the main lines. Two warm, two cool — both traditions contribute.
+  BPM: Variable feel → 17 ticks at IRREGULAR spacing (mixed meter),
+    kick weight 0.45px. The first ASYMMETRIC BPM strip in the system —
+    ticks group in 7s and 5s rather than 4s, representing odd time
+    signatures. ~160 BPM feel but metrically complex.
+
+  FAMILY PLACEMENT:
+  ═══════════════════
+  Jazz Rock bridges two family trees:
+  FROM JAZZ: Cool Jazz → Modal Jazz → Jazz Rock (electrification)
+  FROM ROCK: Classic Rock → Art Rock → Jazz Rock (complexification)
+  Also connects to:
+  - Progressive Rock: shares complexity but prog is COMPOSED,
+    jazz rock is IMPROVISED. Prog plans the journey;
+    jazz rock discovers it in real time.
+  - Krautrock: shares the experimental electric exploration
+    but Krautrock is motorik/repetitive; jazz rock is virtuosic/varied.
+  - Avant-Garde Rock: shares the boundary-pushing but avant-garde
+    deconstructs; jazz rock synthesizes.
+  Key artists: Miles Davis (Bitches Brew era), Mahavishnu Orchestra,
+    Return to Forever, Weather Report, Herbie Hancock (Head Hunters),
+    Jeff Beck, Frank Zappa, Tony Williams Lifetime
+
+  COLOUR RATIONALE:
+  ═══════════════════
+  Deep warm charcoal (#0c0a08): the warm darkness of a live stage
+  Amber-gold (#c8961e → #a07818): jazz tradition — brass, wood,
+    acoustic warmth, the colour of a saxophone's bell, Rhodes keys
+    glowing under stage light. Same family as Chicago House's gold
+    but darker, more sophisticated.
+  Blue-white (#5088cc → #3a6aaa): electric current — the colour of
+    amplification, the blue spark of a guitar cable plugging in,
+    the cool glow of a Fender amp's pilot light. The ROCK colour.
+  The dual palette is the visual argument: jazz (warm) and rock (cool)
+    coexisting, neither dominating, both enriching.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=600, height=600">
+<title>jazz rock — playlist cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #0c0a08;
+    position: relative;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(
+      ellipse 58% 58% at 50% 48%,
+      transparent 0%,
+      rgba(8, 6, 4, 0.35) 55%,
+      rgba(8, 6, 4, 0.85) 100%
+    );
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* === GRAIN — 18% (analog tape warmth) === */
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 11;
+    pointer-events: none;
+    opacity: 0.18;
+  }
+
+  /* === DUAL GLOW — warm amber (jazz) + cool blue (rock) === */
+  .jazz-glow {
+    position: absolute;
+    width: 240px;
+    height: 200px;
+    top: 46%;
+    left: 44%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      ellipse 90% 80% at 50% 55%,
+      rgba(200, 150, 30, 0.06) 0%,
+      rgba(160, 120, 24, 0.03) 45%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+  .rock-glow {
+    position: absolute;
+    width: 220px;
+    height: 180px;
+    top: 52%;
+    left: 56%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      ellipse 85% 80% at 50% 45%,
+      rgba(80, 136, 204, 0.06) 0%,
+      rgba(58, 106, 170, 0.03) 45%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  .bpm-strip {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 15;
+  }
+  .rule {
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+  }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 50px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>
+</head>
+<body>
+
+<!-- DUAL GLOWS -->
+<div class="jazz-glow"></div>
+<div class="rock-glow"></div>
+
+<!-- CENTRAL FORM: The Interplay -->
+<svg class="central-form" width="440" height="440" viewBox="0 0 440 440">
+  <defs>
+    <!-- Subtle vibrato displacement: scale=1 -->
+    <filter id="vibrato" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="turbulence" baseFrequency="0.015 0.04" numOctaves="2" seed="1969" result="turb"/>
+      <feDisplacementMap in="SourceGraphic" in2="turb" scale="1" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Room blur: stdDev=4 (club acoustics) -->
+    <filter id="roomBlur">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+
+    <!-- Jazz line glow — warm -->
+    <filter id="jazzGlow">
+      <feGaussianBlur stdDeviation="2.5" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Rock line glow — cool -->
+    <filter id="rockGlow">
+      <feGaussianBlur stdDeviation="2" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Overtone mote glow -->
+    <filter id="overtoneGlow">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+
+    <!-- Crossing point blend glow -->
+    <filter id="crossGlow">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+
+    <!-- Jazz line gradient: warm amber-gold -->
+    <linearGradient id="jazzLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a07818" stop-opacity="0.3"/>
+      <stop offset="20%" stop-color="#c8961e" stop-opacity="0.65"/>
+      <stop offset="50%" stop-color="#d4a825" stop-opacity="0.7"/>
+      <stop offset="80%" stop-color="#c8961e" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#a07818" stop-opacity="0.25"/>
+    </linearGradient>
+
+    <!-- Rock line gradient: cool blue-white -->
+    <linearGradient id="rockLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3a6aaa" stop-opacity="0.25"/>
+      <stop offset="20%" stop-color="#5088cc" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#6098d8" stop-opacity="0.65"/>
+      <stop offset="80%" stop-color="#5088cc" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#3a6aaa" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!--
+    THE INTERPLAY
+    ═══════════════════
+    Two line systems weaving through each other — the first
+    dual-line interacting form in the cover system.
+
+    LINE A (JAZZ): Curved, flowing, melodic.
+    The improvisation — saxophone or Rhodes solo — exploring
+    harmonic space with fluid, singing motion. Bezier curves
+    with wide control points, creating smooth arcs and dips.
+
+    LINE B (ROCK): Angular, powerful, rhythmic.
+    The guitar riff / bass groove — driving forward with
+    sharp direction changes and aggressive angles. Polyline
+    segments with hard corners.
+
+    The lines CROSS at two points — moments where the
+    traditions directly interact (the soloist locks in with
+    the riff, the groove supports the improvisation).
+    At crossing points, a subtle blend glow appears.
+
+    They also run PARALLEL at moments (call and response)
+    and DIVERGE at others (the soloist departing into space
+    while the riff holds the ground).
+  -->
+
+  <!-- Crossing point blend glows — where jazz meets rock -->
+  <circle cx="205" cy="218" r="12"
+    fill="#8a8860" filter="url(#crossGlow)" opacity="0.06"/>
+  <circle cx="295" cy="225" r="10"
+    fill="#8a8860" filter="url(#crossGlow)" opacity="0.05"/>
+
+  <g filter="url(#vibrato)">
+
+    <!--
+      LINE A: JAZZ — the improvisation
+      ═══════════════════
+      Flowing Bezier curves — the soloist exploring.
+      Starts lower-left, rises into the harmonic upper register,
+      dips back, rises again. The line BREATHES — wide arcs,
+      no sharp corners. This is a saxophone singing.
+    -->
+    <path d="
+      M 75,255
+      C 95,250 110,235 130,225
+      C 155,212 165,195 180,188
+      C 200,178 210,205 220,215
+      C 232,228 245,195 260,185
+      C 278,173 285,190 300,200
+      C 318,212 325,230 340,225
+      C 358,218 365,210 380,215
+    "
+    stroke="url(#jazzLine)" stroke-width="1.8" fill="none"
+    stroke-linecap="round" stroke-linejoin="round"
+    filter="url(#jazzGlow)"/>
+
+    <!-- Jazz ghost line — the echo, the reverb tail of the phrase -->
+    <path d="
+      M 85,260
+      C 105,254 115,240 135,230
+      C 158,218 168,200 183,194
+      C 202,185 213,210 223,220
+      C 235,232 248,200 263,190
+    "
+    stroke="#c8961e" stroke-width="0.6" fill="none"
+    stroke-linecap="round" opacity="0.15"/>
+
+    <!--
+      LINE B: ROCK — the riff/groove
+      ═══════════════════
+      Angular line segments — the guitarist driving forward.
+      Sharper direction changes, more horizontal (rhythmic)
+      than vertical (melodic). The line PUSHES — it has
+      momentum and weight. This is a distorted guitar riff.
+    -->
+    <path d="
+      M 80,215
+      L 110,210 L 130,225 L 155,218
+      L 175,230 L 195,215 L 210,222
+      L 235,210 L 255,228 L 275,218
+      L 295,230 L 315,215 L 335,222
+      L 355,228 L 370,220
+    "
+    stroke="url(#rockLine)" stroke-width="1.6" fill="none"
+    stroke-linecap="round" stroke-linejoin="bevel"
+    filter="url(#rockGlow)"/>
+
+    <!-- Rock ghost line — the sustain/feedback -->
+    <path d="
+      M 90,220
+      L 115,215 L 135,228 L 158,222
+      L 178,234 L 198,220
+    "
+    stroke="#5088cc" stroke-width="0.5" fill="none"
+    stroke-linecap="round" opacity="0.12"/>
+
+  </g>
+
+  <!--
+    CROSSING POINTS — small bright marks where the lines intersect
+    These are the moments of musical synthesis: the soloist and the
+    rhythm section locking in, call meeting response.
+  -->
+  <circle cx="205" cy="218" r="2" fill="#c0b880" opacity="0.3"/>
+  <circle cx="295" cy="225" r="1.8" fill="#c0b880" opacity="0.25"/>
+
+  <!--
+    HARMONIC OVERTONE MOTES — 4 particles
+    ═══════════════════
+    The rich harmonic extensions (9ths, 11ths, 13ths) that
+    float above the main lines. Two warm (jazz harmonics),
+    two cool (rock overtones).
+  -->
+  <circle cx="175" cy="175" r="1.5"
+    fill="#d4a825" filter="url(#overtoneGlow)" opacity="0.3"/>
+  <circle cx="260" cy="170" r="1.3"
+    fill="#5088cc" filter="url(#overtoneGlow)" opacity="0.28"/>
+  <circle cx="310" cy="195" r="1.4"
+    fill="#c8961e" filter="url(#overtoneGlow)" opacity="0.25"/>
+  <circle cx="230" cy="178" r="1.2"
+    fill="#6098d8" filter="url(#overtoneGlow)" opacity="0.25"/>
+
+</svg>
+
+<!--
+  BPM STRIP — ~160 BPM feel, ASYMMETRIC (mixed meter)
+  ═══════════════════
+  17 ticks grouped in 7+5+5 pattern — the first odd-meter
+  BPM strip in the system. Jazz rock lives in 7/8, 5/4,
+  mixed meters. The ticks cluster asymmetrically:
+  Group of 7 → slight gap → group of 5 → slight gap → group of 5
+
+  Within each group, spacing is ~14px but the GROUP boundaries
+  have wider gaps (20px), creating the rhythmic hiccup of
+  an odd time signature.
+
+  Kick weight: 0.45px — solid but not heavy. The groove is
+  about complexity, not weight.
+-->
+<svg class="bpm-strip" width="600" height="600" viewBox="0 0 600 600">
+  <g stroke="#ffffff" stroke-linecap="round">
+    <!--
+      GROUP OF 7 (7/8 feel)
+      ═══════════════════
+      1-2-3 | 1-2 | 1-2 — the classic 7/8 subdivision
+    -->
+    <!-- Sub-group: 1-2-3 -->
+    <line x1="145" y1="341" x2="145" y2="349" stroke-width="0.45" opacity="0.5"/>
+    <line x1="159" y1="343" x2="159" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <line x1="173" y1="343" x2="173" y2="347" stroke-width="0.3" opacity="0.28"/>
+    <!-- Sub-group: 1-2 -->
+    <line x1="189" y1="342" x2="189" y2="348" stroke-width="0.4" opacity="0.42"/>
+    <line x1="203" y1="343" x2="203" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <!-- Sub-group: 1-2 -->
+    <line x1="219" y1="342" x2="219" y2="348" stroke-width="0.4" opacity="0.42"/>
+    <line x1="233" y1="343" x2="233" y2="347" stroke-width="0.3" opacity="0.25"/>
+
+    <!-- GAP (20px — wider than internal spacing, the meter RESETS) -->
+
+    <!--
+      GROUP OF 5 (5/4 feel)
+      ═══════════════════
+      1-2-3 | 1-2
+    -->
+    <line x1="253" y1="341" x2="253" y2="349" stroke-width="0.45" opacity="0.5"/>
+    <line x1="267" y1="343" x2="267" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <line x1="281" y1="343" x2="281" y2="347" stroke-width="0.3" opacity="0.28"/>
+    <line x1="297" y1="342" x2="297" y2="348" stroke-width="0.4" opacity="0.42"/>
+    <line x1="311" y1="343" x2="311" y2="347" stroke-width="0.3" opacity="0.25"/>
+
+    <!-- GAP -->
+
+    <!--
+      GROUP OF 5 (5/4 feel, repeat)
+    -->
+    <line x1="331" y1="341" x2="331" y2="349" stroke-width="0.45" opacity="0.48"/>
+    <line x1="345" y1="343" x2="345" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <line x1="359" y1="343" x2="359" y2="347" stroke-width="0.3" opacity="0.28"/>
+    <line x1="375" y1="342" x2="375" y2="348" stroke-width="0.4" opacity="0.4"/>
+    <line x1="389" y1="343" x2="389" y2="347" stroke-width="0.3" opacity="0.22"/>
+  </g>
+</svg>
+
+<!-- GRAIN OVERLAY -->
+<svg class="grain" width="600" height="600" viewBox="0 0 600 600">
+  <filter id="grainFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- VIGNETTE -->
+<div class="vignette"></div>
+
+<!-- TYPOGRAPHY -->
+<div class="text-block">
+  <div class="rule"></div>
+  <div class="genre-name">jazz rock</div>
+  <div class="subtitle">playlist</div>
+</div>
+
+</body>
+</html>

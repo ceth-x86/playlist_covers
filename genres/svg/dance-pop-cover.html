@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dance Pop Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #080410; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0e0a14; overflow: hidden; }
+
+  /* Dark warm purple — the colour of a pop stage
+     wash, the VIP booth at a superclub, the glow
+     of a phone screen at a festival mainstage.
+     NOT cold (techno) or gritty (garage). GLAMOROUS.
+     The most commercially polished space. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(168,72,108,0.07) 0%, transparent 42%),
+      radial-gradient(ellipse at 50% 48%, rgba(188,128,148,0.025) 0%, transparent 30%),
+      linear-gradient(180deg, #100c18 0%, #0e0a14 42%, #080410 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — BRIGHT, warm, inviting. The largest
+     and warmest glow in the pop spectrum.
+     Pink-coral, the colour of a pop hook that
+     lodges in your brain for a week. */
+  .glow {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+      rgba(198,92,128,0.08) 0%,
+      rgba(168,78,108,0.04) 35%,
+      transparent 56%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+
+  /* Grain — 12%. The LOWEST alongside classic ambient
+     and cool jazz. Dance pop is maximally polished.
+     Every frequency sculpted, every transient shaped.
+     Zero accidents. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.12;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 46%, transparent 36%, rgba(4,2,8,0.42) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .genre-name .line1 { color: rgba(208,108,142,0.88); }
+  .genre-name .line2 { color: rgba(168,82,115,0.4); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(148,68,98,0.15); margin-top: 10px; }
+  .rule { position: absolute; bottom: 86px; left: 40px; width: 80px; height: 1px; background: rgba(155,72,102,0.09); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Bright pink-coral gradient — the pop hook -->
+      <linearGradient id="popWave" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#a05878;stop-opacity:0"/>
+        <stop offset="6%" style="stop-color:#c06888;stop-opacity:0.28"/>
+        <stop offset="15%" style="stop-color:#d87898;stop-opacity:0.52"/>
+        <stop offset="30%" style="stop-color:#e888a8;stop-opacity:0.7"/>
+        <stop offset="50%" style="stop-color:#f098b2;stop-opacity:0.78"/>
+        <stop offset="70%" style="stop-color:#e888a8;stop-opacity:0.7"/>
+        <stop offset="85%" style="stop-color:#d87898;stop-opacity:0.52"/>
+        <stop offset="94%" style="stop-color:#c06888;stop-opacity:0.28"/>
+        <stop offset="100%" style="stop-color:#a05878;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- White highlight — the vocal shimmer -->
+      <linearGradient id="vocalShine" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#c8a0b0;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#d8b8c2;stop-opacity:0.15"/>
+        <stop offset="50%" style="stop-color:#e8d0d8;stop-opacity:0.28"/>
+        <stop offset="80%" style="stop-color:#d8b8c2;stop-opacity:0.15"/>
+        <stop offset="100%" style="stop-color:#c8a0b0;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="popGlow" x="-4%" y="-8%" width="108%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <filter id="hookShine" x="-8%" y="-10%" width="116%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+
+      <filter id="beatPulse" x="-6%" y="-6%" width="112%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.8"/>
+      </filter>
+    </defs>
+
+
+    <!-- === BEAT PULSE === -->
+    <!-- The 4/4 kick beneath the wave — dance pop's
+         engine. Not heavy (techno), not swung (garage).
+         ROUND, polished, present but never overwhelming
+         the vocal. -->
+    <g filter="url(#hookShine)" opacity="0.08">
+      <ellipse cx="220" cy="225" rx="130" ry="18"
+        fill="rgba(168,82,112,0.06)"/>
+    </g>
+
+
+    <!-- === THE SMOOTH SINE WAVE === -->
+    <!-- A PERFECT sine curve — the cleanest waveform
+         in the entire series. ZERO displacement, ZERO
+         noise. Every point precisely calculated.
+         
+         Where rock's wave is organic, punk's is
+         destroyed, new wave's is angular — dance pop's
+         wave is MATHEMATICALLY SMOOTH. The sound of
+         a pop vocal processed through Auto-Tune,
+         layered with harmonies, compressed to
+         perfection, and riding a MaxxBass kick.
+         
+         This is what happens when a wave has a
+         million-dollar budget. -->
+
+    <g filter="url(#popGlow)">
+      <!-- Main wave — smooth sine, PERFECT curve -->
+      <path d="M 38,210
+               C 58,210 68,182 88,182
+               C 108,182 118,238 138,238
+               C 158,238 168,182 188,182
+               C 208,182 218,238 238,238
+               C 258,238 268,182 288,182
+               C 308,182 318,238 338,238
+               C 358,238 368,210 388,210"
+        fill="none" stroke="url(#popWave)" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Vocal highlight wave — thinner, brighter,
+         riding ABOVE the main wave. The top-line
+         melody floating above the beat. White-pink,
+         the most luminous element. -->
+    <g filter="url(#popGlow)" opacity="0.6">
+      <path d="M 48,208
+               C 68,208 78,184 98,184
+               C 118,184 128,232 148,232
+               C 168,232 178,184 198,184
+               C 218,184 228,232 248,232
+               C 268,232 278,184 298,184
+               C 318,184 328,232 348,232
+               C 368,232 378,208 388,208"
+        fill="none" stroke="url(#vocalShine)" stroke-width="0.7"
+        stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Wave fill — the BODY of the sound.
+         A faint gradient fill between the wave peaks,
+         the fullness of the production. Dense, warm,
+         no frequency left empty. -->
+    <g filter="url(#hookShine)" opacity="0.06">
+      <path d="M 88,182 C 108,182 118,238 138,238
+               C 158,238 168,182 188,182
+               C 208,182 218,238 238,238
+               C 258,238 268,182 288,182
+               C 308,182 318,238 338,238 L 338,210 L 88,210 Z"
+        fill="rgba(198,88,128,0.05)"/>
+    </g>
+
+
+    <!-- === HOOK SPARKLE === -->
+    <!-- Tiny bright points at the wave peaks —
+         the crystalline production sheen, the
+         top-end sparkle of a mastered pop record.
+         Where the compressor catches the transients
+         and makes them glitter. -->
+    <g filter="url(#beatPulse)" opacity="0.25">
+      <circle cx="88" cy="182" r="1.8" fill="rgba(218,138,165,0.3)"/>
+      <circle cx="188" cy="182" r="2.0" fill="rgba(222,142,168,0.35)"/>
+      <circle cx="288" cy="182" r="1.8" fill="rgba(218,138,165,0.3)"/>
+    </g>
+    <g filter="url(#beatPulse)" opacity="0.2">
+      <circle cx="138" cy="238" r="1.5" fill="rgba(208,128,155,0.25)"/>
+      <circle cx="238" cy="238" r="1.6" fill="rgba(210,130,158,0.28)"/>
+      <circle cx="338" cy="238" r="1.4" fill="rgba(205,125,152,0.22)"/>
+    </g>
+
+
+    <!-- === BPM === -->
+    <!-- 120-128 BPM — the CLASSIC dance tempo.
+         Clean, even, the four-on-the-floor that
+         has driven pop clubs since Giorgio Moroder.
+         POLISHED, every tick identical, the most
+         PRODUCED BPM pattern in the series. -->
+    <g stroke="rgba(138,62,92,0.05)" stroke-width="0.22">
+      <line x1="72" y1="345" x2="72" y2="352"/><line x1="90" y1="345" x2="90" y2="352"/>
+      <line x1="108" y1="345" x2="108" y2="352"/><line x1="126" y1="345" x2="126" y2="352"/>
+      <line x1="144" y1="345" x2="144" y2="352"/><line x1="162" y1="345" x2="162" y2="352"/>
+      <line x1="180" y1="345" x2="180" y2="352"/><line x1="198" y1="345" x2="198" y2="352"/>
+      <line x1="216" y1="345" x2="216" y2="352"/><line x1="234" y1="345" x2="234" y2="352"/>
+      <line x1="252" y1="345" x2="252" y2="352"/><line x1="270" y1="345" x2="270" y2="352"/>
+      <line x1="288" y1="345" x2="288" y2="352"/><line x1="306" y1="345" x2="306" y2="352"/>
+      <line x1="324" y1="345" x2="324" y2="352"/><line x1="342" y1="345" x2="342" y2="352"/>
+      <line x1="360" y1="345" x2="360" y2="352"/><line x1="378" y1="345" x2="378" y2="352"/>
+    </g>
+    <!-- 4/4 kick — perfect, round, polished -->
+    <g stroke="rgba(188,88,125,0.1)" stroke-width="0.38">
+      <line x1="72" y1="342" x2="72" y2="355"/>
+      <line x1="144" y1="342" x2="144" y2="355"/>
+      <line x1="216" y1="342" x2="216" y2="355"/>
+      <line x1="288" y1="342" x2="288" y2="355"/>
+      <line x1="360" y1="342" x2="360" y2="355"/>
+    </g>
+    <!-- Hi-hat 8ths — the polished shimmer -->
+    <g stroke="rgba(158,72,105,0.03)" stroke-width="0.12">
+      <line x1="108" y1="346" x2="108" y2="351"/>
+      <line x1="180" y1="346" x2="180" y2="351"/>
+      <line x1="252" y1="346" x2="252" y2="351"/>
+      <line x1="324" y1="346" x2="324" y2="351"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Dance</span><br/><span class="line2">Pop</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

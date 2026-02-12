@@ -1,0 +1,468 @@
+<!--
+  CHAMBER POP — Playlist Cover
+  Design System: Playlist Cover v1
+
+  SONIC DNA ANALYSIS:
+  ═══════════════════
+  Chamber Pop's defining sonic features:
+  1. SMALL ENSEMBLE TRANSPARENCY — where baroque pop deploys a full
+     orchestra (60+ players), chamber pop uses 4-8 players: a string
+     quartet, a French horn, an oboe, acoustic guitar, piano. The
+     CHAMBER MUSIC principle: every instrument is individually audible,
+     every part is essential, nothing is doubled for density. You can
+     TRACE each voice through the arrangement.
+  2. INTIMACY OF SCALE — the music is performed as if in a small room
+     (a chamber), not a concert hall. The dynamic range is narrower,
+     the recording is closer, the emotional register is confessional
+     rather than grand. Where baroque pop says "listen to this
+     SPECTACLE," chamber pop says "come closer and listen."
+  3. LITERARY SENSIBILITY — lyrics that read like short fiction or
+     poetry. Stephin Merritt's wit, Sufjan Stevens' narrative detail,
+     Joanna Newsom's mythological density. The words matter as much
+     as the arrangement.
+  4. ACOUSTIC PRIMACY — acoustic instruments foregrounded. Even when
+     electric instruments appear, the acoustic timbres lead: nylon
+     guitar, bowed strings, woodwinds, piano. The sound of WOOD
+     and BREATH and BOW.
+  5. DELIBERATE FRAGILITY — the arrangements are delicate by design.
+     Thin textures that could break. A single pizzicato cello note
+     carrying a whole measure. An oboe solo over silence. The beauty
+     is in the exposed vulnerability.
+  6. COUNTERPOINT REFINED — baroque pop's counterpoint made more
+     delicate. Each voice moves independently but the total is
+     transparent enough to hear all voices at once. Like watching
+     4 dancers rather than a corps de ballet.
+
+  VISUAL TRANSLATION:
+  ═══════════════════
+  Background: Soft warm dark (#0c0908) — similar warmth to baroque pop
+    but slightly less saturated, less burgundy. More like the darkness
+    of a private room with a reading lamp than a candlelit hall.
+    The intimacy of smaller scale.
+  Central form: THE DELICATE LATTICE — 4-5 thin, distinct melodic
+    lines that interweave with visible separation between them.
+    Each line is individually traceable (unlike baroque pop where the
+    lush primary melody dominates). The lines are THINNER than baroque
+    pop's (0.6-0.9px vs 2.0px) because each instrument is lighter,
+    more exposed. They cross and interweave but never merge — you can
+    always see each thread.
+    CRITICAL CONTRAST with baroque pop:
+    - Baroque pop: thick primary + supporting counter + decoration
+    - Chamber pop: 4-5 EQUAL thin lines, none dominant
+    This encodes the ensemble philosophy: baroque pop has a lead voice
+    with accompaniment; chamber pop has equal voices in conversation.
+  Glow: Soft warm amber (0.05) — more restrained than baroque pop's
+    0.07. The reading lamp, not the candelabra.
+  Grain: 15% — clean but with acoustic warmth. Similar production
+    quality to baroque pop but slightly more intimate recording.
+  Displacement: scale=0 — zero. Like post bop and Chicago House,
+    chamber pop is acoustically pure and deliberately unprocessed.
+    The beauty is in the natural timbre, unwarped.
+  Blur: stdDev=2 — LOW. The clarity of a close recording in a small
+    room. Much less than baroque pop's 5 (concert hall) or spiritual
+    jazz's 7 (devotional wash). Chamber pop wants you to hear each
+    instrument DISTINCTLY.
+  Particles: 3 motes — the fewest non-zero in this session (tied with
+    Chicago House). Economy. Every element earns its place. Where
+    baroque pop has 7 (orchestral shimmer), chamber pop has 3
+    (three quiet details — a breath, a page turn, a bow lift).
+  BPM: ~110 BPM → 15 ticks at 20px, kick weight 0.3px (very light).
+    Gentle, unhurried. The brushed snare rather than the struck kick.
+    Dynamics very even — no strong accents, all ticks nearly uniform
+    in weight. The rhythm supports without asserting.
+
+  FAMILY PLACEMENT:
+  ═══════════════════
+  Direct descendant of Baroque Pop — same ornamental/orchestral
+  philosophy but REDUCED in scale. The relationship is:
+    Baroque Pop (full orchestra, grand) → Chamber Pop (small ensemble, intimate)
+  This is analogous to:
+    House → Minimal House (full dance → reduced dance)
+    Metal → Post-Metal (full aggression → reduced, atmospheric)
+  Also connects to:
+  - Indie Folk: shares the acoustic intimacy and literary lyrics
+    but chamber pop has the classical ensemble training
+  - Art Song: shares the compositional precision and small-ensemble
+    focus but art song is firmly classical; chamber pop is pop-structured
+  - Slowcore: shares the deliberate fragility and quietness
+    but slowcore uses rock instrumentation
+  Key artists: Belle & Sebastian, Sufjan Stevens (Illinois era),
+    The Divine Comedy, Joanna Newsom, Beirut, Andrew Bird,
+    The Magnetic Fields, Arcade Fire (early, Funeral)
+
+  COLOUR RATIONALE:
+  ═══════════════════
+  Soft warm dark (#0c0908): private room, reading light, not stage light
+  Muted warm tones for each thread — each line gets a slightly
+    different warm hue, representing the distinct timbral identity
+    of each instrument:
+    - Amber (#c8a060): the cello — warm, wood-toned, the heart
+    - Warm rose (#b88078): the oboe/clarinet — reed warmth, breath
+    - Pale gold (#d0b880): the piano — ivory, hammered strings
+    - Silver-warm (#a8a090): the violin — the highest voice, bright
+      but not cold
+    - Soft cream (#c8b898): the guitar — nylon, gentle, grounding
+  All warm, all muted. No bright colours. Chamber pop whispers;
+    it doesn't shout.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=600, height=600">
+<title>chamber pop — playlist cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #0c0908;
+    position: relative;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(
+      ellipse 56% 56% at 50% 48%,
+      transparent 0%,
+      rgba(8, 6, 4, 0.32) 55%,
+      rgba(8, 6, 4, 0.85) 100%
+    );
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* === GRAIN — 15% (intimate acoustic clarity) === */
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 11;
+    pointer-events: none;
+    opacity: 0.15;
+  }
+
+  /* === READING LAMP GLOW — soft, restrained === */
+  .lamp-glow {
+    position: absolute;
+    width: 260px;
+    height: 200px;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      ellipse 80% 75% at 50% 50%,
+      rgba(200, 160, 96, 0.05) 0%,
+      rgba(184, 144, 80, 0.025) 40%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  .bpm-strip {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 15;
+  }
+  .rule {
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+  }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>
+</head>
+<body>
+
+<!-- READING LAMP GLOW -->
+<div class="lamp-glow"></div>
+
+<!-- CENTRAL FORM: The Delicate Lattice -->
+<svg class="central-form" width="440" height="440" viewBox="0 0 440 440">
+  <defs>
+    <!--
+      NO displacement filter. scale=0.
+      Chamber pop is acoustically pure. Unprocessed. The beauty is
+      in the natural timbre of wood, breath, and bow.
+    -->
+
+    <!-- Close-room clarity blur: stdDev=2 (intimate, distinct) -->
+    <filter id="roomClarity">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+
+    <!-- Thread glow — delicate, tight -->
+    <filter id="threadGlow">
+      <feGaussianBlur stdDeviation="1" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Breath mote glow -->
+    <filter id="breathGlow">
+      <feGaussianBlur stdDeviation="1.8"/>
+    </filter>
+  </defs>
+
+  <!--
+    THE DELICATE LATTICE
+    ═══════════════════
+    5 thin, distinct melodic threads — each representing one
+    instrument in the chamber ensemble. Each line is independently
+    traceable: you can follow any single thread from left to right
+    through the lattice without losing it.
+
+    CRITICAL DESIGN DISTINCTION from Baroque Pop:
+    ┌────────────────────────────────────────────────┐
+    │ BAROQUE POP:                                    │
+    │   ━━━━━━━━━━━━━━━━━━ thick primary (2.0px)     │
+    │   ──────────────── medium counter (1.0px)       │
+    │   ┈┈┈┈┈┈  ┈┈┈┈  ornaments (0.7px, fragmented) │
+    │   → HIERARCHY: one lead voice with support      │
+    │                                                 │
+    │ CHAMBER POP:                                    │
+    │   ──────────────── thread A (0.8px)             │
+    │   ──────────────── thread B (0.8px)             │
+    │   ──────────────── thread C (0.7px)             │
+    │   ──────────────── thread D (0.7px)             │
+    │   ──────────────── thread E (0.6px)             │
+    │   → EQUALITY: all voices individually audible   │
+    └────────────────────────────────────────────────┘
+
+    The lines cross and interweave but maintain distinct colours
+    and visible separation. At crossing points, the lines don't
+    merge — they PASS THROUGH each other, each maintaining identity.
+  -->
+
+  <!-- Soft ensemble blend — barely visible warmth where threads cluster -->
+  <ellipse cx="220" cy="218" rx="100" ry="35"
+    fill="#c8a060" filter="url(#roomClarity)" opacity="0.03"/>
+
+  <!--
+    THREAD A: CELLO — the heart of the ensemble
+    Warm amber (#c8a060), the lowest voice, gentle undulation.
+    Moves with slow, singing arcs — the cello's sustained bow.
+  -->
+  <path d="
+    M 80,248
+    C 100,252 120,245 145,240
+    C 170,235 185,248 205,250
+    C 225,252 240,238 260,232
+    C 280,226 295,242 315,245
+    C 335,248 350,235 370,230
+  "
+  stroke="#c8a060" stroke-width="0.8" fill="none"
+  stroke-linecap="round" stroke-linejoin="round"
+  filter="url(#threadGlow)" opacity="0.55"/>
+
+  <!--
+    THREAD B: OBOE/CLARINET — reed warmth, breath
+    Warm rose (#b88078), mid-register, more melodic movement.
+    Slightly more angular than the cello — the reed's articulation.
+  -->
+  <path d="
+    M 75,228
+    C 95,222 110,230 130,234
+    C 150,238 165,218 185,212
+    C 205,206 215,225 235,230
+    C 255,235 270,215 290,210
+    C 310,205 320,222 340,228
+    C 355,232 365,220 380,215
+  "
+  stroke="#b88078" stroke-width="0.8" fill="none"
+  stroke-linecap="round" stroke-linejoin="round"
+  filter="url(#threadGlow)" opacity="0.5"/>
+
+  <!--
+    THREAD C: PIANO — ivory, hammered strings
+    Pale gold (#d0b880), slightly detached feel — the piano's
+    note-by-note attack vs the strings' sustained bow.
+    Gently stepping motion, less smooth than strings.
+  -->
+  <path d="
+    M 85,215
+    C 100,210 115,218 135,222
+    C 155,226 170,208 190,202
+    C 210,196 225,215 240,220
+    C 258,226 270,205 290,198
+    C 305,192 318,210 335,218
+    C 348,224 360,210 375,205
+  "
+  stroke="#d0b880" stroke-width="0.7" fill="none"
+  stroke-linecap="round" stroke-linejoin="round"
+  filter="url(#threadGlow)" opacity="0.48"/>
+
+  <!--
+    THREAD D: VIOLIN — the highest voice
+    Silver-warm (#a8a090), the most active melodic line.
+    More ornamental movement — the violin can decorate more.
+  -->
+  <path d="
+    M 90,200
+    C 105,192 120,198 140,205
+    C 155,210 168,192 185,186
+    C 200,180 218,198 235,205
+    C 250,210 262,190 280,184
+    C 298,178 308,195 325,202
+    C 340,208 352,194 368,188
+  "
+  stroke="#a8a090" stroke-width="0.7" fill="none"
+  stroke-linecap="round" stroke-linejoin="round"
+  filter="url(#threadGlow)" opacity="0.45"/>
+
+  <!--
+    THREAD E: GUITAR (nylon) — the grounding voice
+    Soft cream (#c8b898), the gentlest line, widest arcs.
+    The guitar provides harmonic foundation with minimal motion.
+  -->
+  <path d="
+    M 95,238
+    C 125,242 155,235 185,232
+    C 215,229 235,240 260,244
+    C 285,248 305,235 330,230
+    C 350,226 365,234 380,238
+  "
+  stroke="#c8b898" stroke-width="0.6" fill="none"
+  stroke-linecap="round" stroke-linejoin="round"
+  filter="url(#threadGlow)" opacity="0.38"/>
+
+  <!--
+    CROSSING MARKERS
+    ═══════════════════
+    Unlike jazz rock's crossing points (bright blend marks showing
+    traditions merging), chamber pop's crossings are UNMARKED.
+    The lines pass through each other silently — the instruments
+    are aware of each other but they don't merge. Each maintains
+    its own identity. The transparency is the point: you can see
+    both threads at the crossing.
+
+    Instead, we mark the SPACES BETWEEN threads — the breathing room
+    that makes each voice audible. Three small, extremely faint
+    vertical guides showing the ensemble's vertical spacing.
+  -->
+  <g stroke="#a09080" stroke-width="0.2" opacity="0.05">
+    <line x1="190" y1="175" x2="190" y2="260"/>
+    <line x1="260" y1="175" x2="260" y2="260"/>
+    <line x1="330" y1="175" x2="330" y2="260"/>
+  </g>
+
+  <!--
+    BREATH MOTES — 3 particles
+    ═══════════════════
+    The FEWEST non-zero particles in this session (tied with
+    Chicago House at 3). Economy. Every element earns its place.
+
+    These represent three intimate details:
+    1. A breath before singing
+    2. The soft click of a key mechanism
+    3. A bow lifted between phrases
+
+    The sounds between the notes — the silence that chamber pop
+    treats as musical content.
+  -->
+  <circle cx="170" cy="190" r="1.0"
+    fill="#d0b880" filter="url(#breathGlow)" opacity="0.25"/>
+  <circle cx="250" cy="195" r="1.2"
+    fill="#c8a060" filter="url(#breathGlow)" opacity="0.28"/>
+  <circle cx="320" cy="188" r="0.9"
+    fill="#b88078" filter="url(#breathGlow)" opacity="0.22"/>
+
+</svg>
+
+<!--
+  BPM STRIP — ~110 BPM, gentle pulse
+  ═══════════════════
+  15 ticks at 20px, kick weight 0.3px (whisper-light).
+  VERY EVEN dynamics — no strong accents, nearly uniform.
+  The rhythm supports without asserting itself. A brushed
+  snare, a gentle bass drum, the rhythm section as furniture
+  (essential but unobtrusive).
+
+  Compare to baroque pop's dance-form pattern (ONE-two-THREE-four):
+  chamber pop has no courtly dance ancestor — its rhythm is
+  simply a gentle, even heartbeat beneath the threads.
+
+  Starting x = (600 - 14*20) / 2 = 160
+-->
+<svg class="bpm-strip" width="600" height="600" viewBox="0 0 600 600">
+  <g stroke="#ffffff" stroke-linecap="round">
+    <!-- Gentle, even pulse — the heartbeat beneath the lattice -->
+    <line x1="160" y1="343" x2="160" y2="347" stroke-width="0.3" opacity="0.3"/>
+    <line x1="180" y1="343.5" x2="180" y2="346.5" stroke-width="0.25" opacity="0.2"/>
+    <line x1="200" y1="343" x2="200" y2="347" stroke-width="0.3" opacity="0.28"/>
+    <line x1="220" y1="343.5" x2="220" y2="346.5" stroke-width="0.25" opacity="0.2"/>
+    <line x1="240" y1="343" x2="240" y2="347" stroke-width="0.3" opacity="0.3"/>
+    <line x1="260" y1="343.5" x2="260" y2="346.5" stroke-width="0.25" opacity="0.2"/>
+    <line x1="280" y1="343" x2="280" y2="347" stroke-width="0.3" opacity="0.28"/>
+    <line x1="300" y1="343.5" x2="300" y2="346.5" stroke-width="0.25" opacity="0.2"/>
+    <line x1="320" y1="343" x2="320" y2="347" stroke-width="0.3" opacity="0.3"/>
+    <line x1="340" y1="343.5" x2="340" y2="346.5" stroke-width="0.25" opacity="0.2"/>
+    <line x1="360" y1="343" x2="360" y2="347" stroke-width="0.3" opacity="0.28"/>
+    <line x1="380" y1="343.5" x2="380" y2="346.5" stroke-width="0.25" opacity="0.2"/>
+    <line x1="400" y1="343" x2="400" y2="347" stroke-width="0.3" opacity="0.28"/>
+    <line x1="420" y1="343.5" x2="420" y2="346.5" stroke-width="0.25" opacity="0.18"/>
+    <line x1="440" y1="343" x2="440" y2="347" stroke-width="0.3" opacity="0.25"/>
+  </g>
+</svg>
+
+<!-- GRAIN OVERLAY -->
+<svg class="grain" width="600" height="600" viewBox="0 0 600 600">
+  <filter id="grainFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- VIGNETTE -->
+<div class="vignette"></div>
+
+<!-- TYPOGRAPHY -->
+<div class="text-block">
+  <div class="rule"></div>
+  <div class="genre-name">chamber pop</div>
+  <div class="subtitle">playlist</div>
+</div>
+
+</body>
+</html>

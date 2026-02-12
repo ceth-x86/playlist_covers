@@ -1,0 +1,461 @@
+<!--
+  POST BOP — Playlist Cover
+  Design System: Playlist Cover v1
+
+  SONIC DNA ANALYSIS:
+  ═══════════════════
+  Post Bop's defining sonic features:
+  1. THE BENT FORM — compositions that maintain structure but BEND it.
+     Not free jazz (structure abandoned) nor hard bop (structure obeyed).
+     Post bop keeps the skeleton — head-solo-head, standard rhythm section —
+     but the skeleton has been ANGLED. Unexpected turns, displaced accents,
+     harmonic detours that return to familiar territory by unfamiliar routes.
+  2. HARMONIC AMBIGUITY — neither fully inside (functional harmony) nor
+     fully outside (atonality). Shorter's compositions sit in the space
+     where you ALMOST recognize the chord progression but it keeps
+     slipping sideways. Suspended chords, slash chords, modal shifts
+     mid-phrase.
+  3. RHYTHMIC DISPLACEMENT — the rhythm section plays WITH the time but
+     displaces accents and phrases across bar lines. Tony Williams'
+     innovation: the pulse is there but the emphasis moves. You feel
+     the time but you can't tap your foot simply.
+  4. ANGULAR MELODY — melodies that leap by unusual intervals (minor 9ths,
+     tritones, augmented 4ths) rather than moving stepwise. Dolphy's
+     wide-interval lines, Shorter's cryptic themes.
+  5. COMPOSITIONAL SOPHISTICATION — unlike hard bop's 12-bar blues and
+     32-bar standards, post bop compositions have through-composed
+     structures, unusual form lengths (18 bars, 30 bars), and internal
+     asymmetries.
+  6. ACOUSTIC INTENSITY — still primarily acoustic (piano, bass, drums,
+     horn) but played with an intellectual ferocity that exceeds hard bop.
+     The instruments are traditional; the thinking is radical.
+
+  VISUAL TRANSLATION:
+  ═══════════════════
+  Background: Deep slate blue-black (#0a0a10) — nighttime intellectual
+    intensity. Cooler than Chicago House or Jazz Rock but not cold —
+    there's still human warmth beneath the sophistication. The blue
+    undertone reflects the "blue note" tradition this music descends from.
+  Central form: THE BENT AXIS — a single primary line that moves
+    across the canvas with deliberate angular bends at unexpected
+    intervals. NOT smooth curves (that would be cool jazz's flowing
+    lines) and NOT chaotic angles (that would be free jazz). Post bop's
+    line has DIRECTION — it's going somewhere — but it BENDS at
+    surprising points, like a Shorter composition that turns a corner
+    you didn't expect but in retrospect makes perfect sense.
+    At each bend point: TENSION CLUSTERS — small groups of short
+    lines radiating from the bend, representing the harmonic tension
+    that gathers at each structural pivot. These are the moments
+    where the harmony suspends, where the listener holds their breath.
+  Glow: Muted steel blue (0.05) — intellectual, restrained,
+    sophisticated. Not warm amber (hard bop) or bright gold (Chicago).
+    The cool blue of late-night thought.
+  Grain: 16% — clean acoustic recording, Blue Note/Prestige quality.
+    Post bop was recorded by Rudy Van Gelder with crystalline precision.
+  Displacement: scale=0 — ZERO. Post bop is acoustically pure.
+    No electronic processing, no effects. The displacement is in the
+    COMPOSITION, not the signal. The bends in the axis ARE the
+    displacement — structural, not textural.
+  Blur: stdDev=3 — moderate room sound. Van Gelder's studio had
+    a distinctive warm-but-clear acoustic.
+  Particles: 5 tension motes — positioned near the bend points,
+    representing the suspended harmonic tones that cluster at each
+    structural pivot. Cool-warm mixed (steel blue + muted amber).
+  BPM: ~280 BPM feel (uptempo post bop) → 15 ticks at 20px,
+    kick weight 0.35px (light — the ride cymbal is the primary
+    timekeeper, not the kick). Ride cymbal pattern with displaced
+    accents — some ticks are slightly taller/brighter than the
+    surrounding pattern, representing Tony Williams-style accent
+    displacement.
+
+  FAMILY PLACEMENT:
+  ═══════════════════
+  Jazz lineage: Cool Jazz (smooth, restrained) → Modal Jazz (open harmony)
+    → Post Bop (bent structure) → Free Jazz (structure abandoned)
+  Post Bop sits at the critical tipping point — the last moment
+  where jazz retains compositional form before the leap into freedom.
+  Also connects to:
+  - Hard Bop: the parent. Post bop takes hard bop's blues-rooted swing
+    and intellectualizes it — same instruments, different intent.
+  - Jazz Rock: post bop's harmonic language electrified.
+    Shorter's compositions for Weather Report extend his post bop
+    thinking through electric instruments.
+  - Art Rock: shares the intellectual ambition applied to a
+    popular-music foundation.
+  Compared to Cool Jazz: cool jazz flows SMOOTHLY, post bop BENDS.
+    Cool jazz is horizontal; post bop is angular.
+  Compared to Modal Jazz: modal jazz is OPEN and spacious;
+    post bop is DENSE and angular. Modal creates room to explore;
+    post bop creates tension to navigate.
+  Key artists: Wayne Shorter, Herbie Hancock (mid-60s), Andrew Hill,
+    Eric Dolphy, Tony Williams, Sam Rivers, Grachan Moncur III,
+    Miles Davis Second Great Quintet (1964-68)
+
+  COLOUR RATIONALE:
+  ═══════════════════
+  Deep slate blue-black (#0a0a10): the blue note — post bop descends
+    from the blues, but has intellectualized it. The blue is still
+    there, just deeper, darker, more complex.
+  Steel blue-silver (#7088a0 → #506878): the colour of midnight thought —
+    cool, precise, not decorative. Like brushed metal in dim light.
+    This is the colour of Shorter's compositional mind.
+  Muted amber (#a08848 → #887040): the vestigial warmth — the blues
+    heritage, the acoustic wood, the human breath in the horn.
+    Present but restrained, like post bop's relationship to tradition.
+  The palette is intentionally MUTED — no bright colours.
+    Post bop's emotional register is complex and understated, not
+    exuberant (Chicago House gold) or aggressive (frenchcore orange).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=600, height=600">
+<title>post bop — playlist cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #0a0a10;
+    position: relative;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(
+      ellipse 56% 56% at 50% 48%,
+      transparent 0%,
+      rgba(6, 6, 11, 0.38) 55%,
+      rgba(6, 6, 11, 0.88) 100%
+    );
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* === GRAIN — 16% (Van Gelder studio clarity) === */
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 11;
+    pointer-events: none;
+    opacity: 0.16;
+  }
+
+  /* === STEEL BLUE GLOW — restrained, intellectual === */
+  .thought-glow {
+    position: absolute;
+    width: 260px;
+    height: 200px;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      ellipse 85% 80% at 50% 50%,
+      rgba(112, 136, 160, 0.05) 0%,
+      rgba(80, 104, 120, 0.025) 45%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  .bpm-strip {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 15;
+  }
+  .rule {
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+  }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 52px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>
+</head>
+<body>
+
+<!-- THOUGHT GLOW -->
+<div class="thought-glow"></div>
+
+<!-- CENTRAL FORM: The Bent Axis -->
+<svg class="central-form" width="440" height="440" viewBox="0 0 440 440">
+  <defs>
+    <!--
+      NO displacement filter. scale=0.
+      Post bop is acoustically pure. The "displacement" is
+      COMPOSITIONAL — the bends in the axis — not textural.
+    -->
+
+    <!-- Room sound blur: stdDev=3 (Van Gelder clarity) -->
+    <filter id="roomSound">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+
+    <!-- Axis line glow — steel, restrained -->
+    <filter id="axisGlow">
+      <feGaussianBlur stdDeviation="2" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Tension cluster glow — tight, focused -->
+    <filter id="tensionGlow">
+      <feGaussianBlur stdDeviation="1.5" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Mote glow -->
+    <filter id="moteGlow">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+
+    <!-- Bend point halo -->
+    <filter id="bendHalo">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+
+    <!-- Axis gradient: steel blue with muted amber undertone -->
+    <linearGradient id="axisGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#506878" stop-opacity="0.3"/>
+      <stop offset="15%" stop-color="#7088a0" stop-opacity="0.6"/>
+      <stop offset="35%" stop-color="#8898a8" stop-opacity="0.7"/>
+      <stop offset="55%" stop-color="#7088a0" stop-opacity="0.65"/>
+      <stop offset="75%" stop-color="#8898a8" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#506878" stop-opacity="0.25"/>
+    </linearGradient>
+  </defs>
+
+  <!--
+    THE BENT AXIS
+    ═══════════════════
+    A single primary line that traverses the canvas with five
+    deliberate angular bends. This is post bop's compositional
+    form made visual:
+
+    - The line has DIRECTION (left to right = time, the piece progressing)
+    - It BENDS at unexpected angles (structural pivots, harmonic turns)
+    - Between bends, it's relatively straight (the composed sections)
+    - The bends are NOT uniform — each turn is at a different angle,
+      like Shorter's compositions where each section pivot surprises
+
+    Compare to:
+    - Cool Jazz: would be a SMOOTH curve (flowing, no angles)
+    - Modal Jazz: would be a LONG HORIZONTAL with gentle slopes (spacious)
+    - Free Jazz: would be CHAOTIC lines in all directions (no axis)
+    - Hard Bop: would be a STRAIGHT line with slight swing (conventional)
+    Post Bop: a LINE WITH BENDS — directional but angular.
+  -->
+
+  <!-- Bend point halos — harmonic tension gathering at each pivot -->
+  <circle cx="155" cy="230" r="10" fill="#7088a0" filter="url(#bendHalo)" opacity="0.04"/>
+  <circle cx="210" cy="198" r="10" fill="#7088a0" filter="url(#bendHalo)" opacity="0.04"/>
+  <circle cx="265" cy="222" r="10" fill="#7088a0" filter="url(#bendHalo)" opacity="0.045"/>
+  <circle cx="320" cy="195" r="10" fill="#7088a0" filter="url(#bendHalo)" opacity="0.04"/>
+  <circle cx="355" cy="210" r="8" fill="#7088a0" filter="url(#bendHalo)" opacity="0.035"/>
+
+  <!--
+    THE AXIS — main line with angular bends
+    5 bend points creating 6 segments of varying length and angle
+  -->
+  <polyline points="
+    80,215
+    155,230
+    210,198
+    265,222
+    320,195
+    355,210
+    385,202
+  "
+  stroke="url(#axisGrad)" stroke-width="1.8" fill="none"
+  stroke-linecap="round" stroke-linejoin="round"
+  filter="url(#axisGlow)"/>
+
+  <!-- Axis shadow — the form's weight, slightly offset -->
+  <polyline points="
+    82,218
+    157,233
+    212,201
+    267,225
+    322,198
+    357,213
+    387,205
+  "
+  stroke="#506878" stroke-width="0.7" fill="none"
+  stroke-linecap="round" stroke-linejoin="round" opacity="0.12"/>
+
+  <!--
+    TENSION CLUSTERS
+    ═══════════════════
+    At each bend point, 2-4 short lines radiate outward,
+    representing the harmonic tension that gathers at each
+    structural pivot. These are the suspended chords, the
+    slash chords, the moments where the listener holds breath
+    before the composition turns its corner.
+
+    The lines are SHORT (not long fractures — this isn't destruction)
+    and ANGLED (not radial — this is directional tension, not explosion).
+  -->
+
+  <!-- Bend 1 (155,230) — moderate tension -->
+  <g filter="url(#tensionGlow)">
+    <line x1="150" y1="235" x2="143" y2="242" stroke="#7088a0" stroke-width="0.7" opacity="0.35"/>
+    <line x1="158" y1="235" x2="162" y2="244" stroke="#a08848" stroke-width="0.6" opacity="0.28"/>
+    <line x1="148" y1="228" x2="140" y2="230" stroke="#7088a0" stroke-width="0.6" opacity="0.25"/>
+  </g>
+
+  <!-- Bend 2 (210,198) — higher tension (wider interval leap) -->
+  <g filter="url(#tensionGlow)">
+    <line x1="206" y1="193" x2="200" y2="184" stroke="#7088a0" stroke-width="0.7" opacity="0.38"/>
+    <line x1="214" y1="193" x2="220" y2="185" stroke="#a08848" stroke-width="0.7" opacity="0.3"/>
+    <line x1="207" y1="202" x2="198" y2="206" stroke="#7088a0" stroke-width="0.6" opacity="0.25"/>
+    <line x1="215" y1="201" x2="222" y2="207" stroke="#a08848" stroke-width="0.5" opacity="0.2"/>
+  </g>
+
+  <!-- Bend 3 (265,222) — maximum tension (the climactic turn) -->
+  <g filter="url(#tensionGlow)">
+    <line x1="260" y1="227" x2="252" y2="236" stroke="#8898a8" stroke-width="0.8" opacity="0.4"/>
+    <line x1="270" y1="227" x2="278" y2="234" stroke="#a08848" stroke-width="0.7" opacity="0.35"/>
+    <line x1="261" y1="217" x2="254" y2="210" stroke="#7088a0" stroke-width="0.7" opacity="0.35"/>
+    <line x1="269" y1="217" x2="277" y2="212" stroke="#a08848" stroke-width="0.6" opacity="0.28"/>
+  </g>
+
+  <!-- Bend 4 (320,195) — resolving tension -->
+  <g filter="url(#tensionGlow)">
+    <line x1="316" y1="190" x2="310" y2="183" stroke="#7088a0" stroke-width="0.7" opacity="0.32"/>
+    <line x1="324" y1="190" x2="330" y2="184" stroke="#a08848" stroke-width="0.6" opacity="0.25"/>
+    <line x1="318" y1="200" x2="312" y2="206" stroke="#7088a0" stroke-width="0.5" opacity="0.2"/>
+  </g>
+
+  <!-- Bend 5 (355,210) — final gentle turn -->
+  <g filter="url(#tensionGlow)">
+    <line x1="351" y1="205" x2="346" y2="199" stroke="#7088a0" stroke-width="0.6" opacity="0.25"/>
+    <line x1="359" y1="214" x2="365" y2="220" stroke="#a08848" stroke-width="0.5" opacity="0.2"/>
+  </g>
+
+  <!--
+    HARMONIC TENSION MOTES — 5 particles
+    ═══════════════════
+    Suspended tones floating near the bend points.
+    The harmonic ambiguity made visible — tones that belong
+    to neither the chord before nor after the pivot.
+    Mixed steel blue + muted amber.
+  -->
+  <circle cx="165" cy="240" r="1.3"
+    fill="#7088a0" filter="url(#moteGlow)" opacity="0.28"/>
+  <circle cx="220" cy="182" r="1.5"
+    fill="#a08848" filter="url(#moteGlow)" opacity="0.3"/>
+  <circle cx="255" cy="235" r="1.4"
+    fill="#8898a8" filter="url(#moteGlow)" opacity="0.32"/>
+  <circle cx="310" cy="182" r="1.2"
+    fill="#a08848" filter="url(#moteGlow)" opacity="0.25"/>
+  <circle cx="275" cy="210" r="1.1"
+    fill="#7088a0" filter="url(#moteGlow)" opacity="0.22"/>
+
+</svg>
+
+<!--
+  BPM STRIP — ~280 BPM uptempo swing feel
+  ═══════════════════
+  15 ticks at 20px spacing, kick weight 0.35px (LIGHTEST in this session)
+  The primary timekeeper is the RIDE CYMBAL, not the kick.
+  In post bop, the kick comps and accents — it doesn't mark time.
+  Displaced accents: 3 ticks are slightly taller/brighter than
+  the surrounding pattern, representing Tony Williams-style
+  accent displacement across bar lines.
+  Starting x = (600 - 14*20) / 2 = 160
+-->
+<svg class="bpm-strip" width="600" height="600" viewBox="0 0 600 600">
+  <g stroke="#ffffff" stroke-linecap="round">
+    <!--
+      Ride cymbal pattern with displaced accents.
+      Most ticks are small and even (the ride's constant ping).
+      3 displaced accents break the pattern — taller, brighter,
+      NOT on expected downbeats. Williams places the bomb where
+      you don't expect it.
+    -->
+    <line x1="160" y1="343" x2="160" y2="347" stroke-width="0.35" opacity="0.35"/>
+    <line x1="180" y1="343" x2="180" y2="347" stroke-width="0.35" opacity="0.32"/>
+    <line x1="200" y1="343" x2="200" y2="347" stroke-width="0.35" opacity="0.35"/>
+    <!-- DISPLACED ACCENT — unexpected emphasis -->
+    <line x1="220" y1="341" x2="220" y2="349" stroke-width="0.45" opacity="0.52"/>
+    <line x1="240" y1="343" x2="240" y2="347" stroke-width="0.35" opacity="0.32"/>
+    <line x1="260" y1="343" x2="260" y2="347" stroke-width="0.35" opacity="0.35"/>
+    <line x1="280" y1="343" x2="280" y2="347" stroke-width="0.35" opacity="0.32"/>
+    <line x1="300" y1="343" x2="300" y2="347" stroke-width="0.35" opacity="0.35"/>
+    <!-- DISPLACED ACCENT — falls between expected beats -->
+    <line x1="320" y1="341" x2="320" y2="349" stroke-width="0.45" opacity="0.52"/>
+    <line x1="340" y1="343" x2="340" y2="347" stroke-width="0.35" opacity="0.32"/>
+    <line x1="360" y1="343" x2="360" y2="347" stroke-width="0.35" opacity="0.35"/>
+    <!-- DISPLACED ACCENT — asymmetric to the first two -->
+    <line x1="380" y1="341" x2="380" y2="349" stroke-width="0.45" opacity="0.5"/>
+    <line x1="400" y1="343" x2="400" y2="347" stroke-width="0.35" opacity="0.32"/>
+    <line x1="420" y1="343" x2="420" y2="347" stroke-width="0.35" opacity="0.35"/>
+    <line x1="440" y1="343" x2="440" y2="347" stroke-width="0.35" opacity="0.28"/>
+  </g>
+</svg>
+
+<!-- GRAIN OVERLAY -->
+<svg class="grain" width="600" height="600" viewBox="0 0 600 600">
+  <filter id="grainFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- VIGNETTE -->
+<div class="vignette"></div>
+
+<!-- TYPOGRAPHY -->
+<div class="text-block">
+  <div class="rule"></div>
+  <div class="genre-name">post bop</div>
+  <div class="subtitle">playlist</div>
+</div>
+
+</body>
+</html>

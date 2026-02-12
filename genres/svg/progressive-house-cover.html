@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progressive House Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #04060a; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0a0e14; overflow: hidden; }
+
+  /* Dark blue-grey — between deep house's warm
+     brown (looking inward) and prog trance's deep
+     blue-indigo (looking upward). Progressive house
+     looks OUTWARD — the blue of a horizon at dusk,
+     not midnight. Bedrock, Renaissance, Sudbeat. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(72,82,98,0.06) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 50%, rgba(98,82,52,0.025) 0%, transparent 30%),
+      linear-gradient(180deg, #0c1018 0%, #0a0e14 45%, #04060a 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — WIDE and HORIZONTAL. Not tall (prog
+     trance's vertical bloom) or round (deep house's
+     enveloping warmth). The light along a horizon.
+     The widest glow aspect ratio in the series. */
+  .glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+      rgba(88,82,58,0.06) 0%,
+      rgba(68,75,88,0.04) 30%,
+      rgba(52,58,72,0.02) 48%,
+      transparent 58%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+
+  /* Grain — 14%. Clean, polished, the same as
+     deep house. Progressive house is PRODUCED —
+     the warmth is designed, not accidental. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.14;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 50%, transparent 34%, rgba(2,3,5,0.48) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .genre-name .line1 { color: rgba(128,122,88,0.82); }
+  .genre-name .line2 { color: rgba(88,95,108,0.38); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(72,78,88,0.14); margin-top: 10px; }
+  .rule { position: absolute; bottom: 82px; left: 40px; width: 80px; height: 1px; background: rgba(82,85,78,0.07); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Warm slate-blue — the blend of deep house's
+           amber warmth and prog trance's blue cool -->
+      <linearGradient id="horizonArc" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#687068;stop-opacity:0"/>
+        <stop offset="12%" style="stop-color:#788078;stop-opacity:0.18"/>
+        <stop offset="30%" style="stop-color:#889088;stop-opacity:0.38"/>
+        <stop offset="50%" style="stop-color:#929890;stop-opacity:0.48"/>
+        <stop offset="70%" style="stop-color:#889088;stop-opacity:0.38"/>
+        <stop offset="88%" style="stop-color:#788078;stop-opacity:0.18"/>
+        <stop offset="100%" style="stop-color:#687068;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Muted gold for inner arc warmth -->
+      <linearGradient id="goldInner" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#887848;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#988850;stop-opacity:0.15"/>
+        <stop offset="50%" style="stop-color:#a89858;stop-opacity:0.28"/>
+        <stop offset="80%" style="stop-color:#988850;stop-opacity:0.15"/>
+        <stop offset="100%" style="stop-color:#887848;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="horizonGlow" x="-4%" y="-6%" width="108%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <filter id="layerBlur" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+
+      <filter id="hazeBlur" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+      </filter>
+
+      <filter id="moteBlur" x="-6%" y="-6%" width="112%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
+      </filter>
+    </defs>
+
+
+    <!-- === HORIZON HAZE === -->
+    <!-- The atmospheric foundation — a wide,
+         low-contrast field. The air between
+         you and the horizon, the reverb tail
+         that never fully decays. -->
+    <g filter="url(#hazeBlur)" opacity="0.1">
+      <ellipse cx="220" cy="210" rx="150" ry="42"
+        fill="rgba(72,78,68,0.04)"/>
+    </g>
+
+
+    <!-- === THE EXPANDING ARCS === -->
+    <!-- HORIZONTAL arcs expanding LEFT and RIGHT
+         from centre. Where prog trance's arcs
+         ascend UPWARD (each higher than the last),
+         progressive house's arcs expand OUTWARD
+         (each WIDER than the last, same height).
+         
+         Prog Trance:    ⌢         (arcs going UP)
+                        ⌢
+                       ⌢
+                      ⌢
+         
+         PROG HOUSE:  (  (  (  ·  )  )  )  (arcs going WIDE)
+         
+         The journey isn't toward a peak —
+         it's toward the HORIZON. The track
+         doesn't climax, it OPENS. -->
+
+    <g filter="url(#horizonGlow)">
+      <!-- Arc 1 — innermost, warmest (gold) -->
+      <path d="M 195,210
+               C 195,194 205,185 220,185
+               C 235,185 245,194 245,210"
+        fill="none" stroke="url(#goldInner)" stroke-width="0.9"
+        stroke-linecap="round"/>
+
+      <!-- Arc 2 — wider, transitioning -->
+      <path d="M 170,210
+               C 170,188 190,175 220,175
+               C 250,175 270,188 270,210"
+        fill="none" stroke="rgba(138,132,92,0.38)" stroke-width="0.8"
+        stroke-linecap="round"/>
+
+      <!-- Arc 3 — wider still, blending blue -->
+      <path d="M 142,210
+               C 142,180 175,163 220,163
+               C 265,163 298,180 298,210"
+        fill="none" stroke="rgba(128,132,112,0.32)" stroke-width="0.75"
+        stroke-linecap="round"/>
+
+      <!-- Arc 4 — wide, cool -->
+      <path d="M 112,210
+               C 112,170 158,150 220,150
+               C 282,150 328,170 328,210"
+        fill="none" stroke="rgba(118,125,128,0.25)" stroke-width="0.65"
+        stroke-linecap="round"/>
+
+      <!-- Arc 5 — widest, coolest, the horizon -->
+      <path d="M 80,210
+               C 80,160 140,138 220,138
+               C 300,138 360,160 360,210"
+        fill="none" stroke="rgba(108,118,132,0.18)" stroke-width="0.55"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === LAYER ECHOES === -->
+    <!-- Below the arcs — faint reflections, the
+         same arcs mirrored downward. Not equal
+         (the top arcs are primary), just ghosts.
+         The reverb tail of each layer. -->
+    <g filter="url(#layerBlur)" opacity="0.1">
+      <path d="M 192,210
+               C 192,222 204,228 220,228
+               C 236,228 248,222 248,210"
+        fill="none" stroke="rgba(108,102,72,0.12)" stroke-width="0.5"
+        stroke-linecap="round"/>
+
+      <path d="M 155,210
+               C 155,228 182,240 220,240
+               C 258,240 285,228 285,210"
+        fill="none" stroke="rgba(98,102,92,0.08)" stroke-width="0.4"
+        stroke-linecap="round"/>
+
+      <path d="M 118,210
+               C 118,235 162,250 220,250
+               C 278,250 322,235 322,210"
+        fill="none" stroke="rgba(88,95,102,0.05)" stroke-width="0.35"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === HORIZON MOTES === -->
+    <!-- Tiny particles along the arc paths —
+         the melodic elements suspended in the
+         expanding space. Not energy (sparkle)
+         or decay (dust). ATMOSPHERE — the
+         particles of light in the air between
+         you and a distant view. -->
+    <g filter="url(#moteBlur)" opacity="0.18">
+      <!-- On inner arcs — warmer -->
+      <circle cx="205" cy="188" r="1.1" fill="rgba(148,138,88,0.2)"/>
+      <circle cx="238" cy="186" r="1.0" fill="rgba(142,132,85,0.18)"/>
+      <circle cx="220" cy="182" r="0.8" fill="rgba(152,142,92,0.22)"/>
+
+      <!-- On outer arcs — cooler -->
+      <circle cx="168" cy="178" r="0.9" fill="rgba(118,122,108,0.14)"/>
+      <circle cx="275" cy="175" r="1.0" fill="rgba(115,120,105,0.13)"/>
+      <circle cx="135" cy="190" r="0.7" fill="rgba(108,115,118,0.1)"/>
+      <circle cx="308" cy="185" r="0.8" fill="rgba(105,112,115,0.09)"/>
+
+      <!-- On reflections — faintest -->
+      <circle cx="200" cy="228" r="0.6" fill="rgba(98,95,72,0.08)"/>
+      <circle cx="242" cy="232" r="0.5" fill="rgba(92,95,82,0.06)"/>
+    </g>
+
+
+    <!-- === BPM === -->
+    <!-- 120-124 BPM — same tempo as deep house
+         but the feel is different: deep house's
+         kick is submerged, prog house's kick is
+         the PULSE that drives the expansion.
+         Steady, patient, the heartbeat of a
+         3-hour journey. -->
+    <g stroke="rgba(68,72,78,0.05)" stroke-width="0.2">
+      <line x1="72" y1="345" x2="72" y2="352"/><line x1="90" y1="345" x2="90" y2="352"/>
+      <line x1="108" y1="345" x2="108" y2="352"/><line x1="126" y1="345" x2="126" y2="352"/>
+      <line x1="144" y1="345" x2="144" y2="352"/><line x1="162" y1="345" x2="162" y2="352"/>
+      <line x1="180" y1="345" x2="180" y2="352"/><line x1="198" y1="345" x2="198" y2="352"/>
+      <line x1="216" y1="345" x2="216" y2="352"/><line x1="234" y1="345" x2="234" y2="352"/>
+      <line x1="252" y1="345" x2="252" y2="352"/><line x1="270" y1="345" x2="270" y2="352"/>
+      <line x1="288" y1="345" x2="288" y2="352"/><line x1="306" y1="345" x2="306" y2="352"/>
+      <line x1="324" y1="345" x2="324" y2="352"/><line x1="342" y1="345" x2="342" y2="352"/>
+      <line x1="360" y1="345" x2="360" y2="352"/><line x1="378" y1="345" x2="378" y2="352"/>
+    </g>
+    <!-- Kick — gentle, steady, the driving pulse -->
+    <g stroke="rgba(108,100,68,0.1)" stroke-width="0.36">
+      <line x1="72" y1="342" x2="72" y2="355"/>
+      <line x1="144" y1="342" x2="144" y2="355"/>
+      <line x1="216" y1="342" x2="216" y2="355"/>
+      <line x1="288" y1="342" x2="288" y2="355"/>
+      <line x1="360" y1="342" x2="360" y2="355"/>
+    </g>
+    <!-- Hi-hat — soft, steady -->
+    <g stroke="rgba(78,85,92,0.04)" stroke-width="0.15">
+      <line x1="108" y1="346" x2="108" y2="351"/>
+      <line x1="180" y1="346" x2="180" y2="351"/>
+      <line x1="252" y1="346" x2="252" y2="351"/>
+      <line x1="324" y1="346" x2="324" y2="351"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Progressive</span><br/><span class="line2">House</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

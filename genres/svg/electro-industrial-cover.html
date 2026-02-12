@@ -1,0 +1,474 @@
+<!--
+  ELECTRO INDUSTRIAL — Playlist Cover
+  Design System: Playlist Cover v1
+
+  SONIC DNA ANALYSIS:
+  ═══════════════════
+  Electro Industrial's defining sonic features:
+  1. THE CORRUPTED SEQUENCER — rigid, repetitive synthesizer patterns
+     that are processed through distortion, bitcrushing, and degradation.
+     The machine is running but it's DAMAGED. Unlike EBM's clean sequences
+     or industrial noise's total chaos, electro-industrial is the MIDDLE:
+     structure visible through corruption.
+  2. DISTORTED VOCALS — processed, layered, often unintelligible. Shouted
+     through effects chains until the human voice becomes machine texture.
+  3. COLD DIGITAL SYNTHESIS — early digital synths (Ensoniq, E-mu),
+     samplers, and FM synthesis. Harsh, metallic, angular timbres.
+     Not the warm analog of EBM or the tape saturation of industrial.
+  4. MARTIAL STOMP — mid-tempo kick patterns with military precision,
+     influenced by EBM but heavier and more oppressive.
+  5. SAMPLING AS WEAPON — found sound, movie dialogue, political speech
+     chopped and weaponized. Early 90s sampling technology used aggressively.
+  6. DIGITAL DECAY — bitcrushing, aliasing, quantization noise. The sound
+     of digital technology pushed past its limits and breaking down.
+
+  VISUAL TRANSLATION:
+  ═══════════════════
+  Background: Cold dark grey-blue (#090a0e) — digital coldness, CRT monitor
+    darkness, the anti-warmth of early digital processing
+  Central form: THE CORRUPTED SEQUENCER — a grid of horizontal sequence
+    lines (like a step sequencer display) that progressively degrades from
+    left to right. Left side: clean, sharp, ordered steps. Right side:
+    lines fragment, displace, corrupt, dissolve into noise. This is the
+    genre's core tension — machine order vs signal decay.
+    This is distinct from:
+    - Techno grids (pristine, functional)
+    - Power Electronics (total destruction, no grid left)
+    - EBM (clean sequences, disciplined)
+    Electro-industrial is the PROCESS of corruption, not the endpoint.
+  Glow: Cold green-cyan (0.05) — CRT phosphor, LED readouts, the cold
+    light of early digital displays. NOT warm (house), NOT purple (darkwave),
+    NOT red (distortion). Green = digital, machine, terminal.
+  Grain: 30% — heavy digital grit. Aliasing, quantization, bitcrushing
+    artefacts. Higher than EBM would be, lower than power electronics (48%).
+  Displacement: scale=5 — HEAVY corruption. Third-highest in the system
+    after power electronics (8) and garage rock (6). The displacement
+    attacks the right side of the sequencer harder than the left,
+    creating the progressive-corruption effect.
+  Blur: stdDev=2 — minimal. Electro-industrial is SHARP and cutting,
+    not diffused. Digital, not analog.
+  Particles: 6 corruption glitches — small rectangular fragments scattered
+    near the degrading right side, like broken pixel clusters or data
+    artefacts from a failing display. NOT round (organic) — rectangular
+    (digital, pixel-based).
+  BPM: 130 BPM → 19 ticks at 16px, kick weight 0.55px (martial stomp),
+    rigid and mechanical with no swing, no variation — the machine
+    doesn't breathe, it MARCHES.
+
+  FAMILY PLACEMENT:
+  ═══════════════════
+  Industrial/EBM Family position:
+  Industrial Noise (total chaos) → EBM (disciplined body sequence) →
+    Dark Electro (darker EBM) → Electro Industrial (corrupted sequence) →
+    Aggrotech (faster, more aggressive) → Futurepop (cleaned up, melodic)
+  Electro-Industrial sits between EBM's discipline and Industrial Noise's
+  chaos. It's the moment the machine starts to FAIL.
+  Also connects to: Power Electronics (shares distortion but PE goes further),
+    Industrial Techno (shares the stomp but IT has a dancefloor function)
+  Key comparison — the corruption spectrum:
+    EBM = clean machine (0% corrupted)
+    Electro-Industrial = degrading machine (50% corrupted)
+    Power Electronics = destroyed machine (100% corrupted)
+  Key artists: Skinny Puppy, Front Line Assembly, Leæther Strip,
+    Download, Haujobb, Mentallo & The Fixer
+
+  COLOUR RATIONALE:
+  ═══════════════════
+  Cold grey-blue (#090a0e): digital darkness, no warmth
+  Green-cyan (#00cc66 → #00aa55 → #008844): CRT phosphor green,
+    terminal text, LED indicators on rack-mount gear. This is the
+    colour of digital machinery — the readout before it fails.
+  White-to-grey on sequence lines: signal strength degrading
+  Red accent (#cc2200) on corruption fragments: error, warning,
+    system failure indicators
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=600, height=600">
+<title>electro industrial — playlist cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #090a0e;
+    position: relative;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(
+      ellipse 52% 52% at 48% 50%,
+      transparent 0%,
+      rgba(5, 5, 9, 0.4) 50%,
+      rgba(5, 5, 9, 0.88) 100%
+    );
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* === GRAIN — 30% (heavy digital grit) === */
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 11;
+    pointer-events: none;
+    opacity: 0.30;
+  }
+
+  /* === CRT PHOSPHOR GLOW — cold green === */
+  .crt-glow {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    top: 49%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      ellipse 90% 80% at 55% 50%,
+      rgba(0, 204, 102, 0.05) 0%,
+      rgba(0, 170, 85, 0.02) 45%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  .bpm-strip {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 15;
+  }
+  .rule {
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+  }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>
+</head>
+<body>
+
+<!-- CRT PHOSPHOR GLOW -->
+<div class="crt-glow"></div>
+
+<!-- CENTRAL FORM: The Corrupted Sequencer -->
+<svg class="central-form" width="440" height="440" viewBox="0 0 440 440">
+  <defs>
+    <!--
+      PROGRESSIVE CORRUPTION DISPLACEMENT: scale=5
+      Applied to the RIGHT SIDE of the sequencer — the corruption zone.
+      High frequency turbulence creates digital artefact look.
+    -->
+    <filter id="corrupt" x="-15%" y="-15%" width="130%" height="130%">
+      <feTurbulence type="turbulence" baseFrequency="0.04 0.08" numOctaves="4" seed="911" result="turb"/>
+      <feDisplacementMap in="SourceGraphic" in2="turb" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Light corruption for transition zone -->
+    <filter id="corruptMild" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="turbulence" baseFrequency="0.03 0.06" numOctaves="3" seed="911" result="turb"/>
+      <feDisplacementMap in="SourceGraphic" in2="turb" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Minimal blur: stdDev=2 (sharp digital) -->
+    <filter id="digitalBlur">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+
+    <!-- Sequence line glow — cold, tight -->
+    <filter id="seqGlow">
+      <feGaussianBlur stdDeviation="1" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- CRT scanline gradient -->
+    <linearGradient id="seqFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00cc66" stop-opacity="0.7"/>
+      <stop offset="40%" stop-color="#00aa55" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#008844" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#005530" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Corruption zone gradient (signal degrading) -->
+    <linearGradient id="decayGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="30%" stop-color="#88ccaa" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#00aa55" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#cc2200" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+
+  <!--
+    THE CORRUPTED SEQUENCER
+    ═══════════════════
+    8 horizontal sequence lines representing 8 steps/channels of a
+    step sequencer (like a Roland MC-series or Ensoniq ASR display).
+
+    LEFT ZONE (x: 80-200): CLEAN — sharp, ordered, uniform.
+    The machine is functioning. The sequence plays correctly.
+
+    TRANSITION ZONE (x: 200-280): DEGRADING — mild displacement,
+    lines start to waver and break. The corruption begins.
+
+    RIGHT ZONE (x: 280-380): CORRUPTED — heavy displacement,
+    lines fragment, dissolve. The machine is failing.
+
+    This three-zone structure is unique in the system — no other
+    cover has a progressive spatial transformation.
+  -->
+
+  <!--
+    CLEAN ZONE — left side, no displacement
+    ═══════════════════
+    Sharp step sequencer lines. Each line has "step" notches —
+    brighter segments where notes trigger, darker gaps between.
+  -->
+  <g filter="url(#seqGlow)">
+    <!-- Sequence line 1 (top) -->
+    <line x1="80" y1="168" x2="200" y2="168"
+      stroke="#00cc66" stroke-width="1.4" opacity="0.55"/>
+    <!-- Step triggers on line 1 -->
+    <rect x="90" y="166" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.5"/>
+    <rect x="120" y="166" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.45"/>
+    <rect x="160" y="166" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.5"/>
+    <rect x="185" y="166" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.4"/>
+
+    <!-- Sequence line 2 -->
+    <line x1="80" y1="188" x2="200" y2="188"
+      stroke="#00cc66" stroke-width="1.4" opacity="0.5"/>
+    <rect x="95" y="186" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.45"/>
+    <rect x="140" y="186" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.5"/>
+    <rect x="175" y="186" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.4"/>
+
+    <!-- Sequence line 3 -->
+    <line x1="80" y1="208" x2="200" y2="208"
+      stroke="#00cc66" stroke-width="1.4" opacity="0.5"/>
+    <rect x="85" y="206" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.5"/>
+    <rect x="110" y="206" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.4"/>
+    <rect x="150" y="206" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.5"/>
+    <rect x="190" y="206" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.45"/>
+
+    <!-- Sequence line 4 -->
+    <line x1="80" y1="228" x2="200" y2="228"
+      stroke="#00cc66" stroke-width="1.4" opacity="0.55"/>
+    <rect x="100" y="226" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.45"/>
+    <rect x="130" y="226" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.5"/>
+    <rect x="170" y="226" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.4"/>
+
+    <!-- Sequence line 5 -->
+    <line x1="80" y1="248" x2="200" y2="248"
+      stroke="#00cc66" stroke-width="1.4" opacity="0.5"/>
+    <rect x="88" y="246" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.5"/>
+    <rect x="125" y="246" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.45"/>
+    <rect x="155" y="246" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.4"/>
+    <rect x="185" y="246" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.45"/>
+
+    <!-- Sequence line 6 -->
+    <line x1="80" y1="268" x2="200" y2="268"
+      stroke="#00cc66" stroke-width="1.4" opacity="0.5"/>
+    <rect x="95" y="266" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.45"/>
+    <rect x="145" y="266" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.5"/>
+    <rect x="180" y="266" width="8" height="4" rx="0.5" fill="#00ff80" opacity="0.4"/>
+  </g>
+
+  <!--
+    TRANSITION ZONE — mild displacement begins
+    ═══════════════════
+    Lines continue but start to waver. Step triggers become irregular.
+  -->
+  <g filter="url(#corruptMild)">
+    <!-- Line 1 continues -->
+    <line x1="200" y1="168" x2="280" y2="168"
+      stroke="#00aa55" stroke-width="1.2" opacity="0.4"/>
+    <rect x="215" y="166" width="7" height="4" rx="0.5" fill="#00dd70" opacity="0.35"/>
+    <rect x="255" y="166" width="6" height="4" rx="0.5" fill="#00dd70" opacity="0.25"/>
+
+    <!-- Line 2 -->
+    <line x1="200" y1="188" x2="280" y2="188"
+      stroke="#00aa55" stroke-width="1.2" opacity="0.38"/>
+    <rect x="225" y="186" width="7" height="4" rx="0.5" fill="#00dd70" opacity="0.3"/>
+
+    <!-- Line 3 -->
+    <line x1="200" y1="208" x2="280" y2="208"
+      stroke="#00aa55" stroke-width="1.2" opacity="0.38"/>
+    <rect x="210" y="206" width="6" height="4" rx="0.5" fill="#00dd70" opacity="0.3"/>
+    <rect x="250" y="206" width="7" height="4" rx="0.5" fill="#00dd70" opacity="0.25"/>
+
+    <!-- Line 4 -->
+    <line x1="200" y1="228" x2="280" y2="228"
+      stroke="#00aa55" stroke-width="1.2" opacity="0.4"/>
+    <rect x="235" y="226" width="6" height="4" rx="0.5" fill="#00dd70" opacity="0.28"/>
+
+    <!-- Line 5 -->
+    <line x1="200" y1="248" x2="280" y2="248"
+      stroke="#00aa55" stroke-width="1.2" opacity="0.35"/>
+    <rect x="220" y="246" width="7" height="4" rx="0.5" fill="#00dd70" opacity="0.3"/>
+    <rect x="260" y="246" width="5" height="4" rx="0.5" fill="#00dd70" opacity="0.2"/>
+
+    <!-- Line 6 -->
+    <line x1="200" y1="268" x2="280" y2="268"
+      stroke="#00aa55" stroke-width="1.2" opacity="0.35"/>
+    <rect x="240" y="266" width="6" height="4" rx="0.5" fill="#00dd70" opacity="0.25"/>
+  </g>
+
+  <!--
+    CORRUPTION ZONE — heavy displacement (scale=5)
+    ═══════════════════
+    Lines fragment and dissolve. Step triggers become noise artefacts.
+    The machine is failing. Signal degrades into error.
+  -->
+  <g filter="url(#corrupt)">
+    <!-- Fragmenting line remnants -->
+    <line x1="280" y1="168" x2="350" y2="168"
+      stroke="#008844" stroke-width="1.0" opacity="0.25"/>
+    <line x1="280" y1="188" x2="340" y2="188"
+      stroke="#008844" stroke-width="0.8" opacity="0.2"/>
+    <line x1="280" y1="208" x2="360" y2="208"
+      stroke="#008844" stroke-width="1.0" opacity="0.22"/>
+    <line x1="280" y1="228" x2="345" y2="228"
+      stroke="#008844" stroke-width="0.8" opacity="0.18"/>
+    <line x1="280" y1="248" x2="355" y2="248"
+      stroke="#008844" stroke-width="0.9" opacity="0.2"/>
+    <line x1="280" y1="268" x2="340" y2="268"
+      stroke="#008844" stroke-width="0.8" opacity="0.15"/>
+
+    <!-- Corrupted step triggers — misaligned, wrong colours -->
+    <rect x="295" y="165" width="5" height="5" fill="#cc2200" opacity="0.2"/>
+    <rect x="320" y="207" width="6" height="3" fill="#cc2200" opacity="0.18"/>
+    <rect x="310" y="246" width="4" height="5" fill="#cc2200" opacity="0.15"/>
+    <rect x="330" y="227" width="5" height="4" fill="#cc2200" opacity="0.18"/>
+  </g>
+
+  <!--
+    CORRUPTION GLITCH PARTICLES — 6 rectangular fragments
+    ═══════════════════
+    Broken pixel clusters scattered near the corruption zone.
+    RECTANGULAR (digital, pixel-based) — not round (organic)
+    or triangular (concrete). These are DATA ARTEFACTS from
+    a failing display/processor.
+  -->
+  <g>
+    <rect x="350" y="175" width="5" height="2" fill="#cc2200" opacity="0.25"/>
+    <rect x="365" y="205" width="3" height="4" fill="#00aa55" opacity="0.2"/>
+    <rect x="345" y="240" width="6" height="1.5" fill="#cc2200" opacity="0.22"/>
+    <rect x="358" y="260" width="4" height="3" fill="#008844" opacity="0.18"/>
+    <rect x="340" y="185" width="3" height="5" fill="#cc2200" opacity="0.2"/>
+    <rect x="370" y="230" width="5" height="2" fill="#00aa55" opacity="0.15"/>
+  </g>
+
+  <!--
+    SCANLINE NOISE — faint horizontal lines across the entire form
+    Like CRT scanlines or interlacing artefacts.
+    Ties the three zones together visually.
+  -->
+  <g stroke="#00cc66" stroke-width="0.3" opacity="0.04">
+    <line x1="70" y1="178" x2="380" y2="178"/>
+    <line x1="70" y1="198" x2="380" y2="198"/>
+    <line x1="70" y1="218" x2="380" y2="218"/>
+    <line x1="70" y1="238" x2="380" y2="238"/>
+    <line x1="70" y1="258" x2="380" y2="258"/>
+    <line x1="70" y1="278" x2="380" y2="278"/>
+  </g>
+
+</svg>
+
+<!--
+  BPM STRIP — 130 BPM
+  ═══════════════════
+  19 ticks at 16px, kick weight 0.55px (martial stomp)
+  RIGID and MECHANICAL — no swing, no variation, no humanity.
+  The machine marches. Every tick identical in weight.
+  Compared to Frenchcore (0.7px, all-kick): electro-industrial
+  has traditional kick-hat structure but RIGID, not varied.
+  Starting x = (600 - 18*16) / 2 = 156
+-->
+<svg class="bpm-strip" width="600" height="600" viewBox="0 0 600 600">
+  <g stroke="#ffffff" stroke-linecap="round">
+    <!-- Martial stomp: rigid, mechanical, identical spacing -->
+    <line x1="156" y1="342" x2="156" y2="348" stroke-width="0.55" opacity="0.45"/>
+    <line x1="172" y1="343" x2="172" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <line x1="188" y1="342" x2="188" y2="348" stroke-width="0.55" opacity="0.43"/>
+    <line x1="204" y1="343" x2="204" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <line x1="220" y1="341" x2="220" y2="349" stroke-width="0.55" opacity="0.48"/>
+    <line x1="236" y1="343" x2="236" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <line x1="252" y1="342" x2="252" y2="348" stroke-width="0.55" opacity="0.43"/>
+    <line x1="268" y1="343" x2="268" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <line x1="284" y1="342" x2="284" y2="348" stroke-width="0.55" opacity="0.45"/>
+    <line x1="300" y1="343" x2="300" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <line x1="316" y1="341" x2="316" y2="349" stroke-width="0.55" opacity="0.48"/>
+    <line x1="332" y1="343" x2="332" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <line x1="348" y1="342" x2="348" y2="348" stroke-width="0.55" opacity="0.43"/>
+    <line x1="364" y1="343" x2="364" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <line x1="380" y1="342" x2="380" y2="348" stroke-width="0.55" opacity="0.45"/>
+    <line x1="396" y1="343" x2="396" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <line x1="412" y1="341" x2="412" y2="349" stroke-width="0.55" opacity="0.48"/>
+    <line x1="428" y1="343" x2="428" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <line x1="444" y1="342" x2="444" y2="348" stroke-width="0.55" opacity="0.38"/>
+  </g>
+</svg>
+
+<!-- GRAIN OVERLAY -->
+<svg class="grain" width="600" height="600" viewBox="0 0 600 600">
+  <filter id="grainFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- VIGNETTE -->
+<div class="vignette"></div>
+
+<!-- TYPOGRAPHY -->
+<div class="text-block">
+  <div class="rule"></div>
+  <div class="genre-name">electro industrial</div>
+  <div class="subtitle">playlist</div>
+</div>
+
+</body>
+</html>

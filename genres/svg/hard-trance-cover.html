@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hard Trance Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #040808; }
+  .cover { position: relative; width: 600px; height: 600px; background: #080e0c; overflow: hidden; }
+
+  /* Dark blue-green — between techno's cold black
+     and trance's deep blue. The colour of a German
+     rave hangar at peak hour, green lasers cutting
+     through fog. Tracid Traxxx, Fusion Records. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 38%, rgba(42,148,108,0.08) 0%, transparent 38%),
+      radial-gradient(ellipse at 50% 34%, rgba(148,168,128,0.02) 0%, transparent 25%),
+      linear-gradient(180deg, #0a1210 0%, #080e0c 42%, #040808 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — positioned HIGH like prog trance but
+     BRIGHTER and more concentrated. The peak
+     is closer, more aggressive. Not a gentle
+     bloom (prog) — a BEACON. */
+  .glow {
+    position: absolute;
+    top: 34%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+      rgba(82,168,118,0.09) 0%,
+      rgba(58,138,98,0.04) 32%,
+      transparent 55%);
+    filter: blur(20px);
+    z-index: 2;
+  }
+
+  /* Grain — 20%, moderate-high. Harder than
+     progressive trance (15%) but cleaner than
+     big beat (28%). The distortion is on the
+     kick, not the production. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.20;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 40%, transparent 30%, rgba(2,4,4,0.52) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .genre-name .line1 { color: rgba(72,178,118,0.88); }
+  .genre-name .line2 { color: rgba(52,138,92,0.4); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(45,118,78,0.15); margin-top: 10px; }
+  .rule { position: absolute; bottom: 86px; left: 40px; width: 80px; height: 1px; background: rgba(48,125,82,0.09); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Chevron gradients — ascending colour shift
+           from deep green to electric cyan-white -->
+
+      <linearGradient id="chev1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#288858;stop-opacity:0"/>
+        <stop offset="25%" style="stop-color:#389868;stop-opacity:0.25"/>
+        <stop offset="50%" style="stop-color:#48a878;stop-opacity:0.38"/>
+        <stop offset="75%" style="stop-color:#389868;stop-opacity:0.25"/>
+        <stop offset="100%" style="stop-color:#288858;stop-opacity:0"/>
+      </linearGradient>
+
+      <linearGradient id="chev2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#38a068;stop-opacity:0"/>
+        <stop offset="22%" style="stop-color:#48b078;stop-opacity:0.3"/>
+        <stop offset="50%" style="stop-color:#58c088;stop-opacity:0.45"/>
+        <stop offset="78%" style="stop-color:#48b078;stop-opacity:0.3"/>
+        <stop offset="100%" style="stop-color:#38a068;stop-opacity:0"/>
+      </linearGradient>
+
+      <linearGradient id="chev3" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#48b878;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#58c888;stop-opacity:0.35"/>
+        <stop offset="50%" style="stop-color:#68d898;stop-opacity:0.52"/>
+        <stop offset="80%" style="stop-color:#58c888;stop-opacity:0.35"/>
+        <stop offset="100%" style="stop-color:#48b878;stop-opacity:0"/>
+      </linearGradient>
+
+      <linearGradient id="chev4" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#58c888;stop-opacity:0"/>
+        <stop offset="18%" style="stop-color:#68d8a0;stop-opacity:0.4"/>
+        <stop offset="50%" style="stop-color:#78e8b0;stop-opacity:0.58"/>
+        <stop offset="82%" style="stop-color:#68d8a0;stop-opacity:0.4"/>
+        <stop offset="100%" style="stop-color:#58c888;stop-opacity:0"/>
+      </linearGradient>
+
+      <linearGradient id="chev5" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#68d8a0;stop-opacity:0"/>
+        <stop offset="15%" style="stop-color:#80e8b8;stop-opacity:0.42"/>
+        <stop offset="50%" style="stop-color:#98f0c8;stop-opacity:0.65"/>
+        <stop offset="85%" style="stop-color:#80e8b8;stop-opacity:0.42"/>
+        <stop offset="100%" style="stop-color:#68d8a0;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="chevGlow" x="-4%" y="-6%" width="108%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <filter id="apexFlash" x="-15%" y="-15%" width="130%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+
+      <filter id="riffEcho" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+      </filter>
+    </defs>
+
+
+    <!-- === ASCENDING CHEVRONS === -->
+    <!-- 5 V-shapes stacked upward, each one wider,
+         brighter, and HARDER than the last.
+         
+         Where progressive trance uses CURVED arcs
+         (bezier, organic, the gentle journey),
+         hard trance uses ANGULAR chevrons
+         (polyline, miter joins, the driven riff).
+         
+         Each chevron = one repeat of the riff.
+         The riff doesn't evolve — it INSISTS.
+         Each repeat hits harder. Scot Project's
+         "H(ypnotize)" — 8 minutes of the same
+         riff gaining force with every bar. -->
+
+    <g filter="url(#chevGlow)">
+      <!-- Chevron 1 — lowest, narrowest -->
+      <polyline points="175,262  220,242  265,262"
+        fill="none" stroke="url(#chev1)" stroke-width="0.8"
+        stroke-linecap="butt" stroke-linejoin="miter"/>
+
+      <!-- Chevron 2 — ascending -->
+      <polyline points="155,238  220,212  285,238"
+        fill="none" stroke="url(#chev2)" stroke-width="0.95"
+        stroke-linecap="butt" stroke-linejoin="miter"/>
+
+      <!-- Chevron 3 — middle, the riff locking in -->
+      <polyline points="135,215  220,182  305,215"
+        fill="none" stroke="url(#chev3)" stroke-width="1.1"
+        stroke-linecap="butt" stroke-linejoin="miter"/>
+
+      <!-- Chevron 4 — approaching peak -->
+      <polyline points="112,195  220,155  328,195"
+        fill="none" stroke="url(#chev4)" stroke-width="1.25"
+        stroke-linecap="butt" stroke-linejoin="miter"/>
+
+      <!-- Chevron 5 — apex, widest, brightest, HARDEST -->
+      <polyline points="88,178  220,128  352,178"
+        fill="none" stroke="url(#chev5)" stroke-width="1.45"
+        stroke-linecap="butt" stroke-linejoin="miter"/>
+    </g>
+
+
+    <!-- === APEX FLASH === -->
+    <!-- The peak of the top chevron — where the riff
+         reaches maximum intensity. Not a bloom (prog)
+         but a FLASH — sharp, concentrated, the laser
+         hitting the mirror ball. -->
+    <g filter="url(#apexFlash)" opacity="0.2">
+      <circle cx="220" cy="132" r="10"
+        fill="rgba(128,218,168,0.12)"/>
+    </g>
+    <g filter="url(#apexFlash)" opacity="0.08">
+      <circle cx="220" cy="138" r="18"
+        fill="rgba(72,168,118,0.06)"/>
+    </g>
+
+
+    <!-- === RIFF ECHOES === -->
+    <!-- Faint repetitions of the chevron tips —
+         the riff's echo in the reverb, the delay
+         feedback. Each echo a ghost of the chevron
+         tip, descending in brightness. -->
+    <g filter="url(#riffEcho)" opacity="0.12">
+      <!-- Left wing echoes -->
+      <circle cx="95" cy="175" r="2" fill="rgba(72,158,108,0.1)"/>
+      <circle cx="118" cy="192" r="1.8" fill="rgba(62,142,95,0.08)"/>
+      <circle cx="140" cy="212" r="1.5" fill="rgba(55,128,85,0.06)"/>
+
+      <!-- Right wing echoes -->
+      <circle cx="345" cy="175" r="2" fill="rgba(72,158,108,0.1)"/>
+      <circle cx="322" cy="192" r="1.8" fill="rgba(62,142,95,0.08)"/>
+      <circle cx="300" cy="212" r="1.5" fill="rgba(55,128,85,0.06)"/>
+    </g>
+
+    <!-- Vertex echoes — at the chevron tips -->
+    <g filter="url(#riffEcho)" opacity="0.15">
+      <circle cx="220" cy="240" r="1.2" fill="rgba(55,128,78,0.12)"/>
+      <circle cx="220" cy="210" r="1.4" fill="rgba(62,138,88,0.14)"/>
+      <circle cx="220" cy="180" r="1.6" fill="rgba(72,148,98,0.16)"/>
+      <circle cx="220" cy="153" r="1.8" fill="rgba(82,162,112,0.18)"/>
+    </g>
+
+
+    <!-- === KICK COLUMN === -->
+    <!-- A faint vertical presence below the form —
+         the hard trance kick driving everything.
+         Heavier than prog trance, lighter than
+         hardcore. The PISTON that pushes the
+         chevrons upward. -->
+    <g opacity="0.05">
+      <line x1="220" y1="268" x2="220" y2="320"
+        stroke="rgba(62,128,88,0.06)" stroke-width="2.0"
+        stroke-linecap="butt"/>
+    </g>
+
+
+    <!-- === BPM === -->
+    <!-- 145-155 BPM — faster than progressive (128-132)
+         but slower than hardcore (160-180).
+         The ticks are AGGRESSIVE — heavier than prog,
+         the kick weight is CONSTANT (no ascending
+         build like prog — hard trance hits hard
+         from bar 1).
+         12px spacing — between prog's 18px and
+         hardcore's 10px. -->
+    <g stroke="rgba(42,108,72,0.05)" stroke-width="0.2">
+      <line x1="62" y1="345" x2="62" y2="352"/><line x1="74" y1="345" x2="74" y2="352"/>
+      <line x1="86" y1="345" x2="86" y2="352"/><line x1="98" y1="345" x2="98" y2="352"/>
+      <line x1="110" y1="345" x2="110" y2="352"/><line x1="122" y1="345" x2="122" y2="352"/>
+      <line x1="134" y1="345" x2="134" y2="352"/><line x1="146" y1="345" x2="146" y2="352"/>
+      <line x1="158" y1="345" x2="158" y2="352"/><line x1="170" y1="345" x2="170" y2="352"/>
+      <line x1="182" y1="345" x2="182" y2="352"/><line x1="194" y1="345" x2="194" y2="352"/>
+      <line x1="206" y1="345" x2="206" y2="352"/><line x1="218" y1="345" x2="218" y2="352"/>
+      <line x1="230" y1="345" x2="230" y2="352"/><line x1="242" y1="345" x2="242" y2="352"/>
+      <line x1="254" y1="345" x2="254" y2="352"/><line x1="266" y1="345" x2="266" y2="352"/>
+      <line x1="278" y1="345" x2="278" y2="352"/><line x1="290" y1="345" x2="290" y2="352"/>
+      <line x1="302" y1="345" x2="302" y2="352"/><line x1="314" y1="345" x2="314" y2="352"/>
+      <line x1="326" y1="345" x2="326" y2="352"/><line x1="338" y1="345" x2="338" y2="352"/>
+      <line x1="350" y1="345" x2="350" y2="352"/><line x1="362" y1="345" x2="362" y2="352"/>
+      <line x1="374" y1="345" x2="374" y2="352"/><line x1="386" y1="345" x2="386" y2="352"/>
+    </g>
+    <!-- HARD KICKS — constant force, no build.
+         Every kick identical, relentless.
+         0.55px, same as Berlin but at higher BPM. -->
+    <g stroke="rgba(62,158,102,0.14)" stroke-width="0.55">
+      <line x1="62" y1="341" x2="62" y2="356"/>
+      <line x1="134" y1="341" x2="134" y2="356"/>
+      <line x1="206" y1="341" x2="206" y2="356"/>
+      <line x1="278" y1="341" x2="278" y2="356"/>
+      <line x1="350" y1="341" x2="350" y2="356"/>
+    </g>
+    <!-- Offbeat bass — the "unts-unts" drive -->
+    <g stroke="rgba(52,138,88,0.06)" stroke-width="0.25">
+      <line x1="98" y1="343" x2="98" y2="354"/>
+      <line x1="170" y1="343" x2="170" y2="354"/>
+      <line x1="242" y1="343" x2="242" y2="354"/>
+      <line x1="314" y1="343" x2="314" y2="354"/>
+      <line x1="386" y1="343" x2="386" y2="354"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Hard</span><br/><span class="line2">Trance</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

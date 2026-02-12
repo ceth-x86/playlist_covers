@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Underground Hip-Hop Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #060604; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0e0c0a; overflow: hidden; }
+
+  /* Dark brown-black — the colour of dusty crates,
+     MPC pads worn smooth, the cardboard sleeve of
+     a white-label 12". Not cold (techno) or bright
+     (pop). WARM but HEAVY — the weight of the boom-bap.
+     Stones Throw, Def Jux, Rhymesayers, Fondle 'Em. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 52%, rgba(98,78,48,0.05) 0%, transparent 38%),
+      radial-gradient(ellipse at 48% 54%, rgba(78,62,38,0.03) 0%, transparent 28%),
+      linear-gradient(180deg, #100e0a 0%, #0e0c0a 48%, #060604 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — LOW, warm, the sub-bass and sample
+     warmth. Positioned below centre because
+     the beat sits at the BOTTOM of the mix,
+     the foundation everything rides on. */
+  .glow {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+      rgba(108,82,42,0.06) 0%,
+      rgba(78,62,32,0.03) 40%,
+      transparent 55%);
+    filter: blur(20px);
+    z-index: 2;
+  }
+
+  /* Grain — 22%. The crackle of vinyl samples,
+     the dust on the record, the SP-1200's
+     lo-fi sampling. NOT clean (dance pop 12%)
+     and NOT destroyed (grindcore 36%).
+     The grain IS the aesthetic — Dilla's
+     crackle, Madlib's dust. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 52%, transparent 30%, rgba(3,3,2,0.5) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .genre-name .line1 { color: rgba(158,128,72,0.82); }
+  .genre-name .line2 { color: rgba(118,95,55,0.38); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(95,78,45,0.14); margin-top: 10px; }
+  .rule { position: absolute; bottom: 82px; left: 40px; width: 80px; height: 1px; background: rgba(102,82,48,0.08); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Warm concrete grey for the beat bar -->
+      <linearGradient id="beatBar" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#68583a;stop-opacity:0"/>
+        <stop offset="6%" style="stop-color:#7a6842;stop-opacity:0.2"/>
+        <stop offset="18%" style="stop-color:#8a784c;stop-opacity:0.42"/>
+        <stop offset="40%" style="stop-color:#988858;stop-opacity:0.58"/>
+        <stop offset="60%" style="stop-color:#988858;stop-opacity:0.58"/>
+        <stop offset="82%" style="stop-color:#8a784c;stop-opacity:0.42"/>
+        <stop offset="94%" style="stop-color:#7a6842;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#68583a;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Amber for flow syllables -->
+      <linearGradient id="flowAmber" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#a08038;stop-opacity:0"/>
+        <stop offset="15%" style="stop-color:#b89042;stop-opacity:0.3"/>
+        <stop offset="50%" style="stop-color:#c8a048;stop-opacity:0.5"/>
+        <stop offset="85%" style="stop-color:#b89042;stop-opacity:0.3"/>
+        <stop offset="100%" style="stop-color:#a08038;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="beatWeight" x="-3%" y="-8%" width="106%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <filter id="sampleCrackle">
+        <feTurbulence type="fractalNoise" baseFrequency="0.1" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+
+      <filter id="dustBlur" x="-6%" y="-6%" width="112%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
+      </filter>
+
+      <filter id="subBlur" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+    </defs>
+
+
+    <!-- === SUB-BASS === -->
+    <!-- The weight beneath the beat — the 808 kick
+         or the sampled bass loop. LOW, HEAVY,
+         the foundation. -->
+    <g filter="url(#subBlur)" opacity="0.1">
+      <ellipse cx="220" cy="225" rx="135" ry="18"
+        fill="rgba(98,78,38,0.06)"/>
+    </g>
+
+
+    <!-- === THE BEAT BAR === -->
+    <!-- A HEAVY horizontal bar — the boom-bap loop.
+         The sampled drum break, the kick and snare
+         pattern that everything rides on.
+         
+         This is NOT a wave (rock), NOT a line (punk/
+         coldwave), NOT scattered (breakbeat). It's
+         a BAR — a FOUNDATION, a PLATFORM.
+         Thick, weighted, low in the frame.
+         
+         The beat in hip-hop is ARCHITECTURE —
+         it creates the space the MC inhabits.
+         
+         sampleCrackle displacement adds vinyl
+         texture — the sample source is old,
+         dusty, imperfect. The crackle IS the
+         aesthetic. -->
+
+    <g filter="url(#sampleCrackle)">
+      <g filter="url(#beatWeight)">
+        <line x1="82" y1="218" x2="358" y2="218"
+          stroke="url(#beatBar)" stroke-width="2.8"
+          stroke-linecap="butt"/>
+      </g>
+    </g>
+
+    <!-- Beat shadow — the weight of the boom -->
+    <g filter="url(#subBlur)" opacity="0.15">
+      <line x1="95" y1="222" x2="345" y2="222"
+        stroke="rgba(88,72,42,0.12)" stroke-width="3.5"
+        stroke-linecap="butt"/>
+    </g>
+
+
+    <!-- === THE FLOW === -->
+    <!-- ABOVE the beat bar: staccato marks at
+         varying positions and lengths — each one
+         a SYLLABLE in the flow. The MC's voice
+         landing on and between the beat.
+         
+         This is the FIRST cover where the central
+         form explicitly represents VOICE/LANGUAGE.
+         
+         The marks are IRREGULAR — not evenly spaced
+         (that's pop), not swung (that's garage),
+         not scattered (that's breakbeat).
+         They follow the LOGIC OF SPEECH —
+         clusters where words pile up, gaps where
+         the MC breathes, accent marks where the
+         emphasis falls.
+         
+         Some marks are ON the beat (rhythmically
+         aligned with the bar below). Others are
+         BETWEEN beats (syncopated flow). Others
+         are AHEAD of the beat (double-time). -->
+
+    <g filter="url(#beatWeight)">
+      <!-- Bar 1 — the setup, measured -->
+      <line x1="92" y1="200" x2="102" y2="200"
+        stroke="rgba(178,142,68,0.52)" stroke-width="0.8"
+        stroke-linecap="round"/>
+      <line x1="110" y1="200" x2="116" y2="200"
+        stroke="rgba(172,138,65,0.48)" stroke-width="0.7"
+        stroke-linecap="round"/>
+      <line x1="124" y1="198" x2="138" y2="198"
+        stroke="rgba(182,148,72,0.55)" stroke-width="0.9"
+        stroke-linecap="round"/>
+      <line x1="145" y1="200" x2="150" y2="200"
+        stroke="rgba(168,132,62,0.42)" stroke-width="0.6"
+        stroke-linecap="round"/>
+
+      <!-- Bar 2 — flow accelerates, words pile up -->
+      <line x1="162" y1="199" x2="170" y2="199"
+        stroke="rgba(175,138,65,0.5)" stroke-width="0.75"
+        stroke-linecap="round"/>
+      <line x1="174" y1="197" x2="180" y2="197"
+        stroke="rgba(172,135,62,0.48)" stroke-width="0.7"
+        stroke-linecap="round"/>
+      <line x1="184" y1="198" x2="188" y2="198"
+        stroke="rgba(168,132,60,0.44)" stroke-width="0.6"
+        stroke-linecap="round"/>
+      <line x1="192" y1="197" x2="200" y2="197"
+        stroke="rgba(178,142,68,0.52)" stroke-width="0.8"
+        stroke-linecap="round"/>
+      <line x1="204" y1="198" x2="208" y2="198"
+        stroke="rgba(165,128,58,0.4)" stroke-width="0.55"
+        stroke-linecap="round"/>
+      <line x1="213" y1="196" x2="222" y2="196"
+        stroke="rgba(185,150,75,0.58)" stroke-width="0.9"
+        stroke-linecap="round"/>
+
+      <!-- Bar 3 — the punchline, emphasis -->
+      <line x1="235" y1="198" x2="248" y2="198"
+        stroke="rgba(192,155,78,0.62)" stroke-width="1.0"
+        stroke-linecap="round"/>
+      <!-- breath gap -->
+      <line x1="262" y1="200" x2="268" y2="200"
+        stroke="rgba(168,132,62,0.42)" stroke-width="0.6"
+        stroke-linecap="round"/>
+      <line x1="276" y1="199" x2="285" y2="199"
+        stroke="rgba(178,142,68,0.52)" stroke-width="0.8"
+        stroke-linecap="round"/>
+
+      <!-- Bar 4 — resolution, deceleration -->
+      <line x1="298" y1="198" x2="310" y2="198"
+        stroke="rgba(182,148,72,0.55)" stroke-width="0.85"
+        stroke-linecap="round"/>
+      <line x1="318" y1="200" x2="324" y2="200"
+        stroke="rgba(172,135,62,0.46)" stroke-width="0.65"
+        stroke-linecap="round"/>
+      <line x1="332" y1="200" x2="342" y2="200"
+        stroke="rgba(175,138,65,0.48)" stroke-width="0.7"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === SAMPLE DUST === -->
+    <!-- Tiny particles — the vinyl crackle, the
+         dust of the sample source. NOT sparkles
+         (happy HC), NOT spores (psybient).
+         DUST — the age of the music being sampled,
+         the history embedded in the sound. -->
+    <g filter="url(#dustBlur)" opacity="0.12">
+      <rect x="118" y="208" width="2" height="1" fill="rgba(108,88,52,0.12)" rx="0"/>
+      <rect x="182" y="212" width="1.5" height="1.5" fill="rgba(102,82,48,0.1)" rx="0"/>
+      <rect x="248" y="209" width="2" height="1" fill="rgba(108,88,52,0.12)" rx="0"/>
+      <rect x="310" y="211" width="1.5" height="1" fill="rgba(98,78,45,0.08)" rx="0"/>
+      <rect x="152" y="206" width="1" height="1" fill="rgba(95,75,42,0.07)" rx="0"/>
+      <rect x="278" y="214" width="1.5" height="1.5" fill="rgba(105,85,50,0.1)" rx="0"/>
+    </g>
+
+
+    <!-- === BPM === -->
+    <!-- 85-95 BPM — the SLOWEST BPM with a beat
+         in the series (psybient is 90-110 but
+         lighter). BOOM-BAP tempo. The head-nod
+         speed. Heavy, deliberate, the rhythm of
+         walking and thinking.
+         
+         WIDEST TICK SPACING of any rhythmic cover
+         after psybient. The space between beats is
+         where the flow LIVES. -->
+    <g stroke="rgba(78,62,38,0.05)" stroke-width="0.2">
+      <line x1="72" y1="345" x2="72" y2="352"/>
+      <line x1="102" y1="345" x2="102" y2="352"/>
+      <line x1="132" y1="345" x2="132" y2="352"/>
+      <line x1="162" y1="345" x2="162" y2="352"/>
+      <line x1="192" y1="345" x2="192" y2="352"/>
+      <line x1="222" y1="345" x2="222" y2="352"/>
+      <line x1="252" y1="345" x2="252" y2="352"/>
+      <line x1="282" y1="345" x2="282" y2="352"/>
+      <line x1="312" y1="345" x2="312" y2="352"/>
+      <line x1="342" y1="345" x2="342" y2="352"/>
+      <line x1="372" y1="345" x2="372" y2="352"/>
+    </g>
+    <!-- BOOM — the kick. Heavy, round, the 808 -->
+    <g stroke="rgba(128,102,55,0.14)" stroke-width="0.55">
+      <line x1="72" y1="340" x2="72" y2="357"/>
+      <line x1="222" y1="340" x2="222" y2="357"/>
+      <line x1="372" y1="340" x2="372" y2="357"/>
+    </g>
+    <!-- BAP — the snare. Crisp, on 2 and 4 -->
+    <g stroke="rgba(148,118,62,0.1)" stroke-width="0.4">
+      <line x1="147" y1="342" x2="147" y2="355"/>
+      <line x1="297" y1="342" x2="297" y2="355"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Underground</span><br/><span class="line2">Hip-Hop</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

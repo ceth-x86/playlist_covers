@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Martial Folk Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #060608; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0c0c10; overflow: hidden; }
+
+  /* Cold stone-dark — the colour of granite
+     monuments, bunker concrete, parade ground
+     stone at dawn. NOT warm (folk's earth).
+     NOT scorched (power electronics' burn).
+     COLD STONE — minerite, formal, severe.
+     Cold Meat Industry, Tesco, Hau Ruck!,
+     Eternal Soul. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 42%, rgba(82,72,52,0.04) 0%, transparent 32%),
+      radial-gradient(ellipse at 50% 50%, rgba(68,68,78,0.03) 0%, transparent 28%),
+      linear-gradient(180deg, #0e0e12 0%, #0c0c10 46%, #060608 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — MINIMAL, positioned HIGH.
+     Not warmth — AUTHORITY. The light
+     of a torch on a monument at night.
+     Cold, formal, elevated. */
+  .glow {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+      rgba(88,78,52,0.035) 0%,
+      rgba(68,62,45,0.015) 40%,
+      transparent 52%);
+    filter: blur(16px);
+    z-index: 2;
+  }
+
+  /* Grain — 24%. Between industrial (18%) and
+     raw black metal (44%). The grain of old
+     recordings, military archives, shellac
+     records of marches and anthems. Formal
+     noise — not chaos, but AGE. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.24;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 42%, transparent 26%, rgba(3,3,4,0.55) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .genre-name .line1 { color: rgba(128,112,72,0.78); }
+  .genre-name .line2 { color: rgba(88,80,55,0.32); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(72,65,45,0.12); margin-top: 10px; }
+  .rule { position: absolute; bottom: 82px; left: 40px; width: 80px; height: 1px; background: rgba(82,72,50,0.06); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Iron grey for the column -->
+      <linearGradient id="ironColumn" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#888880;stop-opacity:0.15"/>
+        <stop offset="10%" style="stop-color:#989890;stop-opacity:0.38"/>
+        <stop offset="30%" style="stop-color:#a8a8a0;stop-opacity:0.52"/>
+        <stop offset="50%" style="stop-color:#b0b0a8;stop-opacity:0.58"/>
+        <stop offset="70%" style="stop-color:#a8a8a0;stop-opacity:0.52"/>
+        <stop offset="90%" style="stop-color:#989890;stop-opacity:0.38"/>
+        <stop offset="100%" style="stop-color:#888880;stop-opacity:0.15"/>
+      </linearGradient>
+
+      <!-- Dark brass-gold for ceremonial accents -->
+      <linearGradient id="brassGold" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#786828;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#887830;stop-opacity:0.2"/>
+        <stop offset="50%" style="stop-color:#988838;stop-opacity:0.35"/>
+        <stop offset="80%" style="stop-color:#887830;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#786828;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="stoneTexture" x="-3%" y="-3%" width="106%" height="106%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.15" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+
+      <filter id="monumentGlow" x="-5%" y="-3%" width="110%" height="106%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <filter id="echoBlur" x="-8%" y="-6%" width="116%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+
+      <filter id="trumpetBlur" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+      </filter>
+    </defs>
+
+
+    <!-- === TRUMPET WASH === -->
+    <!-- The distant brass — horns and trumpets
+         over the empty parade ground. Not melody —
+         ANNOUNCEMENT. The tone that precedes
+         the march. Blurred, distant, formal. -->
+    <g filter="url(#trumpetBlur)" opacity="0.08">
+      <rect x="208" y="120" width="24" height="200"
+        fill="rgba(108,95,55,0.04)" rx="12"/>
+    </g>
+
+
+    <!-- === THE IRON COLUMN === -->
+    <!-- The most VERTICAL form in the series.
+         
+         Every other form is primarily HORIZONTAL:
+         waves, bars, grids, clouds, lines.
+         The column is VERTICAL — it STANDS.
+         
+         NOT a cross (religious).
+         NOT a spire (architectural).
+         A COLUMN — military, monumental,
+         the obelisk, the cenotaph, the marker.
+         
+         RIGIDLY SYMMETRICAL around vertical axis.
+         Martial folk demands perfect bilateral
+         symmetry — the precision of the parade
+         ground, the formation, the rank and file.
+         
+         The column is the visual equivalent of
+         the military snare cadence: vertical,
+         measured, inexorable. -->
+
+    <g filter="url(#stoneTexture)">
+      <g filter="url(#monumentGlow)">
+        <!-- Central column shaft -->
+        <line x1="220" y1="128" x2="220" y2="292"
+          stroke="url(#ironColumn)" stroke-width="2.8"
+          stroke-linecap="butt"/>
+
+        <!-- Column edges — the flanking lines,
+             perfectly parallel, forming the
+             width of the monument -->
+        <line x1="212" y1="135" x2="212" y2="285"
+          stroke="rgba(142,142,135,0.25)" stroke-width="0.6"
+          stroke-linecap="butt"/>
+        <line x1="228" y1="135" x2="228" y2="285"
+          stroke="rgba(142,142,135,0.25)" stroke-width="0.6"
+          stroke-linecap="butt"/>
+      </g>
+    </g>
+
+
+    <!-- === CROSS BARS === -->
+    <!-- Horizontal elements crossing the column —
+         the drum cadence markers, the structural
+         divisions. SYMMETRICAL — same distance
+         from centre on each side.
+         Short, measured, like insignia on a
+         monument or rank marks on a uniform. -->
+    <g filter="url(#monumentGlow)">
+      <!-- Top bar — the cap -->
+      <line x1="200" y1="142" x2="240" y2="142"
+        stroke="rgba(138,122,78,0.35)" stroke-width="0.8"
+        stroke-linecap="butt"/>
+
+      <!-- Upper division -->
+      <line x1="205" y1="172" x2="235" y2="172"
+        stroke="rgba(128,112,68,0.28)" stroke-width="0.6"
+        stroke-linecap="butt"/>
+
+      <!-- Centre bar — the strongest, widest -->
+      <line x1="195" y1="210" x2="245" y2="210"
+        stroke="url(#brassGold)" stroke-width="1.0"
+        stroke-linecap="butt"/>
+
+      <!-- Lower division -->
+      <line x1="205" y1="248" x2="235" y2="248"
+        stroke="rgba(128,112,68,0.28)" stroke-width="0.6"
+        stroke-linecap="butt"/>
+
+      <!-- Base bar -->
+      <line x1="198" y1="278" x2="242" y2="278"
+        stroke="rgba(138,122,78,0.32)" stroke-width="0.7"
+        stroke-linecap="butt"/>
+    </g>
+
+
+    <!-- === ECHO COLUMNS === -->
+    <!-- Faint vertical lines flanking the main
+         column — the ranks behind the standard
+         bearer. The echo of the drum in the
+         parade ground. Symmetrical, receding. -->
+    <g filter="url(#echoBlur)" opacity="0.12">
+      <!-- First echo pair -->
+      <line x1="192" y1="148" x2="192" y2="272"
+        stroke="rgba(108,108,102,0.12)" stroke-width="0.5"/>
+      <line x1="248" y1="148" x2="248" y2="272"
+        stroke="rgba(108,108,102,0.12)" stroke-width="0.5"/>
+
+      <!-- Second echo pair — fainter, wider -->
+      <line x1="172" y1="158" x2="172" y2="262"
+        stroke="rgba(95,95,88,0.08)" stroke-width="0.4"/>
+      <line x1="268" y1="158" x2="268" y2="262"
+        stroke="rgba(95,95,88,0.08)" stroke-width="0.4"/>
+
+      <!-- Third echo pair — faintest -->
+      <line x1="155" y1="168" x2="155" y2="252"
+        stroke="rgba(82,82,75,0.05)" stroke-width="0.35"/>
+      <line x1="285" y1="168" x2="285" y2="252"
+        stroke="rgba(82,82,75,0.05)" stroke-width="0.35"/>
+    </g>
+
+
+    <!-- === MEDAL POINTS === -->
+    <!-- Small precise dots at symmetrical positions —
+         the rivets on a monument, the medals on
+         a uniform, the stars on a standard.
+         PERFECTLY bilateral. -->
+    <g filter="url(#monumentGlow)" opacity="0.2">
+      <circle cx="202" cy="160" r="1.2" fill="rgba(148,132,82,0.25)"/>
+      <circle cx="238" cy="160" r="1.2" fill="rgba(148,132,82,0.25)"/>
+
+      <circle cx="200" cy="210" r="1.5" fill="rgba(158,142,88,0.3)"/>
+      <circle cx="240" cy="210" r="1.5" fill="rgba(158,142,88,0.3)"/>
+
+      <circle cx="202" cy="260" r="1.2" fill="rgba(148,132,82,0.25)"/>
+      <circle cx="238" cy="260" r="1.2" fill="rgba(148,132,82,0.25)"/>
+    </g>
+
+
+    <!-- === BPM — THE CADENCE === -->
+    <!-- SLOW, HEAVY, CEREMONIAL.
+         The military snare cadence — not a beat
+         for dancing, a beat for MARCHING.
+         Perfectly even spacing, heavy weight.
+         The most FORMAL rhythm in the series.
+         
+         12 ticks at 25px — slow march tempo (~80 BPM).
+         HEAVY kicks — 0.55px — these are field drums,
+         not snares. Each one a COMMAND. -->
+    <g stroke="rgba(72,68,52,0.05)" stroke-width="0.22">
+      <line x1="78" y1="345" x2="78" y2="353"/>
+      <line x1="103" y1="345" x2="103" y2="353"/>
+      <line x1="128" y1="345" x2="128" y2="353"/>
+      <line x1="153" y1="345" x2="153" y2="353"/>
+      <line x1="178" y1="345" x2="178" y2="353"/>
+      <line x1="203" y1="345" x2="203" y2="353"/>
+      <line x1="228" y1="345" x2="228" y2="353"/>
+      <line x1="253" y1="345" x2="253" y2="353"/>
+      <line x1="278" y1="345" x2="278" y2="353"/>
+      <line x1="303" y1="345" x2="303" y2="353"/>
+      <line x1="328" y1="345" x2="328" y2="353"/>
+      <line x1="353" y1="345" x2="353" y2="353"/>
+    </g>
+    <!-- Field drum strikes — heavy, ceremonial -->
+    <g stroke="rgba(118,105,65,0.12)" stroke-width="0.55">
+      <line x1="78" y1="340" x2="78" y2="358"/>
+      <line x1="153" y1="340" x2="153" y2="358"/>
+      <line x1="228" y1="340" x2="228" y2="358"/>
+      <line x1="303" y1="340" x2="303" y2="358"/>
+    </g>
+    <!-- Snare roll — between kicks, lighter -->
+    <g stroke="rgba(92,85,58,0.06)" stroke-width="0.25">
+      <line x1="115" y1="344" x2="115" y2="354"/>
+      <line x1="190" y1="344" x2="190" y2="354"/>
+      <line x1="265" y1="344" x2="265" y2="354"/>
+      <line x1="340" y1="344" x2="340" y2="354"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Martial</span><br/><span class="line2">Folk</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

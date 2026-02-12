@@ -1,0 +1,462 @@
+<!--
+  AVANT PROG — Playlist Cover
+  Design System: Playlist Cover v1
+
+  SONIC DNA ANALYSIS:
+  ═══════════════════
+  Avant Prog's defining sonic features:
+  1. DISSONANCE AS ARCHITECTURE — not dissonance as shock (noise),
+     nor dissonance as accent (post bop), but dissonance as the
+     PRIMARY BUILDING MATERIAL. Univers Zero constructs entire
+     compositions from intervals that conventional music treats as
+     tension-requiring-resolution. In avant prog, the tension IS
+     the resolution. The building stands on angles.
+  2. COMPOSED COMPLEXITY — unlike mainstream prog which balances
+     complexity with accessibility (the memorable riff, the singable
+     chorus), avant prog is FULLY composed with no commercial
+     concession. Pieces are 15-25 minutes of through-composed,
+     non-repeating structure. No verse-chorus. No hook.
+  3. EXTENDED TECHNIQUES — bowing behind the bridge, prepared piano,
+     multiphonics on woodwinds, unusual percussion (brake drums,
+     industrial scrap). The instruments are played "wrong" by
+     conventional standards, but systematically so.
+  4. ASYMMETRIC STRUCTURE — time signatures that change every bar,
+     sections of unequal length, forms that resist pattern recognition.
+     Where mainstream prog uses 7/8 or 5/4 as a GROOVE, avant prog
+     uses 11/16 followed by 7/8 followed by 13/16 — the asymmetry
+     IS the form.
+  5. CHAMBER MUSIC + ROCK — the instrumentation bridges: violin, oboe,
+     bassoon alongside electric guitar and drums. But unlike chamber
+     pop (which is gentle), avant prog's chamber instruments are
+     played with AGGRESSION and extended technique.
+  6. RIO / ZEUHL / CANTERBURY EXTREME — three tributaries converge:
+     Rock in Opposition's political angular music (Henry Cow, Art Bears),
+     Magma's ritualistic alien repetition (Zeuhl), and Canterbury's
+     absurdist jazz-prog pushed to its experimental limits.
+
+  VISUAL TRANSLATION:
+  ═══════════════════
+  Background: Cold dark grey (#0a0a0c) — austere, intellectual,
+    deliberately unwelcoming. Not the warmth of jazz or the
+    velvet of baroque pop. Avant prog does not invite; it demands.
+    Grey because this music exists in a monochromatic intellectual
+    space — between the warmth of rock and the coldness of
+    academic composition.
+  Central form: THE FRACTURED POLYGON — an asymmetric closed shape
+    with unequal sides and non-standard angles. NOT a regular polygon
+    (that would be techno's geometric precision). NOT a circle or
+    ellipse (that would be organic). NOT a fracture pattern (that
+    would be destruction). This is a CONSTRUCTED form that deliberately
+    refuses conventional geometry — like a composition that uses
+    complex structure but rejects familiar patterns.
+    Internal structural lines visible: the compositional scaffolding,
+    the analytical framework that holds the dissonance together.
+    These internal lines are the "score" — the composed structure
+    that makes avant prog ORGANIZED rather than chaotic.
+  Glow: Cold silver (0.04) — minimal, clinical. The light of
+    a rehearsal room, not a concert hall or stage.
+  Grain: 20% — moderate. Acoustic/electric hybrid recording.
+    Not as polished as chamber pop (15%) or baroque pop (14%),
+    not as rough as garage rock. Avant prog's recording aesthetic
+    is functional, not luxurious.
+  Displacement: scale=2 — moderate tension. The forms are under
+    compositional STRESS — the angles and structures push against
+    each other. Not destruction (power electronics) but internal
+    pressure.
+  Blur: stdDev=1 — MINIMAL. Avant prog is precise and sharp.
+    Every dissonance is intentional, every angle is calculated.
+    The sharpest blur in this session (tied with power noise).
+  Particles: 0 — ZERO. Like trap and power noise, but for a
+    different reason. Avant prog has no decoration, no ornament,
+    no shimmer. Every element is structural. There is nothing
+    extraneous. Where baroque pop ornaments, avant prog strips
+    to the skeleton.
+  BPM: ~130 feel but IRREGULAR → 13 ticks at VARIABLE spacing
+    (no two gaps identical), kick weight 0.5px (moderate).
+    The most metrically complex BPM strip yet — every interval
+    between ticks is different, representing the constantly
+    shifting time signatures.
+
+  FAMILY PLACEMENT:
+  ═══════════════════
+  Progressive Rock family:
+  Classic Prog → Symphonic Prog → Neo-Prog (mainstream branch)
+  Classic Prog → Art Rock → Avant Prog (radical branch)
+  Avant Prog is the EXTREME of progressive rock's experimental
+  impulse — the endpoint where "progressive" means "refusing all
+  convention" rather than "elaborating on convention."
+  Connects to:
+  - Post Bop: shares angular composition and intellectual rigor
+    but post bop is rooted in jazz tradition; avant prog deconstructs
+    rock tradition
+  - Chamber Pop: shares the chamber instrumentation but OPPOSITE
+    aesthetics: chamber pop is gentle/ornamental; avant prog is
+    aggressive/structural
+  - Power Noise: shares the zero-ornament austerity and structural
+    focus but through completely different sonic means
+  - Free Jazz: shares the extended techniques and anti-commercial
+    stance but free jazz IMPROVISES; avant prog COMPOSES
+  Key artists: Henry Cow, Univers Zero, Magma, Art Bears,
+    Art Zoyd, Thinking Plague, Present, Aranis, Gentle Giant
+    (early, as bridge), Ruins (Japanese)
+
+  COLOUR RATIONALE:
+  ═══════════════════
+  Cold dark grey (#0a0a0c): austere, intellectual, monochromatic
+  Pale cold blue-grey (#8090a0 → #607080): the colour of
+    scored music paper under fluorescent light, the rehearsal
+    room aesthetic. Not warm (this isn't baroque), not void-dark
+    (this isn't noise), not green (this isn't digital). Grey-blue
+    is the colour of ANALYTICAL thought — cool, precise, structured.
+  Dull warm accent (#a08860): the vestigial rock tradition —
+    the electric guitar's warmth still present beneath the
+    compositional surface. Barely visible, like rock DNA buried
+    under avant-garde structure.
+  White (#d0d0d0) on structural lines: the score, the analytical
+    framework, the compositional skeleton.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=600, height=600">
+<title>avant prog — playlist cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #0a0a0c;
+    position: relative;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(
+      ellipse 54% 54% at 50% 48%,
+      transparent 0%,
+      rgba(6, 6, 8, 0.38) 50%,
+      rgba(6, 6, 8, 0.9) 100%
+    );
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* === GRAIN — 20% (functional recording aesthetic) === */
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 11;
+    pointer-events: none;
+    opacity: 0.20;
+  }
+
+  /* === COLD SILVER GLOW — minimal, clinical === */
+  .clinical-glow {
+    position: absolute;
+    width: 240px;
+    height: 200px;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      ellipse 80% 75% at 50% 50%,
+      rgba(128, 144, 160, 0.04) 0%,
+      rgba(96, 112, 128, 0.02) 40%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  .bpm-strip {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 15;
+  }
+  .rule {
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+  }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 46px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>
+</head>
+<body>
+
+<!-- CLINICAL GLOW -->
+<div class="clinical-glow"></div>
+
+<!-- CENTRAL FORM: The Fractured Polygon -->
+<svg class="central-form" width="440" height="440" viewBox="0 0 440 440">
+  <defs>
+    <!-- Compositional stress displacement: scale=2 -->
+    <filter id="stress" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="turbulence" baseFrequency="0.015 0.03" numOctaves="3" seed="1978" result="turb"/>
+      <feDisplacementMap in="SourceGraphic" in2="turb" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Minimal blur: stdDev=1 (precise, sharp) -->
+    <filter id="precisionBlur">
+      <feGaussianBlur stdDeviation="1"/>
+    </filter>
+
+    <!-- Structural line glow — tight, analytical -->
+    <filter id="structGlow">
+      <feGaussianBlur stdDeviation="0.8" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Edge glow -->
+    <filter id="edgeGlow">
+      <feGaussianBlur stdDeviation="1.5" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!--
+    THE FRACTURED POLYGON
+    ═══════════════════
+    An asymmetric closed shape — 7 vertices, NO TWO SIDES EQUAL
+    in length, NO TWO ANGLES equal in measure. This is the visual
+    equivalent of a composition where no section repeats, no measure
+    mirrors another, no pattern recurs.
+
+    CRITICAL DISTINCTION from other geometric forms in the system:
+    - Detroit Techno grid: REGULAR, symmetric, functional
+    - Electro Industrial sequencer: REPEATING pattern (degrading)
+    - Power Noise lattice: GRID structure (rhythm from noise)
+    - Avant Prog polygon: ASYMMETRIC, closed, non-repeating
+
+    The polygon is CLOSED (unlike post bop's open-ended axis or
+    jazz rock's interweaving lines) because avant prog compositions
+    are FULLY COMPOSED — they have defined beginnings, middles, and
+    ends. The form is complete, just irregular.
+
+    7 vertices chosen because 7 is the most common "complex" odd
+    number in avant prog time signatures (7/8, 7/4).
+  -->
+
+  <g filter="url(#stress)">
+
+    <!--
+      THE OUTER POLYGON — the composition's boundary
+      7 vertices, all at different distances from center,
+      creating an irregular, asymmetric closed form.
+    -->
+    <polygon points="
+      175,168
+      240,158
+      305,178
+      328,225
+      295,278
+      215,285
+      162,240
+    "
+    stroke="#8090a0" stroke-width="1.2" fill="none"
+    stroke-linejoin="miter" filter="url(#edgeGlow)" opacity="0.55"/>
+
+    <!--
+      INTERNAL STRUCTURAL LINES — the compositional scaffolding
+      ═══════════════════
+      Lines connecting non-adjacent vertices of the polygon,
+      creating internal triangulations. These represent the
+      compositional structure that holds the dissonance together —
+      the score, the analysis, the framework.
+
+      In avant prog, the structure is VISIBLE: you can hear
+      the compositional thought, the deliberate choices.
+      Unlike free jazz (where structure is hidden or absent),
+      avant prog's structure is its defining feature.
+
+      The internal lines create smaller, irregular sub-shapes
+      within the polygon — sections of the composition,
+      each with its own character.
+    -->
+
+    <!-- Primary structural diagonals -->
+    <line x1="175" y1="168" x2="295" y2="278"
+      stroke="#607080" stroke-width="0.6" opacity="0.3"
+      filter="url(#structGlow)"/>
+    <line x1="240" y1="158" x2="215" y2="285"
+      stroke="#607080" stroke-width="0.6" opacity="0.28"
+      filter="url(#structGlow)"/>
+    <line x1="305" y1="178" x2="162" y2="240"
+      stroke="#607080" stroke-width="0.6" opacity="0.3"
+      filter="url(#structGlow)"/>
+
+    <!-- Secondary structural lines — finer subdivision -->
+    <line x1="328" y1="225" x2="175" y2="168"
+      stroke="#506070" stroke-width="0.4" opacity="0.2"
+      filter="url(#structGlow)"/>
+    <line x1="295" y1="278" x2="240" y2="158"
+      stroke="#506070" stroke-width="0.4" opacity="0.18"
+      filter="url(#structGlow)"/>
+
+    <!--
+      STRESS POINTS — where internal lines cross
+      Small marks at the intersection of structural lines,
+      representing the points of maximum compositional tension —
+      where different sections collide, where time signatures
+      change, where the dissonance is most acute.
+    -->
+    <circle cx="238" cy="220" r="2.5"
+      stroke="#8090a0" stroke-width="0.5" fill="none" opacity="0.25"/>
+    <circle cx="255" cy="235" r="2"
+      stroke="#8090a0" stroke-width="0.4" fill="none" opacity="0.2"/>
+    <circle cx="225" cy="200" r="1.8"
+      stroke="#8090a0" stroke-width="0.4" fill="none" opacity="0.2"/>
+
+    <!--
+      VESTIGIAL ROCK ACCENT
+      A single warm line along one edge of the polygon —
+      the rock tradition still present beneath the avant-garde
+      surface. Dull amber, barely visible. This is the electric
+      guitar's DNA: avant prog is still ROCK at its base,
+      however transformed.
+    -->
+    <line x1="162" y1="240" x2="215" y2="285"
+      stroke="#a08860" stroke-width="0.8" opacity="0.15"/>
+
+  </g>
+
+  <!--
+    ZERO PARTICLES.
+    Avant prog has no decoration. No ornament. No shimmer.
+    Every element is structural. Where baroque pop adds
+    filigree (7 motes), chamber pop adds breath (3 motes),
+    and spiritual jazz overflows (8 motes), avant prog
+    strips to the skeleton.
+
+    The ABSENCE of particles makes a statement:
+    - Trap (0 particles): negative space as urban aesthetic
+    - Power Noise (0 particles): no room, everything is texture
+    - Avant Prog (0 particles): nothing extraneous, pure structure
+    Three zeroes, three different philosophies of absence.
+  -->
+
+  <!--
+    ANGLE NOTATION MARKS
+    ═══════════════════
+    Small arc marks at 3 vertices of the polygon, like the
+    angle notation in a geometry diagram. These encode the
+    analytical/mathematical quality of avant prog composition.
+    The angles are being MEASURED, not just felt. This is
+    composed music — every angle is calculated.
+  -->
+  <g stroke="#8090a0" stroke-width="0.4" fill="none" opacity="0.15">
+    <!-- Angle mark at vertex 1 (175,168) -->
+    <path d="M 180,175 A 8,8 0 0 1 170,174"/>
+    <!-- Angle mark at vertex 4 (328,225) -->
+    <path d="M 322,220 A 8,8 0 0 1 323,232"/>
+    <!-- Angle mark at vertex 6 (215,285) -->
+    <path d="M 222,281 A 8,8 0 0 1 210,280"/>
+  </g>
+
+</svg>
+
+<!--
+  BPM STRIP — ~130 BPM feel, FULLY IRREGULAR spacing
+  ═══════════════════
+  13 ticks, NO TWO GAPS IDENTICAL. This is the most metrically
+  complex BPM strip in the entire system. Every interval between
+  ticks is different, representing the constantly shifting time
+  signatures that define avant prog:
+  11/16 → 7/8 → 13/16 → 5/4 → 9/8 → ...
+
+  Compare to:
+  - Jazz Rock asymmetric (7+5+5 grouping): structured asymmetry
+  - Post Bop displaced accents: even spacing, shifted emphasis
+  - Avant Prog: NO PATTERN AT ALL — pure irregularity
+
+  Kick weight 0.5px (moderate — avant prog has presence but
+  isn't about weight).
+-->
+<svg class="bpm-strip" width="600" height="600" viewBox="0 0 600 600">
+  <g stroke="#ffffff" stroke-linecap="round">
+    <!--
+      Fully irregular spacing — read the gaps:
+      14, 22, 12, 18, 26, 15, 20, 24, 11, 17, 23, 19
+      No gap repeats. Pure asymmetry.
+    -->
+    <line x1="155" y1="342" x2="155" y2="348" stroke-width="0.5" opacity="0.42"/>
+    <line x1="169" y1="342" x2="169" y2="348" stroke-width="0.5" opacity="0.4"/>
+    <line x1="191" y1="342" x2="191" y2="348" stroke-width="0.5" opacity="0.44"/>
+    <line x1="203" y1="342" x2="203" y2="348" stroke-width="0.5" opacity="0.38"/>
+    <line x1="221" y1="342" x2="221" y2="348" stroke-width="0.5" opacity="0.42"/>
+    <line x1="247" y1="342" x2="247" y2="348" stroke-width="0.5" opacity="0.45"/>
+    <line x1="262" y1="342" x2="262" y2="348" stroke-width="0.5" opacity="0.38"/>
+    <line x1="282" y1="342" x2="282" y2="348" stroke-width="0.5" opacity="0.42"/>
+    <line x1="306" y1="342" x2="306" y2="348" stroke-width="0.5" opacity="0.44"/>
+    <line x1="317" y1="342" x2="317" y2="348" stroke-width="0.5" opacity="0.38"/>
+    <line x1="334" y1="342" x2="334" y2="348" stroke-width="0.5" opacity="0.4"/>
+    <line x1="357" y1="342" x2="357" y2="348" stroke-width="0.5" opacity="0.42"/>
+    <line x1="376" y1="342" x2="376" y2="348" stroke-width="0.5" opacity="0.38"/>
+  </g>
+</svg>
+
+<!-- GRAIN OVERLAY -->
+<svg class="grain" width="600" height="600" viewBox="0 0 600 600">
+  <filter id="grainFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- VIGNETTE -->
+<div class="vignette"></div>
+
+<!-- TYPOGRAPHY -->
+<div class="text-block">
+  <div class="rule"></div>
+  <div class="genre-name">avant prog</div>
+  <div class="subtitle">playlist</div>
+</div>
+
+</body>
+</html>

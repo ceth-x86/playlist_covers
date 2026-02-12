@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power Electronics Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #0a0604; }
+  .cover { position: relative; width: 600px; height: 600px; background: #100c08; overflow: hidden; }
+
+  /* Scorched dark brown-black — the colour of
+     burned electronics, overheated amplifiers,
+     the scorch mark on a speaker cone pushed
+     past its limits. Not cold (industrial's
+     blue-steel). Not warm (deep house's amber).
+     BURNT. Susan Lawly, Hospital Productions,
+     Tesco Organisation, Broken Flag. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(118,42,18,0.06) 0%, transparent 35%),
+      linear-gradient(180deg, #120e0a 0%, #100c08 50%, #080604 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — NONE. Zero. Power electronics has
+     NO glow, NO warmth, NO luminance. The
+     signal doesn't illuminate — it BURNS.
+     Even grindcore had 0.02. This has ZERO.
+     The ONLY cover with literally no glow element. */
+
+  /* Grain — 48%. NEW RECORD. The highest grain
+     in the entire series. Higher than raw black
+     metal (44%). The noise floor IS the signal.
+     There is no distinction between the intended
+     sound and the distortion. They are the same. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.48;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  /* Vignette — INVERTED. Most covers darken the
+     edges. Power electronics SCORCHES the centre.
+     The burn is brightest where the signal peaks. */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 50%, rgba(48,18,8,0.08) 0%, rgba(3,2,1,0.55) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .genre-name .line1 { color: rgba(158,52,22,0.75); }
+  .genre-name .line2 { color: rgba(118,38,15,0.32); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(88,32,12,0.12); margin-top: 10px; }
+  .rule { position: absolute; bottom: 82px; left: 40px; width: 80px; height: 1px; background: rgba(98,35,14,0.06); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <!-- NO GLOW ELEMENT — first cover with zero glow -->
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Dirty red-orange for the overdriven signal -->
+      <linearGradient id="overdrive" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#882818;stop-opacity:0.1"/>
+        <stop offset="8%" style="stop-color:#a83820;stop-opacity:0.5"/>
+        <stop offset="20%" style="stop-color:#c84828;stop-opacity:0.72"/>
+        <stop offset="50%" style="stop-color:#d85030;stop-opacity:0.82"/>
+        <stop offset="80%" style="stop-color:#c84828;stop-opacity:0.72"/>
+        <stop offset="92%" style="stop-color:#a83820;stop-opacity:0.5"/>
+        <stop offset="100%" style="stop-color:#882818;stop-opacity:0.1"/>
+      </linearGradient>
+
+      <!-- Clipping indicator red -->
+      <linearGradient id="clipRed" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#981808;stop-opacity:0"/>
+        <stop offset="30%" style="stop-color:#b82810;stop-opacity:0.55"/>
+        <stop offset="50%" style="stop-color:#c83018;stop-opacity:0.65"/>
+        <stop offset="70%" style="stop-color:#b82810;stop-opacity:0.55"/>
+        <stop offset="100%" style="stop-color:#981808;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- HEAVY distortion displacement —
+           scale=8: HIGHEST in entire series.
+           The signal is so overdriven that the
+           waveform itself is being destroyed
+           by the amplification. -->
+      <filter id="overdriveNoise">
+        <feTurbulence type="turbulence" baseFrequency="0.06" numOctaves="4" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+
+      <!-- Clipping distortion — a second, harsher
+           displacement for the flat-topped regions -->
+      <filter id="clipDistort">
+        <feTurbulence type="turbulence" baseFrequency="0.12" numOctaves="5" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+
+      <filter id="burnBlur" x="-6%" y="-8%" width="112%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+      </filter>
+
+      <filter id="heatBlur" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+    </defs>
+
+
+    <!-- === HEAT SHADOW === -->
+    <!-- The thermal ghost behind the signal —
+         the amplifier overheating, the speaker
+         cone distorting. Not a glow (luminance)
+         but a BURN (damage). -->
+    <g filter="url(#heatBlur)" opacity="0.15">
+      <line x1="30" y1="210" x2="410" y2="210"
+        stroke="rgba(128,38,12,0.08)" stroke-width="18"/>
+    </g>
+
+
+    <!-- === THE OVERDRIVEN SIGNAL === -->
+    <!-- ONE line — but THICK, DISTORTED, VIOLENT.
+         
+         Not parallel lines (shoegaze's wall —
+         multiple guitars in harmony).
+         Not a grid (techno — order).
+         Not a wave (rock — organic).
+         ONE SIGNAL pushed past its limits.
+         
+         The form is what happens when you turn
+         the gain past 10, past 11, past where
+         the knob stops. The waveform CLIPS —
+         the peaks flatten because the amplifier
+         can't represent them. The signal exceeds
+         the medium's capacity to contain it.
+         
+         stroke-width: 3.5px — TIED with big beat
+         for thickest line. But big beat is clean.
+         This is DESTROYED by scale=8 displacement. -->
+    <g filter="url(#overdriveNoise)">
+      <line x1="20" y1="210" x2="420" y2="210"
+        stroke="url(#overdrive)" stroke-width="3.5"
+        stroke-linecap="butt"/>
+    </g>
+
+
+    <!-- === CLIPPING ZONES === -->
+    <!-- FLAT-TOPPED regions — where the signal
+         has exceeded 0dB and the waveform is
+         being squared off by the amplifier.
+         The visual equivalent of digital clipping:
+         the sine wave becomes a RECTANGLE because
+         the system can't go higher.
+         
+         3 flat zones: rectangles, not curves.
+         The signal WANTS to peak higher but
+         the medium won't let it. -->
+    <g filter="url(#clipDistort)" opacity="0.5">
+      <!-- Clip zone 1 — above signal -->
+      <rect x="105" y="198" width="55" height="3.5"
+        fill="url(#clipRed)" rx="0"/>
+      <!-- Clip zone 2 — below signal -->
+      <rect x="210" y="218" width="70" height="3"
+        fill="url(#clipRed)" rx="0"/>
+      <!-- Clip zone 3 — above, strongest -->
+      <rect x="310" y="196" width="48" height="4"
+        fill="url(#clipRed)" rx="0"/>
+    </g>
+
+
+    <!-- === DISTORTION DEBRIS === -->
+    <!-- Fragments thrown off by the overdriven
+         signal — speaker fragments, broken
+         harmonics, intermodulation products.
+         SHARP (rx=0), ANGULAR, scattered.
+         Not dust (hip-hop) or sparkle (happy HC)
+         or feedback (shoegaze). SHRAPNEL. -->
+    <g filter="url(#burnBlur)" opacity="0.18">
+      <rect x="88" y="192" width="4" height="1.5" fill="rgba(148,42,15,0.2)" rx="0"/>
+      <rect x="168" y="222" width="3" height="2" fill="rgba(138,38,12,0.18)" rx="0"/>
+      <rect x="248" y="195" width="5" height="1" fill="rgba(155,45,18,0.22)" rx="0"/>
+      <rect x="332" y="224" width="3.5" height="1.5" fill="rgba(142,40,14,0.19)" rx="0"/>
+      <rect x="128" y="226" width="2.5" height="2.5" fill="rgba(132,35,10,0.15)" rx="0"/>
+      <rect x="372" y="200" width="3" height="1" fill="rgba(125,32,8,0.12)" rx="0"/>
+      <rect x="195" y="190" width="2" height="3" fill="rgba(120,30,8,0.1)" rx="0"/>
+      <rect x="285" y="228" width="4" height="1" fill="rgba(115,28,6,0.08)" rx="0"/>
+      <rect x="58" y="205" width="2" height="2" fill="rgba(108,25,5,0.06)" rx="0"/>
+      <rect x="395" y="215" width="2.5" height="1.5" fill="rgba(105,22,4,0.05)" rx="0"/>
+    </g>
+
+
+    <!-- === BPM === -->
+    <!-- ERRATIC or ABSENT. Power electronics
+         often has no beat at all — just the
+         sustained noise. When rhythm exists,
+         it's an ASSAULT — irregular, punishing.
+         
+         5 irregular strikes — not a beat, an ATTACK.
+         Each one a burst of voltage, not a musical
+         pulse. No consistent spacing. No pattern.
+         The anti-rhythm. -->
+    <g stroke="rgba(98,30,10,0.06)" stroke-width="0.3">
+      <!-- Strike 1 — opening assault -->
+      <line x1="82" y1="342" x2="82" y2="358"/>
+      <!-- long gap — the silence before -->
+      <!-- Strike 2 + 3 — double hit -->
+      <line x1="175" y1="340" x2="175" y2="360"/>
+      <line x1="188" y1="341" x2="188" y2="359"/>
+      <!-- long gap -->
+      <!-- Strike 4 — isolated, heavy -->
+      <line x1="288" y1="339" x2="288" y2="361"/>
+      <!-- gap -->
+      <!-- Strike 5 — trailing -->
+      <line x1="365" y1="342" x2="365" y2="358"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Power</span><br/><span class="line2">Electronics</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

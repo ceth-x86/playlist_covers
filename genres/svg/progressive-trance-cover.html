@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progressive Trance Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #04060c; }
+  .cover { position: relative; width: 600px; height: 600px; background: #080c16; overflow: hidden; }
+
+  /* Deep blue-indigo — the colour of a club at 4am
+     when the journey is halfway through and the
+     ceiling has disappeared. Deeper than Detroit's
+     blue-black, warmer than Berlin's grey-black.
+     The blue of DEPTH, not cold. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 38%, rgba(55,78,148,0.07) 0%, transparent 42%),
+      radial-gradient(ellipse at 50% 32%, rgba(148,125,72,0.025) 0%, transparent 28%),
+      linear-gradient(180deg, #0a0e1a 0%, #080c16 42%, #04060c 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — positioned HIGHER than centre.
+     The apex, the destination. Warm white-gold
+     at the top where the arcs are climbing toward.
+     The light at the end of the 3-hour set. */
+  .glow {
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+      rgba(148,132,88,0.06) 0%,
+      rgba(72,88,148,0.04) 30%,
+      transparent 55%);
+    filter: blur(24px);
+    z-index: 2;
+  }
+
+  /* Grain — low, clean production.
+     Progressive trance is POLISHED —
+     the mix matters, every EQ curve deliberate. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.15;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 40%, transparent 34%, rgba(2,3,6,0.48) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .genre-name .line1 { color: rgba(92,118,188,0.82); }
+  .genre-name .line2 { color: rgba(68,92,158,0.38); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(62,85,142,0.15); margin-top: 10px; }
+  .rule { position: absolute; bottom: 82px; left: 40px; width: 80px; height: 1px; background: rgba(65,88,148,0.09); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Arc gradients — each one slightly warmer
+           and brighter than the last, representing
+           the ascent from deep blue to white-gold -->
+
+      <!-- Arc 1 — deepest, coolest blue -->
+      <linearGradient id="arc1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#3050a0;stop-opacity:0"/>
+        <stop offset="20%" style="stop-color:#3858a8;stop-opacity:0.2"/>
+        <stop offset="50%" style="stop-color:#4068b8;stop-opacity:0.32"/>
+        <stop offset="80%" style="stop-color:#3858a8;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#3050a0;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Arc 2 — slightly warmer -->
+      <linearGradient id="arc2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#3858a8;stop-opacity:0"/>
+        <stop offset="18%" style="stop-color:#4268b8;stop-opacity:0.25"/>
+        <stop offset="50%" style="stop-color:#4c78c8;stop-opacity:0.4"/>
+        <stop offset="82%" style="stop-color:#4268b8;stop-opacity:0.25"/>
+        <stop offset="100%" style="stop-color:#3858a8;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Arc 3 — transitioning blue→blue-white -->
+      <linearGradient id="arc3" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#4268b8;stop-opacity:0"/>
+        <stop offset="16%" style="stop-color:#5078c8;stop-opacity:0.3"/>
+        <stop offset="50%" style="stop-color:#5e88d5;stop-opacity:0.48"/>
+        <stop offset="84%" style="stop-color:#5078c8;stop-opacity:0.3"/>
+        <stop offset="100%" style="stop-color:#4268b8;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Arc 4 — warm, approaching the peak -->
+      <linearGradient id="arc4" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#5078c0;stop-opacity:0"/>
+        <stop offset="15%" style="stop-color:#6088c8;stop-opacity:0.35"/>
+        <stop offset="50%" style="stop-color:#7098d0;stop-opacity:0.55"/>
+        <stop offset="85%" style="stop-color:#6088c8;stop-opacity:0.35"/>
+        <stop offset="100%" style="stop-color:#5078c0;stop-opacity:0"/>
+      </linearGradient>
+
+      <!-- Arc 5 — warmest, the apex, blue-gold -->
+      <linearGradient id="arc5" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#6088c0;stop-opacity:0"/>
+        <stop offset="14%" style="stop-color:#7098c8;stop-opacity:0.38"/>
+        <stop offset="35%" style="stop-color:#88a8c8;stop-opacity:0.55"/>
+        <stop offset="50%" style="stop-color:#a0b0b8;stop-opacity:0.62"/>
+        <stop offset="65%" style="stop-color:#88a8c8;stop-opacity:0.55"/>
+        <stop offset="86%" style="stop-color:#7098c8;stop-opacity:0.38"/>
+        <stop offset="100%" style="stop-color:#6088c0;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="arcGlow" x="-4%" y="-6%" width="108%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <filter id="apexGlow" x="-15%" y="-15%" width="130%" height="130%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+      </filter>
+
+      <filter id="trailBlur" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+      </filter>
+    </defs>
+
+
+    <!-- === THE ASCENDING ARCS === -->
+    <!-- 5 arcs, each one:
+         - HIGHER than the last (ascending y)
+         - WIDER than the last (expanding x range)
+         - BRIGHTER and WARMER (colour shift)
+         - More curved (deeper arc, more breath)
+         
+         This is the progressive build — each 
+         phrase lifts slightly, the filter opens
+         a little more, the pad swells a touch
+         brighter. 3 hours compressed into 5 arcs.
+         
+         The arcs DON'T close — they're open at
+         the ends, like the journey continues
+         beyond the frame. -->
+
+    <g filter="url(#arcGlow)">
+      <!-- Arc 1 — lowest, narrowest, deepest blue -->
+      <path d="M 155,265
+               C 175,248 195,240 220,238
+               C 245,240 265,248 285,265"
+        fill="none" stroke="url(#arc1)" stroke-width="0.6"
+        stroke-linecap="round"/>
+
+      <!-- Arc 2 — ascending -->
+      <path d="M 138,245
+               C 165,218 195,206 220,204
+               C 245,206 275,218 302,245"
+        fill="none" stroke="url(#arc2)" stroke-width="0.7"
+        stroke-linecap="round"/>
+
+      <!-- Arc 3 — middle, the journey's heart -->
+      <path d="M 120,225
+               C 155,188 190,174 220,172
+               C 250,174 285,188 320,225"
+        fill="none" stroke="url(#arc3)" stroke-width="0.85"
+        stroke-linecap="round"/>
+
+      <!-- Arc 4 — approaching apex -->
+      <path d="M 102,208
+               C 142,162 185,145 220,142
+               C 255,145 298,162 338,208"
+        fill="none" stroke="url(#arc4)" stroke-width="0.95"
+        stroke-linecap="round"/>
+
+      <!-- Arc 5 — highest, widest, warmest -->
+      <path d="M 82,195
+               C 128,138 178,118 220,115
+               C 262,118 312,138 358,195"
+        fill="none" stroke="url(#arc5)" stroke-width="1.1"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === APEX GLOW === -->
+    <!-- Where the highest arc reaches its peak,
+         a warm radiance — the moment the set peaks,
+         the breakdown resolves, the bass returns.
+         But in progressive trance, this peak is
+         UNDERSTATED — it doesn't explode (rave),
+         it BLOOMS. -->
+    <g filter="url(#apexGlow)" opacity="0.12">
+      <circle cx="220" cy="125" r="15"
+        fill="rgba(128,118,88,0.08)"/>
+    </g>
+    <g filter="url(#apexGlow)" opacity="0.06">
+      <circle cx="220" cy="135" r="25"
+        fill="rgba(82,98,148,0.05)"/>
+    </g>
+
+
+    <!-- === TRAIL PARTICLES === -->
+    <!-- Along each arc, faint particles — the
+         elements of the mix: a pluck, a pad swell,
+         a vocal chop, a filter sweep. Each one
+         placed on or near an arc, colour-matched
+         to that arc's temperature. Ascending with
+         the arcs. -->
+    <g filter="url(#trailBlur)" opacity="0.18">
+      <!-- On Arc 1 — deepest -->
+      <circle cx="190" cy="248" r="1.0" fill="rgba(55,72,128,0.15)"/>
+      <circle cx="250" cy="248" r="0.9" fill="rgba(52,68,125,0.12)"/>
+
+      <!-- On Arc 2 -->
+      <circle cx="175" cy="218" r="1.1" fill="rgba(62,82,138,0.16)"/>
+      <circle cx="262" cy="220" r="1.0" fill="rgba(58,78,135,0.14)"/>
+
+      <!-- On Arc 3 -->
+      <circle cx="162" cy="192" r="1.2" fill="rgba(72,92,148,0.18)"/>
+      <circle cx="278" cy="194" r="1.1" fill="rgba(68,88,145,0.16)"/>
+
+      <!-- On Arc 4 -->
+      <circle cx="148" cy="170" r="1.3" fill="rgba(82,102,158,0.2)"/>
+      <circle cx="292" cy="172" r="1.2" fill="rgba(78,98,155,0.18)"/>
+
+      <!-- On Arc 5 — warmest, brightest -->
+      <circle cx="135" cy="152" r="1.4" fill="rgba(95,110,158,0.22)"/>
+      <circle cx="305" cy="155" r="1.3" fill="rgba(92,108,155,0.2)"/>
+    </g>
+
+
+    <!-- === VERTICAL AXIS === -->
+    <!-- The faintest vertical suggestion — the
+         ascent axis. Not a line (too structural),
+         just a whisper of upward direction. -->
+    <g filter="url(#trailBlur)" opacity="0.03">
+      <line x1="220" y1="270" x2="220" y2="110"
+        stroke="rgba(82,98,148,0.04)" stroke-width="0.5"
+        stroke-linecap="round"/>
+    </g>
+
+
+    <!-- === BPM === -->
+    <!-- Steady, driving, the progressive pulse.
+         128-132 BPM — not fast (DnB) or slow
+         (downtempo). The pace of a long journey.
+         Even, relentless, but with SWELL ACCENTS
+         that grow slightly stronger — the build. -->
+    <g stroke="rgba(48,68,118,0.05)" stroke-width="0.2">
+      <line x1="72" y1="345" x2="72" y2="352"/><line x1="90" y1="345" x2="90" y2="352"/>
+      <line x1="108" y1="345" x2="108" y2="352"/><line x1="126" y1="345" x2="126" y2="352"/>
+      <line x1="144" y1="345" x2="144" y2="352"/><line x1="162" y1="345" x2="162" y2="352"/>
+      <line x1="180" y1="345" x2="180" y2="352"/><line x1="198" y1="345" x2="198" y2="352"/>
+      <line x1="216" y1="345" x2="216" y2="352"/><line x1="234" y1="345" x2="234" y2="352"/>
+      <line x1="252" y1="345" x2="252" y2="352"/><line x1="270" y1="345" x2="270" y2="352"/>
+      <line x1="288" y1="345" x2="288" y2="352"/><line x1="306" y1="345" x2="306" y2="352"/>
+      <line x1="324" y1="345" x2="324" y2="352"/><line x1="342" y1="345" x2="342" y2="352"/>
+      <line x1="360" y1="345" x2="360" y2="352"/><line x1="378" y1="345" x2="378" y2="352"/>
+    </g>
+    <!-- Kick — steady 4/4, with ASCENDING weight.
+         Each downbeat slightly heavier than the last —
+         the build visualized in the BPM. -->
+    <g stroke-linecap="butt">
+      <line x1="72" y1="343" x2="72" y2="354"
+        stroke="rgba(55,78,138,0.06)" stroke-width="0.28"/>
+      <line x1="144" y1="343" x2="144" y2="354"
+        stroke="rgba(60,82,142,0.07)" stroke-width="0.3"/>
+      <line x1="216" y1="343" x2="216" y2="354"
+        stroke="rgba(65,88,148,0.08)" stroke-width="0.33"/>
+      <line x1="288" y1="342" x2="288" y2="355"
+        stroke="rgba(72,95,155,0.1)" stroke-width="0.36"/>
+      <line x1="360" y1="341" x2="360" y2="356"
+        stroke="rgba(82,105,162,0.12)" stroke-width="0.4"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Progressive</span><br/><span class="line2">Trance</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

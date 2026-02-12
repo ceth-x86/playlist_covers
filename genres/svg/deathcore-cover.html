@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deathcore Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #040404; }
+  .cover { position: relative; width: 600px; height: 600px; background: #080808; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 52%, rgba(58,62,48,0.05) 0%, transparent 35%), radial-gradient(ellipse at 50% 55%, rgba(55,28,22,0.03) 0%, transparent 30%), linear-gradient(180deg, #0a0a0a 0%, #080808 42%, #040404 100%); z-index: 1; }
+  .central-form { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -54%); z-index: 3; width: 440px; height: 440px; }
+  .glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 220px; height: 120px; border-radius: 50%; background: radial-gradient(ellipse, rgba(55,58,42,0.06) 0%, rgba(42,22,18,0.025) 42%, transparent 55%); filter: blur(16px); z-index: 2; }
+  .grain { position: absolute; inset: 0; z-index: 7; opacity: 0.30; mix-blend-mode: overlay; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 128px 128px; }
+  .vignette { position: absolute; inset: 0; z-index: 6; background: radial-gradient(ellipse at 50% 52%, transparent 25%, rgba(2,2,2,0.58) 100%); pointer-events: none; }
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name { font-family: 'Anton', sans-serif; font-size: 18px; letter-spacing: 5px; text-transform: uppercase; line-height: 1; color: rgba(128,132,105,0.82); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(82,85,65,0.15); margin-top: 10px; }
+  .rule { position: absolute; bottom: 78px; left: 40px; width: 80px; height: 1px; background: rgba(88,92,68,0.08); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="glow"></div>
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Dead grey-green gradient -->
+      <linearGradient id="slabH" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#5a5e48;stop-opacity:0"/>
+        <stop offset="10%" style="stop-color:#6a6e52;stop-opacity:0.22"/>
+        <stop offset="25%" style="stop-color:#787c5c;stop-opacity:0.42"/>
+        <stop offset="45%" style="stop-color:#848868;stop-opacity:0.58"/>
+        <stop offset="55%" style="stop-color:#848868;stop-opacity:0.58"/>
+        <stop offset="75%" style="stop-color:#787c5c;stop-opacity:0.42"/>
+        <stop offset="90%" style="stop-color:#6a6e52;stop-opacity:0.22"/>
+        <stop offset="100%" style="stop-color:#5a5e48;stop-opacity:0"/>
+      </linearGradient>
+      <!-- Blood undertone for breakdown teeth -->
+      <linearGradient id="bloodV" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#6a5548;stop-opacity:0.52"/>
+        <stop offset="40%" style="stop-color:#5a4238;stop-opacity:0.4"/>
+        <stop offset="100%" style="stop-color:#4a3228;stop-opacity:0.08"/>
+      </linearGradient>
+      <filter id="crushGlow" x="-3%" y="-4%" width="106%" height="108%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="impactWash" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+      </filter>
+      <filter id="breakFracture">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+
+    <!-- IMPACT PRESSURE — the sub-drop that precedes
+         the breakdown. The floor giving way. -->
+    <g filter="url(#impactWash)" opacity="0.1">
+      <ellipse cx="220" cy="230" rx="140" ry="30"
+        fill="rgba(52,55,40,0.07)"/>
+    </g>
+
+    <!-- THE SLAB — the massive horizontal block.
+         The chugging low-tuned riff before it
+         fractures into the breakdown. Heavy,
+         continuous, oppressive. Wider and heavier
+         than any single line in the series. -->
+    <g filter="url(#breakFracture)">
+      <g filter="url(#crushGlow)">
+        <!-- Main slab — the heaviest horizontal form -->
+        <line x1="70" y1="200" x2="370" y2="200"
+          stroke="url(#slabH)" stroke-width="4.5"
+          stroke-linecap="butt"/>
+
+        <!-- Slab harmonic — the overtone, slightly above -->
+        <line x1="85" y1="193" x2="355" y2="193"
+          stroke="url(#slabH)" stroke-width="1.8"
+          stroke-linecap="butt" opacity="0.4"/>
+      </g>
+    </g>
+
+    <!-- THE BREAKDOWN TEETH — the slab FRACTURES
+         downward into jagged vertical stabs.
+         Each tooth is a rhythmic hit — the
+         staccato chugging that defines deathcore.
+         They descend from the slab like stalactites
+         or jaw teeth — DOWNWARD, heavy, crushing.
+         
+         Varying heights = varying rhythmic emphasis.
+         The pattern: heavy-light-heavy-HEAVIEST-light-heavy
+         echoing the typical 0-0-0-0-0-0 palm-muted
+         breakdown rhythm with accents. -->
+    <g filter="url(#crushGlow)">
+      <!-- Tooth 1 -->
+      <line x1="128" y1="204" x2="128" y2="238"
+        stroke="url(#bloodV)" stroke-width="3.5" stroke-linecap="butt"/>
+      <!-- Tooth 2 — shorter -->
+      <line x1="152" y1="204" x2="152" y2="228"
+        stroke="url(#bloodV)" stroke-width="2.8" stroke-linecap="butt" opacity="0.7"/>
+      <!-- Tooth 3 -->
+      <line x1="176" y1="204" x2="176" y2="242"
+        stroke="url(#bloodV)" stroke-width="3.2" stroke-linecap="butt" opacity="0.85"/>
+      <!-- Tooth 4 — THE HEAVIEST, longest, the main accent -->
+      <line x1="200" y1="204" x2="200" y2="258"
+        stroke="url(#bloodV)" stroke-width="4.2" stroke-linecap="butt"/>
+      <!-- Tooth 5 — shorter -->
+      <line x1="224" y1="204" x2="224" y2="226"
+        stroke="url(#bloodV)" stroke-width="2.5" stroke-linecap="butt" opacity="0.6"/>
+      <!-- Tooth 6 -->
+      <line x1="248" y1="204" x2="248" y2="245"
+        stroke="url(#bloodV)" stroke-width="3.8" stroke-linecap="butt" opacity="0.9"/>
+      <!-- Tooth 7 — shorter -->
+      <line x1="272" y1="204" x2="272" y2="232"
+        stroke="url(#bloodV)" stroke-width="2.8" stroke-linecap="butt" opacity="0.7"/>
+      <!-- Tooth 8 -->
+      <line x1="296" y1="204" x2="296" y2="248"
+        stroke="url(#bloodV)" stroke-width="3.5" stroke-linecap="butt" opacity="0.85"/>
+      <!-- Tooth 9 — final accent -->
+      <line x1="320" y1="204" x2="320" y2="252"
+        stroke="url(#bloodV)" stroke-width="4.0" stroke-linecap="butt" opacity="0.95"/>
+    </g>
+
+    <!-- TOOTH IMPACT HALOS — the floor shaking
+         beneath the heaviest hits -->
+    <g filter="url(#impactWash)" opacity="0.12">
+      <circle cx="200" cy="258" r="8" fill="rgba(62,42,35,0.06)"/>
+      <circle cx="248" cy="245" r="7" fill="rgba(58,40,32,0.05)"/>
+      <circle cx="320" cy="252" r="7.5" fill="rgba(60,42,34,0.055)"/>
+    </g>
+
+    <!-- BLAST BEAT RESIDUE — above the slab,
+         the blast beats that precede the breakdown.
+         Rapid, dense, then STOPPING for the drop. -->
+    <g opacity="0.2">
+      <line x1="100" y1="184" x2="100" y2="190" stroke="rgba(95,98,78,0.25)" stroke-width="0.4" stroke-linecap="butt"/>
+      <line x1="106" y1="185" x2="106" y2="189" stroke="rgba(88,92,72,0.2)" stroke-width="0.3" stroke-linecap="butt"/>
+      <line x1="112" y1="184" x2="112" y2="190" stroke="rgba(92,95,75,0.22)" stroke-width="0.35" stroke-linecap="butt"/>
+      <line x1="117" y1="185" x2="117" y2="189" stroke="rgba(88,92,72,0.2)" stroke-width="0.3" stroke-linecap="butt"/>
+      <line x1="122" y1="184" x2="122" y2="190" stroke="rgba(92,95,75,0.22)" stroke-width="0.35" stroke-linecap="butt"/>
+      <line x1="127" y1="185" x2="127" y2="189" stroke="rgba(85,88,68,0.18)" stroke-width="0.25" stroke-linecap="butt"/>
+      <line x1="132" y1="184" x2="132" y2="190" stroke="rgba(80,82,65,0.15)" stroke-width="0.2" stroke-linecap="butt"/>
+      <line x1="136" y1="185" x2="136" y2="188" stroke="rgba(75,78,60,0.12)" stroke-width="0.18" stroke-linecap="butt"/>
+    </g>
+
+    <!-- GUTTURAL — the low-end vocal pressure,
+         a blurred mass below the teeth -->
+    <g filter="url(#impactWash)" opacity="0.05">
+      <ellipse cx="220" cy="265" rx="100" ry="15"
+        fill="rgba(62,35,28,0.05)"/>
+    </g>
+
+    <!-- BPM — the breakdown rhythm.
+         SLOW, HEAVY, each hit separated by
+         silence. The anti-speed: where blast
+         beats are fast, breakdowns are GLACIALLY
+         heavy with gaps between impacts. -->
+    <g stroke="rgba(72,75,58,0.05)" stroke-width="0.2">
+      <line x1="72" y1="345" x2="72" y2="352"/><line x1="96" y1="345" x2="96" y2="352"/>
+      <line x1="120" y1="345" x2="120" y2="352"/><line x1="144" y1="345" x2="144" y2="352"/>
+      <line x1="168" y1="345" x2="168" y2="352"/><line x1="192" y1="345" x2="192" y2="352"/>
+      <line x1="216" y1="345" x2="216" y2="352"/><line x1="240" y1="345" x2="240" y2="352"/>
+      <line x1="264" y1="345" x2="264" y2="352"/><line x1="288" y1="345" x2="288" y2="352"/>
+      <line x1="312" y1="345" x2="312" y2="352"/><line x1="336" y1="345" x2="336" y2="352"/>
+      <line x1="360" y1="345" x2="360" y2="352"/>
+    </g>
+    <!-- Breakdown hits — heavy, spaced, the rhythm of crushing weight -->
+    <g stroke="rgba(105,85,68,0.14)" stroke-width="0.6">
+      <line x1="72" y1="340" x2="72" y2="357"/>
+      <line x1="168" y1="340" x2="168" y2="357"/>
+      <line x1="264" y1="340" x2="264" y2="357"/>
+      <line x1="360" y1="340" x2="360" y2="357"/>
+    </g>
+    <!-- Blast section — rapid ticks before breakdown -->
+    <g stroke="rgba(82,85,65,0.04)" stroke-width="0.12">
+      <line x1="80" y1="347" x2="80" y2="350"/><line x1="84" y1="347" x2="84" y2="350"/>
+      <line x1="88" y1="347" x2="88" y2="350"/><line x1="92" y1="347" x2="92" y2="350"/>
+    </g>
+  </svg>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Deathcore</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+</body>
+</html>

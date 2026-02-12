@@ -1,0 +1,420 @@
+<!--
+  FRENCHCORE — Playlist Cover
+  Design System: Playlist Cover v1
+
+  SONIC DNA ANALYSIS:
+  ═══════════════════
+  Frenchcore's defining sonic features:
+  1. THE DISTORTED KICK — massively overdriven, pitched kick drums that ARE the
+     melody. Unlike mainstream hardcore where the kick punctuates, in frenchcore
+     the kick IS the composition. Distorted to the point of tonal content.
+  2. RELENTLESS TEMPO — 190-210 BPM, four-on-the-floor without mercy
+  3. INDUSTRIAL DISTORTION — French industrial heritage (think Noize Suppressor,
+     Dr. Peacock), everything pushed through heavy distortion chains
+  4. PITCHED KICK MELODIES — the kick drum changes pitch to create melodic
+     phrases, a technique that defines the genre
+  5. RAVE AGGRESSION — carnival energy turned violent, "happy" melodies
+     played at punishing speed with crushing distortion
+  6. MINIMAL ARRANGEMENT — kick + kick + kick + occasional stab/vocal
+
+  VISUAL TRANSLATION:
+  ═══════════════════
+  Background: Dark industrial grey-brown (#0d0a08) — scorched, charred,
+    the aftermath of sustained sonic punishment
+  Central form: FRACTURED IMPACT — a central impact point (the kick strike)
+    with radiating fracture lines spreading outward like cracks in concrete.
+    The impact is NOT a circle (that's mainstream hardcore's crater) — it's
+    a STARBURST OF FRACTURES, angular and sharp, because frenchcore's kick
+    is distorted beyond roundness into jagged, clipping waveforms.
+    Below/around: concentric pressure rings (the kick's tonal resonance)
+  Glow: Harsh orange-red (0.07) — overdriven tubes, clipping LEDs,
+    the visual of distortion pushed past the red line
+  Grain: 34% — HEAVY. This is distorted, crushed, lo-fi by design.
+    Higher than dubstep (24%) but below raw black metal (44%)
+  Displacement: scale=4 — aggressive distortion warping the form,
+    second-highest after power electronics (8) and garage rock (6)
+  Blur: stdDev=3 — minimal blur, frenchcore is SHARP and attacking,
+    not diffused. The kick cuts, it doesn't wash.
+  Particles: 4 angular shards — kicked-out fragments of the impact,
+    sharp and geometric (not round shimmer, not organic debris)
+  BPM: 200 BPM → 30 ticks at 10px spacing, kick weight 0.7px
+    (second only to mainstream hardcore's 0.75px),
+    EVERY tick is a kick — true four-on-the-floor with no hi-hat/snare
+    variation, just relentless identical strikes
+
+  FAMILY PLACEMENT:
+  ═══════════════════
+  Hardcore evolution: Mainstream Hardcore (impact crater, 0.75px kick) →
+    Happy Hardcore (bouncing star, lighter) → Frenchcore (fractured impact)
+  Also connects to: Industrial Techno (distortion heritage),
+    Gabber (tempo ancestor), Hard Trance (ascending energy)
+  Compared to Mainstream Hardcore: same neighbourhood kick weight but
+    frenchcore's kick is DISTORTED and PITCHED — it has melodic content.
+    Mainstream HC = blunt impact; Frenchcore = sharpened, weaponized impact.
+  Compared to Happy Hardcore: same French party DNA but inverted —
+    happy HC is euphoric (star, sparkles); frenchcore is aggressive
+    (fractures, shards). Both fast, opposite emotional charge.
+  Key artists: Dr. Peacock, Sefa, Mr. Ivex, Billx, The Speed Freak
+
+  COLOUR RATIONALE:
+  ═══════════════════
+  Dark charred grey (#0d0a08): scorched — the visual of sustained
+    high-SPL punishment, darker than mainstream HC
+  Orange-red (#cc3300 → #ff4400): the colour of clipping — when a
+    signal overdrives, meters go orange then red. Frenchcore lives
+    permanently in the red zone.
+  White fracture lines: the raw energy of the impact itself,
+    bright because the transient of each kick is blinding
+  NO blue, NO purple, NO cool tones — frenchcore is HOT,
+    thermally aggressive, everything is friction and heat
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=600, height=600">
+<title>frenchcore — playlist cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #0d0a08;
+    position: relative;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(
+      ellipse 50% 50% at 50% 50%,
+      transparent 0%,
+      rgba(8, 6, 4, 0.45) 50%,
+      rgba(8, 6, 4, 0.9) 100%
+    );
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* === GRAIN — 34% (heavy distortion aesthetic) === */
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 11;
+    pointer-events: none;
+    opacity: 0.34;
+  }
+
+  /* === IMPACT GLOW — harsh orange-red from the strike point === */
+  .impact-glow {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(204, 51, 0, 0.07) 0%,
+      rgba(180, 40, 0, 0.03) 40%,
+      transparent 70%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  .bpm-strip {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 15;
+  }
+  .rule {
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+  }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 44px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>
+</head>
+<body>
+
+<!-- IMPACT GLOW -->
+<div class="impact-glow"></div>
+
+<!-- CENTRAL FORM: Fractured Impact + Pressure Rings -->
+<svg class="central-form" width="440" height="440" viewBox="0 0 440 440">
+  <defs>
+    <!-- Aggressive distortion displacement: scale=4 -->
+    <filter id="distort" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="turbulence" baseFrequency="0.025 0.05" numOctaves="3" seed="666" result="turb"/>
+      <feDisplacementMap in="SourceGraphic" in2="turb" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Impact flash blur: stdDev=3 (sharp, not washy) -->
+    <filter id="impactFlash">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+
+    <!-- Fracture line glow — tight -->
+    <filter id="fractureGlow">
+      <feGaussianBlur stdDeviation="1.5" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Pressure ring blur -->
+    <filter id="ringBlur">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+
+    <!-- Orange-red distortion gradient -->
+    <radialGradient id="impactGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff4400" stop-opacity="0.6"/>
+      <stop offset="30%" stop-color="#cc3300" stop-opacity="0.4"/>
+      <stop offset="70%" stop-color="#8b2200" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0d0a08" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!--
+    FRACTURED IMPACT
+    ═══════════════════
+    The central visual: a kick strike so hard it fractures the field.
+    Not a clean circle (mainstream hardcore) or a bouncing shape
+    (happy hardcore) — angular fracture lines radiating from a
+    central impact point, like concrete cracking under a pile driver.
+
+    The fractures are the DISTORTED KICK's waveform made spatial —
+    jagged, clipping, sharp angles where a clean kick would be smooth.
+
+    Key distinction from Mainstream Hardcore's "impact crater":
+    - Mainstream HC = concentric crater (blunt force)
+    - Frenchcore = radiating fractures (piercing force)
+    The kick in frenchcore doesn't just HIT — it CRACKS.
+  -->
+
+  <!-- Impact core flash — the transient moment of the kick strike -->
+  <circle cx="220" cy="220" r="8"
+    fill="#ff4400" filter="url(#impactFlash)" opacity="0.15"/>
+  <circle cx="220" cy="220" r="3"
+    fill="#ffffff" opacity="0.2"/>
+
+  <!-- Concentric pressure rings — kicked tonal resonance -->
+  <!-- These are the pitched harmonics of the distorted kick -->
+  <circle cx="220" cy="220" r="35"
+    stroke="#cc3300" stroke-width="0.6" fill="none"
+    filter="url(#ringBlur)" opacity="0.12"/>
+  <circle cx="220" cy="220" r="60"
+    stroke="#8b2200" stroke-width="0.5" fill="none"
+    filter="url(#ringBlur)" opacity="0.08"/>
+  <circle cx="220" cy="220" r="90"
+    stroke="#5c1500" stroke-width="0.4" fill="none"
+    filter="url(#ringBlur)" opacity="0.05"/>
+
+  <!-- FRACTURE LINES — radiating from impact point, with distortion -->
+  <g filter="url(#distort)">
+
+    <!-- Primary fractures: 8 major lines at irregular angles -->
+    <!-- (not evenly spaced — the crack pattern is chaotic, not designed) -->
+
+    <!-- Fracture 1 — upper right, longest -->
+    <line x1="223" y1="217" x2="330" y2="140"
+      stroke="#ffffff" stroke-width="1.4" opacity="0.55"
+      stroke-linecap="round" filter="url(#fractureGlow)"/>
+    <!-- Branch off fracture 1 -->
+    <line x1="280" y1="175" x2="310" y2="155"
+      stroke="#ffffff" stroke-width="0.7" opacity="0.3"
+      stroke-linecap="round"/>
+
+    <!-- Fracture 2 — upper left -->
+    <line x1="217" y1="218" x2="118" y2="155"
+      stroke="#ffffff" stroke-width="1.2" opacity="0.5"
+      stroke-linecap="round" filter="url(#fractureGlow)"/>
+    <!-- Branch -->
+    <line x1="160" y1="190" x2="135" y2="180"
+      stroke="#ffffff" stroke-width="0.6" opacity="0.25"
+      stroke-linecap="round"/>
+
+    <!-- Fracture 3 — right -->
+    <line x1="224" y1="222" x2="345" y2="235"
+      stroke="#ffffff" stroke-width="1.3" opacity="0.5"
+      stroke-linecap="round" filter="url(#fractureGlow)"/>
+
+    <!-- Fracture 4 — lower right -->
+    <line x1="222" y1="224" x2="315" y2="310"
+      stroke="#ffffff" stroke-width="1.1" opacity="0.45"
+      stroke-linecap="round" filter="url(#fractureGlow)"/>
+    <!-- Branch -->
+    <line x1="275" y1="270" x2="300" y2="280"
+      stroke="#ffffff" stroke-width="0.6" opacity="0.2"
+      stroke-linecap="round"/>
+
+    <!-- Fracture 5 — lower left -->
+    <line x1="218" y1="223" x2="130" y2="295"
+      stroke="#ffffff" stroke-width="1.2" opacity="0.45"
+      stroke-linecap="round" filter="url(#fractureGlow)"/>
+
+    <!-- Fracture 6 — left -->
+    <line x1="216" y1="220" x2="105" y2="215"
+      stroke="#ffffff" stroke-width="1.0" opacity="0.4"
+      stroke-linecap="round" filter="url(#fractureGlow)"/>
+
+    <!-- Fracture 7 — steep upper -->
+    <line x1="220" y1="216" x2="235" y2="120"
+      stroke="#ffffff" stroke-width="1.1" opacity="0.45"
+      stroke-linecap="round" filter="url(#fractureGlow)"/>
+
+    <!-- Fracture 8 — steep lower -->
+    <line x1="220" y1="225" x2="195" y2="325"
+      stroke="#ffffff" stroke-width="1.0" opacity="0.4"
+      stroke-linecap="round" filter="url(#fractureGlow)"/>
+    <!-- Branch -->
+    <line x1="205" y1="280" x2="185" y2="295"
+      stroke="#ffffff" stroke-width="0.5" opacity="0.2"
+      stroke-linecap="round"/>
+
+    <!--
+      Secondary micro-fractures: shorter, thinner
+      The damage radiates in fine detail
+    -->
+    <line x1="225" y1="215" x2="270" y2="170"
+      stroke="#cc3300" stroke-width="0.5" opacity="0.25"
+      stroke-linecap="round"/>
+    <line x1="215" y1="222" x2="165" y2="245"
+      stroke="#cc3300" stroke-width="0.5" opacity="0.2"
+      stroke-linecap="round"/>
+    <line x1="222" y1="225" x2="250" y2="275"
+      stroke="#cc3300" stroke-width="0.5" opacity="0.22"
+      stroke-linecap="round"/>
+    <line x1="218" y1="215" x2="185" y2="170"
+      stroke="#cc3300" stroke-width="0.5" opacity="0.2"
+      stroke-linecap="round"/>
+  </g>
+
+  <!--
+    ANGULAR SHARDS — 4 particles
+    ═══════════════════
+    Kicked-out fragments from the impact — sharp, geometric,
+    not round (future bass) or rectangular (dubstep).
+    These are TRIANGULAR — like shattered concrete chips.
+  -->
+  <g opacity="0.4">
+    <polygon points="295,168 299,164 297,170"
+      fill="#ff4400" opacity="0.4"/>
+    <polygon points="148,188 153,184 150,191"
+      fill="#cc3300" opacity="0.35"/>
+    <polygon points="290,278 294,282 288,283"
+      fill="#ff4400" opacity="0.3"/>
+    <polygon points="162,268 158,272 164,273"
+      fill="#cc3300" opacity="0.3"/>
+  </g>
+
+</svg>
+
+<!--
+  BPM STRIP — 200 BPM
+  ═══════════════════
+  30 ticks at 10px spacing (total: 290px, centered)
+  Kick weight: 0.7px (HEAVY — second only to mainstream hardcore 0.75px)
+  EVERY TICK IS A KICK — no hi-hat/snare variation.
+  True four-on-the-floor: identical, relentless, mechanical strikes.
+  This is the first BPM strip in the system with uniform weight
+  across all ticks — because in frenchcore, every beat is a kick.
+  Starting x = (600 - 29*10) / 2 = 155
+-->
+<svg class="bpm-strip" width="600" height="600" viewBox="0 0 600 600">
+  <g stroke="#ffffff" stroke-linecap="round">
+    <!-- 30 identical kick strikes. No variation. No mercy. -->
+    <line x1="155" y1="341" x2="155" y2="349" stroke-width="0.7" opacity="0.45"/>
+    <line x1="165" y1="341" x2="165" y2="349" stroke-width="0.7" opacity="0.43"/>
+    <line x1="175" y1="341" x2="175" y2="349" stroke-width="0.7" opacity="0.45"/>
+    <line x1="185" y1="341" x2="185" y2="349" stroke-width="0.7" opacity="0.43"/>
+    <line x1="195" y1="341" x2="195" y2="349" stroke-width="0.7" opacity="0.45"/>
+    <line x1="205" y1="341" x2="205" y2="349" stroke-width="0.7" opacity="0.43"/>
+    <line x1="215" y1="341" x2="215" y2="349" stroke-width="0.7" opacity="0.45"/>
+    <line x1="225" y1="341" x2="225" y2="349" stroke-width="0.7" opacity="0.43"/>
+    <line x1="235" y1="341" x2="235" y2="349" stroke-width="0.7" opacity="0.45"/>
+    <line x1="245" y1="341" x2="245" y2="349" stroke-width="0.7" opacity="0.43"/>
+    <line x1="255" y1="341" x2="255" y2="349" stroke-width="0.7" opacity="0.45"/>
+    <line x1="265" y1="341" x2="265" y2="349" stroke-width="0.7" opacity="0.43"/>
+    <line x1="275" y1="341" x2="275" y2="349" stroke-width="0.7" opacity="0.45"/>
+    <line x1="285" y1="341" x2="285" y2="349" stroke-width="0.7" opacity="0.43"/>
+    <line x1="295" y1="341" x2="295" y2="349" stroke-width="0.7" opacity="0.45"/>
+    <line x1="305" y1="341" x2="305" y2="349" stroke-width="0.7" opacity="0.43"/>
+    <line x1="315" y1="341" x2="315" y2="349" stroke-width="0.7" opacity="0.45"/>
+    <line x1="325" y1="341" x2="325" y2="349" stroke-width="0.7" opacity="0.43"/>
+    <line x1="335" y1="341" x2="335" y2="349" stroke-width="0.7" opacity="0.45"/>
+    <line x1="345" y1="341" x2="345" y2="349" stroke-width="0.7" opacity="0.43"/>
+    <line x1="355" y1="341" x2="355" y2="349" stroke-width="0.7" opacity="0.45"/>
+    <line x1="365" y1="341" x2="365" y2="349" stroke-width="0.7" opacity="0.43"/>
+    <line x1="375" y1="341" x2="375" y2="349" stroke-width="0.7" opacity="0.45"/>
+    <line x1="385" y1="341" x2="385" y2="349" stroke-width="0.7" opacity="0.43"/>
+    <line x1="395" y1="341" x2="395" y2="349" stroke-width="0.7" opacity="0.45"/>
+    <line x1="405" y1="341" x2="405" y2="349" stroke-width="0.7" opacity="0.43"/>
+    <line x1="415" y1="341" x2="415" y2="349" stroke-width="0.7" opacity="0.45"/>
+    <line x1="425" y1="341" x2="425" y2="349" stroke-width="0.7" opacity="0.43"/>
+    <line x1="435" y1="341" x2="435" y2="349" stroke-width="0.7" opacity="0.45"/>
+    <line x1="445" y1="341" x2="445" y2="349" stroke-width="0.7" opacity="0.43"/>
+  </g>
+</svg>
+
+<!-- GRAIN OVERLAY -->
+<svg class="grain" width="600" height="600" viewBox="0 0 600 600">
+  <filter id="grainFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- VIGNETTE -->
+<div class="vignette"></div>
+
+<!-- TYPOGRAPHY -->
+<div class="text-block">
+  <div class="rule"></div>
+  <div class="genre-name">frenchcore</div>
+  <div class="subtitle">playlist</div>
+</div>
+
+</body>
+</html>

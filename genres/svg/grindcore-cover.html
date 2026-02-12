@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grindcore Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #060604; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0c0c08; overflow: hidden; }
+
+  /* Dirty olive-black — not blue (BM), not purple
+     (goth), not warm brown (sludge). The colour
+     of a squat venue's ceiling, nicotine-stained
+     concrete, the floor of a DIY space after a
+     show. Earache, Relapse, Willowtip. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(72,68,42,0.05) 0%, transparent 35%),
+      linear-gradient(180deg, #0e0e0a 0%, #0c0c08 48%, #060604 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* NO glow. Grindcore does not glow, shimmer,
+     resonate, or bloom. It HITS and it ENDS.
+     The most ANTI-luminous cover in the series. */
+  .glow {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+      rgba(58,55,35,0.02) 0%,
+      transparent 45%);
+    filter: blur(15px);
+    z-index: 2;
+  }
+
+  /* Grain — 36%. Very heavy. The HM-2 through
+     a busted PA, cassette demos traded at shows,
+     the noise floor IS the music. Between garage
+     rock (32%) and raw BM (44%). */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.36;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 48%, transparent 24%, rgba(3,3,2,0.55) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: rgba(128,122,78,0.78);
+  }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(88,85,55,0.14); margin-top: 10px; }
+  .rule { position: absolute; bottom: 78px; left: 40px; width: 80px; height: 1px; background: rgba(92,88,58,0.07); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="massNoise">
+        <feTurbulence type="fractalNoise" baseFrequency="0.15" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+
+      <filter id="blastBlur" x="-3%" y="-5%" width="106%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.5"/>
+      </filter>
+
+      <filter id="edgeBlur" x="-4%" y="-6%" width="108%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
+      </filter>
+    </defs>
+
+
+    <!-- === THE BLAST CLOUD === -->
+    <!-- The central form: a DENSE RECTANGULAR MASS.
+         Not a wave. Not a line. Not a circle.
+         Not a grid. A MASS.
+         
+         Hundreds of tiny marks packed so densely
+         they merge into a solid block — the blast
+         beat's individual snare hits becoming
+         indistinguishable, the guitar riffs
+         compressed into a wall of noise.
+         
+         The form is COMPACT — shorter/wider than
+         other forms because grindcore songs are
+         90 SECONDS. The mass doesn't extend to
+         fill the frame — it's a BLOCK in the centre,
+         surrounded by silence. Duration compressed,
+         density maximized.
+         
+         Width > height because the sound is
+         ALL FREQUENCIES simultaneously, not
+         a single pitch. -->
+
+    <g filter="url(#massNoise)">
+      <!-- === BLAST LAYER 1: the wall === -->
+      <!-- Dense horizontal marks — each one a
+           snare hit, packed at blast beat density.
+           0.3-0.6px height, varying width, stacked
+           with minimal spacing. The individual
+           hits are barely distinguishable. -->
+      <g opacity="0.45">
+        <!-- Row by row, the blast beat wall -->
+        <rect x="120" y="188" width="200" height="0.5" fill="rgba(108,105,68,0.5)" rx="0"/>
+        <rect x="118" y="190" width="204" height="0.6" fill="rgba(112,108,72,0.52)" rx="0"/>
+        <rect x="122" y="192" width="196" height="0.4" fill="rgba(105,102,65,0.48)" rx="0"/>
+        <rect x="116" y="194" width="208" height="0.6" fill="rgba(115,112,75,0.55)" rx="0"/>
+        <rect x="120" y="196" width="200" height="0.5" fill="rgba(108,105,68,0.5)" rx="0"/>
+        <rect x="124" y="198" width="192" height="0.5" fill="rgba(102,98,62,0.46)" rx="0"/>
+        <rect x="117" y="200" width="206" height="0.7" fill="rgba(118,115,78,0.58)" rx="0"/>
+        <rect x="121" y="202" width="198" height="0.5" fill="rgba(110,107,70,0.52)" rx="0"/>
+        <rect x="119" y="204" width="202" height="0.6" fill="rgba(112,108,72,0.54)" rx="0"/>
+        <rect x="123" y="206" width="194" height="0.4" fill="rgba(105,102,65,0.48)" rx="0"/>
+        <rect x="115" y="208" width="210" height="0.7" fill="rgba(120,118,80,0.6)" rx="0"/>
+        <rect x="120" y="210" width="200" height="0.6" fill="rgba(115,112,75,0.56)" rx="0"/>
+        <rect x="118" y="212" width="204" height="0.5" fill="rgba(108,105,68,0.5)" rx="0"/>
+        <rect x="122" y="214" width="196" height="0.6" fill="rgba(112,108,72,0.54)" rx="0"/>
+        <rect x="116" y="216" width="208" height="0.5" fill="rgba(110,107,70,0.52)" rx="0"/>
+        <rect x="121" y="218" width="198" height="0.7" fill="rgba(118,115,78,0.58)" rx="0"/>
+        <rect x="119" y="220" width="202" height="0.5" fill="rgba(108,105,68,0.5)" rx="0"/>
+        <rect x="124" y="222" width="192" height="0.4" fill="rgba(102,98,62,0.46)" rx="0"/>
+        <rect x="117" y="224" width="206" height="0.6" fill="rgba(115,112,75,0.55)" rx="0"/>
+        <rect x="120" y="226" width="200" height="0.5" fill="rgba(108,105,68,0.5)" rx="0"/>
+      </g>
+
+      <!-- === BLAST LAYER 2: the guitar === -->
+      <!-- Wider, thicker marks at lower opacity —
+           the downtuned guitar chugging beneath
+           the blast beat. Same space, same density,
+           merged into the mass. -->
+      <g opacity="0.3">
+        <rect x="128" y="192" width="184" height="1.2" fill="rgba(88,85,52,0.35)" rx="0"/>
+        <rect x="126" y="197" width="188" height="1.0" fill="rgba(85,82,48,0.32)" rx="0"/>
+        <rect x="130" y="203" width="180" height="1.3" fill="rgba(92,88,55,0.38)" rx="0"/>
+        <rect x="125" y="209" width="190" height="1.1" fill="rgba(88,85,52,0.35)" rx="0"/>
+        <rect x="129" y="215" width="182" height="1.2" fill="rgba(85,82,48,0.32)" rx="0"/>
+        <rect x="127" y="221" width="186" height="1.0" fill="rgba(82,78,45,0.3)" rx="0"/>
+      </g>
+    </g>
+
+
+    <!-- === EDGE SCATTER === -->
+    <!-- Tiny fragments blown off the edges of
+         the mass — the noise that escapes the
+         blast. Sparse, small, irregular. The
+         feedback squeal between songs, the
+         monitor buzz. -->
+    <g filter="url(#edgeBlur)" opacity="0.15">
+      <!-- Left edge -->
+      <rect x="102" y="198" width="3" height="1" fill="rgba(92,88,55,0.15)" rx="0"/>
+      <rect x="106" y="208" width="2" height="1.5" fill="rgba(88,85,52,0.12)" rx="0"/>
+      <rect x="100" y="218" width="2.5" height="1" fill="rgba(85,82,48,0.1)" rx="0"/>
+
+      <!-- Right edge -->
+      <rect x="335" y="195" width="2.5" height="1" fill="rgba(92,88,55,0.14)" rx="0"/>
+      <rect x="332" y="210" width="3" height="1.5" fill="rgba(88,85,52,0.12)" rx="0"/>
+      <rect x="336" y="222" width="2" height="1" fill="rgba(85,82,48,0.1)" rx="0"/>
+
+      <!-- Top/bottom scatter -->
+      <rect x="178" y="184" width="2" height="1" fill="rgba(82,78,45,0.08)" rx="0"/>
+      <rect x="252" y="182" width="1.5" height="1" fill="rgba(78,75,42,0.06)" rx="0"/>
+      <rect x="195" y="230" width="2.5" height="1" fill="rgba(82,78,45,0.08)" rx="0"/>
+      <rect x="268" y="232" width="2" height="1" fill="rgba(78,75,42,0.06)" rx="0"/>
+    </g>
+
+
+    <!-- === BPM === -->
+    <!-- The FASTEST non-electronic BPM in the
+         series. Blast beats at 200-280 BPM.
+         7px spacing — faster than DnB's 8px,
+         the fastest in the ENTIRE series.
+         
+         But the ticks are HEAVIER than DnB —
+         these are snare hits, not hi-hats.
+         BRUTE FORCE at maximum speed. -->
+    <g stroke="rgba(78,75,48,0.05)" stroke-width="0.18">
+      <line x1="50" y1="345" x2="50" y2="351"/><line x1="57" y1="345" x2="57" y2="351"/>
+      <line x1="64" y1="345" x2="64" y2="351"/><line x1="71" y1="345" x2="71" y2="351"/>
+      <line x1="78" y1="345" x2="78" y2="351"/><line x1="85" y1="345" x2="85" y2="351"/>
+      <line x1="92" y1="345" x2="92" y2="351"/><line x1="99" y1="345" x2="99" y2="351"/>
+      <line x1="106" y1="345" x2="106" y2="351"/><line x1="113" y1="345" x2="113" y2="351"/>
+      <line x1="120" y1="345" x2="120" y2="351"/><line x1="127" y1="345" x2="127" y2="351"/>
+      <line x1="134" y1="345" x2="134" y2="351"/><line x1="141" y1="345" x2="141" y2="351"/>
+      <line x1="148" y1="345" x2="148" y2="351"/><line x1="155" y1="345" x2="155" y2="351"/>
+      <line x1="162" y1="345" x2="162" y2="351"/><line x1="169" y1="345" x2="169" y2="351"/>
+      <line x1="176" y1="345" x2="176" y2="351"/><line x1="183" y1="345" x2="183" y2="351"/>
+      <line x1="190" y1="345" x2="190" y2="351"/><line x1="197" y1="345" x2="197" y2="351"/>
+      <line x1="204" y1="345" x2="204" y2="351"/><line x1="211" y1="345" x2="211" y2="351"/>
+      <line x1="218" y1="345" x2="218" y2="351"/><line x1="225" y1="345" x2="225" y2="351"/>
+      <line x1="232" y1="345" x2="232" y2="351"/><line x1="239" y1="345" x2="239" y2="351"/>
+      <line x1="246" y1="345" x2="246" y2="351"/><line x1="253" y1="345" x2="253" y2="351"/>
+      <line x1="260" y1="345" x2="260" y2="351"/><line x1="267" y1="345" x2="267" y2="351"/>
+      <line x1="274" y1="345" x2="274" y2="351"/><line x1="281" y1="345" x2="281" y2="351"/>
+      <line x1="288" y1="345" x2="288" y2="351"/><line x1="295" y1="345" x2="295" y2="351"/>
+      <line x1="302" y1="345" x2="302" y2="351"/><line x1="309" y1="345" x2="309" y2="351"/>
+      <line x1="316" y1="345" x2="316" y2="351"/><line x1="323" y1="345" x2="323" y2="351"/>
+      <line x1="330" y1="345" x2="330" y2="351"/><line x1="337" y1="345" x2="337" y2="351"/>
+      <line x1="344" y1="345" x2="344" y2="351"/><line x1="351" y1="345" x2="351" y2="351"/>
+      <line x1="358" y1="345" x2="358" y2="351"/><line x1="365" y1="345" x2="365" y2="351"/>
+      <line x1="372" y1="345" x2="372" y2="351"/><line x1="379" y1="345" x2="379" y2="351"/>
+      <line x1="386" y1="345" x2="386" y2="351"/><line x1="393" y1="345" x2="393" y2="351"/>
+    </g>
+    <!-- NO distinct kick pattern — in grindcore
+         the blast beat OBLITERATES the kick/snare
+         distinction. Just the wall of hits.
+         The BPM IS the blast. No hierarchy. -->
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Grindcore</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

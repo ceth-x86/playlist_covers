@@ -1,0 +1,512 @@
+<!--
+  BAROQUE POP — Playlist Cover
+  Design System: Playlist Cover v1
+
+  SONIC DNA ANALYSIS:
+  ═══════════════════
+  Baroque Pop's defining sonic features:
+  1. ORCHESTRAL ARRANGEMENT OVER POP STRUCTURE — full string sections,
+     woodwinds, brass, harpsichord, timpani deployed within 3-minute pop
+     songs. Not prog's extended suites or classical music's formal
+     development — baroque pop keeps the pop SONG and dresses it in
+     orchestral CLOTHING. The verse-chorus remains; the accompaniment
+     becomes symphonic.
+  2. MELODIC ORNAMENTATION — melodies that embellish themselves with
+     grace notes, turns, passing tones, countermelodies. Where standard
+     pop uses simple, direct vocal lines, baroque pop decorates the
+     melody the way a baroque composer would — with elaborate but
+     purposeful ornament.
+  3. HARPSICHORD — the signature instrument. Its presence signals the
+     genre instantly. The bright, plucked, slightly brittle sound of
+     the harpsichord against warm strings and pop vocals creates
+     baroque pop's distinctive timbral tension.
+  4. COUNTERPOINT — multiple independent melodic lines moving simultaneously,
+     directly borrowed from Bach and Handel. Bass lines that are melodies
+     in themselves. String parts that answer the vocal. Not just chords
+     supporting a tune — VOICES in conversation.
+  5. LUSH PRODUCTION — Phil Spector's Wall of Sound, Brian Wilson's
+     layered harmonics, George Martin's orchestral arrangements. Dense,
+     rich, maximalist production that fills every frequency.
+  6. EMOTIONAL GRANDEUR IN MINIATURE — the scale of an opera compressed
+     into a pop single. A 3-minute song that feels like it contains
+     an entire symphony's emotional arc.
+
+  VISUAL TRANSLATION:
+  ═══════════════════
+  Background: Deep warm burgundy-black (#0e0608) — richer and more
+    opulent than any other cover in this session. Burgundy because
+    baroque pop is LUXURIOUS — velvet curtains, concert halls, the
+    warmth of orchestral wood. Not the dark void of electronic music
+    or the austere darkness of jazz — this is the darkness of a
+    candlelit chamber.
+  Central form: THE ORNAMENTAL FLOURISH — a primary melodic line
+    (the pop melody) that flows across the canvas with baroque
+    decorative elements: curling ornaments at key points (the trills
+    and grace notes), thin countermelody lines running parallel (the
+    counterpoint), and small harpsichord-note markers along the path
+    (the rhythmic punctuation). The line itself is more elaborate than
+    any previous cover — not angular (post bop), not smooth-simple
+    (cool jazz), not interweaving (jazz rock), but ORNATE: a single
+    line that decorates itself.
+  Glow: Warm candlelight gold (0.07) — the soft golden light of
+    a baroque concert hall. Similar hue to spiritual jazz but more
+    contained, more architectural — light that fills a ROOM, not a void.
+  Grain: 14% — polished, lush production. Baroque pop is one of the
+    most carefully produced genres. Pet Sounds, Sgt. Pepper's — these
+    are studio masterworks. Low grain = high production value.
+  Displacement: scale=1 — the subtle vibrato of strings, the
+    natural tremolo of a harpsichord's decay. Minimal warping because
+    baroque pop is PRECISE in its lushness.
+  Blur: stdDev=5 — the reverb of a concert hall, the lush bleed
+    of orchestral instruments. More than post bop (3) but less than
+    spiritual jazz (7) — baroque pop's space is architectural,
+    not infinite.
+  Particles: 7 filigree motes — decorative sparkle representing
+    the orchestral detail: the triangle hit, the celesta note, the
+    harp glissando, the piccolo flourish. These are the ornamental
+    details that make baroque pop shimmer.
+  BPM: ~120 BPM → 17 ticks at 18px, kick weight 0.38px (light,
+    elegant). Pop tempo but with a graceful, unhurried quality.
+    Alternating emphasis pattern: stronger beats with lighter
+    passing beats — the ONE-two-THREE-four of a baroque dance form
+    (think minuet or gavotte rhythmic feel).
+
+  FAMILY PLACEMENT:
+  ═══════════════════
+  Pop lineage: Classic Synthpop → Electropop → Dance Pop (electronic pop)
+    vs. Baroque Pop (orchestral pop) — a separate branch entirely.
+  Baroque Pop bridges:
+  - FROM CLASSICAL: Bach/Handel counterpoint + orchestration
+  - FROM POP: verse-chorus structure + accessible melody
+  Connects to:
+  - Art Rock: shares ambition and complexity but art rock DECONSTRUCTS
+    pop; baroque pop ELEVATES it. Art rock challenges; baroque pop adorns.
+  - Symphonic Prog: shares orchestral palette but prog extends the form
+    into 20-minute suites; baroque pop keeps the 3-minute song.
+  - Chamber Pop: the modern continuation — Sufjan Stevens, Belle &
+    Sebastian. Smaller ensemble, same ornamental philosophy.
+  - Indie Folk: shares the melodic sophistication but strips the
+    orchestral density.
+  Key artists: The Beach Boys (Pet Sounds), The Beatles (Sgt. Pepper's),
+    Scott Walker, The Left Banke, The Zombies, Burt Bacharach,
+    Sufjan Stevens (modern), Fleet Foxes (modern extension)
+
+  COLOUR RATIONALE:
+  ═══════════════════
+  Deep burgundy-black (#0e0608): velvet, candlelight, concert hall
+    warmth. The richest background in this session. Burgundy is the
+    colour of opulence — wine, curtains, old wood.
+  Warm ivory-gold (#d4b878 → #c8a868 → #b89858): candlelight on
+    sheet music, the golden varnish of a violin, ivory harpsichord
+    keys. Warmer and softer than spiritual jazz's radiant gold —
+    this is REFLECTED light (candlelight bouncing off instruments),
+    not EMITTED light (spiritual radiance).
+  Cream (#f0e8d0): the colour of parchment, of musical manuscript,
+    of the page where ornament is written.
+  Rose-warm (#c08870): the flush of emotional warmth, the rosewood
+    of the harpsichord, the blush undertone in the velvet.
+  The palette is deliberately ANTIQUE — aged, warm, candlelit.
+    No cool tones, no neon, no chrome. This is 18th-century light
+    in 20th-century music.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=600, height=600">
+<title>baroque pop — playlist cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #0e0608;
+    position: relative;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(
+      ellipse 58% 58% at 50% 48%,
+      transparent 0%,
+      rgba(10, 4, 5, 0.35) 55%,
+      rgba(10, 4, 5, 0.85) 100%
+    );
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* === GRAIN — 14% (lush studio production) === */
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 11;
+    pointer-events: none;
+    opacity: 0.14;
+  }
+
+  /* === CANDLELIGHT GLOW — warm gold, architectural === */
+  .candlelight {
+    position: absolute;
+    width: 300px;
+    height: 220px;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      ellipse 85% 80% at 50% 50%,
+      rgba(212, 184, 120, 0.07) 0%,
+      rgba(200, 168, 104, 0.035) 40%,
+      rgba(184, 152, 88, 0.015) 65%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  .bpm-strip {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 15;
+  }
+  .rule {
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+  }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 42px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>
+</head>
+<body>
+
+<!-- CANDLELIGHT GLOW -->
+<div class="candlelight"></div>
+
+<!-- CENTRAL FORM: The Ornamental Flourish -->
+<svg class="central-form" width="440" height="440" viewBox="0 0 440 440">
+  <defs>
+    <!-- String vibrato displacement: scale=1 -->
+    <filter id="stringVibrato" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="turbulence" baseFrequency="0.012 0.03" numOctaves="2" seed="1966" result="turb"/>
+      <feDisplacementMap in="SourceGraphic" in2="turb" scale="1" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Concert hall blur: stdDev=5 -->
+    <filter id="hallBlur">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+
+    <!-- Melodic line glow — warm, soft -->
+    <filter id="melodyGlow">
+      <feGaussianBlur stdDeviation="2" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Ornament glow — tighter, more delicate -->
+    <filter id="ornamentGlow">
+      <feGaussianBlur stdDeviation="1.2" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Filigree mote glow -->
+    <filter id="filiGlow">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+
+    <!-- Primary melody gradient: warm ivory-gold -->
+    <linearGradient id="melodyGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b89858" stop-opacity="0.3"/>
+      <stop offset="15%" stop-color="#c8a868" stop-opacity="0.6"/>
+      <stop offset="40%" stop-color="#d4b878" stop-opacity="0.72"/>
+      <stop offset="65%" stop-color="#d4b878" stop-opacity="0.7"/>
+      <stop offset="85%" stop-color="#c8a868" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#b89858" stop-opacity="0.25"/>
+    </linearGradient>
+  </defs>
+
+  <!--
+    THE ORNAMENTAL FLOURISH
+    ═══════════════════
+    The most elaborate single-line form in the system.
+
+    THREE LAYERS of melodic content:
+    1. PRIMARY MELODY (thickest): the pop song's vocal line —
+       flowing, singable, with gentle rises and falls.
+    2. COUNTERMELODY (thinner, offset): an independent second voice
+       running parallel — the cello line, the French horn response,
+       the bass moving in contrary motion. This is COUNTERPOINT:
+       Bach's technique applied to pop arrangement.
+    3. ORNAMENTAL CURLS (thinnest): decorative turns and trills at
+       key melodic moments — grace notes, mordents, the harpsichord's
+       ornamented figuration. These curl away from the main line
+       and return, like calligraphic flourishes on a manuscript.
+
+    Compare to:
+    - Post Bop's bent axis: angular, intellectual, austere
+    - Jazz Rock's dual interplay: two EQUAL lines in conversation
+    - Chicago House's vocal arc: a simple floating line
+    - Baroque Pop's flourish: a single line that ORNAMENTS ITSELF —
+      the decoration is organic to the melody, not a separate voice.
+  -->
+
+  <!-- Hall ambience — soft glow behind the main melodic area -->
+  <ellipse cx="220" cy="215" rx="130" ry="50"
+    fill="#c8a868" filter="url(#hallBlur)" opacity="0.04"/>
+
+  <g filter="url(#stringVibrato)">
+
+    <!--
+      LAYER 1: PRIMARY MELODY — the pop vocal/lead line
+      ═══════════════════
+      A flowing, lyrical curve — singable, with the graceful
+      rises and falls of a well-crafted pop melody. Richer and
+      more elaborate than Chicago House's simple vocal arc, but
+      still fundamentally MELODIC (not angular like post bop,
+      not driving like rock).
+    -->
+    <path d="
+      M 65,225
+      C 80,218 95,210 115,205
+      C 135,200 145,215 160,220
+      C 175,225 185,195 200,190
+      C 215,185 220,208 235,215
+      C 250,222 260,192 278,188
+      C 295,185 300,200 315,210
+      C 330,220 340,205 355,200
+      C 370,195 378,205 390,210
+    "
+    stroke="url(#melodyGrad)" stroke-width="2.0" fill="none"
+    stroke-linecap="round" stroke-linejoin="round"
+    filter="url(#melodyGlow)"/>
+
+    <!--
+      LAYER 2: COUNTERMELODY — the orchestral response
+      ═══════════════════
+      A second independent line running below/around the primary
+      melody, moving in complementary (sometimes contrary) motion.
+      This is the cello part, the French horn answer, the bass
+      line that is itself a melody. Thinner, slightly offset,
+      rose-warm colour (the orchestral wood tones).
+    -->
+    <path d="
+      M 85,242
+      C 100,248 115,240 130,235
+      C 148,228 158,245 175,248
+      C 190,250 200,228 218,222
+      C 232,218 242,238 258,242
+      C 272,245 280,225 298,220
+      C 312,216 322,232 338,238
+      C 350,242 360,230 375,228
+    "
+    stroke="#c08870" stroke-width="1.0" fill="none"
+    stroke-linecap="round" stroke-linejoin="round"
+    filter="url(#ornamentGlow)" opacity="0.4"/>
+
+    <!-- Counter-counter: a bass line fragment in contrary motion -->
+    <path d="
+      M 120,255
+      C 140,260 160,252 180,258
+      C 200,262 215,248 235,245
+      C 255,242 268,255 285,258
+      C 300,260 315,250 330,248
+    "
+    stroke="#b89858" stroke-width="0.6" fill="none"
+    stroke-linecap="round" opacity="0.18"/>
+
+  </g>
+
+  <!--
+    LAYER 3: ORNAMENTAL CURLS — grace notes and trills
+    ═══════════════════
+    Small decorative curves that branch from the primary melody
+    at key points and curl back. These are the baroque ornaments:
+    trills (rapid alternation), mordents (quick turn), grace notes
+    (approaching a main note from above or below).
+
+    Each ornament is a tiny curve that departs from and returns to
+    the main melodic line — like calligraphic flourishes on a page.
+
+    NOT applied through displacement (that would be random warping).
+    Each ornament is hand-placed at a melodic high point or
+    structural arrival — the moments where a baroque performer
+    would naturally add decoration.
+  -->
+  <g stroke="#d4b878" fill="none" stroke-linecap="round" opacity="0.35">
+    <!-- Ornament 1: trill at first melodic peak (x≈115, y≈205) -->
+    <path d="M 112,203 C 108,195 115,190 120,196 C 125,201 118,205 115,205"
+      stroke-width="0.7" filter="url(#ornamentGlow)"/>
+
+    <!-- Ornament 2: turn at second peak (x≈200, y≈190) -->
+    <path d="M 197,188 C 193,180 200,175 207,180 C 212,184 205,190 200,190"
+      stroke-width="0.7" filter="url(#ornamentGlow)"/>
+
+    <!-- Ornament 3: mordent at third peak (x≈278, y≈188) -->
+    <path d="M 275,186 C 272,178 278,174 284,179 C 288,183 282,188 278,188"
+      stroke-width="0.7" filter="url(#ornamentGlow)"/>
+
+    <!-- Ornament 4: grace note descending (x≈160, y≈220) -->
+    <path d="M 158,222 C 155,228 150,230 148,226 C 146,222 152,219 158,220"
+      stroke-width="0.6" filter="url(#ornamentGlow)"/>
+
+    <!-- Ornament 5: ascending turn (x≈315, y≈210) -->
+    <path d="M 312,208 C 308,200 314,196 320,200 C 324,204 318,210 315,210"
+      stroke-width="0.7" filter="url(#ornamentGlow)"/>
+  </g>
+
+  <!--
+    HARPSICHORD MARKERS
+    ═══════════════════
+    Small diamond shapes along the primary melody — the harpsichord's
+    rhythmic punctuation. The harpsichord plays detached, plucked notes
+    that mark the harmonic rhythm beneath the sustained strings.
+    Diamonds (not circles) because the harpsichord's sound is POINTED
+    and BRIGHT — plucked, not bowed or blown.
+  -->
+  <g fill="#f0e8d0" opacity="0.3">
+    <polygon points="130,207 133,204 136,207 133,210" />
+    <polygon points="185,196 188,193 191,196 188,199" />
+    <polygon points="243,218 246,215 249,218 246,221" />
+    <polygon points="298,192 301,189 304,192 301,195" />
+    <polygon points="345,204 348,201 351,204 348,207" />
+  </g>
+
+  <!--
+    FILIGREE MOTES — 7 particles
+    ═══════════════════
+    Orchestral detail sparkle: the triangle hit, the celesta,
+    the harp glissando, the piccolo's high note, the glockenspiel.
+    The shimmer of a full orchestral arrangement's upper harmonics.
+
+    7 particles — more than post bop (5, intellectual restraint)
+    and jazz rock (4, focused), fewer than spiritual jazz (8, ecstasy).
+    Baroque pop is LUSH but not transcendent — it's decorative
+    abundance, not spiritual overflow.
+
+    All warm — ivory, gold, cream. The unified warmth of an
+    orchestra under candlelight.
+  -->
+  <circle cx="125" cy="192" r="1.2" fill="#f0e8d0" filter="url(#filiGlow)" opacity="0.3"/>
+  <circle cx="205" cy="178" r="1.4" fill="#d4b878" filter="url(#filiGlow)" opacity="0.32"/>
+  <circle cx="270" cy="180" r="1.1" fill="#f0e8d0" filter="url(#filiGlow)" opacity="0.28"/>
+  <circle cx="330" cy="195" r="1.3" fill="#c8a868" filter="url(#filiGlow)" opacity="0.3"/>
+  <circle cx="165" cy="188" r="1.0" fill="#d4b878" filter="url(#filiGlow)" opacity="0.25"/>
+  <circle cx="248" cy="182" r="1.5" fill="#f0e8d0" filter="url(#filiGlow)" opacity="0.32"/>
+  <circle cx="370" cy="192" r="1.1" fill="#c8a868" filter="url(#filiGlow)" opacity="0.22"/>
+
+</svg>
+
+<!--
+  BPM STRIP — ~120 BPM, baroque dance feel
+  ═══════════════════
+  17 ticks at 18px, kick weight 0.38px (light, elegant)
+  Alternating emphasis: ONE-two-THREE-four — a minuet/gavotte
+  rhythmic pattern where beats 1 and 3 are slightly emphasized.
+  This encodes the baroque DANCE FORM origin — these rhythms
+  descend from 18th-century courtly dances.
+  Starting x = (600 - 16*18) / 2 = 156
+-->
+<svg class="bpm-strip" width="600" height="600" viewBox="0 0 600 600">
+  <g stroke="#ffffff" stroke-linecap="round">
+    <!-- Baroque dance pattern: strong-light-medium-light -->
+    <!-- ONE -->
+    <line x1="156" y1="342" x2="156" y2="348" stroke-width="0.38" opacity="0.45"/>
+    <!-- two -->
+    <line x1="174" y1="343.5" x2="174" y2="346.5" stroke-width="0.25" opacity="0.22"/>
+    <!-- THREE -->
+    <line x1="192" y1="342.5" x2="192" y2="347.5" stroke-width="0.35" opacity="0.38"/>
+    <!-- four -->
+    <line x1="210" y1="343.5" x2="210" y2="346.5" stroke-width="0.25" opacity="0.22"/>
+    <!-- ONE -->
+    <line x1="228" y1="342" x2="228" y2="348" stroke-width="0.38" opacity="0.45"/>
+    <!-- two -->
+    <line x1="246" y1="343.5" x2="246" y2="346.5" stroke-width="0.25" opacity="0.22"/>
+    <!-- THREE -->
+    <line x1="264" y1="342.5" x2="264" y2="347.5" stroke-width="0.35" opacity="0.38"/>
+    <!-- four -->
+    <line x1="282" y1="343.5" x2="282" y2="346.5" stroke-width="0.25" opacity="0.22"/>
+    <!-- ONE -->
+    <line x1="300" y1="342" x2="300" y2="348" stroke-width="0.38" opacity="0.45"/>
+    <!-- two -->
+    <line x1="318" y1="343.5" x2="318" y2="346.5" stroke-width="0.25" opacity="0.22"/>
+    <!-- THREE -->
+    <line x1="336" y1="342.5" x2="336" y2="347.5" stroke-width="0.35" opacity="0.38"/>
+    <!-- four -->
+    <line x1="354" y1="343.5" x2="354" y2="346.5" stroke-width="0.25" opacity="0.22"/>
+    <!-- ONE -->
+    <line x1="372" y1="342" x2="372" y2="348" stroke-width="0.38" opacity="0.45"/>
+    <!-- two -->
+    <line x1="390" y1="343.5" x2="390" y2="346.5" stroke-width="0.25" opacity="0.22"/>
+    <!-- THREE -->
+    <line x1="408" y1="342.5" x2="408" y2="347.5" stroke-width="0.35" opacity="0.38"/>
+    <!-- four -->
+    <line x1="426" y1="343.5" x2="426" y2="346.5" stroke-width="0.25" opacity="0.2"/>
+    <!-- trailing ONE -->
+    <line x1="444" y1="342" x2="444" y2="348" stroke-width="0.38" opacity="0.35"/>
+  </g>
+</svg>
+
+<!-- GRAIN OVERLAY -->
+<svg class="grain" width="600" height="600" viewBox="0 0 600 600">
+  <filter id="grainFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- VIGNETTE -->
+<div class="vignette"></div>
+
+<!-- TYPOGRAPHY -->
+<div class="text-block">
+  <div class="rule"></div>
+  <div class="genre-name">baroque pop</div>
+  <div class="subtitle">playlist</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!--
+  DUBSTEP — Playlist Cover
+  Design System: Playlist Cover v1
+
+  SONIC DNA ANALYSIS:
+  ═══════════════════
+  Dubstep's defining sonic features:
+  1. THE WOBBLE — LFO-modulated bass that oscillates at sub-frequencies (~140 BPM, half-time feel)
+  2. THE DROP — massive vertical energy shift, silence → full pressure
+  3. SUB-BASS WEIGHT — frequencies below 60Hz that you feel in your chest
+  4. HALF-TIME GROOVE — snare on beat 3, giving that lurching, heavy swing
+  5. DARK SPACE — lots of negative space in the arrangement, punctuated by bass stabs
+
+  VISUAL TRANSLATION:
+  ═══════════════════
+  Background: Deep dark purple (#0a0612) — the void before the drop
+  Central form: A wobble waveform — a sine wave being modulated by an LFO,
+    creating the characteristic "wub wub" shape. Below it, a massive bass mass
+    representing the sub-bass pressure zone. The wobble descends from center,
+    showing the DROP — the fundamental dubstep gesture.
+  Glow: Purple-blue sub-bass glow emanating from below the wobble (bass pressure)
+  Grain: 24% — modern production but with grit (not clean like EDM, not raw like punk)
+  Displacement: scale=3 — moderate wobble distortion on the form itself
+  Blur: stdDev=6 on bass mass — sub-bass is felt not heard
+  Particles: 6 bass shrapnel fragments — debris from the drop impact
+  BPM: 140 BPM → 20 ticks at 16px spacing, kick weight 0.55px (heavy but not hardcore),
+    half-time snare emphasis on every other beat
+
+  FAMILY PLACEMENT:
+  ═══════════════════
+  Bass music lineage: UK Garage (swung rows) → Breakbeat → DnB → Dubstep
+  Dubstep inherits the dark space of dub, the broken beats of garage,
+  and adds the wobble bass that defines the genre.
+  Compared to DnB: slower (140 vs 170), heavier sub-bass, half-time feel
+  Compared to Breakbeat: more structured, deeper sub frequencies
+  Compared to Brostep: this is the original Croydon/dark dubstep aesthetic,
+  not the American maximalist variant
+
+  COLOUR RATIONALE:
+  ═══════════════════
+  Deep purple-black (#0a0612): the darkness of a dubstep club, UV lighting
+  Purple glow (#6b2fa0 → #3a1870): UV/blacklight aesthetic, sub-bass frequencies
+  made visible — purple sits at the edge of human perception, just as sub-bass
+  sits at the edge of human hearing
+  Cyan accents (#00d4ff): the sharp digital edges of the wobble synthesis
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=600, height=600">
+<title>dubstep — playlist cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #0a0612;
+    position: relative;
+    font-family: 'Anton', sans-serif;
+  }
+
+  /* === VIGNETTE === */
+  .vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(
+      ellipse 55% 55% at 50% 50%,
+      transparent 0%,
+      rgba(6, 3, 12, 0.4) 60%,
+      rgba(6, 3, 12, 0.85) 100%
+    );
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* === GRAIN OVERLAY — 24% opacity === */
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 11;
+    pointer-events: none;
+    opacity: 0.24;
+  }
+
+  /* === SUB-BASS GLOW — emanates from below center === */
+  .sub-glow {
+    position: absolute;
+    width: 320px;
+    height: 200px;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      ellipse 100% 80% at 50% 30%,
+      rgba(107, 47, 160, 0.12) 0%,
+      rgba(58, 24, 112, 0.06) 50%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* === CENTRAL FORM === */
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  /* === BPM STRIP === */
+  .bpm-strip {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  /* === TYPOGRAPHY === */
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 15;
+  }
+  .rule {
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+  }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 52px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>
+</head>
+<body>
+
+<!-- SUB-BASS GLOW -->
+<div class="sub-glow"></div>
+
+<!-- CENTRAL FORM: Wobble waveform + bass mass + drop gesture -->
+<svg class="central-form" width="440" height="440" viewBox="0 0 440 440">
+  <defs>
+    <!-- Displacement filter: wobble distortion, scale=3 -->
+    <filter id="wobbleDistort" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="turbulence" baseFrequency="0.015 0.04" numOctaves="3" seed="42" result="turb"/>
+      <feDisplacementMap in="SourceGraphic" in2="turb" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Sub-bass blur: stdDev=6 -->
+    <filter id="subBlur">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+
+    <!-- Wobble glow -->
+    <filter id="wobbleGlow">
+      <feGaussianBlur stdDeviation="4" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Drop impact glow -->
+    <filter id="dropGlow">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+
+    <!-- Gradient for wobble line: cyan to purple -->
+    <linearGradient id="wobbleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.3"/>
+      <stop offset="30%" stop-color="#00d4ff" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#8b5cf6" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#6b2fa0" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- Sub-bass mass gradient -->
+    <linearGradient id="bassGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6b2fa0" stop-opacity="0.15"/>
+      <stop offset="40%" stop-color="#3a1870" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0a0612" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!--
+    THE WOBBLE WAVEFORM
+    ═══════════════════
+    This is the central visual metaphor: an LFO-modulated bass waveform.
+    The wave starts relatively calm on the left (pre-drop tension),
+    then increases in amplitude and wobble rate toward the center,
+    and descends into the bass mass below (the drop).
+
+    The "wub wub wub" shape is created by a sine wave whose frequency
+    increases (tighter oscillations) while amplitude grows — mimicking
+    how a wobble bass sounds as the LFO rate increases.
+  -->
+
+  <!-- Sub-bass pressure mass — the weight you FEEL, blurred because sub-bass is below hearing -->
+  <ellipse cx="220" cy="300" rx="140" ry="80"
+    fill="url(#bassGrad)" filter="url(#subBlur)" opacity="0.7"/>
+
+  <!-- Drop impact flash — a brief bright moment at the drop point -->
+  <ellipse cx="220" cy="240" rx="30" ry="6"
+    fill="#8b5cf6" filter="url(#dropGlow)" opacity="0.08"/>
+
+  <!-- THE WOBBLE — main waveform with displacement distortion -->
+  <g filter="url(#wobbleDistort)">
+    <!--
+      Wobble path: starts narrow oscillation, widens into the "wub" shape,
+      then plunges down into the bass mass. LFO modulation visible as
+      increasing amplitude toward center-right.
+    -->
+    <path d="
+      M 60,210
+      C 70,210 75,208 85,212
+      C 95,216 100,204 115,208
+      C 125,211 130,198 145,205
+      C 155,210 158,190 172,200
+      C 182,208 183,178 198,192
+      C 208,202 208,165 225,185
+      C 235,198 232,155 250,178
+      C 262,194 258,148 278,172
+      C 290,188 288,155 305,170
+      C 315,180 318,162 330,172
+      C 338,178 342,168 352,174
+      C 358,177 365,172 375,175
+      C 380,176 382,174 388,175
+    "
+    stroke="url(#wobbleGrad)" stroke-width="2.2" fill="none"
+    stroke-linecap="round" filter="url(#wobbleGlow)"/>
+
+    <!-- Second harmonic wobble — slightly offset, thinner, more transparent -->
+    <path d="
+      M 80,215
+      C 90,215 95,220 105,217
+      C 115,214 120,225 135,219
+      C 148,214 152,230 168,222
+      C 178,216 180,238 198,228
+      C 210,220 212,248 230,235
+      C 242,226 245,255 262,242
+      C 275,232 278,258 295,245
+      C 305,238 310,252 322,244
+      C 330,240 338,248 348,244
+      C 355,242 360,246 368,244
+    "
+    stroke="#00d4ff" stroke-width="1" fill="none" opacity="0.25"
+    stroke-linecap="round"/>
+  </g>
+
+  <!--
+    BASS SHRAPNEL — 6 particles
+    Debris from the drop impact. Small angular fragments
+    scattered below and around the wobble epicenter.
+    These represent the transient high-frequency content
+    that accompanies each bass hit.
+  -->
+  <g opacity="0.4">
+    <rect x="185" y="260" width="4" height="1.5" fill="#00d4ff" transform="rotate(-15 185 260)" opacity="0.5"/>
+    <rect x="255" y="275" width="3" height="1" fill="#8b5cf6" transform="rotate(25 255 275)" opacity="0.6"/>
+    <rect x="200" y="290" width="5" height="1" fill="#00d4ff" transform="rotate(-40 200 290)" opacity="0.35"/>
+    <rect x="270" y="255" width="3" height="1.5" fill="#6b2fa0" transform="rotate(60 270 255)" opacity="0.45"/>
+    <rect x="165" y="250" width="4" height="1" fill="#00d4ff" transform="rotate(-5 165 250)" opacity="0.3"/>
+    <rect x="240" y="285" width="3.5" height="1" fill="#8b5cf6" transform="rotate(35 240 285)" opacity="0.4"/>
+  </g>
+
+  <!--
+    HALF-TIME SNARE MARKERS
+    Two vertical accent lines at the "3" beat positions,
+    representing dubstep's characteristic half-time backbeat.
+    Faint, structural — they frame the wobble.
+  -->
+  <line x1="160" y1="185" x2="160" y2="195" stroke="#ffffff" stroke-width="0.5" opacity="0.12"/>
+  <line x1="300" y1="185" x2="300" y2="195" stroke="#ffffff" stroke-width="0.5" opacity="0.12"/>
+</svg>
+
+<!--
+  BPM STRIP — 140 BPM
+  ═══════════════════
+  20 ticks at 16px spacing (total width: 304px, centered)
+  Kick weight: 0.55px (heavy sub-bass thump)
+  Half-time feel: snare accents every 2nd beat (taller ticks)
+  Positioned at y=345 per system spec
+-->
+<svg class="bpm-strip" width="600" height="600" viewBox="0 0 600 600">
+  <!-- Kick ticks — 140 BPM, 20 ticks, 16px spacing -->
+  <!-- Starting x = (600 - 19*16) / 2 = 148 -->
+  <g stroke="#ffffff" stroke-linecap="round">
+    <!-- Beat 1 — KICK (heavy) -->
+    <line x1="148" y1="342" x2="148" y2="348" stroke-width="0.55" opacity="0.5"/>
+    <line x1="164" y1="343" x2="164" y2="347" stroke-width="0.35" opacity="0.3"/>
+    <!-- Beat 2 — hat -->
+    <line x1="180" y1="343" x2="180" y2="347" stroke-width="0.35" opacity="0.25"/>
+    <line x1="196" y1="343" x2="196" y2="347" stroke-width="0.35" opacity="0.3"/>
+    <!-- Beat 3 — SNARE (half-time accent, taller) -->
+    <line x1="212" y1="340" x2="212" y2="350" stroke-width="0.5" opacity="0.55"/>
+    <line x1="228" y1="343" x2="228" y2="347" stroke-width="0.35" opacity="0.25"/>
+    <!-- Beat 4 — hat -->
+    <line x1="244" y1="343" x2="244" y2="347" stroke-width="0.35" opacity="0.28"/>
+    <line x1="260" y1="343" x2="260" y2="347" stroke-width="0.35" opacity="0.3"/>
+    <!-- Beat 5 — KICK -->
+    <line x1="276" y1="342" x2="276" y2="348" stroke-width="0.55" opacity="0.5"/>
+    <line x1="292" y1="343" x2="292" y2="347" stroke-width="0.35" opacity="0.25"/>
+    <!-- Beat 6 — hat -->
+    <line x1="308" y1="343" x2="308" y2="347" stroke-width="0.35" opacity="0.28"/>
+    <line x1="324" y1="343" x2="324" y2="347" stroke-width="0.35" opacity="0.3"/>
+    <!-- Beat 7 — SNARE (half-time accent) -->
+    <line x1="340" y1="340" x2="340" y2="350" stroke-width="0.5" opacity="0.55"/>
+    <line x1="356" y1="343" x2="356" y2="347" stroke-width="0.35" opacity="0.25"/>
+    <!-- Beat 8 — hat -->
+    <line x1="372" y1="343" x2="372" y2="347" stroke-width="0.35" opacity="0.28"/>
+    <line x1="388" y1="343" x2="388" y2="347" stroke-width="0.35" opacity="0.3"/>
+    <!-- Beat 9 — KICK -->
+    <line x1="404" y1="342" x2="404" y2="348" stroke-width="0.55" opacity="0.5"/>
+    <line x1="420" y1="343" x2="420" y2="347" stroke-width="0.35" opacity="0.25"/>
+    <!-- Beat 10 — trailing -->
+    <line x1="436" y1="343" x2="436" y2="347" stroke-width="0.35" opacity="0.28"/>
+    <line x1="452" y1="343" x2="452" y2="347" stroke-width="0.35" opacity="0.2"/>
+  </g>
+</svg>
+
+<!-- GRAIN OVERLAY -->
+<svg class="grain" width="600" height="600" viewBox="0 0 600 600">
+  <filter id="grainFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- VIGNETTE -->
+<div class="vignette"></div>
+
+<!-- TYPOGRAPHY -->
+<div class="text-block">
+  <div class="rule"></div>
+  <div class="genre-name">dubstep</div>
+  <div class="subtitle">playlist</div>
+</div>
+
+</body>
+</html>

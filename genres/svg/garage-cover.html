@@ -1,0 +1,420 @@
+<!--
+  GARAGE (UK) — Playlist Cover
+  Design System: Playlist Cover v1
+
+  NOTE: This genre is listed in the original 125 as "garage (UK)" with the
+  description "organized rows, swung". This is the full implementation.
+
+  SONIC DNA ANALYSIS:
+  ═══════════════════
+  UK Garage's defining sonic features:
+  1. THE 2-STEP — the rhythmic invention that defines the genre. Instead of
+     straight four-on-the-floor (house) or breakbeats (jungle), 2-step
+     SKIPS beats, creating a syncopated, shuffled groove where the kick
+     and snare land in unexpected places. The rhythm swings and stumbles
+     forward — you can't march to it, you have to MOVE to it.
+  2. PITCHED-UP VOCALS — female R&B vocals pitched up 2-4 semitones,
+     creating that ethereal, sped-up quality unique to garage.
+  3. WARM SUB-BASS — deep, round 808 sub that fills the low end without
+     dominating. Supporting, not leading.
+  4. SHUFFLED HI-HATS — swung, syncopated hat patterns that complement
+     the 2-step, creating intricate rhythmic interplay.
+  5. R&B/SOUL POLISH — compared to jungle/DnB, garage is POLISHED.
+     Clean production, sophisticated chord progressions, smooth vocals.
+     This is club music dressed up for a night out.
+  6. LONDON PIRATE RADIO — the sound of 1997-2003 London, Twice as Nice,
+     Ministry of Sound, Ayia Napa. Urban, aspirational, communal.
+
+  VISUAL TRANSLATION:
+  ═══════════════════
+  Background: Deep midnight blue-black (#08090e) — the 2am London club
+    darkness, cooler than Chicago House's warm brown (garage is UK,
+    nocturnal, urban, slightly cooler emotional temperature)
+  Central form: THE 2-STEP PATTERN — organized rows of rhythmic dots/marks
+    that are SWUNG — offset from a strict grid. The dots follow the
+    2-step pattern: kick lands, skips, snare lands off-beat, skip,
+    repeat. Unlike a straight grid (techno) or scattered impacts
+    (breakbeat), garage's rhythm is ORGANIZED BUT SWUNG — structured
+    yet syncopated. The rows represent the multi-layered rhythm:
+    kick row, snare row, hat row, each offset differently.
+    This matches the system description: "organized rows, swung."
+  Glow: Soft violet-silver (0.07) — the sophistication and polish
+    of UK garage, cooler than Chicago's amber, warmer than techno's chrome
+  Grain: 16% — polished production but not sterile. Garage is CLEAN
+    compared to jungle or grime, but it's still club music with warmth.
+  Displacement: scale=0 — clean production, no distortion. Like Chicago
+    House, garage is honest and unwarped.
+  Blur: stdDev=4 on sub-bass presence — the warm low-end fill
+  Particles: 5 vocal shimmer motes — the pitched-up vocal fragments
+    that float above the rhythm. More than Chicago's 3 (garage is more
+    vocal-forward) but not as many as future bass's 10.
+  BPM: 132 BPM → 19 ticks at 16px, kick weight 0.4px (light, bouncy),
+    with SWUNG spacing — ticks are not evenly spaced, they alternate
+    between slightly wider and narrower gaps (the shuffle).
+    First swung BPM strip in the system.
+
+  FAMILY PLACEMENT:
+  ═══════════════════
+  Bass music lineage: UK Garage → Breakbeat → DnB → Dubstep
+  Garage is the organized ancestor — it has structure that breakbeat
+  then fragments, DnB accelerates, and dubstep slows and darkens.
+  Also descends from: Chicago House (four-on-the-floor → 2-step),
+    US Garage (Larry Levan, Paradise Garage — the name origin),
+    Jungle (shared London scene, shared pirate radio)
+  Compared to Chicago House: garage inherits the warmth but adds
+    SYNCOPATION and SOPHISTICATION. Chicago is straight pulse;
+    garage is skippy groove. Chicago is warehouse; garage is nightclub.
+  Compared to Breakbeat: garage is ORGANIZED; breakbeat scatters.
+    Same energy, different discipline.
+  Compared to Grime: garage is the polished parent; grime is the
+    aggressive child that stripped out the R&B and added MC aggression.
+  Key artists: MJ Cole, Artful Dodger, Craig David, DJ EZ, Wookie,
+    Todd Edwards, El-B, Zed Bias
+
+  COLOUR RATIONALE:
+  ═══════════════════
+  Midnight blue-black (#08090e): nocturnal London, cooler than Chicago
+  Violet-silver (#9b8ec4 → #7b6ea8): sophistication, nightclub lighting,
+    the aspirational quality of UK garage culture. Violet because garage
+    sits between the warmth of house (gold) and the coolness of techno
+    (chrome) — it's the purple middle ground, R&B meets electronic.
+  Soft lilac (#c4b8e0) on vocal motes: the pitched-up vocal quality,
+    airy and ethereal
+  Warm undertone in the sub-bass glow (#8a7060): the sub-bass still
+    carries Chicago's warmth in its DNA
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=600, height=600">
+<title>garage (uk) — playlist cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #08090e;
+    position: relative;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(
+      ellipse 58% 58% at 50% 48%,
+      transparent 0%,
+      rgba(5, 5, 10, 0.35) 55%,
+      rgba(5, 5, 10, 0.85) 100%
+    );
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* === GRAIN — 16% (polished but warm) === */
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 11;
+    pointer-events: none;
+    opacity: 0.16;
+  }
+
+  /* === VIOLET-SILVER GLOW === */
+  .groove-glow {
+    position: absolute;
+    width: 280px;
+    height: 220px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      ellipse 90% 80% at 50% 50%,
+      rgba(155, 142, 196, 0.07) 0%,
+      rgba(123, 110, 168, 0.03) 45%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  .bpm-strip {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 15;
+  }
+  .rule {
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+  }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 52px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>
+</head>
+<body>
+
+<!-- GROOVE GLOW -->
+<div class="groove-glow"></div>
+
+<!-- CENTRAL FORM: 2-Step Pattern — Organized Rows, Swung -->
+<svg class="central-form" width="440" height="440" viewBox="0 0 440 440">
+  <defs>
+    <!-- NO displacement — clean production, zero distortion -->
+
+    <!-- Sub-bass warmth blur: stdDev=4 -->
+    <filter id="subWarmth">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+
+    <!-- Dot glow — soft rhythmic presence -->
+    <filter id="dotGlow">
+      <feGaussianBlur stdDeviation="1.5" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Vocal mote shimmer -->
+    <filter id="vocalGlow">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+  </defs>
+
+  <!--
+    THE 2-STEP PATTERN
+    ═══════════════════
+    "Organized rows, swung" — the system description for UK Garage.
+
+    Three horizontal rows of rhythmic marks representing the three
+    rhythmic layers of a 2-step beat:
+    - TOP ROW: Hi-hats (small dots, swung timing)
+    - MIDDLE ROW: Snare/clap (medium dots, off-beat placement)
+    - BOTTOM ROW: Kick (larger dots, syncopated — the 2-step skip)
+
+    The KEY is the SWING: dots within each row are NOT evenly spaced.
+    They alternate between wider and narrower gaps, creating the
+    characteristic 2-step shuffle. This is the first rhythmic grid
+    in the system where timing itself is the visual subject.
+
+    Compare to:
+    - Detroit Techno's chrome grid: STRAIGHT, mechanical, precise
+    - Breakbeat's scattered impacts: CHAOTIC, no grid at all
+    - Garage's swung rows: ORGANIZED but SYNCOPATED — the middle ground
+
+    The rows are slightly curved (not rigid horizontal lines) because
+    the groove SWINGS — it breathes and bends, not locked to a grid.
+  -->
+
+  <!-- Sub-bass presence — warm low-end glow beneath the pattern -->
+  <ellipse cx="220" cy="265" rx="120" ry="30"
+    fill="#8a7060" filter="url(#subWarmth)" opacity="0.06"/>
+
+  <!--
+    ROW 1: HI-HATS (top, y≈190)
+    Small dots, swung spacing. The hats are the most rhythmically
+    complex layer — rapid, syncopated, shuffled.
+    Colour: silver-white (metallic hat sound)
+  -->
+  <g>
+    <!-- Swung hat pattern: spacing alternates ~22px / ~14px (the shuffle) -->
+    <circle cx="100" cy="190" r="2" fill="#c0bcc8" filter="url(#dotGlow)" opacity="0.35"/>
+    <circle cx="122" cy="190" r="1.5" fill="#c0bcc8" filter="url(#dotGlow)" opacity="0.25"/>
+    <circle cx="136" cy="191" r="2" fill="#c0bcc8" filter="url(#dotGlow)" opacity="0.38"/>
+    <circle cx="160" cy="190" r="1.5" fill="#c0bcc8" filter="url(#dotGlow)" opacity="0.22"/>
+    <circle cx="172" cy="191" r="2" fill="#c0bcc8" filter="url(#dotGlow)" opacity="0.35"/>
+    <circle cx="196" cy="190" r="1.5" fill="#c0bcc8" filter="url(#dotGlow)" opacity="0.25"/>
+    <circle cx="210" cy="191" r="2" fill="#c0bcc8" filter="url(#dotGlow)" opacity="0.38"/>
+    <circle cx="232" cy="190" r="1.5" fill="#c0bcc8" filter="url(#dotGlow)" opacity="0.22"/>
+    <circle cx="246" cy="191" r="2" fill="#c0bcc8" filter="url(#dotGlow)" opacity="0.35"/>
+    <circle cx="270" cy="190" r="1.5" fill="#c0bcc8" filter="url(#dotGlow)" opacity="0.25"/>
+    <circle cx="282" cy="191" r="2" fill="#c0bcc8" filter="url(#dotGlow)" opacity="0.38"/>
+    <circle cx="306" cy="190" r="1.5" fill="#c0bcc8" filter="url(#dotGlow)" opacity="0.22"/>
+    <circle cx="318" cy="191" r="2" fill="#c0bcc8" filter="url(#dotGlow)" opacity="0.35"/>
+    <circle cx="340" cy="190" r="1.5" fill="#c0bcc8" filter="url(#dotGlow)" opacity="0.25"/>
+  </g>
+
+  <!--
+    ROW 2: SNARE/CLAP (middle, y≈225)
+    Medium dots, distinctly OFF-BEAT. The snare in 2-step doesn't land
+    on the 2 and 4 like house or hip-hop — it lands in between,
+    creating the lopsided feel. Wider gaps between hits.
+    Colour: violet-silver (the sophistication)
+  -->
+  <g>
+    <!-- Snare pattern: sparse, off-grid, syncopated -->
+    <!-- The GAPS are the point — where the snare ISN'T is what makes 2-step -->
+    <circle cx="130" cy="225" r="3" fill="#9b8ec4" filter="url(#dotGlow)" opacity="0.4"/>
+    <!-- skip... skip... -->
+    <circle cx="183" cy="226" r="2.5" fill="#9b8ec4" filter="url(#dotGlow)" opacity="0.32"/>
+    <!-- skip... -->
+    <circle cx="222" cy="224" r="3" fill="#9b8ec4" filter="url(#dotGlow)" opacity="0.42"/>
+    <!-- long skip... -->
+    <circle cx="288" cy="226" r="2.5" fill="#9b8ec4" filter="url(#dotGlow)" opacity="0.32"/>
+    <!-- skip... -->
+    <circle cx="320" cy="225" r="3" fill="#9b8ec4" filter="url(#dotGlow)" opacity="0.4"/>
+  </g>
+
+  <!--
+    ROW 3: KICK (bottom, y≈260)
+    Larger dots — the kick is the heaviest element.
+    SYNCOPATED: the kick skips beats, creating the 2-step feel.
+    Where a house kick goes 1-2-3-4 (every beat), the 2-step kick
+    goes 1-..3-... or 1-..-..4 — it SKIPS, creating forward momentum.
+    Colour: warm amber-brown (sub-bass warmth, Chicago DNA)
+  -->
+  <g>
+    <!-- Kick pattern: 2-step skip — lands, skips, lands late, skips -->
+    <circle cx="100" cy="260" r="4" fill="#a08060" filter="url(#dotGlow)" opacity="0.45"/>
+    <!-- SKIP (no kick on beat 2 — this is the 2-step) -->
+    <circle cx="172" cy="261" r="3.5" fill="#a08060" filter="url(#dotGlow)" opacity="0.38"/>
+    <!-- SKIP -->
+    <!-- late kick — lands between beats -->
+    <circle cx="232" cy="260" r="4" fill="#a08060" filter="url(#dotGlow)" opacity="0.45"/>
+    <!-- SKIP -->
+    <circle cx="306" cy="261" r="3.5" fill="#a08060" filter="url(#dotGlow)" opacity="0.38"/>
+    <!-- SKIP -->
+    <circle cx="340" cy="260" r="3.5" fill="#a08060" filter="url(#dotGlow)" opacity="0.4"/>
+  </g>
+
+  <!--
+    CONNECTING GROOVE LINES
+    Thin, faint lines connecting dots within each row — showing
+    the rhythmic FLOW between hits. These are not rigid grid lines;
+    they curve slightly, following the swing.
+  -->
+  <g stroke-linecap="round" opacity="0.08">
+    <!-- Hat flow line -->
+    <path d="M 100,190 C 150,188 200,192 250,189 C 300,192 320,189 340,190"
+      stroke="#c0bcc8" stroke-width="0.5" fill="none"/>
+    <!-- Snare flow line -->
+    <path d="M 130,225 C 175,227 220,223 290,226 C 310,224 320,225 320,225"
+      stroke="#9b8ec4" stroke-width="0.5" fill="none"/>
+    <!-- Kick flow line -->
+    <path d="M 100,260 C 140,262 195,259 240,261 C 280,259 320,262 340,260"
+      stroke="#a08060" stroke-width="0.5" fill="none"/>
+  </g>
+
+  <!--
+    VOCAL SHIMMER MOTES — 5 particles
+    ═══════════════════
+    Pitched-up female vocal fragments floating above the rhythm.
+    Garage is MORE vocal-forward than Chicago House (3 motes) but
+    less saturated than future bass (10 motes). The vocals are
+    the SOUL of garage — R&B divas sped up into ethereal textures.
+    Colour: soft lilac (the pitched-up, airy quality)
+  -->
+  <circle cx="155" cy="165" r="1.6" fill="#c4b8e0" filter="url(#vocalGlow)" opacity="0.35"/>
+  <circle cx="220" cy="158" r="1.8" fill="#c4b8e0" filter="url(#vocalGlow)" opacity="0.4"/>
+  <circle cx="280" cy="162" r="1.4" fill="#c4b8e0" filter="url(#vocalGlow)" opacity="0.3"/>
+  <circle cx="190" cy="155" r="1.2" fill="#d4c8ec" filter="url(#vocalGlow)" opacity="0.25"/>
+  <circle cx="250" cy="155" r="1.5" fill="#c4b8e0" filter="url(#vocalGlow)" opacity="0.32"/>
+
+</svg>
+
+<!--
+  BPM STRIP — 132 BPM
+  ═══════════════════
+  19 ticks, SWUNG SPACING — alternating 18px / 14px gaps
+  This is the first SWUNG BPM strip in the system.
+  Kick weight: 0.4px (light, bouncy)
+  The swing is subtle but visible — ticks cluster in pairs,
+  creating the characteristic 2-step shuffle at the micro level.
+  Starting x ≈ 148
+-->
+<svg class="bpm-strip" width="600" height="600" viewBox="0 0 600 600">
+  <g stroke="#ffffff" stroke-linecap="round">
+    <!--
+      SWUNG SPACING: long-short-long-short pattern
+      18px gap → 14px gap → 18px gap → 14px gap...
+      This creates the physical shuffle in the tick pattern.
+    -->
+    <!-- Pair 1 -->
+    <line x1="148" y1="342" x2="148" y2="348" stroke-width="0.4" opacity="0.45"/>
+    <line x1="162" y1="343" x2="162" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <!-- Pair 2 -->
+    <line x1="180" y1="342" x2="180" y2="348" stroke-width="0.4" opacity="0.42"/>
+    <line x1="194" y1="343" x2="194" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <!-- Pair 3 — clap accent -->
+    <line x1="212" y1="341" x2="212" y2="349" stroke-width="0.4" opacity="0.5"/>
+    <line x1="226" y1="343" x2="226" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <!-- Pair 4 -->
+    <line x1="244" y1="342" x2="244" y2="348" stroke-width="0.4" opacity="0.42"/>
+    <line x1="258" y1="343" x2="258" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <!-- Pair 5 -->
+    <line x1="276" y1="342" x2="276" y2="348" stroke-width="0.4" opacity="0.45"/>
+    <line x1="290" y1="343" x2="290" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <!-- Pair 6 — clap accent -->
+    <line x1="308" y1="341" x2="308" y2="349" stroke-width="0.4" opacity="0.5"/>
+    <line x1="322" y1="343" x2="322" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <!-- Pair 7 -->
+    <line x1="340" y1="342" x2="340" y2="348" stroke-width="0.4" opacity="0.42"/>
+    <line x1="354" y1="343" x2="354" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <!-- Pair 8 -->
+    <line x1="372" y1="342" x2="372" y2="348" stroke-width="0.4" opacity="0.45"/>
+    <line x1="386" y1="343" x2="386" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <!-- Trailing pair -->
+    <line x1="404" y1="342" x2="404" y2="348" stroke-width="0.4" opacity="0.35"/>
+    <line x1="418" y1="343" x2="418" y2="347" stroke-width="0.3" opacity="0.18"/>
+    <line x1="436" y1="342" x2="436" y2="348" stroke-width="0.4" opacity="0.28"/>
+  </g>
+</svg>
+
+<!-- GRAIN OVERLAY -->
+<svg class="grain" width="600" height="600" viewBox="0 0 600 600">
+  <filter id="grainFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- VIGNETTE -->
+<div class="vignette"></div>
+
+<!-- TYPOGRAPHY -->
+<div class="text-block">
+  <div class="rule"></div>
+  <div class="genre-name">garage</div>
+  <div class="subtitle">playlist</div>
+</div>
+
+</body>
+</html>

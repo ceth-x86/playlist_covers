@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep House Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #060504; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0e0c08; overflow: hidden; }
+
+  /* Warm dark brown — warmer than minimal house's
+     sand-beige dark, deeper than Detroit's blue-black.
+     The colour of a basement studio at night, wood
+     panelling, the amber of a single desk lamp.
+     Prescription, KDJ, Peacefrog, Cajual. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(118,82,38,0.07) 0%, transparent 42%),
+      radial-gradient(ellipse at 50% 50%, rgba(58,68,88,0.02) 0%, transparent 32%),
+      linear-gradient(180deg, #100e0a 0%, #0e0c08 44%, #060504 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — WARM, diffuse, the largest warm glow
+     in the house family. The pad warmth that
+     wraps around everything. Larry Heard's
+     "Can You Feel It" — the glow IS the feeling. */
+  .glow {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+      rgba(128,88,38,0.08) 0%,
+      rgba(98,72,32,0.05) 28%,
+      rgba(72,55,25,0.025) 48%,
+      transparent 60%);
+    filter: blur(28px);
+    z-index: 2;
+  }
+
+  /* Grain — 14%. Clean, warm production.
+     Deep house is polished but not sterile —
+     the warmth comes from analogue gear,
+     not from dirt. Between minimal house (16%)
+     and dance pop (12%). */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.14;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 48%, transparent 36%, rgba(3,2,2,0.42) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .genre-name .line1 { color: rgba(168,118,55,0.85); }
+  .genre-name .line2 { color: rgba(128,90,42,0.38); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(108,78,38,0.14); margin-top: 10px; }
+  .rule { position: absolute; bottom: 86px; left: 40px; width: 80px; height: 1px; background: rgba(115,82,40,0.08); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Warm amber for ripple rings -->
+      <radialGradient id="rippleGrad" cx="50%" cy="48%" r="40%">
+        <stop offset="0%" style="stop-color:#b88838;stop-opacity:0.22"/>
+        <stop offset="30%" style="stop-color:#a87830;stop-opacity:0.12"/>
+        <stop offset="60%" style="stop-color:#987028;stop-opacity:0.06"/>
+        <stop offset="100%" style="stop-color:#886020;stop-opacity:0"/>
+      </radialGradient>
+
+      <!-- Pad warmth — the water itself -->
+      <radialGradient id="padWarmth" cx="50%" cy="48%" r="35%">
+        <stop offset="0%" style="stop-color:#a88038;stop-opacity:0.18"/>
+        <stop offset="40%" style="stop-color:#907028;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#786020;stop-opacity:0"/>
+      </radialGradient>
+
+      <!-- Soft blue for hi-hat shimmer -->
+      <radialGradient id="shimmerBlue" cx="50%" cy="48%" r="30%">
+        <stop offset="0%" style="stop-color:#6888b0;stop-opacity:0.12"/>
+        <stop offset="50%" style="stop-color:#587898;stop-opacity:0.05"/>
+        <stop offset="100%" style="stop-color:#486888;stop-opacity:0"/>
+      </radialGradient>
+
+      <filter id="waterBlur" x="-12%" y="-12%" width="124%" height="124%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+      </filter>
+
+      <filter id="rippleGlow" x="-5%" y="-5%" width="110%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <filter id="shimmerFilter" x="-6%" y="-6%" width="112%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+      </filter>
+
+      <filter id="depthBlur" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+    </defs>
+
+
+    <!-- === PAD WARMTH === -->
+    <!-- The warm pads that ARE the depth — the
+         water everything is submerged in. Larry
+         Heard's Juno-106 pads, Ron Trent's
+         atmospheric washes. LARGE, WARM, ENVELOPING.
+         
+         This is what makes deep house DEEP —
+         not the tempo or the kick, but the PADS
+         that surround everything in warmth. -->
+    <g filter="url(#waterBlur)" opacity="0.3">
+      <circle cx="220" cy="208" r="80"
+        fill="url(#padWarmth)"/>
+    </g>
+    <g filter="url(#waterBlur)" opacity="0.15">
+      <circle cx="220" cy="210" r="110"
+        fill="rgba(98,72,32,0.03)"/>
+    </g>
+
+
+    <!-- === THE KICK RIPPLE === -->
+    <!-- Central warm circle — the kick. Not hard
+         (Berlin), not sharp (acid), not crushing
+         (hardcore). SOFT — the kick filtered
+         through warmth. The kick doesn't HIT,
+         it PULSES into the pads, creating ripples.
+         
+         vs Minimal House: minimal has ONE circle +
+         orbital rings (structural). Deep house has
+         a WARM circle + RIPPLES (organic, expanding). -->
+    <g filter="url(#rippleGlow)">
+      <!-- The kick — warm centre -->
+      <circle cx="220" cy="208" r="16"
+        fill="rgba(158,108,42,0.2)" opacity="0.4"/>
+      <circle cx="220" cy="208" r="10"
+        stroke="rgba(168,118,48,0.42)" stroke-width="0.8"
+        fill="none"/>
+      <circle cx="220" cy="208" r="4"
+        fill="rgba(178,128,55,0.55)"/>
+    </g>
+
+    <!-- RIPPLE RINGS — expanding outward from kick.
+         Each ring = one pulse of the kick spreading
+         through the warm pads. ORGANIC — not perfectly
+         circular (minimal house's precise orbits),
+         slightly elliptical, slightly imperfect.
+         The water is warm, the ripples are soft. -->
+    <g filter="url(#rippleGlow)">
+      <!-- Ripple 1 — closest, strongest -->
+      <ellipse cx="220" cy="208" rx="38" ry="36"
+        fill="none" stroke="rgba(158,112,48,0.3)"
+        stroke-width="0.7"/>
+
+      <!-- Ripple 2 -->
+      <ellipse cx="220" cy="208" rx="62" ry="58"
+        fill="none" stroke="rgba(148,105,42,0.22)"
+        stroke-width="0.6"/>
+
+      <!-- Ripple 3 -->
+      <ellipse cx="220" cy="208" rx="88" ry="82"
+        fill="none" stroke="rgba(138,98,38,0.16)"
+        stroke-width="0.5"/>
+
+      <!-- Ripple 4 -->
+      <ellipse cx="220" cy="208" rx="115" ry="108"
+        fill="none" stroke="rgba(128,90,35,0.1)"
+        stroke-width="0.4"/>
+
+      <!-- Ripple 5 — outermost, faintest -->
+      <ellipse cx="220" cy="208" rx="142" ry="132"
+        fill="none" stroke="rgba(118,82,30,0.06)"
+        stroke-width="0.35"/>
+    </g>
+
+
+    <!-- === HI-HAT SHIMMER === -->
+    <!-- Soft blue highlights on the upper ripples —
+         the hi-hat catching light on water.
+         NOT sharp (techno closed hats) or scattered
+         (breakbeat). SHIMMERING — the open hi-hat
+         sustaining over the warm pads.
+         
+         Blue accent is SUBTLE — deep house's colour
+         is overwhelmingly warm amber, with just
+         a hint of blue where the light catches. -->
+    <g filter="url(#shimmerFilter)" opacity="0.15">
+      <circle cx="192" cy="182" r="1.8" fill="rgba(88,118,152,0.2)"/>
+      <circle cx="252" cy="178" r="1.5" fill="rgba(82,112,148,0.18)"/>
+      <circle cx="178" cy="198" r="1.2" fill="rgba(78,108,142,0.15)"/>
+      <circle cx="265" cy="195" r="1.4" fill="rgba(85,115,150,0.17)"/>
+      <circle cx="210" cy="172" r="1.0" fill="rgba(75,105,138,0.12)"/>
+      <circle cx="235" cy="170" r="1.1" fill="rgba(78,108,142,0.14)"/>
+    </g>
+
+
+    <!-- === DEPTH PARTICLES === -->
+    <!-- Warm motes suspended in the depth — the
+         sample chords, the vocal fragments, the
+         organ stabs filtered through reverb.
+         NOT dust (hip-hop's age) or sparkle (happy
+         HC's joy). WARMTH — heat particles
+         suspended in water. -->
+    <g filter="url(#depthBlur)" opacity="0.18">
+      <circle cx="168" cy="215" r="1.4" fill="rgba(138,98,42,0.16)"/>
+      <circle cx="275" cy="210" r="1.2" fill="rgba(132,92,38,0.14)"/>
+      <circle cx="195" cy="235" r="1.0" fill="rgba(128,88,35,0.12)"/>
+      <circle cx="248" cy="232" r="1.1" fill="rgba(125,85,32,0.11)"/>
+      <circle cx="152" cy="200" r="0.9" fill="rgba(118,82,30,0.09)"/>
+      <circle cx="288" cy="222" r="0.8" fill="rgba(115,78,28,0.08)"/>
+    </g>
+
+
+    <!-- === BPM === -->
+    <!-- 120-124 BPM — classic house tempo but
+         with SOFTER kicks than regular house.
+         The tempo of a warm night, not a cold
+         warehouse. Even spacing, gentle weight.
+         The most COMFORTABLE BPM in the series. -->
+    <g stroke="rgba(88,65,32,0.05)" stroke-width="0.2">
+      <line x1="72" y1="345" x2="72" y2="352"/><line x1="90" y1="345" x2="90" y2="352"/>
+      <line x1="108" y1="345" x2="108" y2="352"/><line x1="126" y1="345" x2="126" y2="352"/>
+      <line x1="144" y1="345" x2="144" y2="352"/><line x1="162" y1="345" x2="162" y2="352"/>
+      <line x1="180" y1="345" x2="180" y2="352"/><line x1="198" y1="345" x2="198" y2="352"/>
+      <line x1="216" y1="345" x2="216" y2="352"/><line x1="234" y1="345" x2="234" y2="352"/>
+      <line x1="252" y1="345" x2="252" y2="352"/><line x1="270" y1="345" x2="270" y2="352"/>
+      <line x1="288" y1="345" x2="288" y2="352"/><line x1="306" y1="345" x2="306" y2="352"/>
+      <line x1="324" y1="345" x2="324" y2="352"/><line x1="342" y1="345" x2="342" y2="352"/>
+      <line x1="360" y1="345" x2="360" y2="352"/><line x1="378" y1="345" x2="378" y2="352"/>
+    </g>
+    <!-- Kick — soft, round, warm. The softest
+         4/4 kick in the electronic series. -->
+    <g stroke="rgba(148,105,48,0.09)" stroke-width="0.35">
+      <line x1="72" y1="342" x2="72" y2="355"/>
+      <line x1="144" y1="342" x2="144" y2="355"/>
+      <line x1="216" y1="342" x2="216" y2="355"/>
+      <line x1="288" y1="342" x2="288" y2="355"/>
+      <line x1="360" y1="342" x2="360" y2="355"/>
+    </g>
+    <!-- Open hi-hat — the shimmer on the offbeat -->
+    <g stroke="rgba(72,95,118,0.04)" stroke-width="0.15">
+      <line x1="108" y1="346" x2="108" y2="351"/>
+      <line x1="180" y1="346" x2="180" y2="351"/>
+      <line x1="252" y1="346" x2="252" y2="351"/>
+      <line x1="324" y1="346" x2="324" y2="351"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Deep</span><br/><span class="line2">House</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psybient Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #040808; }
+  .cover { position: relative; width: 600px; height: 600px; background: #080e0e; overflow: hidden; }
+
+  /* Dark forest-indigo — the colour of deep jungle
+     at pre-dawn, the chill-out tent's canvas filtering
+     first light. Not cold (classic ambient) or dead
+     (industrial ambient). ALIVE, breathing, organic.
+     Ultimae Records, Interchill, Twisted. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(42,98,82,0.07) 0%, transparent 42%),
+      radial-gradient(ellipse at 50% 46%, rgba(148,108,48,0.025) 0%, transparent 32%),
+      linear-gradient(180deg, #0a1212 0%, #080e0e 42%, #040808 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — warm, ORGANIC, bioluminescent.
+     The amber-gold of bioluminescence,
+     the inner light of the mandala. */
+  .glow {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+      rgba(128,108,52,0.06) 0%,
+      rgba(52,98,78,0.04) 28%,
+      rgba(38,75,65,0.02) 48%,
+      transparent 58%);
+    filter: blur(22px);
+    z-index: 2;
+  }
+
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.18;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 48%, transparent 35%, rgba(2,4,4,0.48) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: rgba(82,148,118,0.8);
+  }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(55,108,82,0.15); margin-top: 10px; }
+  .rule { position: absolute; bottom: 78px; left: 40px; width: 80px; height: 1px; background: rgba(58,112,88,0.08); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Teal-green for organic curves -->
+      <radialGradient id="organicGrad" cx="50%" cy="48%" r="38%">
+        <stop offset="0%" style="stop-color:#58b898;stop-opacity:0.45"/>
+        <stop offset="35%" style="stop-color:#48a888;stop-opacity:0.32"/>
+        <stop offset="65%" style="stop-color:#389878;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#288868;stop-opacity:0"/>
+      </radialGradient>
+
+      <!-- Amber-gold for bioluminescent core -->
+      <radialGradient id="bioGrad" cx="50%" cy="48%" r="25%">
+        <stop offset="0%" style="stop-color:#c8a848;stop-opacity:0.3"/>
+        <stop offset="40%" style="stop-color:#a89038;stop-opacity:0.15"/>
+        <stop offset="100%" style="stop-color:#887828;stop-opacity:0"/>
+      </radialGradient>
+
+      <filter id="organicGlow" x="-5%" y="-5%" width="110%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <filter id="breathBlur" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+      </filter>
+
+      <filter id="sporeBlur" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+      </filter>
+
+      <!-- Organic displacement — NOT mechanical turbulence,
+           but fractalNoise with LOW frequency — the slow
+           undulation of living things -->
+      <filter id="organicDisplace">
+        <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="4" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+
+
+    <!-- === BIOLUMINESCENT CORE === -->
+    <!-- The warm centre — amber-gold, the inner
+         light. Not mechanical (Detroit node), not
+         aggressive (rave flash). ORGANIC luminescence,
+         the glow of living things in darkness. -->
+    <g filter="url(#breathBlur)" opacity="0.2">
+      <circle cx="220" cy="210" r="22" fill="rgba(148,118,52,0.1)"/>
+    </g>
+    <g filter="url(#breathBlur)" opacity="0.12">
+      <circle cx="220" cy="210" r="38" fill="rgba(88,128,78,0.05)"/>
+    </g>
+
+
+    <!-- === THE ORGANIC MANDALA === -->
+    <!-- Curves radiating from centre — NOT straight
+         lines (techno grid) or angular (post-punk)
+         or arcs (prog trance). ORGANIC CURVES —
+         bezier paths that suggest plant tendrils,
+         neural dendrites, mycelium networks.
+         
+         6 petals, each a pair of curves creating
+         a leaf/petal shape. Slightly irregular
+         through organic displacement — living
+         symmetry, not mechanical symmetry. -->
+
+    <g filter="url(#organicDisplace)">
+      <g filter="url(#organicGlow)">
+        <!-- Petal 1 — top -->
+        <path d="M 220,210 C 215,178 198,148 220,132
+                 C 242,148 225,178 220,210"
+          fill="none" stroke="rgba(68,148,112,0.35)" stroke-width="0.55"
+          stroke-linecap="round"/>
+
+        <!-- Petal 2 — top-right -->
+        <path d="M 220,210 C 242,192 268,172 288,178
+                 C 282,200 252,198 220,210"
+          fill="none" stroke="rgba(65,142,108,0.32)" stroke-width="0.5"
+          stroke-linecap="round"/>
+
+        <!-- Petal 3 — bottom-right -->
+        <path d="M 220,210 C 245,222 272,238 280,258
+                 C 260,260 242,238 220,210"
+          fill="none" stroke="rgba(62,138,105,0.3)" stroke-width="0.5"
+          stroke-linecap="round"/>
+
+        <!-- Petal 4 — bottom -->
+        <path d="M 220,210 C 225,242 238,268 220,284
+                 C 202,268 215,242 220,210"
+          fill="none" stroke="rgba(60,135,102,0.28)" stroke-width="0.5"
+          stroke-linecap="round"/>
+
+        <!-- Petal 5 — bottom-left -->
+        <path d="M 220,210 C 198,225 172,242 155,238
+                 C 158,218 192,212 220,210"
+          fill="none" stroke="rgba(58,132,98,0.26)" stroke-width="0.5"
+          stroke-linecap="round"/>
+
+        <!-- Petal 6 — top-left -->
+        <path d="M 220,210 C 200,195 175,175 168,155
+                 C 188,152 205,178 220,210"
+          fill="none" stroke="rgba(55,128,95,0.24)" stroke-width="0.5"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === SECONDARY TENDRILS === -->
+    <!-- Fainter, longer curves extending beyond
+         the petals — the fractal nature of the
+         pattern, self-similar at different scales.
+         Neural dendrites reaching further. -->
+    <g filter="url(#organicDisplace)" opacity="0.4">
+      <g filter="url(#sporeBlur)">
+        <path d="M 220,132 C 218,115 222,98 228,82"
+          fill="none" stroke="rgba(62,128,98,0.15)" stroke-width="0.35"
+          stroke-linecap="round"/>
+        <path d="M 288,178 C 302,172 318,170 332,175"
+          fill="none" stroke="rgba(58,125,95,0.12)" stroke-width="0.35"
+          stroke-linecap="round"/>
+        <path d="M 280,258 C 288,272 292,288 288,302"
+          fill="none" stroke="rgba(55,122,92,0.1)" stroke-width="0.3"
+          stroke-linecap="round"/>
+        <path d="M 220,284 C 218,298 215,315 220,328"
+          fill="none" stroke="rgba(52,118,88,0.1)" stroke-width="0.3"
+          stroke-linecap="round"/>
+        <path d="M 155,238 C 142,245 128,248 115,242"
+          fill="none" stroke="rgba(50,115,85,0.08)" stroke-width="0.3"
+          stroke-linecap="round"/>
+        <path d="M 168,155 C 155,145 142,138 130,140"
+          fill="none" stroke="rgba(48,112,82,0.08)" stroke-width="0.3"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === SPORE PARTICLES === -->
+    <!-- Bioluminescent particles — NOT dust (grain),
+         NOT sparks (debris), NOT pixels (glitch).
+         SPORES — living particles suspended in the
+         atmosphere, each faintly glowing with its
+         own inner light. Some teal, some amber.
+         The pollen of psychedelic space. -->
+    <g filter="url(#sporeBlur)" opacity="0.25">
+      <!-- Teal spores — closer to petals -->
+      <circle cx="205" cy="162" r="1.2" fill="rgba(65,138,108,0.2)"/>
+      <circle cx="258" cy="185" r="1.0" fill="rgba(62,135,105,0.18)"/>
+      <circle cx="248" cy="245" r="1.1" fill="rgba(60,132,102,0.16)"/>
+      <circle cx="185" cy="252" r="0.9" fill="rgba(58,128,98,0.15)"/>
+      <circle cx="175" cy="185" r="1.0" fill="rgba(55,125,95,0.14)"/>
+
+      <!-- Amber spores — closer to core, bioluminescent -->
+      <circle cx="228" cy="192" r="0.8" fill="rgba(148,118,55,0.22)"/>
+      <circle cx="208" cy="225" r="0.9" fill="rgba(142,112,52,0.2)"/>
+      <circle cx="235" cy="222" r="0.7" fill="rgba(138,108,48,0.18)"/>
+
+      <!-- Distant spores — outer field -->
+      <circle cx="145" cy="168" r="0.6" fill="rgba(48,108,78,0.08)"/>
+      <circle cx="305" cy="192" r="0.5" fill="rgba(45,105,75,0.06)"/>
+      <circle cx="290" cy="275" r="0.6" fill="rgba(48,108,78,0.07)"/>
+      <circle cx="148" cy="278" r="0.5" fill="rgba(45,105,75,0.06)"/>
+    </g>
+
+
+    <!-- === BPM === -->
+    <!-- VERY slow — psybient breathes at
+         downtempo pace (90-110 BPM).
+         The widest BPM spacing in any electronic
+         cover WITH a pulse. Organic, gentle,
+         the rhythm of breathing not machines.
+         Slightly uneven — LIVING tempo. -->
+    <g stroke="rgba(42,88,68,0.04)" stroke-width="0.2">
+      <line x1="72" y1="345" x2="72" y2="352"/>
+      <line x1="98" y1="345" x2="98" y2="352"/>
+      <line x1="124" y1="345" x2="124" y2="352"/>
+      <line x1="150" y1="345" x2="150" y2="352"/>
+      <line x1="178" y1="345" x2="178" y2="352"/>
+      <line x1="204" y1="345" x2="204" y2="352"/>
+      <line x1="232" y1="345" x2="232" y2="352"/>
+      <line x1="258" y1="345" x2="258" y2="352"/>
+      <line x1="286" y1="345" x2="286" y2="352"/>
+      <line x1="312" y1="345" x2="312" y2="352"/>
+      <line x1="340" y1="345" x2="340" y2="352"/>
+      <line x1="366" y1="345" x2="366" y2="352"/>
+    </g>
+    <!-- Pulse — gentle, organic, the heartbeat -->
+    <g stroke="rgba(62,118,88,0.08)" stroke-width="0.3">
+      <line x1="72" y1="343" x2="72" y2="354"/>
+      <line x1="178" y1="343" x2="178" y2="354"/>
+      <line x1="286" y1="343" x2="286" y2="354"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Psybient</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

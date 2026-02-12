@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coldwave Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #040406; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0a0a0e; overflow: hidden; }
+
+  /* Near-black with the faintest cold blue —
+     no violet (darkwave), no warm brown, no green.
+     The colour of concrete in February.
+     The most NEUTRAL dark in the series.
+     Minimal Wave Records, Desire, Infrastition. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(62,65,78,0.04) 0%, transparent 38%),
+      linear-gradient(180deg, #0c0c10 0%, #0a0a0e 50%, #040406 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — BARELY PRESENT. Coldwave does not
+     radiate. It does not invite. The faintest
+     suggestion of presence, nothing more.
+     The most minimal glow in any synth cover. */
+  .glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+      rgba(58,62,78,0.035) 0%,
+      rgba(45,48,62,0.015) 42%,
+      transparent 55%);
+    filter: blur(18px);
+    z-index: 2;
+  }
+
+  /* Grain — 20%. Not clean (dance pop 12%) and
+     not lo-fi (garage 32%). The texture of cheap
+     cassette duplication, four-track demos passed
+     between friends. Functional, not aesthetic. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.20;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 50%, transparent 30%, rgba(2,2,3,0.5) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: rgba(108,112,132,0.72);
+  }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(72,75,92,0.14); margin-top: 10px; }
+  .rule { position: absolute; bottom: 78px; left: 40px; width: 80px; height: 1px; background: rgba(78,82,98,0.07); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Cold grey-blue — no warmth, no violet romance,
+           no pink accent. Pure desaturated cold. -->
+      <linearGradient id="coldLine" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#555868;stop-opacity:0"/>
+        <stop offset="8%" style="stop-color:#656878;stop-opacity:0.2"/>
+        <stop offset="22%" style="stop-color:#757888;stop-opacity:0.4"/>
+        <stop offset="45%" style="stop-color:#828598;stop-opacity:0.55"/>
+        <stop offset="55%" style="stop-color:#828598;stop-opacity:0.55"/>
+        <stop offset="78%" style="stop-color:#757888;stop-opacity:0.4"/>
+        <stop offset="92%" style="stop-color:#656878;stop-opacity:0.2"/>
+        <stop offset="100%" style="stop-color:#555868;stop-opacity:0"/>
+      </linearGradient>
+
+      <filter id="coldGlow" x="-3%" y="-8%" width="106%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <filter id="staticBlur" x="-6%" y="-6%" width="112%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
+      </filter>
+
+      <!-- Micro-displacement — the FAINTEST tremor.
+           Not expressive (rock), not corroded (acid),
+           not organic (psybient). MECHANICAL —
+           the slight instability of cheap analogue
+           oscillators. Scale 1 — the LOWEST
+           displacement of any displaced element. -->
+      <filter id="coldTremor">
+        <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+
+
+    <!-- === THE FROZEN LINE === -->
+    <!-- A SINGLE horizontal line with the faintest
+         micro-oscillation. Almost a flatline.
+         
+         New Wave:   ┐┌┘└┐┌┘└   (steps — DESIGNED angles)
+         Darkwave:   ∿╲∿╲∿╲∿    (falls — MELANCHOLIC descent)
+         COLDWAVE:   ─────────   (FLAT — refuses to move)
+         
+         The wave that refuses to emote. Not dead
+         (a true flatline), not alive (a wave with
+         amplitude). FROZEN — the oscillator is on,
+         the signal exists, but the expression is
+         withheld. Martin Dupont's Juno-6 set to
+         one voice, one octave, no modulation.
+         
+         Micro-displacement scale=1 gives it the
+         faintest tremor — the hand on the key
+         is human, even if the face is stone. -->
+
+    <g filter="url(#coldTremor)">
+      <g filter="url(#coldGlow)">
+        <line x1="35" y1="210" x2="405" y2="210"
+          stroke="url(#coldLine)" stroke-width="0.9"
+          stroke-linecap="butt"/>
+      </g>
+    </g>
+
+
+    <!-- === GHOST LINE === -->
+    <!-- A second line — barely visible, 6px below.
+         The delay set to one repeat, dry, short.
+         Not darkwave's lush echo wave (reverb-drenched,
+         romantic). A SINGLE dry repeat. Functional,
+         not expressive. -->
+    <g filter="url(#coldTremor)" opacity="0.3">
+      <line x1="55" y1="216" x2="385" y2="216"
+        stroke="rgba(92,95,112,0.2)" stroke-width="0.5"
+        stroke-linecap="butt"/>
+    </g>
+
+
+    <!-- === STATIC RESIDUE === -->
+    <!-- Faint marks ALONG the line — not below
+         (darkwave's falling trails) or above
+         (new wave's step-edge accents). ON the line.
+         The tape hiss, the analogue static, the
+         noise floor of a cheap synth. Not expressive
+         particles — RESIDUE. -->
+    <g filter="url(#staticBlur)" opacity="0.1">
+      <rect x="108" y="208" width="3" height="1.5" fill="rgba(78,82,98,0.12)" rx="0"/>
+      <rect x="172" y="209" width="2" height="1" fill="rgba(75,78,95,0.1)" rx="0"/>
+      <rect x="225" y="208" width="2.5" height="1.5" fill="rgba(78,82,98,0.12)" rx="0"/>
+      <rect x="288" y="209" width="2" height="1" fill="rgba(72,75,92,0.08)" rx="0"/>
+      <rect x="342" y="208" width="1.5" height="1" fill="rgba(68,72,88,0.07)" rx="0"/>
+    </g>
+
+
+    <!-- === ABSENCE MARKERS === -->
+    <!-- Where other genres have particles, warmth,
+         trails, sparkles — coldwave has GAPS.
+         Two faint vertical marks where beats
+         are WITHHELD. The space where expression
+         would be, if the artist permitted it. -->
+    <g opacity="0.06">
+      <line x1="158" y1="200" x2="158" y2="220"
+        stroke="rgba(72,75,92,0.06)" stroke-width="0.4"
+        stroke-linecap="butt"/>
+      <line x1="282" y1="200" x2="282" y2="220"
+        stroke="rgba(68,72,88,0.05)" stroke-width="0.4"
+        stroke-linecap="butt"/>
+    </g>
+
+
+    <!-- === BPM === -->
+    <!-- Mechanical, EXACT, affectless.
+         120 BPM — the default. Not slow (darkwave's
+         weight) or fast (new wave's energy).
+         THE DEFAULT TEMPO — the drum machine was
+         switched on and no one adjusted it.
+         
+         The most NEUTRAL BPM in the series:
+         even spacing, even weight, even length.
+         No swing (garage), no build (prog trance),
+         no variation (garage rock). INDIFFERENT. -->
+    <g stroke="rgba(58,62,78,0.05)" stroke-width="0.2">
+      <line x1="72" y1="345" x2="72" y2="352"/><line x1="92" y1="345" x2="92" y2="352"/>
+      <line x1="112" y1="345" x2="112" y2="352"/><line x1="132" y1="345" x2="132" y2="352"/>
+      <line x1="152" y1="345" x2="152" y2="352"/><line x1="172" y1="345" x2="172" y2="352"/>
+      <line x1="192" y1="345" x2="192" y2="352"/><line x1="212" y1="345" x2="212" y2="352"/>
+      <line x1="232" y1="345" x2="232" y2="352"/><line x1="252" y1="345" x2="252" y2="352"/>
+      <line x1="272" y1="345" x2="272" y2="352"/><line x1="292" y1="345" x2="292" y2="352"/>
+      <line x1="312" y1="345" x2="312" y2="352"/><line x1="332" y1="345" x2="332" y2="352"/>
+      <line x1="352" y1="345" x2="352" y2="352"/><line x1="372" y1="345" x2="372" y2="352"/>
+    </g>
+    <!-- Kick — identical, affectless, the default -->
+    <g stroke="rgba(78,82,98,0.08)" stroke-width="0.32">
+      <line x1="72" y1="343" x2="72" y2="354"/>
+      <line x1="152" y1="343" x2="152" y2="354"/>
+      <line x1="232" y1="343" x2="232" y2="354"/>
+      <line x1="312" y1="343" x2="312" y2="354"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name">Coldwave</div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

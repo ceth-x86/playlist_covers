@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Occult Folk Playlist Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #06040a; }
+  .cover { position: relative; width: 600px; height: 600px; background: #0e0a14; overflow: hidden; }
+
+  /* Deep purple-black — darker and more violet
+     than pagan folk's warm earth-dark. Not the
+     grey of apocalyptic ash or the cold stone
+     of martial. The colour of a room lit only
+     by candles, of purple cloth on an altar,
+     of the sky an hour after sunset when the
+     stars first appear. Rise Above, Svart,
+     The Ajna Offensive, Invada. */
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(82,52,98,0.06) 0%, transparent 36%),
+      radial-gradient(ellipse at 50% 48%, rgba(68,55,48,0.025) 0%, transparent 26%),
+      linear-gradient(180deg, #100c18 0%, #0e0a14 44%, #06040a 100%);
+    z-index: 1;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+    z-index: 3;
+    width: 440px;
+    height: 440px;
+  }
+
+  /* Glow — CENTRED, dim, contained WITHIN the
+     circle. Not radiating outward (happy HC)
+     or below (darkwave/trip hop). The light
+     stays inside the circle — the energy is
+     contained, directed, bound. The candle
+     on the altar illuminates only the sigil. */
+  .glow {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+      rgba(82,55,92,0.05) 0%,
+      rgba(62,42,72,0.025) 38%,
+      transparent 50%);
+    filter: blur(14px);
+    z-index: 2;
+  }
+
+  /* Grain — 22%. Same as gothic rock, pagan folk.
+     The grain of analogue recording, of folk
+     instruments through old equipment, of the
+     harmonium's inherent texture. Not digital
+     noise — PATINA. */
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 46%, transparent 30%, rgba(3,2,5,0.52) 100%);
+    pointer-events: none;
+  }
+
+  .text-block { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .genre-name .line1 { color: rgba(142,108,155,0.78); }
+  .genre-name .line2 { color: rgba(98,72,108,0.32); }
+  .subtitle { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(78,58,85,0.12); margin-top: 10px; }
+  .rule { position: absolute; bottom: 82px; left: 40px; width: 80px; height: 1px; background: rgba(88,65,95,0.06); z-index: 10; }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="glow"></div>
+
+  <svg class="central-form" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Muted indigo-violet for the circle -->
+      <radialGradient id="sigilCircle" cx="50%" cy="46%" r="25%">
+        <stop offset="60%" style="stop-color:#7858a0;stop-opacity:0.32"/>
+        <stop offset="85%" style="stop-color:#685090;stop-opacity:0.18"/>
+        <stop offset="100%" style="stop-color:#584880;stop-opacity:0"/>
+      </radialGradient>
+
+      <!-- Bone-white for inscriptions -->
+      <linearGradient id="boneInk" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#b0a898;stop-opacity:0.12"/>
+        <stop offset="30%" style="stop-color:#c8c0b8;stop-opacity:0.32"/>
+        <stop offset="50%" style="stop-color:#d0c8c0;stop-opacity:0.4"/>
+        <stop offset="70%" style="stop-color:#c8c0b8;stop-opacity:0.32"/>
+        <stop offset="100%" style="stop-color:#b0a898;stop-opacity:0.12"/>
+      </linearGradient>
+
+      <filter id="inkAge">
+        <feTurbulence type="fractalNoise" baseFrequency="0.1" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+
+      <filter id="candleGlow" x="-5%" y="-5%" width="110%" height="110%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+
+      <filter id="spiritBlur" x="-8%" y="-8%" width="116%" height="116%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      </filter>
+
+      <filter id="waxBlur" x="-6%" y="-6%" width="112%" height="112%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.8"/>
+      </filter>
+    </defs>
+
+
+    <!-- === SPIRIT FIELD === -->
+    <!-- The energy contained within the circle —
+         not radiating out (pagan's fire glow)
+         but HELD. The ritual space defined by
+         the circle. Whatever is summoned stays
+         inside. -->
+    <g filter="url(#spiritBlur)" opacity="0.12">
+      <circle cx="220" cy="200" r="62"
+        fill="rgba(72,48,82,0.04)"/>
+    </g>
+
+
+    <!-- === THE BINDING CIRCLE === -->
+    <!-- The outer circle — the boundary.
+         Pagan folk's circle is whole and warm
+         (community, ritual). Occult folk's
+         circle is whole but COLD — it's not
+         a gathering, it's a CONTAINMENT.
+         The circle that holds what's inside,
+         keeps what's outside out.
+         
+         Through inkAge displacement — the hand
+         that drew it was steady but human,
+         the ink on parchment aged and slightly
+         uneven. NOT geometric perfection
+         (techno's circles). NOT broken
+         (apocalyptic). INSCRIBED — made by
+         hand with intent. -->
+    <g filter="url(#inkAge)">
+      <g filter="url(#candleGlow)">
+        <!-- The binding circle -->
+        <circle cx="220" cy="200" r="68"
+          fill="none" stroke="rgba(148,128,155,0.35)"
+          stroke-width="0.7"/>
+
+        <!-- Inner circle — the second boundary -->
+        <circle cx="220" cy="200" r="56"
+          fill="none" stroke="rgba(138,118,145,0.25)"
+          stroke-width="0.5"/>
+      </g>
+    </g>
+
+
+    <!-- === THE INSCRIBED LINES === -->
+    <!-- Lines WITHIN the circle — the sigil.
+         NOT a pentagram (too literal) but the
+         ABSTRACTION of arcane geometry: lines
+         crossing inside the circle, forming
+         intersections that suggest hidden meaning.
+         
+         5 lines through the centre, each at a
+         different angle — the geometry of intent.
+         They don't form a recognizable symbol —
+         they suggest one. The viewer's mind
+         completes the pattern. That IS the occult:
+         the hidden pattern that you almost see. -->
+    <g filter="url(#inkAge)">
+      <g filter="url(#candleGlow)">
+        <!-- Line 1 — vertical (the axis) -->
+        <line x1="220" y1="138" x2="220" y2="262"
+          stroke="url(#boneInk)" stroke-width="0.55"
+          stroke-linecap="round"/>
+
+        <!-- Line 2 — upper-left to lower-right -->
+        <line x1="172" y1="155" x2="262" y2="248"
+          stroke="rgba(188,180,172,0.28)" stroke-width="0.5"
+          stroke-linecap="round"/>
+
+        <!-- Line 3 — upper-right to lower-left -->
+        <line x1="268" y1="155" x2="178" y2="248"
+          stroke="rgba(185,178,168,0.26)" stroke-width="0.48"
+          stroke-linecap="round"/>
+
+        <!-- Line 4 — near-horizontal, slight tilt -->
+        <line x1="156" y1="195" x2="284" y2="205"
+          stroke="rgba(182,175,165,0.24)" stroke-width="0.45"
+          stroke-linecap="round"/>
+
+        <!-- Line 5 — opposing tilt -->
+        <line x1="160" y1="215" x2="280" y2="185"
+          stroke="rgba(178,172,162,0.22)" stroke-width="0.42"
+          stroke-linecap="round"/>
+      </g>
+    </g>
+
+
+    <!-- === INTERSECTION NODES === -->
+    <!-- Where the inscribed lines cross —
+         points of power, the conjunctions
+         in the sigil. Small, precise, brighter
+         than the lines themselves. The nodes
+         where energy concentrates.
+         NOT medals (martial's bilateral pairs)
+         or orbital dots (minimal house).
+         CONJUNCTIONS — where meanings overlap. -->
+    <g filter="url(#candleGlow)" opacity="0.22">
+      <!-- Centre — the convergence -->
+      <circle cx="220" cy="200" r="2.0"
+        fill="rgba(168,148,172,0.4)"/>
+
+      <!-- Upper intersections -->
+      <circle cx="207" cy="170" r="1.3"
+        fill="rgba(158,138,162,0.3)"/>
+      <circle cx="238" cy="168" r="1.2"
+        fill="rgba(155,135,158,0.28)"/>
+
+      <!-- Side intersections -->
+      <circle cx="186" cy="198" r="1.1"
+        fill="rgba(152,132,155,0.25)"/>
+      <circle cx="255" cy="195" r="1.1"
+        fill="rgba(150,130,152,0.24)"/>
+
+      <!-- Lower intersections -->
+      <circle cx="198" cy="232" r="1.2"
+        fill="rgba(148,128,148,0.22)"/>
+      <circle cx="242" cy="228" r="1.0"
+        fill="rgba(145,125,145,0.2)"/>
+    </g>
+
+
+    <!-- === WAX DRIP MARKS === -->
+    <!-- Tiny drops below the circle — the candle
+         wax that dripped during the ritual.
+         The only marks OUTSIDE the circle.
+         Evidence that a human performed this,
+         that time passed, that candles burned down.
+         NOT debris (power electronics) or dust
+         (hip-hop). WAX — the material evidence
+         of ritual duration. -->
+    <g filter="url(#waxBlur)" opacity="0.1">
+      <circle cx="208" cy="278" r="0.8" fill="rgba(128,108,88,0.12)"/>
+      <circle cx="225" cy="282" r="0.6" fill="rgba(122,102,82,0.1)"/>
+      <circle cx="238" cy="276" r="0.7" fill="rgba(125,105,85,0.11)"/>
+      <circle cx="215" cy="288" r="0.5" fill="rgba(118,98,78,0.08)"/>
+    </g>
+
+
+    <!-- === BPM === -->
+    <!-- SLOW, deliberate, ritualistic.
+         Not martial's precise cadence — this
+         is INCANTATION tempo. The rhythm of
+         chanting, of repeated phrases, of the
+         harmonium's bellows being pumped by hand.
+         Irregular spacing — the ritual breathes. -->
+    <g stroke="rgba(62,48,68,0.04)" stroke-width="0.18">
+      <line x1="88" y1="345" x2="88" y2="352"/>
+      <line x1="112" y1="345" x2="112" y2="352"/>
+      <line x1="138" y1="345" x2="138" y2="352"/>
+      <line x1="168" y1="345" x2="168" y2="352"/>
+      <line x1="198" y1="345" x2="198" y2="352"/>
+      <line x1="225" y1="345" x2="225" y2="352"/>
+      <line x1="255" y1="345" x2="255" y2="352"/>
+      <line x1="288" y1="345" x2="288" y2="352"/>
+      <line x1="318" y1="345" x2="318" y2="352"/>
+      <line x1="348" y1="345" x2="348" y2="352"/>
+    </g>
+    <!-- Ritual pulse — the harmonium breath -->
+    <g stroke="rgba(108,82,115,0.08)" stroke-width="0.38">
+      <line x1="88" y1="342" x2="88" y2="356"/>
+      <line x1="168" y1="342" x2="168" y2="356"/>
+      <line x1="255" y1="342" x2="255" y2="356"/>
+      <line x1="348" y1="342" x2="348" y2="356"/>
+    </g>
+  </svg>
+
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="rule"></div>
+  <div class="text-block">
+    <div class="genre-name"><span class="line1">Occult</span><br/><span class="line2">Folk</span></div>
+    <div class="subtitle">playlist</div>
+  </div>
+</div>
+
+</body>
+</html>

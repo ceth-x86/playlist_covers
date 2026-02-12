@@ -1,0 +1,411 @@
+<!--
+  TRAP — Playlist Cover
+  Design System: Playlist Cover v1
+
+  SONIC DNA ANALYSIS:
+  ═══════════════════
+  Trap's defining sonic features:
+  1. 808 SUB-BASS SLIDES — pitched 808 kicks that bend/glide between notes,
+     the gravitational core of every trap beat
+  2. HI-HAT ROLLS — rapid triplet hi-hat patterns that accelerate and decelerate,
+     the genre's rhythmic fingerprint (1/8 → 1/16 → 1/32 → rolls)
+  3. SPARSE ARRANGEMENT — minimal elements, maximum impact. Negative space
+     is as important as the sounds themselves
+  4. SNARE/CLAP ON 3 — heavy, layered snare with long reverb tail
+  5. DARK ATMOSPHERE — minor keys, cinematic tension, ominous pads
+  6. TRIPLET FLOW — everything subdivides into threes, not fours
+
+  VISUAL TRANSLATION:
+  ═══════════════════
+  Background: Near-black with warm undertone (#0c0806) — the darkness of
+    a trap beat's negative space, warm because 808s are warm analog sounds
+  Central form: THE 808 SLIDE — a thick, heavy bass line that bends and
+    glides downward in steps, each step a pitch bend between notes.
+    Above it, a HI-HAT LATTICE — thin triplet tick marks that accelerate
+    from sparse to dense (visualizing the classic hi-hat roll pattern).
+    The 808 is HEAVY and LOW, the hats are LIGHT and HIGH — the two
+    poles of trap's sonic architecture.
+  Glow: Deep red-amber (0.06) — the warmth of analog 808 saturation,
+    positioned below the bass line (sub frequencies)
+  Grain: 20% — modern but gritty, not clean pop production
+  Displacement: scale=2 — subtle pitch wobble on the 808 slide
+  Blur: stdDev=8 on 808 glow — sub-bass warmth bleeds
+  Particles: 0 — trap is SPARSE, no decorative elements. Every sound
+    in a trap beat earns its place. No shimmer, no sparkle.
+  BPM: 140 BPM → 20 ticks at 16px, kick weight 0.6px (808 HEAVY),
+    with triplet subdivisions visible as grouped-by-three spacing
+
+  FAMILY PLACEMENT:
+  ═══════════════════
+  Hip-Hop evolution: Underground HH (beat bar) → Experimental HH (fractured bar)
+    → Trap (808 slide + hi-hat lattice)
+  Also feeds into: Future Bass (borrows trap's hi-hats and 808s)
+  Compared to Underground HH: same dark space but synthesized 808 replaces
+    sampled drums, hi-hat complexity replaces boom-bap simplicity
+  Compared to Dubstep: same ~140 BPM, same half-time, but trap's weight
+    comes from 808 slides not wobble bass, and trap's texture comes from
+    hi-hat rolls not synth modulation
+  Key producers: Lex Luger, Metro Boomin, Southside, Mike WiLL Made-It
+
+  COLOUR RATIONALE:
+  ═══════════════════
+  Near-black warm (#0c0806): analog darkness — 808 warmth in the void
+  Deep red (#8b1a1a → #5c1010): the colour of 808 saturation when you
+    push the kick through a warm distortion — it glows red on the meters
+  Amber (#cc6600): 808 decay tail warmth
+  White ticks: hi-hats are metallic, bright, cutting through the darkness
+  NO cyan, NO purple, NO pastels — trap is austere and monochrome
+    with only the 808's warmth providing colour
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=600, height=600">
+<title>trap — playlist cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #0c0806;
+    position: relative;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(
+      ellipse 55% 55% at 50% 50%,
+      transparent 0%,
+      rgba(8, 5, 3, 0.4) 55%,
+      rgba(8, 5, 3, 0.85) 100%
+    );
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* === GRAIN — 20% === */
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 11;
+    pointer-events: none;
+    opacity: 0.20;
+  }
+
+  /* === 808 SUB GLOW — deep red warmth below the bass line === */
+  .sub-glow {
+    position: absolute;
+    width: 300px;
+    height: 160px;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      ellipse 100% 80% at 50% 30%,
+      rgba(139, 26, 26, 0.06) 0%,
+      rgba(92, 16, 16, 0.03) 50%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  .bpm-strip {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 15;
+  }
+  .rule {
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+  }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 52px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>
+</head>
+<body>
+
+<!-- 808 SUB GLOW -->
+<div class="sub-glow"></div>
+
+<!-- CENTRAL FORM: 808 Slide + Hi-Hat Lattice -->
+<svg class="central-form" width="440" height="440" viewBox="0 0 440 440">
+  <defs>
+    <!-- 808 pitch wobble displacement: scale=2 -->
+    <filter id="pitchWobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="turbulence" baseFrequency="0.008 0.03" numOctaves="2" seed="808" result="turb"/>
+      <feDisplacementMap in="SourceGraphic" in2="turb" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- 808 sub warmth blur: stdDev=8 -->
+    <filter id="subWarmth">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+
+    <!-- 808 line glow -->
+    <filter id="bassGlow">
+      <feGaussianBlur stdDeviation="2.5" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- 808 gradient: warm red-amber with saturation -->
+    <linearGradient id="eightOhEight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8b1a1a" stop-opacity="0.4"/>
+      <stop offset="20%" stop-color="#a52a2a" stop-opacity="0.75"/>
+      <stop offset="50%" stop-color="#cc6600" stop-opacity="0.85"/>
+      <stop offset="80%" stop-color="#a52a2a" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#5c1010" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- 808 decay tail gradient (fading warmth) -->
+    <linearGradient id="decayTail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8b1a1a" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0c0806" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!--
+    THE 808 SLIDE
+    ═══════════════════
+    The defining visual: a thick bass line that steps downward in
+    pitch-bend slides. Each horizontal segment is a sustained 808 note;
+    the diagonal connections are the glide/portamento between notes.
+    The line gets thicker as it descends (more sub-bass energy at
+    lower pitches). This is trap's gravitational pull — everything
+    slides DOWN into the low end.
+
+    The stepped-slide shape is unique in the system — not a smooth wave
+    (dubstep), not stacked layers (future bass), not scattered impacts
+    (breakbeat). It's architectural: deliberate, heavy, precise.
+  -->
+
+  <!-- 808 sub-warmth halo — blurred glow beneath the bass line -->
+  <path d="
+    M 80,235 L 140,235 L 155,252 L 225,252 L 242,270 L 320,270 L 338,288 L 380,288
+  "
+  stroke="#8b1a1a" stroke-width="12" fill="none"
+  stroke-linecap="round" stroke-linejoin="round"
+  filter="url(#subWarmth)" opacity="0.12"/>
+
+  <!-- 808 slide — main line with pitch wobble displacement -->
+  <g filter="url(#pitchWobble)">
+    <!--
+      808 BASS LINE: 4 pitch steps descending
+      Each step: hold → slide → hold → slide
+      Line thickens as pitch drops: 2.2px → 2.5px → 2.8px → 3.0px
+    -->
+
+    <!-- Note 1: highest pitch, thinnest -->
+    <line x1="80" y1="235" x2="140" y2="235"
+      stroke="url(#eightOhEight)" stroke-width="2.2"
+      stroke-linecap="round" filter="url(#bassGlow)"/>
+
+    <!-- Slide 1→2 -->
+    <line x1="140" y1="235" x2="155" y2="252"
+      stroke="#a52a2a" stroke-width="2.0" opacity="0.6"
+      stroke-linecap="round"/>
+
+    <!-- Note 2 -->
+    <line x1="155" y1="252" x2="225" y2="252"
+      stroke="url(#eightOhEight)" stroke-width="2.5"
+      stroke-linecap="round" filter="url(#bassGlow)"/>
+
+    <!-- Slide 2→3 -->
+    <line x1="225" y1="252" x2="242" y2="270"
+      stroke="#a52a2a" stroke-width="2.2" opacity="0.6"
+      stroke-linecap="round"/>
+
+    <!-- Note 3 -->
+    <line x1="242" y1="270" x2="320" y2="270"
+      stroke="url(#eightOhEight)" stroke-width="2.8"
+      stroke-linecap="round" filter="url(#bassGlow)"/>
+
+    <!-- Slide 3→4 -->
+    <line x1="320" y1="270" x2="338" y2="288"
+      stroke="#a52a2a" stroke-width="2.4" opacity="0.6"
+      stroke-linecap="round"/>
+
+    <!-- Note 4: lowest, thickest — maximum sub weight -->
+    <line x1="338" y1="288" x2="380" y2="288"
+      stroke="url(#eightOhEight)" stroke-width="3.0"
+      stroke-linecap="round" filter="url(#bassGlow)"/>
+  </g>
+
+  <!-- 808 decay tails — vertical fades below each note (sub resonance) -->
+  <rect x="95" y="236" width="40" height="18" fill="url(#decayTail)" opacity="0.4"/>
+  <rect x="170" y="253" width="50" height="22" fill="url(#decayTail)" opacity="0.5"/>
+  <rect x="260" y="271" width="55" height="25" fill="url(#decayTail)" opacity="0.55"/>
+  <rect x="345" y="289" width="30" height="28" fill="url(#decayTail)" opacity="0.6"/>
+
+  <!--
+    HI-HAT LATTICE
+    ═══════════════════
+    The other pole of trap: rapid-fire hi-hat patterns above the bass.
+    Thin vertical tick marks arranged in TRIPLET GROUPS that accelerate
+    from left to right — mimicking the classic trap hi-hat roll:
+    1/8 notes → 1/16 notes → 1/32 notes → full roll.
+
+    This is the first triplet-grouped BPM element in the system.
+    The hats are WHITE (metallic brightness cutting through darkness)
+    and positioned ABOVE the 808 (high frequency vs low frequency).
+  -->
+  <g stroke="#ffffff" stroke-linecap="round">
+    <!-- Group 1: sparse 1/8 notes (3 ticks, wide spacing = 18px) -->
+    <line x1="95" y1="178" x2="95" y2="185" stroke-width="0.4" opacity="0.35"/>
+    <line x1="113" y1="178" x2="113" y2="185" stroke-width="0.4" opacity="0.3"/>
+    <line x1="131" y1="178" x2="131" y2="185" stroke-width="0.4" opacity="0.35"/>
+
+    <!-- Gap (the breath before acceleration) -->
+
+    <!-- Group 2: 1/16 notes (6 ticks, 10px spacing) -->
+    <line x1="158" y1="178" x2="158" y2="186" stroke-width="0.4" opacity="0.3"/>
+    <line x1="168" y1="178" x2="168" y2="186" stroke-width="0.4" opacity="0.28"/>
+    <line x1="178" y1="178" x2="178" y2="186" stroke-width="0.4" opacity="0.32"/>
+    <line x1="188" y1="178" x2="188" y2="186" stroke-width="0.4" opacity="0.28"/>
+    <line x1="198" y1="178" x2="198" y2="186" stroke-width="0.4" opacity="0.3"/>
+    <line x1="208" y1="178" x2="208" y2="186" stroke-width="0.4" opacity="0.28"/>
+
+    <!-- Group 3: 1/32 notes (9 ticks, 6px spacing — accelerating) -->
+    <line x1="226" y1="177" x2="226" y2="187" stroke-width="0.4" opacity="0.3"/>
+    <line x1="232" y1="177" x2="232" y2="187" stroke-width="0.4" opacity="0.28"/>
+    <line x1="238" y1="177" x2="238" y2="187" stroke-width="0.4" opacity="0.32"/>
+    <line x1="244" y1="177" x2="244" y2="187" stroke-width="0.4" opacity="0.28"/>
+    <line x1="250" y1="177" x2="250" y2="187" stroke-width="0.4" opacity="0.3"/>
+    <line x1="256" y1="177" x2="256" y2="187" stroke-width="0.4" opacity="0.28"/>
+    <line x1="262" y1="177" x2="262" y2="187" stroke-width="0.4" opacity="0.32"/>
+    <line x1="268" y1="177" x2="268" y2="187" stroke-width="0.4" opacity="0.28"/>
+    <line x1="274" y1="177" x2="274" y2="187" stroke-width="0.4" opacity="0.3"/>
+
+    <!-- Group 4: full roll (12 ticks, 3.5px spacing — maximum density) -->
+    <line x1="290" y1="176" x2="290" y2="188" stroke-width="0.35" opacity="0.32"/>
+    <line x1="293.5" y1="176" x2="293.5" y2="188" stroke-width="0.35" opacity="0.28"/>
+    <line x1="297" y1="176" x2="297" y2="188" stroke-width="0.35" opacity="0.3"/>
+    <line x1="300.5" y1="176" x2="300.5" y2="188" stroke-width="0.35" opacity="0.28"/>
+    <line x1="304" y1="176" x2="304" y2="188" stroke-width="0.35" opacity="0.32"/>
+    <line x1="307.5" y1="176" x2="307.5" y2="188" stroke-width="0.35" opacity="0.28"/>
+    <line x1="311" y1="176" x2="311" y2="188" stroke-width="0.35" opacity="0.3"/>
+    <line x1="314.5" y1="176" x2="314.5" y2="188" stroke-width="0.35" opacity="0.28"/>
+    <line x1="318" y1="176" x2="318" y2="188" stroke-width="0.35" opacity="0.32"/>
+    <line x1="321.5" y1="176" x2="321.5" y2="188" stroke-width="0.35" opacity="0.28"/>
+    <line x1="325" y1="176" x2="325" y2="188" stroke-width="0.35" opacity="0.3"/>
+    <line x1="328.5" y1="176" x2="328.5" y2="188" stroke-width="0.35" opacity="0.28"/>
+
+    <!-- Trailing sparse (roll releases) -->
+    <line x1="345" y1="178" x2="345" y2="185" stroke-width="0.4" opacity="0.2"/>
+    <line x1="360" y1="178" x2="360" y2="185" stroke-width="0.4" opacity="0.15"/>
+  </g>
+
+  <!--
+    ZERO PARTICLES.
+    Trap is sparse by design. Every element earns its place.
+    No shimmer motes, no sparkle, no debris.
+    The negative space IS the aesthetic.
+  -->
+
+</svg>
+
+<!--
+  BPM STRIP — 140 BPM
+  ═══════════════════
+  20 ticks at 16px spacing, kick weight 0.6px (808 heavy)
+  Triplet grouping: ticks cluster in threes
+  Starting x = (600 - 19*16) / 2 = 148
+-->
+<svg class="bpm-strip" width="600" height="600" viewBox="0 0 600 600">
+  <g stroke="#ffffff" stroke-linecap="round">
+    <!-- Triplet group 1 -->
+    <line x1="148" y1="341" x2="148" y2="349" stroke-width="0.6" opacity="0.5"/>
+    <line x1="159" y1="343" x2="159" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <line x1="170" y1="343" x2="170" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <!-- Triplet group 2 -->
+    <line x1="186" y1="343" x2="186" y2="347" stroke-width="0.35" opacity="0.3"/>
+    <line x1="197" y1="343" x2="197" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <line x1="208" y1="343" x2="208" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <!-- Triplet group 3 — snare on 3 -->
+    <line x1="224" y1="340" x2="224" y2="350" stroke-width="0.55" opacity="0.55"/>
+    <line x1="235" y1="343" x2="235" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <line x1="246" y1="343" x2="246" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <!-- Triplet group 4 -->
+    <line x1="262" y1="343" x2="262" y2="347" stroke-width="0.35" opacity="0.3"/>
+    <line x1="273" y1="343" x2="273" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <line x1="284" y1="343" x2="284" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <!-- Triplet group 5 — kick -->
+    <line x1="300" y1="341" x2="300" y2="349" stroke-width="0.6" opacity="0.5"/>
+    <line x1="311" y1="343" x2="311" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <line x1="322" y1="343" x2="322" y2="347" stroke-width="0.3" opacity="0.25"/>
+    <!-- Triplet group 6 -->
+    <line x1="338" y1="343" x2="338" y2="347" stroke-width="0.35" opacity="0.3"/>
+    <line x1="349" y1="343" x2="349" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <line x1="360" y1="343" x2="360" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <!-- Triplet group 7 — snare -->
+    <line x1="376" y1="340" x2="376" y2="350" stroke-width="0.55" opacity="0.55"/>
+    <line x1="387" y1="343" x2="387" y2="347" stroke-width="0.3" opacity="0.22"/>
+    <!-- Trailing -->
+    <line x1="403" y1="341" x2="403" y2="349" stroke-width="0.6" opacity="0.4"/>
+    <line x1="414" y1="343" x2="414" y2="347" stroke-width="0.3" opacity="0.18"/>
+  </g>
+</svg>
+
+<!-- GRAIN OVERLAY -->
+<svg class="grain" width="600" height="600" viewBox="0 0 600 600">
+  <filter id="grainFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- VIGNETTE -->
+<div class="vignette"></div>
+
+<!-- TYPOGRAPHY -->
+<div class="text-block">
+  <div class="rule"></div>
+  <div class="genre-name">trap</div>
+  <div class="subtitle">playlist</div>
+</div>
+
+</body>
+</html>

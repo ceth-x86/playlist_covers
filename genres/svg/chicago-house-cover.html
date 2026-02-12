@@ -1,0 +1,440 @@
+<!--
+  CHICAGO HOUSE — Playlist Cover
+  Design System: Playlist Cover v1
+
+  SONIC DNA ANALYSIS:
+  ═══════════════════
+  Chicago House's defining sonic features:
+  1. THE FOUR-ON-THE-FLOOR — the foundational kick pattern that defines
+     all house music, born here in Chicago warehouses. 808/909 kick drums,
+     steady, hypnotic, democratic — everyone can find the beat.
+  2. WARM ANALOG SYNTHESIS — Roland TR-808, TR-909, TB-303, Juno-106.
+     These machines have a warmth and imperfection that IS the sound.
+     Not clean digital, not dirty distortion — WARM.
+  3. SOULFUL VOCAL SAMPLES — gospel, disco, and soul vocal fragments
+     chopped and looped. The human element in the machine music.
+  4. DISCO/GOSPEL HERITAGE — Chicago house grew directly from disco
+     and Black church music. It carries that spiritual, communal energy.
+  5. SIMPLICITY — compared to later house subgenres, Chicago house is
+     stripped down. Kick, hat, clap, bass, vocal. Nothing wasted.
+  6. THE WAREHOUSE — this music was born in specific rooms (The Warehouse,
+     The Music Box), and the room acoustics shaped the sound.
+
+  VISUAL TRANSLATION:
+  ═══════════════════
+  Background: Deep warm brown-black (#0e0906) — the darkness of a
+    warehouse basement at 3am, warm because the sound is warm
+  Central form: THE PULSE — a single, round, warm kick drum pulse
+    at the center. Not a complex waveform, not fractures, not stacked
+    layers — ONE PULSE. This is the mother beat, the original heartbeat
+    of house music. Around it, concentric warmth rings radiating outward
+    like sound waves from a speaker cone, like ripples in Deep House
+    but WARMER and CLOSER (Deep House's ripples are submerged/distant;
+    Chicago House's pulse is RIGHT HERE, in the room with you).
+    Above the pulse: a thin melodic arc — the vocal sample floating
+    over the beat, the human breath over the machine rhythm.
+  Glow: Warm amber-gold (0.08) — analog warmth, vinyl, incandescent
+    club lighting, the golden tone of a Juno pad
+  Grain: 18% — analog tape warmth, vinyl crackle. Not heavy distortion,
+    not pristine digital. The honest grain of analog recording.
+  Displacement: scale=0 — ZERO. Chicago house is direct and honest.
+    No warping, no distortion, no tricks. The beat is the beat.
+  Blur: stdDev=5 on warmth rings — the room reverb, the speaker bleed,
+    the way bass fills a warehouse space
+  Particles: 3 warm motes — subtle, sparse, representing the vocal
+    fragments that float through the mix. Only 3 because Chicago house
+    is MINIMAL — every element earns its place.
+  BPM: 124 BPM → 18 ticks at 18px spacing, kick weight 0.5px
+    (solid but not crushing — the kick invites, it doesn't assault),
+    classic four-on-the-floor with hat on every off-beat
+
+  FAMILY PLACEMENT:
+  ═══════════════════
+  THE ORIGIN POINT. Chicago House is the root of the entire House Family:
+  Chicago House → Minimal House (single pulse + orbits, reduced)
+                → Deep House (warm ripples, submerged)
+                → Tech House (hybrid grid+pulse, technical)
+                → Progressive House (expanding arcs, building)
+  Also the ancestor of: Acid House (TB-303 line), Garage (UK vocal),
+    and indirectly all house-derived genres.
+  Compared to Deep House: Chicago is WARMER and more DIRECT. Deep House
+    submerges the kick and adds melancholy; Chicago puts the kick
+    front and center with soul and joy.
+  Compared to Minimal House: Chicago has MORE elements — vocals, pads,
+    soul. Minimal strips it to the mathematical skeleton.
+  Compared to Detroit Techno: same era, same machines, different cities,
+    different philosophy. Detroit = futurism; Chicago = spiritualism.
+  Key artists: Frankie Knuckles, Ron Hardy, Larry Heard (Mr. Fingers),
+    Marshall Jefferson, Jesse Saunders, Chip E.
+
+  COLOUR RATIONALE:
+  ═══════════════════
+  Warm brown-black (#0e0906): warehouse darkness with analog warmth
+  Amber-gold (#d4881a → #b87314 → #8a5a10): the colour of warmth
+    itself — incandescent light bulbs in a club, the amber glow of
+    vacuum tubes in analog gear, the golden tone of a soul vocal
+    through a warm compressor. This is the ONLY genre that gets
+    pure gold — because Chicago house IS the golden origin.
+  Soft cream white on the vocal arc: the human breath, gospel purity
+  NO cool tones — Chicago house is entirely warm. No blue, no purple,
+    no cyan. Pure soul warmth.
+
+  DESIGN PHILOSOPHY NOTE:
+  ═══════════════════
+  This cover must feel like THE BEGINNING. Every other house cover
+  in the system (deep, minimal, tech, progressive) is a derivation.
+  Chicago House is the seed. The visual should feel foundational,
+  simple, warm, and alive — like a heartbeat.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=600, height=600">
+<title>chicago house — playlist cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: #0e0906;
+    position: relative;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .vignette {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(
+      ellipse 58% 58% at 50% 48%,
+      transparent 0%,
+      rgba(10, 6, 3, 0.35) 55%,
+      rgba(10, 6, 3, 0.85) 100%
+    );
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* === GRAIN — 18% (analog tape warmth) === */
+  .grain {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 11;
+    pointer-events: none;
+    opacity: 0.18;
+  }
+
+  /* === ANALOG WARMTH GLOW — amber-gold from the pulse center === */
+  .warmth-glow {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(212, 136, 26, 0.08) 0%,
+      rgba(184, 115, 20, 0.04) 35%,
+      rgba(138, 90, 16, 0.02) 60%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .central-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  .bpm-strip {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .text-block {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 15;
+  }
+  .rule {
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+  }
+  .genre-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 38px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>
+</head>
+<body>
+
+<!-- ANALOG WARMTH GLOW -->
+<div class="warmth-glow"></div>
+
+<!-- CENTRAL FORM: The Pulse + Warmth Rings + Vocal Arc -->
+<svg class="central-form" width="440" height="440" viewBox="0 0 440 440">
+  <defs>
+    <!--
+      NO displacement filter. scale=0.
+      Chicago house is direct and honest — no warping, no distortion.
+      The beat is the beat. First cover in this session with zero displacement.
+    -->
+
+    <!-- Room reverb blur: stdDev=5 — the way bass fills a warehouse -->
+    <filter id="roomBlur">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+
+    <!-- Pulse glow — warm, tight -->
+    <filter id="pulseGlow">
+      <feGaussianBlur stdDeviation="3" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Vocal arc shimmer -->
+    <filter id="vocalShimmer">
+      <feGaussianBlur stdDeviation="1.5" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Mote glow -->
+    <filter id="moteGlow">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+
+    <!-- Warm amber-gold gradient for the pulse -->
+    <radialGradient id="pulseGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4881a" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#b87314" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#8a5a10" stop-opacity="0.15"/>
+    </radialGradient>
+
+    <!-- Ring gradient — fading gold -->
+    <radialGradient id="ringFade" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4881a" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#8a5a10" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!--
+    THE PULSE
+    ═══════════════════
+    The foundational visual: a single, warm, round pulse.
+    This is the kick drum that started house music — the heartbeat
+    in the warehouse, the 808/909 thump that Frankie Knuckles
+    put underneath disco records and changed everything.
+
+    It's ROUND because the kick is clean and unprocessed — no
+    distortion (frenchcore), no wobble (dubstep), no pitch slide
+    (trap). Just a warm, round, honest thump.
+
+    It's SINGULAR because Chicago house is about THE beat, not
+    layers of beats. One kick, one pulse, one heartbeat.
+
+    This is the mother form from which all house covers descend:
+    - Minimal House reduces it to a mathematical point
+    - Deep House submerges it underwater
+    - Tech House hybridizes it with a grid
+    - Progressive House stretches it into arcs
+    Chicago House IS it — warm, alive, undiluted.
+  -->
+
+  <!-- Warmth halo — the room filling with bass -->
+  <circle cx="220" cy="225" r="55"
+    fill="url(#pulseGrad)" filter="url(#roomBlur)" opacity="0.25"/>
+
+  <!-- The Pulse itself — warm golden circle -->
+  <circle cx="220" cy="225" r="14"
+    fill="#d4881a" filter="url(#pulseGlow)" opacity="0.7"/>
+  <circle cx="220" cy="225" r="7"
+    fill="#e8a030" opacity="0.5"/>
+  <!-- Bright center — the transient moment -->
+  <circle cx="220" cy="225" r="3"
+    fill="#f0c060" opacity="0.4"/>
+
+  <!--
+    WARMTH RINGS — concentric circles radiating from the pulse
+    ═══════════════════
+    These are the sound waves propagating from the speaker cone
+    into the warehouse space. Each ring is a cycle of the kick's
+    sustain and release. They get wider, thinner, and more transparent
+    as they travel outward — just like sound attenuating in a room.
+
+    Compare to Deep House's ripple rings: Deep House's are cool-toned
+    and submerged (underwater). Chicago House's are warm-toned and
+    in the air (in the room with you). Same formal concept, different
+    temperature and proximity.
+  -->
+  <circle cx="220" cy="225" r="35"
+    stroke="#d4881a" stroke-width="1.2" fill="none"
+    filter="url(#pulseGlow)" opacity="0.3"/>
+  <circle cx="220" cy="225" r="60"
+    stroke="#b87314" stroke-width="1.0" fill="none"
+    filter="url(#roomBlur)" opacity="0.2"/>
+  <circle cx="220" cy="225" r="88"
+    stroke="#a06812" stroke-width="0.8" fill="none"
+    filter="url(#roomBlur)" opacity="0.14"/>
+  <circle cx="220" cy="225" r="120"
+    stroke="#8a5a10" stroke-width="0.6" fill="none"
+    filter="url(#roomBlur)" opacity="0.09"/>
+  <circle cx="220" cy="225" r="155"
+    stroke="#7a5010" stroke-width="0.4" fill="none"
+    filter="url(#roomBlur)" opacity="0.05"/>
+
+  <!--
+    VOCAL ARC
+    ═══════════════════
+    A thin, gentle arc floating above the pulse — the soulful vocal
+    sample that rides over the beat. This is the HUMAN element in
+    the machine music, the gospel lineage, the breath.
+
+    It's a single smooth arc, not chopped (that would be UK garage),
+    not stacked (future bass vocal chops), not aggressive.
+    Cream-white because the voice is pure and unprocessed.
+    Positioned above the pulse because the vocal floats over the kick.
+  -->
+  <path d="
+    M 145,185
+    C 165,165 190,155 220,152
+    C 250,155 275,165 295,185
+  "
+  stroke="#f0e0c8" stroke-width="1.0" fill="none"
+  stroke-linecap="round" filter="url(#vocalShimmer)" opacity="0.3"/>
+
+  <!-- Second vocal ghost — the reverb tail of the sample -->
+  <path d="
+    M 155,178
+    C 172,162 195,153 220,150
+    C 245,153 268,162 285,178
+  "
+  stroke="#f0e0c8" stroke-width="0.5" fill="none"
+  stroke-linecap="round" opacity="0.12"/>
+
+  <!--
+    WARM MOTES — 3 particles
+    ═══════════════════
+    Vocal fragments floating through the mix. Only 3 because
+    Chicago house is minimal — every element earns its place.
+    Round and warm (golden), not angular (frenchcore) or
+    crystalline (future bass).
+  -->
+  <circle cx="175" cy="170" r="1.8"
+    fill="#d4881a" filter="url(#moteGlow)" opacity="0.3"/>
+  <circle cx="265" cy="175" r="1.4"
+    fill="#e8a030" filter="url(#moteGlow)" opacity="0.25"/>
+  <circle cx="220" cy="160" r="1.2"
+    fill="#f0c060" filter="url(#moteGlow)" opacity="0.2"/>
+
+</svg>
+
+<!--
+  BPM STRIP — 124 BPM
+  ═══════════════════
+  18 ticks at 18px spacing (total: 306px, centered)
+  Kick weight: 0.5px (solid but inviting, not crushing)
+  Classic four-on-the-floor: kick on every beat, open hat on off-beats
+  This is the TEMPLATE that all house BPM strips derive from:
+  - Minimal House reduces it
+  - Deep House softens it
+  - Tech House complicates it
+  - Frenchcore brutalizes it
+  Chicago House IS the pattern.
+  Starting x = (600 - 17*18) / 2 = 147
+-->
+<svg class="bpm-strip" width="600" height="600" viewBox="0 0 600 600">
+  <g stroke="#ffffff" stroke-linecap="round">
+    <!-- Classic four-on-the-floor: KICK - hat - KICK - hat ... -->
+    <!-- The oldest pattern in house music -->
+
+    <!-- 1: KICK -->
+    <line x1="147" y1="342" x2="147" y2="348" stroke-width="0.5" opacity="0.5"/>
+    <!-- hat -->
+    <line x1="165" y1="343.5" x2="165" y2="346.5" stroke-width="0.3" opacity="0.28"/>
+    <!-- 2: KICK -->
+    <line x1="183" y1="342" x2="183" y2="348" stroke-width="0.5" opacity="0.48"/>
+    <!-- hat -->
+    <line x1="201" y1="343.5" x2="201" y2="346.5" stroke-width="0.3" opacity="0.28"/>
+    <!-- 3: KICK + clap -->
+    <line x1="219" y1="341" x2="219" y2="349" stroke-width="0.5" opacity="0.55"/>
+    <!-- hat -->
+    <line x1="237" y1="343.5" x2="237" y2="346.5" stroke-width="0.3" opacity="0.28"/>
+    <!-- 4: KICK -->
+    <line x1="255" y1="342" x2="255" y2="348" stroke-width="0.5" opacity="0.48"/>
+    <!-- hat -->
+    <line x1="273" y1="343.5" x2="273" y2="346.5" stroke-width="0.3" opacity="0.28"/>
+    <!-- 5: KICK -->
+    <line x1="291" y1="342" x2="291" y2="348" stroke-width="0.5" opacity="0.5"/>
+    <!-- hat -->
+    <line x1="309" y1="343.5" x2="309" y2="346.5" stroke-width="0.3" opacity="0.28"/>
+    <!-- 6: KICK -->
+    <line x1="327" y1="342" x2="327" y2="348" stroke-width="0.5" opacity="0.48"/>
+    <!-- hat -->
+    <line x1="345" y1="343.5" x2="345" y2="346.5" stroke-width="0.3" opacity="0.28"/>
+    <!-- 7: KICK + clap -->
+    <line x1="363" y1="341" x2="363" y2="349" stroke-width="0.5" opacity="0.55"/>
+    <!-- hat -->
+    <line x1="381" y1="343.5" x2="381" y2="346.5" stroke-width="0.3" opacity="0.28"/>
+    <!-- 8: KICK -->
+    <line x1="399" y1="342" x2="399" y2="348" stroke-width="0.5" opacity="0.48"/>
+    <!-- hat -->
+    <line x1="417" y1="343.5" x2="417" y2="346.5" stroke-width="0.3" opacity="0.28"/>
+    <!-- 9: KICK (trailing) -->
+    <line x1="435" y1="342" x2="435" y2="348" stroke-width="0.5" opacity="0.4"/>
+    <!-- hat -->
+    <line x1="453" y1="343.5" x2="453" y2="346.5" stroke-width="0.3" opacity="0.2"/>
+  </g>
+</svg>
+
+<!-- GRAIN OVERLAY -->
+<svg class="grain" width="600" height="600" viewBox="0 0 600 600">
+  <filter id="grainFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- VIGNETTE -->
+<div class="vignette"></div>
+
+<!-- TYPOGRAPHY -->
+<div class="text-block">
+  <div class="rule"></div>
+  <div class="genre-name">chicago house</div>
+  <div class="subtitle">playlist</div>
+</div>
+
+</body>
+</html>
